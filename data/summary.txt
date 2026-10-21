@@ -1,0 +1,8 @@
+
+
+# SUMMARY
+# H1_shl12       total=   12  list-related=   0  undecided=   12
+# H2_and0FFF     total= 2840  list-related= 111  undecided= 2729
+# H3_and0x7FFF   total=   14  list-related=   0  undecided=   14
+# H3_shr12       total= 3004  list-related= 112  undecided= 2892
+# H6_cmp0x1000   total=    3  list-related=   0  undecided=    3

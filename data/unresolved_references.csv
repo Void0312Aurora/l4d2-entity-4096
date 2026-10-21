@@ -1,0 +1,12 @@
+site_va,function,instruction,bytes,base_reg,field,old_offset,provenance,classification,evidence
+0x1034E5AF,,,89 08 c7 40 04 00 01 00 00 c7 40 08,,m_activeList.head,0x10004,,false_positive,"bytes span two instructions (disp8 + imm32), not a disp32 operand"
+0x1034E5EF,,,89 08 c7 40 04 00 01 00 00 c7 40 08,,m_activeList.head,0x10004,,false_positive,"bytes span two instructions (disp8 + imm32), not a disp32 operand"
+0x10501491,,,00 00 c7 46 08 00 01 00 00 c7 46 0c,,m_activeList.tail,0x10008,,false_positive,"bytes span two instructions (disp8 + imm32), not a disp32 operand"
+0x105711BC,,,74 0f 81 4e 08 00 01 00 00 39 5e 18,,m_activeList.tail,0x10008,,false_positive,"bytes span two instructions (disp8 + imm32), not a disp32 operand"
+0x1022FFE4,,,05 fc 59 83 10 00 01 00 00 75 47 81,,m_freeNonNetworkableList.tail,0x10010,,false_positive,"bytes span two instructions (disp8 + imm32), not a disp32 operand"
+0x1022FFF0,,,0d fc 59 83 10 00 01 00 00 68 90 5a,,m_freeNonNetworkableList.tail,0x10010,,false_positive,"bytes span two instructions (disp8 + imm32), not a disp32 operand"
+0x102D8C4A,,2D imm32=0x10010,2d 10 00 01 00,,m_freeNonNetworkableList.tail,0x10010,,offset_immediate,imm32 == member offset (address arithmetic); needs +0x10000
+0x104724CB,,,10 b1 24 47 10 00 01 00 01 00 01 01,,m_freeNonNetworkableList.tail,0x10010,,false_positive,"bytes span two instructions (disp8 + imm32), not a disp32 operand"
+0x1037A9D7,,,57 18 c7 47 1c 00 01 00 00 8b 80 ec,,m_iNumEdicts,0x1001C,,false_positive,"bytes span two instructions (disp8 + imm32), not a disp32 operand"
+0x1037AA9B,,,00 01 c7 46 1c 00 01 00 00 8b c6 5e,,m_iNumEdicts,0x1001C,,false_positive,"bytes span two instructions (disp8 + imm32), not a disp32 operand"
+0x100B5D87,,81 imm32=0x10024,81 c1 24 00 01 00,,m_entityListeners.pMemory,0x10024,,offset_immediate,imm32 == member offset (address arithmetic); needs +0x10000

@@ -1,0 +1,13 @@
+# 生成的二进制（不含 Valve 资产）
+out/
+*.dll
+
+# 派生/临时文件
+archive/
+__pycache__/
+*.pyc
+reports/precheck/
+
+# 编辑器
+.vscode/
+.idea/

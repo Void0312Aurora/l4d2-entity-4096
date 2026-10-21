@@ -1,0 +1,7359 @@
+{
+ "module": "server.dll",
+ "sha256": "a93ec916a8f26fbea85688c321d2ba8dd346d435fab09a0b926dd950c2e1ea12",
+ "size": 9130288,
+ "section_alignment": "0x1000",
+ "sections": [
+  {
+   "name": ".entlist",
+   "rva": 9969664,
+   "va": 278405120,
+   "virtual_size": 131128,
+   "size_of_raw_data": 0,
+   "initialized": "runtime ctor (0x105859B1 writes vptr)"
+  },
+  {
+   "name": ".simthnk",
+   "rva": 10104832,
+   "va": 278540288,
+   "virtual_size": 16408,
+   "size_of_raw_data": 512,
+   "initialized": "static vptr 0x105F3A94 + 1 HIGHLOW"
+  }
+ ],
+ "size_of_image_new": 10125312,
+ "new_reloc_block": {
+  "page_rva": 10104832,
+  "size_of_block": 12,
+  "entries": [
+   "0x3000 HIGHLOW offset 0",
+   "0x0000 ABSOLUTE pad"
+  ]
+ },
+ "objects": {
+  "CGlobalEntityList": {
+   "old": 276694880,
+   "new": 278405120,
+   "size_old": 65592,
+   "size_new": 131128
+  },
+  "CSimThinkManager": {
+   "old": 276163040,
+   "new": 278540288,
+   "size_old": 8216,
+   "size_new": 16408
+  }
+ },
+ "counts": {
+  "A": 808,
+  "B": 0,
+  "total": 808,
+  "A1-glref": 668,
+  "A9-mask": 22,
+  "S10-shr": 16,
+  "A3-gldisp": 58,
+  "A10-stref": 9,
+  "A10-vec": 18,
+  "A4-glimm": 2,
+  "A10-clear": 1,
+  "A7-ctor": 3,
+  "A9-shl": 4,
+  "A8-thresh": 2,
+  "A9-h9": 5
+ },
+ "dedupe_drops": [
+  {
+   "dropped": "A8-thresh",
+   "kept": "A8-thresh",
+   "rva": "0xb7ae9",
+   "reason": "network bound in 0x100B7A30"
+  },
+  {
+   "dropped": "S11-rel",
+   "kept": "A9-shl",
+   "rva": "0xb79a7",
+   "reason": "RemoveEntityAtSlot: handle pack serial<<12 -> <<13"
+  },
+  {
+   "dropped": "S11-rel",
+   "kept": "A8-thresh",
+   "rva": "0xb7a08",
+   "reason": "RemoveEntityAtSlot: non-network boundary 0x800 -> 0x1000"
+  }
+ ],
+ "class_B": [],
+ "patches": [
+  {
+   "id": "A1-glref",
+   "rva": 60939,
+   "file_offset": 57867,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 62628,
+   "file_offset": 59556,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 62865,
+   "file_offset": 59793,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 64003,
+   "file_offset": 60931,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A9-mask",
+   "rva": 67212,
+   "file_offset": 64140,
+   "old": "ff0f0000",
+   "new": "ff1f0000",
+   "size": 4,
+   "evidence": "handle->index mask followed by array access"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 67221,
+   "file_offset": 64149,
+   "old": "64077e10",
+   "new": "04209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00004"
+  },
+  {
+   "id": "S10-shr",
+   "rva": 67229,
+   "file_offset": 64157,
+   "old": "0c",
+   "new": "0d",
+   "size": 1,
+   "evidence": "serial = handle >> 12 -> >> 13 (paired with index mask)"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 181271,
+   "file_offset": 178199,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 200369,
+   "file_offset": 197297,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A9-mask",
+   "rva": 333104,
+   "file_offset": 330032,
+   "old": "ff0f0000",
+   "new": "ff1f0000",
+   "size": 4,
+   "evidence": "handle->index mask followed by array access"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 333112,
+   "file_offset": 330040,
+   "old": "64077e10",
+   "new": "04209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00004"
+  },
+  {
+   "id": "S10-shr",
+   "rva": 333120,
+   "file_offset": 330048,
+   "old": "0c",
+   "new": "0d",
+   "size": 1,
+   "evidence": "serial = handle >> 12 -> >> 13 (paired with index mask)"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 338759,
+   "file_offset": 335687,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 341268,
+   "file_offset": 338196,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 341913,
+   "file_offset": 338841,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 342072,
+   "file_offset": 339000,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 342129,
+   "file_offset": 339057,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 342284,
+   "file_offset": 339212,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 342608,
+   "file_offset": 339536,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 342760,
+   "file_offset": 339688,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 342871,
+   "file_offset": 339799,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 343045,
+   "file_offset": 339973,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 349781,
+   "file_offset": 346709,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 349852,
+   "file_offset": 346780,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 351058,
+   "file_offset": 347986,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 351140,
+   "file_offset": 348068,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 354636,
+   "file_offset": 351564,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 354712,
+   "file_offset": 351640,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 355934,
+   "file_offset": 352862,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 356625,
+   "file_offset": 353553,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 358607,
+   "file_offset": 355535,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 358642,
+   "file_offset": 355570,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 380188,
+   "file_offset": 377116,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 417022,
+   "file_offset": 413950,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 417141,
+   "file_offset": 414069,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 419074,
+   "file_offset": 416002,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 437439,
+   "file_offset": 434367,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 440234,
+   "file_offset": 437162,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 442485,
+   "file_offset": 439413,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 442752,
+   "file_offset": 439680,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 457745,
+   "file_offset": 454673,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 457843,
+   "file_offset": 454771,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 457926,
+   "file_offset": 454854,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 458017,
+   "file_offset": 454945,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 458707,
+   "file_offset": 455635,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 458842,
+   "file_offset": 455770,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 524499,
+   "file_offset": 521427,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 524564,
+   "file_offset": 521492,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 541065,
+   "file_offset": 537993,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 558681,
+   "file_offset": 555609,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 570015,
+   "file_offset": 566943,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 570452,
+   "file_offset": 567380,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 574570,
+   "file_offset": 571498,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 575081,
+   "file_offset": 572009,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 577528,
+   "file_offset": 574456,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 582840,
+   "file_offset": 579768,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 582900,
+   "file_offset": 579828,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 583802,
+   "file_offset": 580730,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 583875,
+   "file_offset": 580803,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 584035,
+   "file_offset": 580963,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 584101,
+   "file_offset": 581029,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 587398,
+   "file_offset": 584326,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 587424,
+   "file_offset": 584352,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 593439,
+   "file_offset": 590367,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 593465,
+   "file_offset": 590393,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A9-mask",
+   "rva": 605199,
+   "file_offset": 602127,
+   "old": "ff0f0000",
+   "new": "ff1f0000",
+   "size": 4,
+   "evidence": "handle->index mask followed by array access"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 605207,
+   "file_offset": 602135,
+   "old": "64077e10",
+   "new": "04209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00004"
+  },
+  {
+   "id": "S10-shr",
+   "rva": 605219,
+   "file_offset": 602147,
+   "old": "0c",
+   "new": "0d",
+   "size": 1,
+   "evidence": "serial = handle >> 12 -> >> 13 (paired with index mask)"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 620229,
+   "file_offset": 617157,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 630425,
+   "file_offset": 627353,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 630522,
+   "file_offset": 627450,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 630585,
+   "file_offset": 627513,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 630682,
+   "file_offset": 627610,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 640087,
+   "file_offset": 637015,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 640254,
+   "file_offset": 637182,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 642402,
+   "file_offset": 639330,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 646674,
+   "file_offset": 643602,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 647033,
+   "file_offset": 643961,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 651687,
+   "file_offset": 648615,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 673598,
+   "file_offset": 670526,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 673837,
+   "file_offset": 670765,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 674046,
+   "file_offset": 670974,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 674842,
+   "file_offset": 671770,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 674919,
+   "file_offset": 671847,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 700537,
+   "file_offset": 697465,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 701114,
+   "file_offset": 698042,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 703779,
+   "file_offset": 700707,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 715883,
+   "file_offset": 712811,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 716237,
+   "file_offset": 713165,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 729163,
+   "file_offset": 726091,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 737598,
+   "file_offset": 734526,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A3-gldisp",
+   "rva": 737890,
+   "file_offset": 734818,
+   "old": "18000100",
+   "new": "18000200",
+   "size": 4,
+   "evidence": "this+0x10018 in entity-list method"
+  },
+  {
+   "id": "A3-gldisp",
+   "rva": 737919,
+   "file_offset": 734847,
+   "old": "04000100",
+   "new": "04000200",
+   "size": 4,
+   "evidence": "this+0x10004 in entity-list method"
+  },
+  {
+   "id": "A3-gldisp",
+   "rva": 737996,
+   "file_offset": 734924,
+   "old": "04000100",
+   "new": "04000200",
+   "size": 4,
+   "evidence": "this+0x10004 in entity-list method"
+  },
+  {
+   "id": "A3-gldisp",
+   "rva": 738081,
+   "file_offset": 735009,
+   "old": "04000100",
+   "new": "04000200",
+   "size": 4,
+   "evidence": "this+0x10004 in entity-list method"
+  },
+  {
+   "id": "A3-gldisp",
+   "rva": 738199,
+   "file_offset": 735127,
+   "old": "04000100",
+   "new": "04000200",
+   "size": 4,
+   "evidence": "this+0x10004 in entity-list method"
+  },
+  {
+   "id": "A3-gldisp",
+   "rva": 738333,
+   "file_offset": 735261,
+   "old": "04000100",
+   "new": "04000200",
+   "size": 4,
+   "evidence": "this+0x10004 in entity-list method"
+  },
+  {
+   "id": "A10-stref",
+   "rva": 739297,
+   "file_offset": 736225,
+   "old": "f0097610",
+   "new": "10709a10",
+   "size": 4,
+   "evidence": "reloc target off=0x02010"
+  },
+  {
+   "id": "A3-gldisp",
+   "rva": 739351,
+   "file_offset": 736279,
+   "old": "04000100",
+   "new": "04000200",
+   "size": 4,
+   "evidence": "this+0x10004 in entity-list method"
+  },
+  {
+   "id": "A3-gldisp",
+   "rva": 739454,
+   "file_offset": 736382,
+   "old": "04000100",
+   "new": "04000200",
+   "size": 4,
+   "evidence": "this+0x10004 in entity-list method"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 740562,
+   "file_offset": 737490,
+   "old": "64077e10",
+   "new": "04209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00004"
+  },
+  {
+   "id": "A10-stref",
+   "rva": 740604,
+   "file_offset": 737532,
+   "old": "e0e97510",
+   "new": "00309a10",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A3-gldisp",
+   "rva": 741228,
+   "file_offset": 738156,
+   "old": "04000100",
+   "new": "04000200",
+   "size": 4,
+   "evidence": "this+0x10004 in entity-list method"
+  },
+  {
+   "id": "A3-gldisp",
+   "rva": 741415,
+   "file_offset": 738343,
+   "old": "04000100",
+   "new": "04000200",
+   "size": 4,
+   "evidence": "this+0x10004 in entity-list method"
+  },
+  {
+   "id": "A3-gldisp",
+   "rva": 741594,
+   "file_offset": 738522,
+   "old": "04000100",
+   "new": "04000200",
+   "size": 4,
+   "evidence": "this+0x10004 in entity-list method"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 741819,
+   "file_offset": 738747,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 741960,
+   "file_offset": 738888,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 742053,
+   "file_offset": 738981,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 742089,
+   "file_offset": 739017,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 742216,
+   "file_offset": 739144,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 742315,
+   "file_offset": 739243,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 742442,
+   "file_offset": 739370,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 742517,
+   "file_offset": 739445,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 742544,
+   "file_offset": 739472,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 742843,
+   "file_offset": 739771,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 742914,
+   "file_offset": 739842,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 743007,
+   "file_offset": 739935,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 743084,
+   "file_offset": 740012,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 743100,
+   "file_offset": 740028,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A3-gldisp",
+   "rva": 743128,
+   "file_offset": 740056,
+   "old": "04000100",
+   "new": "04000200",
+   "size": 4,
+   "evidence": "this+0x10004 in entity-list method"
+  },
+  {
+   "id": "A3-gldisp",
+   "rva": 743474,
+   "file_offset": 740402,
+   "old": "18000100",
+   "new": "18000200",
+   "size": 4,
+   "evidence": "this+0x10018 in entity-list method"
+  },
+  {
+   "id": "A9-mask",
+   "rva": 743479,
+   "file_offset": 740407,
+   "old": "ff0f0000",
+   "new": "ff1f0000",
+   "size": 4,
+   "evidence": "listener callback handle index mask in 0x100B5820"
+  },
+  {
+   "id": "A3-gldisp",
+   "rva": 743485,
+   "file_offset": 740413,
+   "old": "14000100",
+   "new": "14000200",
+   "size": 4,
+   "evidence": "this+0x10014 in entity-list method"
+  },
+  {
+   "id": "A3-gldisp",
+   "rva": 743493,
+   "file_offset": 740421,
+   "old": "14000100",
+   "new": "14000200",
+   "size": 4,
+   "evidence": "this+0x10014 in entity-list method"
+  },
+  {
+   "id": "A3-gldisp",
+   "rva": 743517,
+   "file_offset": 740445,
+   "old": "1c000100",
+   "new": "1c000200",
+   "size": 4,
+   "evidence": "this+0x1001C in entity-list method"
+  },
+  {
+   "id": "A3-gldisp",
+   "rva": 743523,
+   "file_offset": 740451,
+   "old": "30000100",
+   "new": "30000200",
+   "size": 4,
+   "evidence": "this+0x10030 in entity-list method"
+  },
+  {
+   "id": "A3-gldisp",
+   "rva": 743538,
+   "file_offset": 740466,
+   "old": "24000100",
+   "new": "24000200",
+   "size": 4,
+   "evidence": "this+0x10024 in entity-list method"
+  },
+  {
+   "id": "A3-gldisp",
+   "rva": 743595,
+   "file_offset": 740523,
+   "old": "1c000100",
+   "new": "1c000200",
+   "size": 4,
+   "evidence": "this+0x1001C in entity-list method"
+  },
+  {
+   "id": "A3-gldisp",
+   "rva": 743601,
+   "file_offset": 740529,
+   "old": "18000100",
+   "new": "18000200",
+   "size": 4,
+   "evidence": "this+0x10018 in entity-list method"
+  },
+  {
+   "id": "A3-gldisp",
+   "rva": 743612,
+   "file_offset": 740540,
+   "old": "18000100",
+   "new": "18000200",
+   "size": 4,
+   "evidence": "this+0x10018 in entity-list method"
+  },
+  {
+   "id": "A3-gldisp",
+   "rva": 743649,
+   "file_offset": 740577,
+   "old": "30000100",
+   "new": "30000200",
+   "size": 4,
+   "evidence": "this+0x10030 in entity-list method"
+  },
+  {
+   "id": "A3-gldisp",
+   "rva": 743666,
+   "file_offset": 740594,
+   "old": "24000100",
+   "new": "24000200",
+   "size": 4,
+   "evidence": "this+0x10024 in entity-list method"
+  },
+  {
+   "id": "A10-vec",
+   "rva": 744630,
+   "file_offset": 741558,
+   "old": "10200000",
+   "new": "10400000",
+   "size": 4,
+   "evidence": "m_simThinkList[+0x2010] in RemoveEntinfoIndex 0x100B5CA0 (ECX uniform with 0x100B5CA7)"
+  },
+  {
+   "id": "A10-vec",
+   "rva": 744647,
+   "file_offset": 741575,
+   "old": "04200000",
+   "new": "04400000",
+   "size": 4,
+   "evidence": "m_simThinkList[+0x2004] in RemoveEntinfoIndex 0x100B5CA0 (ECX uniform with 0x100B5CA7)"
+  },
+  {
+   "id": "A10-vec",
+   "rva": 744670,
+   "file_offset": 741598,
+   "old": "10200000",
+   "new": "10400000",
+   "size": 4,
+   "evidence": "m_simThinkList[+0x2010] in RemoveEntinfoIndex 0x100B5CA0 (ECX uniform with 0x100B5CA7)"
+  },
+  {
+   "id": "A10-vec",
+   "rva": 744687,
+   "file_offset": 741615,
+   "old": "10200000",
+   "new": "10400000",
+   "size": 4,
+   "evidence": "m_simThinkList[+0x2010] in RemoveEntinfoIndex 0x100B5CA0 (ECX uniform with 0x100B5CA7)"
+  },
+  {
+   "id": "A10-vec",
+   "rva": 744695,
+   "file_offset": 741623,
+   "old": "04200000",
+   "new": "04400000",
+   "size": 4,
+   "evidence": "m_simThinkList[+0x2004] in RemoveEntinfoIndex 0x100B5CA0 (ECX uniform with 0x100B5CA7)"
+  },
+  {
+   "id": "A4-glimm",
+   "rva": 744841,
+   "file_offset": 741769,
+   "old": "24000100",
+   "new": "24000200",
+   "size": 4,
+   "evidence": "member offset imm32"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 744894,
+   "file_offset": 741822,
+   "old": "64077e10",
+   "new": "04209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00004"
+  },
+  {
+   "id": "A3-gldisp",
+   "rva": 744949,
+   "file_offset": 741877,
+   "old": "30000100",
+   "new": "30000200",
+   "size": 4,
+   "evidence": "this+0x10030 in entity-list method"
+  },
+  {
+   "id": "A3-gldisp",
+   "rva": 744962,
+   "file_offset": 741890,
+   "old": "24000100",
+   "new": "24000200",
+   "size": 4,
+   "evidence": "this+0x10024 in entity-list method"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 745336,
+   "file_offset": 742264,
+   "old": "64077f10",
+   "new": "04209a10",
+   "size": 4,
+   "evidence": "reloc target off=0x10004"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 745364,
+   "file_offset": 742292,
+   "old": "64077f10",
+   "new": "04209a10",
+   "size": 4,
+   "evidence": "reloc target off=0x10004"
+  },
+  {
+   "id": "A9-mask",
+   "rva": 745392,
+   "file_offset": 742320,
+   "old": "ff0f0000",
+   "new": "ff1f0000",
+   "size": 4,
+   "evidence": "handle->index mask followed by array access"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 745400,
+   "file_offset": 742328,
+   "old": "64077e10",
+   "new": "04209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00004"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 745487,
+   "file_offset": 742415,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A10-vec",
+   "rva": 746216,
+   "file_offset": 743144,
+   "old": "10200000",
+   "new": "10400000",
+   "size": 4,
+   "evidence": "m_simThinkList[+0x2010] in fn 0x100B62E0 (this=simthink proven)"
+  },
+  {
+   "id": "A10-vec",
+   "rva": 746222,
+   "file_offset": 743150,
+   "old": "0c200000",
+   "new": "0c400000",
+   "size": 4,
+   "evidence": "m_simThinkList[+0x200C] in fn 0x100B62E0 (this=simthink proven)"
+  },
+  {
+   "id": "A10-vec",
+   "rva": 746230,
+   "file_offset": 743158,
+   "old": "04200000",
+   "new": "04400000",
+   "size": 4,
+   "evidence": "m_simThinkList[+0x2004] in fn 0x100B62E0 (this=simthink proven)"
+  },
+  {
+   "id": "A10-vec",
+   "rva": 746256,
+   "file_offset": 743184,
+   "old": "04200000",
+   "new": "04400000",
+   "size": 4,
+   "evidence": "m_simThinkList[+0x2004] in fn 0x100B62E0 (this=simthink proven)"
+  },
+  {
+   "id": "A10-vec",
+   "rva": 746262,
+   "file_offset": 743190,
+   "old": "08200000",
+   "new": "08400000",
+   "size": 4,
+   "evidence": "m_simThinkList[+0x2008] in fn 0x100B62E0 (this=simthink proven)"
+  },
+  {
+   "id": "A10-vec",
+   "rva": 746268,
+   "file_offset": 743196,
+   "old": "04200000",
+   "new": "04400000",
+   "size": 4,
+   "evidence": "m_simThinkList[+0x2004] in fn 0x100B62E0 (this=simthink proven)"
+  },
+  {
+   "id": "A10-vec",
+   "rva": 746284,
+   "file_offset": 743212,
+   "old": "14200000",
+   "new": "14400000",
+   "size": 4,
+   "evidence": "m_simThinkList[+0x2014] in fn 0x100B62E0 (this=simthink proven)"
+  },
+  {
+   "id": "A10-clear",
+   "rva": 746295,
+   "file_offset": 743223,
+   "old": "00080000",
+   "new": "00100000",
+   "size": 4,
+   "evidence": "Clear() fills 0x4000 bytes"
+  },
+  {
+   "id": "A3-gldisp",
+   "rva": 746330,
+   "file_offset": 743258,
+   "old": "04000100",
+   "new": "04000200",
+   "size": 4,
+   "evidence": "this+0x10004 in entity-list method"
+  },
+  {
+   "id": "A3-gldisp",
+   "rva": 746338,
+   "file_offset": 743266,
+   "old": "20000100",
+   "new": "20000200",
+   "size": 4,
+   "evidence": "this+0x10020 in entity-list method"
+  },
+  {
+   "id": "A3-gldisp",
+   "rva": 746643,
+   "file_offset": 743571,
+   "old": "14000100",
+   "new": "14000200",
+   "size": 4,
+   "evidence": "this+0x10014 in entity-list method"
+  },
+  {
+   "id": "A3-gldisp",
+   "rva": 746649,
+   "file_offset": 743577,
+   "old": "18000100",
+   "new": "18000200",
+   "size": 4,
+   "evidence": "this+0x10018 in entity-list method"
+  },
+  {
+   "id": "A3-gldisp",
+   "rva": 746655,
+   "file_offset": 743583,
+   "old": "20000100",
+   "new": "20000200",
+   "size": 4,
+   "evidence": "this+0x10020 in entity-list method"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 747198,
+   "file_offset": 744126,
+   "old": "84077f10",
+   "new": "24209a10",
+   "size": 4,
+   "evidence": "reloc target off=0x10024"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 747419,
+   "file_offset": 744347,
+   "old": "84077f10",
+   "new": "24209a10",
+   "size": 4,
+   "evidence": "reloc target off=0x10024"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 747494,
+   "file_offset": 744422,
+   "old": "84077f10",
+   "new": "24209a10",
+   "size": 4,
+   "evidence": "reloc target off=0x10024"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 747629,
+   "file_offset": 744557,
+   "old": "84077f10",
+   "new": "24209a10",
+   "size": 4,
+   "evidence": "reloc target off=0x10024"
+  },
+  {
+   "id": "A10-stref",
+   "rva": 747641,
+   "file_offset": 744569,
+   "old": "e0e97510",
+   "new": "00309a10",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A10-stref",
+   "rva": 747651,
+   "file_offset": 744579,
+   "old": "e0e97510",
+   "new": "00309a10",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A10-vec",
+   "rva": 748492,
+   "file_offset": 745420,
+   "old": "04200000",
+   "new": "04400000",
+   "size": 4,
+   "evidence": "m_simThinkList[+0x2004] in fn 0x100B6B60 (this=simthink proven)"
+  },
+  {
+   "id": "A10-vec",
+   "rva": 748508,
+   "file_offset": 745436,
+   "old": "04200000",
+   "new": "04400000",
+   "size": 4,
+   "evidence": "m_simThinkList[+0x2004] in fn 0x100B6B60 (this=simthink proven)"
+  },
+  {
+   "id": "A10-vec",
+   "rva": 748526,
+   "file_offset": 745454,
+   "old": "04200000",
+   "new": "04400000",
+   "size": 4,
+   "evidence": "m_simThinkList[+0x2004] in fn 0x100B6B60 (this=simthink proven)"
+  },
+  {
+   "id": "A10-vec",
+   "rva": 748561,
+   "file_offset": 745489,
+   "old": "04200000",
+   "new": "04400000",
+   "size": 4,
+   "evidence": "m_simThinkList[+0x2004] in fn 0x100B6B60 (this=simthink proven)"
+  },
+  {
+   "id": "A10-vec",
+   "rva": 748594,
+   "file_offset": 745522,
+   "old": "04200000",
+   "new": "04400000",
+   "size": 4,
+   "evidence": "m_simThinkList[+0x2004] in fn 0x100B6B60 (this=simthink proven)"
+  },
+  {
+   "id": "A10-vec",
+   "rva": 748620,
+   "file_offset": 745548,
+   "old": "04200000",
+   "new": "04400000",
+   "size": 4,
+   "evidence": "m_simThinkList[+0x2004] in fn 0x100B6B60 (this=simthink proven)"
+  },
+  {
+   "id": "A10-stref",
+   "rva": 748664,
+   "file_offset": 745592,
+   "old": "e0e97510",
+   "new": "00309a10",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A3-gldisp",
+   "rva": 748970,
+   "file_offset": 745898,
+   "old": "24000100",
+   "new": "24000200",
+   "size": 4,
+   "evidence": "this+0x10024 in entity-list method"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 749479,
+   "file_offset": 746407,
+   "old": "64077f10",
+   "new": "04209a10",
+   "size": 4,
+   "evidence": "reloc target off=0x10004"
+  },
+  {
+   "id": "A9-mask",
+   "rva": 749552,
+   "file_offset": 746480,
+   "old": "ff0f0000",
+   "new": "ff1f0000",
+   "size": 4,
+   "evidence": "handle->index mask followed by array access"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 749560,
+   "file_offset": 746488,
+   "old": "64077e10",
+   "new": "04209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00004"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 749623,
+   "file_offset": 746551,
+   "old": "64077f10",
+   "new": "04209a10",
+   "size": 4,
+   "evidence": "reloc target off=0x10004"
+  },
+  {
+   "id": "A9-mask",
+   "rva": 749835,
+   "file_offset": 746763,
+   "old": "ff0f0000",
+   "new": "ff1f0000",
+   "size": 4,
+   "evidence": "handle->index mask followed by array access"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 749843,
+   "file_offset": 746771,
+   "old": "64077e10",
+   "new": "04209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00004"
+  },
+  {
+   "id": "A10-stref",
+   "rva": 749933,
+   "file_offset": 746861,
+   "old": "e0e97510",
+   "new": "00309a10",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 750257,
+   "file_offset": 747185,
+   "old": "64077f10",
+   "new": "04209a10",
+   "size": 4,
+   "evidence": "reloc target off=0x10004"
+  },
+  {
+   "id": "A9-mask",
+   "rva": 750388,
+   "file_offset": 747316,
+   "old": "ff0f0000",
+   "new": "ff1f0000",
+   "size": 4,
+   "evidence": "handle->index mask followed by array access"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 750396,
+   "file_offset": 747324,
+   "old": "64077e10",
+   "new": "04209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00004"
+  },
+  {
+   "id": "A3-gldisp",
+   "rva": 750673,
+   "file_offset": 747601,
+   "old": "30000100",
+   "new": "30000200",
+   "size": 4,
+   "evidence": "this+0x10030 in entity-list method"
+  },
+  {
+   "id": "A3-gldisp",
+   "rva": 750690,
+   "file_offset": 747618,
+   "old": "24000100",
+   "new": "24000200",
+   "size": 4,
+   "evidence": "this+0x10024 in entity-list method"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 750727,
+   "file_offset": 747655,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 750742,
+   "file_offset": 747670,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 750811,
+   "file_offset": 747739,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A10-stref",
+   "rva": 750878,
+   "file_offset": 747806,
+   "old": "e0e97510",
+   "new": "00309a10",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 750883,
+   "file_offset": 747811,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A3-gldisp",
+   "rva": 751775,
+   "file_offset": 748703,
+   "old": "04000100",
+   "new": "04000200",
+   "size": 4,
+   "evidence": "this+0x10004 in entity-list method"
+  },
+  {
+   "id": "A3-gldisp",
+   "rva": 751781,
+   "file_offset": 748709,
+   "old": "08000100",
+   "new": "08000200",
+   "size": 4,
+   "evidence": "this+0x10008 in entity-list method"
+  },
+  {
+   "id": "A3-gldisp",
+   "rva": 751787,
+   "file_offset": 748715,
+   "old": "0c000100",
+   "new": "0c000200",
+   "size": 4,
+   "evidence": "this+0x1000C in entity-list method"
+  },
+  {
+   "id": "A3-gldisp",
+   "rva": 751793,
+   "file_offset": 748721,
+   "old": "10000100",
+   "new": "10000200",
+   "size": 4,
+   "evidence": "this+0x10010 in entity-list method"
+  },
+  {
+   "id": "A7-ctor",
+   "rva": 751801,
+   "file_offset": 748729,
+   "old": "00100000",
+   "new": "00200000",
+   "size": 4,
+   "evidence": "num entries 4096->8192"
+  },
+  {
+   "id": "A7-ctor",
+   "rva": 751841,
+   "file_offset": 748769,
+   "old": "1c800000",
+   "new": "1c000100",
+   "size": 4,
+   "evidence": "free pool base 0x801->0x1001"
+  },
+  {
+   "id": "A7-ctor",
+   "rva": 751846,
+   "file_offset": 748774,
+   "old": "ff070000",
+   "new": "ff0f0000",
+   "size": 4,
+   "evidence": "free pool count 2047->4095"
+  },
+  {
+   "id": "A3-gldisp",
+   "rva": 751882,
+   "file_offset": 748810,
+   "old": "0c000100",
+   "new": "0c000200",
+   "size": 4,
+   "evidence": "this+0x1000C in entity-list method"
+  },
+  {
+   "id": "A3-gldisp",
+   "rva": 751904,
+   "file_offset": 748832,
+   "old": "10000100",
+   "new": "10000200",
+   "size": 4,
+   "evidence": "this+0x10010 in entity-list method"
+  },
+  {
+   "id": "A3-gldisp",
+   "rva": 751925,
+   "file_offset": 748853,
+   "old": "10000100",
+   "new": "10000200",
+   "size": 4,
+   "evidence": "this+0x10010 in entity-list method"
+  },
+  {
+   "id": "A3-gldisp",
+   "rva": 751936,
+   "file_offset": 748864,
+   "old": "10000100",
+   "new": "10000200",
+   "size": 4,
+   "evidence": "this+0x10010 in entity-list method"
+  },
+  {
+   "id": "A3-gldisp",
+   "rva": 751948,
+   "file_offset": 748876,
+   "old": "0c000100",
+   "new": "0c000200",
+   "size": 4,
+   "evidence": "this+0x1000C in entity-list method"
+  },
+  {
+   "id": "A9-shl",
+   "rva": 752039,
+   "file_offset": 748967,
+   "old": "0c",
+   "new": "0d",
+   "size": 1,
+   "evidence": "list-API handle pack"
+  },
+  {
+   "id": "A3-gldisp",
+   "rva": 752100,
+   "file_offset": 749028,
+   "old": "04000100",
+   "new": "04000200",
+   "size": 4,
+   "evidence": "this+0x10004 in entity-list method"
+  },
+  {
+   "id": "A3-gldisp",
+   "rva": 752124,
+   "file_offset": 749052,
+   "old": "08000100",
+   "new": "08000200",
+   "size": 4,
+   "evidence": "this+0x10008 in entity-list method"
+  },
+  {
+   "id": "A8-thresh",
+   "rva": 752136,
+   "file_offset": 749064,
+   "old": "00080000",
+   "new": "00100000",
+   "size": 4,
+   "evidence": "network bound in 0x100B7970"
+  },
+  {
+   "id": "A3-gldisp",
+   "rva": 752145,
+   "file_offset": 749073,
+   "old": "0c000100",
+   "new": "0c000200",
+   "size": 4,
+   "evidence": "this+0x1000C in entity-list method"
+  },
+  {
+   "id": "A3-gldisp",
+   "rva": 752189,
+   "file_offset": 749117,
+   "old": "04000100",
+   "new": "04000200",
+   "size": 4,
+   "evidence": "this+0x10004 in entity-list method"
+  },
+  {
+   "id": "A9-shl",
+   "rva": 752264,
+   "file_offset": 749192,
+   "old": "0c",
+   "new": "0d",
+   "size": 1,
+   "evidence": "list-API handle pack"
+  },
+  {
+   "id": "A3-gldisp",
+   "rva": 752325,
+   "file_offset": 749253,
+   "old": "04000100",
+   "new": "04000200",
+   "size": 4,
+   "evidence": "this+0x10004 in entity-list method"
+  },
+  {
+   "id": "A3-gldisp",
+   "rva": 752349,
+   "file_offset": 749277,
+   "old": "08000100",
+   "new": "08000200",
+   "size": 4,
+   "evidence": "this+0x10008 in entity-list method"
+  },
+  {
+   "id": "A8-thresh",
+   "rva": 752361,
+   "file_offset": 749289,
+   "old": "00080000",
+   "new": "00100000",
+   "size": 4,
+   "evidence": "network bound in 0x100B7970"
+  },
+  {
+   "id": "A3-gldisp",
+   "rva": 752391,
+   "file_offset": 749319,
+   "old": "0c000100",
+   "new": "0c000200",
+   "size": 4,
+   "evidence": "this+0x1000C in entity-list method"
+  },
+  {
+   "id": "A3-gldisp",
+   "rva": 752415,
+   "file_offset": 749343,
+   "old": "10000100",
+   "new": "10000200",
+   "size": 4,
+   "evidence": "this+0x10010 in entity-list method"
+  },
+  {
+   "id": "A3-gldisp",
+   "rva": 752434,
+   "file_offset": 749362,
+   "old": "10000100",
+   "new": "10000200",
+   "size": 4,
+   "evidence": "this+0x10010 in entity-list method"
+  },
+  {
+   "id": "A3-gldisp",
+   "rva": 752443,
+   "file_offset": 749371,
+   "old": "10000100",
+   "new": "10000200",
+   "size": 4,
+   "evidence": "this+0x10010 in entity-list method"
+  },
+  {
+   "id": "A3-gldisp",
+   "rva": 752456,
+   "file_offset": 749384,
+   "old": "0c000100",
+   "new": "0c000200",
+   "size": 4,
+   "evidence": "this+0x1000C in entity-list method"
+  },
+  {
+   "id": "A3-gldisp",
+   "rva": 752532,
+   "file_offset": 749460,
+   "old": "04000100",
+   "new": "04000200",
+   "size": 4,
+   "evidence": "this+0x10004 in entity-list method"
+  },
+  {
+   "id": "A9-shl",
+   "rva": 752549,
+   "file_offset": 749477,
+   "old": "0c",
+   "new": "0d",
+   "size": 1,
+   "evidence": "list-API handle pack"
+  },
+  {
+   "id": "A3-gldisp",
+   "rva": 752602,
+   "file_offset": 749530,
+   "old": "0c000100",
+   "new": "0c000200",
+   "size": 4,
+   "evidence": "this+0x1000C in entity-list method"
+  },
+  {
+   "id": "A3-gldisp",
+   "rva": 752667,
+   "file_offset": 749595,
+   "old": "0c000100",
+   "new": "0c000200",
+   "size": 4,
+   "evidence": "this+0x1000C in entity-list method"
+  },
+  {
+   "id": "A3-gldisp",
+   "rva": 752691,
+   "file_offset": 749619,
+   "old": "10000100",
+   "new": "10000200",
+   "size": 4,
+   "evidence": "this+0x10010 in entity-list method"
+  },
+  {
+   "id": "A3-gldisp",
+   "rva": 752724,
+   "file_offset": 749652,
+   "old": "04000100",
+   "new": "04000200",
+   "size": 4,
+   "evidence": "this+0x10004 in entity-list method"
+  },
+  {
+   "id": "A9-shl",
+   "rva": 752743,
+   "file_offset": 749671,
+   "old": "0c",
+   "new": "0d",
+   "size": 1,
+   "evidence": "list-API handle pack"
+  },
+  {
+   "id": "A9-mask",
+   "rva": 752807,
+   "file_offset": 749735,
+   "old": "ff0f0000",
+   "new": "ff1f0000",
+   "size": 4,
+   "evidence": "RemoveEntity(handle & 0xFFF)"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 767709,
+   "file_offset": 764637,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 770853,
+   "file_offset": 767781,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 771283,
+   "file_offset": 768211,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 773961,
+   "file_offset": 770889,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 782414,
+   "file_offset": 779342,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 784448,
+   "file_offset": 781376,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 784527,
+   "file_offset": 781455,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 788847,
+   "file_offset": 785775,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 788948,
+   "file_offset": 785876,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 789010,
+   "file_offset": 785938,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 789118,
+   "file_offset": 786046,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 791351,
+   "file_offset": 788279,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 791463,
+   "file_offset": 788391,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 791575,
+   "file_offset": 788503,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 795878,
+   "file_offset": 792806,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 805364,
+   "file_offset": 802292,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 805402,
+   "file_offset": 802330,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 806089,
+   "file_offset": 803017,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 813262,
+   "file_offset": 810190,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 813358,
+   "file_offset": 810286,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 819438,
+   "file_offset": 816366,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 819525,
+   "file_offset": 816453,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 819871,
+   "file_offset": 816799,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 836946,
+   "file_offset": 833874,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A9-mask",
+   "rva": 845216,
+   "file_offset": 842144,
+   "old": "ff0f0000",
+   "new": "ff1f0000",
+   "size": 4,
+   "evidence": "handle->index mask followed by array access"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 845225,
+   "file_offset": 842153,
+   "old": "64077e10",
+   "new": "04209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00004"
+  },
+  {
+   "id": "S10-shr",
+   "rva": 845237,
+   "file_offset": 842165,
+   "old": "0c",
+   "new": "0d",
+   "size": 1,
+   "evidence": "serial = handle >> 12 -> >> 13 (paired with index mask)"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 873511,
+   "file_offset": 870439,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 881101,
+   "file_offset": 878029,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 881215,
+   "file_offset": 878143,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 898408,
+   "file_offset": 895336,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 898551,
+   "file_offset": 895479,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A9-mask",
+   "rva": 931855,
+   "file_offset": 928783,
+   "old": "ff0f0000",
+   "new": "ff1f0000",
+   "size": 4,
+   "evidence": "handle->index mask followed by array access"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 931864,
+   "file_offset": 928792,
+   "old": "64077e10",
+   "new": "04209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00004"
+  },
+  {
+   "id": "S10-shr",
+   "rva": 931872,
+   "file_offset": 928800,
+   "old": "0c",
+   "new": "0d",
+   "size": 1,
+   "evidence": "serial = handle >> 12 -> >> 13 (paired with index mask)"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 936190,
+   "file_offset": 933118,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 936489,
+   "file_offset": 933417,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 936778,
+   "file_offset": 933706,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 938813,
+   "file_offset": 935741,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 947531,
+   "file_offset": 944459,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 947719,
+   "file_offset": 944647,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 953697,
+   "file_offset": 950625,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 965592,
+   "file_offset": 962520,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 972443,
+   "file_offset": 969371,
+   "old": "64077f10",
+   "new": "04209a10",
+   "size": 4,
+   "evidence": "reloc target off=0x10004"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 972530,
+   "file_offset": 969458,
+   "old": "64077f10",
+   "new": "04209a10",
+   "size": 4,
+   "evidence": "reloc target off=0x10004"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 973488,
+   "file_offset": 970416,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 973672,
+   "file_offset": 970600,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 977569,
+   "file_offset": 974497,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 979934,
+   "file_offset": 976862,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 979965,
+   "file_offset": 976893,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 980030,
+   "file_offset": 976958,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 980306,
+   "file_offset": 977234,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 980425,
+   "file_offset": 977353,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 990455,
+   "file_offset": 987383,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 990520,
+   "file_offset": 987448,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 991145,
+   "file_offset": 988073,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 991171,
+   "file_offset": 988099,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 992182,
+   "file_offset": 989110,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 993604,
+   "file_offset": 990532,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 993730,
+   "file_offset": 990658,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 1060875,
+   "file_offset": 1057803,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 1061010,
+   "file_offset": 1057938,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 1083009,
+   "file_offset": 1079937,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 1083066,
+   "file_offset": 1079994,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 1083239,
+   "file_offset": 1080167,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 1102852,
+   "file_offset": 1099780,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 1115030,
+   "file_offset": 1111958,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 1115206,
+   "file_offset": 1112134,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 1115350,
+   "file_offset": 1112278,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 1115494,
+   "file_offset": 1112422,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 1117764,
+   "file_offset": 1114692,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 1118058,
+   "file_offset": 1114986,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 1118212,
+   "file_offset": 1115140,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 1118308,
+   "file_offset": 1115236,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 1118353,
+   "file_offset": 1115281,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 1118578,
+   "file_offset": 1115506,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 1118686,
+   "file_offset": 1115614,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 1128201,
+   "file_offset": 1125129,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 1128364,
+   "file_offset": 1125292,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 1137708,
+   "file_offset": 1134636,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 1137788,
+   "file_offset": 1134716,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 1137811,
+   "file_offset": 1134739,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 1137902,
+   "file_offset": 1134830,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 1138248,
+   "file_offset": 1135176,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 1152795,
+   "file_offset": 1149723,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 1152870,
+   "file_offset": 1149798,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 1152990,
+   "file_offset": 1149918,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 1153191,
+   "file_offset": 1150119,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 1153530,
+   "file_offset": 1150458,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 1154040,
+   "file_offset": 1150968,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 1154219,
+   "file_offset": 1151147,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 1154851,
+   "file_offset": 1151779,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 1155321,
+   "file_offset": 1152249,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 1155364,
+   "file_offset": 1152292,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 1155592,
+   "file_offset": 1152520,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 1155712,
+   "file_offset": 1152640,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 1156269,
+   "file_offset": 1153197,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 1156378,
+   "file_offset": 1153306,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 1160663,
+   "file_offset": 1157591,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 1160713,
+   "file_offset": 1157641,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A9-mask",
+   "rva": 1173745,
+   "file_offset": 1170673,
+   "old": "ff0f0000",
+   "new": "ff1f0000",
+   "size": 4,
+   "evidence": "handle->index mask followed by array access"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 1173753,
+   "file_offset": 1170681,
+   "old": "64077e10",
+   "new": "04209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00004"
+  },
+  {
+   "id": "S10-shr",
+   "rva": 1173761,
+   "file_offset": 1170689,
+   "old": "0c",
+   "new": "0d",
+   "size": 1,
+   "evidence": "serial = handle >> 12 -> >> 13 (paired with index mask)"
+  },
+  {
+   "id": "A9-mask",
+   "rva": 1174882,
+   "file_offset": 1171810,
+   "old": "ff0f0000",
+   "new": "ff1f0000",
+   "size": 4,
+   "evidence": "handle->index mask followed by array access"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 1174890,
+   "file_offset": 1171818,
+   "old": "64077e10",
+   "new": "04209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00004"
+  },
+  {
+   "id": "S10-shr",
+   "rva": 1174898,
+   "file_offset": 1171826,
+   "old": "0c",
+   "new": "0d",
+   "size": 1,
+   "evidence": "serial = handle >> 12 -> >> 13 (paired with index mask)"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 1178163,
+   "file_offset": 1175091,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 1179630,
+   "file_offset": 1176558,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 1179668,
+   "file_offset": 1176596,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 1179935,
+   "file_offset": 1176863,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 1206435,
+   "file_offset": 1203363,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 1206450,
+   "file_offset": 1203378,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A9-mask",
+   "rva": 1224188,
+   "file_offset": 1221116,
+   "old": "ff0f0000",
+   "new": "ff1f0000",
+   "size": 4,
+   "evidence": "handle->index mask followed by array access"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 1224197,
+   "file_offset": 1221125,
+   "old": "64077e10",
+   "new": "04209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00004"
+  },
+  {
+   "id": "S10-shr",
+   "rva": 1224205,
+   "file_offset": 1221133,
+   "old": "0c",
+   "new": "0d",
+   "size": 1,
+   "evidence": "serial = handle >> 12 -> >> 13 (paired with index mask)"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 1228232,
+   "file_offset": 1225160,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 1230838,
+   "file_offset": 1227766,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 1232313,
+   "file_offset": 1229241,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 1232440,
+   "file_offset": 1229368,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 1239921,
+   "file_offset": 1236849,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 1242198,
+   "file_offset": 1239126,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 1248283,
+   "file_offset": 1245211,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 1276460,
+   "file_offset": 1273388,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 1276532,
+   "file_offset": 1273460,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 1276717,
+   "file_offset": 1273645,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 1276770,
+   "file_offset": 1273698,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 1281404,
+   "file_offset": 1278332,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 1281448,
+   "file_offset": 1278376,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 1303440,
+   "file_offset": 1300368,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 1303558,
+   "file_offset": 1300486,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 1333971,
+   "file_offset": 1330899,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A9-mask",
+   "rva": 1337024,
+   "file_offset": 1333952,
+   "old": "ff0f0000",
+   "new": "ff1f0000",
+   "size": 4,
+   "evidence": "handle->index mask followed by array access"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 1337033,
+   "file_offset": 1333961,
+   "old": "64077e10",
+   "new": "04209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00004"
+  },
+  {
+   "id": "S10-shr",
+   "rva": 1337041,
+   "file_offset": 1333969,
+   "old": "0c",
+   "new": "0d",
+   "size": 1,
+   "evidence": "serial = handle >> 12 -> >> 13 (paired with index mask)"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 1418959,
+   "file_offset": 1415887,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 1441516,
+   "file_offset": 1438444,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 1442260,
+   "file_offset": 1439188,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 1442279,
+   "file_offset": 1439207,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 1442636,
+   "file_offset": 1439564,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 1456055,
+   "file_offset": 1452983,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 1456162,
+   "file_offset": 1453090,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 1456259,
+   "file_offset": 1453187,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 1460797,
+   "file_offset": 1457725,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 1460845,
+   "file_offset": 1457773,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 1490956,
+   "file_offset": 1487884,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 1490988,
+   "file_offset": 1487916,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 1491065,
+   "file_offset": 1487993,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 1491093,
+   "file_offset": 1488021,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 1491165,
+   "file_offset": 1488093,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 1491255,
+   "file_offset": 1488183,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 1491282,
+   "file_offset": 1488210,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 1491404,
+   "file_offset": 1488332,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 1497700,
+   "file_offset": 1494628,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 1497742,
+   "file_offset": 1494670,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 1509681,
+   "file_offset": 1506609,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 1509828,
+   "file_offset": 1506756,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 1511812,
+   "file_offset": 1508740,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 1619363,
+   "file_offset": 1616291,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 1620050,
+   "file_offset": 1616978,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 1620105,
+   "file_offset": 1617033,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 1620462,
+   "file_offset": 1617390,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 1620607,
+   "file_offset": 1617535,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 1620761,
+   "file_offset": 1617689,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 1622037,
+   "file_offset": 1618965,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 1622362,
+   "file_offset": 1619290,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 1624814,
+   "file_offset": 1621742,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 1625260,
+   "file_offset": 1622188,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 1641021,
+   "file_offset": 1637949,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 1647634,
+   "file_offset": 1644562,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 1648066,
+   "file_offset": 1644994,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 1648467,
+   "file_offset": 1645395,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 1648587,
+   "file_offset": 1645515,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 1649971,
+   "file_offset": 1646899,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 1653450,
+   "file_offset": 1650378,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 1655611,
+   "file_offset": 1652539,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 1655959,
+   "file_offset": 1652887,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 1657429,
+   "file_offset": 1654357,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 1664388,
+   "file_offset": 1661316,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 1664466,
+   "file_offset": 1661394,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 1666928,
+   "file_offset": 1663856,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 1666997,
+   "file_offset": 1663925,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 1688236,
+   "file_offset": 1685164,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 1688412,
+   "file_offset": 1685340,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 1710250,
+   "file_offset": 1707178,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 1713225,
+   "file_offset": 1710153,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 1751369,
+   "file_offset": 1748297,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A9-mask",
+   "rva": 1796230,
+   "file_offset": 1793158,
+   "old": "ff0f0000",
+   "new": "ff1f0000",
+   "size": 4,
+   "evidence": "handle->index mask followed by array access"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 1796239,
+   "file_offset": 1793167,
+   "old": "64077e10",
+   "new": "04209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00004"
+  },
+  {
+   "id": "S10-shr",
+   "rva": 1796247,
+   "file_offset": 1793175,
+   "old": "0c",
+   "new": "0d",
+   "size": 1,
+   "evidence": "serial = handle >> 12 -> >> 13 (paired with index mask)"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 1797760,
+   "file_offset": 1794688,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 1798576,
+   "file_offset": 1795504,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 1798701,
+   "file_offset": 1795629,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 1798749,
+   "file_offset": 1795677,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 1816167,
+   "file_offset": 1813095,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 1816226,
+   "file_offset": 1813154,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 1828101,
+   "file_offset": 1825029,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 1828319,
+   "file_offset": 1825247,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 1829817,
+   "file_offset": 1826745,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 1829891,
+   "file_offset": 1826819,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 1830015,
+   "file_offset": 1826943,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 1830098,
+   "file_offset": 1827026,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 1830396,
+   "file_offset": 1827324,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 1830434,
+   "file_offset": 1827362,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 1840848,
+   "file_offset": 1837776,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 1840891,
+   "file_offset": 1837819,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 1842099,
+   "file_offset": 1839027,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 1847498,
+   "file_offset": 1844426,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 1883656,
+   "file_offset": 1880584,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 1897330,
+   "file_offset": 1894258,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 1897663,
+   "file_offset": 1894591,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 1907452,
+   "file_offset": 1904380,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 1910553,
+   "file_offset": 1907481,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 1910653,
+   "file_offset": 1907581,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 1937958,
+   "file_offset": 1934886,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 1938189,
+   "file_offset": 1935117,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 1950943,
+   "file_offset": 1947871,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 1951758,
+   "file_offset": 1948686,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 1952314,
+   "file_offset": 1949242,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 1996794,
+   "file_offset": 1993722,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 1996907,
+   "file_offset": 1993835,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2000672,
+   "file_offset": 1997600,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2006039,
+   "file_offset": 2002967,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2006195,
+   "file_offset": 2003123,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2006279,
+   "file_offset": 2003207,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2006954,
+   "file_offset": 2003882,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2035300,
+   "file_offset": 2032228,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2035350,
+   "file_offset": 2032278,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2035400,
+   "file_offset": 2032328,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2035444,
+   "file_offset": 2032372,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2035661,
+   "file_offset": 2032589,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2037790,
+   "file_offset": 2034718,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2042096,
+   "file_offset": 2039024,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2054756,
+   "file_offset": 2051684,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2066599,
+   "file_offset": 2063527,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2067476,
+   "file_offset": 2064404,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2067527,
+   "file_offset": 2064455,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2068621,
+   "file_offset": 2065549,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2073737,
+   "file_offset": 2070665,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2075839,
+   "file_offset": 2072767,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2075974,
+   "file_offset": 2072902,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2076189,
+   "file_offset": 2073117,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2076248,
+   "file_offset": 2073176,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2077123,
+   "file_offset": 2074051,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2078857,
+   "file_offset": 2075785,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2093031,
+   "file_offset": 2089959,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2093111,
+   "file_offset": 2090039,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2095012,
+   "file_offset": 2091940,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2097543,
+   "file_offset": 2094471,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2097794,
+   "file_offset": 2094722,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2103054,
+   "file_offset": 2099982,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2103189,
+   "file_offset": 2100117,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2104843,
+   "file_offset": 2101771,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2126289,
+   "file_offset": 2123217,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2129642,
+   "file_offset": 2126570,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2131164,
+   "file_offset": 2128092,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A9-mask",
+   "rva": 2133659,
+   "file_offset": 2130587,
+   "old": "ff0f0000",
+   "new": "ff1f0000",
+   "size": 4,
+   "evidence": "handle->index mask followed by array access"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2133668,
+   "file_offset": 2130596,
+   "old": "64077e10",
+   "new": "04209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00004"
+  },
+  {
+   "id": "S10-shr",
+   "rva": 2133676,
+   "file_offset": 2130604,
+   "old": "0c",
+   "new": "0d",
+   "size": 1,
+   "evidence": "serial = handle >> 12 -> >> 13 (paired with index mask)"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2135827,
+   "file_offset": 2132755,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2137183,
+   "file_offset": 2134111,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2137275,
+   "file_offset": 2134203,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2143075,
+   "file_offset": 2140003,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2157225,
+   "file_offset": 2154153,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2157278,
+   "file_offset": 2154206,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2220401,
+   "file_offset": 2217329,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2220485,
+   "file_offset": 2217413,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2220589,
+   "file_offset": 2217517,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2220684,
+   "file_offset": 2217612,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2220773,
+   "file_offset": 2217701,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2220869,
+   "file_offset": 2217797,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2220937,
+   "file_offset": 2217865,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2221046,
+   "file_offset": 2217974,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2221107,
+   "file_offset": 2218035,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2221216,
+   "file_offset": 2218144,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2226899,
+   "file_offset": 2223827,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2284804,
+   "file_offset": 2281732,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2285046,
+   "file_offset": 2281974,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2307841,
+   "file_offset": 2304769,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2307904,
+   "file_offset": 2304832,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2307949,
+   "file_offset": 2304877,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2308217,
+   "file_offset": 2305145,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2308654,
+   "file_offset": 2305582,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2308699,
+   "file_offset": 2305627,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2320794,
+   "file_offset": 2317722,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2343612,
+   "file_offset": 2340540,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2343673,
+   "file_offset": 2340601,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2344604,
+   "file_offset": 2341532,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2344831,
+   "file_offset": 2341759,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2344857,
+   "file_offset": 2341785,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2345088,
+   "file_offset": 2342016,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2354639,
+   "file_offset": 2351567,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2354843,
+   "file_offset": 2351771,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2354869,
+   "file_offset": 2351797,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2355061,
+   "file_offset": 2351989,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2355088,
+   "file_offset": 2352016,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2355228,
+   "file_offset": 2352156,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2355278,
+   "file_offset": 2352206,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2355348,
+   "file_offset": 2352276,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2355370,
+   "file_offset": 2352298,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2355439,
+   "file_offset": 2352367,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2355467,
+   "file_offset": 2352395,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2371061,
+   "file_offset": 2367989,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2371191,
+   "file_offset": 2368119,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2371318,
+   "file_offset": 2368246,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2371424,
+   "file_offset": 2368352,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A9-mask",
+   "rva": 2439534,
+   "file_offset": 2436462,
+   "old": "ff0f0000",
+   "new": "ff1f0000",
+   "size": 4,
+   "evidence": "handle->index mask followed by array access"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2439543,
+   "file_offset": 2436471,
+   "old": "64077e10",
+   "new": "04209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00004"
+  },
+  {
+   "id": "S10-shr",
+   "rva": 2439551,
+   "file_offset": 2436479,
+   "old": "0c",
+   "new": "0d",
+   "size": 1,
+   "evidence": "serial = handle >> 12 -> >> 13 (paired with index mask)"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2439883,
+   "file_offset": 2436811,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2440075,
+   "file_offset": 2437003,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2447773,
+   "file_offset": 2444701,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2449616,
+   "file_offset": 2446544,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A9-mask",
+   "rva": 2453296,
+   "file_offset": 2450224,
+   "old": "ff0f0000",
+   "new": "ff1f0000",
+   "size": 4,
+   "evidence": "handle->index mask followed by array access"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2453305,
+   "file_offset": 2450233,
+   "old": "64077e10",
+   "new": "04209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00004"
+  },
+  {
+   "id": "S10-shr",
+   "rva": 2453317,
+   "file_offset": 2450245,
+   "old": "0c",
+   "new": "0d",
+   "size": 1,
+   "evidence": "serial = handle >> 12 -> >> 13 (paired with index mask)"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2454147,
+   "file_offset": 2451075,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2454271,
+   "file_offset": 2451199,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2456161,
+   "file_offset": 2453089,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2466482,
+   "file_offset": 2463410,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2468202,
+   "file_offset": 2465130,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2475159,
+   "file_offset": 2472087,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2477254,
+   "file_offset": 2474182,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2479254,
+   "file_offset": 2476182,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2479318,
+   "file_offset": 2476246,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2479382,
+   "file_offset": 2476310,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2479446,
+   "file_offset": 2476374,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2480553,
+   "file_offset": 2477481,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2480733,
+   "file_offset": 2477661,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2480814,
+   "file_offset": 2477742,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2481432,
+   "file_offset": 2478360,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2481452,
+   "file_offset": 2478380,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2483110,
+   "file_offset": 2480038,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2493639,
+   "file_offset": 2490567,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2493709,
+   "file_offset": 2490637,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2497725,
+   "file_offset": 2494653,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2497755,
+   "file_offset": 2494683,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2501342,
+   "file_offset": 2498270,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2508196,
+   "file_offset": 2505124,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2511377,
+   "file_offset": 2508305,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2511734,
+   "file_offset": 2508662,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2511817,
+   "file_offset": 2508745,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2512041,
+   "file_offset": 2508969,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2512070,
+   "file_offset": 2508998,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2527203,
+   "file_offset": 2524131,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2527225,
+   "file_offset": 2524153,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2546854,
+   "file_offset": 2543782,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2547124,
+   "file_offset": 2544052,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2549173,
+   "file_offset": 2546101,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2550054,
+   "file_offset": 2546982,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2550112,
+   "file_offset": 2547040,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2550286,
+   "file_offset": 2547214,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2550630,
+   "file_offset": 2547558,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2551430,
+   "file_offset": 2548358,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2551586,
+   "file_offset": 2548514,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2553173,
+   "file_offset": 2550101,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2553215,
+   "file_offset": 2550143,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2556885,
+   "file_offset": 2553813,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2574831,
+   "file_offset": 2571759,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2580154,
+   "file_offset": 2577082,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2580302,
+   "file_offset": 2577230,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2595203,
+   "file_offset": 2592131,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2602058,
+   "file_offset": 2598986,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2602093,
+   "file_offset": 2599021,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2602128,
+   "file_offset": 2599056,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2603652,
+   "file_offset": 2600580,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2603670,
+   "file_offset": 2600598,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2603720,
+   "file_offset": 2600648,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2603751,
+   "file_offset": 2600679,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2603838,
+   "file_offset": 2600766,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2603863,
+   "file_offset": 2600791,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2603890,
+   "file_offset": 2600818,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2604564,
+   "file_offset": 2601492,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2604586,
+   "file_offset": 2601514,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2604760,
+   "file_offset": 2601688,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2604791,
+   "file_offset": 2601719,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2617634,
+   "file_offset": 2614562,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2617951,
+   "file_offset": 2614879,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2618084,
+   "file_offset": 2615012,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2618337,
+   "file_offset": 2615265,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2619263,
+   "file_offset": 2616191,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2619708,
+   "file_offset": 2616636,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2634714,
+   "file_offset": 2631642,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2634939,
+   "file_offset": 2631867,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2639161,
+   "file_offset": 2636089,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2639192,
+   "file_offset": 2636120,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2639215,
+   "file_offset": 2636143,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2639248,
+   "file_offset": 2636176,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2642112,
+   "file_offset": 2639040,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2642169,
+   "file_offset": 2639097,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2643807,
+   "file_offset": 2640735,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2643859,
+   "file_offset": 2640787,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2646117,
+   "file_offset": 2643045,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2646246,
+   "file_offset": 2643174,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2646380,
+   "file_offset": 2643308,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2646435,
+   "file_offset": 2643363,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2646897,
+   "file_offset": 2643825,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2648539,
+   "file_offset": 2645467,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2650737,
+   "file_offset": 2647665,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2650808,
+   "file_offset": 2647736,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2650967,
+   "file_offset": 2647895,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2652281,
+   "file_offset": 2649209,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2652777,
+   "file_offset": 2649705,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2661969,
+   "file_offset": 2658897,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2661989,
+   "file_offset": 2658917,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2689209,
+   "file_offset": 2686137,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2691936,
+   "file_offset": 2688864,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2692622,
+   "file_offset": 2689550,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2692871,
+   "file_offset": 2689799,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2700186,
+   "file_offset": 2697114,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2717472,
+   "file_offset": 2714400,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2720227,
+   "file_offset": 2717155,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2720319,
+   "file_offset": 2717247,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2720411,
+   "file_offset": 2717339,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2728530,
+   "file_offset": 2725458,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2736544,
+   "file_offset": 2733472,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2744061,
+   "file_offset": 2740989,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2761796,
+   "file_offset": 2758724,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2874791,
+   "file_offset": 2871719,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2875737,
+   "file_offset": 2872665,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2879477,
+   "file_offset": 2876405,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2879594,
+   "file_offset": 2876522,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2934180,
+   "file_offset": 2931108,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2935497,
+   "file_offset": 2932425,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2935619,
+   "file_offset": 2932547,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2935697,
+   "file_offset": 2932625,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2936245,
+   "file_offset": 2933173,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2947942,
+   "file_offset": 2944870,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2948284,
+   "file_offset": 2945212,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2950469,
+   "file_offset": 2947397,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A4-glimm",
+   "rva": 2985035,
+   "file_offset": 2981963,
+   "old": "10000100",
+   "new": "10000200",
+   "size": 4,
+   "evidence": "member offset imm32"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2987554,
+   "file_offset": 2984482,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2994895,
+   "file_offset": 2991823,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2994983,
+   "file_offset": 2991911,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2995023,
+   "file_offset": 2991951,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 2995111,
+   "file_offset": 2992039,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 3005261,
+   "file_offset": 3002189,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 3005379,
+   "file_offset": 3002307,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 3005395,
+   "file_offset": 3002323,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 3034062,
+   "file_offset": 3030990,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 3039906,
+   "file_offset": 3036834,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 3040000,
+   "file_offset": 3036928,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 3040024,
+   "file_offset": 3036952,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 3040127,
+   "file_offset": 3037055,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 3050003,
+   "file_offset": 3046931,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 3050122,
+   "file_offset": 3047050,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 3054986,
+   "file_offset": 3051914,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 3055118,
+   "file_offset": 3052046,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 3055202,
+   "file_offset": 3052130,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 3055268,
+   "file_offset": 3052196,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 3056263,
+   "file_offset": 3053191,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 3056313,
+   "file_offset": 3053241,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 3056540,
+   "file_offset": 3053468,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 3056775,
+   "file_offset": 3053703,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 3056801,
+   "file_offset": 3053729,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 3057035,
+   "file_offset": 3053963,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 3057062,
+   "file_offset": 3053990,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 3057122,
+   "file_offset": 3054050,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 3057144,
+   "file_offset": 3054072,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 3057193,
+   "file_offset": 3054121,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 3057380,
+   "file_offset": 3054308,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 3057512,
+   "file_offset": 3054440,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 3057793,
+   "file_offset": 3054721,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 3090812,
+   "file_offset": 3087740,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 3090889,
+   "file_offset": 3087817,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 3090911,
+   "file_offset": 3087839,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 3090985,
+   "file_offset": 3087913,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 3091055,
+   "file_offset": 3087983,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 3091333,
+   "file_offset": 3088261,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 3091438,
+   "file_offset": 3088366,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 3091505,
+   "file_offset": 3088433,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 3101711,
+   "file_offset": 3098639,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 3101793,
+   "file_offset": 3098721,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 3109030,
+   "file_offset": 3105958,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 3109074,
+   "file_offset": 3106002,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 3109450,
+   "file_offset": 3106378,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 3109621,
+   "file_offset": 3106549,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 3111171,
+   "file_offset": 3108099,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 3111337,
+   "file_offset": 3108265,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 3118791,
+   "file_offset": 3115719,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 3118873,
+   "file_offset": 3115801,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 3118895,
+   "file_offset": 3115823,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 3118969,
+   "file_offset": 3115897,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 3132529,
+   "file_offset": 3129457,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 3132705,
+   "file_offset": 3129633,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 3132931,
+   "file_offset": 3129859,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 3246293,
+   "file_offset": 3243221,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 3269797,
+   "file_offset": 3266725,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 3356855,
+   "file_offset": 3353783,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 3384146,
+   "file_offset": 3381074,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 3384250,
+   "file_offset": 3381178,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 3384378,
+   "file_offset": 3381306,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 3387221,
+   "file_offset": 3384149,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 3387403,
+   "file_offset": 3384331,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 3388748,
+   "file_offset": 3385676,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 3389038,
+   "file_offset": 3385966,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 3426449,
+   "file_offset": 3423377,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 3426647,
+   "file_offset": 3423575,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 3494494,
+   "file_offset": 3491422,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 3494699,
+   "file_offset": 3491627,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 3521337,
+   "file_offset": 3518265,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 3525140,
+   "file_offset": 3522068,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 3534718,
+   "file_offset": 3531646,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 3573122,
+   "file_offset": 3570050,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 3576444,
+   "file_offset": 3573372,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 3580413,
+   "file_offset": 3577341,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 3603886,
+   "file_offset": 3600814,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 3614320,
+   "file_offset": 3611248,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 3614352,
+   "file_offset": 3611280,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A9-mask",
+   "rva": 3644571,
+   "file_offset": 3641499,
+   "old": "ff0f0000",
+   "new": "ff1f0000",
+   "size": 4,
+   "evidence": "handle->index mask followed by array access"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 3644580,
+   "file_offset": 3641508,
+   "old": "64077e10",
+   "new": "04209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00004"
+  },
+  {
+   "id": "S10-shr",
+   "rva": 3644588,
+   "file_offset": 3641516,
+   "old": "0c",
+   "new": "0d",
+   "size": 1,
+   "evidence": "serial = handle >> 12 -> >> 13 (paired with index mask)"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 3680407,
+   "file_offset": 3677335,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 3778052,
+   "file_offset": 3774980,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 3778112,
+   "file_offset": 3775040,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 3778683,
+   "file_offset": 3775611,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 3783308,
+   "file_offset": 3780236,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 3864935,
+   "file_offset": 3861863,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 3865465,
+   "file_offset": 3862393,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 3897953,
+   "file_offset": 3894881,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 3898306,
+   "file_offset": 3895234,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 3967781,
+   "file_offset": 3964709,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 3968317,
+   "file_offset": 3965245,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 3968408,
+   "file_offset": 3965336,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 4028276,
+   "file_offset": 4025204,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 4087380,
+   "file_offset": 4084308,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A9-mask",
+   "rva": 4088560,
+   "file_offset": 4085488,
+   "old": "ff0f0000",
+   "new": "ff1f0000",
+   "size": 4,
+   "evidence": "handle->index mask followed by array access"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 4088569,
+   "file_offset": 4085497,
+   "old": "64077e10",
+   "new": "04209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00004"
+  },
+  {
+   "id": "S10-shr",
+   "rva": 4088581,
+   "file_offset": 4085509,
+   "old": "0c",
+   "new": "0d",
+   "size": 1,
+   "evidence": "serial = handle >> 12 -> >> 13 (paired with index mask)"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 4188329,
+   "file_offset": 4185257,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 4188350,
+   "file_offset": 4185278,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 4188397,
+   "file_offset": 4185325,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 4216547,
+   "file_offset": 4213475,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 4218108,
+   "file_offset": 4215036,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 4218135,
+   "file_offset": 4215063,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A9-mask",
+   "rva": 4305702,
+   "file_offset": 4302630,
+   "old": "ff0f0000",
+   "new": "ff1f0000",
+   "size": 4,
+   "evidence": "handle->index mask followed by array access"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 4305711,
+   "file_offset": 4302639,
+   "old": "64077e10",
+   "new": "04209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00004"
+  },
+  {
+   "id": "S10-shr",
+   "rva": 4305723,
+   "file_offset": 4302651,
+   "old": "0c",
+   "new": "0d",
+   "size": 1,
+   "evidence": "serial = handle >> 12 -> >> 13 (paired with index mask)"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 4396067,
+   "file_offset": 4392995,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 4396217,
+   "file_offset": 4393145,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 4787034,
+   "file_offset": 4783962,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 4787149,
+   "file_offset": 4784077,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 4787172,
+   "file_offset": 4784100,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 4787293,
+   "file_offset": 4784221,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 4828862,
+   "file_offset": 4825790,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 4828966,
+   "file_offset": 4825894,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 4830981,
+   "file_offset": 4827909,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 4832982,
+   "file_offset": 4829910,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 4833709,
+   "file_offset": 4830637,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 4852410,
+   "file_offset": 4849338,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 4852529,
+   "file_offset": 4849457,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 4854175,
+   "file_offset": 4851103,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 4854292,
+   "file_offset": 4851220,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 4986104,
+   "file_offset": 4983032,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 4986611,
+   "file_offset": 4983539,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 5043043,
+   "file_offset": 5039971,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 5043063,
+   "file_offset": 5039991,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 5043111,
+   "file_offset": 5040039,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 5043137,
+   "file_offset": 5040065,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A9-h9",
+   "rva": 5043806,
+   "file_offset": 5040734,
+   "old": "ff0f0000",
+   "new": "ff1f0000",
+   "size": 4,
+   "evidence": "H9 index mask"
+  },
+  {
+   "id": "A9-h9",
+   "rva": 5043812,
+   "file_offset": 5040740,
+   "old": "00080000",
+   "new": "00100000",
+   "size": 4,
+   "evidence": "H9 network bound"
+  },
+  {
+   "id": "A9-h9",
+   "rva": 5043824,
+   "file_offset": 5040752,
+   "old": "00100000",
+   "new": "00200000",
+   "size": 4,
+   "evidence": "H9 total bound"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 5043837,
+   "file_offset": 5040765,
+   "old": "64077e10",
+   "new": "04209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00004"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 5043847,
+   "file_offset": 5040775,
+   "old": "68077e10",
+   "new": "08209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00008"
+  },
+  {
+   "id": "A9-h9",
+   "rva": 5043853,
+   "file_offset": 5040781,
+   "old": "0c",
+   "new": "0d",
+   "size": 1,
+   "evidence": "H9 serial << 13"
+  },
+  {
+   "id": "A9-h9",
+   "rva": 5043864,
+   "file_offset": 5040792,
+   "old": "00f03f00",
+   "new": "00e07f00",
+   "size": 4,
+   "evidence": "H9 serial compare mask"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 5045009,
+   "file_offset": 5041937,
+   "old": "68077e10",
+   "new": "08209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00008"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 5045291,
+   "file_offset": 5042219,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 5790113,
+   "file_offset": 5787041,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 5790131,
+   "file_offset": 5787059,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 5790140,
+   "file_offset": 5787068,
+   "old": "84077f10",
+   "new": "24209a10",
+   "size": 4,
+   "evidence": "reloc target off=0x10024"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 5790145,
+   "file_offset": 5787073,
+   "old": "88077f10",
+   "new": "28209a10",
+   "size": 4,
+   "evidence": "reloc target off=0x10028"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 5790150,
+   "file_offset": 5787078,
+   "old": "8c077f10",
+   "new": "2c209a10",
+   "size": 4,
+   "evidence": "reloc target off=0x1002C"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 5790155,
+   "file_offset": 5787083,
+   "old": "90077f10",
+   "new": "30209a10",
+   "size": 4,
+   "evidence": "reloc target off=0x10030"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 5790160,
+   "file_offset": 5787088,
+   "old": "94077f10",
+   "new": "34209a10",
+   "size": 4,
+   "evidence": "reloc target off=0x10034"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 5790165,
+   "file_offset": 5787093,
+   "old": "7c077f10",
+   "new": "1c209a10",
+   "size": 4,
+   "evidence": "reloc target off=0x1001C"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 5790170,
+   "file_offset": 5787098,
+   "old": "78077f10",
+   "new": "18209a10",
+   "size": 4,
+   "evidence": "reloc target off=0x10018"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 5790175,
+   "file_offset": 5787103,
+   "old": "74077f10",
+   "new": "14209a10",
+   "size": 4,
+   "evidence": "reloc target off=0x10014"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 5790180,
+   "file_offset": 5787108,
+   "old": "80077f10",
+   "new": "20209a10",
+   "size": 4,
+   "evidence": "reloc target off=0x10020"
+  },
+  {
+   "id": "A10-stref",
+   "rva": 5790209,
+   "file_offset": 5787137,
+   "old": "e0e97510",
+   "new": "00309a10",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 5967841,
+   "file_offset": 5964769,
+   "old": "84077f10",
+   "new": "24209a10",
+   "size": 4,
+   "evidence": "reloc target off=0x10024"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 5967851,
+   "file_offset": 5964779,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  },
+  {
+   "id": "A10-stref",
+   "rva": 5967905,
+   "file_offset": 5964833,
+   "old": "e4097610",
+   "new": "04709a10",
+   "size": 4,
+   "evidence": "reloc target off=0x02004"
+  },
+  {
+   "id": "A1-glref",
+   "rva": 7727544,
+   "file_offset": 7722424,
+   "old": "60077e10",
+   "new": "00209810",
+   "size": 4,
+   "evidence": "reloc target off=0x00000"
+  }
+ ]
+}
