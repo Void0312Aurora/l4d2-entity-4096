@@ -3,7 +3,7 @@
 import struct, json, hashlib, os, collections, bisect
 
 
-from config import require, CLIENT_DLL
+from config import require, CLIENT_DLL, OUT, MANIFESTS
 SRC = require(CLIENT_DLL)
 d = bytearray(open(SRC, "rb").read())
 

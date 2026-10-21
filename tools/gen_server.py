@@ -10,7 +10,7 @@ Fixes vs v1:
 """
 import struct, json, hashlib, csv, os, collections, bisect
 
-from config import require, SERVER_DLL
+from config import require, SERVER_DLL, OUT, MANIFESTS
 DLL = require(SERVER_DLL)
 
 BASE = 0x10000000

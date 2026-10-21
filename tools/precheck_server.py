@@ -13,7 +13,7 @@ Nothing on disk is modified; a JSON+text report is written to ./precheck/.
 import struct, json, hashlib, os, sys
 
 
-from config import require, SERVER_DLL
+from config import require, SERVER_DLL, OUTDIR, MANIFESTS, REPORTS
 DLL = require(SERVER_DLL)
 MAN = os.path.join(MANIFESTS, "server.json")
 OUTDIR = os.path.join(REPORTS, "precheck")

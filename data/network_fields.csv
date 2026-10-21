@@ -1,0 +1,22 @@
+kind,symbol,struct_offset,field,bit_width,encoding_rule,legal_range,evidence_class,va,rva,site_va,note
+fn,SVC_PacketEntities::ReadFromBuffer,,-,,n/a,n/a,confirmed,0x101D7460,0x001D7460,0x101D7460,vtable 0x103584DC slot[5]; RTTI TD 0x104253A4 / COL 0x10412620
+fn,SVC_PacketEntities::WriteToBuffer,,-,,n/a,n/a,confirmed,0x101D7340,0x001D7340,0x101D7340,vtable 0x103584DC slot[6]
+field,m_nMaxEntries,+0x54,,11,ReadUBitLong(11); mask 0x7FF @0x103ECE7C,0..0x7FF (0..2047),confirmed,0x101D7460,0x001D7460,read 0x101D747E / shr 0x101D748E / store 0x101D754D; write push 0xb @0x101D7366 from [edi+0x54] @0x101D7362
+field,m_nUpdatedEntries(m_nDeltaFrom),+0x58,,11,ReadUBitLong(11); mask 0x7FF,0..0x7FF (0..2047),confirmed-width / semantic-open,0x101D7460,0x001D7460,read 0x101D7798 / shr 0x101D77A8; write push 0xb @0x101D73D5 from [edi+0x58] @0x101D73D1
+field,m_bIsDelta,+0x5C,,1,ReadOneBit,0..1,confirmed,0x101D7460,0x001D7460,store byte [edi+0x5C] @0x101D75A2
+field,m_bUpdateBaseline,+0x5D,,1,ReadOneBit,0..1,confirmed,0x101D7460,0x001D7460,store byte [edi+0x5D]
+field,m_nBaseline,+0x64,,32,init 0xFFFFFFFF (invalid sentinel),0xFFFFFFFF sentinel,confirmed,0x101D7460,0x001D7460,store dword [edi+0x64] @0x101D76A8
+field,m_DataIn,+0x6C,,288,embedded bf_read (9 dwords copied from caller buffer),n/a,confirmed,0x101D7460,0x001D7460,copy loop to obj+0x6C..
+vtable,SVC_PacketEntities::vftable,,-,,10 slots,listed below,confirmed,0x103584DC,0x003584DC,slot0 0x100541A0 / slot1 0x100025E0 / slot2 0x100025C0 / slot3 0x10053FE0 / slot4 0x10002620 / slot5 0x101D7460 / slot6 0x101D7340 / slot7 0x100025D0 / slot8 0x10053FB0 / slot9 0x10053FF0
+handle,CBaseHandle index/serial split,,-,12,serial = handle >> 12; index = handle & 0xFFF,serial 20 bit / index 12 bit,confirmed,0x10076A40,0x0076A40,shr ecx,0xc @0x10076AE2
+index,CL_CopyNewEntity index bound,,-,11,index < MAX_EDICTS (predicate 0x7FF < idx),0..0x7FF (0..2047),confirmed,0x10076A40,0x0076A40,cmp 0x800 / jge @0x10076A9x; assert string 0x103635C8 ref 0x10076EB5
+index,CEntInfo stride,,-,4,shl ebx,4 (16 B per slot),n/a,confirmed,0x10076A40,0x0076A40,shl ebx,4 @0x10076AAD
+bitvec,CBitVec<MAX_EDICTS> record bits,obj+0xC,,-,"word = base + (idx>>5)*4; bit = 1 << (idx & 0x1F)",base+0xC..base+0x10B (256 B @2048),confirmed,0x10076A40,0x0076A40,and ecx,0x1f @0x10076DEA
+serial,network EHANDLE serial,,-,10,WriteUBitLong(serial, 10, 1),0..0x3FF (0..1023),confirmed,0x10119490,0x00119490,WriteUBitLong(...,10,1) @0x10119576
+bitvec,SV full-update bitvec,obj+0x10C,,-,word = base + (idx>>5)*4,base+0x10C..,confirmed,0x10119490,0x00119490,and ecx,0x1f @0x10119614
+helper,bf_write::WriteUBitLong,,-,variable,"(value, numBits, bCheckRange) thiscall; 177 call sites",n/a,confirmed,0x10061340,0x0061340,width histogram incl. 11-bit x15
+helper,bf_read mask table,-,,-,0x103ECE50 = mask[bits] base; 0x103ECE7C = 0x7FF; 0x103ECE68 = 0x3F; 0x103ECED0 = 0xFFFFFFFF,n/a,confirmed,0x103ECE50,0x003ECE50,used by inlined ReadUBitLong
+state,CL_ParsePacketEntities state machine,,-,-,dispatch on update flags (0/2/3/4),n/a,confirmed,0x10091F50,0x00091F50,buffer-overflow error site 0x1009247A
+state,CL_ParsePacketEntities header reader (inlined bf_read),,-,-,"6-bit first field then flags 0x30 mask split",n/a,confirmed-width / semantic-open,0x10091910,0x00091910,"DAT_103ECE50 mask table; 0x103ECE68 = 0x3F"
+rejected,FUN_1029F880 (bit-width benchmark),,-,-,"writes 11/11/10/10/8/9/9/8 bit fields through three different vtables",n/a,rejected-false-positive,0x1029F880,0x0029F880,not protocol code: two different sink objects, 2-bit fallback branch
+rejected,FUN_10073A80 / FUN_10123880,,-,,function start recovered mid-instruction,unknown,rejected-false-positive,0x10073A80,0x0073A80,start bytes adc/pop -> not a real prologue

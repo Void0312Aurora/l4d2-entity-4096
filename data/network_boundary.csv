@@ -1,0 +1,12 @@
+n,case,as_max_index_fits_11bit,as_max_index_fits_12bit,as_max_index_fits_13bit,as_count_fits_11bit,as_count_fits_12bit,as_count_fits_13bit,verdict
+0,empty/最低边界,yes,yes,yes,yes,yes,yes,baseline
+1024,半容量,yes,yes,yes,yes,yes,yes,baseline
+2046,A_上界-1,yes,yes,yes,yes,yes,yes,11bit-ok
+2047,A_上界(MAX_EDICTS-1 at 2048),yes,yes,yes,yes,yes,yes,11bit-limit
+2048,B_上界(count=MAX_EDICTS),no,yes,yes,no,yes,yes,A_only:12bit ok / B:11bit overflow
+2049,A_上界+1,no,yes,yes,no,yes,yes,12bit-ok
+4094,A_上界-1 at 4096,no,yes,yes,no,yes,yes,12bit-ok
+4095,A_上界 at 4096,no,yes,yes,no,yes,yes,12bit-limit
+4096,B_上界 at 4096,no,no,yes,no,no,yes,A:13bit / B:13bit overflow at 12bit
+8191,上限压力,no,no,yes,no,no,yes,13bit-limit
+8192,越界压力,no,no,no,no,no,no,overflow_probe

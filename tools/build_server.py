@@ -10,7 +10,7 @@ Writes ./out/server.4096.dll and a verification log. Never touches the game inst
 import struct, json, hashlib, os
 
 
-from config import require, SERVER_DLL
+from config import require, SERVER_DLL, OUTDIR, MANIFESTS
 SRC = require(SERVER_DLL)
 
 DST = os.path.join(OUTDIR, "server.4096.dll")

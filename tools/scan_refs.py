@@ -3,7 +3,7 @@
 Read-only. Emits CSV to stdout; no file in the game install is touched."""
 import struct, csv, sys
 
-from config import require, SERVER_DLL
+from config import require, SERVER_DLL, OUT
 DLL = require(SERVER_DLL)
 BASE=0x10000000; OBJ=0x107E0760; ARR=0x107E0764
 d=open(DLL,'rb').read()
