@@ -5,11 +5,7 @@ The game install is read-only and is never modified. Override with
 """
 import os
 
-BIN = os.environ.get(
-    "L4D2_BIN",
-    "/run/media/void0312/566EBEB06EBE87EF/SteamLibrary/steamapps/common/"
-    "Left 4 Dead 2/left4dead2/bin",
-)
+BIN = os.environ.get("L4D2_BIN", "")
 
 SERVER_DLL = os.path.join(BIN, "server.dll")
 CLIENT_DLL = os.path.join(BIN, "client.dll")
@@ -20,6 +16,7 @@ def require(path):
     if not os.path.isfile(path):
         raise SystemExit(
             "missing input: %s\n"
-            "set L4D2_BIN to the directory that holds server.dll/client.dll" % path
+            "set L4D2_BIN to the directory that holds server.dll/client.dll\n"
+            "(e.g. .../SteamLibrary/steamapps/common/Left 4 Dead 2/left4dead2/bin)" % path
         )
     return path

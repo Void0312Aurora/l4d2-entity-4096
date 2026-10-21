@@ -38,7 +38,7 @@ archive/      已废弃的脚本（不纳入版本控制）
 ## 使用
 
 ```bash
-export L4D2_BIN="/path/to/left4dead2/bin"
+export L4D2_BIN="/path/to/left4dead2/bin"   # 必填
 
 python3 tools/gen_server.py      # → manifests/server.json
 python3 tools/gen_client.py      # → manifests/client.json
