@@ -10,7 +10,8 @@ Nothing in the game install is written.
 """
 import struct, csv, re, os, bisect
 
-DLL = "/run/media/void0312/566EBEB06EBE87EF/SteamLibrary/steamapps/common/Left 4 Dead 2/left4dead2/bin/server.dll"
+from config import require, SERVER_DLL
+DLL = require(SERVER_DLL)
 OUT = os.path.dirname(os.path.abspath(__file__))
 
 BASE        = 0x10000000
