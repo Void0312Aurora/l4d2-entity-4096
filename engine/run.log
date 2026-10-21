@@ -1,0 +1,82 @@
+source: <L4D2_BIN>/engine.dll
+size  : 4,817,712 (0x498330)
+sha256: 8a6d468059394bf4cfce32f11dcba12ef45de88da1373084d5a2916d0bf7ba86
+
+=== 1. 前置条件 ===
+[PASS] 完整 SHA-256 绑定  — 8a6d468059394bf4…
+[PASS] 文件长度 = 0x498330  — 0x498330
+[PASS] PE32 / i386 / ImageBase 0x10000000  — magic=0x10B base=0x10000000
+[PASS] NumberOfSections = 5  — 5
+[PASS] SizeOfImage = 0x73F000  — 0x73F000
+[PASS] SizeOfHeaders = 0x400  — 0x400
+[PASS] 尾部为 Authenticode 证书表（安全目录指向文件末尾）  — cert@0x495698 len=0x2C98 rev=0x200 type=2
+[PASS] raw_end 之后另有一份旧签名副本（两者内容不同）  — 旧副本@0x492A00 len=0x2C98；overlay 合计 0x5930
+  尾部布局: raw_end=0x492A00 | 旧签名 0x2C98B | 证书 0x2C98B | EOF=0x498330
+
+  节表:
+    .text    RVA 0x001000..0x34DD7A  raw 0x000400..0x34D200  (raw)
+    .rdata   RVA 0x34E000..0x422673  raw 0x34D200..0x421A00  (raw)
+    .data    RVA 0x423000..0x6E8C44  raw 0x421A00..0x43DE00  (raw)
+    .rsrc    RVA 0x6E9000..0x6E9010  raw 0x43DE00..0x43E000  (raw)
+    .reloc   RVA 0x6EA000..0x73E98A  raw 0x43E000..0x492A00  (raw)
+[PASS] 现有节虚拟区间按 RVA 递增且不重叠
+[PASS] 新段 RVA 0x73F000 不与任何现有节重叠  — existing image ends 0x73F000
+[PASS] 第 6 个段头完全落在 SizeOfHeaders 内  — ends 0x318 <= 0x400
+[PASS] 段头区当前为空白填充
+
+=== 2. 指令级上下文校验（非仅 4 字节数值）===
+[PASS] capacity_imm       0x10123DA2  指令 b8 00 08 00 00  — dword@0x1231A3=0x00000800 -> 0x00001000
+[PASS] reuse_clear_size   0x101DFEF0  指令 68 00 20 00 00  — dword@0x1DF2F1=0x00002000 -> 0x00004000
+[PASS] reuse_arr_push     0x101DFEF7  指令 68 58 3a 6b 10  — dword@0x1DF2F8=0x106B3A58 -> 0x1073F000
+[PASS] reuse_arr_S2       0x101DFF49  指令 f3 0f 11 04 85 58 3a 6b 10  — dword@0x1DF34E=0x106B3A58 -> 0x1073F000
+[PASS] reuse_arr_S3       0x101DFFC4  指令 d9 1c b5 58 3a 6b 10  — dword@0x1DF3C7=0x106B3A58 -> 0x1073F000
+[PASS] reuse_arr_S4       0x101DFFF2  指令 f3 0f 11 04 85 58 3a 6b 10  — dword@0x1DF3F7=0x106B3A58 -> 0x1073F000
+[PASS] reuse_arr_S5       0x101E015B  指令 f3 0f 11 04 8d 58 3a 6b 10  — dword@0x1DF560=0x106B3A58 -> 0x1073F000
+[PASS] reuse_arr_S6       0x101E0201  指令 0f 2f 04 b5 58 3a 6b 10  — dword@0x1DF605=0x106B3A58 -> 0x1073F000
+[PASS] reuse_arr_S7       0x101E021B  指令 d8 24 b5 58 3a 6b 10  — dword@0x1DF61E=0x106B3A58 -> 0x1073F000
+[PASS] reuse_arr_S8       0x101E024F  指令 f3 0f 10 04 9d 58 3a 6b 10  — dword@0x1DF654=0x106B3A58 -> 0x1073F000
+[PASS] reuse_arr_S9       0x101E0295  指令 f3 0f 10 04 b5 58 3a 6b 10  — dword@0x1DF69A=0x106B3A58 -> 0x1073F000
+
+=== 3. 重定位项保留（9 处数组引用须为 HIGHLOW）===
+[PASS] reuse_arr_push     RVA 0x1DFEF8 type 3  — HIGHLOW
+[PASS] reuse_arr_S2       RVA 0x1DFF4E type 3  — HIGHLOW
+[PASS] reuse_arr_S3       RVA 0x1DFFC7 type 3  — HIGHLOW
+[PASS] reuse_arr_S4       RVA 0x1DFFF7 type 3  — HIGHLOW
+[PASS] reuse_arr_S5       RVA 0x1E0160 type 3  — HIGHLOW
+[PASS] reuse_arr_S6       RVA 0x1E0205 type 3  — HIGHLOW
+[PASS] reuse_arr_S7       RVA 0x1E021E type 3  — HIGHLOW
+[PASS] reuse_arr_S8       RVA 0x1E0254 type 3  — HIGHLOW
+[PASS] reuse_arr_S9       RVA 0x1E029A type 3  — HIGHLOW
+[PASS] 指向旧数组的绝对操作数总数为 9  — 9 hits
+
+=== 4. 生成补丁副本（BSS 段，文件长度不变）===
+  written: <REPO>/engine.4096.dll
+
+=== 5. 输出结构重解析 ===
+[PASS] 文件长度未变化（无 raw 追加）  — 0x498330
+[PASS] NumberOfSections = 6  — 6
+[PASS] SizeOfImage = 0x743000  — 0x743000
+[PASS] 新段字段正确  — .edict2 vsz=0x4000 va=0x73F000 rs=0 pr=0
+[PASS] 新段虚拟区间落在 SizeOfImage 内  — 0x743000 <= 0x743000
+[PASS] 无 raw 数据段与新段 raw 冲突
+[PASS] 尾部 overlay（旧签名副本 + 证书表）字节未改变
+[PASS] .reloc 目录仍可完整解析  — 143365 entries
+
+=== 6. 字节级差异审计 ===
+  差异字节数: 47；预期区间外: 0
+[PASS] 所有差异都落在 11 个 dword / 5 个头部字段 / 40 字节段头之内  — stray=[]
+[PASS] 新段在文件中不占用任何字节  — SizeOfRawData=0
+
+=== 7. 验收目标（离线可判定部分）===
+  max_edicts                 = 4096
+  sizeof_pEdicts             = 65536
+  sizeof_pEdictChangeInfo    = 16384
+  sizeof_reuseTimes          = 16384
+  reuse_array_va             = 0x1073f000
+  array_refs_retargeted      = 9
+  relocs_preserved_HIGHLOW   = 9
+
+manifest: <REPO>/manifest.4096-bss.json
+
+=== 结果: 43/43 checks passed ===
+ALL CHECKS PASSED

@@ -1,0 +1,209 @@
+{
+  "artifact": {
+    "path": "engine.dll",
+    "sha256": "8a6d468059394bf4cfce32f11dcba12ef45de88da1373084d5a2916d0bf7ba86",
+    "size": 4817712,
+    "buildid": "23990068",
+    "format": "PE32 i386",
+    "image_base": "0x10000000"
+  },
+  "strategy": "bss_section",
+  "capacity": {
+    "old": 2048,
+    "new": 4096
+  },
+  "derived": {
+    "pEdicts_size": 65536,
+    "pEdictChangeInfo_size": 16384,
+    "reuseTimes_size": 16384
+  },
+  "new_section": {
+    "name": ".edict2",
+    "virtual_address": "0x73F000",
+    "virtual_size": 16384,
+    "size_of_raw_data": 0,
+    "pointer_to_raw_data": 0,
+    "characteristics": "0xc0000080",
+    "size_of_image_new": "0x743000",
+    "header_offset": "0x2f0"
+  },
+  "patches": [
+    {
+      "id": "capacity_imm",
+      "instr_va": "0x10123da2",
+      "instr_len": 5,
+      "instr_bytes": "b800080000",
+      "dword_offset": 1,
+      "file_offset": 1192355,
+      "file_offset_hex": "0x1231a3",
+      "old": 2048,
+      "old_hex": "0x800",
+      "new": 4096,
+      "new_hex": "0x1000",
+      "note": "mov eax,0x800 -> 0x1000 (sv.max_edicts, sole writer)"
+    },
+    {
+      "id": "reuse_clear_size",
+      "instr_va": "0x101dfef0",
+      "instr_len": 5,
+      "instr_bytes": "6800200000",
+      "dword_offset": 1,
+      "file_offset": 1962737,
+      "file_offset_hex": "0x1df2f1",
+      "old": 8192,
+      "old_hex": "0x2000",
+      "new": 16384,
+      "new_hex": "0x4000",
+      "note": "push 0x2000 -> 0x4000 (memset length)"
+    },
+    {
+      "id": "reuse_arr_push",
+      "instr_va": "0x101dfef7",
+      "instr_len": 5,
+      "instr_bytes": "68583a6b10",
+      "dword_offset": 1,
+      "file_offset": 1962744,
+      "file_offset_hex": "0x1df2f8",
+      "old": 275462744,
+      "old_hex": "0x106b3a58",
+      "new": 276033536,
+      "new_hex": "0x1073f000",
+      "note": "push 0x106B3A58 -> 0x1073F000 (memset dest)"
+    },
+    {
+      "id": "reuse_arr_S2",
+      "instr_va": "0x101dff49",
+      "instr_len": 9,
+      "instr_bytes": "f30f110485583a6b10",
+      "dword_offset": 5,
+      "file_offset": 1962830,
+      "file_offset_hex": "0x1df34e",
+      "old": 275462744,
+      "old_hex": "0x106b3a58",
+      "new": 276033536,
+      "new_hex": "0x1073f000",
+      "note": "movss [eax*4+d],xmm0 (init clear loop)"
+    },
+    {
+      "id": "reuse_arr_S3",
+      "instr_va": "0x101dffc4",
+      "instr_len": 7,
+      "instr_bytes": "d91cb5583a6b10",
+      "dword_offset": 3,
+      "file_offset": 1962951,
+      "file_offset_hex": "0x1df3c7",
+      "old": 275462744,
+      "old_hex": "0x106b3a58",
+      "new": 276033536,
+      "new_hex": "0x1073f000",
+      "note": "fstp [esi*4+d] (free path: sv.time)"
+    },
+    {
+      "id": "reuse_arr_S4",
+      "instr_va": "0x101dfff2",
+      "instr_len": 9,
+      "instr_bytes": "f30f110485583a6b10",
+      "dword_offset": 5,
+      "file_offset": 1962999,
+      "file_offset_hex": "0x1df3f7",
+      "old": 275462744,
+      "old_hex": "0x106b3a58",
+      "new": 276033536,
+      "new_hex": "0x1073f000",
+      "note": "movss [eax*4+d],xmm0 (ptr-delta reset)"
+    },
+    {
+      "id": "reuse_arr_S5",
+      "instr_va": "0x101e015b",
+      "instr_len": 9,
+      "instr_bytes": "f30f11048d583a6b10",
+      "dword_offset": 5,
+      "file_offset": 1963360,
+      "file_offset_hex": "0x1df560",
+      "old": 275462744,
+      "old_hex": "0x106b3a58",
+      "new": 276033536,
+      "new_hex": "0x1073f000",
+      "note": "movss [ecx*4+d],xmm0 (ED_ClearEdict)"
+    },
+    {
+      "id": "reuse_arr_S6",
+      "instr_va": "0x101e0201",
+      "instr_len": 8,
+      "instr_bytes": "0f2f04b5583a6b10",
+      "dword_offset": 4,
+      "file_offset": 1963525,
+      "file_offset_hex": "0x1df605",
+      "old": 275462744,
+      "old_hex": "0x106b3a58",
+      "new": 276033536,
+      "new_hex": "0x1073f000",
+      "note": "comiss xmm0,[esi*4+d] (reuse gate)"
+    },
+    {
+      "id": "reuse_arr_S7",
+      "instr_va": "0x101e021b",
+      "instr_len": 7,
+      "instr_bytes": "d824b5583a6b10",
+      "dword_offset": 3,
+      "file_offset": 1963550,
+      "file_offset_hex": "0x1df61e",
+      "old": 275462744,
+      "old_hex": "0x106b3a58",
+      "new": 276033536,
+      "new_hex": "0x1073f000",
+      "note": "fsub [esi*4+d] (dt since free)"
+    },
+    {
+      "id": "reuse_arr_S8",
+      "instr_va": "0x101e024f",
+      "instr_len": 9,
+      "instr_bytes": "f30f10049d583a6b10",
+      "dword_offset": 5,
+      "file_offset": 1963604,
+      "file_offset_hex": "0x1df654",
+      "old": 275462744,
+      "old_hex": "0x106b3a58",
+      "new": 276033536,
+      "new_hex": "0x1073f000",
+      "note": "movss xmm0,[ebx*4+d] (reuse gate)"
+    },
+    {
+      "id": "reuse_arr_S9",
+      "instr_va": "0x101e0295",
+      "instr_len": 9,
+      "instr_bytes": "f30f1004b5583a6b10",
+      "dword_offset": 5,
+      "file_offset": 1963674,
+      "file_offset_hex": "0x1df69a",
+      "old": 275462744,
+      "old_hex": "0x106b3a58",
+      "new": 276033536,
+      "new_hex": "0x1073f000",
+      "note": "movss xmm0,[esi*4+d] (reuse gate)"
+    }
+  ],
+  "preconditions": {
+    "sha256_match": true,
+    "overlay": "0x5930 Authenticode certificate",
+    "header_space_ok": true,
+    "reloc_coverage": "9/9 HIGHLOW"
+  },
+  "file_layout": {
+    "raw_end": "0x492a00",
+    "stale_signature": {
+      "offset": "0x492a00",
+      "size": "0x2c98"
+    },
+    "active_certificate": {
+      "offset": "0x495698",
+      "size": "0x2c98"
+    },
+    "file_size": "0x498330"
+  },
+  "output": {
+    "path": "out/engine.4096.dll",
+    "size": 4817712,
+    "sha256": "3ac18292d746d1d33445b82e83c237fa25b7a3daab5968c18ddf42144059012e"
+  }
+}

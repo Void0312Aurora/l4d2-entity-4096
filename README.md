@@ -1,7 +1,15 @@
 # L4D2 实体上限扩容（2048 → 4096）
 
-对《Left 4 Dead 2》build `23990068`（Source Engine 1，PE32 i386）实体管理层的离线静态分析，
+对《Left 4 Dead 2》build `23990068`（Source Engine 1，PE32 i386）实体管理体系的离线静态分析，
 目标是在**不更换引擎、不修改 32 位构建**的前提下，把网络实体上限从 2048 提高到 4096。
+
+扩容跨三层，缺一不可：
+
+| 层 | 二进制 | 负责什么 | 状态 |
+|---|---|---|---|
+| 1 · 存储 | `engine.dll` | edict 数组容量、`sv.max_edicts` | 11 条补丁，副本已生成 |
+| 2 · 实体管理 | `server.dll` / `client.dll` | 实体列表槽位、句柄位宽、分区 | 808 / 1089 条补丁 |
+| 3 · 网络协议 | `engine.dll` | edict 索引线格式、快照、EHANDLE | **未开始** |
 
 仓库只包含**分析产物**（补丁清单、生成器、报告），不包含任何 Valve 的二进制文件。
 
@@ -9,7 +17,7 @@
 
 | 模块 | 补丁 | 隔离副本 | 静态预检 |
 |---|---|---|---|
-| `engine.dll` | edict 存储层方案 | 已生成 | 43 项通过 |
+| `engine.dll` | **11** | 已生成 | **43/43** |
 | `server.dll` | **808** | 已生成 | PE 预检 **30/30** |
 | `client.dll` | **1089** | 未生成 | 字节匹配通过 |
 
@@ -19,7 +27,12 @@
 ## 目录
 
 ```
-manifests/    补丁清单（核心产物）
+engine/       第 1 层：engine.dll 存储扩容
+  manifest.json   11 条补丁 + 新段定义
+  verify_pe.py    43 项校验 + 副本构建
+  report.md       分析记录
+  run.log         最近一次运行输出
+manifests/    第 2 层：补丁清单（核心产物）
   server.json   808 条
   client.json   1089 条（含 3 条 pending、802 处未分类掩码）
 tools/        可复现的生成器与校验器
@@ -40,6 +53,7 @@ archive/      已废弃的脚本（不纳入版本控制）
 ```bash
 export L4D2_BIN="/path/to/left4dead2/bin"   # 必填
 
+python3 engine/verify_pe.py      # → out/engine.4096.dll + engine/manifest.json
 python3 tools/gen_server.py      # → manifests/server.json
 python3 tools/gen_client.py      # → manifests/client.json
 python3 tools/precheck_server.py # → reports/precheck/
@@ -50,7 +64,10 @@ python3 tools/build_server.py    # → out/server.4096.dll
 
 ## 核心结论
 
-**对象迁移**
+**引擎存储（第 1 层）**：`sv.max_edicts` 2048 → 4096；`pEdicts` 由 `cap<<4` 派生出 64 KB，
+`reuseTimes` 迁入新 BSS 段 `.edict2`（VA `0x73F000`，16 KB），9 处数组引用重定位同步改基址。
+
+**对象迁移（第 2 层）**
 
 | 对象 | 原尺寸 | 新尺寸 | 方式 |
 |---|---|---|---|
