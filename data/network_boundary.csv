@@ -1,12 +1,12 @@
-n,case,as_max_index_fits_11bit,as_max_index_fits_12bit,as_max_index_fits_13bit,as_count_fits_11bit,as_count_fits_12bit,as_count_fits_13bit,verdict
-0,empty/最低边界,yes,yes,yes,yes,yes,yes,baseline
-1024,半容量,yes,yes,yes,yes,yes,yes,baseline
-2046,A_上界-1,yes,yes,yes,yes,yes,yes,11bit-ok
-2047,A_上界(MAX_EDICTS-1 at 2048),yes,yes,yes,yes,yes,yes,11bit-limit
-2048,B_上界(count=MAX_EDICTS),no,yes,yes,no,yes,yes,A_only:12bit ok / B:11bit overflow
-2049,A_上界+1,no,yes,yes,no,yes,yes,12bit-ok
-4094,A_上界-1 at 4096,no,yes,yes,no,yes,yes,12bit-ok
-4095,A_上界 at 4096,no,yes,yes,no,yes,yes,12bit-limit
-4096,B_上界 at 4096,no,no,yes,no,no,yes,A:13bit / B:13bit overflow at 12bit
-8191,上限压力,no,no,yes,no,no,yes,13bit-limit
-8192,越界压力,no,no,no,no,no,no,overflow_probe
+n,value_fits_11bit,value_fits_12bit,value_fits_13bit,required_by_S1_at_4096,required_by_S2_at_4096,note
+0,yes,yes,yes,no,no,empty baseline
+1024,yes,yes,yes,no,no,half capacity baseline
+2046,yes,yes,yes,no,no,below both targets
+2047,yes,yes,yes,no,no,11-bit ceiling (0x7FF); one candidate value under S1 at stock size
+2048,no,yes,yes,no,no,11-bit overflow point; if the stock build carried this value it would already trap -> stock value <= 2047
+2049,no,yes,yes,no,no,12-bit covered
+4094,no,yes,yes,no,no,12-bit covered
+4095,no,yes,yes,YES,no,S1 target value (highest index at 4096 slots); 12 bits exactly sufficient
+4096,no,no,yes,no,YES,S2 target value (slot capacity); 12 bits overflows, needs 13
+8191,no,no,yes,no,no,13-bit ceiling (0x1FFF)
+8192,no,no,no,no,no,13-bit overflow point

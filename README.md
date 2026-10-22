@@ -9,7 +9,7 @@
 |---|---|---|---|
 | 1 · 存储 | `engine.dll` | edict 数组容量、`sv.max_edicts` | 11 条补丁，副本已生成 |
 | 2 · 实体管理 | `server.dll` / `client.dll` | 实体列表槽位、句柄位宽、分区 | 808 / 1089 条补丁 |
-| 3 · 网络协议 | `engine.dll` | edict 索引线格式、快照、EHANDLE | **N1 审计完成，补丁未开始** |
+| 3 · 网络协议 | `engine.dll` | edict 索引线格式、快照、EHANDLE | **N1 审计 + N2 更正，位宽未定，补丁未开始** |
 
 仓库只包含**分析产物**（补丁清单、生成器、报告），不包含任何 Valve 的二进制文件。
 
@@ -25,9 +25,9 @@
 `2f0e723a2991edee628e20638c506ce9508cb96fc8dd226d37603cc0035e0752`）。
 它是**实验性静态产物**：未做运行时验证，也不声称位移/掩码语义正确。
 
-网络协议层已进入 **N1** 阶段：`SVC_PacketEntities` 出入口、两个 11 位字段、
-实体索引与网络序列号位宽均已用静态证据定位（见
-[reports/network-n1.md](reports/network-n1.md)）；补丁尚未生成。
+网络协议层已进入 **N1** 阶段：`SVC_PacketEntities` 出入口与两个 11 位字段已用静态证据定位
+（[reports/network-n1.md](reports/network-n1.md)）；`+0x54` 的语义判定已撤回并重做
+（[reports/network-n2.md](reports/network-n2.md)），当前位宽格式**未定**，补丁尚未生成。
 运行时加载与实体生命周期**尚未验证**。
 
 ## 目录
@@ -48,12 +48,13 @@ tools/        可复现的生成器与校验器
   build_server.py 应用补丁 + PE 手术，产出隔离副本
   build_client.py 应用 1089 处补丁 + `.clentls` 段，产出隔离副本
   precheck_server.py 只读 PE 预检（30 项）
+  check_artifacts.py 离线产物门禁（三个二进制的 SHA-256/尺寸校验，只读）
   scan_netproto.py 网络位缓冲原语与位宽站点初筛
   xrefs_by_imm.py / dump_fn.py 按立即数查引用 / 按地址反汇编整函数
 data/         原始扫描结果（CSV）
-  network_fields.csv    N1 字段图（VA / 偏移 / 位宽 / 合法值）
-  network_boundary.csv  N1 边界矩阵（2046…4096）
-reports/      分析报告（第 1–35 轮完整记录）、N1 网络报告与预检输出
+  network_fields.csv    N1/N2 字段图（VA / 偏移 / 位宽 / 语义状态）
+  network_boundary.csv  N1/N2 边界矩阵（0/1024/2046…4096/8191/8192）
+reports/      分析报告（第 1–35 轮完整记录）、N1 网络报告、N2 更正与预检输出
 out/          生成的 DLL（不纳入版本控制）
 archive/      已废弃的脚本（不纳入版本控制）
 ```
@@ -103,19 +104,25 @@ python3 tools/build_server.py    # → out/server.4096.dll
 | `ReadFromBuffer` | `0x101D7460` | vftable `0x103584DC` 槽 5 |
 | `WriteToBuffer` | `0x101D7340` | 同表槽 6 |
 
-对象内两个**独立**的 11 位字段：`m_nMaxEntries`（`+0x54`，写 `push 0xb`
-@`0x101D7366`，读掩码 `0x7FF` @`0x101D747E`）与 `+0x58` 的第二个 11 位字段
-（写 `0x101D73D5`，读 `0x101D7798`）。
+对象内两个**独立**的 11 位字段：`+0x54`（写 `push 0xb` @`0x101D7366`，读掩码 `0x7FF`
+@`0x101D747E`）与 `+0x58`（写 `0x101D73D5`，读 `@0x101D7798` / `@0x101D77A8`）。
 
-字段语义：`m_nMaxEntries` 承载「最大实体索引（含）」而**不是**条目计数——
-写入侧带 `bCheckRange=1`，11 位上限 2047，若为计数则原版 2048 实体在同一条
-路径上就已越界。该判定同时决定了补丁位宽：索引语义下 4096 槽位需要
-`0xFFF`，12 位刚好够；计数语义下 4096 需 13 位，12 位会在 4096 处溢出。
+**字段语义（N2 更正）**：`+0x54` 与 `+0x58` 的语义**均未确认**，不把二者都当作「最大实体索引」。
+`+0x58` 高度可信为条目计数（`m_nUpdatedEntries`，SDK 参考里标作 `changed`），
+`+0x54` 可能是快照容量（`CreateEmptySnapshot(GetServerTickCount(), entmsg->m_nMaxEntries)` 那种用法），
+**也可能**是最大索引。N1 曾据「原版 2048 实体不越界」推出「必是索引、12 位刚好够」，
+该推理已撤回：原版不越界只约束实际取值域，不能反推字段数学语义——容量型字段在原版规模下
+合法地 ≤2047 完全自洽。因此**位宽格式在 `12/12`、`13/12`、`12/13`、`13/13` 之间尚未确定**，
+补丁位宽暂不下结论；判定路径见 [reports/network-n2.md](reports/network-n2.md) §4–§5。
 
 网络 EHANDLE：索引 11 位 + 序列号 **10 位**（`WriteUBitLong(serial,10,1)`
-@`0x10119576`）= 21 位，目标态 `12+10=22` 位。`CBitVec<MAX_EDICTS>` 是
-对象内固定内联数组（`+0xC` / `+0x10C` 常量基址，`>>5` 取字、`&0x1F` 取位），
-2048 位 = 256 字节 → 4096 位 = 512 字节，扩容需同步移动其后字段。
+@`0x10119576`）= 21 位，目标态 `12+10=22` 位。
+
+位图布局（N2 更正）：`0x10C` 与 `0x0C` 相差 `0x100` 不是「两个相邻内联向量」，而是
+`struct+0x0C` 处的**内联** `CBitVec<2048>`（256 字节，客户端 `CL_CopyNewEntity` 直接 `p = *(this+0xC)`，
+无空指针检查）把后续字段整体推后 `0x100`。`struct+0x10C` 是**可空堆指针**指向裸向量
+（服务端 `SV_WriteEnterPVS` 有 `if (q != 0)`）。故偏移映射为 `F(o)=o+0x100 (o≥0x10C)`，
+sizeof `+0x100`；向量本体 256→512 字节的改动落在**分配点常量**上，与结构体字段偏移是两件事。
 
 ## 已知限制
 
@@ -140,4 +147,18 @@ python3 tools/build_server.py    # → out/server.4096.dll
 ## 分析记录
 
 逐轮结论见 [reports/report.md](reports/report.md)（第 1–35 轮）。
-网络层 N1 阶段结论见 [reports/network-n1.md](reports/network-n1.md)。
+网络层 N1 阶段结论见 [reports/network-n1.md](reports/network-n1.md)；
+N2 更正（`+0x54` 语义撤回、位图布局更正、边界重推）见 [reports/network-n2.md](reports/network-n2.md)。
+
+## 离线工作约定
+
+本仓库只存分析产物，**不含任何 Valve 二进制**：所有字节级扫描都以外部盘上的安装目录为只读输入。
+该盘未挂载时静态分析无法继续，此时只做文档与数据整理，不凭记忆补证据、不写未观测的地址。
+
+恢复分析前先跑门禁，确认坐标仍指向同一构建：
+
+```bash
+python3 tools/check_artifacts.py    # 校验 engine/server/client 的 SHA-256 与尺寸
+```
+
+任一项不符即说明版本变了，`data/` 与 `reports/` 里的 VA、位宽站点全部失效。

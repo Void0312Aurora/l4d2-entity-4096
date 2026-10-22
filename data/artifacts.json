@@ -1,0 +1,25 @@
+{
+  "note": "Identity of the three binaries every VA / RVA / bit-width site in data/ and reports/ is bound to. A null field means it has not been captured yet; it is reported as unrecorded, never as a match. Fill it with: python tools/check_artifacts.py --record",
+  "game": "Left 4 Dead 2",
+  "build": "23990068",
+  "engine": "Source 1, PE32 i386, ImageBase 0x10000000",
+  "files": {
+    "engine.dll": {
+      "role": "layer 1 storage + layer 3 network protocol",
+      "size": 4817712,
+      "sha256": "8a6d468059394bf4cfce32f11dcba12ef45de88da1373084d5a2916d0bf7ba86"
+    },
+    "server.dll": {
+      "role": "layer 2 entity management (server side)",
+      "size": 9130288,
+      "sha256": null,
+      "sha256_prefix": "a93ec916"
+    },
+    "client.dll": {
+      "role": "layer 2 entity management (client side)",
+      "size": null,
+      "sha256": null,
+      "sha256_prefix": "c0a8e1e8"
+    }
+  }
+}

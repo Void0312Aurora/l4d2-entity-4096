@@ -1,27 +1,30 @@
 kind,symbol,struct_offset,field,bit_width,encoding_rule,legal_range,evidence_class,va,rva,site_va,note
 fn,SVC_PacketEntities::ReadFromBuffer,,-,,n/a,n/a,confirmed,0x101D7460,0x001D7460,0x101D7460,vtable 0x103584DC slot[5]; RTTI TD 0x104253A4 / COL 0x10412620
 fn,SVC_PacketEntities::WriteToBuffer,,-,,n/a,n/a,confirmed,0x101D7340,0x001D7340,0x101D7340,vtable 0x103584DC slot[6]
-field,m_nMaxEntries,+0x54,,11,ReadUBitLong(11); mask 0x7FF @0x103ECE7C,0..0x7FF (0..2047),confirmed,0x101D7460,0x001D7460,read 0x101D747E / shr 0x101D748E / store 0x101D754D; write push 0xb @0x101D7366 from [edi+0x54] @0x101D7362
-field,m_nUpdatedEntries(m_nDeltaFrom),+0x58,,11,ReadUBitLong(11); mask 0x7FF,0..0x7FF (0..2047),confirmed-width / semantic-open,0x101D7460,0x001D7460,read 0x101D7798 / shr 0x101D77A8; write push 0xb @0x101D73D5 from [edi+0x58] @0x101D73D1
+field,m_nMaxEntries,+0x54,,11,ReadUBitLong(11) / WriteUBitLong(v,11,1); mask 0x7FF @0x103ECE7C,0..0x7FF (0..2047),width-confirmed / semantic-UNKNOWN,0x101D7460,0x001D7460,read 0x101D747E / shr 0x101D748E / store 0x101D754D; write [edi+0x54] @0x101D7362 push 0xb @0x101D7366
+field,second 11-bit field,+0x58,,11,ReadUBitLong(11) / WriteUBitLong(v,11,1),0..0x7FF (0..2047),width-confirmed / naming-open,0x101D7460,0x001D7460,read mask 0x7FF @0x101D7798 shr 0x101D77A8; write [edi+0x58] @0x101D73D1 push 0xb @0x101D73D5; candidate m_nUpdatedEntries (count)
 field,m_bIsDelta,+0x5C,,1,ReadOneBit,0..1,confirmed,0x101D7460,0x001D7460,store byte [edi+0x5C] @0x101D75A2
-field,m_bUpdateBaseline,+0x5D,,1,ReadOneBit,0..1,confirmed,0x101D7460,0x001D7460,store byte [edi+0x5D]
-field,m_nBaseline,+0x64,,32,init 0xFFFFFFFF (invalid sentinel),0xFFFFFFFF sentinel,confirmed,0x101D7460,0x001D7460,store dword [edi+0x64] @0x101D76A8
-field,m_DataIn,+0x6C,,288,embedded bf_read (9 dwords copied from caller buffer),n/a,confirmed,0x101D7460,0x001D7460,copy loop to obj+0x6C..
-vtable,SVC_PacketEntities::vftable,,-,,10 slots,listed below,confirmed,0x103584DC,0x003584DC,slot0 0x100541A0 / slot1 0x100025E0 / slot2 0x100025C0 / slot3 0x10053FE0 / slot4 0x10002620 / slot5 0x101D7460 / slot6 0x101D7340 / slot7 0x100025D0 / slot8 0x10053FB0 / slot9 0x10053FF0
+field,m_bUpdateBaseline,+0x5D,,1,ReadOneBit,0..1,medium,0x101D7460,0x001D7460,store byte [edi+0x5D]
+field,baseline sentinel,+0x64,,32,init 0xFFFFFFFF,0xFFFFFFFF sentinel,confirmed,0x101D7460,0x001D7460,store dword [edi+0x64] @0x101D76A8
+field,m_DataIn (embedded bf_read),+0x6C,,288,9 dword copy from caller buffer,n/a,confirmed,0x101D7460,0x001D7460,copy loop to obj+0x6C..
+vtable,SVC_PacketEntities::vftable,,-,,10 slots,listed in note,confirmed,0x103584DC,0x003584DC,slot0 0x100541A0 / slot1 0x100025E0 / slot2 0x100025C0 / slot3 0x10053FE0 / slot4 0x10002620 / slot5 0x101D7460 / slot6 0x101D7340 / slot7 0x100025D0 / slot8 0x10053FB0 / slot9 0x10053FF0
 handle,CBaseHandle index/serial split,,-,12,serial = handle >> 12; index = handle & 0xFFF,serial 20 bit / index 12 bit,confirmed,0x10076A40,0x0076A40,shr ecx,0xc @0x10076AE2
 index,CL_CopyNewEntity index bound,,-,11,index < MAX_EDICTS (predicate 0x7FF < idx),0..0x7FF (0..2047),confirmed,0x10076A40,0x0076A40,cmp 0x800 / jge @0x10076A9x; assert string 0x103635C8 ref 0x10076EB5
 index,CEntInfo stride,,-,4,shl ebx,4 (16 B per slot),n/a,confirmed,0x10076A40,0x0076A40,shl ebx,4 @0x10076AAD
-bitvec,CBitVec<MAX_EDICTS> record bits,obj+0xC,,-,"word = base + (idx>>5)*4; bit = 1 << (idx & 0x1F)",base+0xC..base+0x10B (256 B @2048),confirmed,0x10076A40,0x0076A40,and ecx,0x1f @0x10076DEA
+bitvec,inline CBitVec<2048> at struct+0x0C,+0xC,,-,"word = struct + 0x0C + (idx>>5)*4; bit = 1 << (idx & 0x1F)",0x0C..0x10B (256 B),confirmed,0x10076A40,0x0076A40,and ecx,0x1f @0x10076DEA; no null check -> inline
+bitvec,CBitVec<2048>* at struct+0x10C,+0x10C,,-,"p = *(struct+0x10C); if (p != 0) p[(idx>>5)] |= 1 << (idx & 0x1F)",nullable pointer; pointee 256 B (heap),confirmed,0x10119490,0x00119490,load + null test in SV_WriteEnterPVS; pointee is a bare vector (no +0xC header)
+layout,snapshot bitvec object layout,,-,-,"+0x04 last index; +0x0C inline bitvec (0x0C..0x10B); +0x10C bitvec pointer; +0x110 later members",n/a,hypothesis,0x0,0x0,0x10C-0x0C=0x100 is explained by the inline bitvec size NOT by two adjacent bitvecs; supersedes the N1 claim
+layout,4096 offset map under that hypothesis,,-,-,"F(o)=o if o<0x10C; F(o)=o+0x100 if o>=0x10C; sizeof +0x100; heap vector 256->512 B",n/a,hypothesis,0x0,0x0,needs P0 proof that both sites are the same struct type + allocation site
 serial,network EHANDLE serial,,-,10,WriteUBitLong(serial, 10, 1),0..0x3FF (0..1023),confirmed,0x10119490,0x00119490,WriteUBitLong(...,10,1) @0x10119576
-bitvec,SV full-update bitvec,obj+0x10C,,-,word = base + (idx>>5)*4,base+0x10C..,confirmed,0x10119490,0x00119490,and ecx,0x1f @0x10119614
 helper,bf_write::WriteUBitLong,,-,variable,"(value, numBits, bCheckRange) thiscall; 177 call sites",n/a,confirmed,0x10061340,0x0061340,width histogram incl. 11-bit x15
-helper,bf_read mask table,-,,-,0x103ECE50 = mask[bits] base; 0x103ECE7C = 0x7FF; 0x103ECE68 = 0x3F; 0x103ECED0 = 0xFFFFFFFF,n/a,confirmed,0x103ECE50,0x003ECE50,used by inlined ReadUBitLong
+helper,bf_read mask table,-,,-,"0x103ECE50 = mask[bits] base; 0x103ECE7C = 0x7FF; 0x103ECE68 = 0x3F; 0x103ECE54 = 1-bit mask; 0x103ECED0 = 0xFFFFFFFF",n/a,confirmed,0x103ECE50,0x003ECE50,used by inlined ReadUBitLong
 state,CL_ParsePacketEntities state machine,,-,-,dispatch on update flags (0/2/3/4),n/a,confirmed,0x10091F50,0x00091F50,buffer-overflow error site 0x1009247A
-state,CL_ParsePacketEntities header reader (inlined bf_read),,-,-,"6-bit first field then flags 0x30 mask split",n/a,confirmed-width / semantic-open,0x10091910,0x00091910,"DAT_103ECE50 mask table; 0x103ECE68 = 0x3F"
-rejected,FUN_1029F880 (bit-width benchmark),,-,-,"writes 11/11/10/10/8/9/9/8 bit fields through three different vtables",n/a,rejected-false-positive,0x1029F880,0x0029F880,not protocol code: two different sink objects, 2-bit fallback branch
-rejected,FUN_10073A80 / FUN_10123880,,-,,function start recovered mid-instruction,unknown,rejected-false-positive,0x10073A80,0x0073A80,start bytes adc/pop -> not a real prologue
-vtable,SVC_SetView::vftable,,-,,10 slots,listed below,confirmed,0x1035819C,0x0035819C,slot0 0x100538A0 / slot3 0x10053890 / slot5 0x101D2C20(R) / slot6 0x101D2BE0(W) / slot8 0x10053860 / slot9 0x100025A0
+state,CL_ParsePacketEntities header reader (inlined bf_read),,-,-,6-bit first field then flags 0x30 mask split 4/4 bits,n/a,width-confirmed / semantic-open,0x10091910,0x00091910,mask 0x3F @0x103ECE68
+vtable,SVC_SetView::vftable,,-,,10 slots,listed in note,confirmed,0x1035819C,0x0035819C,slot0 0x100538A0 / slot3 0x10053890 / slot5 0x101D2C20(R) / slot6 0x101D2BE0(W) / slot8 0x10053860 / slot9 0x100025A0
 field,SVC_SetView::m_nEntity,,-,11,WriteUBitLong(m_nEntity, 11, 1),0..0x7FF (0..2047),confirmed,0x101D2BE0,0x001D2BE0,single push 0xb @0x101D2C02; function body ends 0x101D2C1A (0x3A B)
-vtable,SVC_EntityMessage::vftable,,-,,10 slots,listed below,confirmed,0x10358294,0x00358294,slot5 0x101D7030(ReadFromBuffer) / slot6 0x101D3E70(WriteToBuffer)
-open,SVC_EntityMessage::m_nEntity,,-,11(推定),写入侧无 push 0xb 直接证据；读侧为内联位读取,unknown,open,0x101D7030,0x001D7030,需按 §9 P4 用掩码常量反推（不得以缺失 push 0xb 推断为 0 位）
-open,SVC_EntityMessage::m_nLength,,-,12(推定),同上,unknown,open,0x101D3E70,0x001D3E70,同上
+vtable,SVC_EntityMessage::vftable,,-,,10 slots,listed in note,confirmed,0x10358294,0x00358294,slot5 0x101D7030(ReadFromBuffer) / slot6 0x101D3E70(WriteToBuffer)
+open,SVC_EntityMessage::m_nEntity,,-,11(推定),write side has no direct push 0xb; read side is inlined,unknown,open,0x101D7030,0x001D7030,derive width from read-side mask constants (P1)
+open,SVC_EntityMessage::m_nLength,,-,12(推定),same,unknown,open,0x101D3E70,0x001D3E70,same
+open,SVC_BSPDecal,,-,-,not located yet,unknown,open,0x0,0x0,add to P1 message list
+rejected,FUN_1029F880 (bit-width benchmark),,-,-,writes 11/11/10/10/8/9/9/8 bit fields through three different vtables,n/a,rejected-false-positive,0x1029F880,0x0029F880,not protocol code: different sink objects + 2-bit fallback branch
+rejected,FUN_10073A80 / FUN_10123880 / FUN_1008D0B1,,-,,function start recovered mid-instruction,unknown,rejected-false-positive,0x10073A80,0x0073A80,start bytes adc/pop -> not a real prologue
