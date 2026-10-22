@@ -1,0 +1,62 @@
+217113:  14780e:	8b 0d 74 81 3a 00    	mov    ecx,DWORD PTR ds:0x3a8174
+218520:  1487f0:	a1 74 81 3a 00       	mov    eax,ds:0x3a8174
+219303:  149272:	8b 15 74 81 3a 00    	mov    edx,DWORD PTR ds:0x3a8174
+251562:  166687:	8b 1d 6c 81 3a 00    	mov    ebx,DWORD PTR ds:0x3a816c
+251568:  1666a2:	8b 35 74 81 3a 00    	mov    esi,DWORD PTR ds:0x3a8174
+267297:  175033:	03 1d 74 81 3a 00    	add    ebx,DWORD PTR ds:0x3a8174
+267507:  1752b5:	03 15 74 81 3a 00    	add    edx,DWORD PTR ds:0x3a8174
+358796:  1c6857:	2b 05 74 81 3a 00    	sub    eax,DWORD PTR ds:0x3a8174
+358810:  1c687e:	3b 1d 70 81 3a 00    	cmp    ebx,DWORD PTR ds:0x3a8170
+358817:  1c689b:	03 05 74 81 3a 00    	add    eax,DWORD PTR ds:0x3a8174
+358831:  1c68ba:	2b 1d 74 81 3a 00    	sub    ebx,DWORD PTR ds:0x3a8174
+358835:  1c68c7:	3b 1d 6c 81 3a 00    	cmp    ebx,DWORD PTR ds:0x3a816c
+358853:  1c68fa:	2b 1d 74 81 3a 00    	sub    ebx,DWORD PTR ds:0x3a8174
+358857:  1c6907:	3b 1d 70 81 3a 00    	cmp    ebx,DWORD PTR ds:0x3a8170
+358878:  1c6948:	8b 15 78 81 3a 00    	mov    edx,DWORD PTR ds:0x3a8178
+358883:  1c695d:	8b 15 78 81 3a 00    	mov    edx,DWORD PTR ds:0x3a8178
+358892:  1c697d:	2b 05 74 81 3a 00    	sub    eax,DWORD PTR ds:0x3a8174
+358909:  1c69b1:	8b 15 78 81 3a 00    	mov    edx,DWORD PTR ds:0x3a8178
+358922:  1c69d1:	8b 15 78 81 3a 00    	mov    edx,DWORD PTR ds:0x3a8178
+358933:  1c69e7:	8b 1d 74 81 3a 00    	mov    ebx,DWORD PTR ds:0x3a8174
+358941:  1c6a0d:	8b 15 6c 81 3a 00    	mov    edx,DWORD PTR ds:0x3a816c
+358968:  1c6a50:	3b 1d 6c 81 3a 00    	cmp    ebx,DWORD PTR ds:0x3a816c
+358972:  1c6a61:	03 1d 74 81 3a 00    	add    ebx,DWORD PTR ds:0x3a8174
+358985:  1c6a80:	8b 35 74 81 3a 00    	mov    esi,DWORD PTR ds:0x3a8174
+358994:  1c6aa9:	a1 6c 81 3a 00       	mov    eax,ds:0x3a816c
+359033:  1c6b54:	a1 6c 81 3a 00       	mov    eax,ds:0x3a816c
+359042:  1c6b70:	8b 0d 70 81 3a 00    	mov    ecx,DWORD PTR ds:0x3a8170
+359058:  1c6ba8:	8b 35 74 81 3a 00    	mov    esi,DWORD PTR ds:0x3a8174
+359062:  1c6bb8:	8b 0d 70 81 3a 00    	mov    ecx,DWORD PTR ds:0x3a8170
+359069:  1c6bd2:	8b 15 6c 81 3a 00    	mov    edx,DWORD PTR ds:0x3a816c
+359072:  1c6bde:	89 15 6c 81 3a 00    	mov    DWORD PTR ds:0x3a816c,edx
+359093:  1c6c28:	a1 74 81 3a 00       	mov    eax,ds:0x3a8174
+386151:  1dd11a:	8b 0d 74 81 3a 00    	mov    ecx,DWORD PTR ds:0x3a8174
+386379:  1dd4d6:	8b 0d 74 81 3a 00    	mov    ecx,DWORD PTR ds:0x3a8174
+387675:  1de8ac:	03 05 74 81 3a 00    	add    eax,DWORD PTR ds:0x3a8174
+387691:  1de8ec:	03 05 74 81 3a 00    	add    eax,DWORD PTR ds:0x3a8174
+392192:  1e271e:	a1 6c 81 3a 00       	mov    eax,ds:0x3a816c
+392199:  1e2739:	8b 0d 6c 81 3a 00    	mov    ecx,DWORD PTR ds:0x3a816c
+392206:  1e2754:	a1 74 81 3a 00       	mov    eax,ds:0x3a8174
+392247:  1e27e0:	39 35 6c 81 3a 00    	cmp    DWORD PTR ds:0x3a816c,esi
+403591:  1ed0f0:	8b 15 6c 81 3a 00    	mov    edx,DWORD PTR ds:0x3a816c
+403600:  1ed115:	03 1d 74 81 3a 00    	add    ebx,DWORD PTR ds:0x3a8174
+403618:  1ed148:	39 35 6c 81 3a 00    	cmp    DWORD PTR ds:0x3a816c,esi
+403751:  1ed372:	a1 6c 81 3a 00       	mov    eax,ds:0x3a816c
+403753:  1ed37b:	a1 74 81 3a 00       	mov    eax,ds:0x3a8174
+404585:  1ee0d3:	c7 05 50 7f 3a 00 00 08 00 00 	mov    DWORD PTR ds:0x3a7f50,0x800
+404598:  1ee111:	a1 70 81 3a 00       	mov    eax,ds:0x3a8170
+404604:  1ee131:	a3 74 81 3a 00       	mov    ds:0x3a8174,eax
+404606:  1ee13b:	a1 70 81 3a 00       	mov    eax,ds:0x3a8170
+404613:  1ee162:	a3 78 81 3a 00       	mov    ds:0x3a8178,eax
+406790:  1f0617:	c7 05 50 7f 3a 00 00 00 00 00 	mov    DWORD PTR ds:0x3a7f50,0x0
+412448:  1f563d:	03 1d 74 81 3a 00    	add    ebx,DWORD PTR ds:0x3a8174
+412657:  1f593a:	03 1d 74 81 3a 00    	add    ebx,DWORD PTR ds:0x3a8174
+413031:  1f5dba:	3b 05 6c 81 3a 00    	cmp    eax,DWORD PTR ds:0x3a816c
+413034:  1f5dc5:	03 05 74 81 3a 00    	add    eax,DWORD PTR ds:0x3a8174
+413510:  1f6618:	8b 15 74 81 3a 00    	mov    edx,DWORD PTR ds:0x3a8174
+454558:  21a155:	a1 6c 81 3a 00       	mov    eax,ds:0x3a816c
+454565:  21a168:	03 05 74 81 3a 00    	add    eax,DWORD PTR ds:0x3a8174
+454570:  21a17c:	39 1d 6c 81 3a 00    	cmp    DWORD PTR ds:0x3a816c,ebx
+455965:  21b531:	a1 6c 81 3a 00       	mov    eax,ds:0x3a816c
+456516:  21b955:	03 05 74 81 3a 00    	add    eax,DWORD PTR ds:0x3a8174
+458023:  21c871:	8b 15 78 81 3a 00    	mov    edx,DWORD PTR ds:0x3a8178
