@@ -40,7 +40,9 @@
       "old_hex": "0x800",
       "new": 4096,
       "new_hex": "0x1000",
-      "note": "mov eax,0x800 -> 0x1000 (sv.max_edicts, sole writer)"
+      "note": "mov eax,0x800 -> 0x1000 (sv.max_edicts, sole writer)",
+      "verified": false,
+      "verification_note": "0x10123DA2 is MOV EAX,0x800 feeding sv+0x218 and 0x10429308, not [0x10645770]; edict allocations read [0x10645770] << 4 / *4. Sole-writer claim unproven; see reports/network-n6.md"
     },
     {
       "id": "reuse_clear_size",
