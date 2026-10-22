@@ -117,15 +117,24 @@ N2 从服务端组包函数 `FUN_10119F50` 恢复了线格式，整条报文**�
 | `m_nMaxEntries`（`+0x54`） | `[[to_frame+0x118]+0x0C]`，即帧快照对象的容量/条目数 @`0x1011A096` | 11 |
 | `m_nUpdatedEntries`（`+0x58`） | 本次实际发射的实体条目计数器 @`LAB_1011A248` | 11 |
 | `m_nDeltaFrom` | `[from_frame+0x08]`，经 `FUN_10290330` = 32 位写入 | **32** |
-| `payloadBitLength`（原 `m_nHeaderCount`） | 实体体比特长度 `[[frame+0x34]+0xC]-[ebp-0x180]` | 20 |
+| `payloadBitLength`（原 `m_nHeaderCount`） | 实体体比特长度 `edi->m_iCurBit - [ebp-0x180]`（同一 `bf_write`） | 20 |
 
 **32 位回填区（N2.3 新证据）**：发送端在实体体之前先冻结主缓冲区视图
 （`0x1011A11F`–`0x1011A13B`，把 `bf_write` 头拷到 `ebp-0x17c`），再 `push 0x20` 占位；
 实体体写完后，`UpdatedEntries`(11)、`payloadBitLength`(20)、标志位(1) **全部经这份冻结视图
 回填**，`11+20+1 = 32` 与占位宽度精确相等。所以线格式是
 `type/maxEntries/isDelta/[deltaFrom]/flag/[Updated 11][Length 20][flag 1]/body`。
-把 `Updated` 改 13 位后回填区需 34 位，**必须同时把 `0x1011A144` 的 `push 0x20` 改成 `push 0x22`**，
-否则 13 位写入会覆盖实体体前 2 bit。
+把 `Updated` 改 13 位后回填区需 34 位：先占位、后回填的机制不变，但**不能把 `0x1011A144`
+的 `push 0x20` 改成 `push 0x22`**——`WriteUBitLong` 的 `numBits` 只能是 `0..32`，掩码按
+`(curbit&31)*33 + numBits` 寻址，34 会取到下一行的 1 位掩码并静默写错。合法做法是让保留区
+"推进 34 位"而不是"一次写 34 位"：保留区那 32 个零位本来就会被回填全量覆盖
+（13+20+1 = 34），所以最小改动是在 `0x1011A156` 把死存储 `mov [ebp-0x168],eax`（6 B）
+换成 `add dword ptr [edi+0xC],2`（4 B + 2×NOP），详见 `reports/network-n2.md` §13。
+回填标志的位号取自冻结游标 `[ebp-0x170]`，会随之自动落到 bit 33，无需改硬编码。
+
+这条约束已写成可执行检查：`python3 tools/net_patch_plan.py --check` 会核验 13 个改动点的
+expected 字节、位置不变量（`F'=F+2`、`B'=B+4`、冻结游标终点 = `B'`），并在任何位宽 > 32
+时直接抛错。
 
 **`bCheckRange` 已失效**：`FUN_10061340` 实际签名是 `(this, value, numBits)`，第三个实参被忽略，
 范围检查只针对缓冲区剩余位数（`m_nDataBits`），超出 `numBits` 的值按掩码表 `DAT_106df750`
@@ -134,8 +143,9 @@ N2 从服务端组包函数 `FUN_10119F50` 恢复了线格式，整条报文**�
 
 `m_nDeltaFrom` 是 32 位、`payloadBitLength` 是 20 位，二者位宽不变，但起点随回填区一起移动。
 快照工厂 `FUN_1011D320` 把 `maxEntities` 直接写入 `obj+0x0C`（无 `-1`），而其两个调用点
-都以 `push 0x800` 传 2048；若发送路径取到的就是 2048，11 位写入会截断成 0、原版必坏，
-故发送路径上该值必在 `0..2047`。这把选择收敛到「计数语义 ⇒ 4096 需 13 位」与
+都以 `push 0x800` 传 2048；若发送路径取到的就是 2048，11 位写入会静默截断成 0。但
+`bCheckRange` 失效使这条论据**不能反证「原版必坏」**——它只说明原版在 4096 槽位下无法正确
+编码 2048，不能排除消费者对 0 另有处理。因此语义仍分成「计数语义 ⇒ 4096 需 13 位」与
 「`n-1` 调整编码 ⇒ 4095 需 12 位」两支，工作假设取 `13/13`（全量更新时
 `m_nUpdatedEntries` 同样可达 4096），裁定探针与四格式代价表见
 [reports/network-n2.md](reports/network-n2.md) §7.2–§8。
