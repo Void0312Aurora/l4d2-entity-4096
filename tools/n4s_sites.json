@@ -1,0 +1,81 @@
+{
+  "audited_sha256": "8a6d468059394bf4cfce32f11dcba12ef45de88da1373084d5a2916d0bf7ba86",
+  "function": "FUN_1011D900",
+  "frame_old": "0x1010",
+  "frame_new": "0x2010",
+  "chkstk_va": "0x1011D903",
+  "chkstk_old": "b810100000",
+  "chkstk_new": "b810200000",
+  "sites": [
+    {
+      "va": "0x1011D927",
+      "disp_old": "f0efffff",
+      "disp_new": "f0dfffff",
+      "prefix": "5250898d",
+      "context": "085356575250898df0efffffe8f0f9ff"
+    },
+    {
+      "va": "0x1011D942",
+      "disp_old": "f4efffff",
+      "disp_new": "f4dfffff",
+      "prefix": "7e088985",
+      "context": "5664108b7e088985f4efffff33c083ef"
+    },
+    {
+      "va": "0x1011D950",
+      "disp_old": "f8efffff",
+      "disp_new": "f8dfffff",
+      "prefix": "c3f08985",
+      "context": "83ef0c83c3f08985f8efffff39056c57"
+    },
+    {
+      "va": "0x1011D97B",
+      "disp_old": "f4efffff",
+      "disp_new": "f4dfffff",
+      "prefix": "7e2b3b85",
+      "context": "755c85c07e2b3b85f4efffff7f238b15"
+    },
+    {
+      "va": "0x1011D9B7",
+      "disp_old": "f8efffff",
+      "disp_new": "f8dfffff",
+      "prefix": "d0668b95",
+      "context": "8b4204ffd0668b95f8efffff89078b4e"
+    },
+    {
+      "va": "0x1011D9C4",
+      "disp_old": "fcefffff",
+      "disp_new": "fcdfffff",
+      "prefix": "6689944d",
+      "context": "078b4e146689944dfcefffffff46148b"
+    },
+    {
+      "va": "0x1011D9CD",
+      "disp_old": "f8efffff",
+      "disp_new": "f8dfffff",
+      "prefix": "46148b85",
+      "context": "efffffff46148b85f8efffff408985f8"
+    },
+    {
+      "va": "0x1011D9D4",
+      "disp_old": "f8efffff",
+      "disp_new": "f8dfffff",
+      "prefix": "ff408985",
+      "context": "85f8efffff408985f8efffff3b056c57"
+    },
+    {
+      "va": "0x1011DA01",
+      "disp_old": "fcefffff",
+      "disp_new": "fcdfffff",
+      "prefix": "c9518d95",
+      "context": "8b4e1403c9518d95fcefffff52508946"
+    },
+    {
+      "va": "0x1011DA5A",
+      "disp_old": "f0efffff",
+      "disp_new": "f0dfffff",
+      "prefix": "c4108bbd",
+      "context": "67160083c4108bbdf0efffff8b97b040"
+    }
+  ]
+}

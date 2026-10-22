@@ -1,43 +1,32 @@
 #!/usr/bin/env python3
-"""N4-S: FUN_1011D900 stack array 2048 -> 4096 (engine.dll, build 23990068).
+"""N4-S: FUN_1011D900 stack array 2048 -> 4096 (engine.dll build 23990068).
 
-Patches every EBP-relative access to the four locals/array inside the function by
-rewriting the disp32 low word: -0x1010/-0x100C/-0x1008/-0x1004 -> -0x2010/-0x200C/-0x2008/-0x2004,
-plus the __chkstk size immediate 0x1010 -> 0x2010.
+Data-driven: the ten disp32 sites are pinned in tools/n4s_sites.json, each with the
+four bytes that precede the displacement and the exact old displacement. No pattern
+sweep is used; every site is verified by address, context bytes and displacement.
 
-Hard gates:
-  * input SHA-256 must equal the audited original (8a6d4680...), otherwise refuse;
-  * the __chkstk instruction must match b8 10 10 00 00 exactly;
-  * at least one reference to the array base must be found;
-  * the security cookie disp (-4) must not be rewritten (we never match it);
-  * after patching, no old disp pattern may remain in the function body.
+Gates (all raise SystemExit, none rely on assert):
+  1. input SHA-256 == audited original;
+  2. __chkstk immediate matches 11 D903 b810100000;
+  3. every pinned site matches prefix + old disp;
+  4. output is reopened and re-verified (sha, length, all 11 operands, no old disp).
 
 Usage:
   python3 tools/patch_n4s_engine.py --check
   python3 tools/patch_n4s_engine.py --out out/engine.n4s.dll
 """
-import argparse, hashlib, pathlib, struct, sys
+import argparse, hashlib, json, pathlib, struct, sys
 
-AUDITED_SHA256 = "8a6d468059394bf4cfce32f11dcba12ef45de88da1373084d5a2916d0bf7ba86"
-FUNC_START, FUNC_END = 0x1011D900, 0x1011DAC9          # inclusive-exclusive body range
-CHKSTK_VA, CHKSTK_OLD, CHKSTK_NEW = 0x1011D903, b"\xb8\x10\x10\x00\x00", b"\xb8\x10\x20\x00\x00"
+ROOT = pathlib.Path(__file__).resolve().parent.parent
+SPEC = json.loads((ROOT / "tools" / "n4s_sites.json").read_text())
 
-# disp32 (low word changes ef -> df, keeping 0xffff high word)
-DISP_MAP = {
-    bytes.fromhex("f0ef ffff".replace(" ", "")): bytes.fromhex("f0dfffff"),
-    bytes.fromhex("f4ef ffff".replace(" ", "")): bytes.fromhex("f4dfffff"),
-    bytes.fromhex("f8ef ffff".replace(" ", "")): bytes.fromhex("f8dfffff"),
-    bytes.fromhex("fcef ffff".replace(" ", "")): bytes.fromhex("fcdfffff"),
-}
-LOCAL_NAME = {
-    "f0ef": "local_1010 (saved ECX)",
-    "f4ef": "local_100c (max_clients)",
-    "f8ef": "local_1008 (loop index)",
-    "fcef": "array base -0x1004 (short[2048])",
-}
+def die(msg):
+    raise SystemExit("REFUSED: " + msg)
 
 def sections(blob):
     e = struct.unpack_from("<I", blob, 0x3C)[0]
+    if blob[e:e+4] != b"PE\0\0":
+        die("not a PE image")
     nsec = struct.unpack_from("<H", blob, e + 6)[0]
     optsz = struct.unpack_from("<H", blob, e + 20)[0]
     base = struct.unpack_from("<I", blob, e + 24 + 28)[0]
@@ -45,88 +34,97 @@ def sections(blob):
     out = []
     for i in range(nsec):
         o = off + i * 40
-        name = blob[o:o + 8].rstrip(b"\0").decode(errors="replace")
-        vsz, rva, rawsz, rawptr = struct.unpack_from("<IIII", blob, o + 8)
-        out.append((name, rva, vsz, rawptr, rawsz))
+        vsz, rva, rawsz, rp = struct.unpack_from("<IIII", blob, o + 8)
+        out.append((rva, rawsz, rp))
     return base, out
 
-def va2off(base, secs, va):
-    for name, rva, vsz, rp, rs in secs:
-        s = base + rva
-        if s <= va < s + rs:
-            return rp + (va - s)
-    raise SystemExit("VA 0x%08X not mapped" % va)
+def make_mapper(base, secs, blob):
+    def va2off(va):
+        for rva, rawsz, rp in secs:
+            s = base + rva
+            if s <= va < s + min(rawsz, len(blob) - rp):
+                return rp + (va - s)
+        die("VA 0x%08X is not mapped" % va)
+    return va2off
+
+def verify_sites(blob, va2off, want):
+    """want: 'old' or 'new'. Returns list of verified addresses."""
+    ok = []
+    for s in SPEC["sites"]:
+        va = int(s["va"], 16)
+        off = va2off(va)
+        if bytes.fromhex(s["prefix"]) != blob[off-4:off]:
+            die("context mismatch at 0x%08X (got %s)" % (va, blob[off-4:off].hex()))
+        target = bytes.fromhex(s["disp_old" if want == "old" else "disp_new"])
+        if blob[off:off+4] != target:
+            die("disp mismatch at 0x%08X (want %s, got %s)" % (va, target.hex(), blob[off:off+4].hex()))
+        ok.append(va)
+    return ok
 
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--dll", default="/run/media/void0312/566EBEB06EBE87EF/SteamLibrary/steamapps/common/Left 4 Dead 2/bin/engine.dll")
     ap.add_argument("--out")
     ap.add_argument("--check", action="store_true")
-    ap.add_argument("--allow-hash", action="store_true")
     a = ap.parse_args()
 
     src = pathlib.Path(a.dll)
     blob = bytearray(src.read_bytes())
     sha = hashlib.sha256(blob).hexdigest()
-    print("input : %s" % src)
-    print("sha256: %s" % sha)
-    if sha != AUDITED_SHA256 and not a.allow_hash:
-        raise SystemExit("REFUSED: sha256 != audited original (use --allow-hash to override)")
+    print("input : %s\nsha256: %s" % (src, sha))
+    if sha != SPEC["audited_sha256"]:
+        die("sha256 != audited original (%s)" % SPEC["audited_sha256"])
 
     base, secs = sections(blob)
-    f0 = va2off(base, secs, FUNC_START)
-    f1 = va2off(base, secs, FUNC_END)
+    va2off = make_mapper(base, secs, blob)
 
-    # 1) __chkstk immediate
-    c = va2off(base, secs, CHKSTK_VA)
-    assert bytes(blob[c:c+5]) == CHKSTK_OLD, "chkstk bytes mismatch: " + bytes(blob[c:c+5]).hex()
-    print("chkstk: 0x%08X %s -> %s" % (CHKSTK_VA, CHKSTK_OLD.hex(), CHKSTK_NEW.hex()))
+    # chkstk
+    c = va2off(int(SPEC["chkstk_va"], 16))
+    if blob[c:c+5] != bytes.fromhex(SPEC["chkstk_old"]):
+        die("chkstk mismatch at %s" % SPEC["chkstk_va"])
+    print("chkstk: %s %s -> %s" % (SPEC["chkstk_va"], SPEC["chkstk_old"], SPEC["chkstk_new"]))
 
-    # 2) enumerate disp references
+    # sites
+    verified = verify_sites(blob, va2off, "old")
+    print("sites : %d pinned disp32 references verified (old form)" % len(verified))
+    for s in SPEC["sites"]:
+        print("  %s  %s -> %s  prefix %s" % (s["va"], s["disp_old"], s["disp_new"], s["prefix"]))
+
+    # apply in memory
+    blob[c:c+5] = bytes.fromhex(SPEC["chkstk_new"])
+    for s in SPEC["sites"]:
+        off = va2off(int(s["va"], 16))
+        blob[off:off+4] = bytes.fromhex(s["disp_new"])
+
+    # in-memory re-check
+    verify_sites(blob, va2off, "new")
+    f0 = va2off(0x1011D900); f1 = va2off(0x1011DAC9)
     body = bytes(blob[f0:f1])
-    sites = []
-    for pat, new in DISP_MAP.items():
-        start = 0
-        while True:
-            i = body.find(pat, start)
-            if i < 0:
-                break
-            va = FUNC_START + i          # address of the disp32 field itself
-            sites.append((va, pat, new))
-            start = i + 1
-    sites.sort()
-    print("\ndisp32 references found in FUN_1011D900: %d" % len(sites))
-    for va, pat, new in sites:
-        tag = LOCAL_NAME[pat[:2].hex()]
-        print("  0x%08X  %s -> %s   %s" % (va, pat.hex(), new.hex(), tag))
-    if not any(p[:2].hex() == "fcef" for _, p, _ in sites):
-        raise SystemExit("REFUSED: no array-base reference found")
-
-    # 3) apply
-    blob[c:c+5] = CHKSTK_NEW
-    for va, pat, new in sites:
-        off = va2off(base, secs, va)
-        blob[off:off+4] = new
-
-    # 4) verify
-    body2 = bytes(blob[f0:f1])
-    for pat in DISP_MAP:
-        assert body2.find(pat) < 0, "old disp remains: " + pat.hex()
-    for pat in DISP_MAP.values():
-        assert body2.count(pat) == sum(1 for _, p, _ in sites if DISP_MAP[p] == pat)
-    assert bytes(blob[c:c+5]) == CHKSTK_NEW
-    # cookie invariant: disp32 fffffffc must not be touched by our map (it is not in DISP_MAP)
-    print("\nnew disp counts:", {p.hex(): body2.count(p) for p in DISP_MAP.values()})
-    print("cookie access is disp8 0xfc (never matched by the disp32 map); unchanged by design")
-    print("frame: 0x1010 -> 0x2010; array [-0x2004,-0x4) covers 4096*2=%d bytes, ends at cookie-1" % (4096*2))
+    for s in SPEC["sites"]:
+        if bytes.fromhex(s["disp_old"]) in body:
+            die("old disp still present after patch: " + s["disp_old"])
+    print("verify: old disp eliminated, %d new disp present, chkstk updated" % len(SPEC["sites"]))
 
     if a.check:
         print("\nCHECK ONLY: no file written")
         return
+
     out = pathlib.Path(a.out or "out/engine.n4s.dll")
     out.parent.mkdir(parents=True, exist_ok=True)
-    out.write_bytes(blob)
-    print("\nwrote %s (%d bytes, sha256 %s)" % (out, len(blob), hashlib.sha256(blob).hexdigest()))
+    out.write_bytes(bytes(blob))
+
+    # reopen and verify the artifact on disk
+    disk = out.read_bytes()
+    got = hashlib.sha256(disk).hexdigest()
+    if len(disk) != len(blob) or got != hashlib.sha256(bytes(blob)).hexdigest():
+        die("written file does not match the patched buffer")
+    db = bytearray(disk); base2, secs2 = sections(db); va2off2 = make_mapper(base2, secs2, db)
+    verify_sites(db, va2off2, "new")
+    c2 = va2off2(int(SPEC["chkstk_va"], 16))
+    if db[c2:c2+5] != bytes.fromhex(SPEC["chkstk_new"]):
+        die("chkstk on disk is wrong")
+    print("disk  : reopened and verified (%d bytes, sha256 %s)" % (len(disk), got))
+    print("output: %s" % out)
 
 if __name__ == "__main__":
     main()
