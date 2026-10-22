@@ -20,6 +20,82 @@
       "note": "chkstk immediate 0x1010->0x2010 and 10 disp32 sites -0x1010/-0x100C/-0x1008/-0x1004 -> -0x2010/-0x200C/-0x2008/-0x2004"
     }
   ],
+  "source_manifest": {
+    "path": "engine/manifest.json",
+    "sha256": "2381cb8e097502b72cefeb54bb1e2812014c7931da06d15fcadd3341599171ea"
+  },
+  "n4s_sites": [
+    {
+      "va": "0x1011D927",
+      "file_offset_hex": "0x11cd27",
+      "disp_old": "f0efffff",
+      "disp_new": "f0dfffff",
+      "verified_on_disk": true
+    },
+    {
+      "va": "0x1011D942",
+      "file_offset_hex": "0x11cd42",
+      "disp_old": "f4efffff",
+      "disp_new": "f4dfffff",
+      "verified_on_disk": true
+    },
+    {
+      "va": "0x1011D950",
+      "file_offset_hex": "0x11cd50",
+      "disp_old": "f8efffff",
+      "disp_new": "f8dfffff",
+      "verified_on_disk": true
+    },
+    {
+      "va": "0x1011D97B",
+      "file_offset_hex": "0x11cd7b",
+      "disp_old": "f4efffff",
+      "disp_new": "f4dfffff",
+      "verified_on_disk": true
+    },
+    {
+      "va": "0x1011D9B7",
+      "file_offset_hex": "0x11cdb7",
+      "disp_old": "f8efffff",
+      "disp_new": "f8dfffff",
+      "verified_on_disk": true
+    },
+    {
+      "va": "0x1011D9C4",
+      "file_offset_hex": "0x11cdc4",
+      "disp_old": "fcefffff",
+      "disp_new": "fcdfffff",
+      "verified_on_disk": true
+    },
+    {
+      "va": "0x1011D9CD",
+      "file_offset_hex": "0x11cdcd",
+      "disp_old": "f8efffff",
+      "disp_new": "f8dfffff",
+      "verified_on_disk": true
+    },
+    {
+      "va": "0x1011D9D4",
+      "file_offset_hex": "0x11cdd4",
+      "disp_old": "f8efffff",
+      "disp_new": "f8dfffff",
+      "verified_on_disk": true
+    },
+    {
+      "va": "0x1011DA01",
+      "file_offset_hex": "0x11ce01",
+      "disp_old": "fcefffff",
+      "disp_new": "fcdfffff",
+      "verified_on_disk": true
+    },
+    {
+      "va": "0x1011DA5A",
+      "file_offset_hex": "0x11ce5a",
+      "disp_old": "f0efffff",
+      "disp_new": "f0dfffff",
+      "verified_on_disk": true
+    }
+  ],
   "checksum": {
     "field_offset": "0x188",
     "value": "0x4a6f8a"

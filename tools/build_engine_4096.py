@@ -112,6 +112,9 @@ def main():
     disk = bytearray(OUT.read_bytes())
     if len(disk) != len(blob):
         die("output length changed")
+    expected_sha = hashlib.sha256(bytes(out)).hexdigest()
+    if hashlib.sha256(bytes(disk)).hexdigest() != expected_sha:
+        die("disk image differs from patched memory image")
     dsha = hashlib.sha256(bytes(disk)).hexdigest()
     e2 = struct.unpack_from("<I", disk, 0x3C)[0]
     n2 = struct.unpack_from("<H", disk, e2 + 6)[0]
@@ -137,7 +140,9 @@ def main():
         die("disk chkstk verify failed")
     print("disk verify: %d bytes, sha256 %s" % (len(d), dsha))
 
-    MANIFEST.write_text(json.dumps({
+    src_manifest_path = ROOT / "engine" / "manifest.json"
+    MANIFEST_TARGETS = [ROOT / "engine" / "manifest.4096.n4s.json", MANIFEST]
+    payload = {
         "artifact": {"path": "engine.dll", "sha256_in": sha, "sha256_storage_stage": stage_sha,
                      "sha256_out": dsha, "size": len(d), "buildid": "23990068"},
         "storage_reproduced_recorded_sha256": True,
@@ -147,8 +152,20 @@ def main():
             {"id": "n4s_stack_array", "operands": 11,
              "note": "chkstk immediate 0x1010->0x2010 and 10 disp32 sites -0x1010/-0x100C/-0x1008/-0x1004 -> -0x2010/-0x200C/-0x2008/-0x2004"},
         ],
+        "source_manifest": {
+            "path": "engine/manifest.json",
+            "sha256": hashlib.sha256(src_manifest_path.read_bytes()).hexdigest(),
+        },
+        "n4s_sites": [
+            {"va": s["va"], "file_offset_hex": hex(va2off2(int(s["va"], 16))),
+             "disp_old": s["disp_old"], "disp_new": s["disp_new"], "verified_on_disk": True}
+            for s in spec["sites"]
+        ],
         "checksum": {"field_offset": hex(csum_off), "value": hex(struct.unpack_from("<I", d, csum_off)[0])},
-    }, indent=2) + "\n")
-    print("manifest: %s" % MANIFEST)
+    }
+    for target in MANIFEST_TARGETS:
+        target.parent.mkdir(parents=True, exist_ok=True)
+        target.write_text(json.dumps(payload, indent=2) + "\n")
+        print("manifest: %s" % target)
 
 main()
