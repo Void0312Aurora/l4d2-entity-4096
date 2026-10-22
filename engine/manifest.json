@@ -42,7 +42,7 @@
       "new_hex": "0x1000",
       "note": "mov eax,0x800 -> 0x1000 (sv.max_edicts, sole writer)",
       "verified": false,
-      "verification_note": "0x10123DA2 is MOV EAX,0x800 feeding sv+0x218 and 0x10429308, not [0x10645770]; edict allocations read [0x10645770] << 4 / *4. Sole-writer claim unproven; see reports/network-n6.md"
+      "verification_note": "0x10123DA2 MOV EAX,0x800 is stored by 0x10123DA7 MOV [ESI+0x218],EAX with ESI=MOV ESI,ECX (this). If SV_SpawnServer this==0x10645558 then [this+0x218]==[0x10645770]: num_edicts/max_edicts/edicts/edictchangeinfo are +0x214/+0x218/+0x21C/+0x220, and 0x10645558 is used as a this-pointer throughout .text. Alias strongly supported, call-site proof pending; see reports/network-n7.md"
     },
     {
       "id": "reuse_clear_size",
