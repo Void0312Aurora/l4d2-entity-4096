@@ -1,0 +1,16 @@
+claim,address,kind,evidence,note
+C1-num-edicts,0x1064576C,global,num_edicts; only write is INC at 0x101E02F1 in ED_Alloc,named by strings ED_Alloc: no free edicts etc.
+C1-max-edicts,0x10645770,global,max_edicts; 8 xrefs all reads; compared against num_edicts before growth,writer not located in this pass
+C1-edicts-array,0x10645774,global,edicts array base; index * 0x10 + base,stride 16 bytes
+C1-ed-alloc,0x101E0170,function,ED_Alloc; grows num_edicts when max_edicts > num_edicts,also validates param < num_edicts
+C1-send-client-messages,0x101254B0,function,SendClientMessages; calls snapshot builder FUN_1011D900(ecx[3]),strings sv_main.cpp and SendClientMessages
+C1-snapshot-build,0x1011D900,function,creates snapshot with capacity [0x1064576C] then iterates edicts below that bound,local short[2048] index table
+C3-frame-ctor,0x10093E20,function,sets [this+0x118] = snapshot after memset; frame object 0x11C,only assignment found
+C3-frame-pool,0x10093970,function,"FUN_1028a300(0x11c,0x80,2,0,0) pool init",frame size corroboration
+C3-frame-find,0x10093C80,function,ordered list lookup by tick (node +8 tick; +0x114 next),returns frame; not a constructor
+C3-send-record-frame,0x101860C0,function,"CHLTVDemo::RecordFrame; frame from FUN_10093C80(tick,1) then FUN_10119F50",reads [frame+0x118] only
+C4-recv-site4,0x101846C0,function,"receiver; snapshot=FUN_1011D320(tick,[msg+0x54]); alloc 0x11c; FUN_10093E20(snapshot)",installs into [ecx+0x49f0]; old frame at [ecx+0x49f4]+0x118
+C4-vcall,0x101846C0+0x06F,instruction,(**(code **)(*(int *)(ecx-8) + 0x80))(&local_4054),vptr form proven; vtable base/COL not located
+P1-mask-iter,0x101196C0,function,sets bit i in [this+0x3c] 2048-bit mask then calls ParseDelta,advances via FUN_1004E310(i+1); +0x58 absent from this loop
+P1-find-next-set-bit,0x1004E310,function,FindNextSetBit; rejects start >= 0x800 and scans at most 0x40 dwords,2048-bit hard boundary
+P1-rtti-table,0x10389080,.rdata,only occurrence of FUN_101846C0 pointer,neighbours alternate 0x1018xxxx and 0x1005xxxx thunks; COL not located

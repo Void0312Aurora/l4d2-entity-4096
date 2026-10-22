@@ -7,6 +7,6 @@ n,value_fits_11bit,value_fits_12bit,value_fits_13bit,required_by_S1_at_4096,requ
 2049,no,yes,yes,no,no,12-bit covered
 4094,no,yes,yes,no,no,12-bit covered
 4095,no,yes,yes,YES,no,S1 target value (highest index at 4096 slots); 12 bits exactly sufficient
-4096,no,no,yes,no,YES,S2 target value (slot capacity); 12 bits overflows, needs 13
+4096,no,no,yes,no,YES,"S2 target value (slot capacity); 12 bits overflows, needs 13"
 8191,no,no,yes,no,no,13-bit ceiling (0x1FFF)
 8192,no,no,no,no,no,13-bit overflow point

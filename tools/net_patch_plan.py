@@ -21,21 +21,27 @@ legal implementations of the "+2 bits" cursor advance.
 
 Usage:
     python net_patch_plan.py                 # plan + position model
-    python net_patch_plan.py --check         # verify expected bytes in engine.dll
+    python net_patch_plan.py --check         # strict CSV structure gate, then
+                                             # verify expected bytes in engine.dll
     python net_patch_plan.py --json          # machine-readable
     python net_patch_plan.py --old-max 11 --old-updated 11 \
                              --new-max 13 --new-updated 13
 
-Read-only: ``--check`` only reads engine.dll, it never writes to it.
+Read-only: ``--check`` only reads the data CSVs and engine.dll, never writes.
+The CSV gate is standard-library-only and runs before any PE import, so a
+malformed table fails first with its file name and line number.
 """
 import argparse
 import hashlib
 import json
+import sys
 from collections import namedtuple
 
-import pefile
-
 from config import require, ENGINE_DLL
+
+# ``pefile`` is only needed for ``--check``.  Importing it at module level would
+# abort before the standard-library CSV structure gate gets a chance to run, so
+# it is imported inside ``check_binary`` and reported as a distinct failure.
 
 # The recorded build (reports/network-n1.md); only a warning if it differs,
 # the real gate is the expected-byte comparison below.
@@ -211,7 +217,40 @@ def va_to_offset(pe, va):
     return None
 
 
+def check_csv_structure():
+    """Run the strict CSV structure gate before any binary work.
+
+    Standard library only: this must be evaluable even when ``pefile`` is not
+    installed.  Returns a small summary on success; raises ``SystemExit(1)``
+    with ``file:line: expected N columns, got M`` on the first bad table.
+    """
+    from check_fields_csv import format_error, scan_all
+
+    reports = scan_all()
+    problems = [error for report in reports for error in report.errors]
+    if problems:
+        print("csv structure: FAILED (strict gate)", file=sys.stderr)
+        for error in problems:
+            print("  " + format_error(error), file=sys.stderr)
+        raise SystemExit(1)
+    return {
+        "status": "ok",
+        "files": len(reports),
+        "rows": sum(report.rows for report in reports),
+    }
+
+
 def check_binary(path):
+    try:
+        import pefile
+    except ImportError as exc:  # pragma: no cover - environment dependent
+        raise SystemExit(
+            "pefile is required to verify engine.dll bytes; the CSV structure "
+            "gate above already passed, so this is a PE-stage dependency, not "
+            "a data-file failure.\n"
+            "install it with: python3 -m pip install pefile"
+        ) from exc
+    path = require(path)
     raw = open(path, "rb").read()
     pe = pefile.PE(path, fast_load=True)
     digest = hashlib.sha256(raw).hexdigest()
@@ -246,9 +285,18 @@ def main():
     ap.add_argument("--new-max", type=int, default=13)
     ap.add_argument("--new-updated", type=int, default=13)
     ap.add_argument("--check", action="store_true",
-                    help="verify the expected bytes in engine.dll")
+                    help="run the strict CSV structure gate, then verify the "
+                         "expected bytes in engine.dll")
     ap.add_argument("--json", action="store_true", help="machine-readable output")
     args = ap.parse_args()
+
+    csv_structure = None
+    if args.check:
+        # Gate 1: data-file structure (standard library, always runs first).
+        csv_structure = check_csv_structure()
+        if not args.json:
+            print("csv structure: OK (%d files, %d data rows, every row matches "
+                  "its header width)" % (csv_structure["files"], csv_structure["rows"]))
 
     guard_selftest()
     model = position_model(args.old_max, args.old_updated,
@@ -278,8 +326,10 @@ def main():
         "cave": {"option_a_bytes": cave_total, "option_b_bytes": len(SITES[2].patch) // 2,
                  "breakdown": cave_parts},
     }
+    if csv_structure is not None:
+        report["csv_structure"] = csv_structure
     if args.check:
-        report["binary"] = check_binary(require(ENGINE_DLL))
+        report["binary"] = check_binary(ENGINE_DLL)
         bad = [s for s in report["binary"]["sites"] if not s["ok"]]
         if not report["binary"]["mask_0x1fff"]["ok"] or bad:
             report["check_passed"] = False

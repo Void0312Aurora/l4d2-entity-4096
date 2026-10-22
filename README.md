@@ -208,3 +208,11 @@ python3 tools/check_artifacts.py    # 校验 engine/server/client 的 SHA-256 �
 ```
 
 任一项不符即说明版本变了，`data/` 与 `reports/` 里的 VA、位宽站点全部失效。
+
+## N3 记录（2026-10-22）
+
+第 3 层网络协议的位宽争议在本轮收窄了一条关键前提：`m_nMaxEntries` 的构造参数不是常量，而是
+`sv.num_edicts`（`ED_Alloc` 唯一自增的运行时全局 `0x1064576C`），因此容量随实体分配增长。
+同时确认 `frame+0x118` 只在帧构造器里赋值一次，发送端只做按 tick 的查找；接收端的更新迭代由
+**2048 位掩码**驱动（`FindNextSetBit` 的 `0x800`/`0x40` 常量），构成第 4 条 2048 硬边界。
+详见 [reports/network-n3.md](reports/network-n3.md)，坐标见 `data/network_n3.csv`。
