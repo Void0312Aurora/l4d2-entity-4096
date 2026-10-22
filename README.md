@@ -117,9 +117,22 @@ N2 从服务端组包函数 `FUN_10119F50` 恢复了线格式，整条报文**�
 | `m_nMaxEntries`（`+0x54`） | `[[to_frame+0x118]+0x0C]`，即帧快照对象的容量/条目数 @`0x1011A096` | 11 |
 | `m_nUpdatedEntries`（`+0x58`） | 本次实际发射的实体条目计数器 @`LAB_1011A248` | 11 |
 | `m_nDeltaFrom` | `[from_frame+0x08]`，经 `FUN_10290330` = 32 位写入 | **32** |
-| `m_nHeaderCount` | 实体体比特长度 | 20 |
+| `payloadBitLength`（原 `m_nHeaderCount`） | 实体体比特长度 `[[frame+0x34]+0xC]-[ebp-0x180]` | 20 |
 
-`m_nDeltaFrom` 是 32 位、`m_nHeaderCount` 是 20 位，**索引扩容不触及这两项**。
+**32 位回填区（N2.3 新证据）**：发送端在实体体之前先冻结主缓冲区视图
+（`0x1011A11F`–`0x1011A13B`，把 `bf_write` 头拷到 `ebp-0x17c`），再 `push 0x20` 占位；
+实体体写完后，`UpdatedEntries`(11)、`payloadBitLength`(20)、标志位(1) **全部经这份冻结视图
+回填**，`11+20+1 = 32` 与占位宽度精确相等。所以线格式是
+`type/maxEntries/isDelta/[deltaFrom]/flag/[Updated 11][Length 20][flag 1]/body`。
+把 `Updated` 改 13 位后回填区需 34 位，**必须同时把 `0x1011A144` 的 `push 0x20` 改成 `push 0x22`**，
+否则 13 位写入会覆盖实体体前 2 bit。
+
+**`bCheckRange` 已失效**：`FUN_10061340` 实际签名是 `(this, value, numBits)`，第三个实参被忽略，
+范围检查只针对缓冲区剩余位数（`m_nDataBits`），超出 `numBits` 的值按掩码表 `DAT_106df750`
+**静默截断**——2048 写 11 位会静默变 0，不断言、不崩溃。因此「原版能跑」不能作为
+`m_nMaxEntries < 2048` 的证明；`13/13` 补丁也没有内建自检，验收必须逐 bit 解析报文头。
+
+`m_nDeltaFrom` 是 32 位、`payloadBitLength` 是 20 位，二者位宽不变，但起点随回填区一起移动。
 快照工厂 `FUN_1011D320` 把 `maxEntities` 直接写入 `obj+0x0C`（无 `-1`），而其两个调用点
 都以 `push 0x800` 传 2048；若发送路径取到的就是 2048，11 位写入会截断成 0、原版必坏，
 故发送路径上该值必在 `0..2047`。这把选择收敛到「计数语义 ⇒ 4096 需 13 位」与
