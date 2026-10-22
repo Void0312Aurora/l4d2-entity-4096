@@ -41,7 +41,7 @@ verify: old disp eliminated, 10 new disp present, chkstk updated
 CHECK ONLY: no file written
 
 $ python3 tools/patch_n4s_engine.py --out /tmp/engine.n4s.dll
-disk  : reopened and verified (4817712 bytes, sha256 6d5c9f5e…)
+disk  : reopened and verified (4817712 bytes, sha256 7086bb4d3098b7496004b90ac494b65c0601e7e3ad39c5a0f19304f4f3f1dda4)
 ```
 
 写盘路径现在是：内存应用 → 内存复验 → 写入 → **重新读取文件** → 重新解析 PE → 逐站点复验

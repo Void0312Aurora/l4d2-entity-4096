@@ -1,0 +1,27 @@
+{
+  "artifact": {
+    "path": "engine.dll",
+    "sha256_in": "8a6d468059394bf4cfce32f11dcba12ef45de88da1373084d5a2916d0bf7ba86",
+    "sha256_storage_stage": "3ac18292d746d1d33445b82e83c237fa25b7a3daab5968c18ddf42144059012e",
+    "sha256_out": "b23788c8bb5c62d6864867953b69d36494a7726d3ead04be1714d087066764c4",
+    "size": 4817712,
+    "buildid": "23990068"
+  },
+  "storage_reproduced_recorded_sha256": true,
+  "groups": [
+    {
+      "id": "storage_layer",
+      "records": 11,
+      "note": "11 dwords + .edict2 header + SizeOfImage/SizeOfUninitializedData/CheckSum"
+    },
+    {
+      "id": "n4s_stack_array",
+      "operands": 11,
+      "note": "chkstk immediate 0x1010->0x2010 and 10 disp32 sites -0x1010/-0x100C/-0x1008/-0x1004 -> -0x2010/-0x200C/-0x2008/-0x2004"
+    }
+  ],
+  "checksum": {
+    "field_offset": "0x188",
+    "value": "0x4a6f8a"
+  }
+}

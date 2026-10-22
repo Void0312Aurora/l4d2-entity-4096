@@ -49,12 +49,21 @@ def make_mapper(base, secs, blob):
 
 def verify_sites(blob, va2off, want):
     """want: 'old' or 'new'. Returns list of verified addresses."""
+    if len(SPEC["sites"]) != 10:
+        die("expected exactly 10 pinned sites, got %d" % len(SPEC["sites"]))
+    vas = [int(x["va"], 16) for x in SPEC["sites"]]
+    if len(set(vas)) != 10:
+        die("pinned sites are not unique")
     ok = []
     for s in SPEC["sites"]:
         va = int(s["va"], 16)
         off = va2off(va)
         if bytes.fromhex(s["prefix"]) != blob[off-4:off]:
-            die("context mismatch at 0x%08X (got %s)" % (va, blob[off-4:off].hex()))
+            die("prefix mismatch at 0x%08X (got %s)" % (va, blob[off-4:off].hex()))
+        if want == "old":   # 只在原始文件上核对上下文；new 形态下相邻站点会互相覆盖该窗口
+            ctx = bytes.fromhex(s["context"])
+            if blob[off-8:off-4] != ctx[:4]:
+                die("context-before mismatch at 0x%08X (got %s)" % (va, blob[off-8:off-4].hex()))
         target = bytes.fromhex(s["disp_old" if want == "old" else "disp_new"])
         if blob[off:off+4] != target:
             die("disp mismatch at 0x%08X (want %s, got %s)" % (va, target.hex(), blob[off:off+4].hex()))
