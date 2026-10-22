@@ -40,7 +40,7 @@
       "old_hex": "0x800",
       "new": 4096,
       "new_hex": "0x1000",
-      "note": "mov eax,0x800 -> 0x1000 (sv.max_edicts, sole writer)",
+      "note": "mov eax,0x800 -> 0x1000 (sv.max_edicts at normal SpawnServer path; this+0x218 with ECX=0x10645558)",
       "verified": true,
       "verification_note": "Direct call sites 0x1018D239 and 0x1018ECAB do MOV ECX,0x10645558 immediately before CALL 0x10123B20; prologue does MOV ESI,ECX, so 0x10123DA7 MOV [ESI+0x218],EAX writes [0x10645558+0x218] = [0x10645770] = sv.max_edicts (num_edicts/max/edicts/changeinfo at +0x214/+0x218/+0x21C/+0x220). Write precedes both Hunk_Alloc calls. Coverage: normal spawn path (level 1); all-path enumeration and post-init overwrite check pending. See reports/network-n10.md",
       "verification_scope": "level1: normal spawn path"
