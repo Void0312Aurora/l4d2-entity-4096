@@ -1,0 +1,22 @@
+elf_addr,file_offset,function,object,orig_instr,old_value,new_value,basis,needs_code_expansion,status
+0x1EE0D3,0x1EE0D3,CGameServer::SpawnServer,global 0x3A7F50,"mov dword ptr ds:0x3a7f50,0x800",0x800,0x1000,"与 sv+0x210 同步写入的镜像容量；无绝对读者，但保持同步",no,unresolved
+0x1EE0DD,0x1EE0DD,CGameServer::SpawnServer,sv+0x210,"mov dword ptr [ebx+0x210],0x800",0x800,0x1000,"edict 主容量初始化；EDICT_NUM/ED_Alloc/Hunk_AllocName 均读此字段",no,must_change
+0x1DDEF5,0x1DDEF5,CBaseServer::WriteDeltaEntities,bitmap scan,"cmp ecx,0x7ff; jg sentinel",0x7FF,0xFFF,"候选位号=current+1；最大合法位号 4095，cmp 0xFFF 与 jg 组合正确",no,must_change
+0x1DD9B5,0x1DD9B5,CBaseServer::WriteDeltaEntities,SVC header,"inlined 11-bit write (mask dword_3E2DCC, add 0xB)",11,13,"m_nMaxEntries 计数语义，值域 0..4096",yes,unresolved
+0x1DDB9C,0x1DDB9C,CBaseServer::WriteDeltaEntities,SVC header,"inlined 11-bit write (mask dword_3E2DCC, add 0xB)",11,13,"m_nUpdatedEntries 计数语义，最坏 4096",yes,unresolved
+0x1DDC24,0x1DDC24,CBaseServer::WriteDeltaEntities,SVC header,"inlined 20-bit write (mask dword_3E2DF0)",20,20,"m_nLength 上限 1,048,575 bit，需 N25-D 复核实际占用",no,no_change
+0x1DDE9F,0x1DDE9F,CBaseServer::WriteDeltaEntities,stack bitmap var_130,"rep stosd (ecx=0x40)",0x40,0x80,"局部已写实体位图 256B -> 512B；栈帧需重排",yes,unresolved
+0x1DDE90,0x1DDE90,CBaseServer::WriteDeltaEntities,frame+0x10C bitmap,"memset(ptr,0,0x100) + mov [frame+0x10C],ptr",0x100,0x200,"第二块 256B 位图清零与挂接",yes,unresolved
+0x1DE9D4,0x1DE9D4,CBaseServer::WriteDeltaEntities,stack bitmap var_130,"or [ebp+edx*4+var_130],eax",-,-,"位图置位点（语义正确，尺寸随 var_130）",yes,unresolved
+0x1DEDFE,0x1DEDFE,CBaseServer::WriteDeltaEntities,frame inline bitmap,"test [esi+eax+0Ch],ebx",-,-,"帧内联位图位测试；位基址+0x0C 不变",no,no_change
+0x105560,0x105560,CClientFrame::CClientFrame(int),frame inline bitmap,"memset(this+12,0,0x100) (inlined)",0x100,0x200,"构造器清零内联位图",no,unresolved
+0x1055C0,0x1055C0,CClientFrame::CClientFrame(),frame inline bitmap,"memset(this+12,0,0x100) (inlined)",0x100,0x200,"构造器清零内联位图",no,unresolved
+0x105710,0x105710,CClientFrame::CClientFrame(CFrameSnapshot*),frame inline bitmap,"memset(this+12,0,0x100) (inlined)",0x100,0x200,"构造器清零内联位图",no,unresolved
+0x1057CC,0x1057CC,CClientFrame::CopyFrame,frame heap bitmap +0x110,"mov [esp],0x100; call operator new",0x100,0x200,"堆位图分配尺寸",no,must_change
+0x105780,0x105780,CClientFrame::CopyFrame,frame inline+heap bitmap,"qmemcpy(this+12,a2+12,256) + memcpy heap 256",256,512,"两份位图复制长度",no,must_change
+0x106444,0x106444,CClientState::CClientState,frame pool,"CUtlMemoryPool(size=0x11C,0x80,2)",0x11C,0x21C,"帧内存池元素大小",no,must_change
+0x1DAC04,0x1DAC04,CGameClient::CGameClient,frame pool,"CUtlMemoryPool(size=0x11C,0x80,2)",0x11C,0x21C,"帧内存池元素大小",no,must_change
+0x162780,0x162780,CHLTVServer::CHLTVServer,frame pool,"CUtlMemoryPool(size=0x11C,0x80,2)",0x11C,0x21C,"帧内存池元素大小",no,must_change
+0x15D0AE,0x15D0AE,CHLTVClientState::ProcessPacketEntities,frame copy,"operator new(0x11C)",0x11C,0x21C,"整帧副本分配",no,must_change
+0x0FF9C6,0x0FF9C6,CBaseServer::WriteTempEntities,stack locals,"sub esp,0x11C",0x11C,0x11C,"纯栈局部空间，未构造 CClientFrame，无语义关联",no,no_change
+0x1056A0,0x1056A0,CClientFrame::~CClientFrame,frame heap bitmap +0x110,"operator delete(*(this+68))",-,-,"释放堆位图；尺寸随分配变化，无立即数",no,no_change
