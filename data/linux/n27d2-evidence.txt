@@ -1,0 +1,19 @@
+# N27-D2 evidence (2026-10-23)
+
+== stale runtime image ==
+runtime 34969ef94d1202b6 vs built cd5ab42eed66425b
+
+== ctor stub after syscall rewrite ==
+CTOR_ENTRY this=0xe6b0d50
+CTOR_STORE ptr=0xed460000
+
+== WriteDeltaEntities stability ==
+HIT WriteDeltaEntities  -> 9374 calls, server alive
+clc_BaselineAck count: 8
+
+== crash before fixes ==
+SV_DetermineUpdateType: cmp eax,[edx+0xc], edx=0 (CEntityWriteInfo+0x13C null)
+
+== pristine engine control ==
+engine sha 5fa15f2820ab67b9
+19:12:16 Segmentation fault (core dumped) after client connect

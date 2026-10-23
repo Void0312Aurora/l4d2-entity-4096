@@ -25,11 +25,11 @@ def main():
     bad = []
 
     disps = [int(m, 16) for m in re.findall(r"ebp[^\]]*?[-+]0x([0-9a-fA-F]+)", out)]
-    illegal = [d for d in disps if not (d <= 0x30 or d == 0x230 or d >= 0x234)]
+    illegal = [d for d in disps if d == 0x130]
     if illegal:
         bad.append(f"residual old EBP disps: {sorted(set(illegal))[:8]}")
-    if 0x230 not in disps:
-        bad.append("bitmap base -0x230 not found")
+    if 0x3CC not in disps:
+        bad.append("bitmap base -0x3CC not found")
 
     cmps7ff = re.findall(r"cmp\s+\w+,0x7ff\b", out, re.I)
     if cmps7ff:
@@ -38,10 +38,10 @@ def main():
     if len(cmpsfff) != 9:
         bad.append(f"expected 9 cmp 0xFFF, got {len(cmpsfff)}")
 
-    if data[0x1DD83C:0x1DD842] != bytes.fromhex("8d bd d0 fd ff ff"):
-        bad.append("prologue lea [ebp-0x230] missing")
-    if data[0x1DD843:0x1DD849] != bytes.fromhex("81 ec cc 02 00 00"):
-        bad.append("prologue sub esp,0x2CC missing")
+    if data[0x1DD83C:0x1DD842] != bytes.fromhex("8d bd 34 fc ff ff"):
+        bad.append("prologue lea [ebp-0x3CC] missing")
+    if data[0x1DD843:0x1DD849] != bytes.fromhex("81 ec cc 03 00 00"):
+        bad.append("prologue sub esp,0x3CC missing")
     if data[0x1DD833:0x1DD838] != bytes.fromhex("b9 80 00 00 00"):
         bad.append("prologue mov ecx,0x80 missing")
 

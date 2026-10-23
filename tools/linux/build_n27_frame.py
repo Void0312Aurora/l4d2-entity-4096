@@ -74,7 +74,7 @@ def main():
 
     # stack shifted displacements (bitmap base rows are handled by S1/S2)
     stack = 0
-    for r in rows("data/linux/n27c_stack_sites.csv"):
+    for r in []:
         if r["class"] == "bitmap_base":
             continue
         if r["class"] != "below_bitmap_shift":
@@ -104,11 +104,7 @@ def main():
         addr = int(r["elf_addr"], 16)
         if le32(int(r["new_disp"], 16)) not in img[addr:addr + 16]:
             raise SystemExit(f"frame new disp missing at 0x{addr:X}")
-    for r in rows("data/linux/n27c_stack_sites.csv"):
-        if r["class"] == "below_bitmap_shift":
-            addr = int(r["elf_addr"], 16)
-            if le32(int(r["new_disp"], 16)) not in img[addr:addr + 16]:
-                raise SystemExit(f"stack new disp missing at 0x{addr:X}")
+    # 位图已移到帧下方，原有局部变量不再迁移，无需逐条检查 new_disp
     print(f"built {out} changed_bytes={changed} frame={frame} stack={stack} edits={len(edits)}")
     return 0
 

@@ -54,9 +54,18 @@ def main():
 
     ctor_off = 0
     ctor = bytearray()
-    ctor += b"\x68\x00\x02\x00\x00"                 # push 0x200
-    ctor += b"\xE8" + rel32(stub_vaddr + ctor_off + len(ctor) + 5, MALLOC_PLT)
-    ctor += b"\x83\xC4\x04"                          # add esp,4
+    # mmap2(NULL,0x200,PROT_READ|WRITE,MAP_PRIVATE|ANON,-1,0) via int 0x80
+    ctor += b"\x60"                                   # pushad
+    ctor += b"\x31\xDB"                              # xor ebx,ebx
+    ctor += b"\xB9" + struct.pack("<I", 0x200)        # mov ecx,0x200
+    ctor += b"\xBA" + struct.pack("<I", 3)            # mov edx,3
+    ctor += b"\xBE" + struct.pack("<I", 0x22)         # mov esi,0x22
+    ctor += b"\xBF" + struct.pack("<I", 0xFFFFFFFF)   # mov edi,-1
+    ctor += b"\x31\xED"                              # xor ebp,ebp
+    ctor += b"\xB8" + struct.pack("<I", 192)          # mov eax,192 (mmap2)
+    ctor += b"\xCD\x80"                              # int 0x80
+    ctor += b"\x89\x44\x24\x1C"                    # mov [esp+0x1C],eax
+    ctor += b"\x61"                                   # popad
     ctor += b"\x89\x83" + struct.pack("<I", 0x10C)   # mov [ebx+0x10C],eax
     ctor += b"\x89\xC2"                              # mov edx,eax
     ctor += b"\xB9" + struct.pack("<I", 0x80)        # mov ecx,0x80
@@ -71,9 +80,12 @@ def main():
     dtor += b"\x85\xC0"                              # test eax,eax
     je_pos = len(dtor)
     dtor += b"\x74\x00"                              # je skip
-    dtor += b"\x50"                                  # push eax
-    dtor += b"\xE8" + rel32(stub_vaddr + dtor_off + len(dtor) + 5, FREE_PLT)
-    dtor += b"\x83\xC4\x04"                          # add esp,4
+    dtor += b"\x60"                                  # pushad
+    dtor += b"\x89\xC3"                              # mov ebx,eax
+    dtor += b"\xB9" + struct.pack("<I", 0x200)        # mov ecx,0x200
+    dtor += b"\xB8" + struct.pack("<I", 91)           # mov eax,91 (munmap)
+    dtor += b"\xCD\x80"                              # int 0x80
+    dtor += b"\x61"                                  # popad
     dtor += b"\xC7\x83" + struct.pack("<I", 0x10C) + b"\x00\x00\x00\x00"
     skip = len(dtor)
     dtor += b"\xE9" + rel32(stub_vaddr + dtor_off + len(dtor) + 5, 0xEB2F5)
