@@ -1,0 +1,23 @@
+[New LWP 22435]
+[New LWP 21403]
+[New LWP 21402]
+[New LWP 21401]
+[New LWP 21399]
+[New LWP 21398]
+[New LWP 21396]
+[New LWP 21394]
+[New LWP 21393]
+[New LWP 21351]
+[New LWP 21337]
+[New LWP 21315]
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/usr/lib/x86_64-linux-gnu/libthread_db.so.1".
+0xe87c668b in ?? () from /usr/lib/i386-linux-gnu/libc.so.6
+engine_base=0xe7aa1000
+B1 num_edicts=1528 max_edicts=4096 pEdicts=0xd9253020 freeTime=0xd9263020
+mirror_0x3A7F50=4096
+EDICT_NUM_0=0xd9253020
+EDICT_NUM_2047=0xd925b010
+EDICT_NUM_2048=0xd925b020
+EDICT_NUM_4095=0xd9263010
+[Inferior 1 (process 21307) detached]
