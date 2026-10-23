@@ -44,6 +44,5 @@ _ZN11CGameClient12SendSnapshotEP12CClientFrame,0x1DB927,0x118,0x218,"mov     eax
 _ZN11CGameClient12SendSnapshotEP12CClientFrame,0x1DB94B,0x118,0x218,"mov     edi, [esi+118h]"
 _ZN11CBaseServer18WriteDeltaEntitiesEP11CBaseClientP12CClientFrameS3_R8bf_write,0x1DD8A9,0x118,0x218,"mov     eax, [eax+118h]"
 _ZN11CBaseServer18WriteDeltaEntitiesEP11CBaseClientP12CClientFrameS3_R8bf_write,0x1DD8ED,0x118,0x218,"mov     eax, [ebx+118h]"
-_ZN11CBaseServer18WriteDeltaEntitiesEP11CBaseClientP12CClientFrameS3_R8bf_write,0x1DDE90,0x10C,0x20C,"lea     edx, [eax+10Ch]"
 _ZN11CBaseServer18WriteDeltaEntitiesEP11CBaseClientP12CClientFrameS3_R8bf_write,0x1DDEA4,0x10C,0x20C,"mov     [eax+10Ch], edx"
 _ZN11CBaseServer18WriteDeltaEntitiesEP11CBaseClientP12CClientFrameS3_R8bf_write,0x1DE522,0x10C,0x20C,"mov     eax, [eax+10Ch]"

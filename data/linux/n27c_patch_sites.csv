@@ -1,0 +1,15 @@
+group,elf_addr,function,instruction,old_bytes,new_bytes,length_ok,note
+S1,0x1DD833,WriteDeltaEntities,mov ecx;0x40 -> 0x80,B9 40 00 00 00,B9 80 00 00 00,yes,栈位图 128 dword
+S1,0x1DD83C,WriteDeltaEntities,lea edi;[ebp-0x130] -> [ebp-0x230],8D BD D0 FE FF FF,8D BD D0 FD FF FF,yes,disp32
+S1,0x1DD843,WriteDeltaEntities,sub esp;0x1CC -> 0x2CC,81 EC CC 01 00 00,81 EC CC 02 00 00,yes,imm32
+S2,0x1DE9D4,WriteDeltaEntities,or [ebp+edx*4-0x130] -> -0x230,09 84 95 D0 FE FF FF,09 84 95 D0 FD FF FF,yes,disp32
+S2,0x1DEDEF,WriteDeltaEntities,test [ebp+eax-0x130] -> -0x230,85 9C 05 D0 FE FF FF,85 9C 05 D0 FD FF FF,yes,disp32
+S3,0x1DDEEF,WriteDeltaEntities,cmp ecx;0x7FF -> 0xFFF,81 F9 FF 07 00 00,81 F9 FF 0F 00 00,yes,imm32
+S3,0x1DDFA1,WriteDeltaEntities,cmp ecx;0x7FF -> 0xFFF,81 F9 FF 07 00 00,81 F9 FF 0F 00 00,yes,imm32
+S3,0x1DE0CD,WriteDeltaEntities,cmp edx;0x7FF -> 0xFFF,81 FA FF 07 00 00,81 FA FF 0F 00 00,yes,imm32
+S3,0x1DE17F,WriteDeltaEntities,cmp edx;0x7FF -> 0xFFF,81 FA FF 07 00 00,81 FA FF 0F 00 00,yes,imm32
+S3,0x1DE5A5,WriteDeltaEntities,cmp edx;0x7FF -> 0xFFF,81 FA FF 07 00 00,81 FA FF 0F 00 00,yes,imm32
+S3,0x1DE6B6,WriteDeltaEntities,cmp edx;0x7FF -> 0xFFF,81 FA FF 07 00 00,81 FA FF 0F 00 00,yes,imm32
+S3,0x1DE777,WriteDeltaEntities,cmp edx;0x7FF -> 0xFFF,81 FA FF 07 00 00,81 FA FF 0F 00 00,yes,imm32
+S3,0x1DE827,WriteDeltaEntities,cmp edx;0x7FF -> 0xFFF,81 FA FF 07 00 00,81 FA FF 0F 00 00,yes,imm32
+S3,0x1DEB41,WriteDeltaEntities,cmp edx;0x7FF -> 0xFFF,81 FA FF 07 00 00,81 FA FF 0F 00 00,yes,imm32
