@@ -3,7 +3,7 @@
 PID=$1; BASE=$2; OUT=$3; DUR=${4:-40}
 DIR=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)
 : > "$OUT"
-sudo -n env CLIENT_BASE="$BASE" CLIENT_DLL_BASE="${CLIENT_DLL_BASE:-}" timeout "$DUR" gdb -q -batch \
+sudo -n env CLIENT_BASE="$BASE" CLIENT_DLL_BASE="${CLIENT_DLL_BASE:-}" ENGINE_DLL_BASE="${ENGINE_DLL_BASE:-}" timeout "$DUR" gdb -q -batch \
   -ex "set pagination off" -ex "set confirm off" \
   -ex "handle SIGUSR1 nostop noprint pass" -ex "handle SIGUSR2 nostop noprint pass" \
   -ex "handle SIGCHLD nostop noprint pass" -ex "handle SIGPIPE nostop noprint pass" \

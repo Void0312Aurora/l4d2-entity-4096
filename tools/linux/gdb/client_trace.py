@@ -56,6 +56,20 @@ class PPE(gdb.Breakpoint):
             w("ERR ppe %s" % e)
         return False
 SS(); PPE()
+edb = os.environ.get("ENGINE_DLL_BASE")
+if edb:
+    ebase = int(edb, 16)
+    for _off,_name in ((0x56E6B,"E56E60"),(0x1EC292,"E1EC1D0"),(0xD32F6,"E0D3210")):
+        class EB(gdb.Breakpoint):
+            def __init__(self, off, name):
+                super().__init__("*0x%x" % (ebase + off), internal=True)
+                self.bname = name
+            def stop(self):
+                if full["ptr"] is not None:
+                    w("POSTFULL %s t=%.3f" % (self.bname, time.time()-t0))
+                return False
+        EB(_off, _name)
+    w("TRACE engine_dll_base=0x%x" % ebase)
 cdb = os.environ.get("CLIENT_DLL_BASE")
 if cdb:
     cbase = int(cdb, 16)
