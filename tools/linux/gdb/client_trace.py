@@ -71,10 +71,14 @@ if cdb:
     class LEVFI(gdb.Breakpoint):
         n = 0
         def __init__(self):
-            super().__init__("*0x%x" % (cbase + 0x1A0A70), internal=True)
+            super().__init__("*0x%x" % (cbase + 0x1A0FBF), internal=True)
         def stop(self):
             LEVFI.n += 1
-            w("ENT levfinish t=%.3f n=%d" % (time.time()-t0, LEVFI.n))
+            try:
+                bt = gdb.execute("bt 8", to_string=True).replace("\n", " | ")[:600]
+            except Exception:
+                bt = ""
+            w("EVT levelfinished t=%.3f n=%d bt=%s" % (time.time()-t0, LEVFI.n, bt))
             return False
     LEVFI()
     w("TRACE client_dll_base=0x%x" % cbase)
