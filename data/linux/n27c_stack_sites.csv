@@ -1,0 +1,263 @@
+elf_addr,file_offset,operand,old_disp,new_disp,class,instruction,old_bytes
+0x1DD83C,0x1DD83C,1,0xFFFFFED0,0xFFFFFDD0,bitmap_base,"lea     edi, [ebp+var_130]",8d bd d0 fe ff ff
+0x1DD849,0x1DD849,0,0xFFFFFFE0,0xFFFFFFE0,above_bitmap_keep,"mov     [ebp+var_20], 0",c7 45 e0 00 00 00 00
+0x1DD852,0x1DD852,1,0x18,0x18,arg_keep,"mov     eax, [ebp+arg_10]",8b 45 18
+0x1DD855,0x1DD855,0,0xFFFFFEA8,0xFFFFFDA8,below_bitmap_shift,"mov     [ebp+var_158], 0FFFFFFFFh",c7 85 a8 fe ff ff ff ff ff ff
+0x1DD85F,0x1DD85F,0,0xFFFFFEAC,0xFFFFFDAC,below_bitmap_shift,"mov     [ebp+var_154], 0FFFFFFFFh",c7 85 ac fe ff ff ff ff ff ff
+0x1DD869,0x1DD869,1,0x8,0x8,arg_keep,"mov     edx, [ebp+this]",8b 55 08
+0x1DD86C,0x1DD86C,0,0xFFFFFEB0,0xFFFFFDB0,below_bitmap_shift,"mov     [ebp+var_150], 0FFFFFFFFh",c7 85 b0 fe ff ff ff ff ff ff
+0x1DD876,0x1DD876,1,0x14,0x14,arg_keep,"mov     ebx, [ebp+arg_C]",8b 5d 14
+0x1DD879,0x1DD879,0,0xFFFFFEB8,0xFFFFFDB8,below_bitmap_shift,"mov     [ebp+var_148], 0",c7 85 b8 fe ff ff 00 00 00 00
+0x1DD883,0x1DD883,0,0xFFFFFEC0,0xFFFFFDC0,below_bitmap_shift,"mov     [ebp+var_140], eax",89 85 c0 fe ff ff
+0x1DD889,0x1DD889,1,0x10,0x10,arg_keep,"mov     eax, [ebp+arg_8]",8b 45 10
+0x1DD88C,0x1DD88C,0,0xFFFFFEBC,0xFFFFFDBC,below_bitmap_shift,"mov     [ebp+var_144], 0",c7 85 bc fe ff ff 00 00 00 00
+0x1DD896,0x1DD896,0,0xFFFFFE94,0xFFFFFD94,below_bitmap_shift,"mov     [ebp+var_16C], offset off_2B04D8",c7 85 94 fe ff ff d8 04 2b 00
+0x1DD8A0,0x1DD8A0,0,0xFFFFFFDC,0xFFFFFFDC,above_bitmap_keep,"mov     [ebp+var_24], edx",89 55 dc
+0x1DD8A3,0x1DD8A3,0,0xFFFFFEA0,0xFFFFFDA0,below_bitmap_shift,"mov     [ebp+var_160], eax",89 85 a0 fe ff ff
+0x1DD8AF,0x1DD8AF,0,0xFFFFFFD4,0xFFFFFFD4,above_bitmap_keep,"mov     [ebp+var_2C], eax",89 45 d4
+0x1DD8B2,0x1DD8B2,1,0xC,0xC,arg_keep,"mov     eax, [ebp+arg_4]",8b 45 0c
+0x1DD8BB,0x1DD8BB,0,0xFFFFFFD8,0xFFFFFFD8,above_bitmap_keep,"mov     [ebp+var_28], eax",89 45 d8
+0x1DD8BE,0x1DD8BE,1,0xC,0xC,arg_keep,"mov     eax, [ebp+arg_4]",8b 45 0c
+0x1DD8C4,0x1DD8C4,0,0xFFFFFEC4,0xFFFFFDC4,below_bitmap_shift,"mov     [ebp+var_13C], eax",89 85 c4 fe ff ff
+0x1DD8E1,0x1DD8E1,0,0xFFFFFFE4,0xFFFFFFE4,above_bitmap_keep,setnle  [ebp+var_1C],0f 9f 45 e4
+0x1DD8F3,0x1DD8F3,0,0xFFFFFE98,0xFFFFFD98,below_bitmap_shift,"mov     [ebp+var_168], 1",c6 85 98 fe ff ff 01
+0x1DD8FA,0x1DD8FA,0,0xFFFFFE9C,0xFFFFFD9C,below_bitmap_shift,"mov     [ebp+var_164], ebx",89 9d 9c fe ff ff
+0x1DD900,0x1DD900,0,0xFFFFFFD0,0xFFFFFFD0,above_bitmap_keep,"mov     [ebp+var_30], eax",89 45 d0
+0x1DD903,0x1DD903,0,0xFFFFFEB4,0xFFFFFDB4,below_bitmap_shift,"mov     [ebp+var_14C], 0",c7 85 b4 fe ff ff 00 00 00 00
+0x1DD90D,0x1DD90D,1,0xC,0xC,arg_keep,"mov     eax, [ebp+arg_4]",8b 45 0c
+0x1DD91D,0x1DD91D,1,0xFFFFFEC0,0xFFFFFDC0,below_bitmap_shift,"mov     eax, [ebp+var_140]",8b 85 c0 fe ff ff
+0x1DD945,0x1DD945,0,0xFFFFFE74,0xFFFFFD74,below_bitmap_shift,"mov     [ebp+var_18C], edi",89 bd 74 fe ff ff
+0x1DD97C,0x1DD97C,1,0xFFFFFFD4,0xFFFFFFD4,above_bitmap_keep,"mov     eax, [ebp+var_2C]",8b 45 d4
+0x1DD982,0x1DD982,0,0xFFFFFE74,0xFFFFFD74,below_bitmap_shift,"mov     [ebp+var_18C], eax",89 85 74 fe ff ff
+0x1DD988,0x1DD988,1,0xFFFFFEC0,0xFFFFFDC0,below_bitmap_shift,"mov     eax, [ebp+var_140]",8b 85 c0 fe ff ff
+0x1DD9BC,0x1DD9BC,1,0xFFFFFE74,0xFFFFFD74,below_bitmap_shift,"mov     edi, [ebp+var_18C]",8b bd 74 fe ff ff
+0x1DD9DC,0x1DD9DC,0,0xFFFFFE98,0xFFFFFD98,below_bitmap_shift,"cmp     [ebp+var_168], 0",80 bd 98 fe ff ff 00
+0x1DD9E3,0x1DD9E3,1,0xFFFFFEC0,0xFFFFFDC0,below_bitmap_shift,"mov     eax, [ebp+var_140]",8b 85 c0 fe ff ff
+0x1DD9FB,0x1DD9FB,1,0xFFFFFEC0,0xFFFFFDC0,below_bitmap_shift,"mov     eax, [ebp+var_140]",8b 85 c0 fe ff ff
+0x1DDA01,0x1DDA01,1,0xFFFFFE9C,0xFFFFFD9C,below_bitmap_shift,"mov     edx, [ebp+var_164]",8b 95 9c fe ff ff
+0x1DDA22,0x1DDA22,0,0xFFFFFFE4,0xFFFFFFE4,above_bitmap_keep,"mov     [ebp+var_1C], 1",c6 45 e4 01
+0x1DDA2C,0x1DDA2C,0,0xFFFFFE98,0xFFFFFD98,below_bitmap_shift,"mov     [ebp+var_168], 0",c6 85 98 fe ff ff 00
+0x1DDA33,0x1DDA33,0,0xFFFFFE9C,0xFFFFFD9C,below_bitmap_shift,"mov     [ebp+var_164], 0",c7 85 9c fe ff ff 00 00 00 00
+0x1DDA3D,0x1DDA3D,0,0xFFFFFFD0,0xFFFFFFD0,above_bitmap_keep,"mov     [ebp+var_30], 0",c7 45 d0 00 00 00 00
+0x1DDA60,0x1DDA60,1,0xC,0xC,arg_keep,"mov     eax, [ebp+arg_4]",8b 45 0c
+0x1DDA69,0x1DDA69,1,0xFFFFFEC0,0xFFFFFDC0,below_bitmap_shift,"mov     eax, [ebp+var_140]",8b 85 c0 fe ff ff
+0x1DDAA2,0x1DDAA2,1,0xFFFFFEC0,0xFFFFFDC0,below_bitmap_shift,"mov     eax, [ebp+var_140]",8b 85 c0 fe ff ff
+0x1DDAB1,0x1DDAB1,0,0xFFFFFE6C,0xFFFFFD6C,below_bitmap_shift,"mov     [ebp+var_194], edi",89 bd 6c fe ff ff
+0x1DDABD,0x1DDABD,0,0xFFFFFE68,0xFFFFFD68,below_bitmap_shift,"mov     [ebp+var_198], esi",89 b5 68 fe ff ff
+0x1DDAC3,0x1DDAC3,0,0xFFFFFE72,0xFFFFFD72,below_bitmap_shift,"mov     [ebp+var_18E], bl",88 9d 72 fe ff ff
+0x1DDACB,0x1DDACB,0,0xFFFFFE74,0xFFFFFD74,below_bitmap_shift,"mov     [ebp+var_18C], edi",89 bd 74 fe ff ff
+0x1DDAD7,0x1DDAD7,1,0xFFFFFE68,0xFFFFFD68,below_bitmap_shift,"mov     edx, [ebp+var_198]",8b 95 68 fe ff ff
+0x1DDADD,0x1DDADD,1,0xFFFFFE6C,0xFFFFFD6C,below_bitmap_shift,"mov     edi, [ebp+var_194]",8b bd 6c fe ff ff
+0x1DDB1E,0x1DDB1E,1,0xFFFFFEC0,0xFFFFFDC0,below_bitmap_shift,"mov     eax, [ebp+var_140]",8b 85 c0 fe ff ff
+0x1DDB27,0x1DDB27,0,0xFFFFFE60,0xFFFFFD60,below_bitmap_shift,"mov     [ebp+var_1A0], eax",89 85 60 fe ff ff
+0x1DDB2D,0x1DDB2D,1,0xC,0xC,arg_keep,"mov     eax, [ebp+arg_4]",8b 45 0c
+0x1DDB3A,0x1DDB3A,0,0xFFFFFE73,0xFFFFFD73,below_bitmap_shift,"mov     [ebp+var_18D], al",88 85 73 fe ff ff
+0x1DDB54,0x1DDB54,1,0xFFFFFEC0,0xFFFFFDC0,below_bitmap_shift,"mov     eax, [ebp+var_140]",8b 85 c0 fe ff ff
+0x1DDB5A,0x1DDB5A,1,0xFFFFFE68,0xFFFFFD68,below_bitmap_shift,"mov     esi, [ebp+var_198]",8b b5 68 fe ff ff
+0x1DDB63,0x1DDB63,0,0xFFFFFE5C,0xFFFFFD5C,below_bitmap_shift,"mov     [ebp+var_1A4], eax",89 85 5c fe ff ff
+0x1DDB69,0x1DDB69,1,0xFFFFFEB4,0xFFFFFDB4,below_bitmap_shift,"mov     eax, [ebp+var_14C]",8b 85 b4 fe ff ff
+0x1DDB6F,0x1DDB6F,0,0xFFFFFE64,0xFFFFFD64,below_bitmap_shift,"mov     [ebp+var_19C], eax",89 85 64 fe ff ff
+0x1DDB7A,0x1DDB7A,1,0xFFFFFE74,0xFFFFFD74,below_bitmap_shift,"cmp     eax, [ebp+var_18C]",3b 85 74 fe ff ff
+0x1DDB86,0x1DDB86,1,0xFFFFFE6C,0xFFFFFD6C,below_bitmap_shift,"mov     ebx, [ebp+var_194]",8b 9d 6c fe ff ff
+0x1DDBA7,0x1DDBA7,1,0xFFFFFE64,0xFFFFFD64,below_bitmap_shift,"mov     edi, [ebp+var_19C]",8b bd 64 fe ff ff
+0x1DDBC4,0x1DDBC4,1,0xFFFFFE6C,0xFFFFFD6C,below_bitmap_shift,"mov     edi, [ebp+var_194]",8b bd 6c fe ff ff
+0x1DDBD9,0x1DDBD9,1,0xFFFFFE64,0xFFFFFD64,below_bitmap_shift,"mov     edi, [ebp+var_19C]",8b bd 64 fe ff ff
+0x1DDBEA,0x1DDBEA,1,0xFFFFFE74,0xFFFFFD74,below_bitmap_shift,"cmp     edx, [ebp+var_18C]",3b 95 74 fe ff ff
+0x1DDBF6,0x1DDBF6,1,0xFFFFFE5C,0xFFFFFD5C,below_bitmap_shift,"mov     edi, [ebp+var_1A4]",8b bd 5c fe ff ff
+0x1DDC01,0x1DDC01,1,0xFFFFFE6C,0xFFFFFD6C,below_bitmap_shift,"mov     esi, [ebp+var_194]",8b b5 6c fe ff ff
+0x1DDC12,0x1DDC12,1,0xFFFFFE60,0xFFFFFD60,below_bitmap_shift,"sub     edi, [ebp+var_1A0]",2b bd 60 fe ff ff
+0x1DDC1A,0x1DDC1A,0,0xFFFFFE68,0xFFFFFD68,below_bitmap_shift,"mov     [ebp+var_198], edi",89 bd 68 fe ff ff
+0x1DDC2B,0x1DDC2B,1,0xFFFFFE68,0xFFFFFD68,below_bitmap_shift,"mov     edi, [ebp+var_198]",8b bd 68 fe ff ff
+0x1DDC43,0x1DDC43,1,0xFFFFFE6C,0xFFFFFD6C,below_bitmap_shift,"mov     edi, [ebp+var_194]",8b bd 6c fe ff ff
+0x1DDC54,0x1DDC54,1,0xFFFFFE68,0xFFFFFD68,below_bitmap_shift,"mov     edi, [ebp+var_198]",8b bd 68 fe ff ff
+0x1DDC6B,0x1DDC6B,1,0xC,0xC,arg_keep,"mov     eax, [ebp+arg_4]",8b 45 0c
+0x1DDC7B,0x1DDC7B,0,0xFFFFFE74,0xFFFFFD74,below_bitmap_shift,"cmp     [ebp+var_18C], edx",39 95 74 fe ff ff
+0x1DDC83,0x1DDC83,0,0xFFFFFE72,0xFFFFFD72,below_bitmap_shift,"cmp     [ebp+var_18E], 0",80 bd 72 fe ff ff 00
+0x1DDC8E,0x1DDC8E,1,0xFFFFFE6C,0xFFFFFD6C,below_bitmap_shift,"mov     edi, [ebp+var_194]",8b bd 6c fe ff ff
+0x1DDCB0,0x1DDCB0,0,0xFFFFFE73,0xFFFFFD73,below_bitmap_shift,"cmp     [ebp+var_18D], 0",80 bd 73 fe ff ff 00
+0x1DDCB9,0x1DDCB9,1,0x18,0x18,arg_keep,"mov     eax, [ebp+arg_10]",8b 45 18
+0x1DDCC8,0x1DDCC8,1,0xC,0xC,arg_keep,"mov     eax, [ebp+arg_4]",8b 45 0c
+0x1DDCE2,0x1DDCE2,1,0xFFFFFE74,0xFFFFFD74,below_bitmap_shift,"mov     edi, [ebp+var_18C]",8b bd 74 fe ff ff
+0x1DDD12,0x1DDD12,1,0xFFFFFE74,0xFFFFFD74,below_bitmap_shift,"mov     esi, [ebp+var_18C]",8b b5 74 fe ff ff
+0x1DDD91,0x1DDD91,1,0xFFFFFEC0,0xFFFFFDC0,below_bitmap_shift,"mov     eax, [ebp+var_140]",8b 85 c0 fe ff ff
+0x1DDDA0,0x1DDDA0,1,0xFFFFFE74,0xFFFFFD74,below_bitmap_shift,"mov     eax, [ebp+var_18C]",8b 85 74 fe ff ff
+0x1DDDA6,0x1DDDA6,0,0xFFFFFE72,0xFFFFFD72,below_bitmap_shift,"mov     [ebp+var_18E], 1",c6 85 72 fe ff ff 01
+0x1DDDB0,0x1DDDB0,1,0xFFFFFE74,0xFFFFFD74,below_bitmap_shift,"cmp     edx, [ebp+var_18C]",3b 95 74 fe ff ff
+0x1DDDBC,0x1DDDBC,1,0xC,0xC,arg_keep,"mov     eax, [ebp+arg_4]",8b 45 0c
+0x1DDDBF,0x1DDDBF,0,0xFFFFFE72,0xFFFFFD72,below_bitmap_shift,"mov     [ebp+var_18E], 1",c6 85 72 fe ff ff 01
+0x1DDDC6,0x1DDDC6,1,0xFFFFFE74,0xFFFFFD74,below_bitmap_shift,"mov     edx, [ebp+var_18C]",8b 95 74 fe ff ff
+0x1DDDD9,0x1DDDD9,1,0xFFFFFFE0,0xFFFFFFE0,above_bitmap_keep,"mov     ecx, [ebp+var_20]",8b 4d e0
+0x1DDDE4,0x1DDDE4,1,0xFFFFFFD8,0xFFFFFFD8,above_bitmap_keep,"mov     eax, [ebp+var_28]",8b 45 d8
+0x1DDDEF,0x1DDDEF,0,0xFFFFFE74,0xFFFFFD74,below_bitmap_shift,"cmp     [ebp+var_18C], edx",39 95 74 fe ff ff
+0x1DDDF7,0x1DDDF7,0,0xFFFFFE72,0xFFFFFD72,below_bitmap_shift,"cmp     [ebp+var_18E], 0",80 bd 72 fe ff ff 00
+0x1DDE00,0x1DDE00,1,0xFFFFFE6C,0xFFFFFD6C,below_bitmap_shift,"mov     edi, [ebp+var_194]",8b bd 6c fe ff ff
+0x1DDE1A,0x1DDE1A,1,0x10,0x10,arg_keep,"mov     eax, [ebp+arg_8]",8b 45 10
+0x1DDE1D,0x1DDE1D,1,0xC,0xC,arg_keep,"mov     edi, [ebp+arg_4]",8b 7d 0c
+0x1DDE70,0x1DDE70,1,0x18,0x18,arg_keep,"mov     eax, [ebp+arg_10]",8b 45 18
+0x1DDE7F,0x1DDE7F,1,0xC,0xC,arg_keep,"mov     eax, [ebp+arg_4]",8b 45 0c
+0x1DDEA1,0x1DDEA1,1,0x10,0x10,arg_keep,"mov     eax, [ebp+arg_8]",8b 45 10
+0x1DDEB0,0x1DDEB0,1,0xC,0xC,arg_keep,"mov     edi, [ebp+arg_4]",8b 7d 0c
+0x1DDEC0,0x1DDEC0,0,0xFFFFFE98,0xFFFFFD98,below_bitmap_shift,"cmp     [ebp+var_168], 0",80 bd 98 fe ff ff 00
+0x1DDED8,0x1DDED8,1,0xFFFFFE9C,0xFFFFFD9C,below_bitmap_shift,"mov     edx, [ebp+var_164]",8b 95 9c fe ff ff
+0x1DDEE6,0x1DDEE6,1,0xFFFFFEA8,0xFFFFFDA8,below_bitmap_shift,"mov     eax, [ebp+var_158]",8b 85 a8 fe ff ff
+0x1DDF86,0x1DDF86,0,0xFFFFFEA8,0xFFFFFDA8,below_bitmap_shift,"mov     [ebp+var_158], edx",89 95 a8 fe ff ff
+0x1DDF92,0x1DDF92,1,0xFFFFFEAC,0xFFFFFDAC,below_bitmap_shift,"mov     eax, [ebp+var_154]",8b 85 ac fe ff ff
+0x1DDF98,0x1DDF98,1,0xFFFFFEA0,0xFFFFFDA0,below_bitmap_shift,"mov     ebx, [ebp+var_160]",8b 9d a0 fe ff ff
+0x1DE036,0x1DE036,0,0xFFFFFEAC,0xFFFFFDAC,below_bitmap_shift,"mov     [ebp+var_154], ebx",89 9d ac fe ff ff
+0x1DE05C,0x1DE05C,0,0xFFFFFECC,0xFFFFFDCC,below_bitmap_shift,"mov     [ebp+var_134], 0",c7 85 cc fe ff ff 00 00 00 00
+0x1DE066,0x1DE066,1,0xFFFFFFD0,0xFFFFFFD0,above_bitmap_keep,"mov     eax, [ebp+var_30]",8b 45 d0
+0x1DE07E,0x1DE07E,0,0xFFFFFEC8,0xFFFFFDC8,below_bitmap_shift,"mov     [ebp+var_138], eax",89 85 c8 fe ff ff
+0x1DE084,0x1DE084,1,0xFFFFFE94,0xFFFFFD94,below_bitmap_shift,"lea     eax, [ebp+var_16C]",8d 85 94 fe ff ff
+0x1DE08F,0x1DE08F,1,0xFFFFFEA4,0xFFFFFDA4,below_bitmap_shift,"mov     eax, [ebp+var_15C]",8b 85 a4 fe ff ff
+0x1DE0B6,0x1DE0B6,1,0xFFFFFE9C,0xFFFFFD9C,below_bitmap_shift,"mov     ecx, [ebp+var_164]",8b 8d 9c fe ff ff
+0x1DE0C4,0x1DE0C4,1,0xFFFFFEA8,0xFFFFFDA8,below_bitmap_shift,"mov     eax, [ebp+var_158]",8b 85 a8 fe ff ff
+0x1DE164,0x1DE164,0,0xFFFFFEA8,0xFFFFFDA8,below_bitmap_shift,"mov     [ebp+var_158], eax",89 85 a8 fe ff ff
+0x1DE170,0x1DE170,1,0xFFFFFEAC,0xFFFFFDAC,below_bitmap_shift,"mov     eax, [ebp+var_154]",8b 85 ac fe ff ff
+0x1DE176,0x1DE176,1,0xFFFFFEA0,0xFFFFFDA0,below_bitmap_shift,"mov     ecx, [ebp+var_160]",8b 8d a0 fe ff ff
+0x1DE214,0x1DE214,0,0xFFFFFEAC,0xFFFFFDAC,below_bitmap_shift,"mov     [ebp+var_154], eax",89 85 ac fe ff ff
+0x1DE220,0x1DE220,0,0xFFFFFE73,0xFFFFFD73,below_bitmap_shift,"cmp     [ebp+var_18D], 0",80 bd 73 fe ff ff 00
+0x1DE229,0x1DE229,1,0xFFFFFEA4,0xFFFFFDA4,below_bitmap_shift,"mov     eax, [ebp+var_15C]",8b 85 a4 fe ff ff
+0x1DE250,0x1DE250,1,0xFFFFFEA8,0xFFFFFDA8,below_bitmap_shift,"mov     edx, [ebp+var_158]",8b 95 a8 fe ff ff
+0x1DE256,0x1DE256,1,0xFFFFFEAC,0xFFFFFDAC,below_bitmap_shift,"mov     ebx, [ebp+var_154]",8b 9d ac fe ff ff
+0x1DE272,0x1DE272,0,0xFFFFFE98,0xFFFFFD98,below_bitmap_shift,"cmp     [ebp+var_168], 0",80 bd 98 fe ff ff 00
+0x1DE27F,0x1DE27F,0,0xFFFFFE73,0xFFFFFD73,below_bitmap_shift,"cmp     [ebp+var_18D], 0",80 bd 73 fe ff ff 00
+0x1DE28C,0x1DE28C,1,0x18,0x18,arg_keep,"mov     eax, [ebp+arg_10]",8b 45 18
+0x1DE29F,0x1DE29F,1,0xC,0xC,arg_keep,"mov     eax, [ebp+arg_4]",8b 45 0c
+0x1DE2B0,0x1DE2B0,1,0xFFFFFFD4,0xFFFFFFD4,above_bitmap_keep,"mov     eax, [ebp+var_2C]",8b 45 d4
+0x1DE2C8,0x1DE2C8,1,0xFFFFFEA8,0xFFFFFDA8,below_bitmap_shift,"mov     edx, [ebp+var_158]",8b 95 a8 fe ff ff
+0x1DE2CE,0x1DE2CE,0,0xFFFFFECC,0xFFFFFDCC,below_bitmap_shift,"mov     [ebp+var_134], eax",89 85 cc fe ff ff
+0x1DE2F8,0x1DE2F8,1,0xFFFFFEAC,0xFFFFFDAC,below_bitmap_shift,"mov     esi, [ebp+var_154]",8b b5 ac fe ff ff
+0x1DE2FE,0x1DE2FE,1,0xFFFFFEC0,0xFFFFFDC0,below_bitmap_shift,"mov     ebx, [ebp+var_140]",8b 9d c0 fe ff ff
+0x1DE306,0x1DE306,1,0xFFFFFEB0,0xFFFFFDB0,below_bitmap_shift,"sub     eax, [ebp+var_150]",2b 85 b0 fe ff ff
+0x1DE32B,0x1DE32B,0,0xFFFFFEB4,0xFFFFFDB4,below_bitmap_shift,"add     [ebp+var_14C], 1",83 85 b4 fe ff ff 01
+0x1DE332,0x1DE332,0,0xFFFFFEB0,0xFFFFFDB0,below_bitmap_shift,"mov     [ebp+var_150], esi",89 b5 b0 fe ff ff
+0x1DE338,0x1DE338,1,0xFFFFFFD4,0xFFFFFFD4,above_bitmap_keep,"mov     edx, [ebp+var_2C]",8b 55 d4
+0x1DE33B,0x1DE33B,1,0xFFFFFEAC,0xFFFFFDAC,below_bitmap_shift,"mov     eax, [ebp+var_154]",8b 85 ac fe ff ff
+0x1DE34A,0x1DE34A,0,0xFFFFFE58,0xFFFFFD58,below_bitmap_shift,"mov     [ebp+var_1A8], edi",89 bd 58 fe ff ff
+0x1DE35F,0x1DE35F,0,0xFFFFFE64,0xFFFFFD64,below_bitmap_shift,"mov     [ebp+var_19C], eax",89 85 64 fe ff ff
+0x1DE365,0x1DE365,1,0xFFFFFFDC,0xFFFFFFDC,above_bitmap_keep,"mov     eax, [ebp+var_24]",8b 45 dc
+0x1DE37C,0x1DE37C,1,0xFFFFFEC0,0xFFFFFDC0,below_bitmap_shift,"mov     eax, [ebp+var_140]",8b 85 c0 fe ff ff
+0x1DE3A2,0x1DE3A2,0,0xFFFFFE50,0xFFFFFD50,below_bitmap_shift,"mov     [ebp+var_1B0], esi",89 b5 50 fe ff ff
+0x1DE3AF,0x1DE3AF,0,0xFFFFFE5C,0xFFFFFD5C,below_bitmap_shift,"mov     [ebp+var_1A4], ebx",89 9d 5c fe ff ff
+0x1DE3B7,0x1DE3B7,1,0xFFFFFE64,0xFFFFFD64,below_bitmap_shift,"mov     ebx, [ebp+var_19C]",8b 9d 64 fe ff ff
+0x1DE3BF,0x1DE3BF,0,0xFFFFFE54,0xFFFFFD54,below_bitmap_shift,"mov     [ebp+var_1AC], esi",89 b5 54 fe ff ff
+0x1DE3CE,0x1DE3CE,1,0xFFFFFE5C,0xFFFFFD5C,below_bitmap_shift,"movzx   ecx, byte ptr [ebp+var_1A4]",0f b6 8d 5c fe ff ff
+0x1DE3DB,0x1DE3DB,1,0xFFFFFE54,0xFFFFFD54,below_bitmap_shift,"mov     esi, [ebp+var_1AC]",8b b5 54 fe ff ff
+0x1DE3E8,0x1DE3E8,1,0xFFFFFE5C,0xFFFFFD5C,below_bitmap_shift,"sub     ecx, [ebp+var_1A4]",2b 8d 5c fe ff ff
+0x1DE3F4,0x1DE3F4,1,0xFFFFFE50,0xFFFFFD50,below_bitmap_shift,"mov     esi, [ebp+var_1B0]",8b b5 50 fe ff ff
+0x1DE409,0x1DE409,0,0xFFFFFE5C,0xFFFFFD5C,below_bitmap_shift,"mov     [ebp+var_1A4], ebx",89 9d 5c fe ff ff
+0x1DE411,0x1DE411,0,0xFFFFFE5C,0xFFFFFD5C,below_bitmap_shift,"and     [ebp+var_1A4], ebx",21 9d 5c fe ff ff
+0x1DE417,0x1DE417,1,0xFFFFFE64,0xFFFFFD64,below_bitmap_shift,"mov     ebx, [ebp+var_19C]",8b 9d 64 fe ff ff
+0x1DE41F,0x1DE41F,1,0xFFFFFE5C,0xFFFFFD5C,below_bitmap_shift,"mov     ecx, [ebp+var_1A4]",8b 8d 5c fe ff ff
+0x1DE42C,0x1DE42C,1,0xFFFFFE58,0xFFFFFD58,below_bitmap_shift,"mov     eax, [ebp+var_1A8]",8b 85 58 fe ff ff
+0x1DE435,0x1DE435,0,0xFFFFFE64,0xFFFFFD64,below_bitmap_shift,"mov     [ebp+var_19C], eax",89 85 64 fe ff ff
+0x1DE43B,0x1DE43B,1,0xFFFFFEC0,0xFFFFFDC0,below_bitmap_shift,"mov     eax, [ebp+var_140]",8b 85 c0 fe ff ff
+0x1DE461,0x1DE461,0,0xFFFFFE58,0xFFFFFD58,below_bitmap_shift,"mov     [ebp+var_1A8], esi",89 b5 58 fe ff ff
+0x1DE470,0x1DE470,0,0xFFFFFE5C,0xFFFFFD5C,below_bitmap_shift,"mov     [ebp+var_1A4], esi",89 b5 5c fe ff ff
+0x1DE476,0x1DE476,1,0xFFFFFE64,0xFFFFFD64,below_bitmap_shift,"mov     esi, [ebp+var_19C]",8b b5 64 fe ff ff
+0x1DE490,0x1DE490,1,0xFFFFFE5C,0xFFFFFD5C,below_bitmap_shift,"mov     esi, [ebp+var_1A4]",8b b5 5c fe ff ff
+0x1DE49F,0x1DE49F,1,0xFFFFFE58,0xFFFFFD58,below_bitmap_shift,"mov     esi, [ebp+var_1A8]",8b b5 58 fe ff ff
+0x1DE4AE,0x1DE4AE,1,0xFFFFFE64,0xFFFFFD64,below_bitmap_shift,"mov     esi, [ebp+var_19C]",8b b5 64 fe ff ff
+0x1DE4C9,0x1DE4C9,0,0xFFFFFE98,0xFFFFFD98,below_bitmap_shift,"cmp     [ebp+var_168], 0",80 bd 98 fe ff ff 00
+0x1DE4D6,0x1DE4D6,1,0xFFFFFE80,0xFFFFFD80,below_bitmap_shift,"lea     eax, [ebp+var_180]",8d 85 80 fe ff ff
+0x1DE4E4,0x1DE4E4,1,0xFFFFFE7C,0xFFFFFD7C,below_bitmap_shift,"lea     eax, [ebp+var_184]",8d 85 7c fe ff ff
+0x1DE4EE,0x1DE4EE,1,0xFFFFFFDC,0xFFFFFFDC,above_bitmap_keep,"mov     eax, [ebp+var_24]",8b 45 dc
+0x1DE501,0x1DE501,1,0xFFFFFE7C,0xFFFFFD7C,below_bitmap_shift,"mov     ebx, [ebp+var_184]",8b 9d 7c fe ff ff
+0x1DE50F,0x1DE50F,1,0xFFFFFE80,0xFFFFFD80,below_bitmap_shift,"mov     eax, [ebp+var_180]",8b 85 80 fe ff ff
+0x1DE51C,0x1DE51C,1,0xFFFFFEA0,0xFFFFFDA0,below_bitmap_shift,"mov     eax, [ebp+var_160]",8b 85 a0 fe ff ff
+0x1DE52C,0x1DE52C,1,0xFFFFFEAC,0xFFFFFDAC,below_bitmap_shift,"mov     ecx, [ebp+var_154]",8b 8d ac fe ff ff
+0x1DE541,0x1DE541,1,0xFFFFFECC,0xFFFFFDCC,below_bitmap_shift,"mov     edx, [ebp+var_134]",8b 95 cc fe ff ff
+0x1DE555,0x1DE555,0,0xFFFFFE80,0xFFFFFD80,below_bitmap_shift,"mov     [ebp+var_180], ecx",89 8d 80 fe ff ff
+0x1DE55B,0x1DE55B,1,0xFFFFFEC0,0xFFFFFDC0,below_bitmap_shift,"mov     esi, [ebp+var_140]",8b b5 c0 fe ff ff
+0x1DE56C,0x1DE56C,1,0xFFFFFE7C,0xFFFFFD7C,below_bitmap_shift,"mov     eax, [ebp+var_184]",8b 85 7c fe ff ff
+0x1DE58D,0x1DE58D,1,0xFFFFFEAC,0xFFFFFDAC,below_bitmap_shift,"mov     edx, [ebp+var_154]",8b 95 ac fe ff ff
+0x1DE593,0x1DE593,0,0xFFFFFFE0,0xFFFFFFE0,above_bitmap_keep,"add     [ebp+var_20], eax",01 45 e0
+0x1DE596,0x1DE596,1,0xFFFFFEA8,0xFFFFFDA8,below_bitmap_shift,"cmp     edx, [ebp+var_158]",3b 95 a8 fe ff ff
+0x1DE5AB,0x1DE5AB,1,0xFFFFFEA0,0xFFFFFDA0,below_bitmap_shift,"mov     eax, [ebp+var_160]",8b 85 a0 fe ff ff
+0x1DE640,0x1DE640,0,0xFFFFFEAC,0xFFFFFDAC,below_bitmap_shift,"mov     [ebp+var_154], 270Fh",c7 85 ac fe ff ff 0f 27 00 00
+0x1DE650,0x1DE650,0,0xFFFFFE98,0xFFFFFD98,below_bitmap_shift,"cmp     [ebp+var_168], 0",80 bd 98 fe ff ff 00
+0x1DE65D,0x1DE65D,1,0xFFFFFEA8,0xFFFFFDA8,below_bitmap_shift,"mov     edi, [ebp+var_158]",8b bd a8 fe ff ff
+0x1DE667,0x1DE667,1,0xFFFFFEC0,0xFFFFFDC0,below_bitmap_shift,"mov     ebx, [ebp+var_140]",8b 9d c0 fe ff ff
+0x1DE66D,0x1DE66D,1,0xFFFFFEB0,0xFFFFFDB0,below_bitmap_shift,"sub     eax, [ebp+var_150]",2b 85 b0 fe ff ff
+0x1DE692,0x1DE692,1,0xFFFFFE9C,0xFFFFFD9C,below_bitmap_shift,"mov     ecx, [ebp+var_164]",8b 8d 9c fe ff ff
+0x1DE698,0x1DE698,0,0xFFFFFEB0,0xFFFFFDB0,below_bitmap_shift,"mov     [ebp+var_150], edi",89 bd b0 fe ff ff
+0x1DE69E,0x1DE69E,0,0xFFFFFEB4,0xFFFFFDB4,below_bitmap_shift,"add     [ebp+var_14C], 1",83 85 b4 fe ff ff 01
+0x1DE6AD,0x1DE6AD,1,0xFFFFFEA8,0xFFFFFDA8,below_bitmap_shift,"mov     eax, [ebp+var_158]",8b 85 a8 fe ff ff
+0x1DE73C,0x1DE73C,0,0xFFFFFEA8,0xFFFFFDA8,below_bitmap_shift,"mov     [ebp+var_158], eax",89 85 a8 fe ff ff
+0x1DE750,0x1DE750,0,0xFFFFFEA8,0xFFFFFDA8,below_bitmap_shift,"mov     [ebp+var_158], 270Fh",c7 85 a8 fe ff ff 0f 27 00 00
+0x1DE760,0x1DE760,1,0xFFFFFE9C,0xFFFFFD9C,below_bitmap_shift,"mov     ecx, [ebp+var_164]",8b 8d 9c fe ff ff
+0x1DE76E,0x1DE76E,1,0xFFFFFEA8,0xFFFFFDA8,below_bitmap_shift,"mov     eax, [ebp+var_158]",8b 85 a8 fe ff ff
+0x1DE80C,0x1DE80C,0,0xFFFFFEA8,0xFFFFFDA8,below_bitmap_shift,"mov     [ebp+var_158], eax",89 85 a8 fe ff ff
+0x1DE818,0x1DE818,1,0xFFFFFEAC,0xFFFFFDAC,below_bitmap_shift,"mov     eax, [ebp+var_154]",8b 85 ac fe ff ff
+0x1DE81E,0x1DE81E,1,0xFFFFFEA0,0xFFFFFDA0,below_bitmap_shift,"mov     ecx, [ebp+var_160]",8b 8d a0 fe ff ff
+0x1DE8A0,0x1DE8A0,1,0xFFFFFEC8,0xFFFFFDC8,below_bitmap_shift,"mov     eax, [ebp+var_138]",8b 85 c8 fe ff ff
+0x1DE8C9,0x1DE8C9,1,0x18,0x18,arg_keep,"mov     eax, [ebp+arg_10]",8b 45 18
+0x1DE8D0,0x1DE8D0,1,0xC,0xC,arg_keep,"mov     eax, [ebp+arg_4]",8b 45 0c
+0x1DE8E0,0x1DE8E0,1,0xFFFFFECC,0xFFFFFDCC,below_bitmap_shift,"mov     eax, [ebp+var_134]",8b 85 cc fe ff ff
+0x1DE910,0x1DE910,1,0xFFFFFEC8,0xFFFFFDC8,below_bitmap_shift,"mov     eax, [ebp+var_138]",8b 85 c8 fe ff ff
+0x1DE990,0x1DE990,1,0xFFFFFFD4,0xFFFFFFD4,above_bitmap_keep,"mov     ecx, [ebp+var_2C]",8b 4d d4
+0x1DE995,0x1DE995,1,0xFFFFFEA8,0xFFFFFDA8,below_bitmap_shift,"mov     edi, [ebp+var_158]",8b bd a8 fe ff ff
+0x1DE99B,0x1DE99B,1,0xFFFFFFD0,0xFFFFFFD0,above_bitmap_keep,"mov     ebx, [ebp+var_30]",8b 5d d0
+0x1DE9D4,0x1DE9D4,0,0xFFFFFED0,0xFFFFFDD0,bitmap_base,"or      [ebp+edx*4+var_130], eax",09 84 95 d0 fe ff ff
+0x1DE9DB,0x1DE9DB,1,0xFFFFFEA8,0xFFFFFDA8,below_bitmap_shift,"mov     edi, [ebp+var_158]",8b bd a8 fe ff ff
+0x1DEA48,0x1DEA48,0,0xFFFFFE98,0xFFFFFD98,below_bitmap_shift,"cmp     [ebp+var_168], 0",80 bd 98 fe ff ff 00
+0x1DEA5C,0x1DEA5C,1,0xFFFFFEAC,0xFFFFFDAC,below_bitmap_shift,"mov     eax, [ebp+var_154]",8b 85 ac fe ff ff
+0x1DEA66,0x1DEA66,1,0xFFFFFFD8,0xFFFFFFD8,above_bitmap_keep,"mov     eax, [ebp+var_28]",8b 45 d8
+0x1DEA82,0x1DEA82,1,0xFFFFFECC,0xFFFFFDCC,below_bitmap_shift,"mov     edx, [ebp+var_134]",8b 95 cc fe ff ff
+0x1DEA95,0x1DEA95,0,0xFFFFFE7C,0xFFFFFD7C,below_bitmap_shift,"mov     [ebp+var_184], edx",89 95 7c fe ff ff
+0x1DEAC0,0x1DEAC0,0,0xFFFFFEA8,0xFFFFFDA8,below_bitmap_shift,"mov     [ebp+var_158], 270Fh",c7 85 a8 fe ff ff 0f 27 00 00
+0x1DEAD0,0x1DEAD0,0,0xFFFFFEA8,0xFFFFFDA8,below_bitmap_shift,"mov     [ebp+var_158], 270Fh",c7 85 a8 fe ff ff 0f 27 00 00
+0x1DEAF7,0x1DEAF7,1,0xFFFFFFDC,0xFFFFFFDC,above_bitmap_keep,"mov     eax, [ebp+var_24]",8b 45 dc
+0x1DEAFA,0x1DEAFA,0,0xFFFFFE64,0xFFFFFD64,below_bitmap_shift,"mov     [ebp+var_19C], esi",89 b5 64 fe ff ff
+0x1DEB30,0x1DEB30,1,0xFFFFFE9C,0xFFFFFD9C,below_bitmap_shift,"mov     eax, [ebp+var_164]",8b 85 9c fe ff ff
+0x1DEB65,0x1DEB65,0,0xFFFFFE64,0xFFFFFD64,below_bitmap_shift,"mov     [ebp+var_19C], edi",89 bd 64 fe ff ff
+0x1DEB79,0x1DEB79,1,0xFFFFFE64,0xFFFFFD64,below_bitmap_shift,"mov     eax, [ebp+var_19C]",8b 85 64 fe ff ff
+0x1DEBEE,0x1DEBEE,0,0xFFFFFEA8,0xFFFFFDA8,below_bitmap_shift,"mov     [ebp+var_158], edi",89 bd a8 fe ff ff
+0x1DEBFA,0x1DEBFA,1,0xFFFFFEA0,0xFFFFFDA0,below_bitmap_shift,"mov     eax, [ebp+var_160]",8b 85 a0 fe ff ff
+0x1DEC00,0x1DEC00,1,0xFFFFFE64,0xFFFFFD64,below_bitmap_shift,"mov     ecx, [ebp+var_19C]",8b 8d 64 fe ff ff
+0x1DEC50,0x1DEC50,1,0xFFFFFE80,0xFFFFFD80,below_bitmap_shift,"lea     eax, [ebp+var_180]",8d 85 80 fe ff ff
+0x1DEC5E,0x1DEC5E,1,0xFFFFFFDC,0xFFFFFFDC,above_bitmap_keep,"mov     eax, [ebp+var_24]",8b 45 dc
+0x1DEC69,0x1DEC69,1,0xFFFFFECC,0xFFFFFDCC,below_bitmap_shift,"mov     edx, [ebp+var_134]",8b 95 cc fe ff ff
+0x1DEC6F,0x1DEC6F,1,0xFFFFFE80,0xFFFFFD80,below_bitmap_shift,"mov     ecx, [ebp+var_180]",8b 8d 80 fe ff ff
+0x1DECC0,0x1DECC0,0,0xFFFFFEA8,0xFFFFFDA8,below_bitmap_shift,"mov     [ebp+var_158], 270Fh",c7 85 a8 fe ff ff 0f 27 00 00
+0x1DECF4,0x1DECF4,0,0xFFFFFEAC,0xFFFFFDAC,below_bitmap_shift,"mov     [ebp+var_154], 270Fh",c7 85 ac fe ff ff 0f 27 00 00
+0x1DED66,0x1DED66,0,0xFFFFFE80,0xFFFFFD80,below_bitmap_shift,"mov     [ebp+var_180], 0",c7 85 80 fe ff ff 00 00 00 00
+0x1DED70,0x1DED70,1,0xFFFFFFD0,0xFFFFFFD0,above_bitmap_keep,"mov     eax, [ebp+var_30]",8b 45 d0
+0x1DED73,0x1DED73,0,0xFFFFFE84,0xFFFFFD84,below_bitmap_shift,"mov     [ebp+var_17C], 0",c7 85 84 fe ff ff 00 00 00 00
+0x1DED7D,0x1DED7D,1,0xFFFFFFD4,0xFFFFFFD4,above_bitmap_keep,"mov     edi, [ebp+var_2C]",8b 7d d4
+0x1DED80,0x1DED80,0,0xFFFFFE88,0xFFFFFD88,below_bitmap_shift,"mov     [ebp+var_178], 0",c7 85 88 fe ff ff 00 00 00 00
+0x1DED8A,0x1DED8A,0,0xFFFFFE8C,0xFFFFFD8C,below_bitmap_shift,"mov     [ebp+var_174], 0",c7 85 8c fe ff ff 00 00 00 00
+0x1DED94,0x1DED94,0,0xFFFFFE90,0xFFFFFD90,below_bitmap_shift,"mov     [ebp+var_170], 0",c7 85 90 fe ff ff 00 00 00 00
+0x1DED9E,0x1DED9E,0,0xFFFFFE58,0xFFFFFD58,below_bitmap_shift,"mov     [ebp+var_1A8], eax",89 85 58 fe ff ff
+0x1DEDA7,0x1DEDA7,0,0xFFFFFE64,0xFFFFFD64,below_bitmap_shift,"mov     [ebp+var_19C], edi",89 bd 64 fe ff ff
+0x1DEDB0,0x1DEDB0,0,0xFFFFFE7C,0xFFFFFD7C,below_bitmap_shift,"mov     [ebp+var_184], 0",c7 85 7c fe ff ff 00 00 00 00
+0x1DEDC7,0x1DEDC7,1,0xFFFFFE80,0xFFFFFD80,below_bitmap_shift,"lea     eax, [ebp+var_180]",8d 85 80 fe ff ff
+0x1DEDD2,0x1DEDD2,0,0xFFFFFE5C,0xFFFFFD5C,below_bitmap_shift,"mov     [ebp+var_1A4], eax",89 85 5c fe ff ff
+0x1DEDEF,0x1DEDEF,0,0xFFFFFED0,0xFFFFFDD0,bitmap_base,"test    [ebp+eax+var_130], ebx",85 9c 05 d0 fe ff ff
+0x1DEDF8,0x1DEDF8,1,0xFFFFFEA0,0xFFFFFDA0,below_bitmap_shift,"mov     esi, [ebp+var_160]",8b b5 a0 fe ff ff
+0x1DEE04,0x1DEE04,1,0xFFFFFE64,0xFFFFFD64,below_bitmap_shift,"mov     ebx, [ebp+var_19C]",8b 9d 64 fe ff ff
+0x1DEE1F,0x1DEE1F,1,0xFFFFFE64,0xFFFFFD64,below_bitmap_shift,"mov     eax, [ebp+var_19C]",8b 85 64 fe ff ff
+0x1DEE50,0x1DEE50,1,0xFFFFFE7C,0xFFFFFD7C,below_bitmap_shift,"mov     eax, [ebp+var_184]",8b 85 7c fe ff ff
+0x1DEE5B,0x1DEE5B,0,0xFFFFFE7C,0xFFFFFD7C,below_bitmap_shift,"mov     [ebp+var_184], ecx",89 8d 7c fe ff ff
+0x1DEE67,0x1DEE67,1,0xFFFFFEC0,0xFFFFFDC0,below_bitmap_shift,"mov     eax, [ebp+var_140]",8b 85 c0 fe ff ff
+0x1DEE79,0x1DEE79,1,0xFFFFFE8C,0xFFFFFD8C,below_bitmap_shift,"mov     edi, [ebp+var_174]",8b bd 8c fe ff ff
+0x1DEE92,0x1DEE92,1,0xFFFFFE80,0xFFFFFD80,below_bitmap_shift,"mov     eax, [ebp+var_180]",8b 85 80 fe ff ff
+0x1DEEA3,0x1DEEA3,1,0xFFFFFEC0,0xFFFFFDC0,below_bitmap_shift,"mov     eax, [ebp+var_140]",8b 85 c0 fe ff ff
+0x1DEEB1,0x1DEEB1,1,0xFFFFFE8C,0xFFFFFD8C,below_bitmap_shift,"mov     edi, [ebp+var_174]",8b bd 8c fe ff ff
+0x1DEEBE,0x1DEEBE,0,0xFFFFFE8C,0xFFFFFD8C,below_bitmap_shift,"mov     [ebp+var_174], 0",c7 85 8c fe ff ff 00 00 00 00
+0x1DEEC8,0x1DEEC8,1,0xFFFFFE5C,0xFFFFFD5C,below_bitmap_shift,"mov     esi, [ebp+var_1A4]",8b b5 5c fe ff ff
+0x1DEED6,0x1DEED6,1,0xFFFFFE80,0xFFFFFD80,below_bitmap_shift,"mov     eax, [ebp+var_180]",8b 85 80 fe ff ff
+0x1DEEDF,0x1DEEDF,0,0xFFFFFE90,0xFFFFFD90,below_bitmap_shift,"mov     [ebp+var_170], eax",89 85 90 fe ff ff
+0x1DEEEF,0x1DEEEF,1,0xFFFFFE58,0xFFFFFD58,below_bitmap_shift,"mov     ebx, [ebp+var_1A8]",8b 9d 58 fe ff ff
+0x1DEF0C,0x1DEF0C,1,0xFFFFFE7C,0xFFFFFD7C,below_bitmap_shift,"lea     eax, [ebp+var_184]",8d 85 7c fe ff ff
+0x1DEF1A,0x1DEF1A,1,0xFFFFFE5C,0xFFFFFD5C,below_bitmap_shift,"mov     eax, [ebp+var_1A4]",8b 85 5c fe ff ff
+0x1DEF28,0x1DEF28,1,0xFFFFFE8C,0xFFFFFD8C,below_bitmap_shift,"mov     edx, [ebp+var_174]",8b 95 8c fe ff ff
+0x1DEF40,0x1DEF40,0,0xFFFFFEA8,0xFFFFFDA8,below_bitmap_shift,"mov     [ebp+var_158], 270Fh",c7 85 a8 fe ff ff 0f 27 00 00
+0x1DEF67,0x1DEF67,0,0xFFFFFEA8,0xFFFFFDA8,below_bitmap_shift,"mov     [ebp+var_158], 270Fh",c7 85 a8 fe ff ff 0f 27 00 00
+0x1DEFE0,0x1DEFE0,1,0xFFFFFE64,0xFFFFFD64,below_bitmap_shift,"mov     eax, [ebp+var_19C]",8b 85 64 fe ff ff
+0x1DEFFB,0x1DEFFB,1,0xFFFFFE80,0xFFFFFD80,below_bitmap_shift,"lea     eax, [ebp+var_180]",8d 85 80 fe ff ff
+0x1DF003,0x1DF003,0,0xFFFFFE5C,0xFFFFFD5C,below_bitmap_shift,"mov     [ebp+var_1A4], eax",89 85 5c fe ff ff
+0x1DF00E,0x1DF00E,1,0xFFFFFE5C,0xFFFFFD5C,below_bitmap_shift,"mov     edi, [ebp+var_1A4]",8b bd 5c fe ff ff
+0x1DF016,0x1DF016,0,0xFFFFFE8C,0xFFFFFD8C,below_bitmap_shift,"mov     [ebp+var_174], 0",c7 85 8c fe ff ff 00 00 00 00
+0x1DF028,0x1DF028,1,0xFFFFFE80,0xFFFFFD80,below_bitmap_shift,"mov     eax, [ebp+var_180]",8b 85 80 fe ff ff
+0x1DF031,0x1DF031,0,0xFFFFFE90,0xFFFFFD90,below_bitmap_shift,"mov     [ebp+var_170], eax",89 85 90 fe ff ff

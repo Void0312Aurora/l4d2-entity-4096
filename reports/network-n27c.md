@@ -142,3 +142,77 @@ N27-C 的栈迁移方案已收敛为**等长位移替换**：
 3 个 prologue 站点、2 个位图索引站点、9 个边界站点，其余 44 个 EBP 位移按
 `n27c_stack_map.csv` 统一迁移。P0-1/P0-2/P0-3 已修正并进入补丁表；
 N27-D 可以在静态门禁通过后构建隔离镜像。
+
+## 7 地址冲突核查：`0x1DDEEF` 实际就是 `cmp`
+
+按 N26 固定 SHA 的原始 ELF 反汇编（`objdump -d -Mintel --start-address=0x1DDEE0`）：
+
+```
+1DDEE6  8b 85 a8 fe ff ff   mov  eax,[ebp-0x158]
+1DDEEC  8d 48 01            lea  ecx,[eax+0x1]
+1DDEEF  81 f9 ff 07 00 00   cmp  ecx,0x7ff
+1DDEF5  0f 8f 45 10 00 00   jg   1def40
+```
+
+原始字节 `0x1DDEEF = 81 F9 FF 07 00 00`，即 `cmp ecx,0x7FF`。
+N24/N25 记录的“`0x1DDEEF` 是 `lea`”是把 `0x1DDEEC` 的 `lea` 记错了 3 字节；
+S3 清单地址本身正确，无需改地址，本轮补上原始字节证据。
+
+九处 `cmp` 的原始字节全部为 `81 F9/FA FF 07 00 00`（imm32），改 `FF 0F 00 00` 等长：
+
+| 地址 | 原字节 | 新字节 |
+|---|---|---|
+| 0x1DDEEF | `81 F9 FF 07 00 00` | `81 F9 FF 0F 00 00` |
+| 0x1DDFA1 | `81 F9 FF 07 00 00` | `81 F9 FF 0F 00 00` |
+| 0x1DE0CD | `81 FA FF 07 00 00` | `81 FA FF 0F 00 00` |
+| 0x1DE17F | `81 FA FF 07 00 00` | `81 FA FF 0F 00 00` |
+| 0x1DE5A5 | `81 FA FF 07 00 00` | `81 FA FF 0F 00 00` |
+| 0x1DE6B6 | `81 FA FF 07 00 00` | `81 FA FF 0F 00 00` |
+| 0x1DE777 | `81 FA FF 07 00 00` | `81 FA FF 0F 00 00` |
+| 0x1DE827 | `81 FA FF 07 00 00` | `81 FA FF 0F 00 00` |
+| 0x1DEB41 | `81 FA FF 07 00 00` | `81 FA FF 0F 00 00` |
+
+## 8 完整性门禁升级（逐指令）
+
+`n27c_stack_map.csv` 的 44 是“不同位移值”；实际引用展开为
+`data/linux/n27c_stack_sites.csv` 的 **262 条逐指令记录**：
+
+| 类别 | 条数 |
+|---|---|
+| 位图下方，需迁移 | **212** |
+| 位图基址 `-0x130`（含 2 条带索引） | 3 |
+| 位图上方，不变 | 24 |
+| 参数，不变 | 23 |
+
+`tools/linux/check_patch_sites.py` 已升级为静态门禁：
+
+1. 校验 ELF SHA-256 为固定原版；
+2. 校验每条显式补丁的 `elf_addr == file_offset` 且原始字节一致；
+3. 检测显式补丁之间的字节区间重叠；
+4. 帧成员表与显式补丁表不得重复占用同一指令；帧成员记录必须包含记录的旧位移；
+5. 栈引用表逐条校验原始字节与位移，并强制类别计数为 212/3/24/23；
+6. 同一表内不得出现重复指令地址。
+
+当前输出：
+
+```
+PASS: pristine bytes, spans, frame/stack coverage all consistent
+counts: {'below_bitmap_shift': 212, 'bitmap_base': 3, 'above_bitmap_keep': 24, 'arg_keep': 23, 'bitmap_region_other': 0}
+explicit spans: 42 frame: 47 stack: 262
+```
+
+同时发现并修正了两处清单问题：
+
+- `0x1DDEA4`、`0x1DE522` 同时出现在帧成员表与 C3 显式表，已统一归 F2；
+- `0xE9202` 的 `je` 是短跳转 `74`，不是 `0F 84`，已按 `74→75` 记录。
+
+## 9 构建后门禁
+
+新增 `tools/linux/verify_n27_patched.py`：对产物反汇编后拒绝
+
+- `WriteDeltaEntities` 内残留旧 EBP 位移（允许 ≤0x30、`0x230`、≥0x234）；
+- 仍存在 `cmp ...,0x7FF`；
+- `0xFFF` 比较不是 9 处；
+- prologue 未变成 `ecx=0x80`、`lea [ebp-0x230]`、`sub esp,0x2CC`。
+
+该脚本在 N27-D 构建 D1 之后运行。

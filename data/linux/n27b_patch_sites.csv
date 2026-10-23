@@ -1,7 +1,7 @@
 group,elf_addr,function,instruction,old_bytes,new_bytes,length_ok,note
-F1,0x106444,CClientState::CClientState,CUtlMemoryPool(0x11C;0x80;2),1C 01 00 00,1C 02 00 00,yes,imm32
-F1,0x1DAC04,CGameClient::CGameClient,CUtlMemoryPool(0x11C;0x80;2),1C 01 00 00,1C 02 00 00,yes,imm32
-F1,0x162780,CHLTVServer::CHLTVServer,CUtlMemoryPool(0x11C;0x80;2),1C 01 00 00,1C 02 00 00,yes,imm32
+F1,0x106444,CClientState::CClientState,CUtlMemoryPool(0x11C;0x80;2),C7 44 24 04 1C 01 00 00,C7 44 24 04 1C 02 00 00,yes,imm32
+F1,0x1DAC04,CGameClient::CGameClient,CUtlMemoryPool(0x11C;0x80;2),C7 44 24 04 1C 01 00 00,C7 44 24 04 1C 02 00 00,yes,imm32
+F1,0x162780,CHLTVServer::CHLTVServer,CUtlMemoryPool(0x11C;0x80;2),C7 44 24 04 1C 01 00 00,C7 44 24 04 1C 02 00 00,yes,imm32
 F1,0x15D0AE,CHLTVClientState::ProcessPacketEntities,operator new(0x11C),C7 04 24 1C 01 00 00,C7 04 24 1C 02 00 00,yes,imm32
 F2,see n27b_frame_member_sites.csv,frame funcs,+0x10C..+0x118 -> +0x20C..+0x218,disp32,disp32,yes,48 sites
 F3,0x105563,CClientFrame::C1(int),mov ecx;0x40 -> 0x80,B9 40 00 00 00,B9 80 00 00 00,yes,bitmap 0x200
@@ -25,9 +25,7 @@ C3,0xE91E2,CBaseClient::ProcessBaselineAck,cmp eax;0x40 -> 0x80,83 F8 40,A8 80 9
 C3,0xE91FF,CBaseClient::ProcessBaselineAck,cmp eax;0x40 -> 0x80,83 F8 40,A8 80 90,no,"cmp imm8 符号扩展不可用；改 test al,0x80，后续 je→jne（见下条）"
 C3,0x1DDE90,CBaseServer::WriteDeltaEntities,lea -> mov (client bitmap ptr),8D 90 0C 01 00 00,8B 90 0C 01 00 00,yes,ptr load
 C3,0x1DDE96,CBaseServer::WriteDeltaEntities,mov ecx;0x40 -> 0x80,B9 40 00 00 00,B9 80 00 00 00,yes,
-C3,0x1DDEA4,CBaseServer::WriteDeltaEntities,frame+0x10C write -> +0x20C,89 90 0C 01 00 00,89 90 0C 02 00 00,yes,frame field
-C3,0x1DE522,CBaseServer::WriteDeltaEntities,frame+0x10C read -> +0x20C,8B 80 0C 01 00 00,8B 80 0C 02 00 00,yes,frame field
 C4,0x000000,C4 gate,no remaining client+0x10C inline access,-,-,-,static scan after patch
-C3,0xE90E9,CBaseClient::ProcessBaselineAck,je -> jne,84,85,yes,"配合 test al,0x80"
-C3,0xE91E5,CBaseClient::ProcessBaselineAck,je -> jne,84,85,yes,"配合 test al,0x80"
-C3,0xE9202,CBaseClient::ProcessBaselineAck,je -> jne,84,85,yes,"配合 test al,0x80"
+C3,0xE90E9,CBaseClient::ProcessBaselineAck,je -> jne,0F 84,0F 85,yes,"配合 test al,0x80"
+C3,0xE91E5,CBaseClient::ProcessBaselineAck,je -> jne,0F 84,0F 85,yes,"配合 test al,0x80"
+C3,0xE9202,CBaseClient::ProcessBaselineAck,je -> jne,74,75,yes,"短跳转 je→jne（配合 test al,0x80）"
