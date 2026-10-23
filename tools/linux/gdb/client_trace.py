@@ -59,6 +59,38 @@ SS(); PPE()
 edb = os.environ.get("ENGINE_DLL_BASE")
 if edb:
     ebase = int(edb, 16)
+    def _mk_entry(off, name):
+        class _E(gdb.Breakpoint):
+            n = 0
+            post = 0
+            def __init__(self):
+                super().__init__("*0x%x" % (ebase + off), internal=True)
+            def stop(self):
+                _E.n += 1
+                if full["ptr"] is not None and _E.post < 3:
+                    _E.post += 1
+                    try: ra = int(gdb.parse_and_eval("*(unsigned int*)$esp"))
+                    except Exception: ra = 0
+                    w("ENTRYPOST %s n=%d t=%.3f ra=0x%x" % (name, _E.n, time.time()-t0, ra))
+                return False
+        _E()
+    class COND(gdb.Breakpoint):
+        n = 0
+        def __init__(self):
+            super().__init__("*0x%x" % (ebase + 0x1BC2F0), internal=True)
+        def stop(self):
+            COND.n += 1
+            if full["ptr"] is not None and COND.n <= 8:
+                try:
+                    al = int(gdb.parse_and_eval("$al"))
+                    edi = int(gdb.parse_and_eval("$edi"))
+                except Exception:
+                    al, edi = -1, 0
+                w("COND al=%d edi=0x%x t=%.3f" % (al, edi, time.time()-t0))
+            return False
+    COND()
+    for _o,_n in ((0x1CDDF0,"CDDF0"),(0x1BCA20,"BCA20"),(0x1BC800,"BC800"),(0x1BBCF0,"BBCF0")):
+        _mk_entry(_o,_n)
     class E56IN(gdb.Breakpoint):
         n = 0
         post = 0
