@@ -1,0 +1,6 @@
+field,offset,size,role,owner,access_sites
+inline_bitmap,0x00C,0x100,实体位图（2048 bit）,CClientFrame,ctor 0x105598; CopyFrame 0x1057D6; WriteDeltaEntities 0x1DE9D4/0x1DEDEF
+borrowed_bitmap_ptr,0x10C,4,指向 CBaseClient 内联基线位图,CBaseClient,ctor 0x105590; WriteDeltaEntities 0x1DDEA4(write)/0x1DE522(read+set)
+owned_bitmap_ptr,0x110,4,CopyFrame 分配的 256B 位图副本,CClientFrame,CopyFrame 0x1057BF/0x1057F4; dtor 0x1056C0; EntityPVSCheck 0x161A90
+next_frame_link,0x114,4,CClientFrameManager 帧链表 next,CClientFrameManager,AddClientFrame 0x1058C5; GetClientFrame 0x105841; DeleteClientFrames 0x1059EA
+snapshot_ptr,0x118,4,CFrameSnapshot*（引用计数）,CClientFrame,SetSnapshot 0x10563E/0x105654/0x105666; SendSnapshot 0xEA993/0xEAD42/0xEAE22
