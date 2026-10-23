@@ -68,5 +68,14 @@ if cdb:
             w("ENT levelinit t=%.3f n=%d" % (time.time()-t0, LIPE.n))
             return False
     LIPE()
+    class LEVFI(gdb.Breakpoint):
+        n = 0
+        def __init__(self):
+            super().__init__("*0x%x" % (cbase + 0x1A0A70), internal=True)
+        def stop(self):
+            LEVFI.n += 1
+            w("ENT levfinish t=%.3f n=%d" % (time.time()-t0, LEVFI.n))
+            return False
+    LEVFI()
     w("TRACE client_dll_base=0x%x" % cbase)
 w("TRACE base=0x%x" % base)
