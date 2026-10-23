@@ -50,7 +50,7 @@ def main():
         for b in bad:
             print(" -", b)
         return 1
-    print("PASS: no residual old EBP displacement, nine 0xFFF bounds, 0x230 base")
+    print("PASS: no residual old EBP displacement, nine 0xFFF bounds, 0x3CC base")
     return 0
 
 if __name__ == "__main__":

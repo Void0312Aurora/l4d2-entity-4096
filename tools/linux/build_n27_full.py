@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
-"""N27-D1-B/C: frame+stack migration plus client-bitmap stubs.
+"""N27-D1-B/C: frame layout plus client-bitmap pointer stubs.
 
 Builds on build_n27_frame.py, then:
   * applies the equal-length C1/C3 edits
-  * appends a new RWE load segment holding malloc/free based stubs
+  * appends a new RX PT_LOAD holding int 0x80 mmap2/munmap stubs
   * hooks CBaseClient ctor (0xEB3F3) and dtor (0xEB2F0) with rel32 jumps
-No relocation is copied: the stubs call malloc@plt/free@plt by rel32 and the
-original TEXTREL instruction at 0xEB2FB stays untouched.
+No relocation is copied and no PLT is used: the stubs issue syscalls directly,
+so the original TEXTREL instruction at 0xEB2FB stays untouched.
 """
 import csv, struct, subprocess, sys
 from pathlib import Path
@@ -14,8 +14,6 @@ from pathlib import Path
 REPO = Path(__file__).resolve().parents[2]
 BASE = Path("/tmp/n27/engine_srv_n27a.so")
 OUT = Path(sys.argv[1] if len(sys.argv) > 1 else "/tmp/n27/engine_srv_n27d1.so")
-MALLOC_PLT = 0x817C0
-FREE_PLT = 0x81800
 
 def rows(path):
     with open(REPO / path, newline="") as f:
@@ -64,6 +62,9 @@ def main():
     ctor += b"\x31\xED"                              # xor ebp,ebp
     ctor += b"\xB8" + struct.pack("<I", 192)          # mov eax,192 (mmap2)
     ctor += b"\xCD\x80"                              # int 0x80
+    ctor += b"\x3D\x01\xF0\xFF\xFF"              # cmp eax,0xFFFFF001 (-4095)
+    ctor += b"\x72\x02"                              # jb ok (anything below is a valid address)
+    ctor += b"\x0F\x0B"                              # ud2: hard fail on -errno
     ctor += b"\x89\x44\x24\x1C"                    # mov [esp+0x1C],eax
     ctor += b"\x61"                                   # popad
     ctor += b"\x89\x83" + struct.pack("<I", 0x10C)   # mov [ebx+0x10C],eax

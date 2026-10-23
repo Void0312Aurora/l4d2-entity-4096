@@ -1,12 +1,13 @@
 #!/usr/bin/env python3
-"""N27-D1-A: frame layout + stack bitmap migration (no code stubs).
+"""N27-D1-A: frame layout + relocated stack bitmap (no code stubs).
 
-Applies F1/F2/F3 from n27b_patch_sites.csv, S1/S2/S3 from
-n27c_patch_sites.csv and the 212 shifted EBP displacements from
-n27c_stack_sites.csv. Refuses to write if any byte is claimed twice or a
-planned byte does not match the pristine image.
+Applies F1/F2/F3 from n27b_patch_sites.csv and S1/S2/S3 from
+n27c_patch_sites.csv. The WriteDeltaEntities bitmap now lives below the
+frame at ebp-0x3CC, so no ordinary local displacement is migrated.
+Refuses to write if any byte is claimed twice or a planned byte does not
+match the pristine image.
 """
-import csv, hashlib, subprocess, sys
+import csv, hashlib, os, subprocess, sys
 from pathlib import Path
 
 REPO = Path(__file__).resolve().parents[2]
@@ -43,8 +44,12 @@ def main():
             edits[p] = v
 
     # explicit patches: F1, F3 from n27b; S1/S2/S3 from n27c
-    for path, groups in (("data/linux/n27b_patch_sites.csv", {"F1", "F3"}),
-                         ("data/linux/n27c_patch_sites.csv", {"S1", "S2", "S3"})):
+    skip_frame = os.environ.get("N27_SKIP_FRAME") == "1"
+    skip_stack = os.environ.get("N27_SKIP_STACK") == "1"
+    skip_f3 = os.environ.get("N27_SKIP_F3") == "1"
+    skip_f2 = os.environ.get("N27_SKIP_F2") == "1"
+    for path, groups in (("data/linux/n27b_patch_sites.csv", set() if skip_frame else ({"F1"} if skip_f3 else {"F1", "F3"})),
+                         ("data/linux/n27c_patch_sites.csv", set() if skip_stack else {"S1", "S2", "S3"})):
         for r in rows(path):
             if r.get("group") not in groups:
                 continue
@@ -58,7 +63,7 @@ def main():
 
     # frame member displacements
     frame = 0
-    for r in rows("data/linux/n27b_frame_member_sites.csv"):
+    for r in ([] if (skip_frame or skip_f2) else rows("data/linux/n27b_frame_member_sites.csv")):
         addr = int(r["elf_addr"], 16)
         old = le32(int(r["old_disp"], 16))
         new = le32(int(r["new_disp"], 16))
@@ -72,25 +77,9 @@ def main():
         put(addr + pos, new, f"frame {addr:X}")
         frame += 1
 
-    # stack shifted displacements (bitmap base rows are handled by S1/S2)
+    # The old "shift every local below the bitmap" scheme is gone: the bitmap
+    # now sits below the frame, so ordinary locals keep their displacements.
     stack = 0
-    for r in []:
-        if r["class"] == "bitmap_base":
-            continue
-        if r["class"] != "below_bitmap_shift":
-            continue
-        addr = int(r["elf_addr"], 16)
-        old = le32(int(r["old_disp"], 16))
-        new = le32(int(r["new_disp"], 16))
-        limit = len(hb(r["old_bytes"]))
-        win = bytes(data[addr:addr + limit])
-        pos = win.find(old)
-        if pos < 0:
-            raise SystemExit(f"stack disp {r['old_disp']} not found at 0x{addr:X}")
-        if win.find(old, pos + 1) >= 0:
-            raise SystemExit(f"stack disp ambiguous at 0x{addr:X}")
-        put(addr + pos, new, f"stack {addr:X}")
-        stack += 1
 
     for p, v in edits.items():
         data[p] = v
@@ -98,9 +87,9 @@ def main():
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_bytes(bytes(data))
 
-    # post-build frame/stack spot verification
+    # post-build frame spot verification
     img = out.read_bytes()
-    for r in rows("data/linux/n27b_frame_member_sites.csv"):
+    for r in ([] if (skip_frame or skip_f2) else rows("data/linux/n27b_frame_member_sites.csv")):
         addr = int(r["elf_addr"], 16)
         if le32(int(r["new_disp"], 16)) not in img[addr:addr + 16]:
             raise SystemExit(f"frame new disp missing at 0x{addr:X}")
