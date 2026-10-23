@@ -1,0 +1,30 @@
+group,elf_addr,function,instruction,old_bytes,new_bytes,length_ok,note
+F1,0x106444,CClientState::CClientState,CUtlMemoryPool(0x11C;0x80;2),1C 01 00 00,1C 02 00 00,yes,imm32
+F1,0x1DAC04,CGameClient::CGameClient,CUtlMemoryPool(0x11C;0x80;2),1C 01 00 00,1C 02 00 00,yes,imm32
+F1,0x162780,CHLTVServer::CHLTVServer,CUtlMemoryPool(0x11C;0x80;2),1C 01 00 00,1C 02 00 00,yes,imm32
+F1,0x15D0AE,CHLTVClientState::ProcessPacketEntities,operator new(0x11C),C7 04 24 1C 01 00 00,C7 04 24 1C 02 00 00,yes,imm32
+F2,see n27b_frame_member_sites.csv,frame funcs,+0x10C..+0x118 -> +0x20C..+0x218,disp32,disp32,yes,48 sites
+F3,0x105563,CClientFrame::C1(int),mov ecx;0x40 -> 0x80,B9 40 00 00 00,B9 80 00 00 00,yes,bitmap 0x200
+F3,0x1055C1,CClientFrame::C2(void),mov ecx;0x40 -> 0x80,B9 40 00 00 00,B9 80 00 00 00,yes,bitmap 0x200
+F3,0x105713,CClientFrame::C2(snapshot),mov ecx;0x40 -> 0x80,B9 40 00 00 00,B9 80 00 00 00,yes,bitmap 0x200
+F3,0x1057B3,CClientFrame::CopyFrame,mov ecx;0x40 -> 0x80,B9 40 00 00 00,B9 80 00 00 00,yes,inline copy
+F3,0x1057E3,CClientFrame::CopyFrame,mov ecx;0x40 -> 0x80,B9 40 00 00 00,B9 80 00 00 00,yes,new buffer zero
+F3,0x1057ED,CClientFrame::CopyFrame,mov ecx;0x40 -> 0x80,B9 40 00 00 00,B9 80 00 00 00,yes,owned copy
+F3,0x1057CC,CClientFrame::CopyFrame,operator new(0x100) -> 0x200,C7 04 24 00 01 00 00,C7 04 24 00 02 00 00,yes,imm32
+C1,0xEB3E3,CBaseClient::CBaseClient,mov ecx;0x40 -> 0x80,B9 40 00 00 00,B9 80 00 00 00,yes,heap bitmap memset count
+C1,0xEB3F3,CBaseClient::CBaseClient,hook alloc stub,8D 93 0C 01 00 00,E8 rel32 90,no,code cave
+C2,0xEB2FB,CBaseClient::~CBaseClient,hook free stub,A1 70 00 2A 00,E8 rel32,no,code cave
+C3,0xE75B6,CBaseClient::FreeBaselines,lea -> mov (bitmap ptr),8D 97 0C 01 00 00,8B 97 0C 01 00 00,yes,pointer load
+C3,0xE75BC,CBaseClient::FreeBaselines,mov ecx;0x40 -> 0x80,B9 40 00 00 00,B9 80 00 00 00,yes,
+C3,0xE90B1,CBaseClient::ProcessBaselineAck,mov edx -> mov eax from +0x10C,8B 96 0C 01 00 00,8B 86 0C 01 00 00,yes,load ptr
+C3,0xE90B7,CBaseClient::ProcessBaselineAck,lea -> mov edx;[eax] + nop,8D 86 0C 01 00 00,8B 10 90 90 90 90,yes,bitmap[0]
+C3,0xE90CC,CBaseClient::ProcessBaselineAck,lea [esi+110h] -> lea [eax+4]+nop,8D 9E 10 01 00 00,8D 58 04 90 90 90,yes,base+4
+C3,0xE90D2,CBaseClient::ProcessBaselineAck,mov edx;[esi+110h] -> [eax+4]+nop,8B 96 10 01 00 00,8B 50 04 90 90 90,yes,base+4
+C3,0xE90E6,CBaseClient::ProcessBaselineAck,cmp eax;0x40 -> 0x80,83 F8 40,83 F8 80,yes,
+C3,0xE91E2,CBaseClient::ProcessBaselineAck,cmp eax;0x40 -> 0x80,83 F8 40,83 F8 80,yes,
+C3,0xE91FF,CBaseClient::ProcessBaselineAck,cmp eax;0x40 -> 0x80,83 F8 40,83 F8 80,yes,
+C3,0x1DDE90,CBaseServer::WriteDeltaEntities,lea -> mov (client bitmap ptr),8D 90 0C 01 00 00,8B 90 0C 01 00 00,yes,ptr load
+C3,0x1DDE96,CBaseServer::WriteDeltaEntities,mov ecx;0x40 -> 0x80,B9 40 00 00 00,B9 80 00 00 00,yes,
+C3,0x1DDEA4,CBaseServer::WriteDeltaEntities,frame+0x10C write -> +0x20C,89 90 0C 01 00 00,89 90 0C 02 00 00,yes,frame field
+C3,0x1DE522,CBaseServer::WriteDeltaEntities,frame+0x10C read -> +0x20C,8B 80 0C 01 00 00,8B 80 0C 02 00 00,yes,frame field
+C4,0x000000,C4 gate,no remaining client+0x10C inline access,-,-,-,static scan after patch
