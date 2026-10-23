@@ -59,6 +59,25 @@ SS(); PPE()
 edb = os.environ.get("ENGINE_DLL_BASE")
 if edb:
     ebase = int(edb, 16)
+    class E56IN(gdb.Breakpoint):
+        n = 0
+        post = 0
+        def __init__(self):
+            super().__init__("*0x%x" % (ebase + 0x56E60), internal=True)
+        def stop(self):
+            E56IN.n += 1
+            if full["ptr"] is not None and E56IN.post < 3:
+                E56IN.post += 1
+                try:
+                    ra = int(gdb.parse_and_eval("*(unsigned int*)$esp"))
+                    bt = gdb.execute("bt 6", to_string=True).replace("\n", " | ")[:500]
+                except Exception:
+                    ra, bt = 0, ""
+                w("ENTRYPOST E56E60 n=%d t=%.3f ra=0x%x bt=%s" % (E56IN.n, time.time()-t0, ra, bt))
+            elif E56IN.n <= 3:
+                w("ENTRY E56E60 n=%d t=%.3f afterfull=False" % (E56IN.n, time.time()-t0))
+            return False
+    E56IN()
     for _off,_name in ((0x56E6B,"E56E60"),(0x1EC292,"E1EC1D0"),(0xD32F6,"E0D3210")):
         class EB(gdb.Breakpoint):
             def __init__(self, off, name):
