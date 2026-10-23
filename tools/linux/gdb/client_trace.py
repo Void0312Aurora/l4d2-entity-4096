@@ -74,21 +74,43 @@ if edb:
                     w("ENTRYPOST %s n=%d t=%.3f ra=0x%x" % (name, _E.n, time.time()-t0, ra))
                 return False
         _E()
-    class COND(gdb.Breakpoint):
-        n = 0
-        def __init__(self):
-            super().__init__("*0x%x" % (ebase + 0x1BC2F0), internal=True)
-        def stop(self):
-            COND.n += 1
-            if full["ptr"] is not None and COND.n <= 8:
-                try:
-                    al = int(gdb.parse_and_eval("$al"))
-                    edi = int(gdb.parse_and_eval("$edi"))
-                except Exception:
-                    al, edi = -1, 0
-                w("COND al=%d edi=0x%x t=%.3f" % (al, edi, time.time()-t0))
-            return False
-    COND()
+    def _mk_probe(off, name, regs):
+        class _P(gdb.Breakpoint):
+            total = 0
+            post = 0
+            def __init__(self):
+                super().__init__("*0x%x" % (ebase + off), internal=True)
+            def stop(self):
+                _P.total += 1
+                if full["ptr"] is not None:
+                    _P.post += 1
+                    if name == "finalCall":
+                        try: tgt = int(gdb.parse_and_eval("$eax"))
+                        except Exception: tgt = 0
+                        TGT[tgt] = TGT.get(tgt, 0) + 1
+                        if TGT[tgt] == 1:
+                            try: edx = int(gdb.parse_and_eval("$edx")); esi = int(gdb.parse_and_eval("$esi"))
+                            except Exception: edx, esi = 0, 0
+                            w("TARGET new tgt=0x%x edx=0x%x esi=0x%x" % (tgt, edx, esi))
+                    if _P.post <= 8:
+                        vals = []
+                        for r in regs:
+                            try: vals.append("%s=%d" % (r, int(gdb.parse_and_eval("$"+r))))
+                            except Exception: vals.append(r+"=?")
+                        try: ra = int(gdb.parse_and_eval("*(unsigned int*)$esp"))
+                        except Exception: ra = 0
+                        w("PROBE %s post=%d total=%d ra=0x%x %s" %
+                          (name, _P.post, _P.total, ra, " ".join(vals)))
+
+                    elif _P.total % 200 == 0:
+                        w("PROBE %s post=%d total=%d" % (name, _P.post, _P.total))
+                return False
+        _P()
+    TGT = {}
+    _mk_probe(0x1BC2E9, "callCond", ["edi"])
+    _mk_probe(0x1BC2EE, "afterCond", ["al"])
+    _mk_probe(0x1BC2F0, "jzCond", ["al","eflags"])
+    _mk_probe(0x1BC301, "finalCall", ["eax","edx","esi","edi"])
     for _o,_n in ((0x1CDDF0,"CDDF0"),(0x1BCA20,"BCA20"),(0x1BC800,"BC800"),(0x1BBCF0,"BBCF0")):
         _mk_entry(_o,_n)
     class E56IN(gdb.Breakpoint):
