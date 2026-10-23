@@ -56,4 +56,17 @@ class PPE(gdb.Breakpoint):
             w("ERR ppe %s" % e)
         return False
 SS(); PPE()
+cdb = os.environ.get("CLIENT_DLL_BASE")
+if cdb:
+    cbase = int(cdb, 16)
+    class LIPE(gdb.Breakpoint):
+        n = 0
+        def __init__(self):
+            super().__init__("*0x%x" % (cbase + 0x179DB0), internal=True)
+        def stop(self):
+            LIPE.n += 1
+            w("ENT levelinit t=%.3f n=%d" % (time.time()-t0, LIPE.n))
+            return False
+    LIPE()
+    w("TRACE client_dll_base=0x%x" % cbase)
 w("TRACE base=0x%x" % base)
