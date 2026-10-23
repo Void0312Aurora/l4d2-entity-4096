@@ -9,15 +9,15 @@ function hook(off, name, handlers){
 hook(0x1DD830, "WDE", {
   onEnter(args){
     C.wde++;
-    this.client=args[1]; this.fFrom=args[2]; this.fTo=args[3]; this.w=args[4];
+    this.client=args[1]; this.target=args[2]; this.baseline=args[3]; this.w=args[4];
     this.bits0 = this.w.isNull() ? 0 : u32(this.w.add(0xC));
   },
   onLeave(ret){
     if (C.wde<=3 || C.wde%100===0) {
       const w=this.w.isNull()?0:u32(this.w.add(0xC));
       send({ev:"WDE", n:C.wde, signon:u32(this.client.add(0xEC)),
-        from:this.fFrom.toString(), from_tick:u32(this.fFrom.add(0x8)), from_snap:u32(this.fFrom.add(0x218)),
-        to:this.fTo.toString(), to_tick:u32(this.fTo.add(0x8)), to_snap:u32(this.fTo.add(0x218)),
+        baseline:this.baseline.toString(), baseline_tick:u32(this.baseline.add(0x8)), baseline_snap:u32(this.baseline.add(0x218)),
+        target:this.target.toString(), target_tick:u32(this.target.add(0x8)), target_snap:u32(this.target.add(0x218)),
         bits:(w-this.bits0), total_bits:w});
     }
   }
