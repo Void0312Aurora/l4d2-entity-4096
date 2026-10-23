@@ -1,0 +1,19 @@
+{
+  "image": "pristine",
+  "image_path": "/home/void0312/l4d2_server/bin/engine_srv.so",
+  "sha256": "5fa15f2820ab67b955ff227a20dbb3fda54d463f3799f33d71b6fd6f38e309b7",
+  "port": 27016,
+  "map": "c1m1_hotel",
+  "started": 1792774915.104978,
+  "ok": true,
+  "invalid_reason": null,
+  "server_pid": 453011,
+  "client_pid": 453835,
+  "engine_base": "0x79e00000",
+  "client_base": "0x74630000",
+  "connect_ok": true,
+  "event_lines": 1003,
+  "install_failed": false,
+  "install_ok": true,
+  "ended": 1792775018.0453775
+}

@@ -1,0 +1,19 @@
+{
+  "image": "frameonly",
+  "image_path": "/tmp/n27/frameonly.so",
+  "sha256": "89152442f624339b4a61220ce7d93b825809e6bbc55426cee17a14eff0036009",
+  "port": 27016,
+  "map": "c1m1_hotel",
+  "started": 1792775606.8787613,
+  "ok": true,
+  "invalid_reason": null,
+  "server_pid": 464148,
+  "client_pid": 464519,
+  "engine_base": "0x79e00000",
+  "client_base": "0x74630000",
+  "connect_ok": true,
+  "event_lines": 714,
+  "install_failed": false,
+  "install_ok": true,
+  "ended": 1792775665.576008
+}

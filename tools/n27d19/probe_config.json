@@ -1,0 +1,167 @@
+{
+  "schema": "n27d19.probe.config.v1",
+  "schema_version": 1,
+  "jsonl_schema_version": "n27d19.probe.v1",
+  "description": "Declarative GDB probes for the Windows L4D2 client under Proton. RVAs are relative to the mapped module base; the PE preferred image base is recorded for documentation only.",
+  "preferred_image_base": "0x10000000",
+  "modules": {
+    "engine.dll": {
+      "env": "N27_MODULE_BASE_ENGINE",
+      "pe_image_base": "0x10000000",
+      "fallback_span": "0x800000"
+    },
+    "client.dll": {
+      "env": "N27_MODULE_BASE_CLIENT",
+      "pe_image_base": "0x10000000",
+      "fallback_span": "0x900000"
+    }
+  },
+  "full_state": {
+    "mode": "signon",
+    "module": "engine.dll",
+    "rva": "0x93140",
+    "request_stack_offset": 4,
+    "state_offset": 104,
+    "request_value": 6,
+    "full_value": 6,
+    "require_return_state": true,
+    "expected_bytes": "558bec81ec",
+    "verify_bytes": true,
+    "env_override": "N27_FULL_STATE",
+    "note": "CClientState::SetSignonState, __thiscall. this=ECX, requested state=[esp+4], current state=[this+0x68]. FULL is latched after the call returns with [this+0x68]==6."
+  },
+  "defaults": {
+    "phase": "both",
+    "sample_limits": {
+      "pre_full": 4,
+      "post_full": 8,
+      "stats_every": 200
+    },
+    "histogram_eax": false,
+    "verify_bytes": true
+  },
+  "probes": [
+    {
+      "id": "callCond",
+      "module": "engine.dll",
+      "rva": "0x1BC2E9",
+      "phase": "both",
+      "sample_limits": {
+        "pre_full": 4,
+        "post_full": 8,
+        "stats_every": 200
+      },
+      "fields": [
+        "edi"
+      ],
+      "histogram_eax": false,
+      "expected_bytes": "e8c29cffff",
+      "verify_bytes": true,
+      "note": "call sub_101B5FB0; EDI is the object copied to ECX immediately before the call."
+    },
+    {
+      "id": "afterCond",
+      "module": "engine.dll",
+      "rva": "0x1BC2EE",
+      "phase": "both",
+      "sample_limits": {
+        "pre_full": 4,
+        "post_full": 8,
+        "stats_every": 200
+      },
+      "fields": [
+        "al"
+      ],
+      "histogram_eax": false,
+      "expected_bytes": "84c0",
+      "verify_bytes": true,
+      "note": "test al,al immediately after the condition call returns."
+    },
+    {
+      "id": "jzCond",
+      "module": "engine.dll",
+      "rva": "0x1BC2F0",
+      "phase": "both",
+      "sample_limits": {
+        "pre_full": 4,
+        "post_full": 8,
+        "stats_every": 200
+      },
+      "fields": [
+        "al",
+        "eflags"
+      ],
+      "histogram_eax": false,
+      "expected_bytes": "0f8438020000",
+      "verify_bytes": true,
+      "note": "je loc_101BC52E; AL is the condition result and EFLAGS carries ZF."
+    },
+    {
+      "id": "finalCall",
+      "module": "engine.dll",
+      "rva": "0x1BC301",
+      "phase": "both",
+      "sample_limits": {
+        "pre_full": 0,
+        "post_full": 2000,
+        "stats_every": 200
+      },
+      "fields": [
+        "eax",
+        "edx",
+        "esi",
+        "edi"
+      ],
+      "histogram_eax": true,
+      "expected_bytes": "ffd0",
+      "verify_bytes": true,
+      "target_check": {
+        "kind": "eq_deref",
+        "left": "eax",
+        "deref_reg": "edx",
+        "deref_offset": 12,
+        "deref_size": 4,
+        "mismatch_field": "mismatch"
+      },
+      "note": "call eax; before the call EDX=[ESI] and EAX=[EDX+0x0C]. Only the first 8 post-FULL hits are logged in detail; every EAX target is histogrammed."
+    },
+    {
+      "id": "e56Entry",
+      "module": "engine.dll",
+      "rva": "0x56E60",
+      "phase": "both",
+      "sample_limits": {
+        "pre_full": 2,
+        "post_full": 100,
+        "stats_every": 200
+      },
+      "fields": [
+        "return_address"
+      ],
+      "histogram_eax": false,
+      "expected_bytes": "8bc1",
+      "verify_bytes": true,
+      "note": "sub_10056E60 entry; [esp] is the caller return address."
+    },
+    {
+      "id": "clientEventBranch",
+      "module": "client.dll",
+      "rva": "0x1A0FBF",
+      "phase": "post_full",
+      "sample_limits": {
+        "pre_full": 0,
+        "post_full": 4,
+        "stats_every": 200
+      },
+      "fields": [
+        "return_address"
+      ],
+      "histogram_eax": false,
+      "expected_bytes": "8d4be8",
+      "verify_bytes": true,
+      "expect_post_full_hits": 0,
+      "note": "0 is the frame-only observation; pristine is expected to hit at least once, so do not treat this as an install failure",
+      "expected_post_full_hits": null
+    }
+  ]
+}
