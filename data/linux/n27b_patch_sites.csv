@@ -13,7 +13,7 @@ F3,0x1057ED,CClientFrame::CopyFrame,mov ecx;0x40 -> 0x80,B9 40 00 00 00,B9 80 00
 F3,0x1057CC,CClientFrame::CopyFrame,operator new(0x100) -> 0x200,C7 04 24 00 01 00 00,C7 04 24 00 02 00 00,yes,imm32
 C1,0xEB3E3,CBaseClient::CBaseClient,mov ecx;0x40 -> 0x80,B9 40 00 00 00,B9 80 00 00 00,yes,heap bitmap memset count
 C1,0xEB3F3,CBaseClient::CBaseClient,hook alloc stub,8D 93 0C 01 00 00,E8 rel32 90,no,code cave
-C2,0xEB2FB,CBaseClient::~CBaseClient,hook free stub,A1 70 00 2A 00,E8 rel32,no,code cave
+C2,0xEB2F0,CBaseClient::~CBaseClient,dtor prologue hook (5 bytes),55 89 E5 56 53,E9 rel32,no,"改为入口钩子，桩内重放 push ebp/mov ebp,esp/push esi/push ebx，再 free 并跳回 0xEB2F5；原 0xEB2FB 的 TEXTREL 指令保持原位"
 C3,0xE75B6,CBaseClient::FreeBaselines,lea -> mov (bitmap ptr),8D 97 0C 01 00 00,8B 97 0C 01 00 00,yes,pointer load
 C3,0xE75BC,CBaseClient::FreeBaselines,mov ecx;0x40 -> 0x80,B9 40 00 00 00,B9 80 00 00 00,yes,
 C3,0xE90B1,CBaseClient::ProcessBaselineAck,mov edx -> mov eax from +0x10C,8B 96 0C 01 00 00,8B 86 0C 01 00 00,yes,load ptr

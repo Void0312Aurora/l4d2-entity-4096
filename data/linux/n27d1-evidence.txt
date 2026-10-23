@@ -1,0 +1,47 @@
+# N27-D1 evidence (2026-10-23)
+
+== static gates ==
+PASS: pristine bytes, spans, frame/stack coverage all consistent
+counts: {'below_bitmap_shift': 212, 'bitmap_base': 3, 'above_bitmap_keep': 24, 'arg_keep': 23, 'bitmap_region_other': 0}
+explicit spans: 42 frame: 47 stack: 262
+
+PASS: no residual old EBP displacement, nine 0xFFF bounds, 0x230 base
+
+== build ==
+built /tmp/n27/engine_srv_n27d1.so
+stubs at file 0x3DE000 vaddr 0x400000 ctor=29 dtor=42
+new LOAD at file 0x3DE000 vaddr 0x400000 size=71; C-rows=15
+
+== stub disassembly ==
+400000: push 0x200
+400005: call 0x817c0          (malloc@plt)
+40000a: add esp,4
+40000d: mov [ebx+0x10C],eax
+400013: mov edx,eax
+400015: mov ecx,0x80
+40001a: xor eax,eax
+40001c: ret
+40001d: push ebp; mov ebp,esp; push esi; push ebx
+400022: mov ebx,[ebp+8]
+400025: mov eax,[ebx+0x10C]
+40002b: test eax,eax
+40002d: je 0x400042
+40002f: push eax
+400030: call 0x81800          (free@plt)
+400035: add esp,4
+400038: mov dword [ebx+0x10C],0
+400042: jmp 0xeb2f5
+
+== ELF program headers ==
+LOAD 0x000000 0x00000000 filesz 0x32aa3d memsz 0x32aa3d R E
+LOAD 0x32ab30 0x0032bb30 filesz 0x071f8  memsz 0xcddd0  RW
+NOTE 0x3de048 0x00400048 filesz 0x24
+LOAD 0x3de000 0x00400000 filesz 0x47     memsz 0x47     R E
+
+== runtime mapping (engine base e81ff000) ==
+e85ff000-e8600000 r-xp 003de000 /tmp/n27run/bin/engine_srv.so
+
+== runtime load ==
+---- Host_NewGame ----
+Host_NewGame on map c1m1_hotel
+num_edicts=1528 max_edicts=2048 pEdicts=0xdd672020
