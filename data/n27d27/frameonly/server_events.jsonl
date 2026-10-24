@@ -1,0 +1,44 @@
+{"base": "0xf1d94000", "event": "ready", "run_id": "d27-frame2", "schema_version": "n27d20.server.v1", "ts": "2026-10-24T17:24:37.203222+00:00", "vtables": 298}
+{"before": 0, "client": 242051872, "event": "setsignon", "requested": 0, "run_id": "d27-frame2", "schema_version": "n27d20.server.v1", "ts": "2026-10-24T17:24:48.488060+00:00"}
+{"before": 0, "client": 242051872, "event": "setsignon", "requested": 0, "run_id": "d27-frame2", "schema_version": "n27d20.server.v1", "ts": "2026-10-24T17:24:48.490253+00:00"}
+{"before": 0, "client": 242051872, "event": "setsignon", "requested": 2, "run_id": "d27-frame2", "schema_version": "n27d20.server.v1", "ts": "2026-10-24T17:24:48.491185+00:00"}
+{"bfread": 227201472, "ebp": 4293049336, "eip": 4058235011, "event": "read_signonstate_enter", "object": 4059277214, "object_ebp": 227201472, "run_id": "d27-frame2", "schema_version": "n27d20.server.v1", "ts": "2026-10-24T17:24:48.542180+00:00"}
+{"event": "read_state_store", "run_id": "d27-frame2", "schema_version": "n27d20.server.v1", "site": "store_a", "ts": "2026-10-24T17:24:48.549617+00:00", "value": 0}
+{"event": "read_signonstate_return", "fields": {"0x4c": 2, "0x50": 4294967295, "0x54": 0, "0x58": 0}, "obj": 227201472, "ret": 1, "run_id": "d27-frame2", "schema_version": "n27d20.server.v1", "state": 2, "ts": "2026-10-24T17:24:48.550713+00:00"}
+{"client": 242051872, "event": "signonmsg", "old": 4294967295, "run_id": "d27-frame2", "schema_version": "n27d20.server.v1", "signon_state": 2, "state": 2, "ts": "2026-10-24T17:24:48.551662+00:00"}
+{"before": 2, "client": 242051872, "event": "setsignon", "requested": 3, "run_id": "d27-frame2", "schema_version": "n27d20.server.v1", "ts": "2026-10-24T17:24:48.641567+00:00"}
+{"bfread": 227201472, "ebp": 4293049336, "eip": 4058235011, "event": "read_signonstate_enter", "object": 4059277214, "object_ebp": 227201472, "run_id": "d27-frame2", "schema_version": "n27d20.server.v1", "ts": "2026-10-24T17:25:08.811019+00:00"}
+{"event": "read_state_store", "run_id": "d27-frame2", "schema_version": "n27d20.server.v1", "site": "store_a", "ts": "2026-10-24T17:25:08.812519+00:00", "value": 0}
+{"event": "read_signonstate_return", "fields": {"0x4c": 3, "0x50": 1, "0x54": 0, "0x58": 0}, "obj": 227201472, "ret": 1, "run_id": "d27-frame2", "schema_version": "n27d20.server.v1", "state": 3, "ts": "2026-10-24T17:25:08.813721+00:00"}
+{"client": 242051872, "event": "signonmsg", "old": 1, "run_id": "d27-frame2", "schema_version": "n27d20.server.v1", "signon_state": 3, "state": 3, "ts": "2026-10-24T17:25:08.814587+00:00"}
+{"client": 242051872, "event": "sendsignondata", "run_id": "d27-frame2", "schema_version": "n27d20.server.v1", "signon_state": 3, "ts": "2026-10-24T17:25:08.815485+00:00"}
+{"before": 3, "client": 242051872, "event": "setsignon", "requested": 4, "run_id": "d27-frame2", "schema_version": "n27d20.server.v1", "ts": "2026-10-24T17:25:08.816467+00:00"}
+{"bfread": 227201472, "ebp": 4293049336, "eip": 4058235011, "event": "read_signonstate_enter", "object": 4059277214, "object_ebp": 227201472, "run_id": "d27-frame2", "schema_version": "n27d20.server.v1", "ts": "2026-10-24T17:25:09.686078+00:00"}
+{"event": "read_state_store", "run_id": "d27-frame2", "schema_version": "n27d20.server.v1", "site": "store_a", "ts": "2026-10-24T17:25:09.687462+00:00", "value": 0}
+{"event": "read_signonstate_return", "fields": {"0x4c": 4, "0x50": 1, "0x54": 0, "0x58": 0}, "obj": 227201472, "ret": 1, "run_id": "d27-frame2", "schema_version": "n27d20.server.v1", "state": 4, "ts": "2026-10-24T17:25:09.688527+00:00"}
+{"client": 242051872, "event": "signonmsg", "old": 1, "run_id": "d27-frame2", "schema_version": "n27d20.server.v1", "signon_state": 4, "state": 4, "ts": "2026-10-24T17:25:09.689053+00:00"}
+{"client": 242051872, "event": "sendmsg", "msg": 4293049120, "msg_class": "SVC_SetView", "run_id": "d27-frame2", "schema_version": "n27d20.server.v1", "ts": "2026-10-24T17:25:09.689986+00:00", "vptr": 4060240200, "vptr_rva": 2693440}
+{"client": 242051872, "event": "spawnplayer", "run_id": "d27-frame2", "schema_version": "n27d20.server.v1", "signon_state": 4, "ts": "2026-10-24T17:25:09.690894+00:00"}
+{"client": 242051872, "event": "sendmsg", "msg": 4293048872, "msg_class": "NET_Tick", "run_id": "d27-frame2", "schema_version": "n27d20.server.v1", "ts": "2026-10-24T17:25:09.691720+00:00", "vptr": 4060240680, "vptr_rva": 2693920}
+{"before": 4, "client": 242051872, "event": "setsignon", "requested": 5, "run_id": "d27-frame2", "schema_version": "n27d20.server.v1", "ts": "2026-10-24T17:25:09.692618+00:00"}
+{"client": 242051872, "event": "sendmsg", "msg": 4293048960, "msg_class": "NET_SignonState", "run_id": "d27-frame2", "schema_version": "n27d20.server.v1", "ts": "2026-10-24T17:25:09.693499+00:00", "vptr": 4060240008, "vptr_rva": 2693248}
+{"bfread": 227201472, "ebp": 4293049336, "eip": 4058235011, "event": "read_signonstate_enter", "object": 4059277214, "object_ebp": 227201472, "run_id": "d27-frame2", "schema_version": "n27d20.server.v1", "ts": "2026-10-24T17:25:10.091788+00:00"}
+{"event": "read_state_store", "run_id": "d27-frame2", "schema_version": "n27d20.server.v1", "site": "store_a", "ts": "2026-10-24T17:25:10.093148+00:00", "value": 0}
+{"event": "read_signonstate_return", "fields": {"0x4c": 5, "0x50": 1, "0x54": 0, "0x58": 0}, "obj": 227201472, "ret": 1, "run_id": "d27-frame2", "schema_version": "n27d20.server.v1", "state": 5, "ts": "2026-10-24T17:25:10.094024+00:00"}
+{"client": 242051872, "event": "signonmsg", "old": 1, "run_id": "d27-frame2", "schema_version": "n27d20.server.v1", "signon_state": 5, "state": 5, "ts": "2026-10-24T17:25:10.094675+00:00"}
+{"client": 242051872, "event": "activateplayer", "run_id": "d27-frame2", "schema_version": "n27d20.server.v1", "signon_state": 5, "ts": "2026-10-24T17:25:10.095551+00:00"}
+{"before": 5, "client": 242051872, "event": "setsignon", "requested": 6, "run_id": "d27-frame2", "schema_version": "n27d20.server.v1", "ts": "2026-10-24T17:25:10.096578+00:00"}
+{"client": 242051872, "event": "sendmsg", "msg": 4061607984, "msg_class": "SVC_UserMessage", "run_id": "d27-frame2", "schema_version": "n27d20.server.v1", "ts": "2026-10-24T17:25:10.097672+00:00", "vptr": 4060240872, "vptr_rva": 2694112}
+{"client": 242051872, "event": "sendmsg", "msg": 4293048688, "msg_class": "SVC_SetView", "run_id": "d27-frame2", "schema_version": "n27d20.server.v1", "ts": "2026-10-24T17:25:10.098717+00:00", "vptr": 4060240200, "vptr_rva": 2693440}
+{"client": 242051872, "event": "sendmsg", "msg": 4061607984, "msg_class": "SVC_UserMessage", "run_id": "d27-frame2", "schema_version": "n27d20.server.v1", "ts": "2026-10-24T17:25:10.099664+00:00", "vptr": 4060240872, "vptr_rva": 2694112}
+{"client": 242051872, "event": "sendmsg", "msg": 4061607984, "msg_class": "SVC_UserMessage", "run_id": "d27-frame2", "schema_version": "n27d20.server.v1", "ts": "2026-10-24T17:25:10.226951+00:00", "vptr": 4060240872, "vptr_rva": 2694112}
+{"event": "read_baseline_enter", "obj": 237138352, "run_id": "d27-frame2", "schema_version": "n27d20.server.v1", "ts": "2026-10-24T17:25:11.005749+00:00"}
+{"event": "read_baseline_return", "nr": 0, "ret": 1, "run_id": "d27-frame2", "schema_version": "n27d20.server.v1", "tick": 665, "ts": "2026-10-24T17:25:11.007195+00:00"}
+{"event": "clc_baseline_process_enter", "msg": 237138352, "run_id": "d27-frame2", "schema_version": "n27d20.server.v1", "tick": 665, "ts": "2026-10-24T17:25:11.007749+00:00"}
+{"client": 242051872, "event": "process_baseline", "msg": 237138352, "nr": 0, "run_id": "d27-frame2", "schema_version": "n27d20.server.v1", "tick": 665, "ts": "2026-10-24T17:25:11.009010+00:00"}
+{"event": "process_baseline_return", "ret": 0, "run_id": "d27-frame2", "schema_version": "n27d20.server.v1", "tick": 665, "ts": "2026-10-24T17:25:11.010137+00:00"}
+{"event": "clc_baseline_process_return", "ret": 0, "run_id": "d27-frame2", "schema_version": "n27d20.server.v1", "tick": 665, "ts": "2026-10-24T17:25:11.010767+00:00"}
+{"count": 100, "event": "processmessages_tick", "run_id": "d27-frame2", "schema_version": "n27d20.server.v1", "ts": "2026-10-24T17:25:11.920478+00:00"}
+{"count": 200, "event": "processmessages_tick", "run_id": "d27-frame2", "schema_version": "n27d20.server.v1", "ts": "2026-10-24T17:25:15.315682+00:00"}
+{"count": 300, "event": "processmessages_tick", "run_id": "d27-frame2", "schema_version": "n27d20.server.v1", "ts": "2026-10-24T17:25:18.642722+00:00"}
+{"count": 400, "event": "processmessages_tick", "run_id": "d27-frame2", "schema_version": "n27d20.server.v1", "ts": "2026-10-24T17:25:21.960986+00:00"}

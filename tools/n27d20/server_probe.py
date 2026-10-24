@@ -73,6 +73,17 @@ class BaseFin(gdb.FinishBreakpoint):
     def out_of_scope(self):
         emit(event="read_baseline_return", ret=None)
 
+class RetFin(gdb.FinishBreakpoint):
+    def __init__(self, event, **kw):
+        super().__init__(internal=True); self.event=event; self.kw=kw
+    def stop(self):
+        try: rv=int(self.return_value) & 0xffffffff
+        except Exception: rv=reg("eax")
+        emit(event=self.event, ret=rv, **self.kw)
+        return False
+    def out_of_scope(self):
+        emit(event=self.event, ret=None, **self.kw)
+
 class BP(gdb.Breakpoint):
     def __init__(self, addr, name, kind):
         super().__init__("*0x%x" % (BASE + addr), internal=True)
@@ -94,6 +105,11 @@ class BP(gdb.Breakpoint):
         elif self.kind == "processbaseline":
             msg=stack(2); emit(event="process_baseline", client=this, msg=msg,
                 tick=u32(msg+0x4C) if msg else None, nr=u32(msg+0x50) if msg else None)
+            RetFin("process_baseline_return", tick=u32(msg+0x4C) if msg else None)
+        elif self.kind == "clcprocess":
+            msg=this; emit(event="clc_baseline_process_enter", msg=msg,
+                tick=u32(msg+0x4C) if msg else None)
+            RetFin("clc_baseline_process_return", tick=u32(msg+0x4C) if msg else None)
         elif self.kind == "readstore":
             emit(event="read_state_store", value=reg("eax"), site=self.name)
         elif self.kind == "readsignon":
@@ -124,6 +140,7 @@ for addr, name, kind in (
     (0x1A6460, "procmsg", "procmsg"),
     (0x9C230, "readbaseline", "readbaseline"),
     (0xE9030, "processbaseline", "processbaseline"),
+    (0xA8D60, "clcprocess", "clcprocess"),
     (0xA81E5, "store_a", "readstore"),
     (0xA836E, "store_b", "readstore"),
 ):
