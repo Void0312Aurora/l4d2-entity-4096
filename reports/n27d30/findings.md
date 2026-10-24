@@ -5,9 +5,7 @@
 - `ProcessBaselineAck` 内确认只有一处 `CClientFrame*` 尾部读取（`+0x118`），已在 D29 迁移；
 - 对 35 个帧消费者函数做位移扫描，发现 78 个旧位移样式的操作数，其中 16 个不在 CSV；
 - 16 个中大多数是 `-0x118(%ebp)` 之类的栈局部变量，不是帧成员；
-- 一个需要继续确认的真实候选：
-  `CBaseServer::WriteDeltaEntities+0x1DDE90` 的 `lea 0x10C(%eax)`，
-  随后 `rep stosd` 清零 256 字节，疑似旧内联实体位图；
+- `0x1DDE90` 经复核属于 C3 客户端位图，不是 F2 漏迁（见 correction.md）；
 - 功能正控仍未建立：无原生 Windows 客户端；Proton + pristine 无调试器仍停在
   `Receiving uncompressed update`，且 `xdotool` 未找到游戏窗口。
 
@@ -46,7 +44,7 @@
 `CBaseClient*`（`esi`），属于客户端内联位图/C3 范围，不是 `CClientFrame*`，
 因此不应加入 F2。
 
-## 4 WriteDeltaEntities 候选
+## 4 WriteDeltaEntities 候选（已更正）
 
 ```
 1dde90: lea 0x10c(%eax),%edx
