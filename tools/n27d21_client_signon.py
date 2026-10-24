@@ -16,6 +16,19 @@ def u8(a):
 def reg(n):
     try: return int(gdb.parse_and_eval("$"+n))
     except Exception: return None
+def bf_snapshot(netchan):
+    if not netchan: return None
+    b=netchan+32
+    data=u32(b); bits=u32(b+12); cap=u32(b+4)
+    raw=None
+    if data and bits is not None and bits >= 0:
+        n=min((bits+7)//8, 64)
+        try:
+            raw=gdb.selected_inferior().read_memory(data,n).tobytes().hex()
+        except Exception:
+            raw=None
+    return {"data":data,"bits":bits,"cap":cap,"raw":raw}
+
 def bufs(netchan):
     if not netchan: return None
     return {str(off): u32(netchan+off+12) for off in (32,68,104)}
@@ -34,9 +47,9 @@ if actual != EXPECTED:
     raise SystemExit(1)
 
 class SendFin(gdb.FinishBreakpoint):
-    def __init__(self, clientstate, state, netchan, before):
+    def __init__(self, clientstate, state, netchan, before, bfbefore):
         super().__init__(internal=True); self.clientstate=clientstate; self.state=state
-        self.netchan=netchan; self.before=before
+        self.netchan=netchan; self.before=before; self.bfbefore=bfbefore
     def stop(self):
         try: rv=int(self.return_value) & 0xff
         except Exception: rv=reg("eax")
@@ -46,7 +59,8 @@ class SendFin(gdb.FinishBreakpoint):
             delta={k: (after[k]-self.before[k] if after.get(k) is not None and self.before.get(k) is not None else None) for k in after}
         emit(event="send_signonstate_return", state=self.state, ret=rv,
              client_state=u32(self.clientstate+0x68) if self.clientstate else None,
-             buffers_before=self.before, buffers_after=after, buffers_delta=delta)
+             buffers_before=self.before, buffers_after=after, buffers_delta=delta,
+             bf_before=self.bfbefore, bf_after=bf_snapshot(self.netchan))
         return False
     def out_of_scope(self):
         emit(event="send_signonstate_return", state=self.state, ret=None)
@@ -62,7 +76,7 @@ class SendBP(gdb.Breakpoint):
         if rva == VT_NS:
             st=u32(msg+0x54); emit(event="send_signonstate_enter", state=st,
                 spawn_count=u32(msg+0x58), netchan=netchan, msg=msg)
-            SendFin(u32(netchan+8) if netchan else None, st, netchan, bufs(netchan))
+            SendFin(u32(netchan+8) if netchan else None, st, netchan, bufs(netchan), bf_snapshot(netchan))
         else:
             emit(event="send_other", vptr_rva=rva, netchan=netchan)
         return False
