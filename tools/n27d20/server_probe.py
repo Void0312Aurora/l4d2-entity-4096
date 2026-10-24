@@ -60,6 +60,19 @@ class ReadFin(gdb.FinishBreakpoint):
     def out_of_scope(self):
         emit(event="read_signonstate_return", ret=None)
 
+class BaseFin(gdb.FinishBreakpoint):
+    def __init__(self, obj):
+        super().__init__(internal=True); self.obj=obj
+    def stop(self):
+        try: rv=int(self.return_value) & 0xff
+        except Exception: rv=reg("eax")
+        emit(event="read_baseline_return", ret=rv,
+             tick=u32(self.obj+0x4C) if self.obj else None,
+             nr=u32(self.obj+0x50) if self.obj else None)
+        return False
+    def out_of_scope(self):
+        emit(event="read_baseline_return", ret=None)
+
 class BP(gdb.Breakpoint):
     def __init__(self, addr, name, kind):
         super().__init__("*0x%x" % (BASE + addr), internal=True)
@@ -75,6 +88,12 @@ class BP(gdb.Breakpoint):
         elif self.kind == "signonmsg":
             emit(event="signonmsg", client=this, state=stack(2), old=stack(3),
                  signon_state=u8(this + 0xEC) if this else None)
+        elif self.kind == "readbaseline":
+            emit(event="read_baseline_enter", obj=this)
+            BaseFin(this)
+        elif self.kind == "processbaseline":
+            msg=stack(2); emit(event="process_baseline", client=this, msg=msg,
+                tick=u32(msg+0x4C) if msg else None, nr=u32(msg+0x50) if msg else None)
         elif self.kind == "readstore":
             emit(event="read_state_store", value=reg("eax"), site=self.name)
         elif self.kind == "readsignon":
@@ -103,6 +122,8 @@ for addr, name, kind in (
     (0xEBD50, "sendsignondata", "plain"),
     (0xA8083, "readsignon2", "readsignon"),
     (0x1A6460, "procmsg", "procmsg"),
+    (0x9C230, "readbaseline", "readbaseline"),
+    (0xE9030, "processbaseline", "processbaseline"),
     (0xA81E5, "store_a", "readstore"),
     (0xA836E, "store_b", "readstore"),
 ):
