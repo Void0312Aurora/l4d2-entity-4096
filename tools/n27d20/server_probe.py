@@ -110,6 +110,19 @@ class BP(gdb.Breakpoint):
             msg=this; emit(event="clc_baseline_process_enter", msg=msg,
                 tick=u32(msg+0x4C) if msg else None)
             RetFin("clc_baseline_process_return", tick=u32(msg+0x4C) if msg else None)
+        elif self.kind == "pbaframe":
+            fr=reg("eax")
+            emit(event="pba_frame", frame=fr,
+                 f118=u32(fr+0x118) if fr else None,
+                 f218=u32(fr+0x218) if fr else None,
+                 f10c=u32(fr+0x10c) if fr else None,
+                 f20c=u32(fr+0x20c) if fr else None)
+        elif self.kind == "pbabranch":
+            cli=reg("esi")
+            emit(event="pba_zero_branch", site=self.name, client=cli,
+                 server_tick=u32(cli+0x108) if cli else None,
+                 snapshot=u32(cli+0x118) if cli else None,
+                 baseline_state=u32(cli+0x20C) if cli else None)
         elif self.kind == "readstore":
             emit(event="read_state_store", value=reg("eax"), site=self.name)
         elif self.kind == "readsignon":
@@ -141,6 +154,10 @@ for addr, name, kind in (
     (0x9C230, "readbaseline", "readbaseline"),
     (0xE9030, "processbaseline", "processbaseline"),
     (0xA8D60, "clcprocess", "clcprocess"),
+    (0xE90AB, "frame_snapshot_check", "pbaframe"),
+    (0xE933F, "snapshot_null", "pbabranch"),
+    (0xE926D, "no_entity_ref", "pbabranch"),
+    (0xE9287, "scan_done", "pbabranch"),
     (0xA81E5, "store_a", "readstore"),
     (0xA836E, "store_b", "readstore"),
 ):
