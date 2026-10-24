@@ -58,7 +58,7 @@ frameonly 的 `signonmsg` 序列是 `[2,3,4,5]`；pristine 是 `[2,3,4,5,6]`。
 | `NET_SignonState` | 1 | 1 |
 | 合计 | **7** | **157** |
 
-frameonly 的 7 条消息全部发生在 signon 6 之前；没有进入正常游戏消息阶段。
+frameonly 的 7 条消息全部发生在**客户端 6 号确认被处理之前**；服务端 `SetSignonState(6)` 之后仍发出了 3 条 `SVC_UserMessage` 和 1 条 `SVC_SetView`，因此不能表述为“服务端请求状态 6 之前”。
 
 ## 4 首个缺失阶段
 
