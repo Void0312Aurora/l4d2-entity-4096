@@ -9,13 +9,15 @@ import argparse, hashlib, json, os, re, shutil, signal, subprocess, sys, time
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
-CLEAN = Path("/tmp/cleanrun")
+CLEAN = Path(os.environ.get("N27_CLEAN", "/home/void0312/l4d2_test/cleanrun"))
 PROBE = ROOT / "tools/n27d19/gdb_probe.py"
 CONFIG = ROOT / "tools/n27d19/probe_config.json"
 
 IMAGES = {
     "pristine": ("/home/void0312/l4d2_server/bin/engine_srv.so", "5fa15f2820ab67b955ff227a20dbb3fda54d463f3799f33d71b6fd6f38e309b7"),
-    "frameonly": ("/tmp/n27/frameonly.so", "89152442f624339b"),
+    "frameonly": ("/home/void0312/l4d2_test/n27/frameonly.so", "2917501000a2cb12e6b9"),
+    "sizeonly": ("/home/void0312/l4d2_test/n27/sizeonly.so", "6f722e05c92219a31396"),
+    "frame_offsets": ("/home/void0312/l4d2_test/n27/frame_offsets.so", "b232407b81cb57396dc9"),
 }
 
 def sha256(p):
@@ -30,7 +32,15 @@ def run(cmd, **kw):
 
 def pid_of(name):
     out = run(["pgrep", "-x", name], capture_output=True)
-    return int(out.stdout.split()[0]) if out.stdout.strip() else None
+    pids = [int(x) for x in out.stdout.split()]
+    for p in pids:
+        try:
+            stat = Path(f"/proc/{p}/stat").read_text().split()
+            if len(stat) > 2 and stat[2] != "Z":
+                return p
+        except Exception:
+            pass
+    return pids[0] if pids else None
 
 def kill_name(name):
     pid = pid_of(name)
@@ -38,6 +48,58 @@ def kill_name(name):
         try: os.kill(pid, signal.SIGKILL)
         except ProcessLookupError: pass
         time.sleep(1.0)
+
+def client_pid():
+    for d in Path("/proc").iterdir():
+        if not d.name.isdigit():
+            continue
+        try:
+            cmd = (d/"cmdline").read_bytes()
+        except Exception:
+            continue
+        if b"left4dead2.exe" not in cmd:
+            continue
+        if any(x in cmd for x in (b"bwrap", b"proton", b"steam-launch-wrapper", b"reaper", b"srt-bwrap", b"pv-adverb")):
+            continue
+        try:
+            if (d/"comm").read_text().strip() in ("steam.exe", "left4dead2.exe"):
+                return int(d.name)
+        except Exception:
+            pass
+    return None
+
+def server_pid_on_port(port):
+    needle = f"-port".encode()
+    pneedle = str(port).encode()
+    for d in Path("/proc").iterdir():
+        if not d.name.isdigit():
+            continue
+        try:
+            cmd = (d/"cmdline").read_bytes()
+            if b"srcds_linux" not in cmd:
+                continue
+            parts = cmd.split(b"\0")
+            if b"-port" in parts and pneedle in parts:
+                return int(d.name)
+        except Exception:
+            continue
+    return None
+
+def child_pid(parent, comm, timeout=12):
+    end = time.time() + timeout
+    while time.time() < end:
+        try:
+            kids = Path(f"/proc/{parent}/task/{parent}/children").read_text().split()
+        except Exception:
+            kids = []
+        for k in kids:
+            try:
+                if Path(f"/proc/{k}/comm").read_text().strip() == comm:
+                    return int(k)
+            except Exception:
+                pass
+        time.sleep(0.2)
+    return None
 
 def module_base(pid, suffix):
     # suffix must be an exact path ending, e.g. '/bin/engine.dll'
@@ -57,8 +119,18 @@ def wait_for(path, needle, timeout, pid=None):
     return False
 
 def launch_server(run_dir, image, port, mapname, log):
-    shutil.copyfile(image, CLEAN / "bin/engine_srv.so")
-    os.chmod(CLEAN / "bin/engine_srv.so", 0o755)
+    dst = CLEAN / "bin/engine_srv.so"
+    # Never follow a symlink into the production install: a previous cleanrun
+    # built with `cp -as` left this path as a symlink, and copyfile() then
+    # overwrote /home/void0312/l4d2_server/bin/engine_srv.so.
+    if dst.is_symlink():
+        dst.unlink()
+    tmp = dst.with_name(dst.name + ".n27tmp")
+    shutil.copyfile(image, tmp)
+    os.chmod(tmp, 0o755)
+    os.replace(tmp, dst)
+    if CLEAN.resolve() == Path("/home/void0312/l4d2_server").resolve():
+        sys.exit("refusing to run in the production install directory")
     fifo = run_dir / "commands.fifo"
     if fifo.exists(): fifo.unlink()
     os.mkfifo(fifo)
@@ -77,7 +149,7 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--image", choices=sorted(IMAGES), required=True)
     ap.add_argument("--out", required=True)
-    ap.add_argument("--port", type=int, default=27016)
+    ap.add_argument("--port", type=int, default=27020)
     ap.add_argument("--map", default="c1m1_hotel")
     ap.add_argument("--duration", type=float, default=40)
     ap.add_argument("--connect-ip", default="10.77.88.2")
@@ -99,9 +171,12 @@ def main():
     client_log = run_dir / "client.console.log"
     jsonl = run_dir / "events.jsonl"
 
-    kill_name("srcds_linux"); kill_name("left4dead2.exe")
+    import socket
+    with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as probe_sock:
+        if probe_sock.connect_ex(("127.0.0.1", args.port)) == 0:
+            sys.exit(f"port {args.port} already in use; refusing to disturb a running server")
     p, fifo = launch_server(run_dir, image, args.port, args.map, server_log)
-    meta["server_pid"] = pid_of("srcds_linux")
+    meta["server_pid"] = server_pid_on_port(args.port) or child_pid(p.pid, "srcds_linux")
     if not wait_for(server_log, "Host_NewGame", 60):
         meta["invalid_reason"] = "server did not reach Host_NewGame"
         (run_dir/"metadata.json").write_text(json.dumps(meta, indent=2)); sys.exit(2)
@@ -110,20 +185,69 @@ def main():
         fifo_write(fifo, cmd)
     time.sleep(2)
 
+    srv_gdb = None
+    server_jsonl = run_dir / "server_events.jsonl"
+    if not args.no_client and Path(__file__).resolve().parents[2].joinpath("tools/n27d20/server_probe.py").exists():
+        sbase = None
+        try:
+            maps = Path(f"/proc/{meta['server_pid']}/maps").read_text(errors="ignore")
+            m = re.search(r"^([0-9a-f]+)-[0-9a-f]+ .*engine_srv\.so$", maps, re.M)
+            sbase = int(m.group(1), 16) if m else None
+        except Exception:
+            sbase = None
+        if sbase:
+            live = server_pid_on_port(args.port)
+            if live:
+                meta["server_pid"] = live
+                try:
+                    lm = Path(f"/proc/{live}/maps").read_text(errors="ignore")
+                    mm = re.search(r"^([0-9a-f]+)-[0-9a-f]+ .*engine_srv\.so$", lm, re.M)
+                    if mm:
+                        sbase = int(mm.group(1), 16)
+                except Exception:
+                    pass
+            meta["server_base"] = hex(sbase)
+            inner = (
+                f"sudo -n env N27_SERVER_OUT='{server_jsonl}' "
+                f"N27_SERVER_BASE='{hex(sbase)}' "
+                f"N27_SERVER_VTABLES='{ROOT/'tools/n27d20/server_vtables.json'}' "
+                f"N27_RUN_ID='{run_dir.name}' "
+                f"timeout {int(args.duration)+25} gdb -q -batch "
+                f"-ex 'set pagination off' -ex 'set confirm off' "
+                f"-ex 'attach {meta['server_pid']}' "
+                f"-ex \"python exec(open('{ROOT/'tools/n27d20/server_probe.py'}').read())\" "
+                f"-ex continue"
+            )
+            sgdb = ["bash", "-lc", inner]
+            time.sleep(3)
+            with open(run_dir/"server_attach_debug.txt","w") as dbg:
+                dbg.write(subprocess.run(["ps","-o","pid,ppid,stat,comm","-p",str(meta['server_pid'])],capture_output=True,text=True).stdout)
+                dbg.write("exists=%s\n" % Path(f"/proc/{meta['server_pid']}").exists())
+                dbg.write("pgrep=%s\n" % subprocess.run(["pgrep","-ax","srcds_linux"],capture_output=True,text=True).stdout)
+            srv_gdb = subprocess.Popen(sgdb, stdin=subprocess.DEVNULL,
+                                       stdout=open(run_dir/"server_gdb.log","w"),
+                                       stderr=subprocess.STDOUT, env=os.environ.copy())
+            time.sleep(1)
+
     if not args.no_client:
         env = os.environ.copy()
         env.setdefault("DISPLAY", ":0")
+        if not env.get("XAUTHORITY"):
+            import glob
+            auth = sorted(glob.glob("/run/user/1000/.mutter-Xwaylandauth.*"))
+            if auth:
+                env["XAUTHORITY"] = auth[-1]
         cp_log0 = Path("/home/void0312/.steam/debian-installation/steamapps/common/Left 4 Dead 2/left4dead2/console.log")
         console_offset = cp_log0.stat().st_size if cp_log0.exists() else 0
         with open("/tmp/n27d19-steam.log", "w") as sf:
-            subprocess.Popen(["/home/void0312/.steam/debian-installation/ubuntu12_32/steam",
+            subprocess.Popen(["/home/void0312/.steam/debian-installation/steam.sh",
                               "-applaunch", "550", "-novid", "-console", "-condebug",
                               "+connect", f"{args.connect_ip}:{args.port}"],
                              env=env, stdout=sf, stderr=subprocess.STDOUT, start_new_session=True)
         gpid = None
-        end = time.time() + 60
+        end = time.time() + 150
         while time.time() < end:
-            gpid = pid_of("left4dead2.exe")
+            gpid = client_pid()
             if gpid: break
             time.sleep(0.3)
         if not gpid:
@@ -169,6 +293,7 @@ def main():
         meta["connect_ok"] = client_log.exists() and "Connected to" in client_log.read_text(errors="ignore")
         events = [json.loads(l) for l in jsonl.read_text(errors="ignore").splitlines() if l.startswith("{")] if jsonl.exists() else []
         meta["event_lines"] = len(events)
+        meta["server_event_lines"] = sum(1 for l in server_jsonl.read_text(errors="ignore").splitlines() if l.startswith("{")) if server_jsonl.exists() else 0
         meta["install_failed"] = any(e.get("event") == "install_failed" for e in events)
         meta["install_ok"] = any(e.get("event") == "install_summary" and e.get("ok") for e in events)
         meta["full_state_seen"] = any(e.get("event") == "full_state" for e in events)
@@ -177,7 +302,19 @@ def main():
         if not meta["ok"]:
             meta["invalid_reason"] = "connect/install/probe validity failed"
 
-    kill_name("left4dead2.exe"); kill_name("srcds_linux")
+    if srv_gdb is not None:
+        try:
+            srv_gdb.wait(timeout=8)
+        except Exception:
+            try: srv_gdb.kill()
+            except Exception: pass
+    if 'gpid' in locals() and gpid:
+        try: os.kill(gpid, signal.SIGKILL)
+        except ProcessLookupError: pass
+    try:
+        os.killpg(os.getpgid(p.pid), signal.SIGKILL)
+    except ProcessLookupError:
+        pass
     meta["ended"] = time.time()
     (run_dir/"metadata.json").write_text(json.dumps(meta, indent=2))
     print(json.dumps({k: meta.get(k) for k in ("image","ok","connect_ok","event_lines","engine_base","client_base","invalid_reason")}, indent=2))
