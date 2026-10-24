@@ -88,3 +88,15 @@ frameonly 只有 `256460656` 一个对象：
 因此正确表述应为：**两者首次连接都完成 SpawnPlayer/ActivatePlayer；原版首次连接
 随后处理 signon 6，frameonly 没有。** 其余 `ActivatePlayer` 来自重连对象，不应计入
 同一连接的协议序列。
+
+## 7 `SendNetMsg` 也按连接对象归组
+
+| 连接对象 | 消息数 | 主要类型 |
+|---|---:|---|
+| frameonly `256460656` | 7 | UserMessage 3、SetView 2、Tick 1、SignonState 1 |
+| pristine `259450832`（首次） | 58 | UserMessage 35、Prefetch 7、Sounds 5 |
+| pristine `260890336` | 34 | 重连对象 |
+| pristine `261424880` | 33 | 重连对象 |
+| pristine `261672368` | 32 | 重连对象 |
+
+因此原版 157 条不能直接与 frameonly 7 条比较；首次连接的正确对比是 **58 vs 7**。
