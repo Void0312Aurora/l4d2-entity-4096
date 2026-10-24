@@ -53,7 +53,8 @@ class ReadFin(gdb.FinishBreakpoint):
     def stop(self):
         try: rv=int(self.return_value) & 0xff
         except Exception: rv=reg("eax")
-        emit(event="read_signonstate_return", ret=rv,
+        vals = {hex(o): u32(self.obj+o) for o in (0x4c,0x50,0x54,0x58)} if self.obj else None
+        emit(event="read_signonstate_return", ret=rv, obj=self.obj, fields=vals,
              state=u32(self.obj+0x54) if self.obj else None)
         return False
     def out_of_scope(self):
@@ -74,9 +75,13 @@ class BP(gdb.Breakpoint):
         elif self.kind == "signonmsg":
             emit(event="signonmsg", client=this, state=stack(2), old=stack(3),
                  signon_state=u8(this + 0xEC) if this else None)
+        elif self.kind == "readstore":
+            emit(event="read_state_store", value=reg("eax"), site=self.name)
         elif self.kind == "readsignon":
-            emit(event="read_signonstate_enter", client=this, bfread=stack(2))
-            ReadFin(this)
+            ebp = reg("ebp"); this_ebp = u32(ebp+8) if ebp else None
+            emit(event="read_signonstate_enter", object=this, object_ebp=this_ebp,
+                 ebp=ebp, eip=reg("eip"), bfread=stack(2))
+            ReadFin(this_ebp or this)
         elif self.kind == "procmsg":
             self.n = getattr(self, "n", 0) + 1
             if self.n % 100 == 0:
@@ -96,8 +101,10 @@ for addr, name, kind in (
     (0xE9740, "activateplayer", "plain"),
     (0xEBA70, "spawnplayer", "plain"),
     (0xEBD50, "sendsignondata", "plain"),
-    (0xA8080, "readsignon", "readsignon"),
+    (0xA8083, "readsignon2", "readsignon"),
     (0x1A6460, "procmsg", "procmsg"),
+    (0xA81E5, "store_a", "readstore"),
+    (0xA836E, "store_b", "readstore"),
 ):
     BP(addr, name, kind)
 
