@@ -89,5 +89,30 @@ class SetBP(gdb.Breakpoint):
         SetFin(cs, state)
         return False
 
+class WriteFin(gdb.FinishBreakpoint):
+    def __init__(self, obj, state):
+        super().__init__(internal=True); self.obj=obj; self.state=state
+    def stop(self):
+        try: rv=int(self.return_value) & 0xff
+        except Exception: rv=reg("eax")
+        emit(event="write_signonstate_return", state=self.state, ret=rv,
+             parsed_state=u32(self.obj+0x54) if self.obj else None)
+        return False
+    def out_of_scope(self):
+        emit(event="write_signonstate_return", state=self.state, ret=None)
+
+class WriteBP(gdb.Breakpoint):
+    def __init__(self):
+        super().__init__("*0x%x" % (E+0x50320), internal=True)
+    def stop(self):
+        obj=reg("ecx"); st=u32(obj+0x54) if obj else None
+        emit(event="write_signonstate_enter", state=st, obj=obj)
+        WriteFin(obj, st)
+        return False
+
+class RecvCount(gdb.Breakpoint):
+    def __init__(self):
+        super().__init__("*0x%x" % (E+0), internal=True)
+WriteBP()
 SetBP()
 emit(event="ready", entry=hex(ENTRY), bytes=actual.hex(), vt_ns=hex(E+VT_NS))

@@ -76,6 +76,15 @@ def main():
     import socket
     s=socket.socket(); busy=s.connect_ex(("127.0.0.1",PORT))==0; s.close()
     if busy: sys.exit("port busy")
+    # packet capture (best effort)
+    pcap=out/"d22.pcap"; tcpdump=None
+    try:
+        if subprocess.run(["sudo","-n","tcpdump","--version"],capture_output=True).returncode==0:
+            tcpdump=subprocess.Popen(["sudo","-n","tcpdump","-i","any","-nn","-tt","-U","-w",str(pcap),"udp","port",str(PORT)],
+                                     stdout=open(out/"tcpdump.log","w"), stderr=subprocess.STDOUT, start_new_session=True)
+            time.sleep(0.5)
+    except Exception:
+        tcpdump=None
     # client first
     cp0=GAME.stat().st_size if GAME.exists() else 0
     subprocess.Popen([STEAM,"-applaunch","550","-novid","-console","-condebug","+connect",f"10.77.88.2:{PORT}"],
@@ -146,6 +155,13 @@ def main():
     except Exception: sgdb.kill()
     try: cgdb.wait(timeout=5)
     except Exception: cgdb.kill()
+    if tcpdump is not None:
+        try: os.killpg(os.getpgid(tcpdump.pid), signal.SIGINT)
+        except Exception:
+            try: tcpdump.terminate()
+            except Exception: pass
+        try: tcpdump.wait(timeout=5)
+        except Exception: tcpdump.kill()
     if GAME.exists():
         (out/"client.console.log").write_bytes(GAME.read_bytes()[cp0:])
     print(json.dumps({"client_pid":pid,"server_pid":spid,"client_events":sum(1 for _ in open(out/"client_events.jsonl")) if (out/"client_events.jsonl").exists() else 0,

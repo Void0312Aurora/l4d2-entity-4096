@@ -47,6 +47,18 @@ def cls_of(vptr):
     rva = vptr - 8 - BASE
     return VT.get(rva), rva
 
+class ReadFin(gdb.FinishBreakpoint):
+    def __init__(self, obj):
+        super().__init__(internal=True); self.obj=obj
+    def stop(self):
+        try: rv=int(self.return_value) & 0xff
+        except Exception: rv=reg("eax")
+        emit(event="read_signonstate_return", ret=rv,
+             state=u32(self.obj+0x54) if self.obj else None)
+        return False
+    def out_of_scope(self):
+        emit(event="read_signonstate_return", ret=None)
+
 class BP(gdb.Breakpoint):
     def __init__(self, addr, name, kind):
         super().__init__("*0x%x" % (BASE + addr), internal=True)
@@ -62,6 +74,13 @@ class BP(gdb.Breakpoint):
         elif self.kind == "signonmsg":
             emit(event="signonmsg", client=this, state=stack(2), old=stack(3),
                  signon_state=u8(this + 0xEC) if this else None)
+        elif self.kind == "readsignon":
+            emit(event="read_signonstate_enter", client=this, bfread=stack(2))
+            ReadFin(this)
+        elif self.kind == "procmsg":
+            self.n = getattr(self, "n", 0) + 1
+            if self.n % 100 == 0:
+                emit(event="processmessages_tick", count=self.n)
         elif self.kind == "setsignon":
             emit(event="setsignon", client=this, requested=stack(2),
                  before=u8(this + 0xEC) if this else None)
@@ -77,6 +96,8 @@ for addr, name, kind in (
     (0xE9740, "activateplayer", "plain"),
     (0xEBA70, "spawnplayer", "plain"),
     (0xEBD50, "sendsignondata", "plain"),
+    (0xA8080, "readsignon", "readsignon"),
+    (0x1A6460, "procmsg", "procmsg"),
 ):
     BP(addr, name, kind)
 
