@@ -117,7 +117,30 @@ def main():
     pid,eb,cb,cgdb=chosen
     (out/"metadata.json").write_text(json.dumps({"client_pid":pid,"engine_base":hex(eb),"client_base":hex(cb)},indent=1))
     # server after client probe ready
-    CLEAN.joinpath("bin/engine_srv.so").write_bytes(image.read_bytes())
+    # P0: never follow a symlink into the production install; install atomically.
+    prod = Path("/home/void0312/l4d2_server").resolve()
+    dst = CLEAN/"bin/engine_srv.so"
+    clean_resolved = CLEAN.resolve()
+    if clean_resolved == prod or prod in clean_resolved.parents:
+        sys.exit("refusing to install image into production server tree")
+    if dst.is_symlink():
+        sys.exit(f"refusing symlinked target: {dst}")
+    dst_resolved = dst.resolve()
+    if dst_resolved == prod or prod in dst_resolved.parents:
+        sys.exit("refusing target resolving into production server tree")
+    tmp = dst.with_name(".engine_srv.so.tmp")
+    tmp.write_bytes(image.read_bytes())
+    os.replace(tmp, dst)
+    if dst.is_symlink() or not dst.is_file():
+        sys.exit("image install did not produce a regular file")
+    import hashlib
+    sha = hashlib.sha256(dst.read_bytes()).hexdigest()
+    if sha != hashlib.sha256(image.read_bytes()).hexdigest():
+        sys.exit("installed image hash mismatch")
+    (out/"image.json").write_text(json.dumps({
+        "source": str(image), "source_sha256": hashlib.sha256(image.read_bytes()).hexdigest(),
+        "installed": str(dst), "installed_resolved": str(dst_resolved),
+        "installed_sha256": sha, "clean": str(clean_resolved)}, indent=1))
     fifo=out/"commands.fifo"
     if fifo.exists(): fifo.unlink()
     os.mkfifo(fifo)
