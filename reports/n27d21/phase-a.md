@@ -68,3 +68,23 @@ D20 的 frameonly 由当前构建器重建，SHA-256 前缀 `29175010`；D19 的
 - D20 报告已修正“7 条消息全部在 signon 6 之前”的表述；
 - 镜像重建未发现计划外改动；
 - **D21 Phase B 暂不开始**，因为原版正向控制仍卡在 75%，此时无法把后续差异归因于 frameonly。
+
+## 6 按 `CBaseClient*` 归组后的修正
+
+D20 摘要把原版 `ActivatePlayer=4` 与 frameonly 的 1 直接比较是不正确的。按客户端
+对象地址归组后：
+
+| 连接对象（pristine） | 事件序列 |
+|---|---|
+| `259450832`（首次连接） | signon 2 → 3 → 4 → SpawnPlayer → 5 → ActivatePlayer → **signon 6** |
+| `260890336` | 仅 SetSignonState/ActivatePlayer（重连残留） |
+| `261424880` | 同上 |
+| `261672368` | 同上 |
+
+frameonly 只有 `256460656` 一个对象：
+
+`signon 2 → 3 → 4 → SpawnPlayer → 5 → ActivatePlayer`，**没有 signon 6**。
+
+因此正确表述应为：**两者首次连接都完成 SpawnPlayer/ActivatePlayer；原版首次连接
+随后处理 signon 6，frameonly 没有。** 其余 `ActivatePlayer` 来自重连对象，不应计入
+同一连接的协议序列。

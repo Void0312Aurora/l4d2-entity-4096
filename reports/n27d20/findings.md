@@ -32,7 +32,7 @@
 | `SendSignonData` | 1 | 1 |
 | `ProcessSignonStateMsg` 2/3/4/5 | 有 | 有 |
 | `SpawnPlayer` | 1 | 1 |
-| `ActivatePlayer` | 1 | 4 |
+| `ActivatePlayer`（首次连接 / 全部对象） | 1 / 1 | 1 / 4 |
 | `SetSignonState(6)` 请求 | 有 | 有 |
 | `ProcessSignonStateMsg(6)` | **0** | **1** |
 
