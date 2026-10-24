@@ -55,7 +55,7 @@ class ReadFin(gdb.FinishBreakpoint):
         except Exception: rv=reg("eax")
         vals = {hex(o): u32(self.obj+o) for o in (0x4c,0x50,0x54,0x58)} if self.obj else None
         emit(event="read_signonstate_return", ret=rv, obj=self.obj, fields=vals,
-             state=u32(self.obj+0x54) if self.obj else None)
+             state=u32(self.obj+0x4C) if self.obj else None)
         return False
     def out_of_scope(self):
         emit(event="read_signonstate_return", ret=None)

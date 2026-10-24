@@ -103,7 +103,7 @@ class WriteFin(gdb.FinishBreakpoint):
 
 class WriteBP(gdb.Breakpoint):
     def __init__(self):
-        super().__init__("*0x%x" % (E+0x50320), internal=True)
+        super().__init__("*0x%x" % (E+0x1D8110), internal=True)
     def stop(self):
         obj=reg("ecx"); st=u32(obj+0x54) if obj else None
         emit(event="write_signonstate_enter", state=st, obj=obj)
