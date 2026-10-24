@@ -1,0 +1,22 @@
+{"base": "0xeb6f5000", "event": "ready", "run_id": "d21sig-frame8", "schema_version": "n27d20.server.v1", "ts": "2026-10-24T15:50:46.612393+00:00", "vtables": 298}
+{"before": 0, "client": 237712816, "event": "setsignon", "requested": 0, "run_id": "d21sig-frame8", "schema_version": "n27d20.server.v1", "ts": "2026-10-24T15:50:58.149694+00:00"}
+{"before": 0, "client": 237712816, "event": "setsignon", "requested": 0, "run_id": "d21sig-frame8", "schema_version": "n27d20.server.v1", "ts": "2026-10-24T15:50:58.151908+00:00"}
+{"before": 0, "client": 237712816, "event": "setsignon", "requested": 2, "run_id": "d21sig-frame8", "schema_version": "n27d20.server.v1", "ts": "2026-10-24T15:50:58.152779+00:00"}
+{"client": 237712816, "event": "signonmsg", "old": 4294967295, "run_id": "d21sig-frame8", "schema_version": "n27d20.server.v1", "signon_state": 2, "state": 2, "ts": "2026-10-24T15:50:58.237787+00:00"}
+{"before": 2, "client": 237712816, "event": "setsignon", "requested": 3, "run_id": "d21sig-frame8", "schema_version": "n27d20.server.v1", "ts": "2026-10-24T15:50:58.332189+00:00"}
+{"client": 237712816, "event": "signonmsg", "old": 1, "run_id": "d21sig-frame8", "schema_version": "n27d20.server.v1", "signon_state": 3, "state": 3, "ts": "2026-10-24T15:51:18.252050+00:00"}
+{"client": 237712816, "event": "sendsignondata", "run_id": "d21sig-frame8", "schema_version": "n27d20.server.v1", "signon_state": 3, "ts": "2026-10-24T15:51:18.252837+00:00"}
+{"before": 3, "client": 237712816, "event": "setsignon", "requested": 4, "run_id": "d21sig-frame8", "schema_version": "n27d20.server.v1", "ts": "2026-10-24T15:51:18.253832+00:00"}
+{"client": 237712816, "event": "signonmsg", "old": 1, "run_id": "d21sig-frame8", "schema_version": "n27d20.server.v1", "signon_state": 4, "state": 4, "ts": "2026-10-24T15:51:19.128172+00:00"}
+{"client": 237712816, "event": "sendmsg", "msg": 4292602336, "msg_class": "SVC_SetView", "run_id": "d21sig-frame8", "schema_version": "n27d20.server.v1", "ts": "2026-10-24T15:51:19.128995+00:00", "vptr": 3952634184, "vptr_rva": 2693440}
+{"client": 237712816, "event": "spawnplayer", "run_id": "d21sig-frame8", "schema_version": "n27d20.server.v1", "signon_state": 4, "ts": "2026-10-24T15:51:19.129692+00:00"}
+{"client": 237712816, "event": "sendmsg", "msg": 4292602088, "msg_class": "NET_Tick", "run_id": "d21sig-frame8", "schema_version": "n27d20.server.v1", "ts": "2026-10-24T15:51:19.130633+00:00", "vptr": 3952634664, "vptr_rva": 2693920}
+{"before": 4, "client": 237712816, "event": "setsignon", "requested": 5, "run_id": "d21sig-frame8", "schema_version": "n27d20.server.v1", "ts": "2026-10-24T15:51:19.131510+00:00"}
+{"client": 237712816, "event": "sendmsg", "msg": 4292602176, "msg_class": "NET_SignonState", "run_id": "d21sig-frame8", "schema_version": "n27d20.server.v1", "ts": "2026-10-24T15:51:19.132303+00:00", "vptr": 3952633992, "vptr_rva": 2693248}
+{"client": 237712816, "event": "signonmsg", "old": 1, "run_id": "d21sig-frame8", "schema_version": "n27d20.server.v1", "signon_state": 5, "state": 5, "ts": "2026-10-24T15:51:19.533938+00:00"}
+{"client": 237712816, "event": "activateplayer", "run_id": "d21sig-frame8", "schema_version": "n27d20.server.v1", "signon_state": 5, "ts": "2026-10-24T15:51:19.534942+00:00"}
+{"before": 5, "client": 237712816, "event": "setsignon", "requested": 6, "run_id": "d21sig-frame8", "schema_version": "n27d20.server.v1", "ts": "2026-10-24T15:51:19.535665+00:00"}
+{"client": 237712816, "event": "sendmsg", "msg": 3954001968, "msg_class": "SVC_UserMessage", "run_id": "d21sig-frame8", "schema_version": "n27d20.server.v1", "ts": "2026-10-24T15:51:19.536594+00:00", "vptr": 3952634856, "vptr_rva": 2694112}
+{"client": 237712816, "event": "sendmsg", "msg": 4292601904, "msg_class": "SVC_SetView", "run_id": "d21sig-frame8", "schema_version": "n27d20.server.v1", "ts": "2026-10-24T15:51:19.537389+00:00", "vptr": 3952634184, "vptr_rva": 2693440}
+{"client": 237712816, "event": "sendmsg", "msg": 3954001968, "msg_class": "SVC_UserMessage", "run_id": "d21sig-frame8", "schema_version": "n27d20.server.v1", "ts": "2026-10-24T15:51:19.538339+00:00", "vptr": 3952634856, "vptr_rva": 2694112}
+{"client": 237712816, "event": "sendmsg", "msg": 3954001968, "msg_class": "SVC_UserMessage", "run_id": "d21sig-frame8", "schema_version": "n27d20.server.v1", "ts": "2026-10-24T15:51:19.567824+00:00", "vptr": 3952634856, "vptr_rva": 2694112}
