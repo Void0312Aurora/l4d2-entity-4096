@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-import argparse, json, os, re, signal, subprocess, sys, time
+import argparse, hashlib, json, os, re, signal, subprocess, sys, tempfile, time
 from pathlib import Path
 
 ROOT = Path("/home/void0312/Workshop/l4d2-entity-4096")
@@ -64,6 +64,7 @@ def main():
     ap.add_argument("image")
     ap.add_argument("out")
     ap.add_argument("--duration", type=int, default=60)
+    ap.add_argument("--expect-sha256", default=None)
     args=ap.parse_args()
     out=Path(args.out); out.mkdir(parents=True, exist_ok=True)
     image=Path(args.image)
@@ -128,12 +129,20 @@ def main():
     dst_resolved = dst.resolve()
     if dst_resolved == prod or prod in dst_resolved.parents:
         sys.exit("refusing target resolving into production server tree")
-    tmp = dst.with_name(".engine_srv.so.tmp")
-    tmp.write_bytes(image.read_bytes())
-    os.replace(tmp, dst)
+    import tempfile
+    src_sha = hashlib.sha256(image.read_bytes()).hexdigest()
+    if args.expect_sha256 and src_sha != args.expect_sha256.lower():
+        sys.exit(f"source image sha mismatch: {src_sha}")
+    fd, tmp_path = tempfile.mkstemp(prefix=".engine_srv.so.", dir=str(dst.parent))
+    try:
+        with os.fdopen(fd, "wb") as f:
+            f.write(image.read_bytes()); f.flush(); os.fsync(f.fileno())
+        os.replace(tmp_path, dst)
+    finally:
+        if os.path.lexists(tmp_path):
+            os.unlink(tmp_path)
     if dst.is_symlink() or not dst.is_file():
         sys.exit("image install did not produce a regular file")
-    import hashlib
     sha = hashlib.sha256(dst.read_bytes()).hexdigest()
     if sha != hashlib.sha256(image.read_bytes()).hexdigest():
         sys.exit("installed image hash mismatch")

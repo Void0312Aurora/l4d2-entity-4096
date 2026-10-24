@@ -16,6 +16,10 @@ def u8(a):
 def reg(n):
     try: return int(gdb.parse_and_eval("$"+n))
     except Exception: return None
+def bufs(netchan):
+    if not netchan: return None
+    return {str(off): u32(netchan+off+12) for off in (32,68,104)}
+
 def emit(**kw):
     kw.update(schema="n27d21.client.signon.v1", run_id=RUN,
               ts=datetime.now(timezone.utc).isoformat())
@@ -30,13 +34,19 @@ if actual != EXPECTED:
     raise SystemExit(1)
 
 class SendFin(gdb.FinishBreakpoint):
-    def __init__(self, clientstate, state):
+    def __init__(self, clientstate, state, netchan, before):
         super().__init__(internal=True); self.clientstate=clientstate; self.state=state
+        self.netchan=netchan; self.before=before
     def stop(self):
         try: rv=int(self.return_value) & 0xff
         except Exception: rv=reg("eax")
+        after=bufs(self.netchan)
+        delta=None
+        if self.before and after:
+            delta={k: (after[k]-self.before[k] if after.get(k) is not None and self.before.get(k) is not None else None) for k in after}
         emit(event="send_signonstate_return", state=self.state, ret=rv,
-             client_state=u32(self.clientstate+0x68) if self.clientstate else None)
+             client_state=u32(self.clientstate+0x68) if self.clientstate else None,
+             buffers_before=self.before, buffers_after=after, buffers_delta=delta)
         return False
     def out_of_scope(self):
         emit(event="send_signonstate_return", state=self.state, ret=None)
@@ -52,7 +62,7 @@ class SendBP(gdb.Breakpoint):
         if rva == VT_NS:
             st=u32(msg+0x54); emit(event="send_signonstate_enter", state=st,
                 spawn_count=u32(msg+0x58), netchan=netchan, msg=msg)
-            SendFin(u32(netchan+8) if netchan else None, st)
+            SendFin(u32(netchan+8) if netchan else None, st, netchan, bufs(netchan))
         else:
             emit(event="send_other", vptr_rva=rva, netchan=netchan)
         return False
