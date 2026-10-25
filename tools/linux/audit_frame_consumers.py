@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
 """Bounded F2 consumer audit: classify old-offset operands in CClientFrame consumers."""
-import csv, re, subprocess, sys
+import csv, hashlib, re, subprocess, sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
 BIN = Path("/home/void0312/l4d2_server/bin/engine_srv.so")
+EXPECTED_SHA = "5fa15f2820ab67b955ff227a20dbb3fda54d463f3799f33d71b6fd6f38e309b7"
 F2 = ROOT/"data/linux/n27b_frame_member_sites.csv"
 PATCH = ROOT/"data/linux/n27b_patch_sites.csv"
 
@@ -17,6 +18,8 @@ def symbols():
     return d
 
 def main():
+    if hashlib.sha256(BIN.read_bytes()).hexdigest() != EXPECTED_SHA:
+        print("FAIL: unexpected pristine engine_srv.so sha256"); return 1
     out_path = Path(sys.argv[1]) if len(sys.argv)>1 else ROOT/"data/linux/n27d30_frame_audit.csv"
     f2 = {int(r["elf_addr"],16): r for r in csv.DictReader(open(F2))}
     patch = {}
@@ -43,12 +46,22 @@ def main():
                     else: origin="unclassified"
                     rows.append(dict(function=name,elf_addr=hex(ea),old_disp="0x"+off.upper(),instruction=ins,origin=origin))
                     break
+    # same instruction can be reported through multiple symbol aliases
+    dedup = {}
+    for r in rows:
+        dedup.setdefault(r["elf_addr"], r)
+    rows = list(dedup.values())
     out_path.parent.mkdir(parents=True,exist_ok=True)
     with open(out_path,"w",newline="") as f:
         w=csv.DictWriter(f,fieldnames=["function","elf_addr","old_disp","instruction","origin"]); w.writeheader(); w.writerows(rows)
     from collections import Counter
-    print("sites",len(rows),Counter(r["origin"] for r in rows))
-    for r in rows:
-        if r["origin"]=="unclassified": print("UNCLASSIFIED",r)
+    counts=Counter(r["origin"] for r in rows)
+    print("unique sites",len(rows),counts)
+    bad=[r for r in rows if r["origin"]=="unclassified"]
+    for r in bad: print("UNCLASSIFIED",r)
+    if bad:
+        print("FAIL: unclassified frame-consumer sites"); return 1
+    print("PASS: every scanned old-offset operand is covered by F2 or C3")
+    return 0
 
-if __name__=="__main__": main()
+if __name__=="__main__": sys.exit(main())
