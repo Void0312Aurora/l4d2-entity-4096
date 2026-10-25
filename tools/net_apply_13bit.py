@@ -14,14 +14,21 @@ EXPECTED = "8a6d468059394bf4cfce32f11dcba12ef45de88da1373084d5a2916d0bf7ba86"
 
 def pe_checksum(data, csum_off, cert_off, cert_sz):
     d = bytearray(data); struct.pack_into("<I", d, csum_off, 0)
-    s = 0
-    for i in range(0, max(cert_off, len(d)), 2):
-        if i == cert_off: break
-        w = d[i] | ((d[i+1] << 8) if i+1 < len(d) else 0)
-        s = (s + w) & 0xFFFFFFFF
-        s = (s & 0xFFFF) + (s >> 16)
-    s = (s & 0xFFFF) + (s >> 16)
-    return (s + len(d)) & 0xFFFFFFFF
+    remainder = len(d) % 4
+    data_len = len(d) + ((4 - remainder) * (remainder != 0))
+    checksum = 0
+    for i in range(data_len // 4):
+        if i == csum_off // 4:
+            continue
+        chunk = d[i*4:i*4+4]
+        if len(chunk) < 4: chunk = chunk + b"\0"*(4-len(chunk))
+        checksum += struct.unpack("<I", chunk)[0]
+        if checksum >= 2**32:
+            checksum = (checksum & 0xFFFFFFFF) + (checksum >> 32)
+    checksum = (checksum & 0xFFFF) + (checksum >> 16)
+    checksum = checksum + (checksum >> 16)
+    checksum &= 0xFFFF
+    return checksum + len(d)
 
 def va_to_off(blob, va):
     e = struct.unpack_from("<I", blob, 0x3C)[0]
@@ -59,10 +66,11 @@ def main():
     changed = sum(1 for x,y in zip(blob,out) if x!=y)
     print(f"applied {len(plan.SITES)} sites, {changed} changed bytes")
     e = struct.unpack_from("<I", out, 0x3C)[0]
-    csum_off = e + 24 + 64
-    # certificate table entry holds file offset/size (data directory 4)
-    cert_off, cert_sz = struct.unpack_from("<II", out, e+24+128+32)
-    struct.pack_into("<I", out, csum_off, pe_checksum(blob, csum_off, cert_off, cert_sz))
+    opt = e + 24
+    csum_off = opt + 64
+    # PE32 DataDirectory[4] (certificate table) is at opt+96+4*8 = opt+128
+    cert_off, cert_sz = struct.unpack_from("<II", out, opt+128)
+    struct.pack_into("<I", out, csum_off, pe_checksum(out, csum_off, cert_off, cert_sz))
     Path(a.out).parent.mkdir(parents=True, exist_ok=True)
     Path(a.out).write_bytes(out)
     print(f"src {src} sha256={sha}")
