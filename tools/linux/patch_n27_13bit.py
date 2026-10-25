@@ -19,6 +19,8 @@ SITES = [
     (0x1DDBA0, "23948fcc2d3e00", "23948fd42d3e00"),
     (0x1DDBBA, "83fa0a", "83fa0c"),
     (0x1DDBBF, "b90b000000", "b90d000000"),
+    (0x1DDABA, "8d5620", "8d5622"),
+    (0x1DDB1A, "83400c20", "83400c22"),
 ]
 
 def main():
