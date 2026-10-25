@@ -14,14 +14,18 @@ SITES = [(0x1EE0D9, 0x800, 0x1000), (0x1EE0E3, 0x800, 0x1000)]
 
 def main():
     subprocess.check_call([sys.executable, str(REPO/"tools/linux/build_n27_full.py"), str(TMP)])
-    data = bytearray(TMP.read_bytes())
+    original = TMP.read_bytes()
+    data = bytearray(original)
     for off, old, new in SITES:
         cur = bytes(data[off:off+4])
         if cur != struct.pack("<I", old):
             raise SystemExit(f"capacity immediate at 0x{off:X} is {cur.hex()}")
         data[off:off+4] = struct.pack("<I", new)
     OUT.write_bytes(data)
-    print(f"built {OUT} sha256={hashlib.sha256(data).hexdigest()} changed={len(data)-len(TMP.read_bytes())+2}")
+    changed = sum(1 for a, b in zip(original, data) if a != b)
+    if changed != 2:
+        raise SystemExit(f"expected exactly 2 changed bytes, got {changed}")
+    print(f"built {OUT} sha256={hashlib.sha256(data).hexdigest()} changed={changed}")
     return 0
 
 if __name__ == "__main__":
