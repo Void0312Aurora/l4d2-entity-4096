@@ -1,0 +1,43 @@
+{
+  "stage": "N27-D64",
+  "date": "2026-10-26",
+  "baseline": {
+    "D62": {"PASS": 24, "NOT_TESTED": 5},
+    "D63": {"PASS": 3, "FAIL": 1, "NOT_TESTED": 7, "historical": true}
+  },
+  "counts": {"PASS": 7, "RECLASSIFIED": 1, "PARTIAL": 1, "NOT_TESTED": 6},
+  "assertions": {
+    "INVALID_HUNTER_VSCRIPT_PATH": {
+      "status": "RECLASSIFIED",
+      "original_low": "NUM_FOR_EDICT: bad pointer",
+      "patched_low": "NUM_FOR_EDICT: bad pointer",
+      "reason": "SpawnEntityFromTable does not establish the fake-client/player binding required by the Hunter path"
+    },
+    "HUNTER_DIRECTOR_ORIGINAL_LOW": {"status": "PASS", "evidence": "ZSpawn type=3 returned true; player idx=1"},
+    "HUNTER_DIRECTOR_PATCHED_LOW": {"status": "PASS", "evidence": "ZSpawn type=3 returned true; player idx=1 type=3 health=250"},
+    "HUNTER_DIRECTOR_PATCHED_HIGH_PRESSURE": {"status": "PASS", "evidence": "1021 fillers, last idx=2047, ZSpawn returned true"},
+    "NUM_FOR_EDICT_INVALID_INPUT": {"status": "PASS", "evidence": "GDB breakpoint: SETFAKE edict=(nil), followed by NUM_FOR_EDICT in the stack"},
+    "RUNTIME_EDICT_LAYOUT": {"status": "PASS", "edict_base": "0xe341a020", "num_edicts": 2080, "max_edicts": 4096, "stride": 16},
+    "HUNTER_SMALL_DAMAGE": {"status": "PASS", "before_health": 250, "after_health": 240},
+    "SPITTER_HIGH_PRESSURE": {"status": "PASS", "fillers": 1020, "last_idx": 2047, "player_idx": 1, "zombie_type": 4, "health": 100},
+    "SPECIAL_INFECTED_TYPES": {"status": "PARTIAL", "confirmed_types": [1, 2, 3, 4], "untested_types": [5, 6]},
+    "HUNTER_DEATH_REMOVE_REUSE": {"status": "NOT_TESTED"},
+    "CLIENT_VISIBLE_SPECIAL_INFECTED": {"status": "NOT_TESTED"},
+    "ORIGINAL_HIGH_PRESSURE_HUNTER": {"status": "NOT_TESTED", "reason": "stock 2048 limit prevents an apples-to-apples run"},
+    "MULTICLIENT": {"status": "NOT_TESTED"},
+    "MULTICLIENT_RECONNECT": {"status": "NOT_TESTED"},
+    "SERIAL_WRAP": {"status": "NOT_TESTED"}
+  },
+  "tooling": {
+    "frida_cli": {"status": "USED", "version": "17.24.3", "target_arch": "ia32", "attach": "sudo -n frida -p <srcds_pid>"},
+    "rea": {"status": "CAPABILITY_DISCOVERED_NOT_INVOKED", "reported_operations": ["instrument_with_frida", "load_frida_script", "resume_frida_session", "list_frida_processes"], "reason": "operations are present in binary_session capability output but absent from the exposed MCP callable table"}
+  },
+  "identities": {
+    "patched_engine_srv.so": "79b3966bd9752394beb2f29f0cf0244acedddde15112b4c037535994ecaf8014",
+    "patched_server_srv.so": "8575ed52f39b7c85ea776c83960e3ac08f07521b503109e639acdee1e53d5222",
+    "original_engine_srv.so": "5fa15f2820ab67b955ff227a20dbb3fda54d463f3799f33d71b6fd6f38e309b7",
+    "original_server_srv.so": "c59ebc75b3cfcb3b6b057aea3bb04131b90258b13dc0ce8968e7deff599c9270"
+  },
+  "evidence_root": "/home/void0312/l4d2_test/runs/d64",
+  "history_preserved": ["/home/void0312/l4d2_test/runs/d63", "reports/n27d63/validation.json"]
+}
