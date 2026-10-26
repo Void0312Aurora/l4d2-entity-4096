@@ -37,8 +37,10 @@ sky-camera 故障仍未解决。详见 [reports/n27d48/findings.md](reports/n27d
 N27-D56 后续分析发现，高索引网络实体会覆盖 `CBaseEntityList` 原本用于非网络实体的
 `2049..4095` 槽位；旧 core 中的 sky-camera 句柄与槽位 serial 也吻合这一覆盖路径。D61
 增加了一个**实验性 Linux 服务端候选构建器**，把网络槽和非网络槽分区，并扩宽对应句柄
-访问。静态字节校验及隔离服务端启动通过，但客户端本轮停在网络初始化前，未能进入游戏；
-因而 D61 不证明断线安全、根因修复或重连成功。详见
+访问。静态字节校验、隔离服务端地图启动以及服务端将实体分配到 index 2048 均已通过；
+一个 index 2050 实体也完成了服务端侧坐标更新和删除请求。客户端仍停在网络初始化前，
+这些服务端探针没有验证实体同步、实际槽位释放或 serial，因此 D61 不证明断线安全、根因
+修复或重连成功。详见
 [reports/n27d56/findings.md](reports/n27d56/findings.md) 与
 [reports/n27d61/findings.md](reports/n27d61/findings.md)。
 
