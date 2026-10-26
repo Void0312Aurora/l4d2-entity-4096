@@ -1,0 +1,3978 @@
+[
+  {
+    "va": "0x100129ac",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x10012980: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x100129c3"
+  },
+  {
+    "va": "0x100129c5",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x10012980: serial extraction paired with CEntInfo index at 0x100129aa"
+  },
+  {
+    "va": "0x10012ab0",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x10012a90: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x10012abe"
+  },
+  {
+    "va": "0x10012ac0",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x10012a90: serial extraction paired with CEntInfo index at 0x10012aaf"
+  },
+  {
+    "va": "0x10012c26",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x10012c00: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x10012c38"
+  },
+  {
+    "va": "0x10012c3a",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x10012c00: serial extraction paired with CEntInfo index at 0x10012c25"
+  },
+  {
+    "va": "0x100133f2",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x10013330: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x10013400"
+  },
+  {
+    "va": "0x10013402",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x10013330: serial extraction paired with CEntInfo index at 0x100133f1"
+  },
+  {
+    "va": "0x10017655",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x10017630: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x10017665"
+  },
+  {
+    "va": "0x10017667",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x10017630: serial extraction paired with CEntInfo index at 0x10017654"
+  },
+  {
+    "va": "0x10017685",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x10017630: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x1001769b"
+  },
+  {
+    "va": "0x1001769d",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x10017630: serial extraction paired with CEntInfo index at 0x10017683"
+  },
+  {
+    "va": "0x1001b66d",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x1001b4e0: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x1001b67b"
+  },
+  {
+    "va": "0x1001b67d",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x1001b4e0: serial extraction paired with CEntInfo index at 0x1001b66c"
+  },
+  {
+    "va": "0x1001b73c",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x1001b720: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x1001b74b"
+  },
+  {
+    "va": "0x1001b74d",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x1001b720: serial extraction paired with CEntInfo index at 0x1001b73a"
+  },
+  {
+    "va": "0x1001b771",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x1001b720: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x1001b77f"
+  },
+  {
+    "va": "0x1001b781",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x1001b720: serial extraction paired with CEntInfo index at 0x1001b76f"
+  },
+  {
+    "va": "0x1001ccbb",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x1001cc10: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x1001ccc9"
+  },
+  {
+    "va": "0x1001cccb",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x1001cc10: serial extraction paired with CEntInfo index at 0x1001ccb9"
+  },
+  {
+    "va": "0x1001e277",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x1001e220: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x1001e285"
+  },
+  {
+    "va": "0x1001e287",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x1001e220: serial extraction paired with CEntInfo index at 0x1001e275"
+  },
+  {
+    "va": "0x1001e71a",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x1001e6d0: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x1001e730"
+  },
+  {
+    "va": "0x1001e732",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x1001e6d0: serial extraction paired with CEntInfo index at 0x1001e718"
+  },
+  {
+    "va": "0x1001f9ed",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x1001f940: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x1001f9fb"
+  },
+  {
+    "va": "0x1001f9fd",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x1001f940: serial extraction paired with CEntInfo index at 0x1001f9eb"
+  },
+  {
+    "va": "0x10020318",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x100202f0: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x10020326"
+  },
+  {
+    "va": "0x10020328",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x100202f0: serial extraction paired with CEntInfo index at 0x10020316"
+  },
+  {
+    "va": "0x100203e9",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x100203c0: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x100203f7"
+  },
+  {
+    "va": "0x100203f9",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x100203c0: serial extraction paired with CEntInfo index at 0x100203e7"
+  },
+  {
+    "va": "0x10020c1a",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x10020c00: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x10020c28"
+  },
+  {
+    "va": "0x10020c2a",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x10020c00: serial extraction paired with CEntInfo index at 0x10020c19"
+  },
+  {
+    "va": "0x10020ce9",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x10020cc0: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x10020cf7"
+  },
+  {
+    "va": "0x10020cf9",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x10020cc0: serial extraction paired with CEntInfo index at 0x10020ce8"
+  },
+  {
+    "va": "0x10020de3",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x10020db0: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x10020df1"
+  },
+  {
+    "va": "0x10020df3",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x10020db0: serial extraction paired with CEntInfo index at 0x10020de1"
+  },
+  {
+    "va": "0x10020e63",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x10020e30: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x10020e71"
+  },
+  {
+    "va": "0x10020e73",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x10020e30: serial extraction paired with CEntInfo index at 0x10020e61"
+  },
+  {
+    "va": "0x1002110c",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x10021020: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x1002111a"
+  },
+  {
+    "va": "0x1002111c",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x10021020: serial extraction paired with CEntInfo index at 0x1002110a"
+  },
+  {
+    "va": "0x100218ab",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x10021880: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x100218b9"
+  },
+  {
+    "va": "0x100218bb",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x10021880: serial extraction paired with CEntInfo index at 0x100218a9"
+  },
+  {
+    "va": "0x10022e60",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x10022e30: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x10022e70"
+  },
+  {
+    "va": "0x10022e72",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x10022e30: serial extraction paired with CEntInfo index at 0x10022e5f"
+  },
+  {
+    "va": "0x10022e96",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x10022e30: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x10022ea4"
+  },
+  {
+    "va": "0x10022ea6",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x10022e30: serial extraction paired with CEntInfo index at 0x10022e94"
+  },
+  {
+    "va": "0x1002387b",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x10023840: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x10023891"
+  },
+  {
+    "va": "0x10023893",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x10023840: serial extraction paired with CEntInfo index at 0x10023879"
+  },
+  {
+    "va": "0x10023bf9",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x10023b30: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x10023c0b"
+  },
+  {
+    "va": "0x10023c0d",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x10023b30: serial extraction paired with CEntInfo index at 0x10023bf7"
+  },
+  {
+    "va": "0x100246b7",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x100246a0: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x100246c5"
+  },
+  {
+    "va": "0x100246c7",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x100246a0: serial extraction paired with CEntInfo index at 0x100246b6"
+  },
+  {
+    "va": "0x10024730",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x100246a0: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x1002473e"
+  },
+  {
+    "va": "0x10024740",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x100246a0: serial extraction paired with CEntInfo index at 0x1002472f"
+  },
+  {
+    "va": "0x1002fd17",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x1002fd00: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x1002fd25"
+  },
+  {
+    "va": "0x1002fd27",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x1002fd00: serial extraction paired with CEntInfo index at 0x1002fd16"
+  },
+  {
+    "va": "0x100320aa",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x10031ef0: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x100320b8"
+  },
+  {
+    "va": "0x100320ba",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x10031ef0: serial extraction paired with CEntInfo index at 0x100320a8"
+  },
+  {
+    "va": "0x10038408",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x100383a0: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x10038416"
+  },
+  {
+    "va": "0x10038418",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x100383a0: serial extraction paired with CEntInfo index at 0x10038407"
+  },
+  {
+    "va": "0x1003a120",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x1003a020: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x1003a132"
+  },
+  {
+    "va": "0x1003a134",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x1003a020: serial extraction paired with CEntInfo index at 0x1003a11e"
+  },
+  {
+    "va": "0x1003a194",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x1003a020: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x1003a1a2"
+  },
+  {
+    "va": "0x1003a1a4",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x1003a020: serial extraction paired with CEntInfo index at 0x1003a192"
+  },
+  {
+    "va": "0x10045df7",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x10045de0: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x10045e05"
+  },
+  {
+    "va": "0x10045e07",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x10045de0: serial extraction paired with CEntInfo index at 0x10045df6"
+  },
+  {
+    "va": "0x10046417",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x10046400: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x10046425"
+  },
+  {
+    "va": "0x10046427",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x10046400: serial extraction paired with CEntInfo index at 0x10046415"
+  },
+  {
+    "va": "0x10046442",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x10046400: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x10046450"
+  },
+  {
+    "va": "0x10046452",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x10046400: serial extraction paired with CEntInfo index at 0x10046440"
+  },
+  {
+    "va": "0x100465c6",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x100465a0: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x100465d4"
+  },
+  {
+    "va": "0x100465d6",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x100465a0: serial extraction paired with CEntInfo index at 0x100465c5"
+  },
+  {
+    "va": "0x10047010",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x10046f90: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x1004701e"
+  },
+  {
+    "va": "0x10047020",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x10046f90: serial extraction paired with CEntInfo index at 0x1004700e"
+  },
+  {
+    "va": "0x10047548",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x10047500: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x10047556"
+  },
+  {
+    "va": "0x10047558",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x10047500: serial extraction paired with CEntInfo index at 0x10047547"
+  },
+  {
+    "va": "0x10047657",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x100475b0: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x10047665"
+  },
+  {
+    "va": "0x10047667",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x100475b0: serial extraction paired with CEntInfo index at 0x10047655"
+  },
+  {
+    "va": "0x1004bd41",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x1004bd20: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x1004bd57"
+  },
+  {
+    "va": "0x1004bd59",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x1004bd20: serial extraction paired with CEntInfo index at 0x1004bd3f"
+  },
+  {
+    "va": "0x1004bd89",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x1004bd20: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x1004bd97"
+  },
+  {
+    "va": "0x1004bd99",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x1004bd20: serial extraction paired with CEntInfo index at 0x1004bd88"
+  },
+  {
+    "va": "0x1004bdd3",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x1004bd20: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x1004bde1"
+  },
+  {
+    "va": "0x1004bde3",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x1004bd20: serial extraction paired with CEntInfo index at 0x1004bdd2"
+  },
+  {
+    "va": "0x1004d1f5",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x1004d1c0: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x1004d203"
+  },
+  {
+    "va": "0x1004d205",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x1004d1c0: serial extraction paired with CEntInfo index at 0x1004d1f3"
+  },
+  {
+    "va": "0x1004d32e",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x1004d270: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x1004d33c"
+  },
+  {
+    "va": "0x1004d33e",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x1004d270: serial extraction paired with CEntInfo index at 0x1004d32d"
+  },
+  {
+    "va": "0x1004dd77",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x1004dd60: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x1004dd8d"
+  },
+  {
+    "va": "0x1004dd8f",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x1004dd60: serial extraction paired with CEntInfo index at 0x1004dd75"
+  },
+  {
+    "va": "0x1004df09",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x1004dec0: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x1004df17"
+  },
+  {
+    "va": "0x1004df19",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x1004dec0: serial extraction paired with CEntInfo index at 0x1004df07"
+  },
+  {
+    "va": "0x1004df3a",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x1004dec0: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x1004df48"
+  },
+  {
+    "va": "0x1004df4a",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x1004dec0: serial extraction paired with CEntInfo index at 0x1004df38"
+  },
+  {
+    "va": "0x1004ebdc",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x1004e940: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x1004ebea"
+  },
+  {
+    "va": "0x1004ebec",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x1004e940: serial extraction paired with CEntInfo index at 0x1004ebda"
+  },
+  {
+    "va": "0x1004ec1a",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x1004e940: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x1004ec28"
+  },
+  {
+    "va": "0x1004ec2a",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x1004e940: serial extraction paired with CEntInfo index at 0x1004ec18"
+  },
+  {
+    "va": "0x1004ecd2",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x1004e940: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x1004ece0"
+  },
+  {
+    "va": "0x1004ece2",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x1004e940: serial extraction paired with CEntInfo index at 0x1004ecd1"
+  },
+  {
+    "va": "0x1005410f",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x10053f50: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x1005411d"
+  },
+  {
+    "va": "0x1005411f",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x10053f50: serial extraction paired with CEntInfo index at 0x1005410d"
+  },
+  {
+    "va": "0x100552f1",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x100552b0: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x10055307"
+  },
+  {
+    "va": "0x10055309",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x100552b0: serial extraction paired with CEntInfo index at 0x100552ef"
+  },
+  {
+    "va": "0x10055424",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x10055360: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x10055432"
+  },
+  {
+    "va": "0x10055434",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x10055360: serial extraction paired with CEntInfo index at 0x10055422"
+  },
+  {
+    "va": "0x10065b03",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x10065a90: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x10065b13"
+  },
+  {
+    "va": "0x10065b15",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x10065a90: serial extraction paired with CEntInfo index at 0x10065b02"
+  },
+  {
+    "va": "0x10065b78",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x10065a90: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x10065b8c"
+  },
+  {
+    "va": "0x10065b8e",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x10065a90: serial extraction paired with CEntInfo index at 0x10065b76"
+  },
+  {
+    "va": "0x10065c89",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x10065a90: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x10065c97"
+  },
+  {
+    "va": "0x10065c99",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x10065a90: serial extraction paired with CEntInfo index at 0x10065c87"
+  },
+  {
+    "va": "0x10065cee",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x10065cd0: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x10065cfc"
+  },
+  {
+    "va": "0x10065cfe",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x10065cd0: serial extraction paired with CEntInfo index at 0x10065ced"
+  },
+  {
+    "va": "0x100672e0",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x100672c0: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x100672ee"
+  },
+  {
+    "va": "0x100672f0",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x100672c0: serial extraction paired with CEntInfo index at 0x100672df"
+  },
+  {
+    "va": "0x10067974",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x10067940: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x10067982"
+  },
+  {
+    "va": "0x10067984",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x10067940: serial extraction paired with CEntInfo index at 0x10067972"
+  },
+  {
+    "va": "0x1006949e",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x10069480: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x100694b0"
+  },
+  {
+    "va": "0x100694b2",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x10069480: serial extraction paired with CEntInfo index at 0x1006949d"
+  },
+  {
+    "va": "0x1006c6c7",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x1006c6b0: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x1006c6d5"
+  },
+  {
+    "va": "0x1006c6d7",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x1006c6b0: serial extraction paired with CEntInfo index at 0x1006c6c6"
+  },
+  {
+    "va": "0x1006cb6c",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x1006cad0: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x1006cb7b"
+  },
+  {
+    "va": "0x1006cb7d",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x1006cad0: serial extraction paired with CEntInfo index at 0x1006cb6a"
+  },
+  {
+    "va": "0x1006cbc6",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x1006cad0: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x1006cbd4"
+  },
+  {
+    "va": "0x1006cbd6",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x1006cad0: serial extraction paired with CEntInfo index at 0x1006cbc4"
+  },
+  {
+    "va": "0x1006cc17",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x1006cad0: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x1006cc25"
+  },
+  {
+    "va": "0x1006cc27",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x1006cad0: serial extraction paired with CEntInfo index at 0x1006cc15"
+  },
+  {
+    "va": "0x1006cc5c",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x1006cad0: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x1006cc6a"
+  },
+  {
+    "va": "0x1006cc6c",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x1006cad0: serial extraction paired with CEntInfo index at 0x1006cc5a"
+  },
+  {
+    "va": "0x1006ccae",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x1006cad0: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x1006ccbc"
+  },
+  {
+    "va": "0x1006ccbe",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x1006cad0: serial extraction paired with CEntInfo index at 0x1006ccac"
+  },
+  {
+    "va": "0x1006cd10",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x1006cad0: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x1006cd1e"
+  },
+  {
+    "va": "0x1006cd20",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x1006cad0: serial extraction paired with CEntInfo index at 0x1006cd0e"
+  },
+  {
+    "va": "0x1006cd4b",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x1006cad0: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x1006cd59"
+  },
+  {
+    "va": "0x1006cd5b",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x1006cad0: serial extraction paired with CEntInfo index at 0x1006cd49"
+  },
+  {
+    "va": "0x1006cd83",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x1006cad0: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x1006cd91"
+  },
+  {
+    "va": "0x1006cd93",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x1006cad0: serial extraction paired with CEntInfo index at 0x1006cd81"
+  },
+  {
+    "va": "0x1006cdd0",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x1006cad0: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x1006cdde"
+  },
+  {
+    "va": "0x1006cde0",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x1006cad0: serial extraction paired with CEntInfo index at 0x1006cdce"
+  },
+  {
+    "va": "0x1006cf56",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x1006cea0: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x1006cf64"
+  },
+  {
+    "va": "0x1006cf66",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x1006cea0: serial extraction paired with CEntInfo index at 0x1006cf54"
+  },
+  {
+    "va": "0x1006cf94",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x1006cea0: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x1006cfa2"
+  },
+  {
+    "va": "0x1006cfa4",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x1006cea0: serial extraction paired with CEntInfo index at 0x1006cf92"
+  },
+  {
+    "va": "0x1006d025",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x1006cea0: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x1006d033"
+  },
+  {
+    "va": "0x1006d035",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x1006cea0: serial extraction paired with CEntInfo index at 0x1006d023"
+  },
+  {
+    "va": "0x1006e632",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x1006e5e0: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x1006e640"
+  },
+  {
+    "va": "0x1006e642",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x1006e5e0: serial extraction paired with CEntInfo index at 0x1006e630"
+  },
+  {
+    "va": "0x1006fb11",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x1006fb00: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x1006fb27"
+  },
+  {
+    "va": "0x1006fb29",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x1006fb00: serial extraction paired with CEntInfo index at 0x1006fb10"
+  },
+  {
+    "va": "0x1006fc61",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x1006fc00: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x1006fc6f"
+  },
+  {
+    "va": "0x1006fc71",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x1006fc00: serial extraction paired with CEntInfo index at 0x1006fc5f"
+  },
+  {
+    "va": "0x10070f2b",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x10070f00: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x10070f3d"
+  },
+  {
+    "va": "0x10070f3f",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x10070f00: serial extraction paired with CEntInfo index at 0x10070f2a"
+  },
+  {
+    "va": "0x100714da",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x10071480: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x100714ec"
+  },
+  {
+    "va": "0x100714ee",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x10071480: serial extraction paired with CEntInfo index at 0x100714d9"
+  },
+  {
+    "va": "0x10071659",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x100715f0: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x10071667"
+  },
+  {
+    "va": "0x10071669",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x100715f0: serial extraction paired with CEntInfo index at 0x10071657"
+  },
+  {
+    "va": "0x10072cc9",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x10072ca0: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x10072cdf"
+  },
+  {
+    "va": "0x10072ce1",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x10072ca0: serial extraction paired with CEntInfo index at 0x10072cc8"
+  },
+  {
+    "va": "0x10074429",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x10073f20: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x10074437"
+  },
+  {
+    "va": "0x10074439",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x10073f20: serial extraction paired with CEntInfo index at 0x10074427"
+  },
+  {
+    "va": "0x10085158",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x10085080: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x10085166"
+  },
+  {
+    "va": "0x10085168",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x10085080: serial extraction paired with CEntInfo index at 0x10085156"
+  },
+  {
+    "va": "0x10085857",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x10085840: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x10085867"
+  },
+  {
+    "va": "0x10085869",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x10085840: serial extraction paired with CEntInfo index at 0x10085855"
+  },
+  {
+    "va": "0x1008ba03",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x1008b9d0: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x1008ba11"
+  },
+  {
+    "va": "0x1008ba13",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x1008b9d0: serial extraction paired with CEntInfo index at 0x1008ba01"
+  },
+  {
+    "va": "0x1008bc0f",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x1008bba0: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x1008bc1d"
+  },
+  {
+    "va": "0x1008bc1f",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x1008bba0: serial extraction paired with CEntInfo index at 0x1008bc0d"
+  },
+  {
+    "va": "0x1008bf3f",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x1008bf30: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x1008bf55"
+  },
+  {
+    "va": "0x1008bf57",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x1008bf30: serial extraction paired with CEntInfo index at 0x1008bf3d"
+  },
+  {
+    "va": "0x1008e5cc",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x1008e550: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x1008e5da"
+  },
+  {
+    "va": "0x1008e5dc",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x1008e550: serial extraction paired with CEntInfo index at 0x1008e5ca"
+  },
+  {
+    "va": "0x1008e691",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x1008e660: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x1008e69f"
+  },
+  {
+    "va": "0x1008e6a1",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x1008e660: serial extraction paired with CEntInfo index at 0x1008e68f"
+  },
+  {
+    "va": "0x1008e787",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x1008e760: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x1008e79d"
+  },
+  {
+    "va": "0x1008e79f",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x1008e760: serial extraction paired with CEntInfo index at 0x1008e785"
+  },
+  {
+    "va": "0x10091e3f",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x10091d20: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x10091e51"
+  },
+  {
+    "va": "0x10091e53",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x10091d20: serial extraction paired with CEntInfo index at 0x10091e3d"
+  },
+  {
+    "va": "0x10096d54",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x10096d20: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x10096d62"
+  },
+  {
+    "va": "0x10096d64",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x10096d20: serial extraction paired with CEntInfo index at 0x10096d53"
+  },
+  {
+    "va": "0x10096dbe",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x10096da0: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x10096dd4"
+  },
+  {
+    "va": "0x10096dd6",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x10096da0: serial extraction paired with CEntInfo index at 0x10096dbd"
+  },
+  {
+    "va": "0x10099a6e",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x100998a0: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x10099a7c"
+  },
+  {
+    "va": "0x10099a7e",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x100998a0: serial extraction paired with CEntInfo index at 0x10099a6c"
+  },
+  {
+    "va": "0x100a3c35",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x100a3b80: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x100a3c43"
+  },
+  {
+    "va": "0x100a3c45",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x100a3b80: serial extraction paired with CEntInfo index at 0x100a3c33"
+  },
+  {
+    "va": "0x100a3c8f",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x100a3c80: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x100a3ca5"
+  },
+  {
+    "va": "0x100a3ca7",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x100a3c80: serial extraction paired with CEntInfo index at 0x100a3c8d"
+  },
+  {
+    "va": "0x100a5d1b",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x100a5c10: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x100a5d29"
+  },
+  {
+    "va": "0x100a5d2b",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x100a5c10: serial extraction paired with CEntInfo index at 0x100a5d19"
+  },
+  {
+    "va": "0x100b847f",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x100b83c0: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x100b848d"
+  },
+  {
+    "va": "0x100b848f",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x100b83c0: serial extraction paired with CEntInfo index at 0x100b847d"
+  },
+  {
+    "va": "0x100cb0ad",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x100cb040: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x100cb0bb"
+  },
+  {
+    "va": "0x100cb0bd",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x100cb040: serial extraction paired with CEntInfo index at 0x100cb0ac"
+  },
+  {
+    "va": "0x100cb0d8",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x100cb040: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x100cb0e6"
+  },
+  {
+    "va": "0x100cb0e8",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x100cb040: serial extraction paired with CEntInfo index at 0x100cb0d6"
+  },
+  {
+    "va": "0x100d7f98",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x100d7f60: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x100d7fa6"
+  },
+  {
+    "va": "0x100d7fa8",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x100d7f60: serial extraction paired with CEntInfo index at 0x100d7f96"
+  },
+  {
+    "va": "0x100f00c8",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x100f0090: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x100f00d6"
+  },
+  {
+    "va": "0x100f00d8",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x100f0090: serial extraction paired with CEntInfo index at 0x100f00c6"
+  },
+  {
+    "va": "0x101006d5",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x10100320: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x101006e3"
+  },
+  {
+    "va": "0x101006e5",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x10100320: serial extraction paired with CEntInfo index at 0x101006d3"
+  },
+  {
+    "va": "0x101028f0",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x10102890: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x101028fe"
+  },
+  {
+    "va": "0x10102900",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x10102890: serial extraction paired with CEntInfo index at 0x101028ee"
+  },
+  {
+    "va": "0x10102936",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x10102890: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x10102944"
+  },
+  {
+    "va": "0x10102946",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x10102890: serial extraction paired with CEntInfo index at 0x10102934"
+  },
+  {
+    "va": "0x1012ba77",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x1012ba50: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x1012ba85"
+  },
+  {
+    "va": "0x1012ba87",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x1012ba50: serial extraction paired with CEntInfo index at 0x1012ba75"
+  },
+  {
+    "va": "0x1012bafd",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x1012bae0: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x1012bb12"
+  },
+  {
+    "va": "0x1012bb14",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x1012bae0: serial extraction paired with CEntInfo index at 0x1012bafb"
+  },
+  {
+    "va": "0x10134467",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x101341f0: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x10134479"
+  },
+  {
+    "va": "0x1013447b",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x101341f0: serial extraction paired with CEntInfo index at 0x10134465"
+  },
+  {
+    "va": "0x101344d0",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x101341f0: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x101344de"
+  },
+  {
+    "va": "0x101344e0",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x101341f0: serial extraction paired with CEntInfo index at 0x101344ce"
+  },
+  {
+    "va": "0x1015135f",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x101512a0: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x10151370"
+  },
+  {
+    "va": "0x10151372",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x101512a0: serial extraction paired with CEntInfo index at 0x1015135e"
+  },
+  {
+    "va": "0x1015be92",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x1015be10: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x1015bea0"
+  },
+  {
+    "va": "0x1015bea2",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x1015be10: serial extraction paired with CEntInfo index at 0x1015be90"
+  },
+  {
+    "va": "0x1015c081",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x1015c070: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x1015c097"
+  },
+  {
+    "va": "0x1015c099",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x1015c070: serial extraction paired with CEntInfo index at 0x1015c080"
+  },
+  {
+    "va": "0x1015ca3e",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x1015ca00: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x1015ca4c"
+  },
+  {
+    "va": "0x1015ca4e",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x1015ca00: serial extraction paired with CEntInfo index at 0x1015ca3c"
+  },
+  {
+    "va": "0x1015e022",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x1015dfa0: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x1015e034"
+  },
+  {
+    "va": "0x1015e036",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x1015dfa0: serial extraction paired with CEntInfo index at 0x1015e020"
+  },
+  {
+    "va": "0x1015e5d0",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x1015e540: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x1015e5e2"
+  },
+  {
+    "va": "0x1015e5e4",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x1015e540: serial extraction paired with CEntInfo index at 0x1015e5ce"
+  },
+  {
+    "va": "0x1015f247",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x1015f1e0: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x1015f259"
+  },
+  {
+    "va": "0x1015f25b",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x1015f1e0: serial extraction paired with CEntInfo index at 0x1015f245"
+  },
+  {
+    "va": "0x1016430b",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x101642e0: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x10164319"
+  },
+  {
+    "va": "0x1016431b",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x101642e0: serial extraction paired with CEntInfo index at 0x10164309"
+  },
+  {
+    "va": "0x10166811",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x101667a0: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x1016681f"
+  },
+  {
+    "va": "0x10166821",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x101667a0: serial extraction paired with CEntInfo index at 0x1016680f"
+  },
+  {
+    "va": "0x10166907",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x101668f0: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x10166915"
+  },
+  {
+    "va": "0x10166917",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x101668f0: serial extraction paired with CEntInfo index at 0x10166906"
+  },
+  {
+    "va": "0x10166cee",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x10166cc0: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x10166d04"
+  },
+  {
+    "va": "0x10166d06",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x10166cc0: serial extraction paired with CEntInfo index at 0x10166cec"
+  },
+  {
+    "va": "0x1016775f",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x10167700: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x1016776d"
+  },
+  {
+    "va": "0x1016776f",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x10167700: serial extraction paired with CEntInfo index at 0x1016775d"
+  },
+  {
+    "va": "0x101683e7",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x101682f0: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x101683f5"
+  },
+  {
+    "va": "0x101683f7",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x101682f0: serial extraction paired with CEntInfo index at 0x101683e5"
+  },
+  {
+    "va": "0x10168430",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x101682f0: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x10168442"
+  },
+  {
+    "va": "0x10168444",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x101682f0: serial extraction paired with CEntInfo index at 0x1016842e"
+  },
+  {
+    "va": "0x10168dca",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x10168d70: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x10168dd8"
+  },
+  {
+    "va": "0x10168dda",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x10168d70: serial extraction paired with CEntInfo index at 0x10168dc8"
+  },
+  {
+    "va": "0x1016dc11",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x1016dbe0: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x1016dc27"
+  },
+  {
+    "va": "0x1016dc29",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x1016dbe0: serial extraction paired with CEntInfo index at 0x1016dc0f"
+  },
+  {
+    "va": "0x10172159",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x10172130: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x10172167"
+  },
+  {
+    "va": "0x10172169",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x10172130: serial extraction paired with CEntInfo index at 0x10172157"
+  },
+  {
+    "va": "0x10177494",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x10177460: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x101774a2"
+  },
+  {
+    "va": "0x101774a4",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x10177460: serial extraction paired with CEntInfo index at 0x10177492"
+  },
+  {
+    "va": "0x1017aeff",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x1017ae80: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x1017af0d"
+  },
+  {
+    "va": "0x1017af0f",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x1017ae80: serial extraction paired with CEntInfo index at 0x1017aefd"
+  },
+  {
+    "va": "0x1017b2ae",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x1017b0c0: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x1017b2bc"
+  },
+  {
+    "va": "0x1017b2be",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x1017b0c0: serial extraction paired with CEntInfo index at 0x1017b2ad"
+  },
+  {
+    "va": "0x1017c67f",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x1017c5f0: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x1017c68d"
+  },
+  {
+    "va": "0x1017c68f",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x1017c5f0: serial extraction paired with CEntInfo index at 0x1017c67e"
+  },
+  {
+    "va": "0x1017d4ce",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x1017d2a0: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x1017d4e0"
+  },
+  {
+    "va": "0x1017d4e2",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x1017d2a0: serial extraction paired with CEntInfo index at 0x1017d4cc"
+  },
+  {
+    "va": "0x1017dce1",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x1017d900: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x1017dcef"
+  },
+  {
+    "va": "0x1017dcf1",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x1017d900: serial extraction paired with CEntInfo index at 0x1017dcdf"
+  },
+  {
+    "va": "0x1017dd08",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x1017d900: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x1017dd16"
+  },
+  {
+    "va": "0x1017dd18",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x1017d900: serial extraction paired with CEntInfo index at 0x1017dd06"
+  },
+  {
+    "va": "0x1017efde",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x1017e540: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x1017efec"
+  },
+  {
+    "va": "0x1017efee",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x1017e540: serial extraction paired with CEntInfo index at 0x1017efdc"
+  },
+  {
+    "va": "0x1017f02e",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x1017e540: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x1017f042"
+  },
+  {
+    "va": "0x1017f044",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x1017e540: serial extraction paired with CEntInfo index at 0x1017f02d"
+  },
+  {
+    "va": "0x1017f0ca",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x1017e540: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x1017f0d8"
+  },
+  {
+    "va": "0x1017f0da",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x1017e540: serial extraction paired with CEntInfo index at 0x1017f0c9"
+  },
+  {
+    "va": "0x1017f119",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x1017e540: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x1017f127"
+  },
+  {
+    "va": "0x1017f129",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x1017e540: serial extraction paired with CEntInfo index at 0x1017f117"
+  },
+  {
+    "va": "0x1017fcde",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x1017f230: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x1017fcec"
+  },
+  {
+    "va": "0x1017fcee",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x1017f230: serial extraction paired with CEntInfo index at 0x1017fcdc"
+  },
+  {
+    "va": "0x1017fd2e",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x1017f230: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x1017fd42"
+  },
+  {
+    "va": "0x1017fd44",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x1017f230: serial extraction paired with CEntInfo index at 0x1017fd2d"
+  },
+  {
+    "va": "0x1017fdca",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x1017f230: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x1017fdd8"
+  },
+  {
+    "va": "0x1017fdda",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x1017f230: serial extraction paired with CEntInfo index at 0x1017fdc9"
+  },
+  {
+    "va": "0x1017fe19",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x1017f230: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x1017fe27"
+  },
+  {
+    "va": "0x1017fe29",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x1017f230: serial extraction paired with CEntInfo index at 0x1017fe17"
+  },
+  {
+    "va": "0x1018f72f",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x1018f630: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x1018f73d"
+  },
+  {
+    "va": "0x1018f73f",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x1018f630: serial extraction paired with CEntInfo index at 0x1018f72e"
+  },
+  {
+    "va": "0x10190504",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x10190400: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x10190512"
+  },
+  {
+    "va": "0x10190514",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x10190400: serial extraction paired with CEntInfo index at 0x10190503"
+  },
+  {
+    "va": "0x10190824",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x101907b0: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x10190832"
+  },
+  {
+    "va": "0x10190834",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x101907b0: serial extraction paired with CEntInfo index at 0x10190823"
+  },
+  {
+    "va": "0x101910dc",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x10191040: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x101910ea"
+  },
+  {
+    "va": "0x101910ec",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x10191040: serial extraction paired with CEntInfo index at 0x101910da"
+  },
+  {
+    "va": "0x10197953",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x101977c0: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x10197961"
+  },
+  {
+    "va": "0x10197963",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x101977c0: serial extraction paired with CEntInfo index at 0x10197951"
+  },
+  {
+    "va": "0x1019a5f1",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x1019a5e0: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x1019a5ff"
+  },
+  {
+    "va": "0x1019a601",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x1019a5e0: serial extraction paired with CEntInfo index at 0x1019a5f0"
+  },
+  {
+    "va": "0x1019ab8c",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x1019ab50: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x1019ab9a"
+  },
+  {
+    "va": "0x1019ab9c",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x1019ab50: serial extraction paired with CEntInfo index at 0x1019ab8a"
+  },
+  {
+    "va": "0x1019ae15",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x1019add0: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x1019ae25"
+  },
+  {
+    "va": "0x1019ae27",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x1019add0: serial extraction paired with CEntInfo index at 0x1019ae14"
+  },
+  {
+    "va": "0x1019b049",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x1019afc0: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x1019b057"
+  },
+  {
+    "va": "0x1019b059",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x1019afc0: serial extraction paired with CEntInfo index at 0x1019b047"
+  },
+  {
+    "va": "0x1019b0df",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x1019afc0: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x1019b0ed"
+  },
+  {
+    "va": "0x1019b0ef",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x1019afc0: serial extraction paired with CEntInfo index at 0x1019b0de"
+  },
+  {
+    "va": "0x1019b154",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x1019afc0: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x1019b162"
+  },
+  {
+    "va": "0x1019b164",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x1019afc0: serial extraction paired with CEntInfo index at 0x1019b152"
+  },
+  {
+    "va": "0x1019b555",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x1019b480: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x1019b563"
+  },
+  {
+    "va": "0x1019b565",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x1019b480: serial extraction paired with CEntInfo index at 0x1019b553"
+  },
+  {
+    "va": "0x1019b5a4",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x1019b480: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x1019b5b2"
+  },
+  {
+    "va": "0x1019b5b4",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x1019b480: serial extraction paired with CEntInfo index at 0x1019b5a2"
+  },
+  {
+    "va": "0x1019bccd",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x1019bc00: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x1019bcdb"
+  },
+  {
+    "va": "0x1019bcdd",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x1019bc00: serial extraction paired with CEntInfo index at 0x1019bccb"
+  },
+  {
+    "va": "0x1019bdfe",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x1019bd10: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x1019be0c"
+  },
+  {
+    "va": "0x1019be0e",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x1019bd10: serial extraction paired with CEntInfo index at 0x1019bdfd"
+  },
+  {
+    "va": "0x1019bf3e",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x1019be50: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x1019bf4c"
+  },
+  {
+    "va": "0x1019bf4e",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x1019be50: serial extraction paired with CEntInfo index at 0x1019bf3d"
+  },
+  {
+    "va": "0x1019c06d",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x1019bfa0: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x1019c07b"
+  },
+  {
+    "va": "0x1019c07d",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x1019bfa0: serial extraction paired with CEntInfo index at 0x1019c06b"
+  },
+  {
+    "va": "0x1019c18d",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x1019c0c0: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x1019c19b"
+  },
+  {
+    "va": "0x1019c19d",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x1019c0c0: serial extraction paired with CEntInfo index at 0x1019c18b"
+  },
+  {
+    "va": "0x1019d261",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x1019d200: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x1019d26f"
+  },
+  {
+    "va": "0x1019d271",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x1019d200: serial extraction paired with CEntInfo index at 0x1019d260"
+  },
+  {
+    "va": "0x1019efd1",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x1019ef70: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x1019efdf"
+  },
+  {
+    "va": "0x1019efe1",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x1019ef70: serial extraction paired with CEntInfo index at 0x1019efd0"
+  },
+  {
+    "va": "0x101a8134",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x101a8120: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x101a8142"
+  },
+  {
+    "va": "0x101a8144",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x101a8120: serial extraction paired with CEntInfo index at 0x101a8133"
+  },
+  {
+    "va": "0x101a818a",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x101a8160: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x101a819a"
+  },
+  {
+    "va": "0x101a819c",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x101a8160: serial extraction paired with CEntInfo index at 0x101a8188"
+  },
+  {
+    "va": "0x101a81bc",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x101a8160: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x101a81ca"
+  },
+  {
+    "va": "0x101a81cc",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x101a8160: serial extraction paired with CEntInfo index at 0x101a81ba"
+  },
+  {
+    "va": "0x101a81f9",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x101a8160: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x101a8207"
+  },
+  {
+    "va": "0x101a8209",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x101a8160: serial extraction paired with CEntInfo index at 0x101a81f7"
+  },
+  {
+    "va": "0x101a8225",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x101a8160: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x101a8233"
+  },
+  {
+    "va": "0x101a8235",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x101a8160: serial extraction paired with CEntInfo index at 0x101a8223"
+  },
+  {
+    "va": "0x101a8249",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x101a8160: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x101a8257"
+  },
+  {
+    "va": "0x101a8259",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x101a8160: serial extraction paired with CEntInfo index at 0x101a8247"
+  },
+  {
+    "va": "0x101a8baf",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x101a8ba0: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x101a8bc5"
+  },
+  {
+    "va": "0x101a8bc7",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x101a8ba0: serial extraction paired with CEntInfo index at 0x101a8bad"
+  },
+  {
+    "va": "0x101be534",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x101be510: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x101be542"
+  },
+  {
+    "va": "0x101be544",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x101be510: serial extraction paired with CEntInfo index at 0x101be532"
+  },
+  {
+    "va": "0x101be5b5",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x101be510: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x101be5c3"
+  },
+  {
+    "va": "0x101be5c5",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x101be510: serial extraction paired with CEntInfo index at 0x101be5b3"
+  },
+  {
+    "va": "0x101be7a7",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x101be770: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x101be7b5"
+  },
+  {
+    "va": "0x101be7b7",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x101be770: serial extraction paired with CEntInfo index at 0x101be7a5"
+  },
+  {
+    "va": "0x101bec4a",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x101be840: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x101bec58"
+  },
+  {
+    "va": "0x101bec5a",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x101be840: serial extraction paired with CEntInfo index at 0x101bec48"
+  },
+  {
+    "va": "0x101bfd3e",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x101bf940: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x101bfd4c"
+  },
+  {
+    "va": "0x101bfd4e",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x101bf940: serial extraction paired with CEntInfo index at 0x101bfd3c"
+  },
+  {
+    "va": "0x101bfd75",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x101bf940: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x101bfd83"
+  },
+  {
+    "va": "0x101bfd85",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x101bf940: serial extraction paired with CEntInfo index at 0x101bfd73"
+  },
+  {
+    "va": "0x101dd410",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x101dd3e0: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x101dd41e"
+  },
+  {
+    "va": "0x101dd420",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x101dd3e0: serial extraction paired with CEntInfo index at 0x101dd40f"
+  },
+  {
+    "va": "0x101de60b",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x101de5f0: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x101de619"
+  },
+  {
+    "va": "0x101de61b",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x101de5f0: serial extraction paired with CEntInfo index at 0x101de60a"
+  },
+  {
+    "va": "0x101de817",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x101de7b0: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x101de825"
+  },
+  {
+    "va": "0x101de827",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x101de7b0: serial extraction paired with CEntInfo index at 0x101de815"
+  },
+  {
+    "va": "0x101de9e2",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x101de9c0: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x101de9f0"
+  },
+  {
+    "va": "0x101de9f2",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x101de9c0: serial extraction paired with CEntInfo index at 0x101de9e1"
+  },
+  {
+    "va": "0x101dea7a",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x101dea40: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x101dea8c"
+  },
+  {
+    "va": "0x101dea8e",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x101dea40: serial extraction paired with CEntInfo index at 0x101dea79"
+  },
+  {
+    "va": "0x101debf8",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x101debe0: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x101dec06"
+  },
+  {
+    "va": "0x101dec08",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x101debe0: serial extraction paired with CEntInfo index at 0x101debf7"
+  },
+  {
+    "va": "0x101dec6a",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x101debe0: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x101dec78"
+  },
+  {
+    "va": "0x101dec7a",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x101debe0: serial extraction paired with CEntInfo index at 0x101dec68"
+  },
+  {
+    "va": "0x101dec90",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x101debe0: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x101dec9e"
+  },
+  {
+    "va": "0x101deca0",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x101debe0: serial extraction paired with CEntInfo index at 0x101dec8e"
+  },
+  {
+    "va": "0x101df3b9",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x101ded00: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x101df3c7"
+  },
+  {
+    "va": "0x101df3c9",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x101ded00: serial extraction paired with CEntInfo index at 0x101df3b7"
+  },
+  {
+    "va": "0x101df3df",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x101ded00: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x101df3ed"
+  },
+  {
+    "va": "0x101df3ef",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x101ded00: serial extraction paired with CEntInfo index at 0x101df3dd"
+  },
+  {
+    "va": "0x101ec968",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x101ec940: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x101ec979"
+  },
+  {
+    "va": "0x101ec97b",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x101ec940: serial extraction paired with CEntInfo index at 0x101ec966"
+  },
+  {
+    "va": "0x101ec9a0",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x101ec940: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x101ec9ae"
+  },
+  {
+    "va": "0x101ec9b0",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x101ec940: serial extraction paired with CEntInfo index at 0x101ec99e"
+  },
+  {
+    "va": "0x101f23e2",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x101f23c0: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x101f23f0"
+  },
+  {
+    "va": "0x101f23f2",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x101f23c0: serial extraction paired with CEntInfo index at 0x101f23e0"
+  },
+  {
+    "va": "0x101f9dba",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x101f9d90: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x101f9dca"
+  },
+  {
+    "va": "0x101f9dcc",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x101f9d90: serial extraction paired with CEntInfo index at 0x101f9db8"
+  },
+  {
+    "va": "0x101f9de9",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x101f9d90: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x101f9df7"
+  },
+  {
+    "va": "0x101f9df9",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x101f9d90: serial extraction paired with CEntInfo index at 0x101f9de7"
+  },
+  {
+    "va": "0x101f9e4d",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x101f9d90: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x101f9e5b"
+  },
+  {
+    "va": "0x101f9e5d",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x101f9d90: serial extraction paired with CEntInfo index at 0x101f9e4b"
+  },
+  {
+    "va": "0x101f9e77",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x101f9d90: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x101f9e85"
+  },
+  {
+    "va": "0x101f9e87",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x101f9d90: serial extraction paired with CEntInfo index at 0x101f9e75"
+  },
+  {
+    "va": "0x101f9ecf",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x101f9ec0: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x101f9ee5"
+  },
+  {
+    "va": "0x101f9ee7",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x101f9ec0: serial extraction paired with CEntInfo index at 0x101f9ecd"
+  },
+  {
+    "va": "0x10208325",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x10208310: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x10208333"
+  },
+  {
+    "va": "0x10208335",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x10208310: serial extraction paired with CEntInfo index at 0x10208323"
+  },
+  {
+    "va": "0x102234b4",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x102234a0: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x102234c2"
+  },
+  {
+    "va": "0x102234c4",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x102234a0: serial extraction paired with CEntInfo index at 0x102234b3"
+  },
+  {
+    "va": "0x1022368e",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x10223680: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x102236a4"
+  },
+  {
+    "va": "0x102236a6",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x10223680: serial extraction paired with CEntInfo index at 0x1022368d"
+  },
+  {
+    "va": "0x102257d4",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x10225580: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x102257e2"
+  },
+  {
+    "va": "0x102257e4",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x10225580: serial extraction paired with CEntInfo index at 0x102257d2"
+  },
+  {
+    "va": "0x10225828",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x10225580: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x10225836"
+  },
+  {
+    "va": "0x10225838",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x10225580: serial extraction paired with CEntInfo index at 0x10225827"
+  },
+  {
+    "va": "0x10225911",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x102258d0: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x1022591f"
+  },
+  {
+    "va": "0x10225921",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x102258d0: serial extraction paired with CEntInfo index at 0x10225910"
+  },
+  {
+    "va": "0x1022597c",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x102258d0: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x1022598a"
+  },
+  {
+    "va": "0x1022598c",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x102258d0: serial extraction paired with CEntInfo index at 0x1022597a"
+  },
+  {
+    "va": "0x10226745",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x102266d0: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x10226753"
+  },
+  {
+    "va": "0x10226755",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x102266d0: serial extraction paired with CEntInfo index at 0x10226744"
+  },
+  {
+    "va": "0x10226a0d",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x102269b0: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x10226a1b"
+  },
+  {
+    "va": "0x10226a1d",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x102269b0: serial extraction paired with CEntInfo index at 0x10226a0b"
+  },
+  {
+    "va": "0x10241653",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x102415f0: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x10241661"
+  },
+  {
+    "va": "0x10241663",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x102415f0: serial extraction paired with CEntInfo index at 0x10241651"
+  },
+  {
+    "va": "0x10253c37",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x10253c20: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x10253c45"
+  },
+  {
+    "va": "0x10253c47",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x10253c20: serial extraction paired with CEntInfo index at 0x10253c36"
+  },
+  {
+    "va": "0x10254386",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x10254370: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x10254394"
+  },
+  {
+    "va": "0x10254396",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x10254370: serial extraction paired with CEntInfo index at 0x10254384"
+  },
+  {
+    "va": "0x10256c92",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x10256780: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x10256ca0"
+  },
+  {
+    "va": "0x10256ca2",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x10256780: serial extraction paired with CEntInfo index at 0x10256c91"
+  },
+  {
+    "va": "0x10256d48",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x10256780: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x10256d56"
+  },
+  {
+    "va": "0x10256d58",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x10256780: serial extraction paired with CEntInfo index at 0x10256d47"
+  },
+  {
+    "va": "0x1025705b",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x10257040: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x10257070"
+  },
+  {
+    "va": "0x10257072",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x10257040: serial extraction paired with CEntInfo index at 0x1025705a"
+  },
+  {
+    "va": "0x10258b04",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x10258ad0: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x10258b12"
+  },
+  {
+    "va": "0x10258b14",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x10258ad0: serial extraction paired with CEntInfo index at 0x10258b03"
+  },
+  {
+    "va": "0x1025a3ff",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x1025a150: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x1025a40d"
+  },
+  {
+    "va": "0x1025a40f",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x1025a150: serial extraction paired with CEntInfo index at 0x1025a3fd"
+  },
+  {
+    "va": "0x1025cb14",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x1025be90: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x1025cb22"
+  },
+  {
+    "va": "0x1025cb24",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x1025be90: serial extraction paired with CEntInfo index at 0x1025cb12"
+  },
+  {
+    "va": "0x10260418",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x1025fe90: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x10260426"
+  },
+  {
+    "va": "0x10260428",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x1025fe90: serial extraction paired with CEntInfo index at 0x10260416"
+  },
+  {
+    "va": "0x10260448",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x1025fe90: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x10260456"
+  },
+  {
+    "va": "0x10260458",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x1025fe90: serial extraction paired with CEntInfo index at 0x10260446"
+  },
+  {
+    "va": "0x10269a37",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x10269a00: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x10269a45"
+  },
+  {
+    "va": "0x10269a47",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x10269a00: serial extraction paired with CEntInfo index at 0x10269a35"
+  },
+  {
+    "va": "0x10269c77",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x10269c60: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x10269c85"
+  },
+  {
+    "va": "0x10269c87",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x10269c60: serial extraction paired with CEntInfo index at 0x10269c76"
+  },
+  {
+    "va": "0x10269d2f",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x10269d20: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x10269d45"
+  },
+  {
+    "va": "0x10269d47",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x10269d20: serial extraction paired with CEntInfo index at 0x10269d2d"
+  },
+  {
+    "va": "0x10269fcf",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x10269fa0: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x10269fdd"
+  },
+  {
+    "va": "0x10269fdf",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x10269fa0: serial extraction paired with CEntInfo index at 0x10269fcd"
+  },
+  {
+    "va": "0x1026c953",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x1026c880: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x1026c961"
+  },
+  {
+    "va": "0x1026c963",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x1026c880: serial extraction paired with CEntInfo index at 0x1026c951"
+  },
+  {
+    "va": "0x1026c987",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x1026c880: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x1026c995"
+  },
+  {
+    "va": "0x1026c997",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x1026c880: serial extraction paired with CEntInfo index at 0x1026c985"
+  },
+  {
+    "va": "0x1026f672",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x1026f660: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x1026f688"
+  },
+  {
+    "va": "0x1026f68a",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x1026f660: serial extraction paired with CEntInfo index at 0x1026f670"
+  },
+  {
+    "va": "0x10270823",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x102707e0: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x10270831"
+  },
+  {
+    "va": "0x10270833",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x102707e0: serial extraction paired with CEntInfo index at 0x10270821"
+  },
+  {
+    "va": "0x10270860",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x102707e0: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x1027086f"
+  },
+  {
+    "va": "0x10270871",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x102707e0: serial extraction paired with CEntInfo index at 0x1027085e"
+  },
+  {
+    "va": "0x102708c0",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x102707e0: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x102708cf"
+  },
+  {
+    "va": "0x102708d1",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x102707e0: serial extraction paired with CEntInfo index at 0x102708be"
+  },
+  {
+    "va": "0x10270903",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x102707e0: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x10270911"
+  },
+  {
+    "va": "0x10270913",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x102707e0: serial extraction paired with CEntInfo index at 0x10270901"
+  },
+  {
+    "va": "0x1027099c",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x102707e0: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x102709aa"
+  },
+  {
+    "va": "0x102709ac",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x102707e0: serial extraction paired with CEntInfo index at 0x1027099a"
+  },
+  {
+    "va": "0x10273505",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x10273210: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x10273513"
+  },
+  {
+    "va": "0x10273515",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x10273210: serial extraction paired with CEntInfo index at 0x10273504"
+  },
+  {
+    "va": "0x10278f20",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x10278be0: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x10278f2e"
+  },
+  {
+    "va": "0x10278f30",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x10278be0: serial extraction paired with CEntInfo index at 0x10278f1e"
+  },
+  {
+    "va": "0x10278f4a",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x10278be0: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x10278f58"
+  },
+  {
+    "va": "0x10278f5a",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x10278be0: serial extraction paired with CEntInfo index at 0x10278f48"
+  },
+  {
+    "va": "0x1027ab44",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x1027a8b0: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x1027ab56"
+  },
+  {
+    "va": "0x1027ab58",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x1027a8b0: serial extraction paired with CEntInfo index at 0x1027ab42"
+  },
+  {
+    "va": "0x1027abfb",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x1027a8b0: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x1027ac0d"
+  },
+  {
+    "va": "0x1027ac0f",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x1027a8b0: serial extraction paired with CEntInfo index at 0x1027abf9"
+  },
+  {
+    "va": "0x10281648",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x102815d0: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x10281656"
+  },
+  {
+    "va": "0x10281658",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x102815d0: serial extraction paired with CEntInfo index at 0x10281646"
+  },
+  {
+    "va": "0x10282887",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x102822d0: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x10282899"
+  },
+  {
+    "va": "0x1028289b",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x102822d0: serial extraction paired with CEntInfo index at 0x10282885"
+  },
+  {
+    "va": "0x10284dc3",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x10284d90: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x10284dd1"
+  },
+  {
+    "va": "0x10284dd3",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x10284d90: serial extraction paired with CEntInfo index at 0x10284dc1"
+  },
+  {
+    "va": "0x102856d4",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x10285580: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x102856e6"
+  },
+  {
+    "va": "0x102856e8",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x10285580: serial extraction paired with CEntInfo index at 0x102856d2"
+  },
+  {
+    "va": "0x1028572c",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x10285580: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x1028573a"
+  },
+  {
+    "va": "0x1028573c",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x10285580: serial extraction paired with CEntInfo index at 0x1028572a"
+  },
+  {
+    "va": "0x10285752",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x10285580: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x10285760"
+  },
+  {
+    "va": "0x10285762",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x10285580: serial extraction paired with CEntInfo index at 0x10285750"
+  },
+  {
+    "va": "0x10285818",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x10285580: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x10285826"
+  },
+  {
+    "va": "0x10285828",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x10285580: serial extraction paired with CEntInfo index at 0x10285816"
+  },
+  {
+    "va": "0x102858a6",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x10285580: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x102858b4"
+  },
+  {
+    "va": "0x102858b6",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x10285580: serial extraction paired with CEntInfo index at 0x102858a4"
+  },
+  {
+    "va": "0x10285b7d",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x10285580: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x10285b8b"
+  },
+  {
+    "va": "0x10285b8d",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x10285580: serial extraction paired with CEntInfo index at 0x10285b7b"
+  },
+  {
+    "va": "0x10286074",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x10286030: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x10286082"
+  },
+  {
+    "va": "0x10286084",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x10286030: serial extraction paired with CEntInfo index at 0x10286072"
+  },
+  {
+    "va": "0x102888f2",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x10288750: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x10288900"
+  },
+  {
+    "va": "0x10288902",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x10288750: serial extraction paired with CEntInfo index at 0x102888f0"
+  },
+  {
+    "va": "0x1028a925",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x1028a910: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x1028a93b"
+  },
+  {
+    "va": "0x1028a93d",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x1028a910: serial extraction paired with CEntInfo index at 0x1028a923"
+  },
+  {
+    "va": "0x1028ac84",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x1028ac70: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x1028ac92"
+  },
+  {
+    "va": "0x1028ac94",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x1028ac70: serial extraction paired with CEntInfo index at 0x1028ac83"
+  },
+  {
+    "va": "0x1028ad17",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x1028acd0: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x1028ad27"
+  },
+  {
+    "va": "0x1028ad29",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x1028acd0: serial extraction paired with CEntInfo index at 0x1028ad15"
+  },
+  {
+    "va": "0x1028ad62",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x1028acd0: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x1028ad70"
+  },
+  {
+    "va": "0x1028ad72",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x1028acd0: serial extraction paired with CEntInfo index at 0x1028ad60"
+  },
+  {
+    "va": "0x1028b7a3",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x1028b6d0: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x1028b7b1"
+  },
+  {
+    "va": "0x1028b7b3",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x1028b6d0: serial extraction paired with CEntInfo index at 0x1028b7a1"
+  },
+  {
+    "va": "0x1028b99f",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x1028b7e0: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x1028b9ad"
+  },
+  {
+    "va": "0x1028b9af",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x1028b7e0: serial extraction paired with CEntInfo index at 0x1028b99e"
+  },
+  {
+    "va": "0x1028ba1e",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x1028b9f0: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x1028ba30"
+  },
+  {
+    "va": "0x1028ba32",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x1028b9f0: serial extraction paired with CEntInfo index at 0x1028ba1c"
+  },
+  {
+    "va": "0x1028c096",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x1028c080: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x1028c0a4"
+  },
+  {
+    "va": "0x1028c0a6",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x1028c080: serial extraction paired with CEntInfo index at 0x1028c094"
+  },
+  {
+    "va": "0x1028cea7",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x1028ce80: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x1028ceb5"
+  },
+  {
+    "va": "0x1028ceb7",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x1028ce80: serial extraction paired with CEntInfo index at 0x1028cea5"
+  },
+  {
+    "va": "0x1028d814",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x1028d7f0: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x1028d822"
+  },
+  {
+    "va": "0x1028d824",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x1028d7f0: serial extraction paired with CEntInfo index at 0x1028d813"
+  },
+  {
+    "va": "0x1028dc14",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x1028dbf0: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x1028dc22"
+  },
+  {
+    "va": "0x1028dc24",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x1028dbf0: serial extraction paired with CEntInfo index at 0x1028dc13"
+  },
+  {
+    "va": "0x1028dc88",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x1028dc70: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x1028dc9e"
+  },
+  {
+    "va": "0x1028dca0",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x1028dc70: serial extraction paired with CEntInfo index at 0x1028dc86"
+  },
+  {
+    "va": "0x1028e805",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x1028e7f0: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x1028e81b"
+  },
+  {
+    "va": "0x1028e81d",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x1028e7f0: serial extraction paired with CEntInfo index at 0x1028e803"
+  },
+  {
+    "va": "0x1028f167",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x1028f130: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x1028f179"
+  },
+  {
+    "va": "0x1028f17b",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x1028f130: serial extraction paired with CEntInfo index at 0x1028f165"
+  },
+  {
+    "va": "0x10290bee",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x10290bc0: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x10290c00"
+  },
+  {
+    "va": "0x10290c02",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x10290bc0: serial extraction paired with CEntInfo index at 0x10290bec"
+  },
+  {
+    "va": "0x10292892",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x10292800: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x102928a0"
+  },
+  {
+    "va": "0x102928a2",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x10292800: serial extraction paired with CEntInfo index at 0x10292890"
+  },
+  {
+    "va": "0x10293dbf",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x10293d40: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x10293dcd"
+  },
+  {
+    "va": "0x10293dcf",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x10293d40: serial extraction paired with CEntInfo index at 0x10293dbe"
+  },
+  {
+    "va": "0x10295532",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x102954b0: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x10295544"
+  },
+  {
+    "va": "0x10295546",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x102954b0: serial extraction paired with CEntInfo index at 0x10295530"
+  },
+  {
+    "va": "0x10295563",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x102954b0: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x10295571"
+  },
+  {
+    "va": "0x10295573",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x102954b0: serial extraction paired with CEntInfo index at 0x10295562"
+  },
+  {
+    "va": "0x102955e6",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x102954b0: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x102955f8"
+  },
+  {
+    "va": "0x102955fa",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x102954b0: serial extraction paired with CEntInfo index at 0x102955e4"
+  },
+  {
+    "va": "0x10298b11",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x10298530: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x10298b1f"
+  },
+  {
+    "va": "0x10298b21",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x10298530: serial extraction paired with CEntInfo index at 0x10298b0f"
+  },
+  {
+    "va": "0x102b592c",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x102b58f0: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x102b593a"
+  },
+  {
+    "va": "0x102b593c",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x102b58f0: serial extraction paired with CEntInfo index at 0x102b592a"
+  },
+  {
+    "va": "0x102b5958",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x102b58f0: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x102b5966"
+  },
+  {
+    "va": "0x102b5968",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x102b58f0: serial extraction paired with CEntInfo index at 0x102b5956"
+  },
+  {
+    "va": "0x102b59b0",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x102b58f0: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x102b59be"
+  },
+  {
+    "va": "0x102b59c0",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x102b58f0: serial extraction paired with CEntInfo index at 0x102b59af"
+  },
+  {
+    "va": "0x102b5a6b",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x102b58f0: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x102b5a79"
+  },
+  {
+    "va": "0x102b5a7b",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x102b58f0: serial extraction paired with CEntInfo index at 0x102b5a69"
+  },
+  {
+    "va": "0x102ce872",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x102ce7a0: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x102ce880"
+  },
+  {
+    "va": "0x102ce882",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x102ce7a0: serial extraction paired with CEntInfo index at 0x102ce870"
+  },
+  {
+    "va": "0x102f3540",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x102f34f0: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x102f354e"
+  },
+  {
+    "va": "0x102f3550",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x102f34f0: serial extraction paired with CEntInfo index at 0x102f353e"
+  },
+  {
+    "va": "0x102f5cdb",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x102f5c20: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x102f5ce9"
+  },
+  {
+    "va": "0x102f5ceb",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x102f5c20: serial extraction paired with CEntInfo index at 0x102f5cd9"
+  },
+  {
+    "va": "0x102f5d2c",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x102f5c20: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x102f5d3a"
+  },
+  {
+    "va": "0x102f5d3c",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x102f5c20: serial extraction paired with CEntInfo index at 0x102f5d2a"
+  },
+  {
+    "va": "0x102f6805",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x102f67e0: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x102f6815"
+  },
+  {
+    "va": "0x102f6817",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x102f67e0: serial extraction paired with CEntInfo index at 0x102f6804"
+  },
+  {
+    "va": "0x102f6835",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x102f67e0: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x102f684b"
+  },
+  {
+    "va": "0x102f684d",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x102f67e0: serial extraction paired with CEntInfo index at 0x102f6833"
+  },
+  {
+    "va": "0x102fcf60",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x102fcdd0: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x102fcf6e"
+  },
+  {
+    "va": "0x102fcf70",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x102fcdd0: serial extraction paired with CEntInfo index at 0x102fcf5f"
+  },
+  {
+    "va": "0x1030134f",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x10301340: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x10301365"
+  },
+  {
+    "va": "0x10301367",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x10301340: serial extraction paired with CEntInfo index at 0x1030134d"
+  },
+  {
+    "va": "0x103033cf",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x103033c0: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x103033e5"
+  },
+  {
+    "va": "0x103033e7",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x103033c0: serial extraction paired with CEntInfo index at 0x103033cd"
+  },
+  {
+    "va": "0x10309480",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x10309450: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x1030948e"
+  },
+  {
+    "va": "0x10309490",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x10309450: serial extraction paired with CEntInfo index at 0x1030947f"
+  },
+  {
+    "va": "0x1030fb7b",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x1030fb50: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x1030fb89"
+  },
+  {
+    "va": "0x1030fb8b",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x1030fb50: serial extraction paired with CEntInfo index at 0x1030fb79"
+  },
+  {
+    "va": "0x10312590",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x10312420: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x1031259e"
+  },
+  {
+    "va": "0x103125a0",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x10312420: serial extraction paired with CEntInfo index at 0x1031258f"
+  },
+  {
+    "va": "0x10319ab6",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x10319a80: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x10319ac4"
+  },
+  {
+    "va": "0x10319ac6",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x10319a80: serial extraction paired with CEntInfo index at 0x10319ab4"
+  },
+  {
+    "va": "0x1031a8f9",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x1031a8b0: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x1031a907"
+  },
+  {
+    "va": "0x1031a909",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x1031a8b0: serial extraction paired with CEntInfo index at 0x1031a8f7"
+  },
+  {
+    "va": "0x1031a9a2",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x1031a950: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x1031a9b0"
+  },
+  {
+    "va": "0x1031a9b2",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x1031a950: serial extraction paired with CEntInfo index at 0x1031a9a0"
+  },
+  {
+    "va": "0x1031aa39",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x1031a9f0: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x1031aa47"
+  },
+  {
+    "va": "0x1031aa49",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x1031a9f0: serial extraction paired with CEntInfo index at 0x1031aa37"
+  },
+  {
+    "va": "0x1031aad9",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x1031aa90: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x1031aae7"
+  },
+  {
+    "va": "0x1031aae9",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x1031aa90: serial extraction paired with CEntInfo index at 0x1031aad7"
+  },
+  {
+    "va": "0x1031ab79",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x1031ab30: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x1031ab87"
+  },
+  {
+    "va": "0x1031ab89",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x1031ab30: serial extraction paired with CEntInfo index at 0x1031ab77"
+  },
+  {
+    "va": "0x1031ac7a",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x1031ac10: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x1031ac88"
+  },
+  {
+    "va": "0x1031ac8a",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x1031ac10: serial extraction paired with CEntInfo index at 0x1031ac78"
+  },
+  {
+    "va": "0x1031ad5a",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "IDA 0x1031acf0: global CEntInfo lookup, decoded index stride 16 and paired serial compare at 0x1031ad68"
+  },
+  {
+    "va": "0x1031ad6a",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "IDA 0x1031acf0: serial extraction paired with CEntInfo index at 0x1031ad58"
+  }
+]

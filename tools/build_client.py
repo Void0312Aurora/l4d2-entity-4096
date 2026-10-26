@@ -1,16 +1,17 @@
 #!/usr/bin/env python3
-"""Build an isolated EXPERTIMENTAL static copy of client.dll.
+"""Build an isolated EXPERIMENTAL copy of client.dll.
 
-Applies the 1089 Class-A patches from manifests/client.json plus PE surgery:
+Applies the 1091 Class-A patches from manifests/client.json plus PE surgery:
   - one new BSS section (.clentls, 0x300A8 bytes at RVA 0x963000)
   - NumberOfSections, SizeOfImage, checksum
 
 It deliberately does NOT:
   - apply the 3 pending `cmp 0x7FF` candidates
   - touch the 802 unclassified B-mask sites
-  - claim any runtime correctness
+  - claim full runtime correctness
 
-The artifact is an experimental candidate for loader/format testing only.
+The artifact reached active signon in one limited direct-Proton smoke test;
+client-side high-index decoding and entity lifecycle remain unverified.
 The game install is opened read-only and never written.
 """
 import hashlib
@@ -80,9 +81,10 @@ report = dict(
     module="client.dll",
     source_sha256=src_sha,
     source_size=len(d),
-    status="experimental-static-only",
+    status="experimental-limited-runtime-validation",
     notes=[
-        "no runtime verification of any kind",
+        "runtime smoke test reached active signon while server held entity index 2048; see reports/n27d48",
+        "client-side high-index decoding and entity lifecycle remain unverified",
         "3 pending cmp 0x7FF candidates not applied",
         "802 unclassified B-mask sites not applied",
         "S10/C10 shift/mask pairing not proven",

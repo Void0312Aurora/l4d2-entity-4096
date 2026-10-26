@@ -1,0 +1,110 @@
+[
+  {
+    "va": "0x1ddf1c",
+    "old": "83f840",
+    "new": "3c8090",
+    "evidence": "WriteDeltaEntities FindNextSetBit word count 64 ->128; cmp al,0x80, only equality consumed"
+  },
+  {
+    "va": "0x1ddf37",
+    "old": "83f840",
+    "new": "3c8090",
+    "evidence": "WriteDeltaEntities FindNextSetBit word count 64 ->128; cmp al,0x80, only equality consumed"
+  },
+  {
+    "va": "0x1ddfce",
+    "old": "83f840",
+    "new": "3c8090",
+    "evidence": "WriteDeltaEntities FindNextSetBit word count 64 ->128; cmp al,0x80, only equality consumed"
+  },
+  {
+    "va": "0x1ddfe7",
+    "old": "83f840",
+    "new": "3c8090",
+    "evidence": "WriteDeltaEntities FindNextSetBit word count 64 ->128; cmp al,0x80, only equality consumed"
+  },
+  {
+    "va": "0x1de0fa",
+    "old": "83f840",
+    "new": "3c8090",
+    "evidence": "WriteDeltaEntities FindNextSetBit word count 64 ->128; cmp al,0x80, only equality consumed"
+  },
+  {
+    "va": "0x1de117",
+    "old": "83f840",
+    "new": "3c8090",
+    "evidence": "WriteDeltaEntities FindNextSetBit word count 64 ->128; cmp al,0x80, only equality consumed"
+  },
+  {
+    "va": "0x1de1ac",
+    "old": "83f840",
+    "new": "3c8090",
+    "evidence": "WriteDeltaEntities FindNextSetBit word count 64 ->128; cmp al,0x80, only equality consumed"
+  },
+  {
+    "va": "0x1de1c7",
+    "old": "83f840",
+    "new": "3c8090",
+    "evidence": "WriteDeltaEntities FindNextSetBit word count 64 ->128; cmp al,0x80, only equality consumed"
+  },
+  {
+    "va": "0x1de5df",
+    "old": "83f840",
+    "new": "3c8090",
+    "evidence": "WriteDeltaEntities FindNextSetBit word count 64 ->128; cmp al,0x80, only equality consumed"
+  },
+  {
+    "va": "0x1de5f7",
+    "old": "83f840",
+    "new": "3c8090",
+    "evidence": "WriteDeltaEntities FindNextSetBit word count 64 ->128; cmp al,0x80, only equality consumed"
+  },
+  {
+    "va": "0x1de6e3",
+    "old": "83f840",
+    "new": "3c8090",
+    "evidence": "WriteDeltaEntities FindNextSetBit word count 64 ->128; cmp al,0x80, only equality consumed"
+  },
+  {
+    "va": "0x1de6f7",
+    "old": "83f840",
+    "new": "3c8090",
+    "evidence": "WriteDeltaEntities FindNextSetBit word count 64 ->128; cmp al,0x80, only equality consumed"
+  },
+  {
+    "va": "0x1de7a4",
+    "old": "83f840",
+    "new": "3c8090",
+    "evidence": "WriteDeltaEntities FindNextSetBit word count 64 ->128; cmp al,0x80, only equality consumed"
+  },
+  {
+    "va": "0x1de7bf",
+    "old": "83f840",
+    "new": "3c8090",
+    "evidence": "WriteDeltaEntities FindNextSetBit word count 64 ->128; cmp al,0x80, only equality consumed"
+  },
+  {
+    "va": "0x1de858",
+    "old": "83f840",
+    "new": "3c8090",
+    "evidence": "WriteDeltaEntities FindNextSetBit word count 64 ->128; cmp al,0x80, only equality consumed"
+  },
+  {
+    "va": "0x1de877",
+    "old": "83f840",
+    "new": "3c8090",
+    "evidence": "WriteDeltaEntities FindNextSetBit word count 64 ->128; cmp al,0x80, only equality consumed"
+  },
+  {
+    "va": "0x1deb85",
+    "old": "83f840",
+    "new": "3c8090",
+    "evidence": "WriteDeltaEntities FindNextSetBit word count 64 ->128; cmp al,0x80, only equality consumed"
+  },
+  {
+    "va": "0x1deb9f",
+    "old": "83f840",
+    "new": "3c8090",
+    "evidence": "WriteDeltaEntities FindNextSetBit word count 64 ->128; cmp al,0x80, only equality consumed"
+  }
+]

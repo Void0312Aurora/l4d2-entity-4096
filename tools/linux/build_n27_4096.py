@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 """Build the integrated N27 + N26 4096 image.
 
-Pipeline: build_n27_full.py (F1/F2/F3 + S1/S2/S3 + C1/C3), then the two N26
-capacity immediates 0x800 -> 0x1000. Network wire format is NOT changed.
+Pipeline: build_n27_full.py (F1/F2/F3 + S1/S2/S3 + C1/C3 + 4096-entry
+g_EdictFreeTime), then the two N26 capacity immediates 0x800 -> 0x1000.
+Network wire format is NOT changed.
 """
 import hashlib, struct, subprocess, sys
 from pathlib import Path

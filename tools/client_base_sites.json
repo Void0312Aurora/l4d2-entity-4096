@@ -1,0 +1,450 @@
+[
+  {
+    "va": "0x100ea58f",
+    "old": "04000100",
+    "new": "04000200",
+    "size": 4,
+    "evidence": "0x100ea580: mov     [edi+10004h], eax"
+  },
+  {
+    "va": "0x100ea595",
+    "old": "08000100",
+    "new": "08000200",
+    "size": 4,
+    "evidence": "0x100ea580: mov     [edi+10008h], eax"
+  },
+  {
+    "va": "0x100ea59b",
+    "old": "0c000100",
+    "new": "0c000200",
+    "size": 4,
+    "evidence": "0x100ea580: mov     [edi+1000Ch], eax"
+  },
+  {
+    "va": "0x100ea5a1",
+    "old": "10000100",
+    "new": "10000200",
+    "size": 4,
+    "evidence": "0x100ea580: mov     [edi+10010h], eax"
+  },
+  {
+    "va": "0x100ea5fa",
+    "old": "0c000100",
+    "new": "0c000200",
+    "size": 4,
+    "evidence": "0x100ea580: mov     [edi+1000Ch], ecx"
+  },
+  {
+    "va": "0x100ea610",
+    "old": "10000100",
+    "new": "10000200",
+    "size": 4,
+    "evidence": "0x100ea580: mov     [edi+10010h], ecx"
+  },
+  {
+    "va": "0x100ea625",
+    "old": "10000100",
+    "new": "10000200",
+    "size": 4,
+    "evidence": "0x100ea580: mov     edx, [edi+10010h]"
+  },
+  {
+    "va": "0x100ea630",
+    "old": "10000100",
+    "new": "10000200",
+    "size": 4,
+    "evidence": "0x100ea580: mov     [edi+10010h], ecx"
+  },
+  {
+    "va": "0x100ea63c",
+    "old": "0c000100",
+    "new": "0c000200",
+    "size": 4,
+    "evidence": "0x100ea580: mov     [edi+1000Ch], ecx"
+  },
+  {
+    "va": "0x100ea6d4",
+    "old": "04000100",
+    "new": "04000200",
+    "size": 4,
+    "evidence": "0x100ea660: mov     [edi+10004h], edx"
+  },
+  {
+    "va": "0x100ea6ec",
+    "old": "08000100",
+    "new": "08000200",
+    "size": 4,
+    "evidence": "0x100ea660: mov     [edi+10008h], edx"
+  },
+  {
+    "va": "0x100ea701",
+    "old": "0c000100",
+    "new": "0c000200",
+    "size": 4,
+    "evidence": "0x100ea660: lea     ecx, [edi+1000Ch]"
+  },
+  {
+    "va": "0x100ea72d",
+    "old": "04000100",
+    "new": "04000200",
+    "size": 4,
+    "evidence": "0x100ea720: mov     eax, [edi+10004h]"
+  },
+  {
+    "va": "0x100ea778",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "0x100ea720: handle pack serial <<13"
+  },
+  {
+    "va": "0x100ea7b5",
+    "old": "04000100",
+    "new": "04000200",
+    "size": 4,
+    "evidence": "0x100ea720: mov     [edi+10004h], edx"
+  },
+  {
+    "va": "0x100ea7cd",
+    "old": "08000100",
+    "new": "08000200",
+    "size": 4,
+    "evidence": "0x100ea720: mov     [edi+10008h], edx"
+  },
+  {
+    "va": "0x100ea7d9",
+    "old": "00080000",
+    "new": "00100000",
+    "size": 4,
+    "evidence": "Clear: non-network free-pool threshold 2048 ->4096"
+  },
+  {
+    "va": "0x100ea7f7",
+    "old": "0c000100",
+    "new": "0c000200",
+    "size": 4,
+    "evidence": "0x100ea720: mov     [edi+1000Ch], edx"
+  },
+  {
+    "va": "0x100ea80f",
+    "old": "10000100",
+    "new": "10000200",
+    "size": 4,
+    "evidence": "0x100ea720: mov     [edi+10010h], edx"
+  },
+  {
+    "va": "0x100ea822",
+    "old": "10000100",
+    "new": "10000200",
+    "size": 4,
+    "evidence": "0x100ea720: mov     eax, [edi+10010h]"
+  },
+  {
+    "va": "0x100ea82b",
+    "old": "10000100",
+    "new": "10000200",
+    "size": 4,
+    "evidence": "0x100ea720: mov     [edi+10010h], esi"
+  },
+  {
+    "va": "0x100ea838",
+    "old": "0c000100",
+    "new": "0c000200",
+    "size": 4,
+    "evidence": "0x100ea720: mov     [edi+1000Ch], esi"
+  },
+  {
+    "va": "0x100ea884",
+    "old": "04000100",
+    "new": "04000200",
+    "size": 4,
+    "evidence": "0x100ea860: lea     ecx, [esi+10004h]"
+  },
+  {
+    "va": "0x100ea895",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "0x100ea860: handle pack serial <<13"
+  },
+  {
+    "va": "0x100ea8ca",
+    "old": "0c000100",
+    "new": "0c000200",
+    "size": 4,
+    "evidence": "0x100ea8c0: mov     eax, [esi+1000Ch]"
+  },
+  {
+    "va": "0x100ea90b",
+    "old": "0c000100",
+    "new": "0c000200",
+    "size": 4,
+    "evidence": "0x100ea8c0: mov     [esi+1000Ch], ecx"
+  },
+  {
+    "va": "0x100ea923",
+    "old": "10000100",
+    "new": "10000200",
+    "size": 4,
+    "evidence": "0x100ea8c0: mov     [esi+10010h], ecx"
+  },
+  {
+    "va": "0x100ea944",
+    "old": "04000100",
+    "new": "04000200",
+    "size": 4,
+    "evidence": "0x100ea8c0: lea     ecx, [esi+10004h]"
+  },
+  {
+    "va": "0x100ea957",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "0x100ea8c0: handle pack serial <<13"
+  },
+  {
+    "va": "0x100ae06a",
+    "old": "7c800100",
+    "new": "7c000300",
+    "size": 4,
+    "evidence": "complete-object PVS active-list head +0x1807C -> +0x3007C (movzx) "
+  },
+  {
+    "va": "0x100ae111",
+    "old": "7c800100",
+    "new": "7c000300",
+    "size": 4,
+    "evidence": "complete-object PVS active-list head +0x1807C -> +0x3007C (movzx) "
+  },
+  {
+    "va": "0x100bb8fc",
+    "old": "3c000100",
+    "new": "3c000200",
+    "size": 4,
+    "evidence": "complete-object entity cache: mov     [esi+edi*8+1003Ch], eax"
+  },
+  {
+    "va": "0x100bb975",
+    "old": "40000100",
+    "new": "40000200",
+    "size": 4,
+    "evidence": "complete-object entity cache: mov     [esi+edi*8+10040h], ax"
+  },
+  {
+    "va": "0x100bb9c6",
+    "old": "40000100",
+    "new": "40000200",
+    "size": 4,
+    "evidence": "complete-object entity cache: mov     [esi+edi*8+10040h], ax"
+  },
+  {
+    "va": "0x100bb9fc",
+    "old": "3c000100",
+    "new": "3c000200",
+    "size": 4,
+    "evidence": "complete-object entity cache: mov     dword ptr [esi+ebx*8+1003Ch], 0"
+  },
+  {
+    "va": "0x100bba6f",
+    "old": "40000100",
+    "new": "40000200",
+    "size": 4,
+    "evidence": "complete-object entity cache: movzx   eax, word ptr [esi+ebx*8+10040h]"
+  },
+  {
+    "va": "0x100bba76",
+    "old": "40000100",
+    "new": "40000200",
+    "size": 4,
+    "evidence": "complete-object entity cache: lea     ebx, [esi+ebx*8+10040h]"
+  },
+  {
+    "va": "0x100bb8ce",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "OnAdd/OnRemoveEntity: internal handle index &0x1FFF"
+  },
+  {
+    "va": "0x100bb909",
+    "old": "42000100",
+    "new": "42000200",
+    "size": 4,
+    "evidence": "complete-object entity cache: mov     [esi+edi*8+10042h], ax"
+  },
+  {
+    "va": "0x100bb9ea",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "OnAdd/OnRemoveEntity: internal handle index &0x1FFF"
+  },
+  {
+    "va": "0x100b9310",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "Purge: subsequent handle pack serial <<13"
+  },
+  {
+    "va": "0x100b8d27",
+    "old": "ff070000",
+    "new": "ff0f0000",
+    "size": 4,
+    "evidence": "GetClientNetworkable: allow network indices through 4095"
+  },
+  {
+    "va": "0x100b8dcb",
+    "old": "00100000",
+    "new": "00200000",
+    "size": 4,
+    "evidence": "GetClientEntity: total slot count 8192"
+  },
+  {
+    "va": "0x100b8dd2",
+    "old": "ffefffff",
+    "new": "ffdfffff",
+    "size": 4,
+    "evidence": "GetClientEntity: secondary-this array displacement -0x20010"
+  },
+  {
+    "va": "0x100bb4ce",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "GetClientUnknownFromHandle: 13-bit internal index"
+  },
+  {
+    "va": "0x100bb4d3",
+    "old": "01100000",
+    "new": "01200000",
+    "size": 4,
+    "evidence": "GetClientUnknownFromHandle: secondary-this array displacement -0x20010"
+  },
+  {
+    "va": "0x100bb4e0",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "GetClientUnknownFromHandle: serial >>13"
+  },
+  {
+    "va": "0x100b8d5e",
+    "old": "42000100",
+    "new": "42000200",
+    "size": 4,
+    "evidence": "SetEntInfo: SIB cache flags complete-object offset +0x10042 -> +0x20042; old store zeroes high word of slot 4099 prev pointer"
+  },
+  {
+    "va": "0x1018bfc7",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "RecvProxy_IntToEHandle: retain 21-bit wire input, pack internal serial <<13 to match CBaseEntityList"
+  },
+  {
+    "va": "0x100b8ff0",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "NextBaseEntity: GetRefEHandle index uses all 13 internal bits"
+  },
+  {
+    "va": "0x1004bd41",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "Hierarchy unlink helper 0x1004BD20: entity-list slot serial check requires internal index mask 0x1FFF and serial >>13"
+  },
+  {
+    "va": "0x1004bd59",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "Hierarchy unlink helper 0x1004BD20: entity-list slot serial check requires internal index mask 0x1FFF and serial >>13"
+  },
+  {
+    "va": "0x1004bd89",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "Hierarchy unlink helper 0x1004BD20: entity-list slot serial check requires internal index mask 0x1FFF and serial >>13"
+  },
+  {
+    "va": "0x1004bd99",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "Hierarchy unlink helper 0x1004BD20: entity-list slot serial check requires internal index mask 0x1FFF and serial >>13"
+  },
+  {
+    "va": "0x1004bdd3",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "Hierarchy unlink helper 0x1004BD20: entity-list slot serial check requires internal index mask 0x1FFF and serial >>13"
+  },
+  {
+    "va": "0x1004bde3",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "Hierarchy unlink helper 0x1004BD20: entity-list slot serial check requires internal index mask 0x1FFF and serial >>13"
+  },
+  {
+    "va": "0x1004d1f5",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "Hierarchy link/dirty traversal: validated slot lookup and serial comparison; internal 13-bit handles"
+  },
+  {
+    "va": "0x1004d205",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "Hierarchy link/dirty traversal: validated slot lookup and serial comparison; internal 13-bit handles"
+  },
+  {
+    "va": "0x1004d32e",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "Hierarchy link/dirty traversal: validated slot lookup and serial comparison; internal 13-bit handles"
+  },
+  {
+    "va": "0x1004d33e",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "Hierarchy link/dirty traversal: validated slot lookup and serial comparison; internal 13-bit handles"
+  },
+  {
+    "va": "0x100714da",
+    "old": "ff0f0000",
+    "new": "ff1f0000",
+    "size": 4,
+    "evidence": "C_EntityFlame cleanup handle lookup: 13-bit index"
+  },
+  {
+    "va": "0x100714ee",
+    "old": "0c",
+    "new": "0d",
+    "size": 1,
+    "evidence": "C_EntityFlame cleanup handle lookup: serial >>13; prevents null child on disconnect"
+  },
+  {
+    "va": "0x100bb7da",
+    "old": "8c800100",
+    "new": "8c000300",
+    "size": 4,
+    "evidence": "Complete CClientEntityList embedded RBTree this adjustment: add reg,0x1808C ->0x3008C; immediate form was absent from member scan"
+  },
+  {
+    "va": "0x100bb828",
+    "old": "8c800100",
+    "new": "8c000300",
+    "size": 4,
+    "evidence": "Complete CClientEntityList embedded RBTree this adjustment: add reg,0x1808C ->0x3008C; immediate form was absent from member scan"
+  }
+]

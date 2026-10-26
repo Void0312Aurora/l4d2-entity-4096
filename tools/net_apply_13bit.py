@@ -49,11 +49,12 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--src", default=None)
     ap.add_argument("--out", default=str(Path(__file__).resolve().parents[1]/"out/engine.4096.13bit.dll"))
+    ap.add_argument("--allow-other-sha", action="store_true")
     a = ap.parse_args()
     src = Path(a.src) if a.src else Path(plan.ENGINE_DLL)
     blob = src.read_bytes()
     sha = hashlib.sha256(blob).hexdigest()
-    if sha != EXPECTED:
+    if sha != EXPECTED and not a.allow_other_sha:
         raise SystemExit(f"unexpected engine.dll sha256 {sha}")
     out = bytearray(blob)
     for s in plan.SITES:

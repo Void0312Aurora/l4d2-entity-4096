@@ -48,6 +48,8 @@ def main():
     skip_stack = os.environ.get("N27_SKIP_STACK") == "1"
     skip_f3 = os.environ.get("N27_SKIP_F3") == "1"
     skip_f2 = os.environ.get("N27_SKIP_F2") == "1"
+    only2 = os.environ.get("N27_F2_ONLY")
+    only_disps = {int(x, 16) for x in only2.replace("0x", "").split(",")} if only2 else None
     for path, groups in (("data/linux/n27b_patch_sites.csv", set() if skip_frame else ({"F1"} if skip_f3 else {"F1", "F3"})),
                          ("data/linux/n27c_patch_sites.csv", set() if skip_stack else {"S1", "S2", "S3"})):
         for r in rows(path):
@@ -63,7 +65,10 @@ def main():
 
     # frame member displacements
     frame = 0
-    for r in ([] if (skip_frame or skip_f2) else rows("data/linux/n27b_frame_member_sites.csv")):
+    frame_rows = [] if (skip_frame or skip_f2) else [
+        r for r in rows("data/linux/n27b_frame_member_sites.csv")
+        if only_disps is None or int(r["old_disp"], 16) in only_disps]
+    for r in frame_rows:
         addr = int(r["elf_addr"], 16)
         old = le32(int(r["old_disp"], 16))
         new = le32(int(r["new_disp"], 16))
@@ -89,7 +94,10 @@ def main():
 
     # post-build frame spot verification
     img = out.read_bytes()
-    for r in ([] if (skip_frame or skip_f2) else rows("data/linux/n27b_frame_member_sites.csv")):
+    frame_rows = [] if (skip_frame or skip_f2) else [
+        r for r in rows("data/linux/n27b_frame_member_sites.csv")
+        if only_disps is None or int(r["old_disp"], 16) in only_disps]
+    for r in frame_rows:
         addr = int(r["elf_addr"], 16)
         if le32(int(r["new_disp"], 16)) not in img[addr:addr + 16]:
             raise SystemExit(f"frame new disp missing at 0x{addr:X}")

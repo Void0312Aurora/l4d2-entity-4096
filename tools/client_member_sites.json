@@ -1,0 +1,608 @@
+[
+  {
+    "va": "0x100ae082",
+    "old": "70800100",
+    "size": 4,
+    "evidence": "0x100ae080: mov     esi, [ebx+20070h]"
+  },
+  {
+    "va": "0x100ae0d0",
+    "old": "70800100",
+    "size": 4,
+    "evidence": "0x100ae0ce: mov     eax, [ebx+20070h]"
+  },
+  {
+    "va": "0x100ae122",
+    "old": "70800100",
+    "size": 4,
+    "evidence": "0x100ae120: mov     esi, [ebx+20070h]"
+  },
+  {
+    "va": "0x100ae15f",
+    "old": "70800100",
+    "size": 4,
+    "evidence": "0x100ae15d: mov     eax, [ebx+20070h]"
+  },
+  {
+    "va": "0x100b8df2",
+    "old": "38000100",
+    "size": 4,
+    "evidence": "0x100b8df0: mov     dword ptr [ecx+20038h], 0FFFFFFFFh"
+  },
+  {
+    "va": "0x100b8e1e",
+    "old": "38000100",
+    "size": 4,
+    "evidence": "0x100b8e1c: mov     [ecx+20038h], eax"
+  },
+  {
+    "va": "0x100b8f83",
+    "old": "04000100",
+    "size": 4,
+    "evidence": "0x100b8f81: mov     esi, [ecx+20004h]"
+  },
+  {
+    "va": "0x100b8fbf",
+    "old": "04000100",
+    "size": 4,
+    "evidence": "0x100b8fbd: mov     esi, [esi+20004h]"
+  },
+  {
+    "va": "0x100b9286",
+    "old": "04000100",
+    "size": 4,
+    "evidence": "0x100b9284: mov     eax, [esi+20004h]"
+  },
+  {
+    "va": "0x100b92f1",
+    "old": "04000100",
+    "size": 4,
+    "evidence": "0x100b92ef: mov     eax, [esi+20004h]"
+  },
+  {
+    "va": "0x100b931f",
+    "old": "2c000100",
+    "size": 4,
+    "evidence": "0x100b931d: mov     [esi+2002Ch], ecx"
+  },
+  {
+    "va": "0x100b9325",
+    "old": "30000100",
+    "size": 4,
+    "evidence": "0x100b9323: mov     [esi+20030h], ecx"
+  },
+  {
+    "va": "0x100b932b",
+    "old": "34000100",
+    "size": 4,
+    "evidence": "0x100b9329: mov     [esi+20034h], ecx"
+  },
+  {
+    "va": "0x100b9331",
+    "old": "38000100",
+    "size": 4,
+    "evidence": "0x100b932f: mov     dword ptr [esi+20038h], 0FFFFFFFFh"
+  },
+  {
+    "va": "0x100b934b",
+    "old": "48800100",
+    "size": 4,
+    "evidence": "0x100b9348: mov     dx, [ecx+20048h]"
+  },
+  {
+    "va": "0x100b98f9",
+    "old": "64800100",
+    "size": 4,
+    "evidence": "0x100b98f7: mov     eax, [ebx+20064h]"
+  },
+  {
+    "va": "0x100b9912",
+    "old": "58800100",
+    "size": 4,
+    "evidence": "0x100b9910: mov     eax, [ebx+20058h]"
+  },
+  {
+    "va": "0x100b993c",
+    "old": "64800100",
+    "size": 4,
+    "evidence": "0x100b993a: mov     dword ptr [ebx+20064h], 0"
+  },
+  {
+    "va": "0x100b994b",
+    "old": "64800100",
+    "size": 4,
+    "evidence": "0x100b9949: mov     [ebx+20064h], edi"
+  },
+  {
+    "va": "0x100b997b",
+    "old": "3c800100",
+    "size": 4,
+    "evidence": "0x100b9979: mov     eax, [edx+2003Ch]"
+  },
+  {
+    "va": "0x100ba3bb",
+    "old": "6c800100",
+    "size": 4,
+    "evidence": "0x100ba3b9: inc     dword ptr [ecx+2006Ch]"
+  },
+  {
+    "va": "0x100ba3c5",
+    "old": "6c800100",
+    "size": 4,
+    "evidence": "0x100ba3c3: dec     dword ptr [ecx+2006Ch]"
+  },
+  {
+    "va": "0x100baf9a",
+    "old": "18000100",
+    "size": 4,
+    "evidence": "0x100baf98: lea     esi, [ecx+20018h]"
+  },
+  {
+    "va": "0x100bb03a",
+    "old": "6c800100",
+    "size": 4,
+    "evidence": "0x100bb038: cmp     dword ptr [ecx+2006Ch], 0"
+  },
+  {
+    "va": "0x100bb043",
+    "old": "5c800100",
+    "size": 4,
+    "evidence": "0x100bb041: mov     eax, [ecx+2005Ch]"
+  },
+  {
+    "va": "0x100bb04a",
+    "old": "58800100",
+    "size": 4,
+    "evidence": "0x100bb048: lea     esi, [ecx+20058h]"
+  },
+  {
+    "va": "0x100bb40b",
+    "old": "8c800100",
+    "size": 4,
+    "evidence": "0x100bb409: lea     ecx, [edi+2008Ch]"
+  },
+  {
+    "va": "0x100bb416",
+    "old": "70800100",
+    "size": 4,
+    "evidence": "0x100bb414: lea     ecx, [edi+20070h]"
+  },
+  {
+    "va": "0x100bb421",
+    "old": "78800100",
+    "size": 4,
+    "evidence": "0x100bb41f: cmp     dword ptr [edi+20078h], 0"
+  },
+  {
+    "va": "0x100bb42a",
+    "old": "70800100",
+    "size": 4,
+    "evidence": "0x100bb428: mov     eax, [edi+20070h]"
+  },
+  {
+    "va": "0x100bb444",
+    "old": "70800100",
+    "size": 4,
+    "evidence": "0x100bb442: mov     dword ptr [edi+20070h], 0"
+  },
+  {
+    "va": "0x100bb44e",
+    "old": "74800100",
+    "size": 4,
+    "evidence": "0x100bb44c: mov     dword ptr [edi+20074h], 0"
+  },
+  {
+    "va": "0x100bb458",
+    "old": "58800100",
+    "size": 4,
+    "evidence": "0x100bb456: lea     ecx, [edi+20058h]"
+  },
+  {
+    "va": "0x100bb463",
+    "old": "3c800100",
+    "size": 4,
+    "evidence": "0x100bb461: lea     ecx, [edi+2003Ch]"
+  },
+  {
+    "va": "0x100bb46e",
+    "old": "44800100",
+    "size": 4,
+    "evidence": "0x100bb46c: cmp     dword ptr [edi+20044h], 0"
+  },
+  {
+    "va": "0x100bb477",
+    "old": "3c800100",
+    "size": 4,
+    "evidence": "0x100bb475: mov     eax, [edi+2003Ch]"
+  },
+  {
+    "va": "0x100bb491",
+    "old": "3c800100",
+    "size": 4,
+    "evidence": "0x100bb48f: mov     dword ptr [edi+2003Ch], 0"
+  },
+  {
+    "va": "0x100bb49b",
+    "old": "40800100",
+    "size": 4,
+    "evidence": "0x100bb499: mov     dword ptr [edi+20040h], 0"
+  },
+  {
+    "va": "0x100bb4a5",
+    "old": "18000100",
+    "size": 4,
+    "evidence": "0x100bb4a3: lea     ecx, [edi+20018h]"
+  },
+  {
+    "va": "0x100bb526",
+    "old": "18000100",
+    "size": 4,
+    "evidence": "0x100bb524: mov     [esi+20018h], eax"
+  },
+  {
+    "va": "0x100bb52c",
+    "old": "1c000100",
+    "size": 4,
+    "evidence": "0x100bb52a: mov     [esi+2001Ch], eax"
+  },
+  {
+    "va": "0x100bb532",
+    "old": "20000100",
+    "size": 4,
+    "evidence": "0x100bb530: mov     [esi+20020h], eax"
+  },
+  {
+    "va": "0x100bb538",
+    "old": "24000100",
+    "size": 4,
+    "evidence": "0x100bb536: mov     [esi+20024h], eax"
+  },
+  {
+    "va": "0x100bb53e",
+    "old": "28000100",
+    "size": 4,
+    "evidence": "0x100bb53c: mov     [esi+20028h], eax"
+  },
+  {
+    "va": "0x100bb544",
+    "old": "3c800100",
+    "size": 4,
+    "evidence": "0x100bb542: mov     [esi+2003Ch], eax"
+  },
+  {
+    "va": "0x100bb54a",
+    "old": "40800100",
+    "size": 4,
+    "evidence": "0x100bb548: mov     [esi+20040h], eax"
+  },
+  {
+    "va": "0x100bb550",
+    "old": "44800100",
+    "size": 4,
+    "evidence": "0x100bb54e: mov     [esi+20044h], eax"
+  },
+  {
+    "va": "0x100bb55c",
+    "old": "52800100",
+    "size": 4,
+    "evidence": "0x100bb559: mov     [esi+20052h], cx"
+  },
+  {
+    "va": "0x100bb562",
+    "old": "4c800100",
+    "size": 4,
+    "evidence": "0x100bb560: mov     [esi+2004Ch], ecx"
+  },
+  {
+    "va": "0x100bb568",
+    "old": "3c800100",
+    "size": 4,
+    "evidence": "0x100bb566: mov     ecx, [esi+2003Ch]"
+  },
+  {
+    "va": "0x100bb56e",
+    "old": "54800100",
+    "size": 4,
+    "evidence": "0x100bb56c: mov     [esi+20054h], ecx"
+  },
+  {
+    "va": "0x100bb574",
+    "old": "48800100",
+    "size": 4,
+    "evidence": "0x100bb572: mov     dword ptr [esi+20048h], 0FFFFFFFFh"
+  },
+  {
+    "va": "0x100bb581",
+    "old": "50800100",
+    "size": 4,
+    "evidence": "0x100bb57e: mov     [esi+20050h], dx"
+  },
+  {
+    "va": "0x100bb587",
+    "old": "58800100",
+    "size": 4,
+    "evidence": "0x100bb585: mov     [esi+20058h], eax"
+  },
+  {
+    "va": "0x100bb58d",
+    "old": "5c800100",
+    "size": 4,
+    "evidence": "0x100bb58b: mov     [esi+2005Ch], eax"
+  },
+  {
+    "va": "0x100bb593",
+    "old": "60800100",
+    "size": 4,
+    "evidence": "0x100bb591: mov     [esi+20060h], eax"
+  },
+  {
+    "va": "0x100bb599",
+    "old": "64800100",
+    "size": 4,
+    "evidence": "0x100bb597: mov     [esi+20064h], eax"
+  },
+  {
+    "va": "0x100bb59f",
+    "old": "68800100",
+    "size": 4,
+    "evidence": "0x100bb59d: mov     [esi+20068h], eax"
+  },
+  {
+    "va": "0x100bb5a5",
+    "old": "70800100",
+    "size": 4,
+    "evidence": "0x100bb5a3: mov     [esi+20070h], eax"
+  },
+  {
+    "va": "0x100bb5ab",
+    "old": "74800100",
+    "size": 4,
+    "evidence": "0x100bb5a9: mov     [esi+20074h], eax"
+  },
+  {
+    "va": "0x100bb5b1",
+    "old": "78800100",
+    "size": 4,
+    "evidence": "0x100bb5af: mov     [esi+20078h], eax"
+  },
+  {
+    "va": "0x100bb5bd",
+    "old": "86800100",
+    "size": 4,
+    "evidence": "0x100bb5ba: mov     [esi+20086h], dx"
+  },
+  {
+    "va": "0x100bb5c3",
+    "old": "80800100",
+    "size": 4,
+    "evidence": "0x100bb5c1: mov     [esi+20080h], edx"
+  },
+  {
+    "va": "0x100bb5c9",
+    "old": "70800100",
+    "size": 4,
+    "evidence": "0x100bb5c7: mov     edx, [esi+20070h]"
+  },
+  {
+    "va": "0x100bb5cf",
+    "old": "7c800100",
+    "size": 4,
+    "evidence": "0x100bb5cd: mov     dword ptr [esi+2007Ch], 0FFFFFFFFh"
+  },
+  {
+    "va": "0x100bb5d9",
+    "old": "88800100",
+    "size": 4,
+    "evidence": "0x100bb5d7: mov     [esi+20088h], edx"
+  },
+  {
+    "va": "0x100bb5e2",
+    "old": "84800100",
+    "size": 4,
+    "evidence": "0x100bb5df: mov     [esi+20084h], cx"
+  },
+  {
+    "va": "0x100bb5e8",
+    "old": "8c800100",
+    "size": 4,
+    "evidence": "0x100bb5e6: mov     dword ptr [esi+2008Ch], offset sub_100B8D00"
+  },
+  {
+    "va": "0x100bb5f2",
+    "old": "90800100",
+    "size": 4,
+    "evidence": "0x100bb5f0: mov     [esi+20090h], eax"
+  },
+  {
+    "va": "0x100bb5f8",
+    "old": "94800100",
+    "size": 4,
+    "evidence": "0x100bb5f6: mov     [esi+20094h], eax"
+  },
+  {
+    "va": "0x100bb5fe",
+    "old": "98800100",
+    "size": 4,
+    "evidence": "0x100bb5fc: mov     [esi+20098h], eax"
+  },
+  {
+    "va": "0x100bb604",
+    "old": "90800100",
+    "size": 4,
+    "evidence": "0x100bb602: mov     ecx, [esi+20090h]"
+  },
+  {
+    "va": "0x100bb60a",
+    "old": "a4800100",
+    "size": 4,
+    "evidence": "0x100bb608: mov     [esi+200A4h], ecx"
+  },
+  {
+    "va": "0x100bb610",
+    "old": "9c800100",
+    "size": 4,
+    "evidence": "0x100bb60e: mov     dword ptr [esi+2009Ch], 0FFFFh"
+  },
+  {
+    "va": "0x100bb61a",
+    "old": "a0800100",
+    "size": 4,
+    "evidence": "0x100bb618: mov     dword ptr [esi+200A0h], 0FFFFFFFFh"
+  },
+  {
+    "va": "0x100bb626",
+    "old": "38000100",
+    "size": 4,
+    "evidence": "0x100bb624: mov     dword ptr [esi+20038h], 0FFFFFFFFh"
+  },
+  {
+    "va": "0x100bb630",
+    "old": "30000100",
+    "size": 4,
+    "evidence": "0x100bb62e: mov     [esi+20030h], eax"
+  },
+  {
+    "va": "0x100bb636",
+    "old": "6c800100",
+    "size": 4,
+    "evidence": "0x100bb634: mov     [esi+2006Ch], eax"
+  },
+  {
+    "va": "0x100bb77f",
+    "old": "70800100",
+    "size": 4,
+    "evidence": "0x100bb77d: lea     ecx, [esi+20070h]"
+  },
+  {
+    "va": "0x100bb7a1",
+    "old": "70800100",
+    "size": 4,
+    "evidence": "0x100bb79f: lea     ecx, [esi+20070h]"
+  },
+  {
+    "va": "0x100bb7b7",
+    "old": "70800100",
+    "size": 4,
+    "evidence": "0x100bb7b5: add     eax, [esi+20070h]"
+  },
+  {
+    "va": "0x100bb879",
+    "old": "90800100",
+    "size": 4,
+    "evidence": "0x100bb877: mov     edx, [ecx+20090h]"
+  },
+  {
+    "va": "0x100bb886",
+    "old": "70800100",
+    "size": 4,
+    "evidence": "0x100bb884: lea     esi, [ecx+20070h]"
+  },
+  {
+    "va": "0x100bb8de",
+    "old": "2c000100",
+    "size": 4,
+    "evidence": "0x100bb8dc: inc     dword ptr [esi+2002Ch]"
+  },
+  {
+    "va": "0x100bb8e4",
+    "old": "38000100",
+    "size": 4,
+    "evidence": "0x100bb8e2: cmp     edi, [esi+20038h]"
+  },
+  {
+    "va": "0x100bb8ec",
+    "old": "38000100",
+    "size": 4,
+    "evidence": "0x100bb8ea: mov     [esi+20038h], edi"
+  },
+  {
+    "va": "0x100bb92b",
+    "old": "3c800100",
+    "size": 4,
+    "evidence": "0x100bb929: lea     ecx, [esi+2003Ch]"
+  },
+  {
+    "va": "0x100bb94f",
+    "old": "3c800100",
+    "size": 4,
+    "evidence": "0x100bb94d: lea     ecx, [esi+2003Ch]"
+  },
+  {
+    "va": "0x100bb95a",
+    "old": "3c800100",
+    "size": 4,
+    "evidence": "0x100bb958: mov     eax, [esi+2003Ch]"
+  },
+  {
+    "va": "0x100bb98c",
+    "old": "34000100",
+    "size": 4,
+    "evidence": "0x100bb98a: inc     dword ptr [esi+20034h]"
+  },
+  {
+    "va": "0x100bb992",
+    "old": "24000100",
+    "size": 4,
+    "evidence": "0x100bb990: mov     edi, [esi+20024h]"
+  },
+  {
+    "va": "0x100bb9a2",
+    "old": "18000100",
+    "size": 4,
+    "evidence": "0x100bb9a0: mov     ecx, [esi+20018h]"
+  },
+  {
+    "va": "0x100bba06",
+    "old": "2c000100",
+    "size": 4,
+    "evidence": "0x100bba04: dec     dword ptr [esi+2002Ch]"
+  },
+  {
+    "va": "0x100bba0c",
+    "old": "38000100",
+    "size": 4,
+    "evidence": "0x100bba0a: cmp     ebx, [esi+20038h]"
+  },
+  {
+    "va": "0x100bba47",
+    "old": "34000100",
+    "size": 4,
+    "evidence": "0x100bba45: dec     dword ptr [esi+20034h]"
+  },
+  {
+    "va": "0x100bba4d",
+    "old": "24000100",
+    "size": 4,
+    "evidence": "0x100bba4b: mov     edi, [esi+20024h]"
+  },
+  {
+    "va": "0x100bba56",
+    "old": "18000100",
+    "size": 4,
+    "evidence": "0x100bba54: mov     ecx, [esi+20018h]"
+  },
+  {
+    "va": "0x100bba89",
+    "old": "3c800100",
+    "size": 4,
+    "evidence": "0x100bba87: lea     ecx, [esi+2003Ch]"
+  },
+  {
+    "va": "0x100bba95",
+    "old": "4c800100",
+    "size": 4,
+    "evidence": "0x100bba92: mov     cx, [esi+2004Ch]"
+  },
+  {
+    "va": "0x100bba9b",
+    "old": "3c800100",
+    "size": 4,
+    "evidence": "0x100bba99: mov     eax, [esi+2003Ch]"
+  },
+  {
+    "va": "0x100bbaa9",
+    "old": "4c800100",
+    "size": 4,
+    "evidence": "0x100bbaa6: mov     [esi+2004Ch], di"
+  }
+]

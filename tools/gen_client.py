@@ -87,25 +87,15 @@ def add(foff, old, new, cid, ev):
     patches.append(dict(id=cid, rva=va_of(foff)[0] - BASE, file_offset=foff,
                         old=bytes(old).hex(), new=bytes(new).hex(), size=len(old), evidence=ev))
 
-# scan every method body for mod=10 disp32 accesses
-seen_site = set()
-for f in METHODS:
-    o = vo(f)
-    for k in range(0, 0x4000):
-        j = o + k
-        if j + 6 > T1: break
-        if d[j] not in MEMOP: continue
-        m = d[j+1]
-        if (m >> 6) != 2: continue
-        if (m & 7) == 4: continue
-        disp = struct.unpack_from("<I", d, j+2)[0]
-        if disp < 0x10004 or disp >= SIZE_OLD: continue
-        if j in seen_site: continue
-        seen_site.add(j)
-        reg = BASE_REG[m & 7]
-        delta = DELTA1 if disp < 0x1803C else DELTA2
-        add(j+2, struct.pack("<I", disp), struct.pack("<I", disp+delta), "C6-member",
-            "fn 0x%X base=%s off=0x%X" % (f, reg, disp))
+# C6 sites were decoded at instruction boundaries with IDA. The former raw
+# 0x4000-byte windows also matched bytes spanning instructions, corrupting
+# vtable offsets and unrelated absolute stores (23 rejected candidates).
+for site in json.load(open(os.path.join(os.path.dirname(__file__), "client_member_sites.json"))):
+    old = bytes.fromhex(site["old"])
+    disp = int.from_bytes(old, "little")
+    delta = DELTA1 if disp < 0x1803C else DELTA1 + DELTA2
+    add(vo(int(site["va"], 16)), old, struct.pack("<I", disp + delta),
+        "C6-member", site["evidence"])
 
 # C1: absolute refs into object range
 rrva, rsz = struct.unpack_from("<II", d, opt + 96 + 5*8)
@@ -237,6 +227,13 @@ for pat in (b"\xc1\xe0\x0c", b"\xc1\xe1\x0c", b"\xc1\xe2\x0c", b"\xc1\xe6\x0c", 
         if struct.pack("<I", 0x1003C) in win or struct.pack("<I", 0x10014) in win or struct.pack("<I", 0x1803C) in win:
             add(j+2, b"\x0c", b"\x0d", "C8-shl", "handle pack serial<<12")
         j += 1
+
+# Exact sites recovered from the base-list methods and the two movzx
+# active-list consumers, which the older seed/window scan did not cover.
+for site in (json.load(open(os.path.join(os.path.dirname(__file__), "client_base_sites.json"))) +
+             json.load(open(os.path.join(os.path.dirname(__file__), "client_handle_sites.json")))):
+    add(vo(int(site["va"], 16)), bytes.fromhex(site["old"]),
+        bytes.fromhex(site["new"]), "C13-layout", site["evidence"])
 
 # dedupe by (rva, file_offset, size)
 seen = {}

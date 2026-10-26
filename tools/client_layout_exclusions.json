@@ -1,0 +1,175 @@
+[
+  {
+    "va": "0x1004bbae",
+    "id": "C6-member",
+    "old": "bf7c0100",
+    "evidence": "not an operand start: 0x1004bbad cmp     byte ptr [edi+27Ch], 0"
+  },
+  {
+    "va": "0x1004cd5a",
+    "id": "C6-member",
+    "old": "90680100",
+    "evidence": "not an operand start: 0x1004cd59 mov     edx, [eax+268h]"
+  },
+  {
+    "va": "0x1004e574",
+    "id": "C6-member",
+    "old": "be780100",
+    "evidence": "not an operand start: 0x1004e573 mov     [esi+278h], edi"
+  },
+  {
+    "va": "0x1004e99e",
+    "id": "C6-member",
+    "old": "863b0100",
+    "evidence": "not an operand start: 0x1004e99d mov     al, [esi+23Bh]"
+  },
+  {
+    "va": "0x1004eb15",
+    "id": "C6-member",
+    "old": "862c0100",
+    "evidence": "not an operand start: 0x1004eb14 mov     eax, [esi+22Ch]"
+  },
+  {
+    "va": "0x1004ec94",
+    "id": "C6-member",
+    "old": "862c0100",
+    "evidence": "not an operand start: 0x1004ec93 mov     eax, [esi+22Ch]"
+  },
+  {
+    "va": "0x1004fd2d",
+    "id": "C6-member",
+    "old": "81100100",
+    "evidence": "not an operand start: 0x1004fd2c mov     eax, [ecx+210h]"
+  },
+  {
+    "va": "0x100acf02",
+    "id": "C6-member",
+    "old": "73100100",
+    "evidence": "not an operand start: 0x100acefe mov     dword_10739780, 2"
+  },
+  {
+    "va": "0x100acf48",
+    "id": "C6-member",
+    "old": "73100100",
+    "evidence": "not an operand start: 0x100acf44 mov     dword_10739780, 2"
+  },
+  {
+    "va": "0x100adc52",
+    "id": "C6-member",
+    "old": "73100100",
+    "evidence": "not an operand start: 0x100adc4e mov     dword_10739780, 2"
+  },
+  {
+    "va": "0x100adc98",
+    "id": "C6-member",
+    "old": "73100100",
+    "evidence": "not an operand start: 0x100adc94 mov     dword_10739780, 2"
+  },
+  {
+    "va": "0x100add01",
+    "id": "C6-member",
+    "old": "73100100",
+    "evidence": "not an operand start: 0x100adcfd mov     dword_10739780, 2"
+  },
+  {
+    "va": "0x100add49",
+    "id": "C6-member",
+    "old": "73100100",
+    "evidence": "not an operand start: 0x100add45 mov     dword_10739780, 2"
+  },
+  {
+    "va": "0x100adda2",
+    "id": "C6-member",
+    "old": "73100100",
+    "evidence": "not an operand start: 0x100add9e mov     dword_10739780, 2"
+  },
+  {
+    "va": "0x100adde6",
+    "id": "C6-member",
+    "old": "73100100",
+    "evidence": "not an operand start: 0x100adde2 mov     dword_10739780, 2"
+  },
+  {
+    "va": "0x100adeb1",
+    "id": "C6-member",
+    "old": "73100100",
+    "evidence": "not an operand start: 0x100adead mov     dword_10739780, 2"
+  },
+  {
+    "va": "0x100adef8",
+    "id": "C6-member",
+    "old": "73100100",
+    "evidence": "not an operand start: 0x100adef4 mov     dword_10739780, 2"
+  },
+  {
+    "va": "0x100aee94",
+    "id": "C6-member",
+    "old": "73100100",
+    "evidence": "not an operand start: 0x100aee90 mov     dword_10739780, 2"
+  },
+  {
+    "va": "0x100aeeda",
+    "id": "C6-member",
+    "old": "73100100",
+    "evidence": "not an operand start: 0x100aeed6 mov     dword_10739780, 2"
+  },
+  {
+    "va": "0x100bdb7f",
+    "id": "C6-member",
+    "old": "801c0100",
+    "evidence": "not an operand start: 0x100bdb7e mov     eax, [eax+21Ch]"
+  },
+  {
+    "va": "0x100beafc",
+    "id": "C6-member",
+    "old": "90800100",
+    "evidence": "not an operand start: 0x100beafb mov     edx, [eax+200h]"
+  },
+  {
+    "va": "0x10158f1b",
+    "id": "C6-member",
+    "old": "90080100",
+    "evidence": "not an operand start: 0x10158f1a mov     edx, [eax+208h]"
+  },
+  {
+    "va": "0x10176e3e",
+    "id": "C6-member",
+    "old": "90800100",
+    "evidence": "not an operand start: 0x10176e3d mov     edx, [eax+200h]"
+  },
+  {
+    "va": "0x100bdcf8",
+    "old": "18800100",
+    "size": 4,
+    "evidence": "CClientRenderablesList, not CClientEntityList; unrelated group counts at +0x18014/+0x18018",
+    "id": "C6-member"
+  },
+  {
+    "va": "0x100bdd27",
+    "old": "18800100",
+    "size": 4,
+    "evidence": "CClientRenderablesList, not CClientEntityList; unrelated group counts at +0x18014/+0x18018",
+    "id": "C6-member"
+  },
+  {
+    "va": "0x100bdd55",
+    "old": "14800100",
+    "size": 4,
+    "evidence": "CClientRenderablesList, not CClientEntityList; unrelated group counts at +0x18014/+0x18018",
+    "id": "C6-member"
+  },
+  {
+    "va": "0x100bdd86",
+    "old": "14800100",
+    "size": 4,
+    "evidence": "CClientRenderablesList, not CClientEntityList; unrelated group counts at +0x18014/+0x18018",
+    "id": "C6-member"
+  },
+  {
+    "va": "0x100bdec5",
+    "old": "18800100",
+    "size": 4,
+    "evidence": "CClientRenderablesList, not CClientEntityList; unrelated group counts at +0x18014/+0x18018",
+    "id": "C6-member"
+  }
+]

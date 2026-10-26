@@ -5,6 +5,7 @@ Builds on build_n27_frame.py, then:
   * applies the equal-length C1/C3 edits
   * appends a new RX PT_LOAD holding int 0x80 mmap2/munmap stubs
   * hooks CBaseClient ctor (0xEB3F3) and dtor (0xEB2F0) with rel32 jumps
+  * relocates g_EdictFreeTime into a 4096-float BSS range
 No relocation is copied and no PLT is used: the stubs issue syscalls directly,
 so the original TEXTREL instruction at 0xEB2FB stays untouched.
 """
@@ -14,6 +15,13 @@ from pathlib import Path
 REPO = Path(__file__).resolve().parents[2]
 BASE = Path("/tmp/n27/engine_srv_n27a.so")
 OUT = Path(sys.argv[1] if len(sys.argv) > 1 else "/tmp/n27/engine_srv_n27d1.so")
+FREE_TIME_SITES = [
+    0x1C6839, 0x1C6863, 0x1C6989, 0x1C6A28,
+    0x1C6AD6, 0x1C6B3B, 0x1C6B85, 0x1C6C8D,
+]
+FREE_TIME_OLD = 0x39E4C0
+FREE_TIME_NEW = 0x3FA000
+FREE_TIME_BYTES = 0x4000
 
 def rows(path):
     with open(REPO / path, newline="") as f:
@@ -25,6 +33,116 @@ def hb(s):
 
 def rel32(src_next, dst):
     return struct.pack("<i", dst - src_next)
+
+
+def patch_free_time_storage(data):
+    """Move g_EdictFreeTime out of the original 2048-float BSS object."""
+    for off in FREE_TIME_SITES:
+        old = struct.unpack_from("<I", data, off)[0]
+        if old != FREE_TIME_OLD:
+            raise SystemExit(
+                f"g_EdictFreeTime reference at 0x{off:X}: "
+                f"expected 0x{FREE_TIME_OLD:X}, got 0x{old:X}"
+            )
+        struct.pack_into("<I", data, off, FREE_TIME_NEW)
+
+    # Extend the existing RW PT_LOAD's zero-initialized tail into the gap
+    # before the RX stub load.  No file bytes are added for this BSS storage.
+    e_phoff = struct.unpack_from("<I", data, 28)[0]
+    e_phentsize = struct.unpack_from("<H", data, 42)[0]
+    e_phnum = struct.unpack_from("<H", data, 44)[0]
+    rw_ph = None
+    # build_n27_full appends its RX stub load at this fixed virtual address;
+    # at this stage that program header has not been written yet.
+    rx_vaddr = 0x400000
+    for i in range(e_phnum):
+        ph = e_phoff + i * e_phentsize
+        p_type, _, p_vaddr, _, _, p_memsz, p_flags, _ = struct.unpack_from(
+            "<IIIIIIII", data, ph
+        )
+        if p_type == 1 and p_flags == 6 and rw_ph is None:
+            rw_ph = (ph, p_vaddr, p_memsz)
+    if rw_ph is None:
+        raise SystemExit("could not locate RW PT_LOAD")
+    ph, rw_vaddr, rw_memsz = rw_ph
+    old_end = rw_vaddr + rw_memsz
+    new_end = FREE_TIME_NEW + FREE_TIME_BYTES
+    if FREE_TIME_NEW < ((old_end + 0xFFF) & ~0xFFF) or new_end > rx_vaddr:
+        raise SystemExit(
+            f"free-time BSS placement overlaps existing loads: "
+            f"old_end=0x{old_end:X} new=0x{FREE_TIME_NEW:X} "
+            f"rx=0x{rx_vaddr:X}"
+        )
+    struct.pack_into("<I", data, ph + 20, new_end - rw_vaddr)
+
+    # Keep the offline ELF section table consistent with the extended load.
+    shoff = struct.unpack_from("<I", data, 32)[0]
+    shentsize = struct.unpack_from("<H", data, 46)[0]
+    shnum = struct.unpack_from("<H", data, 48)[0]
+    shstrndx = struct.unpack_from("<H", data, 50)[0]
+    shstr = shoff + shstrndx * shentsize
+    shstr_off, shstr_size = struct.unpack_from("<II", data, shstr + 16)
+    names = bytes(data[shstr_off:shstr_off + shstr_size])
+    bss_header = None
+    for i in range(shnum):
+        cur = shoff + i * shentsize
+        name_off = struct.unpack_from("<I", data, cur)[0]
+        sh_addr = struct.unpack_from("<I", data, cur + 12)[0]
+        sh_size = struct.unpack_from("<I", data, cur + 20)[0]
+        end = names.find(b"\0", name_off)
+        if names[name_off:end] == b".bss":
+            if sh_addr + sh_size != old_end:
+                raise SystemExit(".bss does not end at the RW PT_LOAD boundary")
+            struct.pack_into("<I", data, cur + 20, new_end - sh_addr)
+            bss_header = cur
+            break
+    if bss_header is None:
+        raise SystemExit("could not locate .bss section")
+
+    # Keep the local symbol table useful for subsequent analysis as well.
+    # ELF32 symbols are 16 bytes: st_name, st_value, st_size, info, other, shndx.
+    sym_found = False
+    for i in range(shnum):
+        cur = shoff + i * shentsize
+        sh_type = struct.unpack_from("<I", data, cur + 4)[0]
+        if sh_type != 2:  # SHT_SYMTAB
+            continue
+        sym_off, sym_size = struct.unpack_from("<II", data, cur + 16)
+        sym_link = struct.unpack_from("<I", data, cur + 24)[0]
+        sym_entsize = struct.unpack_from("<I", data, cur + 36)[0]
+        if sym_entsize != 16:
+            raise SystemExit(f"unexpected ELF32 symbol size {sym_entsize}")
+        str_header = shoff + sym_link * shentsize
+        str_off, str_size = struct.unpack_from("<II", data, str_header + 16)
+        strings = bytes(data[str_off:str_off + str_size])
+        for entry in range(sym_off, sym_off + sym_size, sym_entsize):
+            name_off = struct.unpack_from("<I", data, entry)[0]
+            end = strings.find(b"\0", name_off)
+            if strings[name_off:end] != b"_ZL15g_EdictFreeTime":
+                continue
+            value, size = struct.unpack_from("<II", data, entry + 4)
+            if value != FREE_TIME_OLD or size != 0x2000:
+                raise SystemExit(
+                    f"unexpected g_EdictFreeTime symbol: "
+                    f"value=0x{value:X} size=0x{size:X}"
+                )
+            struct.pack_into("<II", data, entry + 4, FREE_TIME_NEW, FREE_TIME_BYTES)
+            sym_found = True
+            break
+        if sym_found:
+            break
+    if not sym_found:
+        raise SystemExit("could not locate g_EdictFreeTime in SHT_SYMTAB")
+
+    # Guard the emitted bytes at the point where the layout is changed.
+    if struct.unpack_from("<I", data, ph + 20)[0] != new_end - rw_vaddr:
+        raise SystemExit("RW PT_LOAD memsz update did not stick")
+    if struct.unpack_from("<I", data, bss_header + 20)[0] != new_end - sh_addr:
+        raise SystemExit(".bss size update did not stick")
+    for off in FREE_TIME_SITES:
+        if struct.unpack_from("<I", data, off)[0] != FREE_TIME_NEW:
+            raise SystemExit(f"free-time pointer update missing at 0x{off:X}")
+    return len(FREE_TIME_SITES)
 
 def main():
     subprocess.check_call([sys.executable, str(REPO / "tools/linux/build_n27_frame.py"), str(BASE)])
@@ -44,6 +162,8 @@ def main():
             raise SystemExit(f"C edit mismatch at 0x{addr:X}")
         data[addr:addr + len(new)] = new
         applied += 1
+
+    free_time_sites = patch_free_time_storage(data)
 
     # stub layout: append a dedicated RX segment; move PT_NOTE out of the phdr slot
     file_size = len(data)
@@ -134,7 +254,11 @@ def main():
     OUT.write_bytes(bytes(data))
     print(f"built {OUT}")
     print(f"stubs at file 0x{stub_off:X} vaddr 0x{stub_vaddr:X} ctor={len(ctor)} dtor={len(dtor)}")
-    print(f"new LOAD at file 0x{stub_off:X} vaddr 0x{stub_vaddr:X} size={len(stubs)}; C-rows={applied}")
+    print(
+        f"new LOAD at file 0x{stub_off:X} vaddr 0x{stub_vaddr:X} size={len(stubs)}; "
+        f"C-rows={applied}; free-time-sites={free_time_sites}; "
+        f"free-time-base=0x{FREE_TIME_NEW:X}"
+    )
     return 0
 
 if __name__ == "__main__":

@@ -8,8 +8,8 @@
 | 层 | 二进制 | 负责什么 | 状态 |
 |---|---|---|---|
 | 1 · 存储 | `engine.dll` | edict 数组容量、`sv.max_edicts` | 11 条补丁，副本已生成 |
-| 2 · 实体管理 | `server.dll` / `client.dll` | 实体列表槽位、句柄位宽、分区 | 808 / 1089 条补丁 |
-| 3 · 网络协议 | `engine.dll` | edict 索引线格式、快照、EHANDLE | **N1 审计 + N2 更正，位宽未定，补丁未开始** |
+| 2 · 实体管理 | `server.dll` / `client.dll` | 实体列表槽位、句柄位宽、分区 | 808 / 1091 条补丁 |
+| 3 · 网络协议 | `engine.dll` | edict 索引线格式、快照、EHANDLE | **13/13 低索引通过；2048、2049、4095 已完成客户端创建、更新、删除** |
 
 仓库只包含**分析产物**（补丁清单、生成器、报告），不包含任何 Valve 的二进制文件。
 
@@ -19,16 +19,20 @@
 |---|---|---|---|
 | `engine.dll` | **11** | 已生成 | **43/43** |
 | `server.dll` | **808** | 已生成 | PE 预检 **30/30** |
-| `client.dll` | **1089** | 已生成（实验性） | 字节匹配通过 |
+| `client.dll` | **1091** | 已生成（实验性） | 字节匹配通过 |
 
-`client.dll` 的隔离副本 `out/client.4096.dll` 已构建（1,089 处补丁，SHA-256
-`2f0e723a2991edee628e20638c506ce9508cb96fc8dd226d37603cc0035e0752`）。
-它是**实验性静态产物**：未做运行时验证，也不声称位移/掩码语义正确。
+`client.dll` 的隔离副本 `out/client.4096.dll` 已构建（1,091 处补丁，SHA-256
+`3e5c3f2ee98c2bfa3f3672c654f7ae8b3ae401cc437a08ae1abbe57a6d363943`）。它在隔离
+Proton 测试中与扩容服务端达到 `active`，并在客户端槽位中实际创建了 index 2048、2049
+的 `C_DynamicProp`；后续更新改变坐标，删除后槽位归零且序列号递增。相同生命周期也已在
+最高合法索引 4095 通过。较早的高索引压力测试仍出现服务端 sky-camera 空指针，以及填满
+低索引后的重连分配失败；密集压力与断线重连还未通过。
 
-网络协议层已进入 **N1** 阶段：`SVC_PacketEntities` 出入口与两个 11 位字段已用静态证据定位
-（[reports/network-n1.md](reports/network-n1.md)）；`+0x54` 的语义判定已撤回并重做
-（[reports/network-n2.md](reports/network-n2.md)），当前位宽格式**未定**，补丁尚未生成。
-运行时加载与实体生命周期**尚未验证**。
+网络协议的 13/13 候选曾通过低索引双端测试；后续高索引运行暴露并修复了服务端
+`TakeTickSnapshot`、`g_EdictFreeTime`、接收端位图和 baseline 数组等边界问题。当前
+2048、2049、4095 均有客户端槽位、更新、删除的直接证据；密集压力、断线重连和早期
+sky-camera 故障仍未解决。详见 [reports/n27d48/findings.md](reports/n27d48/findings.md)、[reports/n27d49/findings.md](reports/n27d49/findings.md)、
+[reports/network-n1.md](reports/network-n1.md) 与 [reports/network-n2.md](reports/network-n2.md)。
 
 ## 目录
 
@@ -40,21 +44,23 @@ engine/       第 1 层：engine.dll 存储扩容
   run.log         最近一次运行输出
 manifests/    第 2 层：补丁清单（核心产物）
   server.json   808 条
-  client.json   1089 条（含 3 条 pending、802 处未分类掩码）
+  client.json   1091 条（另含 3 个 pending 候选、802 处未分类掩码）
 tools/        可复现的生成器与校验器
   config.py       二进制路径（L4D2_ENGINE_BIN / L4D2_GAMEDLL_BIN 分离）
   gen_server.py   生成 server 清单
   gen_client.py   生成 client 清单
   build_server.py 应用补丁 + PE 手术，产出隔离副本
-  build_client.py 应用 1089 处补丁 + `.clentls` 段，产出隔离副本
+  build_client.py 应用 1091 处补丁 + `.clentls` 段，产出隔离副本
   precheck_server.py 只读 PE 预检（30 项）
   check_artifacts.py 离线产物门禁（三个二进制的 SHA-256/尺寸校验，只读）
   scan_netproto.py 网络位缓冲原语与位宽站点初筛
   xrefs_by_imm.py / dump_fn.py 按立即数查引用 / 按地址反汇编整函数
+  patch_engine_receive.py / patch_engine_baselines.py 客户端接收边界与 baseline 扩容
+  linux/build_highindex.py 可重复构建 Linux 高索引服务端候选
 data/         原始扫描结果（CSV）
   network_fields.csv    N1/N2 字段图（VA / 偏移 / 位宽 / 语义状态）
   network_boundary.csv  N1/N2 边界矩阵（0/1024/2046…4096/8191/8192）
-reports/      分析报告（第 1–35 轮完整记录）、N1 网络报告、N2 更正与预检输出
+reports/      分析报告（第 1–49 轮完整记录）、N1 网络报告、N2 更正与预检输出
 out/          生成的 DLL（不纳入版本控制）
 archive/      已废弃的脚本（不纳入版本控制）
 ```
@@ -90,8 +96,8 @@ python3 tools/build_server.py    # → out/server.4096.dll
 
 **槽位分区**：网络 `[0, 0xFFF]` · 空洞 `0x1000` · 非网络 `[0x1001, 0x1FFF]`。
 
-**补丁类别**（client）：`C1-global` 4、`C2-vptr` 3、`C3-this` 18、`C4-vtload` 17、
-`C5-col/bcd` 2、`C6-member` 129、`C7-bound` 2、`C7-ctor` 3、`C8-shl` 2、
+**补丁类别**（client）：`C1-global` 4、`C1-interface` 1、`C2-vptr` 3、`C3-this` 18、`C4-vtload` 17、
+`C5-col/bcd` 2、`C6-member` 131、`C7-bound` 2、`C7-ctor` 3、`C8-shl` 2、
 `C9-mask` 453、`C10-shr` 453、`C11-rel` 2。
 
 **网络层 N1（`engine.dll`）**
@@ -175,7 +181,7 @@ sizeof `+0x100`；向量本体 256→512 字节的改动落在**分配点常量*
 - **版本绑定**：所有地址对应 build `23990068`，游戏更新后全部失效。
 - **超出 2048 后不再兼容原版客户端**：网络 edict 索引是 11 位，扩容端只能与扩容端联机。
 - **签名失效**：补丁后 Authenticode 无效，仅供离线研究/自建服务器使用。
-- **未验证**：无运行时加载、构造、实体生命周期或联机测试。
+- **运行时边界**：已验证候选可与扩容服务端连接到 `active`；客户端 `idx=2048`、`2049`、`4095` 均完成槽位创建、坐标更新与删除释放。高索引密集压力、断线重连和更长时间稳定性仍未验证。
 - **未覆盖**：802 处 `and 0xFFF` 未分类。
 
 ## 客户端删除路径的三级结论

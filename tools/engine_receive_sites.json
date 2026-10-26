@@ -1,0 +1,404 @@
+[
+  {
+    "va": "0x10093c4c",
+    "old": "18010000",
+    "new": "18020000",
+    "evidence": "CClientFrame tail field after 256 ->512 byte transmitted bitmap; cmp     [esi+118h], edi"
+  },
+  {
+    "va": "0x10093c5f",
+    "old": "18010000",
+    "new": "18020000",
+    "evidence": "CClientFrame tail field after 256 ->512 byte transmitted bitmap; mov     ecx, [esi+118h]"
+  },
+  {
+    "va": "0x10093c6e",
+    "old": "18010000",
+    "new": "18020000",
+    "evidence": "CClientFrame tail field after 256 ->512 byte transmitted bitmap; mov     [esi+118h], edi"
+  },
+  {
+    "va": "0x10093ca9",
+    "old": "14010000",
+    "new": "14020000",
+    "evidence": "CClientFrame tail field after 256 ->512 byte transmitted bitmap; mov     eax, [eax+114h]"
+  },
+  {
+    "va": "0x10093ceb",
+    "old": "14010000",
+    "new": "14020000",
+    "evidence": "CClientFrame tail field after 256 ->512 byte transmitted bitmap; cmp     dword ptr [eax+114h], 0"
+  },
+  {
+    "va": "0x10093d02",
+    "old": "14010000",
+    "new": "14020000",
+    "evidence": "CClientFrame tail field after 256 ->512 byte transmitted bitmap; mov     eax, [eax+114h]"
+  },
+  {
+    "va": "0x10093d09",
+    "old": "14010000",
+    "new": "14020000",
+    "evidence": "CClientFrame tail field after 256 ->512 byte transmitted bitmap; cmp     dword ptr [eax+114h], 0"
+  },
+  {
+    "va": "0x10093d15",
+    "old": "14010000",
+    "new": "14020000",
+    "evidence": "CClientFrame tail field after 256 ->512 byte transmitted bitmap; mov     [eax+114h], edx"
+  },
+  {
+    "va": "0x10093d32",
+    "old": "18010000",
+    "new": "18020000",
+    "evidence": "CClientFrame tail field after 256 ->512 byte transmitted bitmap; cmp     [esi+118h], edi"
+  },
+  {
+    "va": "0x10093d41",
+    "old": "18010000",
+    "new": "18020000",
+    "evidence": "CClientFrame tail field after 256 ->512 byte transmitted bitmap; mov     ecx, [esi+118h]"
+  },
+  {
+    "va": "0x10093d50",
+    "old": "18010000",
+    "new": "18020000",
+    "evidence": "CClientFrame tail field after 256 ->512 byte transmitted bitmap; mov     [esi+118h], edi"
+  },
+  {
+    "va": "0x10093d65",
+    "old": "18010000",
+    "new": "18020000",
+    "evidence": "CClientFrame tail field after 256 ->512 byte transmitted bitmap; mov     ecx, [esi+118h]"
+  },
+  {
+    "va": "0x10093d7a",
+    "old": "18010000",
+    "new": "18020000",
+    "evidence": "CClientFrame tail field after 256 ->512 byte transmitted bitmap; mov     dword ptr [esi+118h], 0"
+  },
+  {
+    "va": "0x10093d84",
+    "old": "10010000",
+    "new": "10020000",
+    "evidence": "CClientFrame tail field after 256 ->512 byte transmitted bitmap; mov     eax, [esi+110h]"
+  },
+  {
+    "va": "0x10093d97",
+    "old": "10010000",
+    "new": "10020000",
+    "evidence": "CClientFrame tail field after 256 ->512 byte transmitted bitmap; mov     dword ptr [esi+110h], 0"
+  },
+  {
+    "va": "0x10093dc8",
+    "old": "18010000",
+    "new": "18020000",
+    "evidence": "CClientFrame tail field after 256 ->512 byte transmitted bitmap; mov     ecx, [esi+118h]"
+  },
+  {
+    "va": "0x10093ddd",
+    "old": "18010000",
+    "new": "18020000",
+    "evidence": "CClientFrame tail field after 256 ->512 byte transmitted bitmap; mov     dword ptr [esi+118h], 0"
+  },
+  {
+    "va": "0x10093de7",
+    "old": "10010000",
+    "new": "10020000",
+    "evidence": "CClientFrame tail field after 256 ->512 byte transmitted bitmap; mov     eax, [esi+110h]"
+  },
+  {
+    "va": "0x10093dfa",
+    "old": "10010000",
+    "new": "10020000",
+    "evidence": "CClientFrame tail field after 256 ->512 byte transmitted bitmap; mov     dword ptr [esi+110h], 0"
+  },
+  {
+    "va": "0x10093e38",
+    "old": "00010000",
+    "new": "00020000",
+    "evidence": "CClientFrame bitmap init/copy/allocation 256 ->512 bytes"
+  },
+  {
+    "va": "0x10093e4e",
+    "old": "10010000",
+    "new": "10020000",
+    "evidence": "CClientFrame tail field after 256 ->512 byte transmitted bitmap; mov     [esi+110h], ebx"
+  },
+  {
+    "va": "0x10093e54",
+    "old": "0c010000",
+    "new": "0c020000",
+    "evidence": "CClientFrame tail field after 256 ->512 byte transmitted bitmap; mov     [esi+10Ch], ebx"
+  },
+  {
+    "va": "0x10093e62",
+    "old": "18010000",
+    "new": "18020000",
+    "evidence": "CClientFrame tail field after 256 ->512 byte transmitted bitmap; mov     [esi+118h], ebx"
+  },
+  {
+    "va": "0x10093e6d",
+    "old": "18010000",
+    "new": "18020000",
+    "evidence": "CClientFrame tail field after 256 ->512 byte transmitted bitmap; mov     ecx, [esi+118h]"
+  },
+  {
+    "va": "0x10093e7c",
+    "old": "18010000",
+    "new": "18020000",
+    "evidence": "CClientFrame tail field after 256 ->512 byte transmitted bitmap; mov     [esi+118h], edi"
+  },
+  {
+    "va": "0x10093e83",
+    "old": "14010000",
+    "new": "14020000",
+    "evidence": "CClientFrame tail field after 256 ->512 byte transmitted bitmap; mov     [esi+114h], ebx"
+  },
+  {
+    "va": "0x10093ea4",
+    "old": "00010000",
+    "new": "00020000",
+    "evidence": "CClientFrame bitmap init/copy/allocation 256 ->512 bytes"
+  },
+  {
+    "va": "0x10093eb7",
+    "old": "10010000",
+    "new": "10020000",
+    "evidence": "CClientFrame tail field after 256 ->512 byte transmitted bitmap; mov     [esi+110h], edi"
+  },
+  {
+    "va": "0x10093ebd",
+    "old": "0c010000",
+    "new": "0c020000",
+    "evidence": "CClientFrame tail field after 256 ->512 byte transmitted bitmap; mov     [esi+10Ch], edi"
+  },
+  {
+    "va": "0x10093ec6",
+    "old": "18010000",
+    "new": "18020000",
+    "evidence": "CClientFrame tail field after 256 ->512 byte transmitted bitmap; mov     [esi+118h], edi"
+  },
+  {
+    "va": "0x10093ecc",
+    "old": "14010000",
+    "new": "14020000",
+    "evidence": "CClientFrame tail field after 256 ->512 byte transmitted bitmap; mov     [esi+114h], edi"
+  },
+  {
+    "va": "0x10093eed",
+    "old": "14010000",
+    "new": "14020000",
+    "evidence": "CClientFrame tail field after 256 ->512 byte transmitted bitmap; mov     eax, [esi+114h]"
+  },
+  {
+    "va": "0x10093f45",
+    "old": "14010000",
+    "new": "14020000",
+    "evidence": "CClientFrame tail field after 256 ->512 byte transmitted bitmap; mov     esi, [esi+114h]"
+  },
+  {
+    "va": "0x10093f51",
+    "old": "14010000",
+    "new": "14020000",
+    "evidence": "CClientFrame tail field after 256 ->512 byte transmitted bitmap; mov     eax, [esi+114h]"
+  },
+  {
+    "va": "0x10093f57",
+    "old": "14010000",
+    "new": "14020000",
+    "evidence": "CClientFrame tail field after 256 ->512 byte transmitted bitmap; mov     [ebx+114h], eax"
+  },
+  {
+    "va": "0x10093f7d",
+    "old": "14010000",
+    "new": "14020000",
+    "evidence": "CClientFrame tail field after 256 ->512 byte transmitted bitmap; mov     esi, [ebx+114h]"
+  },
+  {
+    "va": "0x10093f89",
+    "old": "14010000",
+    "new": "14020000",
+    "evidence": "CClientFrame tail field after 256 ->512 byte transmitted bitmap; mov     esi, [ebx+114h]"
+  },
+  {
+    "va": "0x10093f91",
+    "old": "14010000",
+    "new": "14020000",
+    "evidence": "CClientFrame tail field after 256 ->512 byte transmitted bitmap; mov     ecx, [esi+114h]"
+  },
+  {
+    "va": "0x10093fec",
+    "old": "00010000",
+    "new": "00020000",
+    "evidence": "CClientFrame bitmap init/copy/allocation 256 ->512 bytes"
+  },
+  {
+    "va": "0x10093fff",
+    "old": "10010000",
+    "new": "10020000",
+    "evidence": "CClientFrame tail field after 256 ->512 byte transmitted bitmap; mov     [esi+110h], edi"
+  },
+  {
+    "va": "0x10094005",
+    "old": "0c010000",
+    "new": "0c020000",
+    "evidence": "CClientFrame tail field after 256 ->512 byte transmitted bitmap; mov     [esi+10Ch], edi"
+  },
+  {
+    "va": "0x1009400e",
+    "old": "18010000",
+    "new": "18020000",
+    "evidence": "CClientFrame tail field after 256 ->512 byte transmitted bitmap; mov     [esi+118h], edi"
+  },
+  {
+    "va": "0x10094014",
+    "old": "14010000",
+    "new": "14020000",
+    "evidence": "CClientFrame tail field after 256 ->512 byte transmitted bitmap; mov     [esi+114h], edi"
+  },
+  {
+    "va": "0x10094049",
+    "old": "18010000",
+    "new": "18020000",
+    "evidence": "CClientFrame tail field after 256 ->512 byte transmitted bitmap; mov     ebx, [edi+118h]"
+  },
+  {
+    "va": "0x1009404f",
+    "old": "18010000",
+    "new": "18020000",
+    "evidence": "CClientFrame tail field after 256 ->512 byte transmitted bitmap; cmp     [esi+118h], ebx"
+  },
+  {
+    "va": "0x10094062",
+    "old": "18010000",
+    "new": "18020000",
+    "evidence": "CClientFrame tail field after 256 ->512 byte transmitted bitmap; mov     ecx, [esi+118h]"
+  },
+  {
+    "va": "0x10094071",
+    "old": "18010000",
+    "new": "18020000",
+    "evidence": "CClientFrame tail field after 256 ->512 byte transmitted bitmap; mov     [esi+118h], ebx"
+  },
+  {
+    "va": "0x10094076",
+    "old": "00010000",
+    "new": "00020000",
+    "evidence": "CClientFrame bitmap init/copy/allocation 256 ->512 bytes"
+  },
+  {
+    "va": "0x1009408c",
+    "old": "10010000",
+    "new": "10020000",
+    "evidence": "CClientFrame tail field after 256 ->512 byte transmitted bitmap; cmp     dword ptr [edi+110h], 0"
+  },
+  {
+    "va": "0x10094094",
+    "old": "00010000",
+    "new": "00020000",
+    "evidence": "CClientFrame bitmap init/copy/allocation 256 ->512 bytes"
+  },
+  {
+    "va": "0x100940a7",
+    "old": "00010000",
+    "new": "00020000",
+    "evidence": "CClientFrame bitmap init/copy/allocation 256 ->512 bytes"
+  },
+  {
+    "va": "0x100940be",
+    "old": "10010000",
+    "new": "10020000",
+    "evidence": "CClientFrame tail field after 256 ->512 byte transmitted bitmap; mov     [esi+110h], eax"
+  },
+  {
+    "va": "0x100940c4",
+    "old": "10010000",
+    "new": "10020000",
+    "evidence": "CClientFrame tail field after 256 ->512 byte transmitted bitmap; mov     edi, [edi+110h]"
+  },
+  {
+    "va": "0x100940c9",
+    "old": "00010000",
+    "new": "00020000",
+    "evidence": "CClientFrame bitmap init/copy/allocation 256 ->512 bytes"
+  },
+  {
+    "va": "0x1009398a",
+    "old": "1c010000",
+    "new": "1c020000",
+    "evidence": "CClientState frame pool element size 0x11c ->0x21c"
+  },
+  {
+    "va": "0x1004e319",
+    "old": "00080000",
+    "new": "00100000",
+    "evidence": "Client receive FindNextSetBit / preserve boundary; cmp     esi, 800h"
+  },
+  {
+    "va": "0x1004e340",
+    "old": "3f",
+    "new": "7f",
+    "evidence": "Client receive FindNextSetBit / preserve boundary; cmp     eax, 3Fh ; '?'"
+  },
+  {
+    "va": "0x10091fbe",
+    "old": "00080000",
+    "new": "00100000",
+    "evidence": "Client receive FindNextSetBit / preserve boundary; mov     edi, 800h"
+  },
+  {
+    "va": "0x10092085",
+    "old": "3f",
+    "new": "7f",
+    "evidence": "Client receive FindNextSetBit / preserve boundary; cmp     eax, 3Fh ; '?'"
+  },
+  {
+    "va": "0x100922cb",
+    "old": "00080000",
+    "new": "00100000",
+    "evidence": "Client receive FindNextSetBit / preserve boundary; cmp     ecx, 800h"
+  },
+  {
+    "va": "0x100922f5",
+    "old": "3f",
+    "new": "7f",
+    "evidence": "Client receive FindNextSetBit / preserve boundary; cmp     eax, 3Fh ; '?'"
+  },
+  {
+    "va": "0x1009239d",
+    "old": "3f",
+    "new": "7f",
+    "evidence": "Client receive FindNextSetBit / preserve boundary; cmp     eax, 3Fh ; '?'"
+  },
+  {
+    "va": "0x1009240d",
+    "old": "3f",
+    "new": "7f",
+    "evidence": "Client receive FindNextSetBit / preserve boundary; cmp     eax, 3Fh ; '?'"
+  },
+  {
+    "va": "0x10076a7a",
+    "old": "00080000",
+    "new": "00100000",
+    "evidence": "CL_CopyNewEntity upper bound 2048 ->4096"
+  },
+  {
+    "va": "0x10076ae4",
+    "old": "0c",
+    "new": "0d",
+    "evidence": "Engine compares serial from client.dll internal handle with 13 index bits"
+  },
+  {
+    "va": "0x100765e4",
+    "old": "ff070000",
+    "new": "ff0f0000",
+    "evidence": "CL_DeleteEntity high-index lifecycle range"
+  },
+  {
+    "va": "0x10079670",
+    "old": "00080000",
+    "new": "00100000",
+    "evidence": "Client module SetMaxEntities network capacity"
+  }
+]
