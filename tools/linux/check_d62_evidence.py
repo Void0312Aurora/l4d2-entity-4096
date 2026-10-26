@@ -16,6 +16,7 @@ def main():
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument('root', type=Path)
     ap.add_argument('--out', type=Path, required=True)
+    ap.add_argument('--native', action='store_true', help='also verify completed G and cold-start repeats')
     a = ap.parse_args()
     sources = {}
 
@@ -124,12 +125,81 @@ def main():
     for key in ['SERIAL_WRAP_32767_TO_0', 'INVALID_SENTINEL_CONSUMERS',
                 'ALL_8184_HANDLE_SITES', 'MULTICLIENT_CONCURRENT', 'LONG_SOAK']:
         assertions[key] = dict(status='NOT_TESTED', observations=0)
+    native_result = None
+    if a.native:
+        gserver = {n: load(f'server-G/{n}.json') for n in
+                   ['low-initial', 'high', 'before-disconnect', 'after-disconnect', 'after-delete']}
+        gclient = {n: load(f'client-native-final/{n}.json') for n in
+                   ['low', 'created-4095', 'updated', 'disconnected', 'reconnected',
+                    'reconnect-updated', 'deleted']}
+        gframes = {n: {r['index']: r for r in d['slots']} for n, d in gclient.items()}
+        gchecks, disconnect_checks = [], []
+        for i in indices:
+            c, u, r, v, d = [gframes[n][i] for n in
+                            ['created-4095', 'updated', 'reconnected', 'reconnect-updated', 'deleted']]
+            gchecks += [all(int(x['pointer'], 16) and 'C_DynamicProp' in x['rtti'] for x in [c, u, r, v]),
+                        c['serial'] == u['serial'] == r['serial'] == v['serial'],
+                        c['serial'] == (gserver['high']['slots'][i]['serial'] & 1023),
+                        [b-a for a, b in zip(c['origin'], u['origin'])] == [0, 96, 32],
+                        r['origin'] == u['origin'],
+                        [b-a for a, b in zip(r['origin'], v['origin'])] == [0, 96, 32],
+                        int(d['pointer'], 16) == 0 and d['serial'] == ((c['serial']+1) & 32767),
+                        gserver['after-delete']['slots'][i]['pointer'] == 0,
+                        gserver['after-delete']['slots'][i]['serial'] ==
+                        ((gserver['high']['slots'][i]['serial']+1) & 32767)]
+            disconnect_checks += [int(gframes['disconnected'][i]['pointer'], 16) == 0,
+                                  gserver['after-disconnect']['slots'][i]['pointer'] ==
+                                  gserver['high']['slots'][i]['pointer']]
+        sky_keys = ['pointer', 'serial', 'handle']
+        disconnect_checks += [all(d['assertions'].values()) and
+                              all(d['sky'][0][k] == gserver['high']['sky'][0][k] for k in sky_keys)
+                              for d in gserver.values()]
+        check('NATIVE_HIGH_INDEX_LIFECYCLE_OK', gchecks, 'G full client frames and server memory; normal watchdog')
+        check('NATIVE_DISCONNECT_SAFE', disconnect_checks, 'G client clear/server targets and sky retained')
+        check('NATIVE_RELOCATIONS_OK', [d['relocations']['passed'] for d in gserver.values()],
+              'G: all 587 relocated words per snapshot')
+        glog = read('server-G/pty.log')
+        check('NATIVE_RECONNECT_ACTIVE',
+              [bool(re.search(r'D62_FREE_BATCH requested=\d+ remaining=0.*?Dropped Void0312'
+                              r'.*?"Void0312"[^\n]* active ', glog, re.S)),
+               assertions['NATIVE_HIGH_INDEX_LIFECYCLE_OK']['status'] == 'PASS'],
+              'G status after reconnect plus resync/update/delete')
+        repeat = [load(f'{n}/run.json') for n in ['client-cache-control', 'client-native-final']]
+        first_low = load('client-cache-control/low-stable-final.json')
+        check('CLIENT_COLD_START_REPEAT', [d['launcher_final_returncode'] == 0 and
+              d['ended']-d['started'] >= 120 and
+              {x['event'] for x in d['events']} >= {'game_created', 'game_exited', 'module_loaded'}
+              and {x.get('module') for x in d['events'] if x['event'] == 'module_loaded'} >=
+              {'bin/engine.dll', 'left4dead2/bin/client.dll'}
+              for d in repeat] + [all(int(r['pointer'], 16) for r in gframes['low'].values()),
+              {r.get('rtti') for r in first_low['slots']} == {'.?AVC_World@@', '.?AVC_TerrorPlayer@@'},
+              all(int(r['pointer'], 16) for r in first_low['slots']),
+              bool(re.search(r'"Void0312".* active ', read('client-cache-control/server-status.txt')))],
+              'two fresh game PIDs, actual loaded modules, low objects, active, >=120s, deliberate quit rc=0')
+        infected = load('server-G/infected-event-reporter.json')
+        check('INFECTED_KILLED_LOOKUP_OK',
+              [len(infected) == 2, infected[0]['index'] >= 2048,
+               'PlayerReporter::FireGameEvent' in infected[0]['stack'],
+               'Infected::Event_Killed' in infected[0]['stack'], infected[1]['pointer'] != 0,
+               'D62_INFECTED_DAMAGE_RETURNED' in glog], 'G index 4031 death-event lookup entry/actual return')
+        native_result = dict(server_session=load('server-G/session.json'), client_runs=repeat,
+                             client_frames=gclient, first_low=first_low, infected_event=infected,
+                             cache_recovery=load('workshop-cache-recovery.json'),
+                             ugc_failure=dict(run=load('client-oom-trace/run.json'),
+                                 fault_excerpt=read('client-oom-trace/oom-stack.log').split('process 509509')[0]),
+                             listener_control=load('listener-guard.json'),
+                             wrong_source_control=load('wrong-source-rejected.json'))
+        snapshots.update({f'server-G/{n}.json': d for n, d in gserver.items()})
     compact = {}
     for name, d in snapshots.items():
         compact[name] = {k: d[k] for k in ['time', 'entity_list', 'sky', 'assertions']}
         compact[name].update(occupied=len(d['occupied']), free_nonnetwork=len(d['nonnetwork_free']['indices']),
+                             active_head_tail=[d['active'][k] for k in ['head', 'tail']],
+                             free_nonnetwork_head_tail=[d['nonnetwork_free'][k] for k in ['head', 'tail']],
                              reserved=d['slots'][4096],
                              selected_slots=[d['slots'][i] for i in indices+[4416]])
+        if 'relocations' in d:
+            compact[name]['relocations'] = d['relocations']
     result = dict(raw_root=str(a.root.resolve()), E_interval_end=cutoff,
                   interval_reason='ends at E-deleted.json, before the malformed reuse driver',
                   identities=load('binary-identities.json'),
@@ -137,7 +207,7 @@ def main():
                   assertions=assertions, trace_counts=dict(Counter(r['event'] for r in trace)),
                   target_events=[r for r in trace if r['event'] in ('add_done', 'remove_done')
                                  and r['index'] in indices+[4416]],
-                  snapshots=compact, client_frames=clients, source_sha256=sources)
+                  snapshots=compact, client_frames=clients, native=native_result, source_sha256=sources)
     a.out.parent.mkdir(parents=True, exist_ok=True)
     a.out.write_text(json.dumps(result, indent=2)+'\n')
     print(json.dumps(assertions, indent=2))

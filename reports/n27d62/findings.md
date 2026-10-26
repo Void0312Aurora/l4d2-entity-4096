@@ -6,16 +6,17 @@
 
 修复 D61 的三类漏补丁后，网络 `0..4095`、保留 `4096`、非网络
 `4097..8191` 的分区在真实运行中成立。M1、M2 有创建、实际 Remove、serial、
-链表和复用证据；M4、M5 在新服务端镜像上完成一次受调试器观察的双端完整循环。
+链表和复用证据；M4、M5 在新服务端镜像上完成受调试器观察的 E 循环，另在正常
+watchdog 的 G 上完成未附加调试器的生命周期与断线重连循环。
 这不是对所有句柄候选点或长期稳定性的全面认证。
 
 | 目标 | 已观察结果 | 限制 |
 |---|---|---|
 | M1 分区 | PASS：2048/2049/2095/2096/4095 与真实 CSkyCamera 同时存在，无覆盖 | 指定地图和受控负载 |
 | M2 释放/句柄 | PASS：网络五个槽及非网络 4416 实际移除、serial+1、正常重新分配、旧句柄失效 | 未穷举 serial 回绕和全部无效哨兵消费者 |
-| M3 Proton 正控 | 已恢复 active；发现并定位冷启动 UGC 大文件分配失败，补齐隔离缓存后补测 | 结果见后续补测记录，不能把旧成功运行当作重复启动稳定性证明 |
+| M3 Proton 正控 | PASS：补齐隔离 UGC 缓存后两个全新客户端均 active、接收低实体、正常退出，启动观察约 141/461 秒 | 缓存固定条件下的短时重复；未修大文件下载器本身 |
 | M4 双端生命周期 | PASS：五个目标均有客户端 RTTI、坐标更新、删除归零 | 单客户端 |
-| M5 断线/重连 | PASS：保留全部高目标、清理 filler 后断线；sky getter 正常；新玩家 active、重获目标、更新、删除 | 尚非所有断线变体及并发压力 |
+| M5 断线/重连 | PASS：E/G 保留全部高目标、清理 filler 后断线；sky 完整；新玩家 active、重获目标、更新、删除 | 尚非所有断线变体及并发压力 |
 
 机器可读结果在 [validation.json](validation.json)，由
 `tools/linux/check_d62_evidence.py` 从原始内存、函数追踪和客户端槽数据重新计算。
@@ -34,7 +35,9 @@
    `EntIndexToHScript(2048)` 却为空；另一次高感染者死亡在 PlayerReporter::FireGameEvent
    的 `server+0x8EF0F2` 空解引用。IDA 路径和函数探针指向 UTIL_EntityByIndex 的旧边界。
    只将 `server+0xB1B0BB` 的立即数 `2047 -> 4095`，最终镜像查询返回真实高实体。
-   没有增加空指针掩盖补丁；感染者死亡事件的专门回归仍需单列补测。
+   没有增加空指针掩盖补丁。G 专门创建 index 4031 的 infected 并造成致命伤害；真实
+   Infected::Event_Killed → PlayerReporter::FireGameEvent → UTIL_EntityByIndex
+   查询返回 pointer `272272000`，伤害调用正常返回，原故障路径回归通过。
 
 没有重做 13-bit 协议、TakeTickSnapshot 或 g_EdictFreeTime 的既有修复。
 新增清单仍保留输入 SHA 和每处原字节检查；错误输入镜像实测被拒绝且不产生输出。
@@ -81,7 +84,7 @@ active head/tail、非网络 free head/tail 及全部节点在原始快照中。
 不能把非网络链表伪称为两个池的链表。网络路径用真实 AddNetworkableEntity 返回地址、
 移除后自链接空槽和正常 edict 再分配证明。
 
-六次外部内存快照各对 **587 个** R_386_RELATIVE 迁移值逐一比较
+E/F 六次、G 五次外部内存快照各对 **587 个** R_386_RELATIVE 迁移值逐一比较
 `runtime_word == load_base + file_addend`，全部匹配。重定位和对象实际映射均有动态证据。
 
 ## 创建、实际移除和复用
@@ -126,6 +129,14 @@ E 客户端实际对象均为 C_DynamicProp。第一次所有对象坐标增量 
 返回继续有效、链表不变，新玩家占用低索引并换 serial。既覆盖旧冲突 2095，也保留最高
 4095；不是靠没生成冲突对象而避开旧路径。尚未单独穷举“只预存某一个高目标”的各变体。
 
+G 重复通过同一双端循环：创建/更新、断线/重连和删除阶段均未附加调试器，保持正常
+watchdog。仅在两次感染者事件定点检查时短暂附加 GDB，随后 detach；没有在全阶段
+追踪每次实体操作。客户端 game PID 523833，netcon 27154；重连 status userid **9 active**。
+before-disconnect、after-disconnect、after-delete 快照的 sky pointer `261309776`、serial
+5578、handle `45699119` 均不变；最终五个网络目标在双端真实清空、serial 递增。
+完整检查结果包含 `NATIVE_HIGH_INDEX_LIFECYCLE_OK`、`NATIVE_DISCONNECT_SAFE`、
+`NATIVE_RECONNECT_ACTIVE`，均由 G 自身证据计算，不沿用 E 的 PASS。
+
 ## Proton 环境与 UGC 故障
 
 版本 `1791989105 experimental-11.0-20261014-x86_64`，复用 App 550 compatdata/prefix。
@@ -152,7 +163,9 @@ IDA 确认 file_size 来自 Steam UGC 文件详情，不是实体表索引。缺
 约 4.03 GB 复制至隔离 addons/workshop，保留原 mtime；写隔离 addonlist 将 82 项全部
 禁用。没有修改 Steam 订阅、原目录或二进制，也没有跳过图形/网络初始化。
 `show_addon_load_order` 实测仅基础游戏/DLC 包。缓存修复后的首个新进程已稳定联机约
-138 秒并主动退出返回 0。工坊大文件下载器本身的内存策略未修改。
+141 秒（含初始化）并主动退出返回 0；第二个新进程约 461 秒，完成 G 高实体和断线循环后主动退出
+返回 0。`CLIENT_COLD_START_REPEAT` 同时要求真实模块加载、低实体和 active 证据。
+工坊大文件下载器本身的内存策略未修改，缓存缺失时仍可能触发原 OOM；不能宣称其全面修复。
 
 ## 失败和作废试验
 
@@ -161,8 +174,8 @@ IDA 确认 file_size 来自 Steam UGC 文件详情，不是实体表索引。缺
 - 仅修成员位移的中间构建仍卡在 FindEntityByName。早期 Director 日志不能证明地图就绪。
 - B 在 GDB 下集中移除 3033 个 filler 时进程消失，未取得首次 fault；watchdog 只是怀疑，
   原因保留 UNKNOWN，不能声称已解释。最终 E 使用 -nowatchdog 并逐批清理，F/G 做原生对照。
-- C 高感染者死亡出现真实 PlayerReporter 空解引用；静态路径和 UTIL 高索引查询反例已定位，
-  但不能把查询回归写成感染者死亡场景的全面回归。
+- C 高感染者死亡出现真实 PlayerReporter 空解引用；G 的 index 4031 致命伤害定点追踪
+  现已补齐该路径回归，实际查询返回非空且调用正常结束。
 - E 在上述验收结束后，复用驱动把多条 Squirrel 语句写进一条 console 命令，Source 按分号
   拆开，错误填满 edict 并触发 ED_Alloc no free edicts。该复用试验作废，改用独立 .nut 后
   在 F 重跑通过。E 后段不得算入通过区间。
@@ -196,7 +209,7 @@ python3 tools/linux/run_proton_client.py --client out/client.4096.dll \
   --out /home/void0312/l4d2_test/runs/d62/repro-client --duration 300 --netcon-port 27154
 sudo -n python3 tools/linux/read_client_entities.py PID 0 1 2048 2049 2095 2096 4095 --out client.json
 python3 tools/linux/check_d62_evidence.py /home/void0312/l4d2_test/runs/d62 \
-  --out reports/n27d62/validation.json
+  --native --out reports/n27d62/validation.json
 python3 tools/check_fields_csv.py
 L4D2_ENGINE_BIN='/home/void0312/.steam/steam/steamapps/common/Left 4 Dead 2/bin' \
 L4D2_GAMEDLL_BIN='/home/void0312/.steam/steam/steamapps/common/Left 4 Dead 2/left4dead2/bin' \
@@ -204,7 +217,11 @@ L4D2_GAMEDLL_BIN='/home/void0312/.steam/steam/steamapps/common/Left 4 Dead 2/lef
 ```
 
 静态协议预检通过；字段表 5 文件/6007 行通过；改动 Python 编译和 diff whitespace 检查
-通过。运行时数值不变量及生命周期才是本报告 PASS 的依据。
+通过。故意在内存中的证据副本将一次 NO_SLOT_OVERWRITE 改为 false，校验器实测返回 1
+并标 FAIL，原始文件未修改。运行时数值不变量及生命周期才是本报告 PASS 的依据。
 
-待测：serial 32767→0 回绕、所有无效句柄消费者、8184 个候选逐点语义审计、感染者死亡
-专门回归、多客户端并发、换图、长时间 soak。未将这些内容标为通过。
+待测：serial 32767→0 回绕、所有无效句柄消费者、8184 个候选逐点语义审计、多客户端
+并发、换图、长时间 soak。未将这些内容标为通过。
+
+修复及 E/F 首批证据已提交并推送为 `acfde60`；随后继续执行上述 G/缓存/感染者补测。
+本轮实验进程均已停止，隔离镜像和本地原始证据保留，未覆盖 Steam 原版文件。

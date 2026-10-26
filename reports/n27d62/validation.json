@@ -188,6 +188,36 @@
     "LONG_SOAK": {
       "status": "NOT_TESTED",
       "observations": 0
+    },
+    "NATIVE_HIGH_INDEX_LIFECYCLE_OK": {
+      "status": "PASS",
+      "observations": 45,
+      "evidence": "G full client frames and server memory; normal watchdog"
+    },
+    "NATIVE_DISCONNECT_SAFE": {
+      "status": "PASS",
+      "observations": 15,
+      "evidence": "G client clear/server targets and sky retained"
+    },
+    "NATIVE_RELOCATIONS_OK": {
+      "status": "PASS",
+      "observations": 5,
+      "evidence": "G: all 587 relocated words per snapshot"
+    },
+    "NATIVE_RECONNECT_ACTIVE": {
+      "status": "PASS",
+      "observations": 2,
+      "evidence": "G status after reconnect plus resync/update/delete"
+    },
+    "CLIENT_COLD_START_REPEAT": {
+      "status": "PASS",
+      "observations": 6,
+      "evidence": "two fresh game PIDs, actual loaded modules, low objects, active, >=120s, deliberate quit rc=0"
+    },
+    "INFECTED_KILLED_LOOKUP_OK": {
+      "status": "PASS",
+      "observations": 6,
+      "evidence": "G index 4031 death-event lookup entry/actual return"
     }
   },
   "trace_counts": {
@@ -439,6 +469,14 @@
       },
       "occupied": 1255,
       "free_nonnetwork": 3889,
+      "active_head_tail": [
+        3906703364,
+        3906705748
+      ],
+      "free_nonnetwork_head_tail": [
+        3906774020,
+        3906774036
+      ],
       "reserved": {
         "index": 4096,
         "pointer": 0,
@@ -489,7 +527,12 @@
           "prev": 0,
           "next": 3906769588
         }
-      ]
+      ],
+      "relocations": {
+        "checked": 587,
+        "failures": [],
+        "passed": true
+      }
     },
     "server-E/after-filler-cleanup.json": {
       "time": 1793009010.8205059,
@@ -516,6 +559,14 @@
       },
       "occupied": 1254,
       "free_nonnetwork": 3889,
+      "active_head_tail": [
+        3906703364,
+        3906768884
+      ],
+      "free_nonnetwork_head_tail": [
+        3906774036,
+        3906774020
+      ],
       "reserved": {
         "index": 4096,
         "pointer": 0,
@@ -566,7 +617,12 @@
           "prev": 3906769588,
           "next": 0
         }
-      ]
+      ],
+      "relocations": {
+        "checked": 587,
+        "failures": [],
+        "passed": true
+      }
     },
     "server-E/initial.json": {
       "time": 1793008833.0164502,
@@ -593,6 +649,14 @@
       },
       "occupied": 1214,
       "free_nonnetwork": 3890,
+      "active_head_tail": [
+        3906703364,
+        3906709636
+      ],
+      "free_nonnetwork_head_tail": [
+        3906773988,
+        3906773972
+      ],
       "reserved": {
         "index": 4096,
         "pointer": 0,
@@ -643,7 +707,12 @@
           "prev": 3906774004,
           "next": 3906774036
         }
-      ]
+      ],
+      "relocations": {
+        "checked": 587,
+        "failures": [],
+        "passed": true
+      }
     },
     "server-E/trace-add-2047-846.json": {
       "time": 1793008887.214876,
@@ -670,6 +739,14 @@
       },
       "occupied": 2240,
       "free_nonnetwork": 3889,
+      "active_head_tail": [
+        3906703364,
+        3906736116
+      ],
+      "free_nonnetwork_head_tail": [
+        3906774020,
+        3906769588
+      ],
       "reserved": {
         "index": 4096,
         "pointer": 0,
@@ -747,6 +824,14 @@
       },
       "occupied": 2241,
       "free_nonnetwork": 3889,
+      "active_head_tail": [
+        3906703364,
+        3906736132
+      ],
+      "free_nonnetwork_head_tail": [
+        3906774020,
+        3906769588
+      ],
       "reserved": {
         "index": 4096,
         "pointer": 0,
@@ -824,6 +909,14 @@
       },
       "occupied": 2242,
       "free_nonnetwork": 3889,
+      "active_head_tail": [
+        3906703364,
+        3906736148
+      ],
+      "free_nonnetwork_head_tail": [
+        3906774020,
+        3906769588
+      ],
       "reserved": {
         "index": 4096,
         "pointer": 0,
@@ -901,6 +994,14 @@
       },
       "occupied": 2288,
       "free_nonnetwork": 3889,
+      "active_head_tail": [
+        3906703364,
+        3906736884
+      ],
+      "free_nonnetwork_head_tail": [
+        3906774020,
+        3906769588
+      ],
       "reserved": {
         "index": 4096,
         "pointer": 0,
@@ -978,6 +1079,14 @@
       },
       "occupied": 2289,
       "free_nonnetwork": 3889,
+      "active_head_tail": [
+        3906703364,
+        3906736900
+      ],
+      "free_nonnetwork_head_tail": [
+        3906774020,
+        3906769588
+      ],
       "reserved": {
         "index": 4096,
         "pointer": 0,
@@ -1055,6 +1164,14 @@
       },
       "occupied": 4288,
       "free_nonnetwork": 3889,
+      "active_head_tail": [
+        3906703364,
+        3906768884
+      ],
+      "free_nonnetwork_head_tail": [
+        3906774020,
+        3906769588
+      ],
       "reserved": {
         "index": 4096,
         "pointer": 0,
@@ -1132,6 +1249,14 @@
       },
       "occupied": 4225,
       "free_nonnetwork": 3888,
+      "active_head_tail": [
+        3906703364,
+        3906774020
+      ],
+      "free_nonnetwork_head_tail": [
+        3906774036,
+        3906769588
+      ],
       "reserved": {
         "index": 4096,
         "pointer": 0,
@@ -1209,6 +1334,14 @@
       },
       "occupied": 5143,
       "free_nonnetwork": 0,
+      "active_head_tail": [
+        3906703364,
+        3906774020
+      ],
+      "free_nonnetwork_head_tail": [
+        0,
+        0
+      ],
       "reserved": {
         "index": 4096,
         "pointer": 0,
@@ -1286,6 +1419,14 @@
       },
       "occupied": 1255,
       "free_nonnetwork": 3889,
+      "active_head_tail": [
+        3906703364,
+        3906705748
+      ],
+      "free_nonnetwork_head_tail": [
+        3906774020,
+        3906774036
+      ],
       "reserved": {
         "index": 4096,
         "pointer": 0,
@@ -1363,6 +1504,14 @@
       },
       "occupied": 2244,
       "free_nonnetwork": 3889,
+      "active_head_tail": [
+        3906703364,
+        3906768884
+      ],
+      "free_nonnetwork_head_tail": [
+        3906774036,
+        3906774020
+      ],
       "reserved": {
         "index": 4096,
         "pointer": 0,
@@ -1440,6 +1589,14 @@
       },
       "occupied": 1256,
       "free_nonnetwork": 3889,
+      "active_head_tail": [
+        3906703364,
+        3906706932
+      ],
+      "free_nonnetwork_head_tail": [
+        3906774020,
+        3906774036
+      ],
       "reserved": {
         "index": 4096,
         "pointer": 0,
@@ -1517,6 +1674,14 @@
       },
       "occupied": 1255,
       "free_nonnetwork": 3889,
+      "active_head_tail": [
+        3906703364,
+        3906706932
+      ],
+      "free_nonnetwork_head_tail": [
+        3906774020,
+        3906774036
+      ],
       "reserved": {
         "index": 4096,
         "pointer": 0,
@@ -1594,6 +1759,14 @@
       },
       "occupied": 1254,
       "free_nonnetwork": 3889,
+      "active_head_tail": [
+        3906703364,
+        3906706932
+      ],
+      "free_nonnetwork_head_tail": [
+        3906774020,
+        3906774036
+      ],
       "reserved": {
         "index": 4096,
         "pointer": 0,
@@ -1671,6 +1844,14 @@
       },
       "occupied": 1253,
       "free_nonnetwork": 3889,
+      "active_head_tail": [
+        3906703364,
+        3906706932
+      ],
+      "free_nonnetwork_head_tail": [
+        3906774020,
+        3906774036
+      ],
       "reserved": {
         "index": 4096,
         "pointer": 0,
@@ -1748,6 +1929,14 @@
       },
       "occupied": 1252,
       "free_nonnetwork": 3889,
+      "active_head_tail": [
+        3906703364,
+        3906706932
+      ],
+      "free_nonnetwork_head_tail": [
+        3906774020,
+        3906774036
+      ],
       "reserved": {
         "index": 4096,
         "pointer": 0,
@@ -1825,6 +2014,14 @@
       },
       "occupied": 4224,
       "free_nonnetwork": 3889,
+      "active_head_tail": [
+        3906703364,
+        3906768884
+      ],
+      "free_nonnetwork_head_tail": [
+        3906774036,
+        3906774020
+      ],
       "reserved": {
         "index": 4096,
         "pointer": 0,
@@ -1902,6 +2099,14 @@
       },
       "occupied": 5142,
       "free_nonnetwork": 1,
+      "active_head_tail": [
+        3906703364,
+        3906769588
+      ],
+      "free_nonnetwork_head_tail": [
+        3906774020,
+        3906774020
+      ],
       "reserved": {
         "index": 4096,
         "pointer": 0,
@@ -1979,6 +2184,14 @@
       },
       "occupied": 4224,
       "free_nonnetwork": 3889,
+      "active_head_tail": [
+        3829035012,
+        3829100532
+      ],
+      "free_nonnetwork_head_tail": [
+        3829105668,
+        3829101236
+      ],
       "reserved": {
         "index": 4096,
         "pointer": 0,
@@ -2029,7 +2242,12 @@
           "prev": 0,
           "next": 3829105684
         }
-      ]
+      ],
+      "relocations": {
+        "checked": 587,
+        "failures": [],
+        "passed": true
+      }
     },
     "server-F/deleted.json": {
       "time": 1793009690.2513874,
@@ -2056,6 +2274,14 @@
       },
       "occupied": 4219,
       "free_nonnetwork": 3889,
+      "active_head_tail": [
+        3829035012,
+        3829099492
+      ],
+      "free_nonnetwork_head_tail": [
+        3829105668,
+        3829101236
+      ],
       "reserved": {
         "index": 4096,
         "pointer": 0,
@@ -2106,7 +2332,12 @@
           "prev": 0,
           "next": 3829105684
         }
-      ]
+      ],
+      "relocations": {
+        "checked": 587,
+        "failures": [],
+        "passed": true
+      }
     },
     "server-F/reused.json": {
       "time": 1793009710.0187225,
@@ -2133,6 +2364,14 @@
       },
       "occupied": 4288,
       "free_nonnetwork": 3889,
+      "active_head_tail": [
+        3829035012,
+        3829100532
+      ],
+      "free_nonnetwork_head_tail": [
+        3829105668,
+        3829101236
+      ],
       "reserved": {
         "index": 4096,
         "pointer": 0,
@@ -2183,7 +2422,462 @@
           "prev": 0,
           "next": 3829105684
         }
-      ]
+      ],
+      "relocations": {
+        "checked": 587,
+        "failures": [],
+        "passed": true
+      }
+    },
+    "server-G/low-initial.json": {
+      "time": 1793010405.3387837,
+      "entity_list": 3733196800,
+      "sky": [
+        {
+          "index": 4143,
+          "pointer": 261309776,
+          "serial": 5578,
+          "prev": 3733209876,
+          "next": 3733209988,
+          "rtti": "10CSkyCamera",
+          "handle": 45699119,
+          "handle_valid": true,
+          "networkable": 0
+        }
+      ],
+      "assertions": {
+        "FREELIST_INTEGRITY_OK": true,
+        "HANDLE_ROUNDTRIP_OK": true,
+        "SKYCAMERA_HANDLE_VALID": true,
+        "NON_NETWORK_SLOT_IN_RANGE": true,
+        "NETWORK_SLOT_IN_RANGE": true
+      },
+      "occupied": 1249,
+      "free_nonnetwork": 3889,
+      "active_head_tail": [
+        3733196804,
+        3733203540
+      ],
+      "free_nonnetwork_head_tail": [
+        3733267460,
+        3733263028
+      ],
+      "reserved": {
+        "index": 4096,
+        "pointer": 0,
+        "serial": 19004,
+        "prev": 3733262340,
+        "next": 3733262340
+      },
+      "selected_slots": [
+        {
+          "index": 2048,
+          "pointer": 0,
+          "serial": 7225,
+          "prev": 3733229572,
+          "next": 3733229572
+        },
+        {
+          "index": 2049,
+          "pointer": 0,
+          "serial": 3693,
+          "prev": 3733229588,
+          "next": 3733229588
+        },
+        {
+          "index": 2095,
+          "pointer": 0,
+          "serial": 23375,
+          "prev": 3733230324,
+          "next": 3733230324
+        },
+        {
+          "index": 2096,
+          "pointer": 0,
+          "serial": 8205,
+          "prev": 3733230340,
+          "next": 3733230340
+        },
+        {
+          "index": 4095,
+          "pointer": 0,
+          "serial": 8659,
+          "prev": 3733262324,
+          "next": 3733262324
+        },
+        {
+          "index": 4416,
+          "pointer": 0,
+          "serial": 24258,
+          "prev": 0,
+          "next": 3733267476
+        }
+      ],
+      "relocations": {
+        "checked": 587,
+        "failures": [],
+        "passed": true
+      }
+    },
+    "server-G/high.json": {
+      "time": 1793010603.3869264,
+      "entity_list": 3733196800,
+      "sky": [
+        {
+          "index": 4143,
+          "pointer": 261309776,
+          "serial": 5578,
+          "prev": 3733209876,
+          "next": 3733209988,
+          "rtti": "10CSkyCamera",
+          "handle": 45699119,
+          "handle_valid": true,
+          "networkable": 0
+        }
+      ],
+      "assertions": {
+        "FREELIST_INTEGRITY_OK": true,
+        "HANDLE_ROUNDTRIP_OK": true,
+        "SKYCAMERA_HANDLE_VALID": true,
+        "NON_NETWORK_SLOT_IN_RANGE": true,
+        "NETWORK_SLOT_IN_RANGE": true
+      },
+      "occupied": 4288,
+      "free_nonnetwork": 3889,
+      "active_head_tail": [
+        3733196804,
+        3733262324
+      ],
+      "free_nonnetwork_head_tail": [
+        3733267460,
+        3733263028
+      ],
+      "reserved": {
+        "index": 4096,
+        "pointer": 0,
+        "serial": 19004,
+        "prev": 3733262340,
+        "next": 3733262340
+      },
+      "selected_slots": [
+        {
+          "index": 2048,
+          "pointer": 268661888,
+          "serial": 7225,
+          "prev": 3733229556,
+          "next": 3733229588
+        },
+        {
+          "index": 2049,
+          "pointer": 268675888,
+          "serial": 3693,
+          "prev": 3733229572,
+          "next": 3733229604
+        },
+        {
+          "index": 2095,
+          "pointer": 268794528,
+          "serial": 23375,
+          "prev": 3733230308,
+          "next": 3733230340
+        },
+        {
+          "index": 2096,
+          "pointer": 268800112,
+          "serial": 8205,
+          "prev": 3733230324,
+          "next": 3733230356
+        },
+        {
+          "index": 4095,
+          "pointer": 271873968,
+          "serial": 8659,
+          "prev": 3733262308,
+          "next": 0
+        },
+        {
+          "index": 4416,
+          "pointer": 0,
+          "serial": 24258,
+          "prev": 0,
+          "next": 3733267476
+        }
+      ],
+      "relocations": {
+        "checked": 587,
+        "failures": [],
+        "passed": true
+      }
+    },
+    "server-G/before-disconnect.json": {
+      "time": 1793010773.756961,
+      "entity_list": 3733196800,
+      "sky": [
+        {
+          "index": 4143,
+          "pointer": 261309776,
+          "serial": 5578,
+          "prev": 3733209876,
+          "next": 3733209988,
+          "rtti": "10CSkyCamera",
+          "handle": 45699119,
+          "handle_valid": true,
+          "networkable": 0
+        }
+      ],
+      "assertions": {
+        "FREELIST_INTEGRITY_OK": true,
+        "HANDLE_ROUNDTRIP_OK": true,
+        "SKYCAMERA_HANDLE_VALID": true,
+        "NON_NETWORK_SLOT_IN_RANGE": true,
+        "NETWORK_SLOT_IN_RANGE": true
+      },
+      "occupied": 1254,
+      "free_nonnetwork": 3889,
+      "active_head_tail": [
+        3733196804,
+        3733262324
+      ],
+      "free_nonnetwork_head_tail": [
+        3733267460,
+        3733263028
+      ],
+      "reserved": {
+        "index": 4096,
+        "pointer": 0,
+        "serial": 19004,
+        "prev": 3733262340,
+        "next": 3733262340
+      },
+      "selected_slots": [
+        {
+          "index": 2048,
+          "pointer": 268661888,
+          "serial": 7225,
+          "prev": 3733203572,
+          "next": 3733229588
+        },
+        {
+          "index": 2049,
+          "pointer": 268675888,
+          "serial": 3693,
+          "prev": 3733229572,
+          "next": 3733230324
+        },
+        {
+          "index": 2095,
+          "pointer": 268794528,
+          "serial": 23375,
+          "prev": 3733229588,
+          "next": 3733230340
+        },
+        {
+          "index": 2096,
+          "pointer": 268800112,
+          "serial": 8205,
+          "prev": 3733230324,
+          "next": 3733262324
+        },
+        {
+          "index": 4095,
+          "pointer": 271873968,
+          "serial": 8659,
+          "prev": 3733230340,
+          "next": 0
+        },
+        {
+          "index": 4416,
+          "pointer": 0,
+          "serial": 24258,
+          "prev": 0,
+          "next": 3733267476
+        }
+      ],
+      "relocations": {
+        "checked": 587,
+        "failures": [],
+        "passed": true
+      }
+    },
+    "server-G/after-disconnect.json": {
+      "time": 1793010801.0101202,
+      "entity_list": 3733196800,
+      "sky": [
+        {
+          "index": 4143,
+          "pointer": 261309776,
+          "serial": 5578,
+          "prev": 3733209876,
+          "next": 3733209988,
+          "rtti": "10CSkyCamera",
+          "handle": 45699119,
+          "handle_valid": true,
+          "networkable": 0
+        }
+      ],
+      "assertions": {
+        "FREELIST_INTEGRITY_OK": true,
+        "HANDLE_ROUNDTRIP_OK": true,
+        "SKYCAMERA_HANDLE_VALID": true,
+        "NON_NETWORK_SLOT_IN_RANGE": true,
+        "NETWORK_SLOT_IN_RANGE": true
+      },
+      "occupied": 1254,
+      "free_nonnetwork": 3889,
+      "active_head_tail": [
+        3733196804,
+        3733200420
+      ],
+      "free_nonnetwork_head_tail": [
+        3733267460,
+        3733263028
+      ],
+      "reserved": {
+        "index": 4096,
+        "pointer": 0,
+        "serial": 19004,
+        "prev": 3733262340,
+        "next": 3733262340
+      },
+      "selected_slots": [
+        {
+          "index": 2048,
+          "pointer": 268661888,
+          "serial": 7225,
+          "prev": 3733199188,
+          "next": 3733229588
+        },
+        {
+          "index": 2049,
+          "pointer": 268675888,
+          "serial": 3693,
+          "prev": 3733229572,
+          "next": 3733230324
+        },
+        {
+          "index": 2095,
+          "pointer": 268794528,
+          "serial": 23375,
+          "prev": 3733229588,
+          "next": 3733230340
+        },
+        {
+          "index": 2096,
+          "pointer": 268800112,
+          "serial": 8205,
+          "prev": 3733230324,
+          "next": 3733262324
+        },
+        {
+          "index": 4095,
+          "pointer": 271873968,
+          "serial": 8659,
+          "prev": 3733230340,
+          "next": 3733196836
+        },
+        {
+          "index": 4416,
+          "pointer": 0,
+          "serial": 24258,
+          "prev": 0,
+          "next": 3733267476
+        }
+      ],
+      "relocations": {
+        "checked": 587,
+        "failures": [],
+        "passed": true
+      }
+    },
+    "server-G/after-delete.json": {
+      "time": 1793010886.8168778,
+      "entity_list": 3733196800,
+      "sky": [
+        {
+          "index": 4143,
+          "pointer": 261309776,
+          "serial": 5578,
+          "prev": 3733209876,
+          "next": 3733209988,
+          "rtti": "10CSkyCamera",
+          "handle": 45699119,
+          "handle_valid": true,
+          "networkable": 0
+        }
+      ],
+      "assertions": {
+        "FREELIST_INTEGRITY_OK": true,
+        "HANDLE_ROUNDTRIP_OK": true,
+        "SKYCAMERA_HANDLE_VALID": true,
+        "NON_NETWORK_SLOT_IN_RANGE": true,
+        "NETWORK_SLOT_IN_RANGE": true
+      },
+      "occupied": 1249,
+      "free_nonnetwork": 3889,
+      "active_head_tail": [
+        3733196804,
+        3733203572
+      ],
+      "free_nonnetwork_head_tail": [
+        3733267460,
+        3733263028
+      ],
+      "reserved": {
+        "index": 4096,
+        "pointer": 0,
+        "serial": 19004,
+        "prev": 3733262340,
+        "next": 3733262340
+      },
+      "selected_slots": [
+        {
+          "index": 2048,
+          "pointer": 0,
+          "serial": 7226,
+          "prev": 3733229572,
+          "next": 3733229572
+        },
+        {
+          "index": 2049,
+          "pointer": 0,
+          "serial": 3694,
+          "prev": 3733229588,
+          "next": 3733229588
+        },
+        {
+          "index": 2095,
+          "pointer": 0,
+          "serial": 23376,
+          "prev": 3733230324,
+          "next": 3733230324
+        },
+        {
+          "index": 2096,
+          "pointer": 0,
+          "serial": 8206,
+          "prev": 3733230340,
+          "next": 3733230340
+        },
+        {
+          "index": 4095,
+          "pointer": 0,
+          "serial": 8660,
+          "prev": 3733262324,
+          "next": 3733262324
+        },
+        {
+          "index": 4416,
+          "pointer": 0,
+          "serial": 24258,
+          "prev": 0,
+          "next": 3733267476
+        }
+      ],
+      "relocations": {
+        "checked": 587,
+        "failures": [],
+        "passed": true
+      }
     }
   },
   "client_frames": {
@@ -2607,6 +3301,846 @@
       ]
     }
   },
+  "native": {
+    "server_session": {
+      "run_id": "20261026-181814-54edc9",
+      "pid": 512062,
+      "port": 27052,
+      "script": "d50_session",
+      "target": null,
+      "mode": "low-index-control",
+      "state": {
+        "begin": false,
+        "target": null,
+        "alive": null,
+        "done": false,
+        "ready": true
+      },
+      "argv": [
+        "./srcds_linux",
+        "-game",
+        "left4dead2",
+        "-insecure",
+        "-console",
+        "-port",
+        "27052",
+        "-ip",
+        "192.168.123.104",
+        "+servercfgfile",
+        "n27_lab.cfg",
+        "+map",
+        "c1m1_hotel"
+      ],
+      "engine_sha256": "79b3966bd9752394beb2f29f0cf0244acedddde15112b4c037535994ecaf8014",
+      "control_socket": "/home/void0312/l4d2_test/runs/d62/server-G/console.sock",
+      "log": "/home/void0312/l4d2_test/runs/d62/server-G/pty.log"
+    },
+    "client_runs": [
+      {
+        "argv": [
+          "/home/void0312/.steam/steam/steamapps/common/Proton - Experimental/proton",
+          "run",
+          "/home/void0312/l4d2_test/client4096/left4dead2.exe",
+          "-steam",
+          "-insecure",
+          "-novid",
+          "-windowed",
+          "-w",
+          "960",
+          "-h",
+          "540",
+          "-console",
+          "-condebug",
+          "-netconport",
+          "27153",
+          "+exec",
+          "n27_connect.cfg"
+        ],
+        "prefix": "/home/void0312/.steam/steam/steamapps/compatdata/550",
+        "proton_version": "1791989105 experimental-11.0-20261014-x86_64",
+        "started": 1793010280.3364394,
+        "modules": {
+          "left4dead2.exe": "c1007187e05ed681173b1c44c043980edf72dfcb2183ad90ec8e6d874d1b14e3",
+          "bin/engine.dll": "48329969eaaedee94d011957d81cf53b5a06d8c8098a5e548a7e741309994bd9",
+          "left4dead2/bin/client.dll": "3e5c3f2ee98c2bfa3f3672c654f7ae8b3ae401cc437a08ae1abbe57a6d363943"
+        },
+        "events": [
+          {
+            "event": "game_created",
+            "pid": 520385,
+            "time": 1793010283.4182625
+          },
+          {
+            "event": "module_loaded",
+            "pid": 520385,
+            "module": "bin/engine.dll",
+            "time": 1793010283.7429655
+          },
+          {
+            "event": "module_loaded",
+            "pid": 520385,
+            "module": "left4dead2/bin/client.dll",
+            "time": 1793010285.044161
+          },
+          {
+            "event": "game_exited",
+            "pid": 520385,
+            "time": 1793010421.3361585
+          }
+        ],
+        "target_check": {
+          "target": "192.168.123.104:27052",
+          "resolved_address": "192.168.123.104",
+          "listeners": [
+            "UNCONN 0      0      192.168.123.104:27052 0.0.0.0:* users:((\"srcds_linux\",pid=512062,fd=23))   "
+          ]
+        },
+        "graphics_environment": {
+          "DISPLAY": ":0",
+          "XAUTHORITY": "/run/user/1000/.mutter-Xwaylandauth.711SX3",
+          "XDG_SESSION_TYPE": "tty",
+          "WAYLAND_DISPLAY": null
+        },
+        "connect_config": "wait 120; connect 192.168.123.104:27052\n",
+        "launcher_pid": 520251,
+        "launcher_returncode": 0,
+        "ended_observation": 1793010421.4914622,
+        "alive_at_cleanup": [],
+        "launcher_final_returncode": 0,
+        "ended": 1793010421.5430825
+      },
+      {
+        "argv": [
+          "/home/void0312/.steam/steam/steamapps/common/Proton - Experimental/proton",
+          "run",
+          "/home/void0312/l4d2_test/client4096/left4dead2.exe",
+          "-steam",
+          "-insecure",
+          "-novid",
+          "-windowed",
+          "-w",
+          "960",
+          "-h",
+          "540",
+          "-console",
+          "-condebug",
+          "-netconport",
+          "27154",
+          "+exec",
+          "n27_connect.cfg"
+        ],
+        "prefix": "/home/void0312/.steam/steam/steamapps/compatdata/550",
+        "proton_version": "1791989105 experimental-11.0-20261014-x86_64",
+        "started": 1793010429.815189,
+        "modules": {
+          "left4dead2.exe": "c1007187e05ed681173b1c44c043980edf72dfcb2183ad90ec8e6d874d1b14e3",
+          "bin/engine.dll": "48329969eaaedee94d011957d81cf53b5a06d8c8098a5e548a7e741309994bd9",
+          "left4dead2/bin/client.dll": "3e5c3f2ee98c2bfa3f3672c654f7ae8b3ae401cc437a08ae1abbe57a6d363943"
+        },
+        "events": [
+          {
+            "event": "game_created",
+            "pid": 523833,
+            "time": 1793010432.8107371
+          },
+          {
+            "event": "module_loaded",
+            "pid": 523833,
+            "module": "bin/engine.dll",
+            "time": 1793010433.2693717
+          },
+          {
+            "event": "module_loaded",
+            "pid": 523833,
+            "module": "left4dead2/bin/client.dll",
+            "time": 1793010434.6911747
+          },
+          {
+            "event": "game_exited",
+            "pid": 523833,
+            "time": 1793010890.6636667
+          }
+        ],
+        "target_check": {
+          "target": "192.168.123.104:27052",
+          "resolved_address": "192.168.123.104",
+          "listeners": [
+            "UNCONN 0      0      192.168.123.104:27052 0.0.0.0:* users:((\"srcds_linux\",pid=512062,fd=23))   "
+          ]
+        },
+        "graphics_environment": {
+          "DISPLAY": ":0",
+          "XAUTHORITY": "/run/user/1000/.mutter-Xwaylandauth.711SX3",
+          "XDG_SESSION_TYPE": "tty",
+          "WAYLAND_DISPLAY": null
+        },
+        "connect_config": "wait 120; connect 192.168.123.104:27052\n",
+        "launcher_pid": 523642,
+        "launcher_returncode": 0,
+        "ended_observation": 1793010890.8204463,
+        "alive_at_cleanup": [],
+        "launcher_final_returncode": 0,
+        "ended": 1793010890.87168
+      }
+    ],
+    "client_frames": {
+      "low": {
+        "pid": 523833,
+        "time": 1793010559.12521,
+        "client_base": "0x745f0000",
+        "client_sha256": "3e5c3f2ee98c2bfa3f3672c654f7ae8b3ae401cc437a08ae1abbe57a6d363943",
+        "entity_list": "0x74f53000",
+        "slots": [
+          {
+            "index": 0,
+            "pointer": "0x27d8000",
+            "serial": 904,
+            "vtable": "0x74b52dd4",
+            "rtti": ".?AVC_World@@",
+            "complete_object": "0x27d8000",
+            "origin": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "index": 1,
+            "pointer": "0x1d18f340",
+            "serial": 364,
+            "vtable": "0x74ba6494",
+            "rtti": ".?AVC_TerrorPlayer@@",
+            "complete_object": "0x1d18f340",
+            "origin": [
+              722.5916748046875,
+              5699.62744140625,
+              2848.752685546875
+            ]
+          }
+        ]
+      },
+      "created-4095": {
+        "pid": 523833,
+        "time": 1793010601.7170238,
+        "client_base": "0x745f0000",
+        "client_sha256": "3e5c3f2ee98c2bfa3f3672c654f7ae8b3ae401cc437a08ae1abbe57a6d363943",
+        "entity_list": "0x74f53000",
+        "slots": [
+          {
+            "index": 2048,
+            "pointer": "0x71f69c0",
+            "serial": 57,
+            "vtable": "0x74b49e8c",
+            "rtti": ".?AVC_DynamicProp@@",
+            "complete_object": "0x71f69c0",
+            "origin": [
+              711.65625,
+              5659.375,
+              2872.03125
+            ]
+          },
+          {
+            "index": 2049,
+            "pointer": "0x71f9b90",
+            "serial": 621,
+            "vtable": "0x74b49e8c",
+            "rtti": ".?AVC_DynamicProp@@",
+            "complete_object": "0x71f9b90",
+            "origin": [
+              807.65625,
+              5659.375,
+              2872.03125
+            ]
+          },
+          {
+            "index": 2095,
+            "pointer": "0x71ff1c0",
+            "serial": 847,
+            "vtable": "0x74b49e8c",
+            "rtti": ".?AVC_DynamicProp@@",
+            "complete_object": "0x71ff1c0",
+            "origin": [
+              597.84375,
+              5469.03125,
+              2872.09375
+            ]
+          },
+          {
+            "index": 2096,
+            "pointer": "0x71ffb50",
+            "serial": 13,
+            "vtable": "0x74b49e8c",
+            "rtti": ".?AVC_DynamicProp@@",
+            "complete_object": "0x71ffb50",
+            "origin": [
+              693.84375,
+              5469.03125,
+              2872.09375
+            ]
+          },
+          {
+            "index": 4095,
+            "pointer": "0x72004e0",
+            "serial": 467,
+            "vtable": "0x74b49e8c",
+            "rtti": ".?AVC_DynamicProp@@",
+            "complete_object": "0x72004e0",
+            "origin": [
+              597.84375,
+              5469.03125,
+              2872.09375
+            ]
+          }
+        ]
+      },
+      "updated": {
+        "pid": 523833,
+        "time": 1793010602.8663344,
+        "client_base": "0x745f0000",
+        "client_sha256": "3e5c3f2ee98c2bfa3f3672c654f7ae8b3ae401cc437a08ae1abbe57a6d363943",
+        "entity_list": "0x74f53000",
+        "slots": [
+          {
+            "index": 2048,
+            "pointer": "0x71f69c0",
+            "serial": 57,
+            "vtable": "0x74b49e8c",
+            "rtti": ".?AVC_DynamicProp@@",
+            "complete_object": "0x71f69c0",
+            "origin": [
+              711.65625,
+              5755.375,
+              2904.03125
+            ]
+          },
+          {
+            "index": 2049,
+            "pointer": "0x71f9b90",
+            "serial": 621,
+            "vtable": "0x74b49e8c",
+            "rtti": ".?AVC_DynamicProp@@",
+            "complete_object": "0x71f9b90",
+            "origin": [
+              807.65625,
+              5755.375,
+              2904.03125
+            ]
+          },
+          {
+            "index": 2095,
+            "pointer": "0x71ff1c0",
+            "serial": 847,
+            "vtable": "0x74b49e8c",
+            "rtti": ".?AVC_DynamicProp@@",
+            "complete_object": "0x71ff1c0",
+            "origin": [
+              597.84375,
+              5565.03125,
+              2904.09375
+            ]
+          },
+          {
+            "index": 2096,
+            "pointer": "0x71ffb50",
+            "serial": 13,
+            "vtable": "0x74b49e8c",
+            "rtti": ".?AVC_DynamicProp@@",
+            "complete_object": "0x71ffb50",
+            "origin": [
+              693.84375,
+              5565.03125,
+              2904.09375
+            ]
+          },
+          {
+            "index": 4095,
+            "pointer": "0x72004e0",
+            "serial": 467,
+            "vtable": "0x74b49e8c",
+            "rtti": ".?AVC_DynamicProp@@",
+            "complete_object": "0x72004e0",
+            "origin": [
+              597.84375,
+              5565.03125,
+              2904.09375
+            ]
+          }
+        ]
+      },
+      "disconnected": {
+        "pid": 523833,
+        "time": 1793010800.3867843,
+        "client_base": "0x745f0000",
+        "client_sha256": "3e5c3f2ee98c2bfa3f3672c654f7ae8b3ae401cc437a08ae1abbe57a6d363943",
+        "entity_list": "0x74f53000",
+        "slots": [
+          {
+            "index": 0,
+            "pointer": "0x0",
+            "serial": 905
+          },
+          {
+            "index": 1,
+            "pointer": "0x0",
+            "serial": 365
+          },
+          {
+            "index": 2048,
+            "pointer": "0x0",
+            "serial": 58
+          },
+          {
+            "index": 2049,
+            "pointer": "0x0",
+            "serial": 622
+          },
+          {
+            "index": 2095,
+            "pointer": "0x0",
+            "serial": 848
+          },
+          {
+            "index": 2096,
+            "pointer": "0x0",
+            "serial": 14
+          },
+          {
+            "index": 4095,
+            "pointer": "0x0",
+            "serial": 468
+          }
+        ]
+      },
+      "reconnected": {
+        "pid": 523833,
+        "time": 1793010836.6272187,
+        "client_base": "0x745f0000",
+        "client_sha256": "3e5c3f2ee98c2bfa3f3672c654f7ae8b3ae401cc437a08ae1abbe57a6d363943",
+        "entity_list": "0x74f53000",
+        "slots": [
+          {
+            "index": 0,
+            "pointer": "0x27d8000",
+            "serial": 904,
+            "vtable": "0x74b52dd4",
+            "rtti": ".?AVC_World@@",
+            "complete_object": "0x27d8000",
+            "origin": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "index": 1,
+            "pointer": "0x254c8bb0",
+            "serial": 365,
+            "vtable": "0x74ba6494",
+            "rtti": ".?AVC_TerrorPlayer@@",
+            "complete_object": "0x254c8bb0",
+            "origin": [
+              714.5715942382812,
+              5637.27294921875,
+              2848.24267578125
+            ]
+          },
+          {
+            "index": 2048,
+            "pointer": "0x1ea894f0",
+            "serial": 57,
+            "vtable": "0x74b49e8c",
+            "rtti": ".?AVC_DynamicProp@@",
+            "complete_object": "0x1ea894f0",
+            "origin": [
+              711.65625,
+              5755.375,
+              2904.03125
+            ]
+          },
+          {
+            "index": 2049,
+            "pointer": "0x1ea89e80",
+            "serial": 621,
+            "vtable": "0x74b49e8c",
+            "rtti": ".?AVC_DynamicProp@@",
+            "complete_object": "0x1ea89e80",
+            "origin": [
+              807.65625,
+              5755.375,
+              2904.03125
+            ]
+          },
+          {
+            "index": 2095,
+            "pointer": "0x1ea8a810",
+            "serial": 847,
+            "vtable": "0x74b49e8c",
+            "rtti": ".?AVC_DynamicProp@@",
+            "complete_object": "0x1ea8a810",
+            "origin": [
+              597.84375,
+              5565.03125,
+              2904.09375
+            ]
+          },
+          {
+            "index": 2096,
+            "pointer": "0x7d0cb00",
+            "serial": 13,
+            "vtable": "0x74b49e8c",
+            "rtti": ".?AVC_DynamicProp@@",
+            "complete_object": "0x7d0cb00",
+            "origin": [
+              693.84375,
+              5565.03125,
+              2904.09375
+            ]
+          },
+          {
+            "index": 4095,
+            "pointer": "0x7d0d490",
+            "serial": 467,
+            "vtable": "0x74b49e8c",
+            "rtti": ".?AVC_DynamicProp@@",
+            "complete_object": "0x7d0d490",
+            "origin": [
+              597.84375,
+              5565.03125,
+              2904.09375
+            ]
+          }
+        ]
+      },
+      "reconnect-updated": {
+        "pid": 523833,
+        "time": 1793010875.8455577,
+        "client_base": "0x745f0000",
+        "client_sha256": "3e5c3f2ee98c2bfa3f3672c654f7ae8b3ae401cc437a08ae1abbe57a6d363943",
+        "entity_list": "0x74f53000",
+        "slots": [
+          {
+            "index": 2048,
+            "pointer": "0x1ea894f0",
+            "serial": 57,
+            "vtable": "0x74b49e8c",
+            "rtti": ".?AVC_DynamicProp@@",
+            "complete_object": "0x1ea894f0",
+            "origin": [
+              711.65625,
+              5851.375,
+              2936.03125
+            ]
+          },
+          {
+            "index": 2049,
+            "pointer": "0x1ea89e80",
+            "serial": 621,
+            "vtable": "0x74b49e8c",
+            "rtti": ".?AVC_DynamicProp@@",
+            "complete_object": "0x1ea89e80",
+            "origin": [
+              807.65625,
+              5851.375,
+              2936.03125
+            ]
+          },
+          {
+            "index": 2095,
+            "pointer": "0x1ea8a810",
+            "serial": 847,
+            "vtable": "0x74b49e8c",
+            "rtti": ".?AVC_DynamicProp@@",
+            "complete_object": "0x1ea8a810",
+            "origin": [
+              597.84375,
+              5661.03125,
+              2936.09375
+            ]
+          },
+          {
+            "index": 2096,
+            "pointer": "0x7d0cb00",
+            "serial": 13,
+            "vtable": "0x74b49e8c",
+            "rtti": ".?AVC_DynamicProp@@",
+            "complete_object": "0x7d0cb00",
+            "origin": [
+              693.84375,
+              5661.03125,
+              2936.09375
+            ]
+          },
+          {
+            "index": 4095,
+            "pointer": "0x7d0d490",
+            "serial": 467,
+            "vtable": "0x74b49e8c",
+            "rtti": ".?AVC_DynamicProp@@",
+            "complete_object": "0x7d0d490",
+            "origin": [
+              597.84375,
+              5661.03125,
+              2936.09375
+            ]
+          }
+        ]
+      },
+      "deleted": {
+        "pid": 523833,
+        "time": 1793010886.1982028,
+        "client_base": "0x745f0000",
+        "client_sha256": "3e5c3f2ee98c2bfa3f3672c654f7ae8b3ae401cc437a08ae1abbe57a6d363943",
+        "entity_list": "0x74f53000",
+        "slots": [
+          {
+            "index": 2048,
+            "pointer": "0x0",
+            "serial": 58
+          },
+          {
+            "index": 2049,
+            "pointer": "0x0",
+            "serial": 622
+          },
+          {
+            "index": 2095,
+            "pointer": "0x0",
+            "serial": 848
+          },
+          {
+            "index": 2096,
+            "pointer": "0x0",
+            "serial": 14
+          },
+          {
+            "index": 4095,
+            "pointer": "0x0",
+            "serial": 468
+          }
+        ]
+      }
+    },
+    "first_low": {
+      "pid": 520385,
+      "time": 1793010418.0523455,
+      "client_base": "0x745f0000",
+      "client_sha256": "3e5c3f2ee98c2bfa3f3672c654f7ae8b3ae401cc437a08ae1abbe57a6d363943",
+      "entity_list": "0x74f53000",
+      "slots": [
+        {
+          "index": 0,
+          "pointer": "0x27d8000",
+          "serial": 904,
+          "vtable": "0x74b52dd4",
+          "rtti": ".?AVC_World@@",
+          "complete_object": "0x27d8000",
+          "origin": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "index": 1,
+          "pointer": "0x1d09f6e0",
+          "serial": 363,
+          "vtable": "0x74ba6494",
+          "rtti": ".?AVC_TerrorPlayer@@",
+          "complete_object": "0x1d09f6e0",
+          "origin": [
+            517.9990234375,
+            5631.93017578125,
+            2849.756103515625
+          ]
+        }
+      ]
+    },
+    "infected_event": [
+      {
+        "event": "UTIL_entry",
+        "time": 1793010740.2531767,
+        "index": 4031,
+        "stack": "#0  0xde2fc0b0 in UTIL_EntityByIndex(int) () from /home/void0312/l4d2_test/cleanrun/left4dead2/bin/server_srv.so\n#1  0xde0d00f0 in PlayerReporter::FireGameEvent(IGameEvent*) () from /home/void0312/l4d2_test/cleanrun/left4dead2/bin/server_srv.so\n#2  0xe8d9456f in CGameEventManager::FireEventIntern(IGameEvent*, bool, bool) () from /home/void0312/l4d2_test/cleanrun/bin/engine_srv.so\n#3  0xe8d94792 in CGameEventManager::FireEvent(IGameEvent*, bool) () from /home/void0312/l4d2_test/cleanrun/bin/engine_srv.so\n#4  0xddf22710 in NextBotCombatCharacter::Event_Killed(CTakeDamageInfo const&) () from /home/void0312/l4d2_test/cleanrun/left4dead2/bin/server_srv.so\n#5  0xde1e2457 in Infected::Event_Killed(CTakeDamageInfo const&) () from /home/void0312/l4d2_test/cleanrun/left4dead2/bin/server_srv.so\n#6  0xdddc385c in CBaseCombatCharacter::OnTakeDamage(CTakeDamageInfo const&) () from /home/void0312/l4d2_test/cleanrun/left4dead2/bin/server_srv.so\n#7  0xde1e1ca2 in Infected::OnTakeDamage(CTakeDamageInfo const&) () from /home/void0312/l4d2_test/cleanrun/left4dead2/bin/server_srv.so\n#8  0xdddd6630 in CBaseEntity::TakeDamage(CTakeDamageInfo const&) () from /home/void0312/l4d2_test/cleanrun/left4dead2/bin/server_srv.so\n#9  0xddde44fb in CBaseEntity::ScriptTakeDamage(float, int, HSCRIPT__*) () from /home/void0312/l4d2_test/cleanrun/left4dead2/bin/server_srv.so\n#10 0xddde9401 in CMemberScriptBinding3<CBaseEntity*, void (CBaseEntity::*)(float, int, HSCRIPT__*), void, float, int, HSCRIPT__*>::Call(void*, void*, CVariantBase<CVariantDefaultAllocator>*, int, CVariantBase<CVariantDefaultAllocator>*) () from /home/void0312/l4d2_test/cleanrun/left4dead2/bin/server_srv.so\n#11 0xe6d2290e in CSquirrelVM::TranslateCall(SQVM*) () from /home/void0312/l4d2_test/cleanrun/bin/vscript_srv.so\n#12 0xe6d142c1 in SQVM::CallNative(SQNativeClosure*, int, int, SQObjectPtr&, bool&) () from /home/void0312/l4d2_test/cleanrun/bin/vscript_srv.so\n#13 0xe6d113bb in SQVM::Execute(SQObjectPtr&, int, int, SQObjectPtr&, unsigned int, SQVM::ExecutionType) () from /home/void0312/l4d2_test/cleanrun/bin/vscript_srv.so\n#14 0xe6d12f59 in SQVM::Call(SQObjectPtr&, int, int, SQObjectPtr&, unsigned int) () from /home/void0312/l4d2_test/cleanrun/bin/vscript_srv.so\n#15 0xe6ce9fe3 in sq_call () from /home/void0312/l4d2_test/cleanrun/bin/vscript_srv.so\n#16 0xe6d21146 in CSquirrelVM::ExecuteFunction(HSCRIPT__*, CVariantBase<CVariantDefaultAllocator>*, int, CVariantBase<CVariantDefaultAllocator>*, HSCRIPT__*, bool) () from /home/void0312/l4d2_test/cleanrun/bin/vscript_srv.so\n#17 0xe6d2167f in CSquirrelVM::Run(HSCRIPT__*, HSCRIPT__*, bool) () from /home/void0312/l4d2_test/cleanrun/bin/vscript_srv.so\n"
+      },
+      {
+        "event": "UTIL_return",
+        "time": 1793010740.2536538,
+        "pointer": 272272000
+      }
+    ],
+    "cache_recovery": {
+      "source": "/home/void0312/.steam/steam/steamapps/common/Left 4 Dead 2/left4dead2/addons/workshop",
+      "destination": "/home/void0312/l4d2_test/client4096/left4dead2/addons/workshop",
+      "copied": [
+        {
+          "name": "2108624514.vpk",
+          "bytes": 37757481
+        },
+        {
+          "name": "214630948.vpk",
+          "bytes": 873842
+        },
+        {
+          "name": "1968764163.vpk",
+          "bytes": 1083746
+        },
+        {
+          "name": "2239816060.vpk",
+          "bytes": 96303
+        },
+        {
+          "name": "128424524.vpk",
+          "bytes": 202727803
+        },
+        {
+          "name": "128425775.vpk",
+          "bytes": 196009078
+        },
+        {
+          "name": "1940934007.vpk",
+          "bytes": 76875
+        },
+        {
+          "name": "2396847377.vpk",
+          "bytes": 867196936
+        },
+        {
+          "name": "3577759004.vpk",
+          "bytes": 819396883
+        },
+        {
+          "name": "2108461892.vpk",
+          "bytes": 404119860
+        },
+        {
+          "name": "128426961.vpk",
+          "bytes": 160170633
+        },
+        {
+          "name": "788564919.vpk",
+          "bytes": 262650308
+        },
+        {
+          "name": "3193402096.vpk",
+          "bytes": 1235
+        },
+        {
+          "name": "3578078027.vpk",
+          "bytes": 313060618
+        },
+        {
+          "name": "121086524.vpk",
+          "bytes": 200430361
+        },
+        {
+          "name": "3058708832.vpk",
+          "bytes": 1651
+        },
+        {
+          "name": "2802325803.vpk",
+          "bytes": 466695334
+        },
+        {
+          "name": "3115675033.vpk",
+          "bytes": 98041856
+        }
+      ]
+    },
+    "ugc_failure": {
+      "run": {
+        "argv": [
+          "/home/void0312/.steam/steam/steamapps/common/Proton - Experimental/proton",
+          "run",
+          "/home/void0312/l4d2_test/client4096/left4dead2.exe",
+          "-steam",
+          "-insecure",
+          "-novid",
+          "-windowed",
+          "-w",
+          "960",
+          "-h",
+          "540",
+          "-console",
+          "-condebug",
+          "-netconport",
+          "27152",
+          "+exec",
+          "n27_connect.cfg"
+        ],
+        "prefix": "/home/void0312/.steam/steam/steamapps/compatdata/550",
+        "proton_version": "1791989105 experimental-11.0-20261014-x86_64",
+        "started": 1793009731.7616026,
+        "modules": {
+          "left4dead2.exe": "c1007187e05ed681173b1c44c043980edf72dfcb2183ad90ec8e6d874d1b14e3",
+          "bin/engine.dll": "48329969eaaedee94d011957d81cf53b5a06d8c8098a5e548a7e741309994bd9",
+          "left4dead2/bin/client.dll": "3e5c3f2ee98c2bfa3f3672c654f7ae8b3ae401cc437a08ae1abbe57a6d363943"
+        },
+        "events": [
+          {
+            "event": "game_created",
+            "pid": 509509,
+            "time": 1793009734.9330366
+          },
+          {
+            "event": "module_loaded",
+            "pid": 509509,
+            "module": "bin/engine.dll",
+            "time": 1793009735.2408297
+          },
+          {
+            "event": "module_loaded",
+            "pid": 509509,
+            "module": "left4dead2/bin/client.dll",
+            "time": 1793009736.4842405
+          },
+          {
+            "event": "game_exited",
+            "pid": 509509,
+            "time": 1793009780.8388112
+          }
+        ],
+        "target_check": {
+          "target": "192.168.123.104:27051",
+          "resolved_address": "192.168.123.104",
+          "listeners": [
+            "UNCONN 0      0      192.168.123.104:27051 0.0.0.0:* users:((\"srcds_linux\",pid=501192,fd=23))   "
+          ]
+        },
+        "graphics_environment": {
+          "DISPLAY": ":0",
+          "XAUTHORITY": "/run/user/1000/.mutter-Xwaylandauth.711SX3",
+          "XDG_SESSION_TYPE": "tty",
+          "WAYLAND_DISPLAY": null
+        },
+        "connect_config": "wait 120; connect 192.168.123.104:27051\n",
+        "launcher_pid": 509365,
+        "launcher_returncode": 100,
+        "ended_observation": 1793009780.8389535,
+        "alive_at_cleanup": [],
+        "launcher_final_returncode": 100,
+        "ended": 1793009780.8980687
+      },
+      "fault_excerpt": "[Thread debugging using libthread_db enabled]\nUsing host libthread_db library \"/usr/lib/x86_64-linux-gnu/libthread_db.so.1\".\n0xe8f9a31c in __kernel_vsyscall ()\nTIER0_BASE=7a820000 OOM=7a827680\nBreakpoint 1 at 0x7a827680\nD62_OOM_CALLER_CAPTURE\neax            0x0                 0\necx            0x7a88c4d0          2055783632\nedx            0x0                 0\nebx            0x7a88d250          2055787088\nesp            0x75e170            0x75e170\nebp            0x75e188            0x75e188\nesi            0x30d70114          819396884\nedi            0x0                 0\neip            0x7a827680          0x7a827680 <tier0!MemFreeScratch+1408>\neflags         0x200246            [ PF ZF IF ID ]\ncs             0x23                35\nss             0x2b                43\nds             0x2b                43\nes             0x2b                43\nfs             0x63                99\ngs             0x6b                107\n#0  0x7a827680 in tier0!MemFreeScratch () from /home/void0312/.steam/debian-installation/steamapps/common/Left 4 Dead 2/bin/tier0.dll\n#1  0x7a828e79 in tier0!MemFreeScratch () from /home/void0312/.steam/debian-installation/steamapps/common/Left 4 Dead 2/bin/tier0.dll\n#2  0x30d70114 in ?? ()\n#3  0x7a828008 in tier0!MemFreeScratch () from /home/void0312/.steam/debian-installation/steamapps/common/Left 4 Dead 2/bin/tier0.dll\n#4  0x30d70114 in ?? ()\n#5  0x7a828f17 in tier0!MemFreeScratch () from /home/void0312/.steam/debian-installation/steamapps/common/Left 4 Dead 2/bin/tier0.dll\n#6  0x043368e0 in ?? ()\n#7  0x7a07a9fb in engine!CreateInterface () from /home/void0312/l4d2_test/client4096/bin/engine.dll\n#8  0x7a021941 in engine!?F@@YAXPAPAVIEngineAPI@@@Z () from /home/void0312/l4d2_test/client4096/bin/engine.dll\n#9  0x7a0215dd in engine!?F@@YAXPAPAVIEngineAPI@@@Z () from /home/void0312/l4d2_test/client4096/bin/engine.dll\n#10 0x7a8b6f65 in steam_api!SteamAPI_servernetadr_t_SetQueryPort () from /home/void0312/.steam/debian-installation/steamapps/common/Left 4 Dead 2/bin/steam_api.dll\n#11 0x7a8b70bf in steam_api!SteamAPI_servernetadr_t_SetQueryPort () from /home/void0312/.steam/debian-installation/steamapps/common/Left 4 Dead 2/bin/steam_api.dll\n#12 0x7a8b6b35 in steam_api!SteamAPI_servernetadr_t_SetQueryPort () from /home/void0312/.steam/debian-installation/steamapps/common/Left 4 Dead 2/bin/steam_api.dll\n#13 0x7a8b9f2d in steam_api!SteamAPI_RunCallbacks () from /home/void0312/.steam/debian-installation/steamapps/common/Left 4 Dead 2/bin/steam_api.dll\n#14 0x00000001 in ?? ()\n#15 0x00000000 in ?? ()\n0x75e170:\t0x7a828e79\t0x30d70114\t0x043368e0\t0x30d70114\n0x75e180:\t0x7a88cd40\t0x7a88c4d0\t0x0075e1a0\t0x7a828008\n0x75e190:\t0x30d70114\t0x30d70114\t0x043368e0\t0x7a88c4d0\n0x75e1a0:\t0x0075e1b8\t0x7a828f17\t0x043368e0\t0x30d70114\n0x75e1b0:\t0x071e2c90\t0x00000000\t0x0075e1d0\t0x7a07a9fb\n0x75e1c0:\t0x043368e0\t0x30d70114\t0x15310248\t0x071e2938\n0x75e1d0:\t0x0075e414\t0x7a021941\t0x30d70113\t0x15310248\n0x75e1e0:\t0x15351378\t0x0076d720\t0x00000226\t0x0aae0a2c\n"
+    },
+    "listener_control": {
+      "127.0.0.1:27050": {
+        "rejected": "no local srcds listener matches 127.0.0.1:27050"
+      },
+      "192.168.123.104:27050": {
+        "target": "192.168.123.104:27050",
+        "resolved_address": "192.168.123.104",
+        "listeners": [
+          "UNCONN 960    0      192.168.123.104:27050 0.0.0.0:* users:((\"srcds_linux\",pid=493508,fd=23))                                     "
+        ]
+      }
+    },
+    "wrong_source_control": {
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "source SHA mismatch\n",
+      "output_exists": false
+    }
+  },
   "source_sha256": {
     "client-fixed/E-low.json": "9c7fe724eef265ac11c7b042999cadb191bff80718a9b24190fe9ded2929c012",
     "client-fixed/E-created4095.json": "07aaab23ec10baf312d9a27f9d3c81410f23b84110d393278a2fa1c1b0b3ead7",
@@ -2648,6 +4182,30 @@
     "server-F/reused.json": "394cc12e5dc22cdb04e9f95e438333a2637e654baaf6438df01f7046d51f45ab",
     "server-F/pty.log": "85dbddf00bb288b56bd8b51c441c706a834f005181ebc9329399895ca5d236e3",
     "server-E/pty.log": "333d5fae383c69c1916da3e793b3faa017ed54d4e8bb3f3415e0d9af338ded23",
+    "server-G/low-initial.json": "3b6280884d7621b747aa5653cd98b51039871d28c2365cc0fac1fc466eee7a32",
+    "server-G/high.json": "3cc7e5e46724eda0a89b92296243108255ff00345bb991028cbd15b2e39df210",
+    "server-G/before-disconnect.json": "b139a3f18c4889cf8022c9899b90b68f730a6b2fe9ccb4f11742827dfff512bf",
+    "server-G/after-disconnect.json": "8fde320abbdd4cd91c0f563a64e17f5b3dbb1b4f85fc93685fa12603227d1bbf",
+    "server-G/after-delete.json": "297c33b1bb935d682c974e223e1072eca6056dad055d7d19430aa9410fd6bde0",
+    "client-native-final/low.json": "41a30397d4cf4e0e419cdba6bf7245550658ee984ccb4b2e861372c2021f5ed9",
+    "client-native-final/created-4095.json": "197c04c315d4a6a2f9efdd2d9c7109b0fa26b6d071773947faf69bc704ca1173",
+    "client-native-final/updated.json": "efcc70b5a17b70db2d49360d83edd4c5781864551fce274cac6b785f0fbdf602",
+    "client-native-final/disconnected.json": "f85e2a14fbd5f5f1357a35206921bdeaec3704ea1521aaca2c7614dcbaaaf83e",
+    "client-native-final/reconnected.json": "34fa6c3b46c9529fb9a7be4b7e9e6aa6aef2f3e71e6d0a5788e23d5685bb0668",
+    "client-native-final/reconnect-updated.json": "bb0e1595978bf3b5a4c442bca61b16bcdcaf6c72e9ddaf254cdfd8aeee117f3e",
+    "client-native-final/deleted.json": "b8d44aee849a7ea236ca09dafb47cabedabb51a0031b8371c144a5645be402f9",
+    "server-G/pty.log": "336e687aeb6766e911af21fdac85895ea916f972fc4fe19c3c6f919d83a27cdb",
+    "client-cache-control/run.json": "72f7e8905f7192ed9ff8c6fe3d5d5240b600dd4f85de79620a844cc42f94924a",
+    "client-native-final/run.json": "c5cbd9e5356d3a7f088fb4239fe4fb5c43261502d5e8b635f67a53b8beb5680b",
+    "client-cache-control/low-stable-final.json": "41c6b559e0e3afca6895d385ff70a5fd1260e4794bee2e05b6ddaf96d767d8d7",
+    "client-cache-control/server-status.txt": "965958698e94d3b76878911dccd46103f3323219c35af3d5510cda7eda6bc471",
+    "server-G/infected-event-reporter.json": "ca9550f933320d7182bc023a45e2a22df71479eb3335dfc518ea82d232dddffc",
+    "server-G/session.json": "ea38b7b2f29b7afeb68ab5a9b1b501cd3253307bd52ad5d8a228fd91e723bae7",
+    "workshop-cache-recovery.json": "bcb3eba225402c2f3f5abffa176a8652732718d47e4c0719e1503abb1e6320fd",
+    "client-oom-trace/run.json": "24594e47f69d7c12a9b9dbb78df8bfdea3d31c7c2d4c131cdf935142479add03",
+    "client-oom-trace/oom-stack.log": "edd2d2f5e0039db7dd9093c628b67d371eae7d72c08eaebf54134aee89f3fa3c",
+    "listener-guard.json": "20f577811120da8960cc9720e7272c95a7a36a6237ad03ba81f3ab07e9c76da0",
+    "wrong-source-rejected.json": "7a095045e189fac1228b3ae85671a3eff6af6837affd2b66920635577045c01f",
     "binary-identities.json": "fe93a6af37c8ebbe2a760315679250c37ae22cf1b2bb7af128fa496378b07708",
     "server-E/session.json": "dbbac0062446cc8544af13b66fd560282ff84c5f482d639452ecab12f829d474",
     "server-F/session.json": "6a2c8a2421e2dca8d23b54742d30f90dfa737fa5d0636c575b1a43e499e4bd95"
