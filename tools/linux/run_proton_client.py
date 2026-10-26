@@ -18,13 +18,15 @@ import subprocess
 import time
 
 
-def game_pids():
+def game_pids(game=None):
     found = []
     for proc in Path('/proc').iterdir():
         if not proc.name.isdigit():
             continue
         try:
             if (proc / 'comm').read_text().strip() == 'left4dead2.exe':
+                if game and str(game/'left4dead2.exe') not in (proc/'maps').read_text():
+                    continue
                 found.append(int(proc.name))
         except (FileNotFoundError, ProcessLookupError, PermissionError):
             pass
@@ -60,6 +62,11 @@ def main():
     ap.add_argument('--connect')
     ap.add_argument('--duration', type=float, default=90)
     ap.add_argument('--netcon-port', type=int, default=27101)
+    ap.add_argument('--client-port', type=int, default=27005)
+    ap.add_argument('--host-port', type=int,
+                    help='private listen-server port; avoids occupying a dedicated server port')
+    ap.add_argument('--allow-concurrent', action='store_true',
+                    help='allow other private game roots; never adopts or stops their processes')
     ap.add_argument('--debug', action='store_true')
     a = ap.parse_args()
     a.game = a.game.resolve()
@@ -67,7 +74,7 @@ def main():
     if steam == a.game or steam in a.game.parents:
         ap.error('use a private game directory outside Steam')
     old = game_pids()
-    if old:
+    if game_pids(a.game) or (old and not a.allow_concurrent):
         ap.error(f'existing game processes: {old}')
     try:
         target_check = verify_local_target(a.connect) if a.connect else None
@@ -95,7 +102,10 @@ def main():
         env.setdefault('XAUTHORITY', auth[0])
     cmd = [str(a.proton), 'run', str(a.game/'left4dead2.exe'),
            '-steam', '-insecure', '-novid', '-windowed', '-w', '960', '-h', '540',
-           '-console', '-condebug', '-netconport', str(a.netcon_port)]
+           '-console', '-condebug', '-netconport', str(a.netcon_port),
+           '-clientport', str(a.client_port)]
+    if a.host_port is not None:
+        cmd += ['-port', str(a.host_port)]
     if a.connect:
         cfg = a.game/'left4dead2/cfg/n27_connect.cfg'
         if cfg.is_symlink():
@@ -122,7 +132,7 @@ def main():
         try:
             end = time.monotonic() + a.duration
             while time.monotonic() < end:
-                current = set(game_pids())
+                current = set(game_pids(a.game))
                 for pid in previous_pids-current:
                     meta['events'].append(dict(event='game_exited', pid=pid, time=time.time()))
                 previous_pids = current
@@ -163,7 +173,7 @@ def main():
                 time.sleep(0.1)
         finally:
             meta['ended_observation'] = time.time()
-            meta['alive_at_cleanup'] = game_pids()
+            meta['alive_at_cleanup'] = game_pids(a.game)
             if debugger and debugger.poll() is None:
                 debugger.terminate()
                 try:
