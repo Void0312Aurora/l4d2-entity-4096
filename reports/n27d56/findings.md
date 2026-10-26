@@ -6,7 +6,7 @@
 
 `c1m1_hotel` 的 sky-camera 句柄为 `0x05b4f82f`，索引 `2095`、serial `0x5b4f`。隔离复现的 GDB 断点在创建 `info_target` filler 时捕获 `CBaseEntityList::AddEntityAtSlot` 将新实体写入 #2095；当时该槽仍有非空指针和 serial `0x5b4f`，调用栈来自 `CInfoTarget::Create`，此前没有对应的 `RemoveEntityAtSlot(2095)`。另一次稳定地图观察显示同一槽有对象指针，但 engine `sv.num_edicts=1511`、`edict[2095].flags=0`，符合该对象来自非网络实体槽池，而非已分配的 engine edict。
 
-这解释了旧 core 中的 stale sky-camera handle：高索引网络实体覆盖了 camera 的实体列表槽，却没有执行 camera 的正常移除路径；`ClientData_Update` 随后遇到空的 `GetCurrentSkyCamera()`，在指针变化分支解引用空指针。故障不能归类为单纯的断线时序问题，也不能用只给 `ClientData_Update` 加空指针检查来视为修复。
+这为旧 core 中的 stale sky-camera handle 提供了直接的结构性解释：高索引网络实体覆盖了 camera 的实体列表槽，却没有执行 camera 的正常移除路径；如果之后该 filler 被释放，槽位 serial 会递增，而遗留在 sky-camera 类链表中的对象仍持有旧 handle，`ClientData_Update` 便可能遇到空的 `GetCurrentSkyCamera()` 并在指针变化分支解引用空指针。当前没有抓到 #2095 filler 的实际释放调用，因此从槽位覆盖到旧 core 崩溃的最后一步仍属强推断，不能称完整动态因果链已闭合。故障不能归类为单纯的断线时序问题，也不能用只给 `ClientData_Update` 加空指针检查来视为修复。
 
 ## 静态与运行时证据
 
@@ -26,6 +26,7 @@
   其中 `23375 == 0x5b4f`。本轮 VScript 继续完成 filler 到 4094、目标实体到 4095 的服务端创建；未连接客户端，因此本轮不是断线验收。
 - 延迟 6 秒的低索引地图观察 run `20261026-143311-26932f`（PID `296565`，port `27037`）读到 `gEntList[2095]` 非空，serial `0x5b4f`；engine edict 数为 `1511`，`edict[2095].flags=0`。这与非网络实体占用句柄槽相符。
 - 相关原始记录保存在隔离测试目录：`/home/void0312/l4d2_test/runs/d56/F-low/edict.gdb.log`、`/home/void0312/l4d2_test/runs/d56/F-low/pty.log`、`/home/void0312/l4d2_test/runs/d56/H-low/pty.log`。未把环境日志或二进制复制进仓库。
+- 一轮按类扫描删除 filler 的脚本只报告删除 1730 个实体；条件断点没有捕获 #2095 的移除。该结果不证明目标 filler 未被释放，可能受延迟删除、实体枚举或本轮未等到实际移除影响，因此仍需修复专用脚本/断点时序后补齐这段动态证据。
 
 ## 修复边界与验收状态
 
