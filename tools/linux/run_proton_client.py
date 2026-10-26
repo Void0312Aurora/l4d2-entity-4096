@@ -13,6 +13,7 @@ import os
 from pathlib import Path
 import shutil
 import signal
+import socket
 import subprocess
 import time
 
@@ -28,6 +29,24 @@ def game_pids():
         except (FileNotFoundError, ProcessLookupError, PermissionError):
             pass
     return found
+
+
+def verify_local_target(target):
+    """Fail before launching Wine if the isolated local server does not match."""
+    host, port = target.rsplit(':', 1)
+    address = socket.gethostbyname(host)
+    listeners = subprocess.check_output(['ss', '-H', '-l', '-u', '-n', '-p'], text=True)
+    matches = []
+    for line in listeners.splitlines():
+        fields = line.split()
+        if len(fields) < 5 or 'srcds_linux' not in line:
+            continue
+        bound_host, bound_port = fields[3].rsplit(':', 1)
+        if bound_port == port and bound_host in (address, '0.0.0.0', '*'):
+            matches.append(line)
+    if not matches:
+        raise ValueError(f'no local srcds listener matches {address}:{port}')
+    return dict(target=target, resolved_address=address, listeners=matches)
 
 
 def main():
@@ -50,6 +69,10 @@ def main():
     old = game_pids()
     if old:
         ap.error(f'existing game processes: {old}')
+    try:
+        target_check = verify_local_target(a.connect) if a.connect else None
+    except (OSError, ValueError) as error:
+        ap.error(str(error))
     a.out.mkdir(parents=True, exist_ok=False)
     for source, dest in [(a.client, a.game/'left4dead2/bin/client.dll'),
                          (a.engine, a.game/'bin/engine.dll')]:
@@ -80,7 +103,9 @@ def main():
         cfg.write_text(f'wait 120; connect {a.connect}\n')
         cmd += ['+exec', 'n27_connect.cfg']
     meta = dict(argv=cmd, prefix=str(a.prefix), proton_version=(a.proton.parent/'version').read_text().strip(),
-                started=time.time(), modules={}, events=[])
+                started=time.time(), modules={}, events=[], target_check=target_check,
+                graphics_environment={key: env.get(key) for key in
+                                      ['DISPLAY', 'XAUTHORITY', 'XDG_SESSION_TYPE', 'WAYLAND_DISPLAY']})
     if a.connect:
         meta['connect_config'] = cfg.read_text()
     for rel in ['left4dead2.exe', 'bin/engine.dll', 'left4dead2/bin/client.dll']:

@@ -1,14 +1,14 @@
 {
   "schema": 1,
   "binary_sha256": "18407a811c64593835907dc36395d123858aa69e73f6a651824a302c5f601a81",
-  "derivation": "IDA exact-immediate sites from all containing functions referencing gEntList (0xFBB140) or g_pEntityList (0xF201BC); AND reg,0xFFF -> 0x1FFF and SHR reg,12 -> 13. Pseudocode spot checks confirmed Source EHANDLE index and serial decoding. All entries retain exact pre-patch bytes.",
+  "derivation": "IDA exact-immediate sites from all containing functions referencing gEntList (0xFBB140) or g_pEntityList (0xF201BC); AND reg,0xFFF -> 0x1FFF and SHR reg,12 -> 13. Pseudocode spot checks confirmed Source EHANDLE index and serial decoding. All entries retain exact pre-patch bytes. D62: add 10 reviewed CGlobalEntityList instance-method handle masks missed by global-xref selection; the old FindEntityByName mask caused repeated enumeration during map-template initialization.",
   "gEntList_xrefs": 571,
   "gEntList_functions": 403,
   "g_pEntityList_xrefs": 3553,
   "g_pEntityList_functions": 1638,
-  "candidate_mask_count": 4057,
-  "candidate_shift_count": 4085,
-  "patch_count": 8174,
+  "candidate_mask_count": 4082,
+  "candidate_shift_count": 4102,
+  "patch_count": 8184,
   "patches": [
     {
       "va": 3994673,
@@ -21617,6 +21617,96 @@
       "kind": "serial_shift",
       "function": 6726768,
       "name": "_ZN12CEntityFlame14AttachToEntityEP11CBaseEntity"
+    },
+    {
+      "va": 6730332,
+      "old": "ff0f0000",
+      "new": "ff1f0000",
+      "kind": "index_mask",
+      "function": 6730304,
+      "name": "_ZN17CGlobalEntityList11OnAddEntityEP13IHandleEntity11CBaseHandle",
+      "insn": "and     eax, 0FFFh"
+    },
+    {
+      "va": 6733355,
+      "old": "ff0f0000",
+      "new": "ff1f0000",
+      "kind": "index_mask",
+      "function": 6733328,
+      "name": "_ZN17CGlobalEntityList7NextEntEP11CBaseEntity",
+      "insn": "and     eax, 0FFFh"
+    },
+    {
+      "va": 6733446,
+      "old": "ff0f0000",
+      "new": "ff1f0000",
+      "kind": "index_mask",
+      "function": 6733408,
+      "name": "_ZN17CGlobalEntityList26AddPostClientMessageEntityEP11CBaseEntity",
+      "insn": "and     edi, 0FFFh"
+    },
+    {
+      "va": 6733889,
+      "old": "ff0f0000",
+      "new": "ff1f0000",
+      "kind": "index_mask",
+      "function": 6733856,
+      "name": "_ZN17CGlobalEntityList21FindEntityByClassnameEP11CBaseEntityPKc",
+      "insn": "and     eax, 0FFFh"
+    },
+    {
+      "va": 6735345,
+      "old": "ff0f0000",
+      "new": "ff1f0000",
+      "kind": "index_mask",
+      "function": 6735264,
+      "name": "_ZN17CGlobalEntityList16FindEntityByNameEP11CBaseEntityPKcS1_S1_S1_P17IEntityFindFilter",
+      "insn": "and     eax, 0FFFh"
+    },
+    {
+      "va": 6735577,
+      "old": "ff0f0000",
+      "new": "ff1f0000",
+      "kind": "index_mask",
+      "function": 6735536,
+      "name": "_ZN17CGlobalEntityList20FindEntityByNameFastEP11CBaseEntity8string_t",
+      "insn": "and     eax, 0FFFh"
+    },
+    {
+      "va": 6735714,
+      "old": "ff0f0000",
+      "new": "ff1f0000",
+      "kind": "index_mask",
+      "function": 6735680,
+      "name": "_ZN17CGlobalEntityList17FindEntityByModelEP11CBaseEntityPKc",
+      "insn": "and     eax, 0FFFh"
+    },
+    {
+      "va": 6735953,
+      "old": "ff0f0000",
+      "new": "ff1f0000",
+      "kind": "index_mask",
+      "function": 6735920,
+      "name": "_ZN17CGlobalEntityList18FindEntityByTargetEP11CBaseEntityPKc",
+      "insn": "and     eax, 0FFFh"
+    },
+    {
+      "va": 6736114,
+      "old": "ff0f0000",
+      "new": "ff1f0000",
+      "kind": "index_mask",
+      "function": 6736080,
+      "name": "_ZN17CGlobalEntityList24FindEntityByOutputTargetEP11CBaseEntity8string_t",
+      "insn": "and     eax, 0FFFh"
+    },
+    {
+      "va": 6736370,
+      "old": "ff0f0000",
+      "new": "ff1f0000",
+      "kind": "index_mask",
+      "function": 6736336,
+      "name": "_ZN17CGlobalEntityList18FindEntityInSphereEP11CBaseEntityRK6Vectorf",
+      "insn": "and     eax, 0FFFh"
     },
     {
       "va": 6742931,

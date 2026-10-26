@@ -107,6 +107,7 @@ def main():
         (0x670862, "ff070000", "ff0f0000", "GetIServerEntity network bound"),
         (0x67087F, "0c", "0d", "GetIServerEntity serial pack"),
         (0x67088A, "00f03f00", "00e07f00", "GetIServerEntity serial compare"),
+        (0xB1B0BB, "ff070000", "ff0f0000", "UTIL_EntityByIndex network boundary"),
         (0x4B0452, "0c", "0d", "SoundCreate handle serial pack 1"),
         (0x4B05DC, "0c", "0d", "SoundCreate handle serial pack 2"),
         (0x4B078C, "0c", "0d", "SoundCreate handle serial pack 3"),

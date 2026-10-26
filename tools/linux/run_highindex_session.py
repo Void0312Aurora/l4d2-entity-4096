@@ -16,6 +16,7 @@ LD = f"{BIN}:{ROOT}:{ROOT/'left4dead2'/'bin'}"
 ap = argparse.ArgumentParser()
 ap.add_argument("--port", default="27021")
 ap.add_argument("--ip", default=None, help="explicit local address for the isolated server")
+ap.add_argument("--no-watchdog", action="store_true", help="disable frame watchdog during debugger tracing")
 ap.add_argument("--script", default="d50_session")
 ap.add_argument("--no-script", action="store_true", help="keep a normal low-index map for a control run")
 ap.add_argument("--timeout", type=float, default=180)
@@ -43,6 +44,7 @@ master, slave = pty.openpty()
 env = dict(os.environ, LD_LIBRARY_PATH=LD)
 proc = subprocess.Popen(
     ["./srcds_linux", "-game", "left4dead2", "-insecure", "-console",
+     *(["-nowatchdog"] if a.no_watchdog else []),
      "-port", a.port, *(["-ip", a.ip] if a.ip else []),
      "+servercfgfile", "n27_lab.cfg", "+map", "c1m1_hotel"],
     cwd=str(ROOT), stdin=slave, stdout=slave, stderr=slave,
@@ -50,6 +52,7 @@ proc = subprocess.Popen(
 os.close(slave)
 buf = bytearray()
 sent = False
+status_requested = False
 state = {"begin": False, "target": None, "alive": None, "done": False, "ready": False}
 deadline = time.time() + a.timeout
 rc = 2
@@ -164,7 +167,12 @@ try:
             if not chunk: break
             buf += chunk
             text = buf.decode("utf-8", "replace")
-            if not sent and "Initializing Director's script" in text:
+            if not status_requested and "Initializing Director's script" in text:
+                # The first Director message can occur during map precache.
+                # Only the processed console reply proves the frame loop is ready.
+                os.write(master, b"status\n")
+                status_requested = True
+            if not sent and status_requested and re.search(r"hostname\s*:", text):
                 state["ready"] = True
                 if a.no_script:
                     rc = 0

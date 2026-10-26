@@ -1,8 +1,8 @@
 {
   "schema": 1,
   "binary_sha256": "18407a811c64593835907dc36395d123858aa69e73f6a651824a302c5f601a81",
-  "derivation": "IDA disassembly of CBaseEntityList/CGlobalEntityList methods plus gEntList-referencing functions; all object field offsets at or after old array end 0x10004 are shifted by 0x10000 for the expanded slot array.",
-  "patch_count": 42,
+  "derivation": "IDA disassembly of CBaseEntityList/CGlobalEntityList methods plus gEntList-referencing functions; all object field offsets at or after old array end 0x10004 are shifted by 0x10000 for the expanded slot array. D62: decode operand displacements directly, including IDA structure-formatted operands missed by the original text matcher; add 20 reviewed offsets in the same entity-list methods.",
+  "patch_count": 62,
   "patches": [
     {
       "va": 4432892,
@@ -15,6 +15,16 @@
       "member_offset": "0x10004"
     },
     {
+      "va": 4432902,
+      "old": "08000100",
+      "new": "08000200",
+      "kind": "member_offset",
+      "function": 4432864,
+      "name": "_ZN15CBaseEntityListC1Ev",
+      "insn": "mov     dword ptr ds:stru_10008.r_offset[esi], 0",
+      "member_offset": "0x10008"
+    },
+    {
       "va": 4432912,
       "old": "0c000100",
       "new": "0c000200",
@@ -23,6 +33,16 @@
       "name": "_ZN15CBaseEntityListC1Ev",
       "insn": "mov     dword ptr [esi+1000Ch], 0",
       "member_offset": "0x1000c"
+    },
+    {
+      "va": 4432922,
+      "old": "10000100",
+      "new": "10000200",
+      "kind": "member_offset",
+      "function": 4432864,
+      "name": "_ZN15CBaseEntityListC1Ev",
+      "insn": "mov     dword ptr ds:stru_10010.r_offset[esi], 0",
+      "member_offset": "0x10010"
     },
     {
       "va": 4432972,
@@ -65,6 +85,16 @@
       "member_offset": "0x1000c"
     },
     {
+      "va": 4433397,
+      "old": "10000100",
+      "new": "10000200",
+      "kind": "member_offset",
+      "function": 4433248,
+      "name": "_ZN15CBaseEntityList23AddNonNetworkableEntityEP13IHandleEntity",
+      "insn": "mov     dword ptr ds:stru_10010.r_offset[ecx], eax",
+      "member_offset": "0x10010"
+    },
+    {
       "va": 4433618,
       "old": "0c000100",
       "new": "0c000200",
@@ -73,6 +103,16 @@
       "name": "_ZN15CBaseEntityList18RemoveEntityAtSlotEi",
       "insn": "add     esi, 1000Ch",
       "member_offset": "0x1000c"
+    },
+    {
+      "va": 4433661,
+      "old": "08000100",
+      "new": "08000200",
+      "kind": "member_offset",
+      "function": 4433440,
+      "name": "_ZN15CBaseEntityList18RemoveEntityAtSlotEi",
+      "insn": "mov     dword ptr ds:stru_10008.r_offset[esi], eax",
+      "member_offset": "0x10008"
     },
     {
       "va": 4433677,
@@ -93,6 +133,16 @@
       "name": "_ZN15CBaseEntityListD1Ev",
       "insn": "mov     eax, [ebx+10004h]",
       "member_offset": "0x10004"
+    },
+    {
+      "va": 6730326,
+      "old": "18000100",
+      "new": "18000200",
+      "kind": "member_offset",
+      "function": 6730304,
+      "name": "_ZN17CGlobalEntityList11OnAddEntityEP13IHandleEntity11CBaseHandle",
+      "insn": "add     dword ptr ds:stru_10018.r_offset[edi], 1",
+      "member_offset": "0x10018"
     },
     {
       "va": 6730338,
@@ -125,6 +175,16 @@
       "member_offset": "0x1001c"
     },
     {
+      "va": 6730377,
+      "old": "30000100",
+      "new": "30000200",
+      "kind": "member_offset",
+      "function": 6730304,
+      "name": "_ZN17CGlobalEntityList11OnAddEntityEP13IHandleEntity11CBaseHandle",
+      "insn": "mov     eax, dword ptr ds:stru_10030.r_offset[edi]",
+      "member_offset": "0x10030"
+    },
+    {
       "va": 6730402,
       "old": "24000100",
       "new": "24000200",
@@ -145,6 +205,16 @@
       "member_offset": "0x1001c"
     },
     {
+      "va": 6730485,
+      "old": "18000100",
+      "new": "18000200",
+      "kind": "member_offset",
+      "function": 6730448,
+      "name": "_ZN17CGlobalEntityList14OnRemoveEntityEP13IHandleEntity11CBaseHandle",
+      "insn": "sub     dword ptr ds:stru_10018.r_offset[ebx], 1",
+      "member_offset": "0x10018"
+    },
+    {
       "va": 6732314,
       "old": "24000100",
       "new": "24000200",
@@ -155,6 +225,16 @@
       "member_offset": "0x10024"
     },
     {
+      "va": 6732324,
+      "old": "28000100",
+      "new": "28000200",
+      "kind": "member_offset",
+      "function": 6732288,
+      "name": "_ZN17CGlobalEntityListC1Ev",
+      "insn": "mov     dword ptr ds:stru_10028.r_offset[ebx], 0",
+      "member_offset": "0x10028"
+    },
+    {
       "va": 6732334,
       "old": "2c000100",
       "new": "2c000200",
@@ -163,6 +243,16 @@
       "name": "_ZN17CGlobalEntityListC1Ev",
       "insn": "mov     dword ptr [ebx+1002Ch], 0",
       "member_offset": "0x1002c"
+    },
+    {
+      "va": 6732344,
+      "old": "30000100",
+      "new": "30000200",
+      "kind": "member_offset",
+      "function": 6732288,
+      "name": "_ZN17CGlobalEntityListC1Ev",
+      "insn": "mov     dword ptr ds:stru_10030.r_offset[ebx], 0",
+      "member_offset": "0x10030"
     },
     {
       "va": 6732354,
@@ -185,6 +275,16 @@
       "member_offset": "0x1001c"
     },
     {
+      "va": 6732374,
+      "old": "18000100",
+      "new": "18000200",
+      "kind": "member_offset",
+      "function": 6732288,
+      "name": "_ZN17CGlobalEntityListC1Ev",
+      "insn": "mov     dword ptr ds:stru_10018.r_offset[ebx], 0",
+      "member_offset": "0x10018"
+    },
+    {
       "va": 6732384,
       "old": "14000100",
       "new": "14000200",
@@ -193,6 +293,26 @@
       "name": "_ZN17CGlobalEntityListC1Ev",
       "insn": "mov     dword ptr [ebx+10014h], 0",
       "member_offset": "0x10014"
+    },
+    {
+      "va": 6732394,
+      "old": "20000100",
+      "new": "20000200",
+      "kind": "member_offset",
+      "function": 6732288,
+      "name": "_ZN17CGlobalEntityListC1Ev",
+      "insn": "mov     byte ptr ds:stru_10020.r_offset[ebx], 0",
+      "member_offset": "0x10020"
+    },
+    {
+      "va": 6733305,
+      "old": "18000100",
+      "new": "18000200",
+      "kind": "member_offset",
+      "function": 6733296,
+      "name": "_ZN17CGlobalEntityList16NumberOfEntitiesEv",
+      "insn": "mov     eax, dword ptr ds:stru_10018.r_offset[eax]",
+      "member_offset": "0x10018"
     },
     {
       "va": 6733321,
@@ -315,6 +435,16 @@
       "member_offset": "0x10004"
     },
     {
+      "va": 6739749,
+      "old": "30000100",
+      "new": "30000200",
+      "kind": "member_offset",
+      "function": 6739728,
+      "name": "_ZN17CGlobalEntityList11NotifySpawnEP11CBaseEntity",
+      "insn": "mov     ebx, dword ptr ds:stru_10030.r_offset[edi]",
+      "member_offset": "0x10030"
+    },
+    {
       "va": 6739770,
       "old": "24000100",
       "new": "24000200",
@@ -323,6 +453,16 @@
       "name": "_ZN17CGlobalEntityList11NotifySpawnEP11CBaseEntity",
       "insn": "mov     eax, [edi+10024h]",
       "member_offset": "0x10024"
+    },
+    {
+      "va": 6739849,
+      "old": "30000100",
+      "new": "30000200",
+      "kind": "member_offset",
+      "function": 6739824,
+      "name": "_ZN17CGlobalEntityList18NotifyRemoveEntityEP11CBaseEntity",
+      "insn": "mov     eax, dword ptr ds:stru_10030.r_offset[edi]",
+      "member_offset": "0x10030"
     },
     {
       "va": 6739874,
@@ -343,6 +483,16 @@
       "name": "_ZN17CGlobalEntityList20RemoveListenerEntityEP15IEntityListener",
       "insn": "add     eax, 10024h",
       "member_offset": "0x10024"
+    },
+    {
+      "va": 6740989,
+      "old": "30000100",
+      "new": "30000200",
+      "kind": "member_offset",
+      "function": 6740976,
+      "name": "_ZN17CGlobalEntityList17AddListenerEntityEP15IEntityListener",
+      "insn": "mov     edx, dword ptr ds:stru_10030.r_offset[esi]",
+      "member_offset": "0x10030"
     },
     {
       "va": 6740999,
@@ -375,6 +525,16 @@
       "member_offset": "0x10004"
     },
     {
+      "va": 6741140,
+      "old": "20000100",
+      "new": "20000200",
+      "kind": "member_offset",
+      "function": 6741120,
+      "name": "_ZN17CGlobalEntityList5ClearEv",
+      "insn": "mov     byte ptr ds:stru_10020.r_offset[esi], 1",
+      "member_offset": "0x10020"
+    },
+    {
       "va": 6741375,
       "old": "14000100",
       "new": "14000200",
@@ -383,6 +543,36 @@
       "name": "_ZN17CGlobalEntityList5ClearEv",
       "insn": "mov     dword ptr [esi+10014h], 0",
       "member_offset": "0x10014"
+    },
+    {
+      "va": 6741385,
+      "old": "18000100",
+      "new": "18000200",
+      "kind": "member_offset",
+      "function": 6741120,
+      "name": "_ZN17CGlobalEntityList5ClearEv",
+      "insn": "mov     dword ptr ds:stru_10018.r_offset[esi], 0",
+      "member_offset": "0x10018"
+    },
+    {
+      "va": 6741395,
+      "old": "20000100",
+      "new": "20000200",
+      "kind": "member_offset",
+      "function": 6741120,
+      "name": "_ZN17CGlobalEntityList5ClearEv",
+      "insn": "mov     byte ptr ds:stru_10020.r_offset[esi], 0",
+      "member_offset": "0x10020"
+    },
+    {
+      "va": 6744096,
+      "old": "30000100",
+      "new": "30000200",
+      "kind": "member_offset",
+      "function": 6743792,
+      "name": "_ZN17CGlobalEntityList18NotifyCreateEntityEP11CBaseEntity",
+      "insn": "mov     eax, dword ptr ds:stru_10030.r_offset[esi]",
+      "member_offset": "0x10030"
     },
     {
       "va": 6744122,
@@ -403,6 +593,16 @@
       "name": "_ZN17CGlobalEntityListD2Ev",
       "insn": "lea     esi, [ebx+10024h]",
       "member_offset": "0x10024"
+    },
+    {
+      "va": 6748009,
+      "old": "30000100",
+      "new": "30000200",
+      "kind": "member_offset",
+      "function": 6747984,
+      "name": "_ZN17CGlobalEntityListD2Ev",
+      "insn": "mov     dword ptr ds:stru_10030.r_offset[ebx], 0",
+      "member_offset": "0x10030"
     },
     {
       "va": 6748027,
