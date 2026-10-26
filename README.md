@@ -34,6 +34,14 @@ Proton 测试中与扩容服务端达到 `active`，并在客户端槽位中实�
 sky-camera 故障仍未解决。详见 [reports/n27d48/findings.md](reports/n27d48/findings.md)、[reports/n27d49/findings.md](reports/n27d49/findings.md)、
 [reports/network-n1.md](reports/network-n1.md) 与 [reports/network-n2.md](reports/network-n2.md)。
 
+N27-D56 后续分析发现，高索引网络实体会覆盖 `CBaseEntityList` 原本用于非网络实体的
+`2049..4095` 槽位；旧 core 中的 sky-camera 句柄与槽位 serial 也吻合这一覆盖路径。D61
+增加了一个**实验性 Linux 服务端候选构建器**，把网络槽和非网络槽分区，并扩宽对应句柄
+访问。静态字节校验及隔离服务端启动通过，但客户端本轮停在网络初始化前，未能进入游戏；
+因而 D61 不证明断线安全、根因修复或重连成功。详见
+[reports/n27d56/findings.md](reports/n27d56/findings.md) 与
+[reports/n27d61/findings.md](reports/n27d61/findings.md)。
+
 ## 目录
 
 ```
@@ -60,7 +68,8 @@ tools/        可复现的生成器与校验器
 data/         原始扫描结果（CSV）
   network_fields.csv    N1/N2 字段图（VA / 偏移 / 位宽 / 语义状态）
   network_boundary.csv  N1/N2 边界矩阵（0/1024/2046…4096/8191/8192）
-reports/      分析报告（第 1–49 轮完整记录）、N1 网络报告、N2 更正与预检输出
+  linux/                Linux 服务端实体表句柄扩宽候选点与成员偏移
+reports/      分析报告（含 D56/D61 实体表与断线调查）、N1 网络报告、N2 更正与预检输出
 out/          生成的 DLL（不纳入版本控制）
 archive/      已废弃的脚本（不纳入版本控制）
 ```

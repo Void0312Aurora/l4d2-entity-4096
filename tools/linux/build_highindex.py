@@ -25,7 +25,8 @@ def main():
     run('patch_snapshot_stack.py', a.out/'wire.so', a.out/'snapshot.so')
     run('patch_transmit_limits.py', 'engine', a.out/'snapshot.so', a.out/'transmit.so')
     run('patch_snapshot_cache.py', a.out/'transmit.so', a.out/'engine_srv.so')
-    run('patch_transmit_limits.py', 'server', a.server, a.out/'server_srv.so')
+    run('patch_transmit_limits.py', 'server', a.server, a.out/'server_transmit.so')
+    run('patch_entitylist_linux.py', a.out/'server_transmit.so', a.out/'server_srv.so')
     identities = {p.name: hashlib.sha256(p.read_bytes()).hexdigest()
                   for p in sorted(a.out.glob('*.so'))}
     (a.out/'sha256.json').write_text(json.dumps(identities, indent=2)+'\n')

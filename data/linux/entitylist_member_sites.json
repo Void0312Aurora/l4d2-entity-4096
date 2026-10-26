@@ -1,0 +1,428 @@
+{
+  "schema": 1,
+  "binary_sha256": "18407a811c64593835907dc36395d123858aa69e73f6a651824a302c5f601a81",
+  "derivation": "IDA disassembly of CBaseEntityList/CGlobalEntityList methods plus gEntList-referencing functions; all object field offsets at or after old array end 0x10004 are shifted by 0x10000 for the expanded slot array.",
+  "patch_count": 42,
+  "patches": [
+    {
+      "va": 4432892,
+      "old": "04000100",
+      "new": "04000200",
+      "kind": "member_offset",
+      "function": 4432864,
+      "name": "_ZN15CBaseEntityListC1Ev",
+      "insn": "mov     dword ptr [esi+10004h], 0",
+      "member_offset": "0x10004"
+    },
+    {
+      "va": 4432912,
+      "old": "0c000100",
+      "new": "0c000200",
+      "kind": "member_offset",
+      "function": 4432864,
+      "name": "_ZN15CBaseEntityListC1Ev",
+      "insn": "mov     dword ptr [esi+1000Ch], 0",
+      "member_offset": "0x1000c"
+    },
+    {
+      "va": 4432972,
+      "old": "0c000100",
+      "new": "0c000200",
+      "kind": "member_offset",
+      "function": 4432864,
+      "name": "_ZN15CBaseEntityListC1Ev",
+      "insn": "lea     edi, [esi+1000Ch]",
+      "member_offset": "0x1000c"
+    },
+    {
+      "va": 4433085,
+      "old": "04000100",
+      "new": "04000200",
+      "kind": "member_offset",
+      "function": 4433040,
+      "name": "_ZN15CBaseEntityList15AddEntityAtSlotEP13IHandleEntityii",
+      "insn": "lea     edx, [esi+10004h]",
+      "member_offset": "0x10004"
+    },
+    {
+      "va": 4433264,
+      "old": "0c000100",
+      "new": "0c000200",
+      "kind": "member_offset",
+      "function": 4433248,
+      "name": "_ZN15CBaseEntityList23AddNonNetworkableEntityEP13IHandleEntity",
+      "insn": "mov     edx, [ecx+1000Ch]",
+      "member_offset": "0x1000c"
+    },
+    {
+      "va": 4433373,
+      "old": "0c000100",
+      "new": "0c000200",
+      "kind": "member_offset",
+      "function": 4433248,
+      "name": "_ZN15CBaseEntityList23AddNonNetworkableEntityEP13IHandleEntity",
+      "insn": "mov     [ecx+1000Ch], eax",
+      "member_offset": "0x1000c"
+    },
+    {
+      "va": 4433618,
+      "old": "0c000100",
+      "new": "0c000200",
+      "kind": "member_offset",
+      "function": 4433440,
+      "name": "_ZN15CBaseEntityList18RemoveEntityAtSlotEi",
+      "insn": "add     esi, 1000Ch",
+      "member_offset": "0x1000c"
+    },
+    {
+      "va": 4433677,
+      "old": "04000100",
+      "new": "04000200",
+      "kind": "member_offset",
+      "function": 4433440,
+      "name": "_ZN15CBaseEntityList18RemoveEntityAtSlotEi",
+      "insn": "mov     [esi+10004h], eax",
+      "member_offset": "0x10004"
+    },
+    {
+      "va": 4433710,
+      "old": "04000100",
+      "new": "04000200",
+      "kind": "member_offset",
+      "function": 4433696,
+      "name": "_ZN15CBaseEntityListD1Ev",
+      "insn": "mov     eax, [ebx+10004h]",
+      "member_offset": "0x10004"
+    },
+    {
+      "va": 6730338,
+      "old": "14000100",
+      "new": "14000200",
+      "kind": "member_offset",
+      "function": 6730304,
+      "name": "_ZN17CGlobalEntityList11OnAddEntityEP13IHandleEntity11CBaseHandle",
+      "insn": "cmp     [edi+10014h], eax",
+      "member_offset": "0x10014"
+    },
+    {
+      "va": 6730346,
+      "old": "14000100",
+      "new": "14000200",
+      "kind": "member_offset",
+      "function": 6730304,
+      "name": "_ZN17CGlobalEntityList11OnAddEntityEP13IHandleEntity11CBaseHandle",
+      "insn": "mov     [edi+10014h], eax",
+      "member_offset": "0x10014"
+    },
+    {
+      "va": 6730370,
+      "old": "1c000100",
+      "new": "1c000200",
+      "kind": "member_offset",
+      "function": 6730304,
+      "name": "_ZN17CGlobalEntityList11OnAddEntityEP13IHandleEntity11CBaseHandle",
+      "insn": "add     dword ptr [edi+1001Ch], 1",
+      "member_offset": "0x1001c"
+    },
+    {
+      "va": 6730402,
+      "old": "24000100",
+      "new": "24000200",
+      "kind": "member_offset",
+      "function": 6730304,
+      "name": "_ZN17CGlobalEntityList11OnAddEntityEP13IHandleEntity11CBaseHandle",
+      "insn": "mov     eax, [edi+10024h]",
+      "member_offset": "0x10024"
+    },
+    {
+      "va": 6730478,
+      "old": "1c000100",
+      "new": "1c000200",
+      "kind": "member_offset",
+      "function": 6730448,
+      "name": "_ZN17CGlobalEntityList14OnRemoveEntityEP13IHandleEntity11CBaseHandle",
+      "insn": "sub     dword ptr [ebx+1001Ch], 1",
+      "member_offset": "0x1001c"
+    },
+    {
+      "va": 6732314,
+      "old": "24000100",
+      "new": "24000200",
+      "kind": "member_offset",
+      "function": 6732288,
+      "name": "_ZN17CGlobalEntityListC1Ev",
+      "insn": "mov     dword ptr [ebx+10024h], 0",
+      "member_offset": "0x10024"
+    },
+    {
+      "va": 6732334,
+      "old": "2c000100",
+      "new": "2c000200",
+      "kind": "member_offset",
+      "function": 6732288,
+      "name": "_ZN17CGlobalEntityListC1Ev",
+      "insn": "mov     dword ptr [ebx+1002Ch], 0",
+      "member_offset": "0x1002c"
+    },
+    {
+      "va": 6732354,
+      "old": "34000100",
+      "new": "34000200",
+      "kind": "member_offset",
+      "function": 6732288,
+      "name": "_ZN17CGlobalEntityListC1Ev",
+      "insn": "mov     dword ptr [ebx+10034h], 0",
+      "member_offset": "0x10034"
+    },
+    {
+      "va": 6732364,
+      "old": "1c000100",
+      "new": "1c000200",
+      "kind": "member_offset",
+      "function": 6732288,
+      "name": "_ZN17CGlobalEntityListC1Ev",
+      "insn": "mov     dword ptr [ebx+1001Ch], 0",
+      "member_offset": "0x1001c"
+    },
+    {
+      "va": 6732384,
+      "old": "14000100",
+      "new": "14000200",
+      "kind": "member_offset",
+      "function": 6732288,
+      "name": "_ZN17CGlobalEntityListC1Ev",
+      "insn": "mov     dword ptr [ebx+10014h], 0",
+      "member_offset": "0x10014"
+    },
+    {
+      "va": 6733321,
+      "old": "1c000100",
+      "new": "1c000200",
+      "kind": "member_offset",
+      "function": 6733312,
+      "name": "_ZN17CGlobalEntityList14NumberOfEdictsEv",
+      "insn": "mov     eax, [eax+1001Ch]",
+      "member_offset": "0x1001c"
+    },
+    {
+      "va": 6733389,
+      "old": "04000100",
+      "new": "04000200",
+      "kind": "member_offset",
+      "function": 6733328,
+      "name": "_ZN17CGlobalEntityList7NextEntEP11CBaseEntity",
+      "insn": "mov     eax, [eax+10004h]",
+      "member_offset": "0x10004"
+    },
+    {
+      "va": 6733807,
+      "old": "04000100",
+      "new": "04000200",
+      "kind": "member_offset",
+      "function": 6733792,
+      "name": "_ZN17CGlobalEntityList11IsEntityPtrEPv",
+      "insn": "mov     eax, [eax+10004h]",
+      "member_offset": "0x10004"
+    },
+    {
+      "va": 6733989,
+      "old": "04000100",
+      "new": "04000200",
+      "kind": "member_offset",
+      "function": 6733856,
+      "name": "_ZN17CGlobalEntityList21FindEntityByClassnameEP11CBaseEntityPKc",
+      "insn": "mov     ebx, [eax+10004h]",
+      "member_offset": "0x10004"
+    },
+    {
+      "va": 6735522,
+      "old": "04000100",
+      "new": "04000200",
+      "kind": "member_offset",
+      "function": 6735264,
+      "name": "_ZN17CGlobalEntityList16FindEntityByNameEP11CBaseEntityPKcS1_S1_S1_P17IEntityFindFilter",
+      "insn": "mov     edi, [edi+10004h]",
+      "member_offset": "0x10004"
+    },
+    {
+      "va": 6735669,
+      "old": "04000100",
+      "new": "04000200",
+      "kind": "member_offset",
+      "function": 6735536,
+      "name": "_ZN17CGlobalEntityList20FindEntityByNameFastEP11CBaseEntity8string_t",
+      "insn": "mov     ebx, [eax+10004h]",
+      "member_offset": "0x10004"
+    },
+    {
+      "va": 6735898,
+      "old": "04000100",
+      "new": "04000200",
+      "kind": "member_offset",
+      "function": 6735680,
+      "name": "_ZN17CGlobalEntityList17FindEntityByModelEP11CBaseEntityPKc",
+      "insn": "mov     esi, [ebx+10004h]",
+      "member_offset": "0x10004"
+    },
+    {
+      "va": 6736061,
+      "old": "04000100",
+      "new": "04000200",
+      "kind": "member_offset",
+      "function": 6735920,
+      "name": "_ZN17CGlobalEntityList18FindEntityByTargetEP11CBaseEntityPKc",
+      "insn": "mov     ebx, [eax+10004h]",
+      "member_offset": "0x10004"
+    },
+    {
+      "va": 6736292,
+      "old": "04000100",
+      "new": "04000200",
+      "kind": "member_offset",
+      "function": 6736080,
+      "name": "_ZN17CGlobalEntityList24FindEntityByOutputTargetEP11CBaseEntity8string_t",
+      "insn": "mov     eax, [ebx+10004h]",
+      "member_offset": "0x10004"
+    },
+    {
+      "va": 6736738,
+      "old": "04000100",
+      "new": "04000200",
+      "kind": "member_offset",
+      "function": 6736336,
+      "name": "_ZN17CGlobalEntityList18FindEntityInSphereEP11CBaseEntityRK6Vectorf",
+      "insn": "mov     edi, [ebx+10004h]",
+      "member_offset": "0x10004"
+    },
+    {
+      "va": 6738984,
+      "old": "04000100",
+      "new": "04000200",
+      "kind": "member_offset",
+      "function": 6738960,
+      "name": "_ZN17CGlobalEntityList28FindEntityClassNearestFacingERK6VectorS2_fPc",
+      "insn": "mov     edi, [eax+10004h]",
+      "member_offset": "0x10004"
+    },
+    {
+      "va": 6739381,
+      "old": "04000100",
+      "new": "04000200",
+      "kind": "member_offset",
+      "function": 6739360,
+      "name": "_ZN17CGlobalEntityList23FindEntityNearestFacingERK6VectorS2_f",
+      "insn": "mov     edi, [eax+10004h]",
+      "member_offset": "0x10004"
+    },
+    {
+      "va": 6739770,
+      "old": "24000100",
+      "new": "24000200",
+      "kind": "member_offset",
+      "function": 6739728,
+      "name": "_ZN17CGlobalEntityList11NotifySpawnEP11CBaseEntity",
+      "insn": "mov     eax, [edi+10024h]",
+      "member_offset": "0x10024"
+    },
+    {
+      "va": 6739874,
+      "old": "24000100",
+      "new": "24000200",
+      "kind": "member_offset",
+      "function": 6739824,
+      "name": "_ZN17CGlobalEntityList18NotifyRemoveEntityEP11CBaseEntity",
+      "insn": "mov     eax, [edi+10024h]",
+      "member_offset": "0x10024"
+    },
+    {
+      "va": 6740737,
+      "old": "24000100",
+      "new": "24000200",
+      "kind": "member_offset",
+      "function": 6740720,
+      "name": "_ZN17CGlobalEntityList20RemoveListenerEntityEP15IEntityListener",
+      "insn": "add     eax, 10024h",
+      "member_offset": "0x10024"
+    },
+    {
+      "va": 6740999,
+      "old": "24000100",
+      "new": "24000200",
+      "kind": "member_offset",
+      "function": 6740976,
+      "name": "_ZN17CGlobalEntityList17AddListenerEntityEP15IEntityListener",
+      "insn": "mov     ecx, [esi+10024h]",
+      "member_offset": "0x10024"
+    },
+    {
+      "va": 6741041,
+      "old": "24000100",
+      "new": "24000200",
+      "kind": "member_offset",
+      "function": 6740976,
+      "name": "_ZN17CGlobalEntityList17AddListenerEntityEP15IEntityListener",
+      "insn": "add     esi, 10024h",
+      "member_offset": "0x10024"
+    },
+    {
+      "va": 6741134,
+      "old": "04000100",
+      "new": "04000200",
+      "kind": "member_offset",
+      "function": 6741120,
+      "name": "_ZN17CGlobalEntityList5ClearEv",
+      "insn": "mov     edx, [esi+10004h]",
+      "member_offset": "0x10004"
+    },
+    {
+      "va": 6741375,
+      "old": "14000100",
+      "new": "14000200",
+      "kind": "member_offset",
+      "function": 6741120,
+      "name": "_ZN17CGlobalEntityList5ClearEv",
+      "insn": "mov     dword ptr [esi+10014h], 0",
+      "member_offset": "0x10014"
+    },
+    {
+      "va": 6744122,
+      "old": "24000100",
+      "new": "24000200",
+      "kind": "member_offset",
+      "function": 6743792,
+      "name": "_ZN17CGlobalEntityList18NotifyCreateEntityEP11CBaseEntity",
+      "insn": "mov     eax, [esi+10024h]",
+      "member_offset": "0x10024"
+    },
+    {
+      "va": 6747997,
+      "old": "24000100",
+      "new": "24000200",
+      "kind": "member_offset",
+      "function": 6747984,
+      "name": "_ZN17CGlobalEntityListD2Ev",
+      "insn": "lea     esi, [ebx+10024h]",
+      "member_offset": "0x10024"
+    },
+    {
+      "va": 6748027,
+      "old": "24000100",
+      "new": "24000200",
+      "kind": "member_offset",
+      "function": 6747984,
+      "name": "_ZN17CGlobalEntityListD2Ev",
+      "insn": "mov     eax, [ebx+10024h]",
+      "member_offset": "0x10024"
+    },
+    {
+      "va": 6748033,
+      "old": "34000100",
+      "new": "34000200",
+      "kind": "member_offset",
+      "function": 6747984,
+      "name": "_ZN17CGlobalEntityListD2Ev",
+      "insn": "mov     [ebx+10034h], eax",
+      "member_offset": "0x10034"
+    }
+  ]
+}
