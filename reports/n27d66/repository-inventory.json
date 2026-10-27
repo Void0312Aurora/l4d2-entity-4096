@@ -1,7 +1,7 @@
 {
   "schema": "l4d2-d66-repository-inventory-v1",
   "counts": {
-    "ACTIVE": 51,
+    "ACTIVE": 54,
     "DEPRECATED": 1,
     "GENERATED": 9,
     "HISTORICAL": 201,
@@ -42,7 +42,9 @@
       "path": "data/handle_ops.csv",
       "category": "HISTORICAL",
       "reason": "immutable experiment record or data; current status is resolved by the research index",
-      "referenced_by": []
+      "referenced_by": [
+        "docs/research-index.md"
+      ]
     },
     {
       "path": "data/linux/clientframe_fields.csv",
@@ -82,6 +84,7 @@
       "category": "HISTORICAL",
       "reason": "immutable experiment record or data; current status is resolved by the research index",
       "referenced_by": [
+        "docs/patch-map.md",
         "reports/network-n25.md",
         "reports/network-n26.md"
       ]
@@ -607,6 +610,8 @@
       "category": "HISTORICAL",
       "reason": "immutable experiment record or data; current status is resolved by the research index",
       "referenced_by": [
+        "docs/patch-map.md",
+        "docs/research-index.md",
         "reports/network-n1.md"
       ]
     },
@@ -676,7 +681,8 @@
       "referenced_by": [
         "README.md",
         "README.zh-CN.md",
-        "docs/research-index.md"
+        "docs/research-index.md",
+        "docs/technical-report.md"
       ]
     },
     {
@@ -768,6 +774,18 @@
       ]
     },
     {
+      "path": "docs/evidence-and-reproduction.md",
+      "category": "ACTIVE",
+      "reason": "public entry point or release documentation",
+      "referenced_by": [
+        "README.md",
+        "README.zh-CN.md",
+        "docs/architecture.md",
+        "docs/research-index.md",
+        "docs/technical-report.md"
+      ]
+    },
+    {
       "path": "docs/installation.md",
       "category": "ACTIVE",
       "reason": "public entry point or release documentation",
@@ -786,12 +804,36 @@
       ]
     },
     {
+      "path": "docs/patch-map.md",
+      "category": "ACTIVE",
+      "reason": "public entry point or release documentation",
+      "referenced_by": [
+        "README.md",
+        "README.zh-CN.md",
+        "docs/architecture.md",
+        "docs/research-index.md",
+        "docs/technical-report.md"
+      ]
+    },
+    {
       "path": "docs/research-index.md",
       "category": "ACTIVE",
       "reason": "public entry point or release documentation",
       "referenced_by": [
         "README.md",
-        "README.zh-CN.md"
+        "README.zh-CN.md",
+        "docs/technical-report.md"
+      ]
+    },
+    {
+      "path": "docs/technical-report.md",
+      "category": "ACTIVE",
+      "reason": "public entry point or release documentation",
+      "referenced_by": [
+        "README.md",
+        "README.zh-CN.md",
+        "docs/architecture.md",
+        "docs/research-index.md"
       ]
     },
     {
@@ -809,7 +851,8 @@
       "reason": "public entry point or release documentation",
       "referenced_by": [
         "README.md",
-        "README.zh-CN.md"
+        "README.zh-CN.md",
+        "docs/research-index.md"
       ]
     },
     {
@@ -825,6 +868,7 @@
       "category": "REFERENCE",
       "reason": "active lower-level analysis or evidence input",
       "referenced_by": [
+        "docs/patch-map.md",
         "engine/manifest.4096.n4s.json",
         "reports/network-n11.md",
         "reports/network-n12.md",
@@ -942,13 +986,17 @@
       "path": "release/manifests/linux-server.json",
       "category": "ACTIVE",
       "reason": "public entry point or release documentation",
-      "referenced_by": []
+      "referenced_by": [
+        "docs/research-index.md"
+      ]
     },
     {
       "path": "release/manifests/windows-client.json",
       "category": "ACTIVE",
       "reason": "public entry point or release documentation",
-      "referenced_by": []
+      "referenced_by": [
+        "docs/research-index.md"
+      ]
     },
     {
       "path": "reports/n27d19/auto-diff.md",
@@ -1069,7 +1117,10 @@
       "path": "reports/n27d30/correction.md",
       "category": "HISTORICAL",
       "reason": "immutable experiment record or data; current status is resolved by the research index",
-      "referenced_by": []
+      "referenced_by": [
+        "docs/patch-map.md",
+        "docs/research-index.md"
+      ]
     },
     {
       "path": "reports/n27d30/findings.md",
@@ -1193,6 +1244,7 @@
       "referenced_by": [
         "docs/architecture.md",
         "docs/research-index.md",
+        "docs/technical-report.md",
         "reports/n27d63/findings.md"
       ]
     },
@@ -1201,6 +1253,8 @@
       "category": "HISTORICAL",
       "reason": "immutable experiment record or data; current status is resolved by the research index",
       "referenced_by": [
+        "docs/evidence-and-reproduction.md",
+        "docs/research-index.md",
         "reports/n27d62/findings.md",
         "reports/n27d63/findings.md"
       ]
@@ -1244,6 +1298,7 @@
       "category": "ACTIVE",
       "reason": "current D65 runtime baseline",
       "referenced_by": [
+        "docs/evidence-and-reproduction.md",
         "reports/n27d65/findings.md",
         "reports/n27d65/validation.json"
       ]
@@ -1256,7 +1311,8 @@
         "README.md",
         "README.zh-CN.md",
         "docs/architecture.md",
-        "docs/research-index.md"
+        "docs/research-index.md",
+        "docs/technical-report.md"
       ]
     },
     {
@@ -1267,6 +1323,8 @@
         "README.md",
         "README.zh-CN.md",
         "docs/assets/benchmark/d65-boundary.json",
+        "docs/evidence-and-reproduction.md",
+        "docs/research-index.md",
         "docs/verification.md",
         "reports/n27d65/findings.md",
         "tools/release/build_assets.py",
@@ -1280,6 +1338,7 @@
       "referenced_by": [
         "README.md",
         "README.zh-CN.md",
+        "docs/evidence-and-reproduction.md",
         "reports/n27d66/release-readiness.md"
       ]
     },
@@ -1288,7 +1347,8 @@
       "category": "ACTIVE",
       "reason": "current D66 result",
       "referenced_by": [
-        "docs/research-index.md"
+        "docs/research-index.md",
+        "docs/technical-report.md"
       ]
     },
     {
@@ -1296,6 +1356,7 @@
       "category": "ACTIVE",
       "reason": "current D66 result",
       "referenced_by": [
+        "docs/evidence-and-reproduction.md",
         "docs/verification.md"
       ]
     },
@@ -1304,6 +1365,7 @@
       "category": "ACTIVE",
       "reason": "current D66 result",
       "referenced_by": [
+        "docs/evidence-and-reproduction.md",
         "docs/verification.md"
       ]
     },
@@ -1314,6 +1376,7 @@
       "referenced_by": [
         "README.md",
         "README.zh-CN.md",
+        "docs/evidence-and-reproduction.md",
         "reports/n27d66/release-readiness.md"
       ]
     },
@@ -1322,6 +1385,7 @@
       "category": "ACTIVE",
       "reason": "current D66 result",
       "referenced_by": [
+        "docs/research-index.md",
         "reports/n27d66/release-readiness.md"
       ]
     },
@@ -1348,6 +1412,7 @@
       "category": "GENERATED",
       "reason": "derived inventory, regenerated from current paths and references",
       "referenced_by": [
+        "docs/research-index.md",
         "reports/n27d66/findings.md",
         "tools/release/audit_repository.py"
       ]
@@ -1374,6 +1439,7 @@
       "reason": "current D66 result",
       "referenced_by": [
         "docs/compatibility.md",
+        "docs/evidence-and-reproduction.md",
         "reports/n27d66/findings.md"
       ]
     },
@@ -1384,6 +1450,7 @@
       "referenced_by": [
         "README.md",
         "README.zh-CN.md",
+        "docs/research-index.md",
         "reports/n27d66/findings.md",
         "reports/n27d66/release-readiness.md"
       ]
@@ -1395,6 +1462,7 @@
       "referenced_by": [
         "README.md",
         "README.zh-CN.md",
+        "docs/research-index.md",
         "reports/n27d66/release-readiness.md"
       ]
     },
@@ -1512,7 +1580,9 @@
       "path": "reports/network-n25.md",
       "category": "HISTORICAL",
       "reason": "immutable experiment record or data; current status is resolved by the research index",
-      "referenced_by": []
+      "referenced_by": [
+        "docs/research-index.md"
+      ]
     },
     {
       "path": "reports/network-n25d.md",
@@ -1542,7 +1612,9 @@
       "path": "reports/network-n27b.md",
       "category": "HISTORICAL",
       "reason": "immutable experiment record or data; current status is resolved by the research index",
-      "referenced_by": []
+      "referenced_by": [
+        "docs/research-index.md"
+      ]
     },
     {
       "path": "reports/network-n27c.md",
@@ -1640,7 +1712,9 @@
       "path": "reports/network-n27d6.md",
       "category": "HISTORICAL",
       "reason": "immutable experiment record or data; current status is resolved by the research index",
-      "referenced_by": []
+      "referenced_by": [
+        "docs/research-index.md"
+      ]
     },
     {
       "path": "reports/network-n27d7.md",
@@ -1990,6 +2064,7 @@
       "category": "REFERENCE",
       "reason": "active lower-level analysis or evidence input",
       "referenced_by": [
+        "docs/evidence-and-reproduction.md",
         "reports/n27d62/findings.md",
         "reports/n27d63/findings.md"
       ]
@@ -1999,6 +2074,7 @@
       "category": "ACTIVE",
       "reason": "invoked D66 verification or pinned SourceMod integration workflow",
       "referenced_by": [
+        "docs/evidence-and-reproduction.md",
         "docs/research-index.md",
         "docs/verification.md",
         "reports/n27d65/findings.md",
@@ -2123,7 +2199,9 @@
       "path": "tools/linux/patch_entitylist_linux.py",
       "category": "REFERENCE",
       "reason": "active lower-level analysis or evidence input",
-      "referenced_by": []
+      "referenced_by": [
+        "docs/patch-map.md"
+      ]
     },
     {
       "path": "tools/linux/patch_n27_13bit.py",
@@ -2182,6 +2260,7 @@
       "category": "ACTIVE",
       "reason": "invoked D66 verification or pinned SourceMod integration workflow",
       "referenced_by": [
+        "docs/research-index.md",
         "reports/n27d66/findings.md",
         "tools/release/audit_repository.py"
       ]
@@ -2191,6 +2270,7 @@
       "category": "ACTIVE",
       "reason": "invoked D66 verification or pinned SourceMod integration workflow",
       "referenced_by": [
+        "docs/research-index.md",
         "reports/n27d66/findings.md",
         "tools/release/audit_repository.py"
       ]
@@ -2451,7 +2531,9 @@
       "path": "tools/linux/vscript/d65_special.nut",
       "category": "REFERENCE",
       "reason": "active lower-level analysis or evidence input",
-      "referenced_by": []
+      "referenced_by": [
+        "docs/research-index.md"
+      ]
     },
     {
       "path": "tools/linux/vscript/d66_wrap.nut",
@@ -2643,6 +2725,8 @@
       "category": "ACTIVE",
       "reason": "D66 release and audit entry point",
       "referenced_by": [
+        "docs/evidence-and-reproduction.md",
+        "docs/research-index.md",
         "reports/n27d66/findings.md"
       ]
     },
@@ -2677,13 +2761,17 @@
       "path": "tools/release/check_links.py",
       "category": "ACTIVE",
       "reason": "D66 release and audit entry point",
-      "referenced_by": []
+      "referenced_by": [
+        "docs/evidence-and-reproduction.md"
+      ]
     },
     {
       "path": "tools/release/check_raw_lifecycle.py",
       "category": "ACTIVE",
       "reason": "D66 release and audit entry point",
       "referenced_by": [
+        "docs/evidence-and-reproduction.md",
+        "docs/research-index.md",
         "docs/verification.md",
         "tools/release/check_rc.py"
       ]
@@ -2695,6 +2783,8 @@
       "referenced_by": [
         "README.md",
         "README.zh-CN.md",
+        "docs/evidence-and-reproduction.md",
+        "docs/patch-map.md",
         "docs/research-index.md",
         "docs/verification.md",
         "reports/n27d66/findings.md",
@@ -2706,6 +2796,7 @@
       "category": "ACTIVE",
       "reason": "D66 release and audit entry point",
       "referenced_by": [
+        "docs/evidence-and-reproduction.md",
         "docs/verification.md",
         "reports/n27d66/findings.md"
       ]
@@ -2715,6 +2806,7 @@
       "category": "ACTIVE",
       "reason": "D66 release and audit entry point",
       "referenced_by": [
+        "docs/evidence-and-reproduction.md",
         "tools/release/check_rc.py"
       ]
     },
@@ -2723,6 +2815,7 @@
       "category": "ACTIVE",
       "reason": "D66 release and audit entry point",
       "referenced_by": [
+        "docs/evidence-and-reproduction.md",
         "tools/release/check_rc.py"
       ]
     },
@@ -2741,6 +2834,7 @@
         "README.zh-CN.md",
         "docs/installation.md",
         "docs/research-index.md",
+        "docs/technical-report.md",
         "docs/troubleshooting.md",
         "docs/verification.md",
         "reports/n27d66/findings.md"
@@ -2772,6 +2866,9 @@
       "reason": "invoked D66 verification or pinned SourceMod integration workflow",
       "referenced_by": [
         "docs/compatibility.md",
+        "docs/evidence-and-reproduction.md",
+        "docs/patch-map.md",
+        "docs/research-index.md",
         "reports/n27d66/findings.md",
         "tools/sourcemod/d65_compatibility.md"
       ]
@@ -2789,6 +2886,7 @@
       "referenced_by": [
         "docs/compatibility.md",
         "docs/development.md",
+        "docs/research-index.md",
         "reports/n27d66/findings.md"
       ]
     },

@@ -83,6 +83,9 @@ D65 的机器可读记录见 [reports/n27d65/validation.json](reports/n27d65/val
 
 ## 文档入口
 
+- [英文技术报告](docs/technical-report.md)
+- [补丁技术映射](docs/patch-map.md)
+- [证据与复现说明](docs/evidence-and-reproduction.md)
 - [架构与位宽](docs/architecture.md)
 - [安装、恢复与卸载](docs/installation.md)
 - [兼容性矩阵](docs/compatibility.md)

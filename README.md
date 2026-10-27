@@ -83,6 +83,9 @@ The machine-readable D65 record is [reports/n27d65/validation.json](reports/n27d
 
 ## Architecture and verification
 
+- [Technical report](docs/technical-report.md)
+- [Patch map](docs/patch-map.md)
+- [Evidence and reproduction](docs/evidence-and-reproduction.md)
 - [Architecture and bit-widths](docs/architecture.md)
 - [Installation and recovery](docs/installation.md)
 - [Compatibility matrix](docs/compatibility.md)

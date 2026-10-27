@@ -35,3 +35,21 @@ non-network pool `4097..8191`. The diagrams' supporting evidence is the
 ## Protocol compatibility
 
 An unmodified client cannot decode an entity index at or above `2048`. A patched client and patched server therefore form a private compatibility island. Steam authentication and ownership remain external requirements; this project does not replace them.
+
+## How the layers fit together
+
+The engine edict array is the network-facing allocation layer. The game module's
+`CBaseEntityList` is the ownership and handle layer. Snapshot code translates
+the live network edicts into `PacketEntities`; the client frame, bitmap and
+baseline stores retain the state needed to decode those deltas. A high-index
+entity is therefore valid only when all four layers agree on its width and
+storage.
+
+The final server partition is network `0..4095`, reserved slot `4096`, and
+non-network `4097..8191`. The internal handle uses 13 index bits and 15 serial
+bits; the network serial remains 10 bits. A 4095 observation proves the natural
+allocator boundary, not simultaneous occupancy of every network slot.
+
+For the full mechanism and evidence grades, read the [technical report](technical-report.md).
+The byte-level rationale is in the [patch map](patch-map.md), and the public
+versus private evidence boundary is in [evidence and reproduction](evidence-and-reproduction.md).
