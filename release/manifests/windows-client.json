@@ -1,0 +1,8531 @@
+{
+  "schema": "l4d2-4096-release-v1",
+  "build": "23990068",
+  "platform": "windows-client",
+  "files": [
+    {
+      "path": "bin/engine.dll",
+      "source_sha256": "8a6d468059394bf4cfce32f11dcba12ef45de88da1373084d5a2916d0bf7ba86",
+      "source_size": 4817712,
+      "output_sha256": "48329969eaaedee94d011957d81cf53b5a06d8c8098a5e548a7e741309994bd9",
+      "output_size": 4818944,
+      "hunks": [
+        {
+          "offset": 310,
+          "old_b64": "BQ==",
+          "new_b64": "Bw=="
+        },
+        {
+          "offset": 333,
+          "old_b64": "zjQAAPI+AAAA",
+          "new_b64": "0jQAAPI+AABA"
+        },
+        {
+          "offset": 385,
+          "old_b64": "8HMAAAQAAEDvSQ==",
+          "new_b64": "QHQAAAQAANRPSg=="
+        },
+        {
+          "offset": 752,
+          "old_b64": "AAAAAAAAAAAAAAAAAAAA",
+          "new_b64": "LmVkaWN0MgAAQAAAAPBz"
+        },
+        {
+          "offset": 788,
+          "old_b64": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+          "new_b64": "gAAAwC5jbGJhc2UAJwMAAAAwdAAABAAAAIRJ"
+        },
+        {
+          "offset": 828,
+          "old_b64": "AAAAAA==",
+          "new_b64": "IAAAYA=="
+        },
+        {
+          "offset": 317210,
+          "old_b64": "CA==",
+          "new_b64": "EA=="
+        },
+        {
+          "offset": 317248,
+          "old_b64": "Pw==",
+          "new_b64": "fw=="
+        },
+        {
+          "offset": 333320,
+          "old_b64": "CwNFDIuEgeABAAA=",
+          "new_b64": "DANFDOhvDm8AkJA="
+        },
+        {
+          "offset": 333357,
+          "old_b64": "CwPHjbSB4AEAAA==",
+          "new_b64": "DAPH6MsObwCQkA=="
+        },
+        {
+          "offset": 337911,
+          "old_b64": "jbHgAQAA",
+          "new_b64": "6IT+bgCQ"
+        },
+        {
+          "offset": 337926,
+          "old_b64": "CA==",
+          "new_b64": "EA=="
+        },
+        {
+          "offset": 337996,
+          "old_b64": "DcHiDY2cCOABAABWjYwK4AEAAFeJTQzHRQgACA==",
+          "new_b64": "DsHiDugr/W4AkJBW6KP9bgCQkFeJTQzHRQgAEA=="
+        },
+        {
+          "offset": 361471,
+          "old_b64": "Tf///w==",
+          "new_b64": "/aJuAA=="
+        },
+        {
+          "offset": 362076,
+          "old_b64": "wK8i",
+          "new_b64": "oJ1u"
+        },
+        {
+          "offset": 481765,
+          "old_b64": "Bw==",
+          "new_b64": "Dw=="
+        },
+        {
+          "offset": 482939,
+          "old_b64": "CA==",
+          "new_b64": "EA=="
+        },
+        {
+          "offset": 483044,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 494193,
+          "old_b64": "CA==",
+          "new_b64": "EA=="
+        },
+        {
+          "offset": 594879,
+          "old_b64": "CA==",
+          "new_b64": "EA=="
+        },
+        {
+          "offset": 595077,
+          "old_b64": "Pw==",
+          "new_b64": "fw=="
+        },
+        {
+          "offset": 595660,
+          "old_b64": "CA==",
+          "new_b64": "EA=="
+        },
+        {
+          "offset": 595701,
+          "old_b64": "Pw==",
+          "new_b64": "fw=="
+        },
+        {
+          "offset": 595869,
+          "old_b64": "Pw==",
+          "new_b64": "fw=="
+        },
+        {
+          "offset": 595981,
+          "old_b64": "Pw==",
+          "new_b64": "fw=="
+        },
+        {
+          "offset": 601483,
+          "old_b64": "AQ==",
+          "new_b64": "Ag=="
+        },
+        {
+          "offset": 602189,
+          "old_b64": "AQ==",
+          "new_b64": "Ag=="
+        },
+        {
+          "offset": 602208,
+          "old_b64": "AQ==",
+          "new_b64": "Ag=="
+        },
+        {
+          "offset": 602223,
+          "old_b64": "AQ==",
+          "new_b64": "Ag=="
+        },
+        {
+          "offset": 602282,
+          "old_b64": "AQ==",
+          "new_b64": "Ag=="
+        },
+        {
+          "offset": 602348,
+          "old_b64": "AQ==",
+          "new_b64": "Ag=="
+        },
+        {
+          "offset": 602371,
+          "old_b64": "AQAAQYO4FAE=",
+          "new_b64": "AgAAQYO4FAI="
+        },
+        {
+          "offset": 602390,
+          "old_b64": "AQ==",
+          "new_b64": "Ag=="
+        },
+        {
+          "offset": 602419,
+          "old_b64": "AQ==",
+          "new_b64": "Ag=="
+        },
+        {
+          "offset": 602434,
+          "old_b64": "AQ==",
+          "new_b64": "Ag=="
+        },
+        {
+          "offset": 602449,
+          "old_b64": "AQ==",
+          "new_b64": "Ag=="
+        },
+        {
+          "offset": 602470,
+          "old_b64": "AQ==",
+          "new_b64": "Ag=="
+        },
+        {
+          "offset": 602491,
+          "old_b64": "AQ==",
+          "new_b64": "Ag=="
+        },
+        {
+          "offset": 602501,
+          "old_b64": "AQ==",
+          "new_b64": "Ag=="
+        },
+        {
+          "offset": 602520,
+          "old_b64": "AQ==",
+          "new_b64": "Ag=="
+        },
+        {
+          "offset": 602569,
+          "old_b64": "AQ==",
+          "new_b64": "Ag=="
+        },
+        {
+          "offset": 602590,
+          "old_b64": "AQ==",
+          "new_b64": "Ag=="
+        },
+        {
+          "offset": 602600,
+          "old_b64": "AQ==",
+          "new_b64": "Ag=="
+        },
+        {
+          "offset": 602619,
+          "old_b64": "AQ==",
+          "new_b64": "Ag=="
+        },
+        {
+          "offset": 602681,
+          "old_b64": "AQ==",
+          "new_b64": "Ag=="
+        },
+        {
+          "offset": 602703,
+          "old_b64": "AQAAiZ4MAQ==",
+          "new_b64": "AgAAiZ4MAg=="
+        },
+        {
+          "offset": 602723,
+          "old_b64": "AQ==",
+          "new_b64": "Ag=="
+        },
+        {
+          "offset": 602734,
+          "old_b64": "AQ==",
+          "new_b64": "Ag=="
+        },
+        {
+          "offset": 602749,
+          "old_b64": "AQAAX4meFAE=",
+          "new_b64": "AgAAX4meFAI="
+        },
+        {
+          "offset": 602789,
+          "old_b64": "AQ==",
+          "new_b64": "Ag=="
+        },
+        {
+          "offset": 602808,
+          "old_b64": "AQAAib4MAQAAiX4Iib4YAQAAib4UAQ==",
+          "new_b64": "AgAAib4MAgAAiX4Iib4YAgAAib4UAg=="
+        },
+        {
+          "offset": 602862,
+          "old_b64": "AQ==",
+          "new_b64": "Ag=="
+        },
+        {
+          "offset": 602950,
+          "old_b64": "AQ==",
+          "new_b64": "Ag=="
+        },
+        {
+          "offset": 602962,
+          "old_b64": "AQAAiYMUAQ==",
+          "new_b64": "AgAAiYMUAg=="
+        },
+        {
+          "offset": 603006,
+          "old_b64": "AQ==",
+          "new_b64": "Ag=="
+        },
+        {
+          "offset": 603018,
+          "old_b64": "AQAA6zKLjhQB",
+          "new_b64": "AgAA6zKLjhQC"
+        },
+        {
+          "offset": 603117,
+          "old_b64": "AQ==",
+          "new_b64": "Ag=="
+        },
+        {
+          "offset": 603136,
+          "old_b64": "AQAAib4MAQAAiX4Iib4YAQAAib4UAQ==",
+          "new_b64": "AgAAib4MAgAAiX4Iib4YAgAAib4UAg=="
+        },
+        {
+          "offset": 603210,
+          "old_b64": "AQAAOZ4YAQ==",
+          "new_b64": "AgAAOZ4YAg=="
+        },
+        {
+          "offset": 603235,
+          "old_b64": "AQ==",
+          "new_b64": "Ag=="
+        },
+        {
+          "offset": 603250,
+          "old_b64": "AQAAaAAB",
+          "new_b64": "AgAAaAAC"
+        },
+        {
+          "offset": 603277,
+          "old_b64": "AQAAAHREaAAB",
+          "new_b64": "AgAAAHREaAAC"
+        },
+        {
+          "offset": 603304,
+          "old_b64": "AQ==",
+          "new_b64": "Ag=="
+        },
+        {
+          "offset": 603327,
+          "old_b64": "AQAAi78QAQAAaAAB",
+          "new_b64": "AgAAi78QAgAAaAAC"
+        },
+        {
+          "offset": 1152156,
+          "old_b64": "Cw==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 1152342,
+          "old_b64": "iYWY/v//",
+          "new_b64": "g0cMApCQ"
+        },
+        {
+          "offset": 1152602,
+          "old_b64": "Cw==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 1166597,
+          "old_b64": "EA==",
+          "new_b64": "IA=="
+        },
+        {
+          "offset": 1166632,
+          "old_b64": "7w==",
+          "new_b64": "3w=="
+        },
+        {
+          "offset": 1166659,
+          "old_b64": "7w==",
+          "new_b64": "3w=="
+        },
+        {
+          "offset": 1166673,
+          "old_b64": "7w==",
+          "new_b64": "3w=="
+        },
+        {
+          "offset": 1166716,
+          "old_b64": "7w==",
+          "new_b64": "3w=="
+        },
+        {
+          "offset": 1166776,
+          "old_b64": "7w==",
+          "new_b64": "3w=="
+        },
+        {
+          "offset": 1166789,
+          "old_b64": "7////0YUi4X47///QImF+O8=",
+          "new_b64": "3////0YUi4X43///QImF+N8="
+        },
+        {
+          "offset": 1166850,
+          "old_b64": "7w==",
+          "new_b64": "3w=="
+        },
+        {
+          "offset": 1166939,
+          "old_b64": "7w==",
+          "new_b64": "3w=="
+        },
+        {
+          "offset": 1192356,
+          "old_b64": "CA==",
+          "new_b64": "EA=="
+        },
+        {
+          "offset": 1927286,
+          "old_b64": "Cw==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 1927296,
+          "old_b64": "fM4+EIPB9Q==",
+          "new_b64": "hM4+EIPB8w=="
+        },
+        {
+          "offset": 1927312,
+          "old_b64": "Cw==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 1927398,
+          "old_b64": "Cw==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 1928080,
+          "old_b64": "Cw==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 1928090,
+          "old_b64": "fM4+EIPB9Q==",
+          "new_b64": "hM4+EIPB8w=="
+        },
+        {
+          "offset": 1928106,
+          "old_b64": "Cw==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 1928192,
+          "old_b64": "Cw==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 1962738,
+          "old_b64": "IAAAagBoWDpr",
+          "new_b64": "QAAAagBoAPBz"
+        },
+        {
+          "offset": 1962830,
+          "old_b64": "WDpr",
+          "new_b64": "APBz"
+        },
+        {
+          "offset": 1962951,
+          "old_b64": "WDpr",
+          "new_b64": "APBz"
+        },
+        {
+          "offset": 1962999,
+          "old_b64": "WDpr",
+          "new_b64": "APBz"
+        },
+        {
+          "offset": 1963360,
+          "old_b64": "WDpr",
+          "new_b64": "APBz"
+        },
+        {
+          "offset": 1963525,
+          "old_b64": "WDpr",
+          "new_b64": "APBz"
+        },
+        {
+          "offset": 1963550,
+          "old_b64": "WDpr",
+          "new_b64": "APBz"
+        },
+        {
+          "offset": 1963604,
+          "old_b64": "WDpr",
+          "new_b64": "APBz"
+        },
+        {
+          "offset": 1963674,
+          "old_b64": "WDpr",
+          "new_b64": "APBz"
+        },
+        {
+          "offset": 4817712,
+          "old_b64": "",
+          "new_b64": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGgAgAAA6Ka5pv+DxASFwHUBzImG4AEAAGgAgAAAagBQ6PsRtP+DxAzDAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAUYuJ4AEAAIsEgVnDAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACLseABAACNNIbDAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIuZ4AEAAAHDwwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAi4ngAQAAAdHDAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACLseABAADDAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAOhLXJH/UInx6OMAkf//tuABAADouLam/4PEBMeG4AEAAAAAAABYwwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA="
+        }
+      ],
+      "hunk_count": 95
+    },
+    {
+      "path": "left4dead2/bin/client.dll",
+      "source_sha256": "c0a8e1e88f7312db11bcfd4b0ec574d224a34b2d9a615d6088b28335eeb4af1f",
+      "source_size": 8305664,
+      "output_sha256": "3e5c3f2ee98c2bfa3f3672c654f7ae8b3ae401cc437a08ae1abbe57a6d363943",
+      "output_size": 8305664,
+      "hunks": [
+        {
+          "offset": 286,
+          "old_b64": "BQ==",
+          "new_b64": "Bg=="
+        },
+        {
+          "offset": 361,
+          "old_b64": "MJYAAAQAAAAAAA==",
+          "new_b64": "QJkAAAQAABtVfw=="
+        },
+        {
+          "offset": 728,
+          "old_b64": "AAAAAAAAAAAAAAAAAAAA",
+          "new_b64": "LmNsZW50bHOoAAMAADCW"
+        },
+        {
+          "offset": 764,
+          "old_b64": "AAAAAA==",
+          "new_b64": "gAAAwA=="
+        },
+        {
+          "offset": 70210,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 70225,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 71202,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 71217,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 71254,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 71269,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 72338,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 72353,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 72386,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 72401,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 73046,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 73061,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 73133,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 73157,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 73190,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 73205,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 73393,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 73408,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 73492,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 73507,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 73767,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 73786,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 73894,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 73909,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 73986,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 74001,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 75610,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 75625,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 75763,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 75778,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 86821,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 86836,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 87206,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 87221,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 87311,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 87326,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 87475,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 87490,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 88011,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 88026,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 88557,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 88572,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 88832,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 88847,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 88964,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 88979,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 89068,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 89083,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 89214,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 89229,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 89373,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 89388,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 89436,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 89451,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 90269,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 90284,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 90784,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 90799,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 90847,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 90862,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 92758,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 92775,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 92806,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 92829,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 93390,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 93405,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 93793,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 93812,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 94813,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 94832,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 95022,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 95037,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 95626,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 95645,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 96157,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 96176,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 96619,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 96638,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 97728,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 97743,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 98500,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 98515,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 104770,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 104785,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 106882,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 106897,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 107590,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 107605,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 107654,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 107669,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 109166,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 109181,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 109257,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 109272,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 109373,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 109389,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 109426,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 109441,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 110316,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 110331,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 110480,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 110495,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 114876,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 114891,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 118470,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 118485,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 120066,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 120081,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 120262,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 120277,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 120377,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 120392,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 120440,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 120455,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 121627,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 121650,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 126301,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 126320,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 126407,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 126424,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 126446,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 126461,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 127410,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 127425,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 127461,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 127476,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 127538,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 127553,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 127885,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 127900,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 127942,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 127957,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 128050,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 128065,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 128186,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 128201,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 128346,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 128365,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 128421,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 128436,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 128543,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 128558,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 128793,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 128808,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 129002,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 129017,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 129132,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 129147,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 129295,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 129310,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 131099,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 131114,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 131306,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 131321,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 131556,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 131571,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 131684,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 131699,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 131788,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 131803,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 132171,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 132186,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 132365,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 132380,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 134316,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 134331,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 134595,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 134610,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 138326,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 138341,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 139873,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 139890,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 139927,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 139942,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 141158,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 141173,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 142219,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 142234,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 142460,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 142483,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 142545,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 142560,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 143042,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 143057,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 143354,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 143373,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 144406,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 144421,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 144677,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 144692,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 144719,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 144734,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 146104,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 146119,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 146225,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 146240,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 179554,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 179569,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 180854,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 180869,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 180918,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 180933,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 180982,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 180997,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 188598,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 188613,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 189350,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 189365,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 192326,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 192341,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 192792,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 192807,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 200178,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 200193,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 201899,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 201914,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 206089,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 206104,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 225941,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 225956,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 227337,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 227352,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 234785,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 234804,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 234901,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 234916,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 259725,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 259740,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 264106,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 264121,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 275638,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 275653,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 280194,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 280209,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 283128,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 283143,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 283222,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 283237,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 283286,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 283301,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 283350,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 283365,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 284128,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 284143,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 284696,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 284711,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 284739,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 284754,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 284966,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 284981,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 285048,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 285063,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 285127,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 285142,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 286158,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 286173,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 286440,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 286455,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 286735,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 286750,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 286848,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 286863,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 287761,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 287776,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 288551,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 288566,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 289097,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 289112,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 289368,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 289383,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 289866,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 289881,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 289934,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 289949,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 293714,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 293729,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 293776,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 293791,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 294939,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 294954,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 295656,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 295671,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 296248,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 296263,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 307522,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 307545,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 307594,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 307609,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 307668,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 307683,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 307802,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 307817,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 307860,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 307875,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 307926,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 307941,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 312305,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 312320,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 312822,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 312837,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 313014,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 313029,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 313135,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 313150,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 313198,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 313213,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 313410,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 313425,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 315768,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 315791,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 316170,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 316185,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 316219,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 316234,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 319275,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 319290,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 319453,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 319468,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 319515,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 319530,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 319657,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 319672,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 319699,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 319714,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 321074,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 321089,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 326654,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 326669,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 335980,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 335995,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 341264,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 341279,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 344315,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 344330,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 344704,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 344719,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 345431,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 345446,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 345842,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 345865,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 346024,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 346039,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 346149,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 346164,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 347752,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 347767,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 405282,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 405297,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 405681,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 405696,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 406326,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 406341,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 406391,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 406406,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 409878,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 409893,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 409942,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 409957,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 410006,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 410021,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 410070,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 410085,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 410358,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 410373,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 412822,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 412837,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 413001,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 413016,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 413368,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 413383,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 413444,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 413461,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 413561,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 413582,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 413834,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 413849,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 413935,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 413950,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 419553,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 419568,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 419665,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 419680,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 419833,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 419848,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 420179,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 420194,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 420984,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 420999,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 421237,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 421252,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 425823,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 425844,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 428191,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 428210,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 428517,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 428532,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 429702,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 429717,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 430184,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 430199,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 430227,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 430242,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 432959,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 432974,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 434598,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 434613,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 434708,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 434727,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 436124,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 436139,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 441032,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 441047,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 442221,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 442237,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 442311,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 442326,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 442392,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 442407,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 442461,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 442476,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 442543,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 442558,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 442641,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 442656,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 442700,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 442715,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 442756,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 442771,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 442833,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 442848,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 442907,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 442922,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 442981,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 442996,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 443110,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 443125,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 443223,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 443238,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 443285,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 443300,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 443430,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 443445,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 443929,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 443944,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 444332,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 444347,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 444410,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 444425,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 444666,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 444681,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 444720,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 444735,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 449075,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 449090,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 454418,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 454441,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 454754,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 454769,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 456827,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 456842,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 459564,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 459583,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 460555,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 460570,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 461019,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 461038,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 461106,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 461121,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 461162,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 461177,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 461221,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 461236,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 461402,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 461417,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 461818,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 461833,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 461861,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 461876,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 464240,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 464261,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 464816,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 464835,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 467146,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 467169,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 472013,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 472032,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 473130,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 473145,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 476760,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 476775,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 542041,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 542056,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 542462,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 542477,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 542592,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 542607,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 543832,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 543849,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 545797,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 545812,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 568338,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 568353,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 568836,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 568851,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 568937,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 568952,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 569360,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 569375,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 570176,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 570199,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 580045,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 580060,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 580242,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 580257,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 580488,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 580511,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 586681,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 586696,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 586755,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 586770,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 586905,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 586920,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 586984,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 586999,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 594496,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 594515,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 614338,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 614353,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 614386,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 614401,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 614741,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 614756,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 614847,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 614870,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 625429,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 625448,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 625675,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 625690,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 626287,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 626302,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 647746,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 647761,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 647954,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 647973,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 666700,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 666715,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 666758,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 666773,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 667557,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 667572,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 667607,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 667622,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 667663,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 667680,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 667702,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 667717,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 667792,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 667815,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 672054,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 672069,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 673053,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 673068,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 676124,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 676139,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 709739,
+          "old_b64": "gAE=",
+          "new_b64": "AAM="
+        },
+        {
+          "offset": 709763,
+          "old_b64": "gAE=",
+          "new_b64": "AAM="
+        },
+        {
+          "offset": 709841,
+          "old_b64": "gAE=",
+          "new_b64": "AAM="
+        },
+        {
+          "offset": 709906,
+          "old_b64": "gAE=",
+          "new_b64": "AAM="
+        },
+        {
+          "offset": 709923,
+          "old_b64": "gAE=",
+          "new_b64": "AAM="
+        },
+        {
+          "offset": 709984,
+          "old_b64": "gAE=",
+          "new_b64": "AAM="
+        },
+        {
+          "offset": 710136,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 710151,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 710201,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 710216,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 738481,
+          "old_b64": "AQCLQhCBwRQAAQ==",
+          "new_b64": "AgCLQhCBwRQAAg=="
+        },
+        {
+          "offset": 749647,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 749662,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 751744,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 751759,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 753905,
+          "old_b64": "dKV0",
+          "new_b64": "FDCY"
+        },
+        {
+          "offset": 753960,
+          "old_b64": "Bw==",
+          "new_b64": "Dw=="
+        },
+        {
+          "offset": 754016,
+          "old_b64": "AQ==",
+          "new_b64": "Ag=="
+        },
+        {
+          "offset": 754124,
+          "old_b64": "EAAAfRkF/+8=",
+          "new_b64": "IAAAfRkF/98="
+        },
+        {
+          "offset": 754164,
+          "old_b64": "AQ==",
+          "new_b64": "Ag=="
+        },
+        {
+          "offset": 754208,
+          "old_b64": "AQ==",
+          "new_b64": "Ag=="
+        },
+        {
+          "offset": 754383,
+          "old_b64": "AQCLUAiBwRQAAQ==",
+          "new_b64": "AgCLUAiBwRQAAg=="
+        },
+        {
+          "offset": 754447,
+          "old_b64": "AQCLUAiBwRQAAQ==",
+          "new_b64": "AgCLUAiBwRQAAg=="
+        },
+        {
+          "offset": 754511,
+          "old_b64": "AQCLUAiBwRQAAQ==",
+          "new_b64": "AgCLUAiBwRQAAg=="
+        },
+        {
+          "offset": 754565,
+          "old_b64": "AQ==",
+          "new_b64": "Ag=="
+        },
+        {
+          "offset": 754625,
+          "old_b64": "AQ==",
+          "new_b64": "Ag=="
+        },
+        {
+          "offset": 754673,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 755336,
+          "old_b64": "AQ==",
+          "new_b64": "Ag=="
+        },
+        {
+          "offset": 755367,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 755385,
+          "old_b64": "AQCLUAiNjhQAAQ==",
+          "new_b64": "AgCLUAiNjhQAAg=="
+        },
+        {
+          "offset": 755443,
+          "old_b64": "AQ==",
+          "new_b64": "Ag=="
+        },
+        {
+          "offset": 755472,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 755489,
+          "old_b64": "AQCJjjAAAQCJjjQAAQDHhjgAAQ==",
+          "new_b64": "AgCJjjAAAgCJjjQAAgDHhjgAAg=="
+        },
+        {
+          "offset": 755532,
+          "old_b64": "gAE=",
+          "new_b64": "AAM="
+        },
+        {
+          "offset": 756986,
+          "old_b64": "gAE=",
+          "new_b64": "AAM="
+        },
+        {
+          "offset": 757011,
+          "old_b64": "gAE=",
+          "new_b64": "AAM="
+        },
+        {
+          "offset": 757053,
+          "old_b64": "gAE=",
+          "new_b64": "AAM="
+        },
+        {
+          "offset": 757068,
+          "old_b64": "gAE=",
+          "new_b64": "AAM="
+        },
+        {
+          "offset": 757116,
+          "old_b64": "gAE=",
+          "new_b64": "AAM="
+        },
+        {
+          "offset": 759740,
+          "old_b64": "gAEAXcIEAP+JbIAB",
+          "new_b64": "AAMAXcIEAP+JbAAD"
+        },
+        {
+          "offset": 762780,
+          "old_b64": "AQ==",
+          "new_b64": "Ag=="
+        },
+        {
+          "offset": 762939,
+          "old_b64": "gAEAAHRni4FcgAEAVo2xWIAB",
+          "new_b64": "AAMAAHRni4FcAAMAVo2xWAAD"
+        },
+        {
+          "offset": 763902,
+          "old_b64": "AQ==",
+          "new_b64": "Ag=="
+        },
+        {
+          "offset": 763916,
+          "old_b64": "gAE=",
+          "new_b64": "AAM="
+        },
+        {
+          "offset": 763927,
+          "old_b64": "gAE=",
+          "new_b64": "AAM="
+        },
+        {
+          "offset": 763938,
+          "old_b64": "gAEAAHwui4dwgAE=",
+          "new_b64": "AAMAAHwui4dwAAM="
+        },
+        {
+          "offset": 763973,
+          "old_b64": "gAEAAAAAAMeHdIABAAAAAACNj1iAAQ==",
+          "new_b64": "AAMAAAAAAMeHdAADAAAAAACNj1gAAw=="
+        },
+        {
+          "offset": 764004,
+          "old_b64": "gAE=",
+          "new_b64": "AAM="
+        },
+        {
+          "offset": 764015,
+          "old_b64": "gAEAAHwui4c8gAE=",
+          "new_b64": "AAMAAHwui4c8AAM="
+        },
+        {
+          "offset": 764050,
+          "old_b64": "gAEAAAAAAMeHQIAB",
+          "new_b64": "AAMAAAAAAMeHQAAD"
+        },
+        {
+          "offset": 764071,
+          "old_b64": "AQ==",
+          "new_b64": "Ag=="
+        },
+        {
+          "offset": 764111,
+          "old_b64": "DwAALQEQ",
+          "new_b64": "HwAALQEg"
+        },
+        {
+          "offset": 764128,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 764172,
+          "old_b64": "AQ==",
+          "new_b64": "Ag=="
+        },
+        {
+          "offset": 764188,
+          "old_b64": "AQ==",
+          "new_b64": "Ag=="
+        },
+        {
+          "offset": 764200,
+          "old_b64": "AQCJhhwAAQCJhiAAAQCJhiQAAQCJhigAAQCJhjyAAQCJhkCAAQCJhkSAAQ==",
+          "new_b64": "AgCJhhwAAgCJhiAAAgCJhiQAAgCJhigAAgCJhjwAAwCJhkAAAwCJhkQAAw=="
+        },
+        {
+          "offset": 764253,
+          "old_b64": "gAEAiY5MgAEAi448gAEAiY5UgAEAx4ZIgAE=",
+          "new_b64": "AAMAiY5MAAMAi448AAMAiY5UAAMAx4ZIAAM="
+        },
+        {
+          "offset": 764290,
+          "old_b64": "gAEAiYZYgAEAiYZcgAEAiYZggAEAiYZkgAEAiYZogAEAiYZwgAEAiYZ0gAEAiYZ4gAE=",
+          "new_b64": "AAMAiYZYAAMAiYZcAAMAiYZgAAMAiYZkAAMAiYZoAAMAiYZwAAMAiYZ0AAMAiYZ4AAM="
+        },
+        {
+          "offset": 764350,
+          "old_b64": "gAEAiZaAgAEAi5ZwgAEAx4Z8gAEA/////4mWiIABADPJZomOhIABAMeGjIABAACNCxCJhpCAAQCJhpSAAQCJhpiAAQCLjpCAAQCJjqSAAQDHhpyAAQD//wAAx4aggAE=",
+          "new_b64": "AAMAiZaAAAMAi5ZwAAMAx4Z8AAMA/////4mWiAADADPJZomOhAADAMeGjAADAACNCxCJhpAAAwCJhpQAAwCJhpgAAwCLjpAAAwCJjqQAAwDHhpwAAwD//wAAx4agAAM="
+        },
+        {
+          "offset": 764456,
+          "old_b64": "AQ==",
+          "new_b64": "Ag=="
+        },
+        {
+          "offset": 764466,
+          "old_b64": "AQCJhmyAAQ==",
+          "new_b64": "AgCJhmwAAw=="
+        },
+        {
+          "offset": 764800,
+          "old_b64": "gAE=",
+          "new_b64": "AAM="
+        },
+        {
+          "offset": 764834,
+          "old_b64": "gAE=",
+          "new_b64": "AAM="
+        },
+        {
+          "offset": 764856,
+          "old_b64": "gAE=",
+          "new_b64": "AAM="
+        },
+        {
+          "offset": 764891,
+          "old_b64": "gAE=",
+          "new_b64": "AAM="
+        },
+        {
+          "offset": 764969,
+          "old_b64": "gAE=",
+          "new_b64": "AAM="
+        },
+        {
+          "offset": 765050,
+          "old_b64": "gAE=",
+          "new_b64": "AAM="
+        },
+        {
+          "offset": 765063,
+          "old_b64": "gAE=",
+          "new_b64": "AAM="
+        },
+        {
+          "offset": 765135,
+          "old_b64": "DwAAi/GB//8HAAB3Mf+GLAABADu+OAABAH4Gib44AAE=",
+          "new_b64": "HwAAi/GB//8PAAB3Mf+GLAACADu+OAACAH4Gib44AAI="
+        },
+        {
+          "offset": 765182,
+          "old_b64": "AQ==",
+          "new_b64": "Ag=="
+        },
+        {
+          "offset": 765195,
+          "old_b64": "AQ==",
+          "new_b64": "Ag=="
+        },
+        {
+          "offset": 765228,
+          "old_b64": "gAE=",
+          "new_b64": "AAM="
+        },
+        {
+          "offset": 765264,
+          "old_b64": "gAE=",
+          "new_b64": "AAM="
+        },
+        {
+          "offset": 765275,
+          "old_b64": "gAE=",
+          "new_b64": "AAM="
+        },
+        {
+          "offset": 765303,
+          "old_b64": "AQ==",
+          "new_b64": "Ag=="
+        },
+        {
+          "offset": 765326,
+          "old_b64": "AQCLviQAAQ==",
+          "new_b64": "AgCLviQAAg=="
+        },
+        {
+          "offset": 765348,
+          "old_b64": "AQ==",
+          "new_b64": "Ag=="
+        },
+        {
+          "offset": 765384,
+          "old_b64": "AQ==",
+          "new_b64": "Ag=="
+        },
+        {
+          "offset": 765419,
+          "old_b64": "DwAAV4vxgfv/Bw==",
+          "new_b64": "HwAAV4vxgfv/Dw=="
+        },
+        {
+          "offset": 765438,
+          "old_b64": "AQ==",
+          "new_b64": "Ag=="
+        },
+        {
+          "offset": 765448,
+          "old_b64": "AQA7njgAAQ==",
+          "new_b64": "AgA7njgAAg=="
+        },
+        {
+          "offset": 765513,
+          "old_b64": "AQCLviQAAQBPeBeLjhgAAQ==",
+          "new_b64": "AgCLviQAAgBPeBeLjhgAAg=="
+        },
+        {
+          "offset": 765553,
+          "old_b64": "AQCNnN5AAAE=",
+          "new_b64": "AgCNnN5AAAI="
+        },
+        {
+          "offset": 765578,
+          "old_b64": "gAE=",
+          "new_b64": "AAM="
+        },
+        {
+          "offset": 765590,
+          "old_b64": "gAEAi4Y8gAE=",
+          "new_b64": "AAMAi4Y8AAM="
+        },
+        {
+          "offset": 765610,
+          "old_b64": "gAE=",
+          "new_b64": "AAM="
+        },
+        {
+          "offset": 770990,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 771009,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 771057,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 771072,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 773126,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 773141,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 777226,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 777245,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 828520,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 828535,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 828590,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 828605,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 828633,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 828648,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 828707,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 828722,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 858860,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 858875,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 859399,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 859414,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 881561,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 881576,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 930074,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 930089,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 956817,
+          "old_b64": "AQCJhwgAAQCJhwwAAQCJhxAAAQCNdwS7ABA=",
+          "new_b64": "AgCJhwgAAgCJhwwAAgCJhxAAAgCNdwS7ACA="
+        },
+        {
+          "offset": 956882,
+          "old_b64": "gAAAvv8H",
+          "new_b64": "AAEAvv8P"
+        },
+        {
+          "offset": 956924,
+          "old_b64": "AQ==",
+          "new_b64": "Ag=="
+        },
+        {
+          "offset": 956946,
+          "old_b64": "AQ==",
+          "new_b64": "Ag=="
+        },
+        {
+          "offset": 956967,
+          "old_b64": "AQ==",
+          "new_b64": "Ag=="
+        },
+        {
+          "offset": 956978,
+          "old_b64": "AQ==",
+          "new_b64": "Ag=="
+        },
+        {
+          "offset": 956990,
+          "old_b64": "AQ==",
+          "new_b64": "Ag=="
+        },
+        {
+          "offset": 957079,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 957142,
+          "old_b64": "AQ==",
+          "new_b64": "Ag=="
+        },
+        {
+          "offset": 957166,
+          "old_b64": "AQ==",
+          "new_b64": "Ag=="
+        },
+        {
+          "offset": 957177,
+          "old_b64": "CA==",
+          "new_b64": "EA=="
+        },
+        {
+          "offset": 957187,
+          "old_b64": "AQ==",
+          "new_b64": "Ag=="
+        },
+        {
+          "offset": 957231,
+          "old_b64": "AQ==",
+          "new_b64": "Ag=="
+        },
+        {
+          "offset": 957304,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 957367,
+          "old_b64": "AQ==",
+          "new_b64": "Ag=="
+        },
+        {
+          "offset": 957391,
+          "old_b64": "AQ==",
+          "new_b64": "Ag=="
+        },
+        {
+          "offset": 957402,
+          "old_b64": "CA==",
+          "new_b64": "EA=="
+        },
+        {
+          "offset": 957433,
+          "old_b64": "AQ==",
+          "new_b64": "Ag=="
+        },
+        {
+          "offset": 957457,
+          "old_b64": "AQ==",
+          "new_b64": "Ag=="
+        },
+        {
+          "offset": 957476,
+          "old_b64": "AQCJRgiJtxAAAQ==",
+          "new_b64": "AgCJRgiJtxAAAg=="
+        },
+        {
+          "offset": 957498,
+          "old_b64": "AQ==",
+          "new_b64": "Ag=="
+        },
+        {
+          "offset": 957574,
+          "old_b64": "AQ==",
+          "new_b64": "Ag=="
+        },
+        {
+          "offset": 957589,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 957644,
+          "old_b64": "AQ==",
+          "new_b64": "Ag=="
+        },
+        {
+          "offset": 957709,
+          "old_b64": "AQ==",
+          "new_b64": "Ag=="
+        },
+        {
+          "offset": 957733,
+          "old_b64": "AQ==",
+          "new_b64": "Ag=="
+        },
+        {
+          "offset": 957766,
+          "old_b64": "AQ==",
+          "new_b64": "Ag=="
+        },
+        {
+          "offset": 957783,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 957848,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 980169,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 980184,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 1030557,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 1030572,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 1032566,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 1032581,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 1032630,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 1032645,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 1042822,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 1042837,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 1047254,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 1047269,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 1055985,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 1056000,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 1056055,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 1056070,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 1056134,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 1056149,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 1056238,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 1056253,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 1056300,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 1056315,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 1219036,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 1219051,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 1224312,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 1224327,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 1224446,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 1224468,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 1259624,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 1259643,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 1259729,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 1259744,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 1313126,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 1313141,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 1313178,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 1313193,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 1314696,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 1314711,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 1378144,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 1378162,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 1378401,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 1378416,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 1421971,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 1421986,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 1422466,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 1422489,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 1424959,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 1424974,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 1430563,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 1430582,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 1432017,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 1432036,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 1435208,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 1435227,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 1455884,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 1455899,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 1456357,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 1456372,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 1456565,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 1456580,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 1456861,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 1456880,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 1456991,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 1457006,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 1462070,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 1462085,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 1465362,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 1465377,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 1465608,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 1465623,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 1465759,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 1465774,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 1465806,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 1465821,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 1466285,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 1466300,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 1466607,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 1466630,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 1469280,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 1469295,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 1469484,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 1469499,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 1469933,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 1469950,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 1469984,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 1469999,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 1472488,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 1472503,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 1472561,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 1472580,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 1473466,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 1473481,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 1473540,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 1473555,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 1475019,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 1475034,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 1486933,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 1486948,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 1486977,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 1486992,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 1495058,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 1495081,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 1512489,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 1512508,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 1512794,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 1512809,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 1513364,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 1513379,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 1513847,
+          "old_b64": "AQCLUBiBwRQAAQ==",
+          "new_b64": "AgCLUBiBwRQAAg=="
+        },
+        {
+          "offset": 1515495,
+          "old_b64": "AQCLUBiBwRQAAQ==",
+          "new_b64": "AgCLUBiBwRQAAg=="
+        },
+        {
+          "offset": 1534101,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 1534116,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 1548666,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 1548681,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 1548738,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 1548753,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 1548794,
+          "old_b64": "AQ==",
+          "new_b64": "Ag=="
+        },
+        {
+          "offset": 1548804,
+          "old_b64": "AQ==",
+          "new_b64": "Ag=="
+        },
+        {
+          "offset": 1549056,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 1549071,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 1549737,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 1549758,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 1549921,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 1549936,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 1549999,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 1550014,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 1550352,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 1550367,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 1550653,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 1550668,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 1552603,
+          "old_b64": "AQCLQhiBwRQAAQ==",
+          "new_b64": "AgCLQhiBwRQAAg=="
+        },
+        {
+          "offset": 1554155,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 1554170,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 1554230,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 1554245,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 1555072,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 1555087,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 1558735,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 1558754,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 1558831,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 1558846,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 1560802,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 1560817,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 1560841,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 1560856,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 1565663,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 1565678,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 1565743,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 1565764,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 1565855,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 1565870,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 1565899,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 1565914,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 1565978,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 1565993,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 1568991,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 1569006,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 1569071,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 1569092,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 1569183,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 1569198,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 1569227,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 1569242,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 1569306,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 1569321,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 1617364,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 1617379,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 1617571,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 1617590,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 1618887,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 1633072,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 1633087,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 1634004,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 1634019,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 1636613,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 1636628,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 1636845,
+          "old_b64": "AQ==",
+          "new_b64": "Ag=="
+        },
+        {
+          "offset": 1636859,
+          "old_b64": "AQ==",
+          "new_b64": "Ag=="
+        },
+        {
+          "offset": 1636942,
+          "old_b64": "AQCLQhiBwRQAAQ==",
+          "new_b64": "AgCLQhiBwRQAAg=="
+        },
+        {
+          "offset": 1637413,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 1637428,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 1638553,
+          "old_b64": "AQCLUBiBwRQAAQ==",
+          "new_b64": "AgCLUBiBwRQAAg=="
+        },
+        {
+          "offset": 1638607,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 1639645,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 1639660,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 1640570,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 1640585,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 1640750,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 1640765,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 1645835,
+          "old_b64": "AQCLUBSBwRQAAQ==",
+          "new_b64": "AgCLUBSBwRQAAg=="
+        },
+        {
+          "offset": 1653637,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 1653652,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 1654671,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 1654686,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 1665809,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 1665828,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 1666388,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 1666403,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 1672171,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 1672186,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 1672502,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 1672517,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 1677810,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 1677825,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 1677900,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 1677915,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 1679245,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 1679260,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 1679894,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 1679911,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 1680458,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 1680473,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 1680608,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 1680623,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 1680725,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 1680740,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 1681750,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 1681765,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 1681829,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 1681844,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 1683662,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 1683677,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 1683967,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 1683982,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 1684287,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 1684302,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 1684590,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 1684605,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 1684878,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 1684893,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 1689186,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 1689201,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 1689573,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 1689588,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 1696722,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 1696737,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 1733941,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 1733956,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 1734027,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 1734044,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 1734077,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 1734092,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 1734138,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 1734153,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 1734182,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 1734197,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 1734218,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 1734233,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 1736624,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 1736647,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 1825077,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 1825092,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 1825206,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 1825221,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 1825411,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 1825426,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 1825704,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 1825719,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 1826891,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 1826906,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 1831231,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 1831246,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 1831286,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 1831301,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 1933610,
+          "old_b64": "AQCLQgyBwRQAAQ==",
+          "new_b64": "AgCLQgyBwRQAAg=="
+        },
+        {
+          "offset": 1933978,
+          "old_b64": "AQCLUgyBwRQAAQ==",
+          "new_b64": "AgCLUgyBwRQAAg=="
+        },
+        {
+          "offset": 1948905,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 1948920,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 1949122,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 1949137,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 1949986,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 1950001,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 1950162,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 1950177,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 1951761,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 1951776,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 1955698,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 1955713,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 1955746,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 1955761,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 1955794,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 1955809,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 1956364,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 1956379,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 1956439,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 1956454,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 1956888,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 1956903,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 1957347,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 1957362,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 1957499,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 1957518,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 1957881,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 1957896,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 1957995,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 1958010,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 1958033,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 1958048,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 1958298,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 1958313,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 1959866,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 1959881,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 1959904,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 1959919,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2014569,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2014587,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2014625,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2014640,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2037731,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2037746,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2068300,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2068315,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2068358,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2068373,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2068923,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2068940,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2068970,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2068985,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2069070,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2069085,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2069112,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2069127,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2069200,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2069223,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2127654,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2127669,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2154346,
+          "old_b64": "AQCLUgyBwRQAAQ==",
+          "new_b64": "AgCLUgyBwRQAAg=="
+        },
+        {
+          "offset": 2156336,
+          "old_b64": "AQ==",
+          "new_b64": "Ag=="
+        },
+        {
+          "offset": 2171053,
+          "old_b64": "AQCLQgyBwRQAAQ==",
+          "new_b64": "AgCLQgyBwRQAAg=="
+        },
+        {
+          "offset": 2228418,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2228433,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2234418,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2234433,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2238645,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2238660,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2238702,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2238717,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2239119,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2239142,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2239802,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2239821,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2241058,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2241073,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2242100,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2242119,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2244809,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2244824,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2247637,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2247652,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2247721,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2247736,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2247954,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2247969,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2248061,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2248076,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2251590,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2251605,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2251661,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2251676,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2251890,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2251905,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2252302,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2252317,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2273465,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2273484,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2273746,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2273761,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2301798,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2301813,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2361118,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2361133,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2361585,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2361600,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2361735,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2361750,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2361940,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2361955,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2426701,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2426716,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2432230,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2432245,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2432294,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2432309,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2432358,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2432373,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2432422,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2432437,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2432486,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2432501,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2432550,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2432565,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2432742,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2432757,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2432806,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2432821,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2432870,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2432885,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2432934,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2432949,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2435510,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2435525,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2435574,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2435589,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2437176,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2437191,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2438918,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2438933,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2438982,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2438997,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2439047,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2439062,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2442550,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2442565,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2442596,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2442611,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2444660,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2444675,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2449555,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2449570,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2449638,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2449653,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2449737,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2449752,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2450524,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2450546,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2450628,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2450643,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2457349,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2457364,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2457448,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2457463,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2463744,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2463759,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2464183,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2464198,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2464968,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2464983,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2473749,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2473764,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2473931,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2473946,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2474281,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2474296,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2475302,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2475317,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2477829,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2477844,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2488219,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2488234,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2488261,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2488276,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2488345,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2488360,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2488393,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2488408,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2488502,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2488517,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2522334,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2522353,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2526470,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2526485,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2526534,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2526549,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2526636,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2526651,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2526776,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2526791,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2526892,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2526907,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2527036,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2527051,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2527142,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2527157,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2527206,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2527221,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2527352,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2527367,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2527536,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2527559,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2528208,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2528223,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2530558,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2530573,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2531529,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2531544,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2533199,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2533214,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2538441,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2538456,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2538487,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2538502,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2538836,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2538851,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2538888,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2538903,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2550326,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2550341,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2550387,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2550410,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2550486,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2550501,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2550550,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2550565,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2553942,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2553957,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2554916,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2554931,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2554977,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2554993,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2555073,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2555089,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2555140,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2555155,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2555293,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2555308,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2563144,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2563159,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2566406,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2566421,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2566490,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2566505,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2566558,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2566573,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2566701,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2566716,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2574526,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2574541,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2580166,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2580181,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2580230,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2580245,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2580307,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2580322,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2581097,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2581112,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2581887,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2581902,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2583861,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2583880,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2584689,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2584704,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2587873,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2587888,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2588749,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2588764,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2589021,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2589040,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2589473,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2589488,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2589515,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2589530,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2593755,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2593770,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2596677,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2596696,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2596860,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2596879,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2612022,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2612037,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2620849,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2620864,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2620891,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2620906,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2620995,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2621010,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2621056,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2621071,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2621145,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2621160,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2621187,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2621202,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2624073,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2624088,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2624656,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2624671,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2624702,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2624717,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2625930,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2625945,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2626679,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2626698,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2628744,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2628763,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2629398,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2629413,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2636802,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2636817,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2638276,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2638291,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2640597,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2640616,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2640685,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2640700,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2640723,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2640738,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2640921,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2640936,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2641063,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2641078,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2641141,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2641156,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2641221,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2641236,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2641726,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2641741,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2641790,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2641805,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2641878,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2641893,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2643061,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2643076,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2650754,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2650769,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2650802,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2650817,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2650966,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2650981,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2652959,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2652974,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2653427,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2653442,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2653685,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2653704,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2654924,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2654939,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2659419,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2659434,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2661670,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2661693,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2662470,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2662485,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2662533,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2662548,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2662680,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2662697,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2662755,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2662770,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2662817,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2662832,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2662876,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2662891,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2664414,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2664429,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2664479,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2664494,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2664630,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2664645,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2664698,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2664713,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2664809,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2664824,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2665380,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2665395,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2665500,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2665515,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2665582,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2665597,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2665638,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2665653,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2665888,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2665903,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2666015,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2666034,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2666112,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2666127,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2666252,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2666267,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2666295,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2666310,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2666684,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2666699,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2667466,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2667481,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2667536,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2667551,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2667671,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2667686,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2667851,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2667866,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2668467,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2668482,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2669517,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2669536,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2670558,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2670577,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2670830,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2670849,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2670885,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2670900,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2671088,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2671103,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2671272,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2671287,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2671795,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2671810,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2672842,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2672861,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2673685,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2673700,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2674111,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2674126,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2674709,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2674724,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2674825,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2674848,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2674938,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2674953,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2675379,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2675398,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2676393,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2676408,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2676657,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2676676,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2676909,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2676928,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2677610,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2677625,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2677766,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2677789,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2678039,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2678054,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2678119,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2678134,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2678217,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2678232,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2678567,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2678582,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2679290,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2679305,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2679519,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2679534,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2679785,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2679800,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2680168,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2680187,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2681938,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2681957,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2685354,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2685369,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2686047,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2686066,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2686317,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2686336,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2686959,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2686978,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2694291,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2694306,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2699474,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2699489,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2699712,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2699727,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2699976,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2699995,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2700047,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2700062,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2705314,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2705329,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2705715,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2705734,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2705764,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2705779,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2705895,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2705914,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2715226,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2715245,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2719506,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2719521,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2837461,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2837476,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2837805,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2837820,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2837849,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2837864,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2837937,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2837952,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2838124,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2838139,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2853941,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2853956,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2910503,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2910518,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2939731,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2939746,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2940019,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2940034,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2940610,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2940625,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2940792,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2940807,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2950082,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2950097,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2950274,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2950289,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 2950498,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 2950513,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 3074822,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 3074837,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 3085885,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 3085900,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 3090753,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 3090768,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 3100892,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 3100907,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 3100973,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 3100988,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 3103430,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 3103445,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 3103503,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 3103518,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 3103750,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 3103767,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 3103798,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 3103821,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 3127346,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 3127361,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 3127465,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 3127480,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 3128024,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 3128043,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 3128900,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 3128915,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 3130078,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 3130093,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 3130209,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 3130224,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 3130381,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 3130396,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 3131093,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 3131108,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 3137397,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 3137412,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 3146809,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 3146824,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 3147433,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 3147448,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 3147600,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 3147623,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 3147808,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 3147827,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 3149886,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 3149905,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 3152129,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 3152144,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 3155641,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 3155656,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 3155753,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 3155768,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 3155920,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 3155943,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 3158209,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 3158224,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 3158616,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 3158631,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 3159400,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 3159415,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 3180673,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 3180688,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 3192185,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 3192200,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 3195032,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 3195047,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 3201993,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 3202008,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 3206784,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 3206799,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 3207036,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 3207051,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 3217809,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 3217824,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 3217884,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 3217899,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 3223802,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 3223817,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 3247799,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 3247814,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 3247936,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 3247951,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 3251310,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 3251325,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 3251450,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 3251465,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 3251619,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 3251634,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 3251770,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 3251785,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 3251930,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 3251945,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 3252090,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 3252105,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 3252347,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 3252362,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 3252571,
+          "old_b64": "Dw==",
+          "new_b64": "Hw=="
+        },
+        {
+          "offset": 3252586,
+          "old_b64": "DA==",
+          "new_b64": "DQ=="
+        },
+        {
+          "offset": 5230049,
+          "old_b64": "YKVz",
+          "new_b64": "ADCW"
+        },
+        {
+          "offset": 5366161,
+          "old_b64": "YKVz",
+          "new_b64": "ADCW"
+        },
+        {
+          "offset": 6869122,
+          "old_b64": "AQ==",
+          "new_b64": "Ag=="
+        },
+        {
+          "offset": 6869146,
+          "old_b64": "AQ==",
+          "new_b64": "Ag=="
+        },
+        {
+          "offset": 7092904,
+          "old_b64": "YKVzEGClcw==",
+          "new_b64": "ADCWEAAwlg=="
+        }
+      ],
+      "hunk_count": 1605
+    }
+  ],
+  "notes": [
+    "Windows client image; also usable by a Proton private copy.",
+    "The matching patched Linux dedicated server is a separate manifest."
+  ]
+}
