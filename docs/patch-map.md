@@ -54,7 +54,7 @@ reports/n27d30/correction.md remains the audit trail.
 ## Relocation and verification rules
 
 Each release hunk has an input hash and an old-byte assertion. The installer
-rejects a source mismatch before writing the isolated target and verifies the
+rejects a source mismatch before replacing the listed module and verifies the
 output hash after patching. tools/release/check_rc.py separately checks
 manifest identity, reconstruction, D65 evidence integrity and raw lifecycle
 semantics. A passing hunk assertion proves that the expected file was patched;

@@ -1,6 +1,6 @@
 # Development and reproducible builds
 
-The repository contains patch manifests, source-side generators, runtime probes and reports. It does not contain complete Valve binaries. Work from a verified private copy and keep the Steam library read-only.
+The repository contains patch manifests, source-side generators, runtime probes and reports. It does not contain complete Valve binaries. Work from a verified game tree and keep a matching `.l4d2-4096.bak` for every module changed by a local test.
 
 ## Build inputs
 
@@ -36,6 +36,6 @@ Before committing a release-candidate change:
 1. Run `git diff --check`.
 2. Run Python syntax checks and JSON parsing.
 3. Run the D65 evidence checker.
-4. Run the installer fixture or a private-copy dry run.
+4. Run the installer fixture or an in-place dry run.
 5. Check that no Valve binary, credential, core dump or private raw run was added.
 6. Update the release-readiness report if the tested scope changes.

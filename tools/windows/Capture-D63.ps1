@@ -1,10 +1,12 @@
 param(
-    [string]$TestPath = (Join-Path $env:LOCALAPPDATA 'L4D2-4096-D63'),
+    [string]$GamePath,
     [string]$Phase = 'manual',
     [int[]]$Indices = @(0, 1, 2048, 2049, 2095, 2096, 4095)
 )
 $ErrorActionPreference = 'Stop'
 try {
+    if (-not $GamePath) { $GamePath = Read-Host 'Enter the patched Steam Left 4 Dead 2 folder' }
+    $GamePath = (Resolve-Path -LiteralPath $GamePath).Path.TrimEnd('\')
     Add-Type -TypeDefinition @'
 using System;
 using System.Runtime.InteropServices;
@@ -17,11 +19,11 @@ public static class D63ReadMemory {
     public static extern bool CloseHandle(IntPtr handle);
 }
 '@
-    $exe = [IO.Path]::GetFullPath((Join-Path $TestPath 'left4dead2.exe'))
+    $exe = [IO.Path]::GetFullPath((Join-Path $GamePath 'left4dead2.exe'))
     $games = @(Get-Process left4dead2 -ErrorAction SilentlyContinue | Where-Object { $_.MainModule.FileName -eq $exe })
-    if ($games.Count -ne 1) { throw 'Exactly one running private D63 client is required.' }
+    if ($games.Count -ne 1) { throw 'Exactly one running patched D63 client is required.' }
     $game = $games[0]
-    $client = $game.Modules | Where-Object { $_.FileName -eq (Join-Path $TestPath 'left4dead2\bin\client.dll') } | Select-Object -First 1
+    $client = $game.Modules | Where-Object { $_.FileName -eq (Join-Path $GamePath 'left4dead2\bin\client.dll') } | Select-Object -First 1
     if (-not $client) { throw 'client.dll is not loaded yet.' }
     $clientSha = (Get-FileHash -LiteralPath $client.FileName -Algorithm SHA256).Hash.ToLowerInvariant()
     if ($clientSha -ne '3e5c3f2ee98c2bfa3f3672c654f7ae8b3ae401cc437a08ae1abbe57a6d363943') { throw 'Unexpected client.dll SHA.' }

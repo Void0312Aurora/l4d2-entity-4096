@@ -2,19 +2,26 @@
 
 ## “unsupported original” or SHA-256 mismatch
 
-The manifest is tied to build `23990068`. Do not force the patch onto a newer or different file. Verify the Steam library path and let Steam finish updates, then run `check` again. The installer stops before copying on a mismatch.
+The manifest is tied to build `23990068`. Do not force the patch onto a newer or different file. Verify the Steam library path and let Steam finish updates, then run `check` again. The installer stops before modifying a mismatch.
 
-## Target already exists
+## Existing `.bak` or receipt
 
-The installer only replaces a directory carrying `.l4d2-4096-private-copy`. Choose a fresh target or pass `--replace` after confirming the directory is the intended private copy. Unmarked directories are never adopted.
+The installer reuses a `.l4d2-4096.bak` only when its hash matches the
+manifest's original module. A mismatched backup is never overwritten. Keep the
+receipt in the game directory; it is the record used by `restore`.
 
 ## Patch assertion failed
 
-This means the source bytes changed between the initial check and the copy, or the manifest is not for that build. Keep the failure output, do not edit the binary manually, and restore the private target from its receipt if needed.
+This means the source bytes changed between validation and replacement, or the
+manifest is not for that build. Keep the failure output, do not edit the
+binary manually, and use the receipt plus `.l4d2-4096.bak` files for recovery.
 
 ## Client connects but high-index objects are missing
 
-Confirm that both sides use the matching manifest and that the client is the private copy. A vanilla client can connect to low-index content but cannot decode the expanded network index. Check the module hashes in `l4d2-4096-install.json` and run the release gate.
+Confirm that both sides use the matching manifest and that the client modules
+are patched in the normal Steam game directory. A vanilla client can connect
+to low-index content but cannot decode the expanded network index. Check the
+module hashes in `l4d2-4096-install.json` and run the release gate.
 
 ## SourceMod loads but a plugin fails
 
@@ -39,4 +46,6 @@ specific addon, retaining the original for rollback.
 
 ## Recovery
 
-Use the receipt with `tools/release/install.py restore`. Do not delete the Steam source tree as a recovery step. Preserve the receipt and first failure log for diagnosis.
+Use the receipt with `tools/release/install.py restore`. Do not delete the
+Steam game tree or the `.l4d2-4096.bak` files as a recovery step. Preserve the
+receipt and first failure log for diagnosis.

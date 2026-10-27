@@ -33,7 +33,7 @@ minimal SDK/gamedata changes. See [the recorded artifact hashes](../reports/n27d
 
 ## Production plugin-stack smoke test
 
-On 2026-10-27, a private copy combining the patched Linux server modules with
+On 2026-10-27, a temporary staging tree combining the patched Linux server modules with
 the host's production SourceMod tree was tested before touching the live
 server. The stock SDKHooks extension crashed during its entity-listener
 initialization because it still used the original Linux `EntityListeners`
@@ -45,7 +45,7 @@ extensions are compatible at high entity indices.
 
 The full plugin stack also exposed a command-buffer interaction. The first
 rejected command was `witch_shock_ammo_drop` while SourceMod executed the
-80-command `l4d2_specialammo` config. The private copy now loads the same 80
+80-command `l4d2_specialammo` config. That staging tree now loads the same 80
 commands in eight small files; command order and values are unchanged, and
 the two-map run recorded zero `Cbuf_AddText: buffer overflow` warnings. The
 L4D2-incompatible `nextmap.smx` remains disabled.

@@ -21,9 +21,9 @@ L4D2-4096 是面向《Left 4 Dead 2》build `23990068` 的非官方、版本绑�
 | Linux 原生客户端 | 未测试 | 不列为支持平台 |
 | SourceMod/SDKTools/SDKHooks | 限定兼容构建 | 仅覆盖 D65 探针中的 API 和回调 |
 
-## 安装隔离副本
+## 安装补丁模块
 
-需要 Python 3 和合法安装的 build `23990068`。安装器会先校验源文件哈希，再应用 `release/manifests/` 中的字节差分，校验输出哈希，最后写入独立目标目录；默认不会修改源目录，也不需要 IDA、GDB 或十六进制编辑器。
+需要 Python 3 和合法安装的 build `23990068`。安装器会先校验源文件哈希，只备份清单中的 DLL，再在 Steam 游戏目录原位替换模块；不会复制整棵游戏目录，也不会复制 addons。
 
 先预检 Windows 或 Proton 客户端：
 
@@ -33,28 +33,27 @@ python3 tools/release/install.py check \
   --game "/path/to/Left 4 Dead 2"
 ```
 
-预览并创建副本：
+预览但不修改文件：
 
 ```bash
 python3 tools/release/install.py install \
   --manifest release/manifests/windows-client.json \
   --game "/path/to/Left 4 Dead 2" \
-  --target "$HOME/L4D2-4096-client" --dry-run
+  --dry-run
 
 python3 tools/release/install.py install \
   --manifest release/manifests/windows-client.json \
-  --game "/path/to/Left 4 Dead 2" \
-  --target "$HOME/L4D2-4096-client"
+  --game "/path/to/Left 4 Dead 2"
 ```
 
-Linux 专用服务器使用 `release/manifests/linux-server.json`。目标目录中的 receipt 保存源文件和输出文件哈希；恢复已有备份：
+Linux 专用服务器使用 `release/manifests/linux-server.json`。安装器会在每个 DLL 旁写入 `*.l4d2-4096.bak`，并在游戏目录写入 receipt。恢复原始模块：
 
 ```bash
 python3 tools/release/install.py restore \
-  --receipt "$HOME/L4D2-4096-client/l4d2-4096-install.json"
+  --receipt "/path/to/Left 4 Dead 2/l4d2-4096-install.json"
 ```
 
-如果目标是本次新建且没有旧备份，恢复时加 `--remove-created`。完整流程见[安装说明](docs/installation.md)。
+替换模块时必须关闭游戏。Steam 更新后可能覆盖补丁，需要重新运行 `check` 和 `install`。完整流程见[安装说明](docs/installation.md)。
 
 ## 已验证内容
 

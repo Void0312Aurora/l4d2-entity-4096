@@ -1,92 +1,70 @@
 param(
     [string]$GamePath,
-    [string]$TestPath = (Join-Path $env:LOCALAPPDATA 'L4D2-4096-D63'),
+    [string]$RepoPath = (Split-Path (Split-Path $PSScriptRoot -Parent) -Parent),
     [string]$Server = '47.109.190.101:23067',
-    [switch]$PrepareOnly
+    [switch]$PrepareOnly,
+    [switch]$Restore
 )
 $ErrorActionPreference = 'Stop'
 
-function Get-Sha256([byte[]]$Bytes) {
-    $sha = [Security.Cryptography.SHA256]::Create()
-    try { return ([BitConverter]::ToString($sha.ComputeHash($Bytes))).Replace('-', '').ToLowerInvariant() }
-    finally { $sha.Dispose() }
+function Find-GamePath {
+    $steam = (Get-ItemProperty 'HKCU:\Software\Valve\Steam' -ErrorAction SilentlyContinue).SteamPath
+    $libraries = @($steam)
+    if ($steam -and (Test-Path (Join-Path $steam 'steamapps\libraryfolders.vdf'))) {
+        $vdf = Get-Content (Join-Path $steam 'steamapps\libraryfolders.vdf') -Raw
+        foreach ($m in [regex]::Matches($vdf, '"path"\s+"([^"]+)"')) {
+            $libraries += $m.Groups[1].Value.Replace('\\', '\')
+        }
+    }
+    foreach ($library in ($libraries | Select-Object -Unique)) {
+        if (-not $library) { continue }
+        $candidate = Join-Path $library 'steamapps\common\Left 4 Dead 2'
+        if (Test-Path (Join-Path $candidate 'left4dead2.exe')) { return $candidate }
+    }
+    return $null
 }
 
 try {
-    $manifest = Get-Content (Join-Path $PSScriptRoot 'patches.json') -Raw | ConvertFrom-Json
-    if (-not $GamePath) {
-        $steam = (Get-ItemProperty 'HKCU:\Software\Valve\Steam' -ErrorAction SilentlyContinue).SteamPath
-        $libraries = @($steam)
-        if ($steam -and (Test-Path (Join-Path $steam 'steamapps\libraryfolders.vdf'))) {
-            $vdf = Get-Content (Join-Path $steam 'steamapps\libraryfolders.vdf') -Raw
-            foreach ($m in [regex]::Matches($vdf, '"path"\s+"([^"]+)"')) {
-                $libraries += $m.Groups[1].Value.Replace('\\', '\')
-            }
-        }
-        foreach ($library in ($libraries | Select-Object -Unique)) {
-            if (-not $library) { continue }
-            $candidate = Join-Path $library 'steamapps\common\Left 4 Dead 2'
-            if (Test-Path (Join-Path $candidate 'left4dead2.exe')) { $GamePath = $candidate; break }
-        }
-    }
+    if (-not $GamePath) { $GamePath = Find-GamePath }
     if (-not $GamePath) { $GamePath = Read-Host 'Enter the Steam Left 4 Dead 2 folder (contains left4dead2.exe)' }
     $GamePath = (Resolve-Path -LiteralPath $GamePath).Path.TrimEnd('\')
-    $TestPath = [IO.Path]::GetFullPath($TestPath).TrimEnd('\')
-    if ($TestPath -eq $GamePath -or $TestPath.StartsWith($GamePath + '\', [StringComparison]::OrdinalIgnoreCase) -or
-        $TestPath -match '(?i)\\steamapps(?:\\|$)') { throw 'Choose a private test folder outside Steam.' }
-    $marker = Join-Path $TestPath '.l4d2-d63-private-copy'
-    if ((Test-Path $TestPath) -and -not (Test-Path $marker)) { throw 'Test folder already exists without our private-copy marker. Choose an empty path.' }
-    if (Get-Process 'left4dead2' -ErrorAction SilentlyContinue) { throw 'Close Left 4 Dead 2 before preparing the test copy.' }
-    # Validate every original before making the private copy. A newer build must fail closed.
-    foreach ($image in $manifest.images) {
-        $source = Join-Path $GamePath $image.path
-        if ((Get-Sha256 ([IO.File]::ReadAllBytes($source))) -ne $image.source_sha256) {
-            throw ('Unsupported original file: ' + $image.path + '. No Steam file was modified.')
-        }
+    $RepoPath = (Resolve-Path -LiteralPath $RepoPath).Path.TrimEnd('\')
+    $manifest = Join-Path $RepoPath 'release\manifests\windows-client.json'
+    $installer = Join-Path $RepoPath 'tools\release\install.py'
+    if (-not (Test-Path (Join-Path $GamePath 'left4dead2.exe'))) { throw 'GamePath does not contain left4dead2.exe.' }
+    if (-not (Test-Path $manifest) -or -not (Test-Path $installer)) { throw 'RepoPath must point to the l4d2-entity-4096 clone.' }
+    if (Get-Process 'left4dead2' -ErrorAction SilentlyContinue) { throw 'Close Left 4 Dead 2 before changing its modules.' }
+
+    $py = Get-Command py -ErrorAction SilentlyContinue
+    $python = Get-Command python -ErrorAction SilentlyContinue
+    if ($py) {
+        $pythonCommand = $py.Source
+        $pythonArgs = @('-3')
+        $pythonLabel = 'py -3'
+    } elseif ($python) {
+        $pythonCommand = $python.Source
+        $pythonArgs = @()
+        $pythonLabel = 'python'
+    } else {
+        throw 'Python 3 is required. Install Python or use the repository environment.'
     }
-    Write-Host 'Copying the game to a private test folder. This requires roughly one extra game installation of free disk space.'
-    New-Item -ItemType Directory -Path $TestPath -Force | Out-Null
-    Set-Content -LiteralPath $marker -Value 'L4D2-4096 D63 private test copy' -Encoding ASCII
-    & robocopy $GamePath $TestPath /E /COPY:DAT /DCOPY:T /R:1 /W:1 /XJ /NP /NFL /NDL
-    if ($LASTEXITCODE -ge 8) { throw ('Game copy failed, robocopy code ' + $LASTEXITCODE) }
-    foreach ($image in $manifest.images) {
-        $sourceBytes = [IO.File]::ReadAllBytes((Join-Path $GamePath $image.path))
-        if ((Get-Sha256 $sourceBytes) -ne $image.source_sha256) { throw 'Original changed during copying. Try again after Steam finishes updating.' }
-        $patched = New-Object byte[] ([int]$image.output_size)
-        [Array]::Copy($sourceBytes, $patched, [Math]::Min($sourceBytes.Length, $patched.Length))
-        foreach ($hunk in $image.hunks) {
-            $offset = [int]$hunk.offset
-            $old = [Convert]::FromBase64String($hunk.old)
-            $new = [Convert]::FromBase64String($hunk.new)
-            for ($i = 0; $i -lt $old.Length; $i++) {
-                if ($patched[$offset + $i] -ne $old[$i]) { throw ('Source byte assertion failed: ' + $image.path) }
-            }
-            [Array]::Copy($new, 0, $patched, $offset, $new.Length)
-        }
-        if ((Get-Sha256 $patched) -ne $image.output_sha256) { throw ('Patched SHA mismatch: ' + $image.path) }
-        [IO.File]::WriteAllBytes((Join-Path $TestPath $image.path), $patched)
-        Write-Host ('Verified: ' + $image.path + ' ' + $image.output_sha256)
+
+    if ($Restore) {
+        $receipt = Join-Path $GamePath 'l4d2-4096-install.json'
+        if (-not (Test-Path $receipt)) { throw 'No in-place install receipt was found in GamePath.' }
+        & $pythonCommand @pythonArgs $installer restore --receipt $receipt
+    } else {
+        Write-Host "Patching only the manifest modules in $GamePath with $pythonLabel. No game copy is created."
+        & $pythonCommand @pythonArgs $installer install --manifest $manifest --game $GamePath
+        if ($LASTEXITCODE -ne 0) { throw "Installer failed with exit code $LASTEXITCODE." }
     }
-    # Preserve the copied workshop cache, matching the local D62 recovery condition.
-    $addonList = Join-Path $TestPath 'left4dead2\addonlist.txt'
-    if (Test-Path $addonList) {
-        $text = Get-Content -LiteralPath $addonList -Raw
-        $text = [regex]::Replace($text, '("[^"\r\n]+"\s+)"1"', '$1"0"')
-        [IO.File]::WriteAllText($addonList, $text)
-    }
-    # Check source files again so the installation log proves Steam was preserved.
-    foreach ($image in $manifest.images) {
-        if ((Get-Sha256 ([IO.File]::ReadAllBytes((Join-Path $GamePath $image.path)))) -ne $image.source_sha256) { throw 'Steam original verification failed.' }
-    }
-    $receipt = [ordered]@{ prepared_utc = [DateTime]::UtcNow.ToString('o'); source = $GamePath; private_copy = $TestPath; server = $Server; images = $manifest.images | Select-Object path, source_sha256, output_sha256 }
-    $receipt | ConvertTo-Json -Depth 5 | Set-Content (Join-Path $TestPath 'd63-install-receipt.json') -Encoding UTF8
-    Write-Host ('Private test copy ready: ' + $TestPath)
-    if (-not $PrepareOnly) {
-        $env:SteamAppId = '550'
-        $env:SteamGameId = '550'
-        Start-Process (Join-Path $TestPath 'left4dead2.exe') -WorkingDirectory $TestPath -ArgumentList @('-steam', '-insecure', '-novid', '-console', '-condebug', '+connect', $Server)
-        Write-Host ('Connecting to ' + $Server + '. Keep Steam signed in with your own account.')
-    }
+    if ($LASTEXITCODE -ne 0) { throw "Installer failed with exit code $LASTEXITCODE." }
+    if ($Restore -or $PrepareOnly) { exit 0 }
+
+    $env:SteamAppId = '550'
+    $env:SteamGameId = '550'
+    Start-Process (Join-Path $GamePath 'left4dead2.exe') -WorkingDirectory $GamePath -ArgumentList @('-steam', '-insecure', '-novid', '-console', '-condebug', '+connect', $Server)
+    Write-Host ('Patched Steam game started; connecting to ' + $Server)
 } catch {
     Write-Host ('ERROR: ' + $_.Exception.Message) -ForegroundColor Red
     exit 1

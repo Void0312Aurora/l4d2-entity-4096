@@ -21,14 +21,12 @@ The following remain outside the release claim: internal 15-bit serial wraparoun
 | Linux native client | Not tested | Do not list as supported |
 | SourceMod core / SDKTools / SDKHooks | Limited compatible build | Only the API and callbacks in the D65 probe are covered |
 
-## Install a private copy
+## Install the release modules
 
-Use a Python 3 interpreter and a legally installed build `23990068`. The installer reads the original tree, verifies every source hash, applies only byte deltas from `release/manifests/`, verifies the output hash, and writes to a separate private directory outside the source tree. It never modifies the source tree.
-
-Both client and server installations show three visible stages: source
-verification, byte-level private-tree copying, and per-file patch/final-hash
-verification. The copy stage reports bytes and percentage so a large install
-does not appear stalled.
+Use a Python 3 interpreter and a legally installed build `23990068`. The
+installer verifies the source hashes, backs up only the manifest-listed DLLs
+next to the originals, and replaces those modules in the existing Steam game
+directory. It does not copy the game tree or addons.
 
 Check a Windows or Proton client source:
 
@@ -38,28 +36,32 @@ python3 tools/release/install.py check \
   --game "/path/to/Left 4 Dead 2"
 ```
 
-Preview and create the private copy:
+Preview the source without changing files:
 
 ```bash
 python3 tools/release/install.py install \
   --manifest release/manifests/windows-client.json \
   --game "/path/to/Left 4 Dead 2" \
-  --target "$HOME/L4D2-4096-client" --dry-run
+  --dry-run
 
 python3 tools/release/install.py install \
   --manifest release/manifests/windows-client.json \
-  --game "/path/to/Left 4 Dead 2" \
-  --target "$HOME/L4D2-4096-client"
+  --game "/path/to/Left 4 Dead 2"
 ```
 
-For a Linux dedicated server, use `release/manifests/linux-server.json` with the server root. The receipt in the private target records source and output hashes. Restore a previous marked target with:
+For a Linux dedicated server, use `release/manifests/linux-server.json` with
+the server root. The installer writes `*.l4d2-4096.bak` beside each patched
+module and stores `l4d2-4096-install.json` in the game directory. Restore the
+original modules with:
 
 ```bash
 python3 tools/release/install.py restore \
-  --receipt "$HOME/L4D2-4096-client/l4d2-4096-install.json"
+  --receipt "/path/to/Left 4 Dead 2/l4d2-4096-install.json"
 ```
 
-If the target was newly created and has no backup, add `--remove-created` to remove that marked private copy. See [installation](docs/installation.md) for source paths, launch notes, and failure recovery.
+The game must be closed while modules are replaced. Steam may overwrite a
+patched module during a game update; run `check` and `install` again after an
+update. See [installation](docs/installation.md) for recovery details.
 
 ## Verified behavior
 
@@ -119,7 +121,7 @@ The gate reports static identity, manifest, evidence-integrity, and end-to-end s
 - Wire serial repeats after 1024 reuse cycles as expected. The internal 15-bit wrap remains `NOT_TESTED`.
 - VAC safety, public matchmaking, and public release distribution are unverified.
 - Third-party SourceMod native extensions are not covered by the limited compatibility build.
-- Do not copy patched images into the Steam library. Use an isolated private copy and keep the receipt.
+- The installer touches only the manifest-listed modules; addons and the rest of the Steam tree are left in place.
 
 ## Provenance
 

@@ -1,11 +1,10 @@
 #!/usr/bin/env python3
-"""Install or restore an L4D2-4096 private copy from a byte-delta manifest.
+"""Install or restore the L4D2-4096 modules in the Steam game tree.
 
-The original game tree is read-only.  ``install`` creates a private home-directory
-private copy unless ``--target`` names another destination.  It validates
-every source hash before copying, patches temporary files, verifies the final
-hashes, and only then swaps the destination into place.  ``restore`` uses the
-receipt written by install and never needs IDA, GDB, or a hex editor.
+The installer changes only the files listed by the release manifest. Before
+the first replacement it keeps an adjacent ``.l4d2-4096.bak`` copy of every
+module, so the normal Steam game directory remains the only launch location
+and restore does not require a second game installation.
 """
 from __future__ import annotations
 
@@ -22,8 +21,9 @@ import time
 
 
 SCHEMA = "l4d2-4096-release-v1"
-MARKER = ".l4d2-4096-private-copy"
+RECEIPT_SCHEMA = "l4d2-4096-install-receipt-v2"
 RECEIPT = "l4d2-4096-install.json"
+BACKUP_SUFFIX = ".l4d2-4096.bak"
 
 
 def format_bytes(value: int) -> str:
@@ -34,63 +34,6 @@ def format_bytes(value: int) -> str:
             return f"{amount:.1f} {unit}" if unit != "B" else f"{int(amount)} B"
         amount /= 1024
     return f"{value} B"
-
-
-class Progress:
-    """Small terminal-friendly progress reporter for long installer phases."""
-
-    def __init__(self, label: str, total: int = 0):
-        self.label = label
-        self.total = total
-        self.done = 0
-        self.last_report = 0.0
-
-    def report(self, force: bool = False) -> None:
-        now = time.monotonic()
-        if not force and now - self.last_report < 0.5:
-            return
-        self.last_report = now
-        if self.total:
-            percent = min(100.0, self.done * 100.0 / self.total)
-            print(f"{self.label}: {percent:5.1f}% ({format_bytes(self.done)} / "
-                  f"{format_bytes(self.total)})", flush=True)
-        else:
-            print(f"{self.label}...", flush=True)
-
-    def add(self, amount: int) -> None:
-        self.done += amount
-        self.report()
-
-    def finish(self) -> None:
-        self.done = self.total or self.done
-        self.report(force=True)
-
-
-def tree_bytes(root: Path) -> int:
-    total = 0
-    for base, dirs, files in os.walk(root, followlinks=False):
-        dirs[:] = [name for name in dirs if not (Path(base) / name).is_symlink()]
-        for name in files:
-            path = Path(base) / name
-            if not path.is_symlink():
-                total += path.stat().st_size
-    return total
-
-
-def copy_with_progress(src: str, dst: str, progress: Progress) -> str:
-    """Copy one regular file in chunks so a large tree visibly advances."""
-    source = Path(src)
-    target = Path(dst)
-    target.parent.mkdir(parents=True, exist_ok=True)
-    with source.open("rb") as source_file, target.open("wb") as target_file:
-        while True:
-            chunk = source_file.read(8 * 1024 * 1024)
-            if not chunk:
-                break
-            target_file.write(chunk)
-            progress.add(len(chunk))
-    shutil.copystat(source, target, follow_symlinks=not source.is_symlink())
-    return dst
 
 
 def sha(path: Path) -> str:
@@ -121,12 +64,12 @@ def load_manifest(path: Path) -> dict:
         if relative.is_absolute() or ".." in relative.parts:
             raise SystemExit("manifest paths must stay inside the game tree")
         prev = -1
-        for h in item["hunks"]:
-            if h["offset"] < prev:
+        for hunk in item["hunks"]:
+            old = base64.b64decode(hunk["old_b64"])
+            base64.b64decode(hunk["new_b64"])
+            if hunk["offset"] < prev:
                 raise SystemExit(f"hunks are not ordered: {item['path']}")
-            prev = h["offset"] + len(base64.b64decode(h["old_b64"]))
-            base64.b64decode(h["old_b64"])
-            base64.b64decode(h["new_b64"])
+            prev = hunk["offset"] + len(old)
     return data
 
 
@@ -140,7 +83,7 @@ def validate_architecture(path: Path, platform: str) -> None:
         if head[:2] != b"MZ":
             raise SystemExit(f"expected an x86 PE module: {path}")
         pe = struct.unpack_from("<I", head, 60)[0]
-        if head[pe:pe+4] != b"PE\0\0" or struct.unpack_from("<H", head, pe+4)[0] != 0x14c:
+        if head[pe:pe+4] != b"PE\0\0" or struct.unpack_from("<H", head, pe+4)[0] != 0x14C:
             raise SystemExit(f"expected an x86 PE module: {path}")
 
 
@@ -152,16 +95,21 @@ def reject_symlink(path: Path) -> None:
 def reject_module_links(root: Path, relative: str) -> None:
     path = root
     for part in Path(relative).parts:
-        path = path/part
+        path = path / part
         reject_symlink(path)
 
 
+def backup_path(path: Path) -> Path:
+    return path.with_name(path.name + BACKUP_SUFFIX)
+
+
 def validate_source(game: Path, manifest: dict, progress: bool = False) -> list[dict]:
+    """Verify an unpatched game tree and return source identities."""
     results = []
     total = len(manifest["files"])
     for number, item in enumerate(manifest["files"], 1):
         if progress:
-            print(f"[1/3] verify source {number}/{total}: {item['path']}", flush=True)
+            print(f"[1/2] verify source {number}/{total}: {item['path']}", flush=True)
         path = game / item["path"]
         reject_module_links(game, item["path"])
         if not path.is_file():
@@ -185,11 +133,10 @@ def validate_source(game: Path, manifest: dict, progress: bool = False) -> list[
 def patch_bytes(blob: bytes, item: dict) -> bytes:
     pieces = []
     cursor = 0
-    # Hunk coordinates refer to the source, including insertions/truncations.
-    for h in item["hunks"]:
-        off = int(h["offset"])
-        old = base64.b64decode(h["old_b64"])
-        new = base64.b64decode(h["new_b64"])
+    for hunk in item["hunks"]:
+        off = int(hunk["offset"])
+        old = base64.b64decode(hunk["old_b64"])
+        new = base64.b64decode(hunk["new_b64"])
         if off < cursor or off > len(blob) or blob[off:off + len(old)] != old:
             raise SystemExit(f"source byte assertion failed: {item['path']} +0x{off:x}")
         pieces.extend((blob[cursor:off], new))
@@ -201,16 +148,68 @@ def patch_bytes(blob: bytes, item: dict) -> bytes:
     return out
 
 
-def is_under(child: Path, parent: Path) -> bool:
+def current_state(game: Path, manifest: dict, progress: bool = False) -> tuple[str, list[dict]]:
+    """Return source, patched, or reject a mixed/unknown module state."""
+    states = []
+    records = []
+    total = len(manifest["files"])
+    for number, item in enumerate(manifest["files"], 1):
+        if progress:
+            print(f"[1/2] verify current {number}/{total}: {item['path']}", flush=True)
+        path = game / item["path"]
+        reject_module_links(game, item["path"])
+        if not path.is_file():
+            raise SystemExit(f"missing required file: {path}")
+        actual_size = path.stat().st_size
+        actual_sha = sha(path)
+        if actual_size == item["source_size"] and actual_sha == item["source_sha256"]:
+            state = "source"
+        elif actual_size == item["output_size"] and actual_sha == item["output_sha256"]:
+            state = "patched"
+        else:
+            raise SystemExit(
+                f"unsupported current file at {item['path']}: "
+                f"size={actual_size} sha256={actual_sha}"
+            )
+        validate_architecture(path, manifest["platform"])
+        states.append(state)
+        records.append({"path": item["path"], "state": state,
+                        "sha256": actual_sha, "size": actual_size})
+        if progress:
+            print(f"      {state}: {format_bytes(actual_size)}", flush=True)
+    if all(state == "source" for state in states):
+        return "source", records
+    if all(state == "patched" for state in states):
+        return "patched", records
+    raise SystemExit("mixed module state; restore or repair the listed files before installing")
+
+
+def atomic_write(path: Path, data: bytes) -> None:
+    fd, temp_name = tempfile.mkstemp(prefix=f".{path.name}.", suffix=".tmp", dir=str(path.parent))
+    temp = Path(temp_name)
     try:
-        child.relative_to(parent)
-        return True
-    except ValueError:
-        return False
+        with os.fdopen(fd, "wb") as f:
+            f.write(data)
+            f.flush()
+            os.fsync(f.fileno())
+        os.replace(temp, path)
+    except BaseException:
+        temp.unlink(missing_ok=True)
+        raise
 
 
-def private_default(game: Path) -> Path:
-    return Path.home() / f"{game.name}-l4d2-4096"
+def ensure_backup(path: Path, item: dict) -> Path:
+    backup = backup_path(path)
+    reject_symlink(backup)
+    if backup.exists():
+        if not backup.is_file() or backup.stat().st_size != item["source_size"] or sha(backup) != item["source_sha256"]:
+            raise SystemExit(f"backup does not match the release source: {backup}")
+    else:
+        shutil.copy2(path, backup)
+        if sha(backup) != item["source_sha256"]:
+            backup.unlink(missing_ok=True)
+            raise SystemExit(f"backup verification failed: {backup}")
+    return backup
 
 
 def install(args: argparse.Namespace) -> int:
@@ -218,134 +217,96 @@ def install(args: argparse.Namespace) -> int:
     game = args.game.resolve()
     if not game.is_dir():
         raise SystemExit(f"game root is not a directory: {game}")
-    target = (args.target or private_default(game)).resolve()
-    if target == game or is_under(target, game) or is_under(game, target):
-        raise SystemExit("target must be a separate sibling/private tree")
-    if ".steam" in game.parts and target == game:
-        raise SystemExit("refusing to modify a Steam library")
 
-    source_info = validate_source(game, manifest, progress=True)
-    existing = target.exists()
-    if existing:
-        if not target.is_dir() or not (target / MARKER).is_file():
-            raise SystemExit(f"existing target is not a marked private copy: {target}")
-        if not args.replace:
-            raise SystemExit(f"target exists; pass --replace after checking it: {target}")
-    destination_parent = target.parent
-    print(f"source verified: {game}", flush=True)
-    print(f"private target:  {target}", flush=True)
-    print(f"platform:        {manifest['platform']}", flush=True)
-    for item in manifest["files"]:
-        print(f"  {item['path']}: {item['source_sha256'][:12]} -> {item['output_sha256'][:12]}")
+    state, _ = current_state(game, manifest, progress=True)
+    print(f"game:             {game}", flush=True)
+    print(f"platform:         {manifest['platform']}", flush=True)
+    if state == "patched":
+        for item in manifest["files"]:
+            ensure_backup(game / item["path"], item)
+        print("already installed: release module hashes match", flush=True)
+        return 0
     if args.dry_run:
-        print("DRY-RUN: no files copied or modified")
+        print("DRY-RUN: source verified; no files or backups were written", flush=True)
         return 0
 
-    destination_parent.mkdir(parents=True, exist_ok=True)
-    backup = None
-    backup_files = []
-    if existing:
-        for item in manifest["files"]:
-            prior = target / item["path"]
-            reject_module_links(target, item["path"])
-            backup_files.append({"path": item["path"], "sha256": sha(prior)})
-    temp = Path(tempfile.mkdtemp(prefix=f".{target.name}.", dir=str(destination_parent)))
+    source_info = [{"path": item["path"], "source_sha256": item["source_sha256"],
+                    "source_size": item["source_size"]} for item in manifest["files"]]
+    backups = []
+    candidates = []
+    item_by_path = {item["path"]: item for item in manifest["files"]}
     try:
-        shutil.rmtree(temp)
-        copy_progress = Progress("[2/3] copy game tree", tree_bytes(game))
-        print(f"[2/3] copy game tree: {format_bytes(copy_progress.total)}", flush=True)
-        shutil.copytree(
-            game, temp, symlinks=True,
-            copy_function=lambda source, destination: copy_with_progress(
-                source, destination, copy_progress),
-        )
-        copy_progress.finish()
-        reject_symlink(temp/MARKER)
-        reject_symlink(temp/RECEIPT)
-        (temp / MARKER).write_text(
-            f"L4D2-4096 private copy\nbuild={manifest['build']}\nplatform={manifest['platform']}\n",
-            encoding="ascii",
-        )
-        total = len(manifest["files"])
-        for number, item in enumerate(manifest["files"], 1):
-            print(f"[3/3] patch and verify {number}/{total}: {item['path']}", flush=True)
-            path = temp / item["path"]
-            reject_module_links(temp, item["path"])
-            path.write_bytes(patch_bytes(path.read_bytes(), item))
-            validate_architecture(path, manifest["platform"])
-            print(f"      ready {format_bytes(path.stat().st_size)}", flush=True)
+        for item in manifest["files"]:
+            path = game / item["path"]
+            backups.append(ensure_backup(path, item))
+            candidates.append((path, item, patch_bytes(path.read_bytes(), item)))
+
+        print(f"[2/2] patch and verify {len(candidates)} module(s)", flush=True)
+        applied = []
+        try:
+            for path, item, candidate in candidates:
+                if sha(path) != item["source_sha256"]:
+                    raise SystemExit(f"source changed while preparing install: {path}")
+                atomic_write(path, candidate)
+                applied.append((path, item))
+                print(f"      ready {item['path']}: {format_bytes(len(candidate))}", flush=True)
+        except BaseException:
+            for path, item in reversed(applied):
+                atomic_write(path, backup_path(path).read_bytes())
+            raise
+
+        for item in manifest["files"]:
+            path = game / item["path"]
+            if sha(path) != item["output_sha256"]:
+                raise SystemExit(f"output hash verification failed: {item['path']}")
 
         receipt = {
-            "schema": "l4d2-4096-install-receipt-v1",
+            "schema": RECEIPT_SCHEMA,
             "manifest": str(args.manifest.resolve()),
             "build": manifest["build"],
             "platform": manifest["platform"],
-            "source": str(game),
-            "target": str(target),
+            "game": str(game),
             "created_utc": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
             "source_files": source_info,
             "output_files": [{"path": i["path"], "sha256": i["output_sha256"],
                               "size": i["output_size"]} for i in manifest["files"]],
-            "backup": None,
-            "backup_files": backup_files,
-            "created_new_target": not existing,
+            "backup_files": [{"path": str(b.relative_to(game)).replace("\\", "/"),
+                              "sha256": item["source_sha256"], "size": item["source_size"]}
+                             for b, item in zip(backups, manifest["files"])],
         }
-        (temp / RECEIPT).write_text(json.dumps(receipt, indent=2) + "\n", encoding="utf-8")
-        if existing:
-            backup = target.with_name(target.name + f".backup-{time.strftime('%Y%m%d-%H%M%S')}")
-            if backup.exists():
-                raise SystemExit(f"backup path already exists: {backup}")
-            target.rename(backup)
-            receipt["backup"] = str(backup)
-            (temp / RECEIPT).write_text(json.dumps(receipt, indent=2) + "\n", encoding="utf-8")
-        temp.rename(target)
+        atomic_write(game / RECEIPT, (json.dumps(receipt, indent=2) + "\n").encode())
     except BaseException:
-        shutil.rmtree(temp, ignore_errors=True)
-        if backup and backup.exists() and not target.exists():
-            backup.rename(target)
+        # Verified backups are deliberately retained if a later step fails.
         raise
-    print(f"installed private copy: {target}", flush=True)
-    print(f"receipt: {target / RECEIPT}", flush=True)
+    print(f"installed in place: {game}", flush=True)
+    print(f"backups: {', '.join(str(b) for b in backups)}", flush=True)
+    print(f"receipt: {game / RECEIPT}", flush=True)
     return 0
 
 
 def restore(args: argparse.Namespace) -> int:
     receipt_path = args.receipt.resolve()
     data = json.loads(receipt_path.read_text(encoding="utf-8"))
-    if data.get("schema") != "l4d2-4096-install-receipt-v1":
-        raise SystemExit("unsupported install receipt")
-    target = Path(data["target"]).resolve()
-    if receipt_path != target / RECEIPT:
-        raise SystemExit("receipt must be inside its marked target")
-    if not target.is_dir() or not (target / MARKER).is_file():
-        raise SystemExit(f"marked private target not found: {target}")
-    backup = Path(data["backup"]).resolve() if data.get("backup") else None
-    if backup:
-        if not backup.is_dir():
-            raise SystemExit(f"backup is missing: {backup}")
-        if not data.get("backup_files"):
-            raise SystemExit("receipt has no backup hashes")
-        for item in data["backup_files"]:
-            if sha(backup / item["path"]) != item["sha256"]:
-                raise SystemExit(f"backup hash mismatch: {item['path']}")
-        quarantine = target.with_name(target.name + ".uninstalled")
-        if quarantine.exists():
-            raise SystemExit(f"quarantine path already exists: {quarantine}")
-        target.rename(quarantine)
-        try:
-            backup.rename(target)
-        except BaseException:
-            quarantine.rename(target)
-            raise
-        shutil.rmtree(quarantine)
-        print(f"restored previous private copy: {target}")
-    else:
-        if not data.get("created_new_target"):
-            raise SystemExit("receipt has no backup and does not describe a new target")
-        if not args.remove_created:
-            raise SystemExit("this install created the target; pass --remove-created to delete it")
-        shutil.rmtree(target)
-        print(f"removed created private copy: {target}")
+    if data.get("schema") != RECEIPT_SCHEMA:
+        raise SystemExit("unsupported install receipt (expected an in-place install receipt)")
+    game = Path(data["game"]).resolve()
+    if receipt_path != game / RECEIPT:
+        raise SystemExit("receipt must be in the patched game directory")
+    manifest = load_manifest(Path(data["manifest"]).resolve())
+    state, _ = current_state(game, manifest)
+    if state == "source":
+        print("already restored: source module hashes match", flush=True)
+        return 0
+    for item in manifest["files"]:
+        path = game / item["path"]
+        backup = backup_path(path)
+        if not backup.is_file() or sha(backup) != item["source_sha256"]:
+            raise SystemExit(f"backup hash mismatch or missing: {backup}")
+        atomic_write(path, backup.read_bytes())
+        if sha(path) != item["source_sha256"]:
+            raise SystemExit(f"restore verification failed: {item['path']}")
+        print(f"restored {item['path']}", flush=True)
+    print(f"restored original modules in place: {game}", flush=True)
     return 0
 
 
@@ -353,22 +314,22 @@ def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__)
     sub = ap.add_subparsers(dest="command", required=True)
     for name in ("check", "install"):
-        p = sub.add_parser(name, help="validate the original or install a private copy")
+        p = sub.add_parser(name, help="check or install the release modules in the game tree")
         p.add_argument("--manifest", type=Path, required=True)
         p.add_argument("--game", type=Path, required=True)
         if name == "install":
-            p.add_argument("--target", type=Path)
-            p.add_argument("--replace", action="store_true",
-                           help="replace an existing marked private copy after backup")
-            p.add_argument("--dry-run", action="store_true")
-    p = sub.add_parser("restore", help="restore a receipt's backup or remove a new private copy")
+            p.add_argument("--dry-run", action="store_true",
+                           help="verify the source without creating backups or changing files")
+    p = sub.add_parser("restore", help="restore the .l4d2-4096.bak module backups")
     p.add_argument("--receipt", type=Path, required=True)
-    p.add_argument("--remove-created", action="store_true")
     args = ap.parse_args()
     if args.command == "check":
         m = load_manifest(args.manifest.resolve())
-        validate_source(args.game.resolve(), m)
-        print("PASS: original file identities match the release manifest")
+        state, _ = current_state(args.game.resolve(), m)
+        if state == "source":
+            print("PASS: original file identities match the release manifest")
+        else:
+            print("PASS: patched file identities match the release manifest")
         return 0
     if args.command == "install":
         return install(args)
