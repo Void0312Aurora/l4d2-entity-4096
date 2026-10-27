@@ -1,0 +1,31 @@
+{
+  "schema": "l4d2-d65-ladder-v1",
+  "source": "raw runs/d65 snapshots independently recomputed by check_raw_lifecycle.py",
+  "ladder": [
+    {
+      "count": 16,
+      "status": "PASS",
+      "evidence": "load16-*.json"
+    },
+    {
+      "count": 64,
+      "status": "PASS",
+      "evidence": "load64-actual-*.json"
+    },
+    {
+      "count": 128,
+      "status": "PASS",
+      "evidence": "load128-actual-*.json"
+    },
+    {
+      "count": 256,
+      "status": "PASS",
+      "evidence": "load256-actual-*.json"
+    },
+    {
+      "count": 512,
+      "status": "PASS",
+      "evidence": "load512-actual-*.json"
+    }
+  ]
+}

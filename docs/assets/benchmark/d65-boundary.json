@@ -1,0 +1,26 @@
+{
+  "schema": "l4d2-d65-boundary-v1",
+  "source": "reports/n27d65/validation.json and runs/d65/boundary-*.json",
+  "boundary": [
+    {
+      "index": 2047,
+      "label": "vanilla ceiling",
+      "result": "API round-trip"
+    },
+    {
+      "index": 2048,
+      "label": "first added",
+      "result": "create/update/delete"
+    },
+    {
+      "index": 2049,
+      "label": "edge pair",
+      "result": "client visible"
+    },
+    {
+      "index": 4095,
+      "label": "maximum",
+      "result": "reuse + callbacks"
+    }
+  ]
+}

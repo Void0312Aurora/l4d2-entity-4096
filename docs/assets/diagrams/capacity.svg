@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="860" height="470" viewBox="0 0 860 470" role="img" aria-labelledby="title desc">
+  <title id="title">Entity capacity before and after</title>
+  <desc id="desc">L4D2-4096 technical diagram. Values are tied to build 23990068.</desc>
+  <style>
+    :root { color-scheme: light dark; }
+    text { font-family: Inter,Segoe UI,Arial,sans-serif; fill: #17202a; }
+    .bg { fill: #f7f9fb; } .panel { fill: #ffffff; stroke: #b9c4cf; stroke-width: 1.5; }
+    .old { fill: #e8edf2; stroke: #667687; stroke-width: 1.5; }
+    .new { fill: #d9f3e5; stroke: #2c8b57; stroke-width: 1.5; }
+    .wire { fill: #dceafe; stroke: #356eb8; stroke-width: 1.5; }
+    .label { font-size: 16px; font-weight: 500; } .small { font-size: 13px; }
+    .muted { font-size: 12px; fill: #526273; } .arrow { stroke: #425466; stroke-width: 2; fill: none; marker-end: url(#arrow); }
+    .good { fill: #2c8b57; } .axis { stroke: #748394; stroke-width: 1; }
+    @media (prefers-color-scheme: dark) { text { fill: #e8eef5; } .bg { fill: #151b22; } .panel { fill: #1e2732; stroke: #718096; } .old { fill: #303b47; stroke: #9aa9b8; } .new { fill: #19452f; stroke: #68d391; } .wire { fill: #17375f; stroke: #73a7ed; } .muted { fill: #b4c0cc; } .axis { stroke: #95a4b4; } .arrow { stroke: #c1cfdd; } }
+  </style>
+  <defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#425466"/></marker></defs>
+  <rect class="bg" width="100%" height="100%"/>
+
+  <text x="40" y="38" class="label">Entity capacity before and after</text>
+  <text x="40" y="62" class="muted">Source build 23990068 · network and internal tables have different limits</text>
+  <rect x="40" y="90" width="320" height="280" rx="12" class="panel"/>
+  <text x="64" y="126" class="label">Vanilla L4D2</text>
+  <rect x="64" y="150" width="272" height="42" rx="7" class="old"/>
+  <text x="78" y="176" class="small">network edicts · 0–2047</text>
+  <rect x="64" y="208" width="272" height="42" rx="7" class="old"/>
+  <text x="78" y="234" class="small">internal slots · 0–4095</text>
+  <text x="64" y="282" class="muted">network index: 11 bits</text>
+  <path d="M390 200 H470" class="arrow"/>
+  <rect x="500" y="90" width="320" height="280" rx="12" class="panel"/>
+  <text x="524" y="126" class="label">L4D2-4096</text>
+  <rect x="524" y="150" width="272" height="42" rx="7" class="new"/>
+  <text x="538" y="176" class="small">network edicts · 0–4095</text>
+  <rect x="524" y="208" width="272" height="42" rx="7" class="new"/>
+  <text x="538" y="234" class="small">internal slots · 0–8191</text>
+  <text x="524" y="282" class="muted">index: 12-bit network / 13-bit internal</text>
+  <text x="64" y="316" class="small">reserved slot: 2048</text>
+  <text x="64" y="342" class="small">non-network pool: 2049–4095</text>
+  <text x="524" y="316" class="small">reserved slot: 4096</text>
+  <text x="524" y="342" class="small">non-network pool: 4097–8191</text>
+  <text x="40" y="412" class="muted">Internal EHANDLE: 13-bit index + 15-bit serial · network serial: 10 bits</text>
+  <text x="40" y="438" class="muted">Source: D61 partition and D62/D65 runtime evidence · see docs/architecture.md</text>
+
+</svg>

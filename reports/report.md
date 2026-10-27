@@ -434,7 +434,7 @@ S2 / S4 / S5 / S6 / S7 共约 81 处，均具备：SHA-256 绑定、指令上下
 
 # 追加：任务 A/B/C 执行结果（第 4 轮）
 
-脚本：[audit_object.py](audit_object.py)（只读）。产物：`member_offsets.csv`、`object_references.csv`、`unresolved_references.csv`。
+脚本：[audit_object.py](../tools/audit_object.py)（只读）。产物：`member_offsets.csv`、`object_references.csv`、`unresolved_references.csv`。
 
 ## A. 成员位移候选逐点分类（69 处）
 
@@ -1032,7 +1032,7 @@ iVar2 = piVar5[0x14];                                       // entry+0x50 = 键
 
 # server.dll 统一迁移 manifest（第 11 轮）
 
-产物：[manifest.server.json](manifest.server.json)（生成器 [gen_manifest.py](gen_manifest.py)，只读）。
+产物：[manifest.server.json](../manifests/server.json)（早期生成器归档为 [gen_manifest.py.broken](../archive/gen_manifest.py.broken)，只读）。
 
 ## 51. 目标布局
 
@@ -1104,7 +1104,7 @@ SHA-256 绑定：`a93ec916a8f26fbea85688c321d2ba8dd346d435fab09a0b926dd950c2e1ea
 
 # manifest v2：PE 布局修正与分类复核（第 12 轮）
 
-生成器 v2：[gen_manifest_v2.py](gen_manifest_v2.py) → [manifest.server.json](manifest.server.json)。
+生成器 v2 的历史文件已不在当前仓库；当前清单见 [manifests/server.json](../manifests/server.json)。
 
 ## 57. PE 布局修正（采纳）
 
@@ -1179,7 +1179,7 @@ v2 改用主键 `(rva, file_offset, size)`，并记录被丢弃项：
 
 ## 63. 只读 PE 预检器
 
-[precheck_server.py](precheck_server.py) → [precheck/precheck.json](precheck/precheck.json)。**30 项检查全部通过**，不改写任何文件（内存模拟）。
+[precheck_server.py](../tools/precheck_server.py) → [precheck/precheck.json](precheck/precheck.json)。**30 项检查全部通过**，不改写任何文件（内存模拟）。
 
 | 组 | 检查 | 结果 |
 |---|---|---|
@@ -1375,7 +1375,7 @@ for (i = m_entityListeners.m_Size; --i >= 0; )
 
 ## 75. 隔离测试副本已生成
 
-[build_server.py](build_server.py) → `out/server.4096.dll`
+[build_server.py](../tools/build_server.py) → `out/server.4096.dll`
 
 | 项 | 值 |
 |---|---|

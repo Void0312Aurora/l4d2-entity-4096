@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="930" height="440" viewBox="0 0 930 440" role="img" aria-labelledby="title desc">
+  <title id="title">High-index entity lifecycle</title>
+  <desc id="desc">L4D2-4096 technical diagram. Values are tied to build 23990068.</desc>
+  <style>
+    :root { color-scheme: light dark; }
+    text { font-family: Inter,Segoe UI,Arial,sans-serif; fill: #17202a; }
+    .bg { fill: #f7f9fb; } .panel { fill: #ffffff; stroke: #b9c4cf; stroke-width: 1.5; }
+    .old { fill: #e8edf2; stroke: #667687; stroke-width: 1.5; }
+    .new { fill: #d9f3e5; stroke: #2c8b57; stroke-width: 1.5; }
+    .wire { fill: #dceafe; stroke: #356eb8; stroke-width: 1.5; }
+    .label { font-size: 16px; font-weight: 500; } .small { font-size: 13px; }
+    .muted { font-size: 12px; fill: #526273; } .arrow { stroke: #425466; stroke-width: 2; fill: none; marker-end: url(#arrow); }
+    .good { fill: #2c8b57; } .axis { stroke: #748394; stroke-width: 1; }
+    @media (prefers-color-scheme: dark) { text { fill: #e8eef5; } .bg { fill: #151b22; } .panel { fill: #1e2732; stroke: #718096; } .old { fill: #303b47; stroke: #9aa9b8; } .new { fill: #19452f; stroke: #68d391; } .wire { fill: #17375f; stroke: #73a7ed; } .muted { fill: #b4c0cc; } .axis { stroke: #95a4b4; } .arrow { stroke: #c1cfdd; } }
+  </style>
+  <defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#425466"/></marker></defs>
+  <rect class="bg" width="100%" height="100%"/>
+
+  <text x="40" y="38" class="label">High-index entity lifecycle</text>
+  <text x="40" y="62" class="muted">Representative D65 boundary: index 4095, normal allocator, no direct slot writes</text>
+  <g transform="translate(42,112)">
+    <rect x="0" y="0" width="130" height="60" rx="10" class="new"/><text x="65" y="35" text-anchor="middle" class="small">Allocate</text>
+    <rect x="160" y="0" width="130" height="60" rx="10" class="panel"/><text x="225" y="35" text-anchor="middle" class="small">Create</text>
+    <rect x="320" y="0" width="160" height="60" rx="10" class="wire"/><text x="400" y="35" text-anchor="middle" class="small">Server snapshot</text>
+    <rect x="510" y="0" width="145" height="60" rx="10" class="wire"/><text x="582" y="35" text-anchor="middle" class="small">Client create</text>
+    <rect x="685" y="0" width="130" height="60" rx="10" class="panel"/><text x="750" y="35" text-anchor="middle" class="small">Update ×6</text>
+    <path d="M132 30 H157" class="arrow"/><path d="M292 30 H317" class="arrow"/>
+    <path d="M482 30 H507" class="arrow"/><path d="M657 30 H682" class="arrow"/>
+    <path d="M815 30 H875 V125 H745" class="arrow"/>
+    <rect x="610" y="95" width="145" height="60" rx="10" class="panel"/><text x="682" y="130" text-anchor="middle" class="small">Delete</text>
+    <path d="M608 125 H445" class="arrow"/>
+    <rect x="250" y="95" width="195" height="60" rx="10" class="new"/><text x="347" y="130" text-anchor="middle" class="small">Client remove</text>
+    <path d="M248 125 H125 V190 H250" class="arrow"/>
+    <rect x="250" y="190" width="310" height="60" rx="10" class="new"/><text x="405" y="225" text-anchor="middle" class="small">Serial increment / slot reuse</text>
+  </g>
+  <text x="42" y="402" class="muted">Old references become invalid; serial repetition after its finite period is expected and must be checked by lifecycle state.</text>
+
+</svg>

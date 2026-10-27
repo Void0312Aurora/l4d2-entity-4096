@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="820" height="430" viewBox="0 0 820 430" role="img" aria-labelledby="title desc">
+  <title id="title">D65 real-entity ladder</title>
+  <desc id="desc">L4D2-4096 technical diagram. Values are tied to build 23990068.</desc>
+  <style>
+    :root { color-scheme: light dark; }
+    text { font-family: Inter,Segoe UI,Arial,sans-serif; fill: #17202a; }
+    .bg { fill: #f7f9fb; } .panel { fill: #ffffff; stroke: #b9c4cf; stroke-width: 1.5; }
+    .old { fill: #e8edf2; stroke: #667687; stroke-width: 1.5; }
+    .new { fill: #d9f3e5; stroke: #2c8b57; stroke-width: 1.5; }
+    .wire { fill: #dceafe; stroke: #356eb8; stroke-width: 1.5; }
+    .label { font-size: 16px; font-weight: 500; } .small { font-size: 13px; }
+    .muted { font-size: 12px; fill: #526273; } .arrow { stroke: #425466; stroke-width: 2; fill: none; marker-end: url(#arrow); }
+    .good { fill: #2c8b57; } .axis { stroke: #748394; stroke-width: 1; }
+    @media (prefers-color-scheme: dark) { text { fill: #e8eef5; } .bg { fill: #151b22; } .panel { fill: #1e2732; stroke: #718096; } .old { fill: #303b47; stroke: #9aa9b8; } .new { fill: #19452f; stroke: #68d391; } .wire { fill: #17375f; stroke: #73a7ed; } .muted { fill: #b4c0cc; } .axis { stroke: #95a4b4; } .arrow { stroke: #c1cfdd; } }
+  </style>
+  <defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#425466"/></marker></defs>
+  <rect class="bg" width="100%" height="100%"/>
+
+  <text x="40" y="38" class="label">D65 real-entity ladder</text>
+  <text x="40" y="62" class="muted">Each marked level records create, six updates, delete, and allocator reuse</text>
+  <line x1="76" y1="344" x2="776" y2="344" class="axis"/>
+  <line x1="76" y1="94" x2="76" y2="344" class="axis"/>
+  <text x="30" y="104" class="muted">512</text>
+  <text x="40" y="348" class="muted">0</text>
+  <rect x="112.0" y="336.2" width="68" height="7.8" rx="5" fill="#2c8b57" opacity="0.88"/><text x="146.0" y="326.2" text-anchor="middle" class="small">16</text><text x="146.0" y="370" text-anchor="middle" class="small">16 props</text><text x="146.0" y="391" text-anchor="middle" class="muted">PASS</text><rect x="252.0" y="312.8" width="68" height="31.2" rx="5" fill="#2c8b57" opacity="0.88"/><text x="286.0" y="302.8" text-anchor="middle" class="small">64</text><text x="286.0" y="370" text-anchor="middle" class="small">64 props</text><text x="286.0" y="391" text-anchor="middle" class="muted">PASS</text><rect x="392.0" y="281.5" width="68" height="62.5" rx="5" fill="#2c8b57" opacity="0.88"/><text x="426.0" y="271.5" text-anchor="middle" class="small">128</text><text x="426.0" y="370" text-anchor="middle" class="small">128 props</text><text x="426.0" y="391" text-anchor="middle" class="muted">PASS</text><rect x="532.0" y="219.0" width="68" height="125.0" rx="5" fill="#2c8b57" opacity="0.88"/><text x="566.0" y="209.0" text-anchor="middle" class="small">256</text><text x="566.0" y="370" text-anchor="middle" class="small">256 props</text><text x="566.0" y="391" text-anchor="middle" class="muted">PASS</text><rect x="672.0" y="94.0" width="68" height="250.0" rx="5" fill="#2c8b57" opacity="0.88"/><text x="706.0" y="84.0" text-anchor="middle" class="small">512</text><text x="706.0" y="370" text-anchor="middle" class="small">512 props</text><text x="706.0" y="391" text-anchor="middle" class="muted">PASS</text>
+  <text x="426.0" y="412" text-anchor="middle" class="muted">Network entities held in the private test session</text>
+
+</svg>
