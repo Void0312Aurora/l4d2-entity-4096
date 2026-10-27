@@ -1,0 +1,210 @@
+{
+  "stage": "N27-D65",
+  "date": "2026-10-27",
+  "result": "PARTIAL_WITH_CORE_P0_PASS",
+  "identities": {
+    "patched_engine_sha256": "79b3966bd9752394beb2f29f0cf0244acedddde15112b4c037535994ecaf8014",
+    "patched_server_sha256": "8575ed52f39b7c85ea776c83960e3ac08f07521b503109e639acdee1e53d5222",
+    "patched_client_sha256": "3e5c3f2ee98c2bfa3f3672c654f7ae8b3ae401cc437a08ae1abbe57a6d363943",
+    "original_engine_sha256": "5fa15f2820ab67b955ff227a20dbb3fda54d463f3799f33d71b6fd6f38e309b7",
+    "original_server_sha256": "c59ebc75b3cfcb3b6b057aea3bb04131b90258b13dc0ce8968e7deff599c9270"
+  },
+  "ladder": [
+    16,
+    64,
+    128,
+    256,
+    512
+  ],
+  "assertions": {
+    "HIGH_INDEX_LIVE_SET": {
+      "status": "PASS",
+      "tested_conditions": "actual 16/64/128/256/512 network props",
+      "observations": "CBaseEntityList, edict back-references, handles and 587 relocations checked",
+      "evidence": [
+        "load512-actual-created.json",
+        "load512-actual-reused.json"
+      ]
+    },
+    "HIGH_INDEX_CLIENT_CREATE": {
+      "status": "PASS",
+      "tested_conditions": "patched Proton client and actual 2048+ plus 4095",
+      "observations": "client RTTI and stable slots; serial low 10 bits match",
+      "evidence": [
+        "load512-actual-created.json",
+        "boundary-natural-created.json"
+      ]
+    },
+    "HIGH_INDEX_CLIENT_UPDATE": {
+      "status": "PASS",
+      "tested_conditions": "six deterministic updates per ladder level",
+      "observations": "client final origins match server; observer and client ticks recorded",
+      "evidence": [
+        "load512-actual-seq6.json",
+        "modload512-seq6.json"
+      ]
+    },
+    "HIGH_INDEX_CLIENT_REMOVE": {
+      "status": "PASS",
+      "tested_conditions": "half of each ladder and 4095 removed",
+      "observations": "client pointer cleared and old reference invalid",
+      "evidence": [
+        "load512-actual-deleted.json",
+        "boundary-deleted.json"
+      ]
+    },
+    "HIGH_INDEX_REUSE": {
+      "status": "PASS",
+      "tested_conditions": "normal allocator reuse at all ladder levels and 4095",
+      "observations": "serial increment and new object; old reference invalid",
+      "evidence": [
+        "ladder-actual-results.json",
+        "boundary-reused.json"
+      ]
+    },
+    "HIGH_INDEX_4095_BOUNDARY": {
+      "status": "PASS",
+      "tested_conditions": "normal allocation reached 4095 with 1000 network slots reserved",
+      "observations": "server/client create, six updates, delete and recreate; SDKHooks callbacks",
+      "evidence": [
+        "boundary-natural-created.json",
+        "boundary-seq1.json",
+        "boundary-deleted.json",
+        "boundary-reused.json"
+      ]
+    },
+    "SPECIAL_INFECTED_WITH_HIGH_INDEX_LOAD": {
+      "status": "PASS",
+      "tested_conditions": "512 live high props and legal ZSpawn types 1..6",
+      "observations": "six expected models and health values found",
+      "evidence": [
+        "resume-mod/special-resume-r2.log",
+        "resume512-before.json"
+      ]
+    },
+    "SPECIAL_INFECTED_CLIENT_VISIBLE": {
+      "status": "PASS",
+      "tested_conditions": "each special sampled on patched client while 512 props remained",
+      "observations": "client player RTTI, zombie class and health sampled",
+      "evidence": [
+        "resume-special-hunter-alive.json",
+        "resume-special-spitter-alive.json",
+        "resume-special-charger-alive.json"
+      ]
+    },
+    "GAMEPLAY_DAMAGE_EVENT": {
+      "status": "PASS",
+      "tested_conditions": "10 damage and lethal damage for six special types",
+      "observations": "player_hurt and player_death callbacks for all six",
+      "evidence": [
+        "resume-mod/special-resume-r2.log"
+      ]
+    },
+    "MAP_TRANSITION_SAFE": {
+      "status": "PASS",
+      "tested_conditions": "private startup sets sv_lan before map activation; c1m1 to c1m2",
+      "observations": "client active after transition, old scope cleared, post-map recreation passed",
+      "evidence": [
+        "resume-mod/map-resume.log",
+        "resume-map-after-recreate.json"
+      ],
+      "limitations": [
+        "Earlier crashes used the wrong startup ordering and original engine also reproduced stale Steam stats state; corrected ordering passed."
+      ]
+    },
+    "POST_TRANSITION_HIGH_INDEX": {
+      "status": "PASS",
+      "tested_conditions": "16 props recreated after c1m2 activation",
+      "observations": "2048..2063 live and synchronized",
+      "evidence": [
+        "resume-map-after-recreate.json"
+      ]
+    },
+    "SOURCEMOD_LOAD": {
+      "status": "PASS",
+      "tested_conditions": "rebuilt core, SDKTools and SDKHooks in isolated mod-compat",
+      "observations": "all three loaded",
+      "evidence": [
+        "resume-mod/inventory.log",
+        "compat-build-sources.json"
+      ]
+    },
+    "SOURCEMOD_HIGH_INDEX_API": {
+      "status": "PASS",
+      "tested_conditions": "API probes at 0/2047/2048/2049",
+      "observations": "rebuilt core resolves actual indices; stock core did not",
+      "evidence": [
+        "resume-mod/inventory.log",
+        "mod-core/api-stock-r3.log",
+        "mod-compat-verified/api-live.log"
+      ]
+    },
+    "SDKHOOKS_HIGH_INDEX": {
+      "status": "PASS",
+      "tested_conditions": "offset 131108 and rebuilt extension; 2047..4095 callbacks",
+      "observations": "stock crash at 65572; compat loaded and callbacks fired",
+      "evidence": [
+        "mod-patched-repro2/fault.log",
+        "mod-compat-verified/initial.log",
+        "mod-stable/boundary-lifecycle.log"
+      ]
+    },
+    "WIRE_SERIAL_WRAP": {
+      "status": "NOT_TESTED",
+      "tested_conditions": "none",
+      "observations": "not forced in live game",
+      "evidence": [],
+      "limitations": [
+        "requires controlled network serial state"
+      ]
+    },
+    "INTERNAL_SERIAL_WRAP": {
+      "status": "NOT_TESTED",
+      "tested_conditions": "none",
+      "observations": "not forced in live game",
+      "evidence": [],
+      "limitations": [
+        "requires controlled allocator churn"
+      ]
+    },
+    "MULTICLIENT_CONCURRENT": {
+      "status": "NOT_TESTED",
+      "tested_conditions": "one real Steam account only",
+      "observations": "second client unavailable",
+      "evidence": []
+    },
+    "LONG_SOAK": {
+      "status": "NOT_TESTED",
+      "tested_conditions": "bounded ladder only",
+      "observations": "no multi-hour soak",
+      "evidence": []
+    }
+  },
+  "mod_compatibility": {
+    "stock_sourcemod_core": "INCOMPATIBLE",
+    "stock_sdkhooks": "INCOMPATIBLE",
+    "compat_core_sdktools_sdkhooks": "COMPATIBLE_FOR_TESTED_PROBE_SCOPE",
+    "other_native_extensions": "NOT_TESTED",
+    "dhooks_left4dhooks_l4dtoolz": "NOT_TESTED"
+  },
+  "boundary": {
+    "index": 4095,
+    "old_ref_invalid": true,
+    "evidence": [
+      "boundary-deleted.json",
+      "boundary-reused.json"
+    ]
+  },
+  "evidence_root": "/home/void0312/l4d2_test/runs/d65",
+  "ledger": "reports/n27d65/entity-ledger.json",
+  "history_preserved": [
+    "reports/n27d62",
+    "reports/n27d63",
+    "reports/n27d64"
+  ],
+  "limitations": [
+    "4095 was a normal allocator boundary run, not full 4096-slot occupation.",
+    "Serial wrap, two-client concurrency and long soak were not tested.",
+    "Valve binaries, credentials and large cores are excluded."
+  ]
+}

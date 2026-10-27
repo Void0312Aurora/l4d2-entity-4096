@@ -10,10 +10,10 @@ import argparse, hashlib, json, os, pty, re, select, shutil, signal, socket, sub
 from pathlib import Path
 
 ROOT = Path("/home/void0312/l4d2_test/cleanrun")
-BIN = ROOT / "bin"
-LD = f"{BIN}:{ROOT}:{ROOT/'left4dead2'/'bin'}"
 
 ap = argparse.ArgumentParser()
+ap.add_argument("--root", type=Path, default=ROOT,
+                help="private server tree; use a separate copy for concurrent experiments")
 ap.add_argument("--port", default="27021")
 ap.add_argument("--ip", default=None, help="explicit local address for the isolated server")
 ap.add_argument("--no-watchdog", action="store_true", help="disable frame watchdog during debugger tracing")
@@ -27,6 +27,9 @@ ap.add_argument("--session-dir", type=Path, default=None,
 ap.add_argument("--control-socket", type=Path, default=None,
                 help="override the Unix control socket path used with --keep")
 a = ap.parse_args()
+ROOT = a.root.resolve()
+BIN = ROOT / "bin"
+LD = f"{BIN}:{ROOT}:{ROOT/'left4dead2'/'bin'}"
 lab_cfg = ROOT / "left4dead2" / "cfg" / "n27_lab.cfg"
 if lab_cfg.is_symlink():
     raise SystemExit("refusing symlinked lab config")
@@ -46,7 +49,7 @@ proc = subprocess.Popen(
     ["./srcds_linux", "-game", "left4dead2", "-insecure", "-console",
      *(["-nowatchdog"] if a.no_watchdog else []),
      "-port", a.port, *(["-ip", a.ip] if a.ip else []),
-     "+servercfgfile", "n27_lab.cfg", "+map", "c1m1_hotel"],
+     "+sv_lan", "1", "+exec", "n27_lab.cfg", "+map", "c1m1_hotel"],
     cwd=str(ROOT), stdin=slave, stdout=slave, stderr=slave,
     env=env, start_new_session=True, close_fds=True)
 os.close(slave)
@@ -214,6 +217,7 @@ finally:
         log_path = session_dir / "pty.log"
         metadata = {
             "run_id": run_id,
+            "root": str(ROOT),
             "pid": proc.pid,
             "port": int(a.port),
             "script": a.script,

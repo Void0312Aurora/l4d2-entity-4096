@@ -1,0 +1,13 @@
+"Games"
+{
+    "left4dead2"
+    {
+        "Offsets"
+        {
+            "EntityListeners"
+            {
+                "linux" "131108"
+            }
+        }
+    }
+}
