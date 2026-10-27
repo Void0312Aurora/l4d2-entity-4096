@@ -1,0 +1,47 @@
+{
+  "attempts": [
+    {
+      "run": "soak1",
+      "result": "FAIL",
+      "actual_duration_seconds": 222.49966549873352,
+      "errors": [
+        {
+          "elapsed_seconds": 222.27086353302002,
+          "error": "sampled client/server state mismatch"
+        }
+      ],
+      "samples": 8,
+      "last_snapshot_synchronized": false,
+      "diagnosis": "Runner loaded before the real player became active; test origin remained (0,0,64), server had 512 props and the client had none in the sampled slots."
+    },
+    {
+      "run": "soak3",
+      "result": "FAIL",
+      "actual_duration_seconds": 222.18109393119812,
+      "errors": [
+        {
+          "elapsed_seconds": 221.94734930992126,
+          "error": "RuntimeError: recycling failed to restore 512 distinct targets"
+        }
+      ],
+      "samples": 7,
+      "last_snapshot_synchronized": true,
+      "diagnosis": "Runner required the exact freed slots; normal gameplay claimed two of them, and d65_reuse hit its reserved headroom. Last 512-slot dual-end snapshot had passed."
+    },
+    {
+      "run": "soak4",
+      "result": "FAIL",
+      "actual_duration_seconds": 237.51642417907715,
+      "errors": [
+        {
+          "elapsed_seconds": 237.29531407356262,
+          "error": "sampled client/server state mismatch"
+        }
+      ],
+      "samples": 7,
+      "last_snapshot_synchronized": false,
+      "diagnosis": "Server had 512 props and valid invariants; client showed 224 and spatially contiguous missing slots. PVS/visibility is suspected but not established by a complete matched control. Combined map/soak remains PARTIAL."
+    }
+  ],
+  "raw_evidence_preserved": true
+}

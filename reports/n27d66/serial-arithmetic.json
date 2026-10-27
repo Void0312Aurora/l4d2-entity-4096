@@ -1,0 +1,98 @@
+{
+  "schema": "l4d2-d66-serial-arithmetic-v1",
+  "wire_10bit": [
+    {
+      "input": 0,
+      "encoded_10bit": 0,
+      "decoded": 0,
+      "expected": 0,
+      "ok": true
+    },
+    {
+      "input": 1,
+      "encoded_10bit": 1,
+      "decoded": 1,
+      "expected": 1,
+      "ok": true
+    },
+    {
+      "input": 1022,
+      "encoded_10bit": 1022,
+      "decoded": 1022,
+      "expected": 1022,
+      "ok": true
+    },
+    {
+      "input": 1023,
+      "encoded_10bit": 1023,
+      "decoded": 1023,
+      "expected": 1023,
+      "ok": true
+    },
+    {
+      "input": 1024,
+      "encoded_10bit": 0,
+      "decoded": 0,
+      "expected": 0,
+      "ok": true
+    },
+    {
+      "input": 2047,
+      "encoded_10bit": 1023,
+      "decoded": 1023,
+      "expected": 1023,
+      "ok": true
+    },
+    {
+      "input": 32767,
+      "encoded_10bit": 1023,
+      "decoded": 1023,
+      "expected": 1023,
+      "ok": true
+    }
+  ],
+  "internal_13bit_index_15bit_serial": [
+    {
+      "index": 0,
+      "serial": 0,
+      "handle": 0,
+      "decoded_index": 0,
+      "decoded_serial": 0,
+      "ok": true
+    },
+    {
+      "index": 2048,
+      "serial": 1,
+      "handle": 10240,
+      "decoded_index": 2048,
+      "decoded_serial": 1,
+      "ok": true
+    },
+    {
+      "index": 4095,
+      "serial": 32767,
+      "handle": 268431359,
+      "decoded_index": 4095,
+      "decoded_serial": 32767,
+      "ok": true
+    },
+    {
+      "index": 8191,
+      "serial": 32767,
+      "handle": 268435455,
+      "decoded_index": 8191,
+      "decoded_serial": 32767,
+      "ok": true
+    }
+  ],
+  "wire_wrap_expected": {
+    "before": 1023,
+    "after": 0
+  },
+  "internal_wrap_expected": {
+    "before": 32767,
+    "after": 0
+  },
+  "runtime_claim": "NONE",
+  "result": "PASS_ARITHMETIC_ONLY"
+}

@@ -1,0 +1,50 @@
+{
+  "result": "PASS_BOUNDED",
+  "requested_duration_seconds": 300.0,
+  "actual_duration_seconds": 317.4750814437866,
+  "observed_sample_span_seconds": 282.13796615600586,
+  "sample_count": 10,
+  "entities_per_sample": 512,
+  "recycle_rounds": [
+    {
+      "elapsed_seconds": 111.27421689033508,
+      "restored_count": 512
+    },
+    {
+      "elapsed_seconds": 205.34746432304382,
+      "restored_count": 512
+    },
+    {
+      "elapsed_seconds": 299.419007062912,
+      "restored_count": 512
+    }
+  ],
+  "map_transitions": [],
+  "server_rss_kib": {
+    "first": 313284,
+    "last": 313308,
+    "minimum": 313284,
+    "maximum": 313308
+  },
+  "snapshot_sha256": {
+    "soak-0000.json": "c9a68adcfa184630f3df9602db38748cde17610c81aea0d1133ed698941abcea",
+    "soak-0001.json": "9811c51ec9dfac1fdc2254f4db2aa049af6a7c2b5a752be63a99d2df56279bbe",
+    "soak-0002.json": "39dddece012037acc390fc6f7703540d0347b0533c7416ffaabfaa321e0f6ec2",
+    "soak-0003.json": "244cf6966763bcf04058f513ba3cde5b51733b4182268bc3da1e3d9ebe9e5529",
+    "soak-0004.json": "4315468ac982f95ad8d4165aa325d142c6ad511954440cd7bd2be8a217b079ea",
+    "soak-0005.json": "2198b3c5278fc1023584ef3a511bc1cb3e2b302b7822a92ee37977b2ebafdefb",
+    "soak-0006.json": "4e9dab8d422ed19d62dc4a29f9b0d739638ff473c810791fce29978a07d4d523",
+    "soak-0007.json": "1ec5861b796b4cd048f9b5b01b217815af18319d313c696daa03dd5f252ce8fe",
+    "soak-0008.json": "acd78c3ae8b06a0b40051eb26209053762cd57e9b02c6ea772b3b6251cd628d7",
+    "soak-0009.json": "504bd21d4310c8c330bcf70d2b6cf94ed0e6136e81b32af9791ca80e13476ad2"
+  },
+  "errors": [],
+  "multi_hour_soak": "NOT_TESTED",
+  "coverage_gaps": [
+    "multi-hour duration",
+    "special-infected churn",
+    "disconnect/reconnect",
+    "server tick and network counters",
+    "repeated 512-entity map transitions remain PARTIAL"
+  ]
+}

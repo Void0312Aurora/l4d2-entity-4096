@@ -1,0 +1,25 @@
+{
+  "schema": "l4d2-d66-sourcemod-smoke-v1",
+  "result": "PASS",
+  "server_port": 27134,
+  "checks": {
+    "source_mod_loaded": true,
+    "sdktools_loaded": true,
+    "sdkhooks_loaded": true,
+    "probe_loaded": true,
+    "max_entities_4096": true,
+    "high_index_ref_roundtrip": true,
+    "sdkhook_registered": true,
+    "old_ref_invalid": true,
+    "actual_artifacts_match_new_build": true,
+    "dual_end_snapshot": true
+  },
+  "artifacts": {
+    "bin/sourcemod.2.l4d2.so": "a2992f5cdba8b11d6e51ae7588911b0faee236039db20670385180cf07977b5b",
+    "extensions/sdktools.ext.2.l4d2.so": "192b3477ae04696bb31959b8ceff7c91478f28cdf804bc51d05f5049d588af21",
+    "extensions/sdkhooks.ext.2.l4d2.so": "ccbc8d68855b5c0a51b5ed3839eaa12cf62bb8181109a621cc855d2e4cd3aa54",
+    "plugins/d65_probe.smx": "e21c38191aa0f6eda93d81b614dd9169a87a5b4b79addabf8f654a11df7e3760"
+  },
+  "raw_log_sha256": "91a0763c0c093cc557b4c60cb8f81423fb3e8d055fc9f60166b04e630c14edd4",
+  "scope": "newly rebuilt Linux x86 SourceMod core, SDKTools, SDKHooks, gamedata and d65_probe; private single-client server"
+}

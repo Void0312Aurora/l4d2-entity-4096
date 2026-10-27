@@ -1,0 +1,2847 @@
+{
+  "schema": "l4d2-d66-repository-inventory-v1",
+  "counts": {
+    "ACTIVE": 51,
+    "DEPRECATED": 1,
+    "GENERATED": 9,
+    "HISTORICAL": 201,
+    "REFERENCE": 134
+  },
+  "files": [
+    {
+      "path": ".gitignore",
+      "category": "REFERENCE",
+      "reason": "repository hygiene rules",
+      "referenced_by": []
+    },
+    {
+      "path": "README.md",
+      "category": "ACTIVE",
+      "reason": "public entry point or release documentation",
+      "referenced_by": []
+    },
+    {
+      "path": "README.zh-CN.md",
+      "category": "ACTIVE",
+      "reason": "public entry point or release documentation",
+      "referenced_by": [
+        "reports/n27d66/findings.md"
+      ]
+    },
+    {
+      "path": "data/artifacts.json",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": [
+        "reports/network-n12.md",
+        "reports/network-n3.md",
+        "tools/check_artifacts.py"
+      ]
+    },
+    {
+      "path": "data/handle_ops.csv",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": []
+    },
+    {
+      "path": "data/linux/clientframe_fields.csv",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": [
+        "reports/network-n27a.md",
+        "reports/network-n27b.md"
+      ]
+    },
+    {
+      "path": "data/linux/d49_bitmap_end_sites.json",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": [
+        "tools/linux/patch_transmit_limits.py"
+      ]
+    },
+    {
+      "path": "data/linux/entitylist_handle_sites.json",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": [
+        "tools/linux/patch_entitylist_linux.py"
+      ]
+    },
+    {
+      "path": "data/linux/entitylist_member_sites.json",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": [
+        "tools/linux/patch_entitylist_linux.py"
+      ]
+    },
+    {
+      "path": "data/linux/migration_sites.csv",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": [
+        "reports/network-n25.md",
+        "reports/network-n26.md"
+      ]
+    },
+    {
+      "path": "data/linux/n26-b1-both.log",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": []
+    },
+    {
+      "path": "data/linux/n26-b1-p2only.log",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": []
+    },
+    {
+      "path": "data/linux/n26-b2-both.log",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": []
+    },
+    {
+      "path": "data/linux/n26-p2only-grow.log",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": []
+    },
+    {
+      "path": "data/linux/n27b_frame_member_sites.csv",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": [
+        "reports/n27d29/findings.md",
+        "reports/network-n27b.md",
+        "reports/network-n27c.md",
+        "tools/linux/audit_frame_consumers.py",
+        "tools/linux/build_n27_frame.py",
+        "tools/linux/check_patch_sites.py"
+      ]
+    },
+    {
+      "path": "data/linux/n27b_patch_sites.csv",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": [
+        "reports/n27d30/correction.md",
+        "reports/network-n27b.md",
+        "tools/linux/audit_frame_consumers.py",
+        "tools/linux/build_n27_frame.py",
+        "tools/linux/build_n27_full.py",
+        "tools/linux/check_patch_sites.py"
+      ]
+    },
+    {
+      "path": "data/linux/n27c_patch_sites.csv",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": [
+        "tools/linux/build_n27_frame.py",
+        "tools/linux/check_patch_sites.py"
+      ]
+    },
+    {
+      "path": "data/linux/n27c_stack_map.csv",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": [
+        "reports/network-n27c.md"
+      ]
+    },
+    {
+      "path": "data/linux/n27c_stack_sites.csv",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": [
+        "reports/network-n27c.md",
+        "tools/linux/check_patch_sites.py"
+      ]
+    },
+    {
+      "path": "data/linux/n27d1-evidence.txt",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": []
+    },
+    {
+      "path": "data/linux/n27d2-evidence.txt",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": []
+    },
+    {
+      "path": "data/linux/n27d30_frame_audit.csv",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": [
+        "reports/n27d30/correction.md",
+        "tools/linux/audit_frame_consumers.py"
+      ]
+    },
+    {
+      "path": "data/member_offsets.csv",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": []
+    },
+    {
+      "path": "data/n27d19/auto-diff.json",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": [
+        "reports/n27d19/findings.md",
+        "reports/n27d19/review.md"
+      ]
+    },
+    {
+      "path": "data/n27d19/runs/frameonly-2/events.jsonl.gz",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": []
+    },
+    {
+      "path": "data/n27d19/runs/frameonly-2/gdb.log.gz",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": []
+    },
+    {
+      "path": "data/n27d19/runs/frameonly-2/metadata.json",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": []
+    },
+    {
+      "path": "data/n27d19/runs/frameonly-3/events.jsonl.gz",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": []
+    },
+    {
+      "path": "data/n27d19/runs/frameonly-3/gdb.log.gz",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": []
+    },
+    {
+      "path": "data/n27d19/runs/frameonly-3/metadata.json",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": []
+    },
+    {
+      "path": "data/n27d19/runs/pristine-2/events.jsonl.gz",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": []
+    },
+    {
+      "path": "data/n27d19/runs/pristine-2/gdb.log.gz",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": []
+    },
+    {
+      "path": "data/n27d19/runs/pristine-2/metadata.json",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": []
+    },
+    {
+      "path": "data/n27d19/runs/pristine-3/events.jsonl.gz",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": []
+    },
+    {
+      "path": "data/n27d19/runs/pristine-3/gdb.log.gz",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": []
+    },
+    {
+      "path": "data/n27d19/runs/pristine-3/metadata.json",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": []
+    },
+    {
+      "path": "data/n27d19/static.json",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": [
+        "reports/n27d19/review.md"
+      ]
+    },
+    {
+      "path": "data/n27d20/frameonly-cf3/server_events.jsonl",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": []
+    },
+    {
+      "path": "data/n27d20/pristine-cf3/server_events.jsonl",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": []
+    },
+    {
+      "path": "data/n27d21/frameonly/client_events.jsonl",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": []
+    },
+    {
+      "path": "data/n27d21/frameonly/server_events.jsonl",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": []
+    },
+    {
+      "path": "data/n27d21/pristine/client_events.jsonl",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": []
+    },
+    {
+      "path": "data/n27d21/pristine/server_events.jsonl",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": []
+    },
+    {
+      "path": "data/n27d22/frameonly/client_events.jsonl",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": []
+    },
+    {
+      "path": "data/n27d22/frameonly/metadata.json",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": []
+    },
+    {
+      "path": "data/n27d22/frameonly/server_events.jsonl",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": []
+    },
+    {
+      "path": "data/n27d22/frameonly2/client_events.jsonl",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": []
+    },
+    {
+      "path": "data/n27d22/frameonly2/server_events.jsonl",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": []
+    },
+    {
+      "path": "data/n27d22/frameonly3/client_events.jsonl",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": []
+    },
+    {
+      "path": "data/n27d22/frameonly3/server_events.jsonl",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": []
+    },
+    {
+      "path": "data/n27d22/pristine/client_events.jsonl",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": []
+    },
+    {
+      "path": "data/n27d22/pristine/metadata.json",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": []
+    },
+    {
+      "path": "data/n27d22/pristine/server_events.jsonl",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": []
+    },
+    {
+      "path": "data/n27d22/pristine2/client_events.jsonl",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": []
+    },
+    {
+      "path": "data/n27d22/pristine2/server_events.jsonl",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": []
+    },
+    {
+      "path": "data/n27d22/pristine3/client_events.jsonl",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": []
+    },
+    {
+      "path": "data/n27d22/pristine3/server_events.jsonl",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": []
+    },
+    {
+      "path": "data/n27d24/frameonly/client_events.jsonl",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": []
+    },
+    {
+      "path": "data/n27d24/frameonly/image.json",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": []
+    },
+    {
+      "path": "data/n27d24/frameonly/server_events.jsonl",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": []
+    },
+    {
+      "path": "data/n27d24/pristine/client_events.jsonl",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": []
+    },
+    {
+      "path": "data/n27d24/pristine/image.json",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": []
+    },
+    {
+      "path": "data/n27d24/pristine/server_events.jsonl",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": []
+    },
+    {
+      "path": "data/n27d25/frameonly/client_events.jsonl",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": []
+    },
+    {
+      "path": "data/n27d25/frameonly/server_events.jsonl",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": []
+    },
+    {
+      "path": "data/n27d25/pristine/client_events.jsonl",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": []
+    },
+    {
+      "path": "data/n27d25/pristine/server_events.jsonl",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": []
+    },
+    {
+      "path": "data/n27d26/frameonly/client_events.jsonl",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": []
+    },
+    {
+      "path": "data/n27d26/frameonly/server_events.jsonl",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": []
+    },
+    {
+      "path": "data/n27d26/pristine/client_events.jsonl",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": []
+    },
+    {
+      "path": "data/n27d26/pristine/server_events.jsonl",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": []
+    },
+    {
+      "path": "data/n27d27/frameonly/client_events.jsonl",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": []
+    },
+    {
+      "path": "data/n27d27/frameonly/server_events.jsonl",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": []
+    },
+    {
+      "path": "data/n27d27/pristine/client_events.jsonl",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": []
+    },
+    {
+      "path": "data/n27d27/pristine/server_events.jsonl",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": []
+    },
+    {
+      "path": "data/n27d28/frameonly/client_events.jsonl",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": []
+    },
+    {
+      "path": "data/n27d28/frameonly/server_events.jsonl",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": []
+    },
+    {
+      "path": "data/n27d28/pristine/client_events.jsonl",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": []
+    },
+    {
+      "path": "data/n27d28/pristine/server_events.jsonl",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": []
+    },
+    {
+      "path": "data/n27d29/fix1/client_events.jsonl",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": []
+    },
+    {
+      "path": "data/n27d29/fix1/server_events.jsonl",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": []
+    },
+    {
+      "path": "data/n27d29/fix2/client_events.jsonl",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": []
+    },
+    {
+      "path": "data/n27d29/fix2/server_events.jsonl",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": []
+    },
+    {
+      "path": "data/n27d30/functional/fixed.jpg",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": [
+        "reports/n27d30/functional-control.md"
+      ]
+    },
+    {
+      "path": "data/n27d30/functional/full4096.jpg",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": [
+        "reports/n27d31/findings.md"
+      ]
+    },
+    {
+      "path": "data/n27d30/functional/pristine.jpg",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": [
+        "reports/n27d30/functional-control.md"
+      ]
+    },
+    {
+      "path": "data/n27d34/client_parse_error.jpg",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": [
+        "reports/n27d34/findings.md"
+      ]
+    },
+    {
+      "path": "data/n27d35/13bit_map.jpg",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": [
+        "reports/n27d35/findings.md"
+      ]
+    },
+    {
+      "path": "data/netproto_primitives.csv",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": [
+        "reports/network-n1.md"
+      ]
+    },
+    {
+      "path": "data/netproto_width_sites.csv",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": [
+        "reports/network-n1.md"
+      ]
+    },
+    {
+      "path": "data/network_boundary.csv",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": [
+        "reports/network-n1.md",
+        "reports/network-n2.md"
+      ]
+    },
+    {
+      "path": "data/network_fields.csv",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": [
+        "reports/network-n1.md",
+        "reports/network-n2.md"
+      ]
+    },
+    {
+      "path": "data/network_n3.csv",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": []
+    },
+    {
+      "path": "data/network_n4f_sites.csv",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": [
+        "reports/network-n19.md"
+      ]
+    },
+    {
+      "path": "data/object_references.csv",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": []
+    },
+    {
+      "path": "data/summary.txt",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": []
+    },
+    {
+      "path": "data/unresolved_references.csv",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": []
+    },
+    {
+      "path": "data/width_sites.txt",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": [
+        "reports/network-n1.md",
+        "reports/network-n2.md"
+      ]
+    },
+    {
+      "path": "docs/architecture.md",
+      "category": "ACTIVE",
+      "reason": "public entry point or release documentation",
+      "referenced_by": [
+        "README.md",
+        "README.zh-CN.md",
+        "docs/research-index.md"
+      ]
+    },
+    {
+      "path": "docs/assets/benchmark/d65-boundary.json",
+      "category": "GENERATED",
+      "reason": "generated public diagrams and benchmark assets",
+      "referenced_by": []
+    },
+    {
+      "path": "docs/assets/benchmark/d65-boundary.svg",
+      "category": "GENERATED",
+      "reason": "generated public diagrams and benchmark assets",
+      "referenced_by": [
+        "README.md",
+        "README.zh-CN.md"
+      ]
+    },
+    {
+      "path": "docs/assets/benchmark/d65-ladder.json",
+      "category": "GENERATED",
+      "reason": "generated public diagrams and benchmark assets",
+      "referenced_by": []
+    },
+    {
+      "path": "docs/assets/benchmark/d65-ladder.svg",
+      "category": "GENERATED",
+      "reason": "generated public diagrams and benchmark assets",
+      "referenced_by": [
+        "README.md",
+        "README.zh-CN.md"
+      ]
+    },
+    {
+      "path": "docs/assets/diagrams/capacity.svg",
+      "category": "GENERATED",
+      "reason": "generated public diagrams and benchmark assets",
+      "referenced_by": [
+        "README.md",
+        "README.zh-CN.md",
+        "docs/architecture.md"
+      ]
+    },
+    {
+      "path": "docs/assets/diagrams/lifecycle.svg",
+      "category": "GENERATED",
+      "reason": "generated public diagrams and benchmark assets",
+      "referenced_by": [
+        "README.md",
+        "README.zh-CN.md",
+        "docs/architecture.md"
+      ]
+    },
+    {
+      "path": "docs/assets/diagrams/protocol.svg",
+      "category": "GENERATED",
+      "reason": "generated public diagrams and benchmark assets",
+      "referenced_by": [
+        "README.md",
+        "README.zh-CN.md",
+        "docs/architecture.md"
+      ]
+    },
+    {
+      "path": "docs/compatibility.md",
+      "category": "ACTIVE",
+      "reason": "public entry point or release documentation",
+      "referenced_by": [
+        "README.md",
+        "README.zh-CN.md",
+        "docs/troubleshooting.md"
+      ]
+    },
+    {
+      "path": "docs/demo/storyboard.md",
+      "category": "ACTIVE",
+      "reason": "public entry point or release documentation",
+      "referenced_by": [
+        "README.md",
+        "README.zh-CN.md"
+      ]
+    },
+    {
+      "path": "docs/development.md",
+      "category": "ACTIVE",
+      "reason": "public entry point or release documentation",
+      "referenced_by": [
+        "README.md",
+        "README.zh-CN.md"
+      ]
+    },
+    {
+      "path": "docs/installation.md",
+      "category": "ACTIVE",
+      "reason": "public entry point or release documentation",
+      "referenced_by": [
+        "README.md",
+        "README.zh-CN.md"
+      ]
+    },
+    {
+      "path": "docs/limitations.md",
+      "category": "ACTIVE",
+      "reason": "public entry point or release documentation",
+      "referenced_by": [
+        "README.md",
+        "README.zh-CN.md"
+      ]
+    },
+    {
+      "path": "docs/research-index.md",
+      "category": "ACTIVE",
+      "reason": "public entry point or release documentation",
+      "referenced_by": [
+        "README.md",
+        "README.zh-CN.md"
+      ]
+    },
+    {
+      "path": "docs/troubleshooting.md",
+      "category": "ACTIVE",
+      "reason": "public entry point or release documentation",
+      "referenced_by": [
+        "README.md",
+        "README.zh-CN.md"
+      ]
+    },
+    {
+      "path": "docs/verification.md",
+      "category": "ACTIVE",
+      "reason": "public entry point or release documentation",
+      "referenced_by": [
+        "README.md",
+        "README.zh-CN.md"
+      ]
+    },
+    {
+      "path": "engine/manifest.4096.n4s.json",
+      "category": "REFERENCE",
+      "reason": "active lower-level analysis or evidence input",
+      "referenced_by": [
+        "reports/network-n13.md"
+      ]
+    },
+    {
+      "path": "engine/manifest.json",
+      "category": "REFERENCE",
+      "reason": "active lower-level analysis or evidence input",
+      "referenced_by": [
+        "engine/manifest.4096.n4s.json",
+        "reports/network-n11.md",
+        "reports/network-n12.md",
+        "reports/network-n13.md",
+        "reports/network-n14.md",
+        "reports/network-n6.md",
+        "tools/build_engine_4096.py"
+      ]
+    },
+    {
+      "path": "engine/report.md",
+      "category": "REFERENCE",
+      "reason": "active lower-level analysis or evidence input",
+      "referenced_by": []
+    },
+    {
+      "path": "engine/run.log",
+      "category": "REFERENCE",
+      "reason": "active lower-level analysis or evidence input",
+      "referenced_by": []
+    },
+    {
+      "path": "engine/verify_pe.py",
+      "category": "REFERENCE",
+      "reason": "active lower-level analysis or evidence input",
+      "referenced_by": [
+        "docs/development.md",
+        "docs/verification.md",
+        "reports/network-n12.md"
+      ]
+    },
+    {
+      "path": "evidence/linux/asm.sha256",
+      "category": "REFERENCE",
+      "reason": "active lower-level analysis or evidence input",
+      "referenced_by": []
+    },
+    {
+      "path": "evidence/linux/capacity_refs.txt",
+      "category": "REFERENCE",
+      "reason": "active lower-level analysis or evidence input",
+      "referenced_by": []
+    },
+    {
+      "path": "evidence/linux/ed_alloc_edictnum.asm",
+      "category": "REFERENCE",
+      "reason": "active lower-level analysis or evidence input",
+      "referenced_by": []
+    },
+    {
+      "path": "evidence/linux/engine_srv.notes.txt",
+      "category": "REFERENCE",
+      "reason": "active lower-level analysis or evidence input",
+      "referenced_by": []
+    },
+    {
+      "path": "evidence/linux/engine_srv.sections.txt",
+      "category": "REFERENCE",
+      "reason": "active lower-level analysis or evidence input",
+      "referenced_by": []
+    },
+    {
+      "path": "evidence/linux/engine_srv.sha256",
+      "category": "REFERENCE",
+      "reason": "active lower-level analysis or evidence input",
+      "referenced_by": []
+    },
+    {
+      "path": "evidence/linux/engine_srv.syms.txt",
+      "category": "REFERENCE",
+      "reason": "active lower-level analysis or evidence input",
+      "referenced_by": []
+    },
+    {
+      "path": "evidence/linux/packet-reader.asm",
+      "category": "REFERENCE",
+      "reason": "active lower-level analysis or evidence input",
+      "referenced_by": []
+    },
+    {
+      "path": "evidence/linux/packet-writer.asm",
+      "category": "REFERENCE",
+      "reason": "active lower-level analysis or evidence input",
+      "referenced_by": []
+    },
+    {
+      "path": "evidence/linux/rels_0x210.count",
+      "category": "REFERENCE",
+      "reason": "active lower-level analysis or evidence input",
+      "referenced_by": []
+    },
+    {
+      "path": "evidence/linux/spawnserver.asm",
+      "category": "REFERENCE",
+      "reason": "active lower-level analysis or evidence input",
+      "referenced_by": []
+    },
+    {
+      "path": "manifests/client.json",
+      "category": "REFERENCE",
+      "reason": "active lower-level analysis or evidence input",
+      "referenced_by": [
+        "tools/build_client.py"
+      ]
+    },
+    {
+      "path": "manifests/server.json",
+      "category": "REFERENCE",
+      "reason": "active lower-level analysis or evidence input",
+      "referenced_by": [
+        "reports/report.md"
+      ]
+    },
+    {
+      "path": "release/manifests/linux-server.json",
+      "category": "ACTIVE",
+      "reason": "public entry point or release documentation",
+      "referenced_by": []
+    },
+    {
+      "path": "release/manifests/windows-client.json",
+      "category": "ACTIVE",
+      "reason": "public entry point or release documentation",
+      "referenced_by": []
+    },
+    {
+      "path": "reports/n27d19/auto-diff.md",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": [
+        "reports/n27d19/findings.md"
+      ]
+    },
+    {
+      "path": "reports/n27d19/findings.md",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": [
+        "docs/research-index.md",
+        "reports/n27d19/review.md"
+      ]
+    },
+    {
+      "path": "reports/n27d19/review.md",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": [
+        "reports/n27d19/findings.md"
+      ]
+    },
+    {
+      "path": "reports/n27d19/static-analysis.md",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": []
+    },
+    {
+      "path": "reports/n27d20/findings.md",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": []
+    },
+    {
+      "path": "reports/n27d21/phase-a.md",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": []
+    },
+    {
+      "path": "reports/n27d21/phase-b-result.md",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": []
+    },
+    {
+      "path": "reports/n27d21/phase-b-status.md",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": []
+    },
+    {
+      "path": "reports/n27d22/findings.md",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": []
+    },
+    {
+      "path": "reports/n27d22/findings2.md",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": []
+    },
+    {
+      "path": "reports/n27d22/findings3.md",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": []
+    },
+    {
+      "path": "reports/n27d23/findings.md",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": []
+    },
+    {
+      "path": "reports/n27d24/findings.md",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": []
+    },
+    {
+      "path": "reports/n27d25/findings.md",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": []
+    },
+    {
+      "path": "reports/n27d26/findings.md",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": []
+    },
+    {
+      "path": "reports/n27d27/findings.md",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": []
+    },
+    {
+      "path": "reports/n27d28/findings.md",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": []
+    },
+    {
+      "path": "reports/n27d29/findings.md",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": []
+    },
+    {
+      "path": "reports/n27d30/correction.md",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": []
+    },
+    {
+      "path": "reports/n27d30/findings.md",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": []
+    },
+    {
+      "path": "reports/n27d30/functional-control.md",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": []
+    },
+    {
+      "path": "reports/n27d31/findings.md",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": []
+    },
+    {
+      "path": "reports/n27d32/findings.md",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": []
+    },
+    {
+      "path": "reports/n27d33/findings.md",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": []
+    },
+    {
+      "path": "reports/n27d34/findings.md",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": []
+    },
+    {
+      "path": "reports/n27d35/findings.md",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": []
+    },
+    {
+      "path": "reports/n27d36/findings.md",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": [
+        "docs/research-index.md"
+      ]
+    },
+    {
+      "path": "reports/n27d43/findings.md",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": [
+        "docs/research-index.md"
+      ]
+    },
+    {
+      "path": "reports/n27d44/findings.md",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": []
+    },
+    {
+      "path": "reports/n27d45/findings.md",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": []
+    },
+    {
+      "path": "reports/n27d46/findings.md",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": []
+    },
+    {
+      "path": "reports/n27d47/findings.md",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": []
+    },
+    {
+      "path": "reports/n27d48/findings.md",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": [
+        "docs/research-index.md"
+      ]
+    },
+    {
+      "path": "reports/n27d49/findings.md",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": [
+        "docs/research-index.md"
+      ]
+    },
+    {
+      "path": "reports/n27d56/findings.md",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": [
+        "docs/research-index.md"
+      ]
+    },
+    {
+      "path": "reports/n27d61/findings.md",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": [
+        "docs/architecture.md",
+        "docs/research-index.md"
+      ]
+    },
+    {
+      "path": "reports/n27d62/findings.md",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": [
+        "docs/architecture.md",
+        "docs/research-index.md",
+        "reports/n27d63/findings.md"
+      ]
+    },
+    {
+      "path": "reports/n27d62/validation.json",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": [
+        "reports/n27d62/findings.md",
+        "reports/n27d63/findings.md"
+      ]
+    },
+    {
+      "path": "reports/n27d63/findings.md",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": [
+        "docs/research-index.md"
+      ]
+    },
+    {
+      "path": "reports/n27d63/validation.json",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": [
+        "reports/n27d63/findings.md",
+        "reports/n27d64/validation.json"
+      ]
+    },
+    {
+      "path": "reports/n27d64/findings.md",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": [
+        "docs/research-index.md",
+        "reports/n27d63/findings.md"
+      ]
+    },
+    {
+      "path": "reports/n27d64/validation.json",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": [
+        "reports/n27d64/findings.md"
+      ]
+    },
+    {
+      "path": "reports/n27d65/entity-ledger.json",
+      "category": "ACTIVE",
+      "reason": "current D65 runtime baseline",
+      "referenced_by": [
+        "reports/n27d65/findings.md",
+        "reports/n27d65/validation.json"
+      ]
+    },
+    {
+      "path": "reports/n27d65/findings.md",
+      "category": "ACTIVE",
+      "reason": "current D65 runtime baseline",
+      "referenced_by": [
+        "README.md",
+        "README.zh-CN.md",
+        "docs/architecture.md",
+        "docs/research-index.md"
+      ]
+    },
+    {
+      "path": "reports/n27d65/validation.json",
+      "category": "ACTIVE",
+      "reason": "current D65 runtime baseline",
+      "referenced_by": [
+        "README.md",
+        "README.zh-CN.md",
+        "docs/assets/benchmark/d65-boundary.json",
+        "docs/verification.md",
+        "reports/n27d65/findings.md",
+        "tools/release/build_assets.py",
+        "tools/release/check_rc.py"
+      ]
+    },
+    {
+      "path": "reports/n27d66/bounded-soak.json",
+      "category": "ACTIVE",
+      "reason": "current D66 result",
+      "referenced_by": [
+        "README.md",
+        "README.zh-CN.md",
+        "reports/n27d66/release-readiness.md"
+      ]
+    },
+    {
+      "path": "reports/n27d66/findings.md",
+      "category": "ACTIVE",
+      "reason": "current D66 result",
+      "referenced_by": [
+        "docs/research-index.md"
+      ]
+    },
+    {
+      "path": "reports/n27d66/installer-linux-results.json",
+      "category": "ACTIVE",
+      "reason": "current D66 result",
+      "referenced_by": [
+        "docs/verification.md"
+      ]
+    },
+    {
+      "path": "reports/n27d66/installer-results.json",
+      "category": "ACTIVE",
+      "reason": "current D66 result",
+      "referenced_by": [
+        "docs/verification.md"
+      ]
+    },
+    {
+      "path": "reports/n27d66/network-serial.json",
+      "category": "ACTIVE",
+      "reason": "current D66 result",
+      "referenced_by": [
+        "README.md",
+        "README.zh-CN.md",
+        "reports/n27d66/release-readiness.md"
+      ]
+    },
+    {
+      "path": "reports/n27d66/raw-lifecycle.json",
+      "category": "ACTIVE",
+      "reason": "current D66 result",
+      "referenced_by": [
+        "reports/n27d66/release-readiness.md"
+      ]
+    },
+    {
+      "path": "reports/n27d66/release-readiness.md",
+      "category": "ACTIVE",
+      "reason": "current D66 result",
+      "referenced_by": [
+        "README.md",
+        "README.zh-CN.md"
+      ]
+    },
+    {
+      "path": "reports/n27d66/repository-inventory.json",
+      "category": "GENERATED",
+      "reason": "derived inventory, regenerated from current paths and references",
+      "referenced_by": [
+        "reports/n27d66/findings.md",
+        "tools/release/audit_repository.py"
+      ]
+    },
+    {
+      "path": "reports/n27d66/repository-inventory.md",
+      "category": "GENERATED",
+      "reason": "derived inventory, regenerated from current paths and references",
+      "referenced_by": [
+        "reports/n27d66/findings.md",
+        "tools/release/audit_repository.py"
+      ]
+    },
+    {
+      "path": "reports/n27d66/serial-arithmetic.json",
+      "category": "ACTIVE",
+      "reason": "current D66 result",
+      "referenced_by": [
+        "docs/verification.md",
+        "reports/n27d66/findings.md",
+        "tools/release/check_serial_arithmetic.py"
+      ]
+    },
+    {
+      "path": "reports/n27d66/soak-attempts.json",
+      "category": "ACTIVE",
+      "reason": "current D66 result",
+      "referenced_by": []
+    },
+    {
+      "path": "reports/n27d66/sourcemod-build.json",
+      "category": "ACTIVE",
+      "reason": "current D66 result",
+      "referenced_by": [
+        "docs/compatibility.md",
+        "reports/n27d66/findings.md"
+      ]
+    },
+    {
+      "path": "reports/n27d66/sourcemod-smoke.json",
+      "category": "ACTIVE",
+      "reason": "current D66 result",
+      "referenced_by": [
+        "README.md",
+        "README.zh-CN.md",
+        "reports/n27d66/findings.md",
+        "reports/n27d66/release-readiness.md"
+      ]
+    },
+    {
+      "path": "reports/n27d66/validation.json",
+      "category": "ACTIVE",
+      "reason": "current D66 result",
+      "referenced_by": [
+        "README.md",
+        "README.zh-CN.md",
+        "reports/n27d66/release-readiness.md"
+      ]
+    },
+    {
+      "path": "reports/network-n1.md",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": [
+        "reports/network-n2.md",
+        "tools/net_patch_plan.py"
+      ]
+    },
+    {
+      "path": "reports/network-n10.md",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": [
+        "engine/manifest.json"
+      ]
+    },
+    {
+      "path": "reports/network-n11.md",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": []
+    },
+    {
+      "path": "reports/network-n12.md",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": []
+    },
+    {
+      "path": "reports/network-n13.md",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": []
+    },
+    {
+      "path": "reports/network-n14.md",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": []
+    },
+    {
+      "path": "reports/network-n15.md",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": []
+    },
+    {
+      "path": "reports/network-n16.md",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": []
+    },
+    {
+      "path": "reports/network-n17.md",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": []
+    },
+    {
+      "path": "reports/network-n18.md",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": []
+    },
+    {
+      "path": "reports/network-n19.md",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": []
+    },
+    {
+      "path": "reports/network-n2.md",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": [
+        "reports/network-n1.md",
+        "tools/probe_deltaflow.py"
+      ]
+    },
+    {
+      "path": "reports/network-n20.md",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": []
+    },
+    {
+      "path": "reports/network-n21.md",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": []
+    },
+    {
+      "path": "reports/network-n22.md",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": []
+    },
+    {
+      "path": "reports/network-n23.md",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": []
+    },
+    {
+      "path": "reports/network-n24.md",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": []
+    },
+    {
+      "path": "reports/network-n25.md",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": []
+    },
+    {
+      "path": "reports/network-n25d.md",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": []
+    },
+    {
+      "path": "reports/network-n26-baseline.md",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": []
+    },
+    {
+      "path": "reports/network-n26.md",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": []
+    },
+    {
+      "path": "reports/network-n27a.md",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": []
+    },
+    {
+      "path": "reports/network-n27b.md",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": []
+    },
+    {
+      "path": "reports/network-n27c.md",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": [
+        "reports/network-n27b.md"
+      ]
+    },
+    {
+      "path": "reports/network-n27d1.md",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": []
+    },
+    {
+      "path": "reports/network-n27d10.md",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": []
+    },
+    {
+      "path": "reports/network-n27d11.md",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": []
+    },
+    {
+      "path": "reports/network-n27d12.md",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": []
+    },
+    {
+      "path": "reports/network-n27d13.md",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": []
+    },
+    {
+      "path": "reports/network-n27d14.md",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": []
+    },
+    {
+      "path": "reports/network-n27d15.md",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": []
+    },
+    {
+      "path": "reports/network-n27d16.md",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": []
+    },
+    {
+      "path": "reports/network-n27d17.md",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": []
+    },
+    {
+      "path": "reports/network-n27d18.md",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": []
+    },
+    {
+      "path": "reports/network-n27d2.md",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": []
+    },
+    {
+      "path": "reports/network-n27d3.md",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": []
+    },
+    {
+      "path": "reports/network-n27d4.md",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": []
+    },
+    {
+      "path": "reports/network-n27d5.md",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": []
+    },
+    {
+      "path": "reports/network-n27d6.md",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": []
+    },
+    {
+      "path": "reports/network-n27d7.md",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": []
+    },
+    {
+      "path": "reports/network-n27d8.md",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": []
+    },
+    {
+      "path": "reports/network-n27d9.md",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": []
+    },
+    {
+      "path": "reports/network-n3.md",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": []
+    },
+    {
+      "path": "reports/network-n4.md",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": []
+    },
+    {
+      "path": "reports/network-n5.md",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": [
+        "reports/network-n4.md"
+      ]
+    },
+    {
+      "path": "reports/network-n6.md",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": []
+    },
+    {
+      "path": "reports/network-n7.md",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": []
+    },
+    {
+      "path": "reports/network-n8.md",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": []
+    },
+    {
+      "path": "reports/network-n9.md",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": []
+    },
+    {
+      "path": "reports/report.md",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": [
+        "docs/research-index.md"
+      ]
+    },
+    {
+      "path": "tools/_argp.py",
+      "category": "REFERENCE",
+      "reason": "active lower-level analysis or evidence input",
+      "referenced_by": []
+    },
+    {
+      "path": "tools/_ctor.py",
+      "category": "REFERENCE",
+      "reason": "active lower-level analysis or evidence input",
+      "referenced_by": []
+    },
+    {
+      "path": "tools/_pair.py",
+      "category": "REFERENCE",
+      "reason": "active lower-level analysis or evidence input",
+      "referenced_by": []
+    },
+    {
+      "path": "tools/_wr2.py",
+      "category": "REFERENCE",
+      "reason": "active lower-level analysis or evidence input",
+      "referenced_by": []
+    },
+    {
+      "path": "tools/_xr.py",
+      "category": "REFERENCE",
+      "reason": "active lower-level analysis or evidence input",
+      "referenced_by": []
+    },
+    {
+      "path": "tools/_xr2.py",
+      "category": "REFERENCE",
+      "reason": "active lower-level analysis or evidence input",
+      "referenced_by": []
+    },
+    {
+      "path": "tools/audit_object.py",
+      "category": "REFERENCE",
+      "reason": "active lower-level analysis or evidence input",
+      "referenced_by": [
+        "reports/report.md"
+      ]
+    },
+    {
+      "path": "tools/build_client.py",
+      "category": "REFERENCE",
+      "reason": "active lower-level analysis or evidence input",
+      "referenced_by": [
+        "docs/development.md"
+      ]
+    },
+    {
+      "path": "tools/build_engine_4096.py",
+      "category": "REFERENCE",
+      "reason": "active lower-level analysis or evidence input",
+      "referenced_by": [
+        "reports/network-n13.md",
+        "reports/network-n14.md"
+      ]
+    },
+    {
+      "path": "tools/build_join_kit.py",
+      "category": "REFERENCE",
+      "reason": "active lower-level analysis or evidence input",
+      "referenced_by": [
+        "docs/development.md"
+      ]
+    },
+    {
+      "path": "tools/build_server.py",
+      "category": "REFERENCE",
+      "reason": "active lower-level analysis or evidence input",
+      "referenced_by": [
+        "docs/development.md",
+        "reports/report.md"
+      ]
+    },
+    {
+      "path": "tools/check_artifacts.py",
+      "category": "REFERENCE",
+      "reason": "active lower-level analysis or evidence input",
+      "referenced_by": [
+        "data/artifacts.json",
+        "reports/network-n12.md",
+        "reports/network-n2.md",
+        "reports/network-n3.md"
+      ]
+    },
+    {
+      "path": "tools/check_fields_csv.py",
+      "category": "REFERENCE",
+      "reason": "active lower-level analysis or evidence input",
+      "referenced_by": [
+        "reports/n27d49/findings.md",
+        "reports/n27d62/findings.md"
+      ]
+    },
+    {
+      "path": "tools/client_base_sites.json",
+      "category": "REFERENCE",
+      "reason": "active lower-level analysis or evidence input",
+      "referenced_by": []
+    },
+    {
+      "path": "tools/client_handle_sites.json",
+      "category": "REFERENCE",
+      "reason": "active lower-level analysis or evidence input",
+      "referenced_by": []
+    },
+    {
+      "path": "tools/client_layout_exclusions.json",
+      "category": "REFERENCE",
+      "reason": "active lower-level analysis or evidence input",
+      "referenced_by": []
+    },
+    {
+      "path": "tools/client_member_sites.json",
+      "category": "REFERENCE",
+      "reason": "active lower-level analysis or evidence input",
+      "referenced_by": []
+    },
+    {
+      "path": "tools/config.py",
+      "category": "REFERENCE",
+      "reason": "active lower-level analysis or evidence input",
+      "referenced_by": [
+        "docs/development.md"
+      ]
+    },
+    {
+      "path": "tools/dump_fn.py",
+      "category": "REFERENCE",
+      "reason": "active lower-level analysis or evidence input",
+      "referenced_by": []
+    },
+    {
+      "path": "tools/dyn/attach_gdb.sh",
+      "category": "REFERENCE",
+      "reason": "active lower-level analysis or evidence input",
+      "referenced_by": []
+    },
+    {
+      "path": "tools/dyn/env.sh",
+      "category": "REFERENCE",
+      "reason": "active lower-level analysis or evidence input",
+      "referenced_by": [
+        "reports/network-n20.md"
+      ]
+    },
+    {
+      "path": "tools/dyn/launch_game.sh",
+      "category": "REFERENCE",
+      "reason": "active lower-level analysis or evidence input",
+      "referenced_by": []
+    },
+    {
+      "path": "tools/dyn/launch_ge9.sh",
+      "category": "REFERENCE",
+      "reason": "active lower-level analysis or evidence input",
+      "referenced_by": []
+    },
+    {
+      "path": "tools/dyn/launch_plain.sh",
+      "category": "REFERENCE",
+      "reason": "active lower-level analysis or evidence input",
+      "referenced_by": []
+    },
+    {
+      "path": "tools/dyn/launch_proton2.sh",
+      "category": "REFERENCE",
+      "reason": "active lower-level analysis or evidence input",
+      "referenced_by": []
+    },
+    {
+      "path": "tools/dyn/launch_symlink.sh",
+      "category": "REFERENCE",
+      "reason": "active lower-level analysis or evidence input",
+      "referenced_by": []
+    },
+    {
+      "path": "tools/dyn/restart_and_launch.sh",
+      "category": "DEPRECATED",
+      "reason": "globally restarts Steam and launches the Steam tree; replaced by bounded private-copy runner",
+      "referenced_by": [
+        "tools/release/audit_repository.py"
+      ]
+    },
+    {
+      "path": "tools/dyn/wait_launch.sh",
+      "category": "REFERENCE",
+      "reason": "active lower-level analysis or evidence input",
+      "referenced_by": []
+    },
+    {
+      "path": "tools/engine_baselines.S",
+      "category": "REFERENCE",
+      "reason": "active lower-level analysis or evidence input",
+      "referenced_by": []
+    },
+    {
+      "path": "tools/engine_receive_sites.json",
+      "category": "REFERENCE",
+      "reason": "active lower-level analysis or evidence input",
+      "referenced_by": []
+    },
+    {
+      "path": "tools/gen_client.py",
+      "category": "REFERENCE",
+      "reason": "active lower-level analysis or evidence input",
+      "referenced_by": []
+    },
+    {
+      "path": "tools/gen_server.py",
+      "category": "REFERENCE",
+      "reason": "active lower-level analysis or evidence input",
+      "referenced_by": []
+    },
+    {
+      "path": "tools/linux/audit_frame_consumers.py",
+      "category": "REFERENCE",
+      "reason": "active lower-level analysis or evidence input",
+      "referenced_by": [
+        "reports/n27d30/correction.md",
+        "reports/n27d31/findings.md"
+      ]
+    },
+    {
+      "path": "tools/linux/build_highindex.py",
+      "category": "REFERENCE",
+      "reason": "active lower-level analysis or evidence input",
+      "referenced_by": [
+        "reports/n27d49/findings.md",
+        "reports/n27d61/findings.md",
+        "reports/n27d62/findings.md"
+      ]
+    },
+    {
+      "path": "tools/linux/build_n26_capacity.py",
+      "category": "REFERENCE",
+      "reason": "active lower-level analysis or evidence input",
+      "referenced_by": [
+        "reports/network-n26.md"
+      ]
+    },
+    {
+      "path": "tools/linux/build_n27_4096.py",
+      "category": "REFERENCE",
+      "reason": "active lower-level analysis or evidence input",
+      "referenced_by": [
+        "reports/n27d31/findings.md",
+        "reports/n27d48/findings.md"
+      ]
+    },
+    {
+      "path": "tools/linux/build_n27_frame.py",
+      "category": "REFERENCE",
+      "reason": "active lower-level analysis or evidence input",
+      "referenced_by": [
+        "reports/network-n27d1.md",
+        "tools/linux/build_n27_full.py"
+      ]
+    },
+    {
+      "path": "tools/linux/build_n27_full.py",
+      "category": "REFERENCE",
+      "reason": "active lower-level analysis or evidence input",
+      "referenced_by": [
+        "reports/n27d48/findings.md",
+        "reports/network-n27d1.md",
+        "tools/linux/build_n27_4096.py"
+      ]
+    },
+    {
+      "path": "tools/linux/check_d62_evidence.py",
+      "category": "REFERENCE",
+      "reason": "active lower-level analysis or evidence input",
+      "referenced_by": [
+        "reports/n27d62/findings.md",
+        "reports/n27d63/findings.md"
+      ]
+    },
+    {
+      "path": "tools/linux/check_d65_evidence.py",
+      "category": "ACTIVE",
+      "reason": "invoked D66 verification or pinned SourceMod integration workflow",
+      "referenced_by": [
+        "docs/research-index.md",
+        "docs/verification.md",
+        "reports/n27d65/findings.md",
+        "tools/release/audit_repository.py",
+        "tools/release/check_rc.py"
+      ]
+    },
+    {
+      "path": "tools/linux/check_patch_sites.py",
+      "category": "REFERENCE",
+      "reason": "active lower-level analysis or evidence input",
+      "referenced_by": [
+        "reports/network-n27c.md"
+      ]
+    },
+    {
+      "path": "tools/linux/classify_handle_sites.py",
+      "category": "REFERENCE",
+      "reason": "active lower-level analysis or evidence input",
+      "referenced_by": [
+        "reports/n27d63/findings.md"
+      ]
+    },
+    {
+      "path": "tools/linux/collect_d63_metrics.py",
+      "category": "REFERENCE",
+      "reason": "active lower-level analysis or evidence input",
+      "referenced_by": []
+    },
+    {
+      "path": "tools/linux/d65_runtime.py",
+      "category": "ACTIVE",
+      "reason": "invoked D66 verification or pinned SourceMod integration workflow",
+      "referenced_by": [
+        "tools/release/audit_repository.py"
+      ]
+    },
+    {
+      "path": "tools/linux/extract_evidence.sh",
+      "category": "REFERENCE",
+      "reason": "active lower-level analysis or evidence input",
+      "referenced_by": [
+        "reports/network-n23.md",
+        "reports/network-n24.md"
+      ]
+    },
+    {
+      "path": "tools/linux/frida/d64_capture_slots.js",
+      "category": "REFERENCE",
+      "reason": "active lower-level analysis or evidence input",
+      "referenced_by": [
+        "reports/n27d64/findings.md"
+      ]
+    },
+    {
+      "path": "tools/linux/frida/d65_boundary.js",
+      "category": "REFERENCE",
+      "reason": "active lower-level analysis or evidence input",
+      "referenced_by": []
+    },
+    {
+      "path": "tools/linux/frida/d65_observe.js",
+      "category": "REFERENCE",
+      "reason": "active lower-level analysis or evidence input",
+      "referenced_by": []
+    },
+    {
+      "path": "tools/linux/frida/d65_relay.py",
+      "category": "REFERENCE",
+      "reason": "active lower-level analysis or evidence input",
+      "referenced_by": []
+    },
+    {
+      "path": "tools/linux/frida/n27_frame_hooks.js",
+      "category": "REFERENCE",
+      "reason": "active lower-level analysis or evidence input",
+      "referenced_by": [
+        "reports/network-n27d6.md"
+      ]
+    },
+    {
+      "path": "tools/linux/frida/run_attach.py",
+      "category": "REFERENCE",
+      "reason": "active lower-level analysis or evidence input",
+      "referenced_by": [
+        "reports/network-n27d6.md",
+        "reports/network-n27d7.md"
+      ]
+    },
+    {
+      "path": "tools/linux/gdb/client_signon_trace.gdb",
+      "category": "REFERENCE",
+      "reason": "active lower-level analysis or evidence input",
+      "referenced_by": []
+    },
+    {
+      "path": "tools/linux/gdb/client_trace.py",
+      "category": "REFERENCE",
+      "reason": "active lower-level analysis or evidence input",
+      "referenced_by": [
+        "reports/network-n27d10.md",
+        "tools/n27d19/README.md"
+      ]
+    },
+    {
+      "path": "tools/linux/gdb/entitylist_trace.py",
+      "category": "REFERENCE",
+      "reason": "active lower-level analysis or evidence input",
+      "referenced_by": [
+        "reports/n27d62/findings.md"
+      ]
+    },
+    {
+      "path": "tools/linux/gdb/run_client_trace.sh",
+      "category": "REFERENCE",
+      "reason": "active lower-level analysis or evidence input",
+      "referenced_by": [
+        "reports/network-n27d10.md"
+      ]
+    },
+    {
+      "path": "tools/linux/patch_entitylist_linux.py",
+      "category": "REFERENCE",
+      "reason": "active lower-level analysis or evidence input",
+      "referenced_by": []
+    },
+    {
+      "path": "tools/linux/patch_n27_13bit.py",
+      "category": "REFERENCE",
+      "reason": "active lower-level analysis or evidence input",
+      "referenced_by": [
+        "reports/n27d34/findings.md"
+      ]
+    },
+    {
+      "path": "tools/linux/patch_snapshot_cache.py",
+      "category": "REFERENCE",
+      "reason": "active lower-level analysis or evidence input",
+      "referenced_by": []
+    },
+    {
+      "path": "tools/linux/patch_snapshot_stack.py",
+      "category": "REFERENCE",
+      "reason": "active lower-level analysis or evidence input",
+      "referenced_by": []
+    },
+    {
+      "path": "tools/linux/patch_transmit_limits.py",
+      "category": "REFERENCE",
+      "reason": "active lower-level analysis or evidence input",
+      "referenced_by": []
+    },
+    {
+      "path": "tools/linux/read_client_entities.py",
+      "category": "REFERENCE",
+      "reason": "active lower-level analysis or evidence input",
+      "referenced_by": [
+        "reports/n27d49/findings.md",
+        "reports/n27d62/findings.md"
+      ]
+    },
+    {
+      "path": "tools/linux/read_server_entities.py",
+      "category": "REFERENCE",
+      "reason": "active lower-level analysis or evidence input",
+      "referenced_by": [
+        "reports/n27d62/findings.md"
+      ]
+    },
+    {
+      "path": "tools/linux/run_d65_lifecycle.py",
+      "category": "ACTIVE",
+      "reason": "invoked D66 verification or pinned SourceMod integration workflow",
+      "referenced_by": [
+        "docs/research-index.md",
+        "tools/release/audit_repository.py"
+      ]
+    },
+    {
+      "path": "tools/linux/run_d66_serial.py",
+      "category": "ACTIVE",
+      "reason": "invoked D66 verification or pinned SourceMod integration workflow",
+      "referenced_by": [
+        "reports/n27d66/findings.md",
+        "tools/release/audit_repository.py"
+      ]
+    },
+    {
+      "path": "tools/linux/run_d66_soak.py",
+      "category": "ACTIVE",
+      "reason": "invoked D66 verification or pinned SourceMod integration workflow",
+      "referenced_by": [
+        "reports/n27d66/findings.md",
+        "tools/release/audit_repository.py"
+      ]
+    },
+    {
+      "path": "tools/linux/run_highindex_session.py",
+      "category": "REFERENCE",
+      "reason": "active lower-level analysis or evidence input",
+      "referenced_by": [
+        "reports/n27d47/findings.md",
+        "reports/n27d49/findings.md",
+        "reports/n27d62/findings.md"
+      ]
+    },
+    {
+      "path": "tools/linux/run_proton_client.py",
+      "category": "REFERENCE",
+      "reason": "active lower-level analysis or evidence input",
+      "referenced_by": [
+        "docs/installation.md",
+        "reports/n27d49/findings.md",
+        "reports/n27d62/findings.md"
+      ]
+    },
+    {
+      "path": "tools/linux/run_vscript_pty.py",
+      "category": "REFERENCE",
+      "reason": "active lower-level analysis or evidence input",
+      "referenced_by": [
+        "reports/n27d45/findings.md"
+      ]
+    },
+    {
+      "path": "tools/linux/verify_n27_patched.py",
+      "category": "REFERENCE",
+      "reason": "active lower-level analysis or evidence input",
+      "referenced_by": [
+        "reports/network-n27c.md"
+      ]
+    },
+    {
+      "path": "tools/linux/vscript/d37_batch.nut",
+      "category": "REFERENCE",
+      "reason": "active lower-level analysis or evidence input",
+      "referenced_by": []
+    },
+    {
+      "path": "tools/linux/vscript/d41_target.nut",
+      "category": "REFERENCE",
+      "reason": "active lower-level analysis or evidence input",
+      "referenced_by": []
+    },
+    {
+      "path": "tools/linux/vscript/d50_session.nut",
+      "category": "REFERENCE",
+      "reason": "active lower-level analysis or evidence input",
+      "referenced_by": []
+    },
+    {
+      "path": "tools/linux/vscript/d51_near.nut",
+      "category": "REFERENCE",
+      "reason": "active lower-level analysis or evidence input",
+      "referenced_by": []
+    },
+    {
+      "path": "tools/linux/vscript/d52_near_fill.nut",
+      "category": "REFERENCE",
+      "reason": "active lower-level analysis or evidence input",
+      "referenced_by": []
+    },
+    {
+      "path": "tools/linux/vscript/d53_update.nut",
+      "category": "REFERENCE",
+      "reason": "active lower-level analysis or evidence input",
+      "referenced_by": []
+    },
+    {
+      "path": "tools/linux/vscript/d54_delete.nut",
+      "category": "REFERENCE",
+      "reason": "active lower-level analysis or evidence input",
+      "referenced_by": []
+    },
+    {
+      "path": "tools/linux/vscript/d55_create.nut",
+      "category": "REFERENCE",
+      "reason": "active lower-level analysis or evidence input",
+      "referenced_by": []
+    },
+    {
+      "path": "tools/linux/vscript/d55_delete.nut",
+      "category": "REFERENCE",
+      "reason": "active lower-level analysis or evidence input",
+      "referenced_by": []
+    },
+    {
+      "path": "tools/linux/vscript/d55_free_fillers.nut",
+      "category": "REFERENCE",
+      "reason": "active lower-level analysis or evidence input",
+      "referenced_by": []
+    },
+    {
+      "path": "tools/linux/vscript/d55_update.nut",
+      "category": "REFERENCE",
+      "reason": "active lower-level analysis or evidence input",
+      "referenced_by": []
+    },
+    {
+      "path": "tools/linux/vscript/d62_create.nut",
+      "category": "REFERENCE",
+      "reason": "active lower-level analysis or evidence input",
+      "referenced_by": []
+    },
+    {
+      "path": "tools/linux/vscript/d62_delete.nut",
+      "category": "REFERENCE",
+      "reason": "active lower-level analysis or evidence input",
+      "referenced_by": []
+    },
+    {
+      "path": "tools/linux/vscript/d62_free_batch.nut",
+      "category": "REFERENCE",
+      "reason": "active lower-level analysis or evidence input",
+      "referenced_by": []
+    },
+    {
+      "path": "tools/linux/vscript/d62_infected_event.nut",
+      "category": "REFERENCE",
+      "reason": "active lower-level analysis or evidence input",
+      "referenced_by": []
+    },
+    {
+      "path": "tools/linux/vscript/d62_nonnet_create.nut",
+      "category": "REFERENCE",
+      "reason": "active lower-level analysis or evidence input",
+      "referenced_by": []
+    },
+    {
+      "path": "tools/linux/vscript/d62_nonnet_delete.nut",
+      "category": "REFERENCE",
+      "reason": "active lower-level analysis or evidence input",
+      "referenced_by": []
+    },
+    {
+      "path": "tools/linux/vscript/d62_nonnet_free_batch.nut",
+      "category": "REFERENCE",
+      "reason": "active lower-level analysis or evidence input",
+      "referenced_by": []
+    },
+    {
+      "path": "tools/linux/vscript/d62_nonnet_reuse.nut",
+      "category": "REFERENCE",
+      "reason": "active lower-level analysis or evidence input",
+      "referenced_by": []
+    },
+    {
+      "path": "tools/linux/vscript/d62_reuse_targets.nut",
+      "category": "REFERENCE",
+      "reason": "active lower-level analysis or evidence input",
+      "referenced_by": []
+    },
+    {
+      "path": "tools/linux/vscript/d62_update.nut",
+      "category": "REFERENCE",
+      "reason": "active lower-level analysis or evidence input",
+      "referenced_by": []
+    },
+    {
+      "path": "tools/linux/vscript/d63_boundary_consumers.nut",
+      "category": "REFERENCE",
+      "reason": "active lower-level analysis or evidence input",
+      "referenced_by": []
+    },
+    {
+      "path": "tools/linux/vscript/d63_hunter_only.nut",
+      "category": "REFERENCE",
+      "reason": "active lower-level analysis or evidence input",
+      "referenced_by": []
+    },
+    {
+      "path": "tools/linux/vscript/d63_infected_only.nut",
+      "category": "REFERENCE",
+      "reason": "active lower-level analysis or evidence input",
+      "referenced_by": []
+    },
+    {
+      "path": "tools/linux/vscript/d63_real_gameplay.nut",
+      "category": "REFERENCE",
+      "reason": "active lower-level analysis or evidence input",
+      "referenced_by": []
+    },
+    {
+      "path": "tools/linux/vscript/d63_stress.nut",
+      "category": "REFERENCE",
+      "reason": "active lower-level analysis or evidence input",
+      "referenced_by": []
+    },
+    {
+      "path": "tools/linux/vscript/d64_hunter_director.nut",
+      "category": "REFERENCE",
+      "reason": "active lower-level analysis or evidence input",
+      "referenced_by": []
+    },
+    {
+      "path": "tools/linux/vscript/d64_hunter_high_director.nut",
+      "category": "REFERENCE",
+      "reason": "active lower-level analysis or evidence input",
+      "referenced_by": []
+    },
+    {
+      "path": "tools/linux/vscript/d64_hunter_low.nut",
+      "category": "REFERENCE",
+      "reason": "active lower-level analysis or evidence input",
+      "referenced_by": []
+    },
+    {
+      "path": "tools/linux/vscript/d64_hunter_probe_player.nut",
+      "category": "REFERENCE",
+      "reason": "active lower-level analysis or evidence input",
+      "referenced_by": []
+    },
+    {
+      "path": "tools/linux/vscript/d64_special_high_spitter.nut",
+      "category": "REFERENCE",
+      "reason": "active lower-level analysis or evidence input",
+      "referenced_by": []
+    },
+    {
+      "path": "tools/linux/vscript/d64_special_single.nut",
+      "category": "REFERENCE",
+      "reason": "active lower-level analysis or evidence input",
+      "referenced_by": []
+    },
+    {
+      "path": "tools/linux/vscript/d65_boundary.nut",
+      "category": "REFERENCE",
+      "reason": "active lower-level analysis or evidence input",
+      "referenced_by": []
+    },
+    {
+      "path": "tools/linux/vscript/d65_events.nut",
+      "category": "REFERENCE",
+      "reason": "active lower-level analysis or evidence input",
+      "referenced_by": []
+    },
+    {
+      "path": "tools/linux/vscript/d65_load.nut",
+      "category": "REFERENCE",
+      "reason": "active lower-level analysis or evidence input",
+      "referenced_by": []
+    },
+    {
+      "path": "tools/linux/vscript/d65_probe_players.nut",
+      "category": "REFERENCE",
+      "reason": "active lower-level analysis or evidence input",
+      "referenced_by": []
+    },
+    {
+      "path": "tools/linux/vscript/d65_special.nut",
+      "category": "REFERENCE",
+      "reason": "active lower-level analysis or evidence input",
+      "referenced_by": []
+    },
+    {
+      "path": "tools/linux/vscript/d66_wrap.nut",
+      "category": "ACTIVE",
+      "reason": "invoked D66 verification or pinned SourceMod integration workflow",
+      "referenced_by": [
+        "reports/n27d66/findings.md",
+        "tools/release/audit_repository.py"
+      ]
+    },
+    {
+      "path": "tools/n27d19/README.md",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": []
+    },
+    {
+      "path": "tools/n27d19/diff_traces.py",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": [
+        "reports/n27d19/findings.md"
+      ]
+    },
+    {
+      "path": "tools/n27d19/gdb_probe.py",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": [
+        "reports/n27d19/findings.md",
+        "tools/n27d19/README.md",
+        "tools/n27d19/run_experiment.py"
+      ]
+    },
+    {
+      "path": "tools/n27d19/probe_config.json",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": [
+        "reports/n27d19/findings.md",
+        "tools/n27d19/README.md",
+        "tools/n27d19/run_experiment.py"
+      ]
+    },
+    {
+      "path": "tools/n27d19/run_experiment.py",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": [
+        "reports/n27d19/findings.md"
+      ]
+    },
+    {
+      "path": "tools/n27d19/test_probe_schema.py",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": [
+        "reports/n27d19/findings.md",
+        "reports/n27d19/review.md",
+        "tools/n27d19/README.md"
+      ]
+    },
+    {
+      "path": "tools/n27d20/client_first.sh",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": []
+    },
+    {
+      "path": "tools/n27d20/server_probe.py",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": [
+        "tools/n27d19/run_experiment.py",
+        "tools/n27d20/client_first.sh",
+        "tools/n27d21_run_signon.py"
+      ]
+    },
+    {
+      "path": "tools/n27d20/server_vtables.json",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": [
+        "tools/n27d19/run_experiment.py",
+        "tools/n27d20/client_first.sh",
+        "tools/n27d21_run_signon.py"
+      ]
+    },
+    {
+      "path": "tools/n27d21_client_signon.py",
+      "category": "REFERENCE",
+      "reason": "active lower-level analysis or evidence input",
+      "referenced_by": [
+        "reports/n27d21/phase-b-status.md",
+        "tools/n27d21_run_signon.py"
+      ]
+    },
+    {
+      "path": "tools/n27d21_run_signon.py",
+      "category": "REFERENCE",
+      "reason": "active lower-level analysis or evidence input",
+      "referenced_by": [
+        "reports/n27d23/findings.md",
+        "reports/n27d24/findings.md"
+      ]
+    },
+    {
+      "path": "tools/n4s_sites.json",
+      "category": "REFERENCE",
+      "reason": "active lower-level analysis or evidence input",
+      "referenced_by": [
+        "reports/network-n12.md",
+        "tools/patch_n4s_engine.py"
+      ]
+    },
+    {
+      "path": "tools/net_apply_13bit.py",
+      "category": "REFERENCE",
+      "reason": "active lower-level analysis or evidence input",
+      "referenced_by": [
+        "reports/n27d33/findings.md",
+        "reports/n27d34/findings.md"
+      ]
+    },
+    {
+      "path": "tools/net_patch_plan.py",
+      "category": "REFERENCE",
+      "reason": "active lower-level analysis or evidence input",
+      "referenced_by": [
+        "reports/n27d32/findings.md",
+        "reports/n27d49/findings.md",
+        "reports/n27d61/findings.md",
+        "reports/n27d62/findings.md",
+        "reports/network-n2.md"
+      ]
+    },
+    {
+      "path": "tools/netmsg_probe.py",
+      "category": "REFERENCE",
+      "reason": "active lower-level analysis or evidence input",
+      "referenced_by": [
+        "reports/network-n2.md"
+      ]
+    },
+    {
+      "path": "tools/patch_engine_baselines.py",
+      "category": "REFERENCE",
+      "reason": "active lower-level analysis or evidence input",
+      "referenced_by": [
+        "reports/n27d49/findings.md"
+      ]
+    },
+    {
+      "path": "tools/patch_engine_receive.py",
+      "category": "REFERENCE",
+      "reason": "active lower-level analysis or evidence input",
+      "referenced_by": [
+        "reports/n27d49/findings.md"
+      ]
+    },
+    {
+      "path": "tools/patch_n4s_engine.py",
+      "category": "REFERENCE",
+      "reason": "active lower-level analysis or evidence input",
+      "referenced_by": [
+        "reports/network-n11.md",
+        "reports/network-n12.md",
+        "reports/network-n13.md"
+      ]
+    },
+    {
+      "path": "tools/precheck_server.py",
+      "category": "REFERENCE",
+      "reason": "active lower-level analysis or evidence input",
+      "referenced_by": [
+        "docs/development.md",
+        "docs/verification.md",
+        "reports/report.md"
+      ]
+    },
+    {
+      "path": "tools/probe_deltaflow.py",
+      "category": "REFERENCE",
+      "reason": "active lower-level analysis or evidence input",
+      "referenced_by": []
+    },
+    {
+      "path": "tools/release/audit_repository.py",
+      "category": "ACTIVE",
+      "reason": "D66 release and audit entry point",
+      "referenced_by": [
+        "reports/n27d66/findings.md"
+      ]
+    },
+    {
+      "path": "tools/release/build_assets.py",
+      "category": "ACTIVE",
+      "reason": "D66 release and audit entry point",
+      "referenced_by": [
+        "docs/architecture.md",
+        "docs/development.md",
+        "reports/n27d66/findings.md"
+      ]
+    },
+    {
+      "path": "tools/release/build_manifests.py",
+      "category": "ACTIVE",
+      "reason": "D66 release and audit entry point",
+      "referenced_by": [
+        "docs/development.md"
+      ]
+    },
+    {
+      "path": "tools/release/capture_demo.sh",
+      "category": "ACTIVE",
+      "reason": "D66 release and audit entry point",
+      "referenced_by": [
+        "docs/demo/storyboard.md",
+        "reports/n27d66/findings.md"
+      ]
+    },
+    {
+      "path": "tools/release/check_links.py",
+      "category": "ACTIVE",
+      "reason": "D66 release and audit entry point",
+      "referenced_by": []
+    },
+    {
+      "path": "tools/release/check_raw_lifecycle.py",
+      "category": "ACTIVE",
+      "reason": "D66 release and audit entry point",
+      "referenced_by": [
+        "docs/verification.md",
+        "tools/release/check_rc.py"
+      ]
+    },
+    {
+      "path": "tools/release/check_rc.py",
+      "category": "ACTIVE",
+      "reason": "D66 release and audit entry point",
+      "referenced_by": [
+        "README.md",
+        "README.zh-CN.md",
+        "docs/research-index.md",
+        "docs/verification.md",
+        "reports/n27d66/findings.md",
+        "reports/n27d66/release-readiness.md"
+      ]
+    },
+    {
+      "path": "tools/release/check_serial_arithmetic.py",
+      "category": "ACTIVE",
+      "reason": "D66 release and audit entry point",
+      "referenced_by": [
+        "docs/verification.md",
+        "reports/n27d66/findings.md"
+      ]
+    },
+    {
+      "path": "tools/release/check_serial_result.py",
+      "category": "ACTIVE",
+      "reason": "D66 release and audit entry point",
+      "referenced_by": [
+        "tools/release/check_rc.py"
+      ]
+    },
+    {
+      "path": "tools/release/check_soak_result.py",
+      "category": "ACTIVE",
+      "reason": "D66 release and audit entry point",
+      "referenced_by": [
+        "tools/release/check_rc.py"
+      ]
+    },
+    {
+      "path": "tools/release/exercise_installer.py",
+      "category": "ACTIVE",
+      "reason": "D66 release and audit entry point",
+      "referenced_by": []
+    },
+    {
+      "path": "tools/release/install.py",
+      "category": "ACTIVE",
+      "reason": "D66 release and audit entry point",
+      "referenced_by": [
+        "README.md",
+        "README.zh-CN.md",
+        "docs/installation.md",
+        "docs/research-index.md",
+        "docs/troubleshooting.md",
+        "docs/verification.md",
+        "reports/n27d66/findings.md"
+      ]
+    },
+    {
+      "path": "tools/rtti_vtable.py",
+      "category": "REFERENCE",
+      "reason": "active lower-level analysis or evidence input",
+      "referenced_by": [
+        "reports/network-n2.md"
+      ]
+    },
+    {
+      "path": "tools/scan_netproto.py",
+      "category": "REFERENCE",
+      "reason": "active lower-level analysis or evidence input",
+      "referenced_by": []
+    },
+    {
+      "path": "tools/scan_refs.py",
+      "category": "REFERENCE",
+      "reason": "active lower-level analysis or evidence input",
+      "referenced_by": []
+    },
+    {
+      "path": "tools/sourcemod/build_compat.py",
+      "category": "ACTIVE",
+      "reason": "invoked D66 verification or pinned SourceMod integration workflow",
+      "referenced_by": [
+        "docs/compatibility.md",
+        "reports/n27d66/findings.md",
+        "tools/sourcemod/d65_compatibility.md"
+      ]
+    },
+    {
+      "path": "tools/sourcemod/d65-entitylisteners.txt",
+      "category": "ACTIVE",
+      "reason": "invoked D66 verification or pinned SourceMod integration workflow",
+      "referenced_by": []
+    },
+    {
+      "path": "tools/sourcemod/d65_compatibility.md",
+      "category": "ACTIVE",
+      "reason": "invoked D66 verification or pinned SourceMod integration workflow",
+      "referenced_by": [
+        "docs/compatibility.md",
+        "docs/development.md",
+        "reports/n27d66/findings.md"
+      ]
+    },
+    {
+      "path": "tools/sourcemod/d65_core_probe.sp",
+      "category": "ACTIVE",
+      "reason": "invoked D66 verification or pinned SourceMod integration workflow",
+      "referenced_by": []
+    },
+    {
+      "path": "tools/sourcemod/d65_probe.sp",
+      "category": "ACTIVE",
+      "reason": "invoked D66 verification or pinned SourceMod integration workflow",
+      "referenced_by": [
+        "docs/compatibility.md",
+        "docs/research-index.md"
+      ]
+    },
+    {
+      "path": "tools/windows/Capture-D63.cmd",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": []
+    },
+    {
+      "path": "tools/windows/Capture-D63.ps1",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": []
+    },
+    {
+      "path": "tools/windows/Join-D63.cmd",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": []
+    },
+    {
+      "path": "tools/windows/Join-D63.ps1",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": []
+    },
+    {
+      "path": "tools/windows/加入说明.txt",
+      "category": "HISTORICAL",
+      "reason": "immutable experiment record or data; current status is resolved by the research index",
+      "referenced_by": []
+    },
+    {
+      "path": "tools/xrefs_by_imm.py",
+      "category": "REFERENCE",
+      "reason": "active lower-level analysis or evidence input",
+      "referenced_by": []
+    }
+  ]
+}

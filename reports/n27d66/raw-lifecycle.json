@@ -1,0 +1,49 @@
+{
+  "result": "PASS",
+  "cases": [
+    {
+      "count": 16,
+      "slots_checked": 16,
+      "removed_and_reused": 8,
+      "snapshots_checked": 9,
+      "status": "PASS"
+    },
+    {
+      "count": 64,
+      "slots_checked": 64,
+      "removed_and_reused": 32,
+      "snapshots_checked": 9,
+      "status": "PASS"
+    },
+    {
+      "count": 128,
+      "slots_checked": 128,
+      "removed_and_reused": 64,
+      "snapshots_checked": 9,
+      "status": "PASS"
+    },
+    {
+      "count": 256,
+      "slots_checked": 256,
+      "removed_and_reused": 128,
+      "snapshots_checked": 9,
+      "status": "PASS"
+    },
+    {
+      "count": 512,
+      "slots_checked": 512,
+      "removed_and_reused": 256,
+      "snapshots_checked": 9,
+      "status": "PASS"
+    },
+    {
+      "count": 1,
+      "slots_checked": 1,
+      "removed_and_reused": 1,
+      "snapshots_checked": 9,
+      "status": "PASS"
+    }
+  ],
+  "failures": [],
+  "scope": "raw ladder and natural 4095 dual-end lifecycle only"
+}

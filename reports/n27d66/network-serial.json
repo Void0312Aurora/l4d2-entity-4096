@@ -1,0 +1,38 @@
+{
+  "result": "PASS",
+  "index": 2229,
+  "cycles": 1024,
+  "snapshots_checked": 13,
+  "actual_duration_seconds": 1811.5446000099182,
+  "start_internal_serial": 2218,
+  "end_internal_serial": 3242,
+  "start_wire_serial": 170,
+  "first_zero_cycle": 854,
+  "observed_created_wire_serials": {
+    "0": 170,
+    "1": 171,
+    "853": 1023,
+    "854": 0,
+    "855": 1,
+    "1023": 169,
+    "1024": 170
+  },
+  "log_sha256": "a6ecb43ddb9441b6f292c55569d17c07d6c95342c0c6d76503f53bc17daa8f4b",
+  "snapshot_sha256": {
+    "serial-first-created.json": "29cc31e022528eaf089ccb82997b5a0de60dd8ef63fffa6c31691a841b253b45",
+    "serial-cycle0001-deleted.json": "5dc0e1c4cbbf1e3b0cc337d20d27dde9132f57b39600627995e80660456b9cdb",
+    "serial-cycle0001-created.json": "5f0fe0ee11995d94cb3317a14a8a5da527cd146441ab67d069f8a182285ec411",
+    "serial-cycle0853-deleted.json": "df05c4dfdbf84f116f03386b7d8c176ee32889decd188551c000a407d7319244",
+    "serial-cycle0853-created.json": "3d431209ae9a45ad753a490d717b6268d9e52a5d795cae41e78504b8700a447c",
+    "serial-cycle0854-deleted.json": "d1775163f9b5afd77c990a682d0f3c71f2f7e16e311740b984877d3fa890a05c",
+    "serial-cycle0854-created.json": "82bfa8c6c5f570f251d7db12a48dffbc7cde21f177a3f325b09b4b99356b5dcb",
+    "serial-cycle0855-deleted.json": "70da3d0c6343e4bb2ed866912bcb8c02d1d3ed47e217e4923e03b03602003241",
+    "serial-cycle0855-created.json": "0aa7117ee3e285200654a8d6c7553b1256d382f6b4c9313568c214ea51aa0025",
+    "serial-cycle1023-deleted.json": "387ae425b719af88210e7ec58431e4c4bb64d578adfd36698060bfca91b7e569",
+    "serial-cycle1023-created.json": "e2cda3f322951898ac8749c2b0c4ab19ec4f8ef2e58811fb1f5e3b31ae39def3",
+    "serial-cycle1024-deleted.json": "7de573207b3e005e902ac7423d939ba2980c12c18576d1fa7d7632dbfa4d62d3",
+    "serial-cycle1024-created.json": "3b15493f74f1451bb206cdf3feb54ad29013fe5d1566e144af6fe8715418da36"
+  },
+  "empty_slot_note": "client may cache 1024 immediately after deleting serial 1023; its pointer is null and the next created object decodes wire serial 0",
+  "internal_serial_wrap": "NOT_TESTED"
+}

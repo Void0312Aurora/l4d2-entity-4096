@@ -1,0 +1,147 @@
+{
+  "stage": "D66",
+  "result": "PARTIALLY_READY",
+  "build": "23990068",
+  "checks": [
+    {
+      "name": "windows-client.json",
+      "status": "PASS",
+      "detail": "schema, build and file records are valid"
+    },
+    {
+      "name": "windows-client_reconstruction",
+      "status": "PASS",
+      "detail": "source identities, every old-byte hunk, output hashes and x86 structure"
+    },
+    {
+      "name": "linux-server.json",
+      "status": "PASS",
+      "detail": "schema, build and file records are valid"
+    },
+    {
+      "name": "linux-server_reconstruction",
+      "status": "PASS",
+      "detail": "source identities, every old-byte hunk, output hashes and x86 structure"
+    },
+    {
+      "name": "d65_status",
+      "status": "PASS",
+      "detail": "D65 partial status is preserved"
+    },
+    {
+      "name": "d65_evidence",
+      "status": "PASS",
+      "detail": "external D65 raw evidence directory exists"
+    },
+    {
+      "name": "d65_evidence_integrity",
+      "status": "PASS",
+      "detail": "named evidence and pinned D65 module identities",
+      "exit_code": 0
+    },
+    {
+      "name": "raw_lifecycle_semantics",
+      "status": "PASS",
+      "detail": "raw five-level ladder and natural 4095 lifecycle recomputation",
+      "output": "{\n  \"result\": \"PASS\",\n  \"cases\": [\n    {\n      \"count\": 16,\n      \"slots_checked\": 16,\n      \"removed_and_reused\": 8,\n      \"snapshots_checked\": 9,\n      \"status\": \"PASS\"\n    },\n    {\n      \"count\": 64,\n      \"slots_checked\": 64,\n      \"removed_and_reused\": 32,\n      \"snapshots_checked\": 9,\n      \"status\": \"PASS\"\n    },\n    {\n      \"count\": 128,\n      \"slots_checked\": 128,\n      \"removed_and_reused\": 64,\n      \"snapshots_checked\": 9,\n      \"status\": \"PASS\"\n    },\n    {\n      \"count\": 256,\n      \"slots_checked\": 256,\n      \"removed_and_reused\": 128,\n      \"snapshots_checked\": 9,\n      \"status\": \"PASS\"\n    },\n    {\n      \"count\": 512,\n      \"slots_checked\": 512,\n      \"removed_and_reused\": 256,\n      \"snapshots_checked\": 9,\n      \"status\": \"PASS\"\n    },\n    {\n      \"count\": 1,\n      \"slots_checked\": 1,\n      \"removed_and_reused\": 1,\n      \"snapshots_checked\": 9,\n      \"status\": \"PASS\"\n    }\n  ],\n  \"failures\": [],\n  \"scope\": \"raw ladder and natural 4095 dual-end lifecycle only\"\n}",
+      "exit_code": 0
+    },
+    {
+      "name": "valve_binaries_absent",
+      "status": "PASS",
+      "detail": "no complete binary artifacts are tracked",
+      "files": []
+    },
+    {
+      "name": "build_binding",
+      "status": "PASS",
+      "detail": "all release manifests bind build 23990068"
+    },
+    {
+      "name": "network_serial_wrap",
+      "status": "PASS",
+      "detail": "real 1024-cycle allocator reuse result"
+    },
+    {
+      "name": "bounded_soak",
+      "status": "PASS",
+      "detail": "bounded soak result supplied"
+    },
+    {
+      "name": "installer_recovery_windows-client",
+      "status": "PASS",
+      "detail": "module-only original fixture; not a full game installation"
+    },
+    {
+      "name": "installer_recovery_linux-server",
+      "status": "PASS",
+      "detail": "module-only original fixture; not a full game installation"
+    },
+    {
+      "name": "sourcemod_rebuild_smoke",
+      "status": "PASS",
+      "detail": "newly rebuilt core/SDKTools/SDKHooks and probe in a private server"
+    },
+    {
+      "name": "internal_serial_wrap",
+      "status": "NOT_TESTED",
+      "detail": "internal 15-bit wrap was not forced safely"
+    },
+    {
+      "name": "long_soak",
+      "status": "NOT_TESTED",
+      "detail": "multi-hour soak was not run in D66"
+    },
+    {
+      "name": "repeated_512_map_transition",
+      "status": "PARTIAL",
+      "detail": "D66 combined soak/map runs stopped on harness or visibility assertions; D65 single transition remains PASS"
+    },
+    {
+      "name": "multi_client",
+      "status": "NOT_TESTED",
+      "detail": "multi-client work was deferred by the user; one real client tested"
+    },
+    {
+      "name": "full_4096_occupancy",
+      "status": "NOT_TESTED",
+      "detail": "4095 boundary is not full simultaneous occupation"
+    },
+    {
+      "name": "windows_dedicated",
+      "status": "NOT_TESTED",
+      "detail": "Windows native dedicated server has no end-to-end evidence"
+    },
+    {
+      "name": "windows_native_client",
+      "status": "NOT_TESTED",
+      "detail": "Windows image runtime was tested through Proton only"
+    },
+    {
+      "name": "linux_native_client",
+      "status": "NOT_TESTED",
+      "detail": "no native Linux client runtime acceptance"
+    },
+    {
+      "name": "arbitrary_native_extensions",
+      "status": "NOT_TESTED",
+      "detail": "SourceMod acceptance remains probe-scoped"
+    }
+  ],
+  "manifests": [
+    "release/manifests/windows-client.json",
+    "release/manifests/linux-server.json"
+  ],
+  "evidence_root": "external D65 raw run directory (not distributed)",
+  "limitations": [
+    "internal_serial_wrap",
+    "long_soak",
+    "repeated_512_map_transition",
+    "multi_client",
+    "full_4096_occupancy",
+    "windows_dedicated",
+    "windows_native_client",
+    "linux_native_client",
+    "arbitrary_native_extensions"
+  ]
+}

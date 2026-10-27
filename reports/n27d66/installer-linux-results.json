@@ -1,0 +1,54 @@
+{
+  "result": "PASS",
+  "platform": "linux-server",
+  "fixture": "module-only original fixture; not a full game installation",
+  "steps": [
+    {
+      "name": "source identities and architecture",
+      "result": "PASS",
+      "exit_code": 0
+    },
+    {
+      "name": "dry-run",
+      "result": "PASS",
+      "exit_code": 0
+    },
+    {
+      "name": "new private copy",
+      "result": "PASS",
+      "exit_code": 0
+    },
+    {
+      "name": "replace with backup",
+      "result": "PASS",
+      "exit_code": 0
+    },
+    {
+      "name": "restore verified backup",
+      "result": "PASS",
+      "exit_code": 0
+    },
+    {
+      "name": "failed patch keeps old target",
+      "result": "PASS",
+      "exit_code": 1
+    },
+    {
+      "name": "remove newly created copy",
+      "result": "PASS",
+      "exit_code": 0
+    },
+    {
+      "name": "unsupported source rejected",
+      "result": "PASS",
+      "exit_code": 1
+    },
+    {
+      "name": "symlinked module parent rejected",
+      "result": "PASS",
+      "exit_code": 1
+    }
+  ],
+  "original_modules_unchanged": true,
+  "installer_sha256": "f258d5af62da59d630a7127cd57c58ca8585fb242d90cb584564fa773658de57"
+}
