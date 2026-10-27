@@ -26,6 +26,73 @@ MARKER = ".l4d2-4096-private-copy"
 RECEIPT = "l4d2-4096-install.json"
 
 
+def format_bytes(value: int) -> str:
+    units = ("B", "KiB", "MiB", "GiB", "TiB")
+    amount = float(value)
+    for unit in units:
+        if amount < 1024 or unit == units[-1]:
+            return f"{amount:.1f} {unit}" if unit != "B" else f"{int(amount)} B"
+        amount /= 1024
+    return f"{value} B"
+
+
+class Progress:
+    """Small terminal-friendly progress reporter for long installer phases."""
+
+    def __init__(self, label: str, total: int = 0):
+        self.label = label
+        self.total = total
+        self.done = 0
+        self.last_report = 0.0
+
+    def report(self, force: bool = False) -> None:
+        now = time.monotonic()
+        if not force and now - self.last_report < 0.5:
+            return
+        self.last_report = now
+        if self.total:
+            percent = min(100.0, self.done * 100.0 / self.total)
+            print(f"{self.label}: {percent:5.1f}% ({format_bytes(self.done)} / "
+                  f"{format_bytes(self.total)})", flush=True)
+        else:
+            print(f"{self.label}...", flush=True)
+
+    def add(self, amount: int) -> None:
+        self.done += amount
+        self.report()
+
+    def finish(self) -> None:
+        self.done = self.total or self.done
+        self.report(force=True)
+
+
+def tree_bytes(root: Path) -> int:
+    total = 0
+    for base, dirs, files in os.walk(root, followlinks=False):
+        dirs[:] = [name for name in dirs if not (Path(base) / name).is_symlink()]
+        for name in files:
+            path = Path(base) / name
+            if not path.is_symlink():
+                total += path.stat().st_size
+    return total
+
+
+def copy_with_progress(src: str, dst: str, progress: Progress) -> str:
+    """Copy one regular file in chunks so a large tree visibly advances."""
+    source = Path(src)
+    target = Path(dst)
+    target.parent.mkdir(parents=True, exist_ok=True)
+    with source.open("rb") as source_file, target.open("wb") as target_file:
+        while True:
+            chunk = source_file.read(8 * 1024 * 1024)
+            if not chunk:
+                break
+            target_file.write(chunk)
+            progress.add(len(chunk))
+    shutil.copystat(source, target, follow_symlinks=not source.is_symlink())
+    return dst
+
+
 def sha(path: Path) -> str:
     h = hashlib.sha256()
     with path.open("rb") as f:
@@ -89,9 +156,12 @@ def reject_module_links(root: Path, relative: str) -> None:
         reject_symlink(path)
 
 
-def validate_source(game: Path, manifest: dict) -> list[dict]:
+def validate_source(game: Path, manifest: dict, progress: bool = False) -> list[dict]:
     results = []
-    for item in manifest["files"]:
+    total = len(manifest["files"])
+    for number, item in enumerate(manifest["files"], 1):
+        if progress:
+            print(f"[1/3] verify source {number}/{total}: {item['path']}", flush=True)
         path = game / item["path"]
         reject_module_links(game, item["path"])
         if not path.is_file():
@@ -107,6 +177,8 @@ def validate_source(game: Path, manifest: dict) -> list[dict]:
         validate_architecture(path, manifest["platform"])
         results.append({"path": item["path"], "source_sha256": actual_sha,
                         "source_size": actual_size})
+        if progress:
+            print(f"      verified {format_bytes(actual_size)}", flush=True)
     return results
 
 
@@ -152,7 +224,7 @@ def install(args: argparse.Namespace) -> int:
     if ".steam" in game.parts and target == game:
         raise SystemExit("refusing to modify a Steam library")
 
-    source_info = validate_source(game, manifest)
+    source_info = validate_source(game, manifest, progress=True)
     existing = target.exists()
     if existing:
         if not target.is_dir() or not (target / MARKER).is_file():
@@ -160,9 +232,9 @@ def install(args: argparse.Namespace) -> int:
         if not args.replace:
             raise SystemExit(f"target exists; pass --replace after checking it: {target}")
     destination_parent = target.parent
-    print(f"source verified: {game}")
-    print(f"private target:  {target}")
-    print(f"platform:        {manifest['platform']}")
+    print(f"source verified: {game}", flush=True)
+    print(f"private target:  {target}", flush=True)
+    print(f"platform:        {manifest['platform']}", flush=True)
     for item in manifest["files"]:
         print(f"  {item['path']}: {item['source_sha256'][:12]} -> {item['output_sha256'][:12]}")
     if args.dry_run:
@@ -180,18 +252,28 @@ def install(args: argparse.Namespace) -> int:
     temp = Path(tempfile.mkdtemp(prefix=f".{target.name}.", dir=str(destination_parent)))
     try:
         shutil.rmtree(temp)
-        shutil.copytree(game, temp, symlinks=True)
+        copy_progress = Progress("[2/3] copy game tree", tree_bytes(game))
+        print(f"[2/3] copy game tree: {format_bytes(copy_progress.total)}", flush=True)
+        shutil.copytree(
+            game, temp, symlinks=True,
+            copy_function=lambda source, destination: copy_with_progress(
+                source, destination, copy_progress),
+        )
+        copy_progress.finish()
         reject_symlink(temp/MARKER)
         reject_symlink(temp/RECEIPT)
         (temp / MARKER).write_text(
             f"L4D2-4096 private copy\nbuild={manifest['build']}\nplatform={manifest['platform']}\n",
             encoding="ascii",
         )
-        for item in manifest["files"]:
+        total = len(manifest["files"])
+        for number, item in enumerate(manifest["files"], 1):
+            print(f"[3/3] patch and verify {number}/{total}: {item['path']}", flush=True)
             path = temp / item["path"]
             reject_module_links(temp, item["path"])
             path.write_bytes(patch_bytes(path.read_bytes(), item))
             validate_architecture(path, manifest["platform"])
+            print(f"      ready {format_bytes(path.stat().st_size)}", flush=True)
 
         receipt = {
             "schema": "l4d2-4096-install-receipt-v1",
@@ -222,8 +304,8 @@ def install(args: argparse.Namespace) -> int:
         if backup and backup.exists() and not target.exists():
             backup.rename(target)
         raise
-    print(f"installed private copy: {target}")
-    print(f"receipt: {target / RECEIPT}")
+    print(f"installed private copy: {target}", flush=True)
+    print(f"receipt: {target / RECEIPT}", flush=True)
     return 0
 
 

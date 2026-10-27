@@ -2,6 +2,12 @@
 
 The supported workflow is a private copy. The source game may live in a Steam library, but the installer never writes to that directory.
 
+The installer prints progress for the three long phases: source verification,
+copying the private tree with byte progress, and patching/verifying each
+manifest file. The same output is used for the Windows client and Linux
+server manifests, including `--dry-run`; a failed hash check stops before the
+copy phase.
+
 ## 1. Check the build
 
 The manifest is bound to build `23990068`. Point `--game` at the root containing `left4dead2.exe` on Windows/Proton, or the Linux dedicated server root containing `srcds_run` and `left4dead2/`.

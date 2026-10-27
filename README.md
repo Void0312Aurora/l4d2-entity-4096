@@ -25,6 +25,11 @@ The following remain outside the release claim: internal 15-bit serial wraparoun
 
 Use a Python 3 interpreter and a legally installed build `23990068`. The installer reads the original tree, verifies every source hash, applies only byte deltas from `release/manifests/`, verifies the output hash, and writes to a separate private directory outside the source tree. It never modifies the source tree.
 
+Both client and server installations show three visible stages: source
+verification, byte-level private-tree copying, and per-file patch/final-hash
+verification. The copy stage reports bytes and percentage so a large install
+does not appear stalled.
+
 Check a Windows or Proton client source:
 
 ```bash
