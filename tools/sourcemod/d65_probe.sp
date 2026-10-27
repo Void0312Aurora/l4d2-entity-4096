@@ -58,8 +58,11 @@ public Action Probe(int argc) {
 public Action Force(int argc) {
     char arg[32]; GetCmdArg(1,arg,sizeof(arg)); int index=StringToInt(arg);
     PrintToServer("D65_SM_FORCE_BEGIN requested=%d",index);
-    int entity=CreateEntityByName("prop_dynamic_override",index);
-    PrintToServer("D65_SM_FORCE_RETURN requested=%d entity=%d",index,entity);
+    // CreateEntityByName allocates through the normal engine allocator; the
+    // second argument never selected an entity index and made this probe look
+    // like a high-index allocator test when it was not one.
+    int entity=CreateEntityByName("prop_dynamic_override");
+    PrintToServer("D65_SM_FORCE_RETURN requested=%d actual=%d",index,entity);
     if (entity != -1) {
         DispatchKeyValue(entity,"model","models/props_c17/oildrum001.mdl");
         DispatchKeyValue(entity,"solid","0");
@@ -72,6 +75,10 @@ public Action Force(int argc) {
 public Action Hook(int argc) {
     char arg[32];GetCmdArg(1,arg,sizeof(arg));int entity=StringToInt(arg);
     PrintToServer("D65_SM_HOOK_BEGIN index=%d",entity);
+    if (!IsValidEntity(entity)) {
+        PrintToServer("D65_SM_HOOK_SKIP index=%d reason=invalid",entity);
+        return Plugin_Handled;
+    }
     SDKHook(entity,SDKHook_OnTakeDamage,Damage);
     PrintToServer("D65_SM_HOOK_END index=%d",entity);
     return Plugin_Handled;

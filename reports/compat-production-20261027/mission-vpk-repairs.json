@@ -1,0 +1,65 @@
+[
+  {
+    "id": "121121759",
+    "mission": "deathcraft.txt",
+    "source_sha256": "2f741b1a2638154060d3160619df39d978d31030efbdb2287c0f36c67b38db1c",
+    "patched_sha256": "1e8ef4575862aab9c3d0917159365358f02977b92daaa285289948819ac14891",
+    "changes": "close coop before versus; close root; use unique versus/survival mode keys"
+  },
+  {
+    "id": "121125253",
+    "mission": "deathcraft.txt",
+    "source_sha256": "e7064292735b758e9662c500f436a3b544501b28e573fab3d243e0f5b27f1837",
+    "patched_sha256": "5c8b2356c7401a06b4362def725b99c3bb72071711e3e3fcf9fd0d7cd605cf39",
+    "changes": "close coop before versus; close root; use unique versus/survival mode keys"
+  },
+  {
+    "id": "121125848",
+    "mission": "deathcraft.txt",
+    "source_sha256": "1868cc0aebc51dce7fe01c525e33cc419596266ac0b680d5e700dce5fc2cf591",
+    "patched_sha256": "631d3c4dd64f621a4d52399cf71cb8faa20104471fc40bf47de291c6dbe5537f",
+    "changes": "close coop before versus; close root; use unique versus/survival mode keys"
+  },
+  {
+    "id": "121529630",
+    "mission": "deathcraft.txt",
+    "source_sha256": "fd63e04f27f27dfd3fd3630a0dadd8a36f6fa0ab8edc0398f3d1f7d51aeebb4a",
+    "patched_sha256": "94b2897812eda9021ce24653b3e6053b9aa10985c177f8bf723a47162669a8f5",
+    "changes": "close coop before versus; close root; use unique versus/survival mode keys"
+  },
+  {
+    "id": "122123085",
+    "mission": "deathcraft.txt",
+    "source_sha256": "0ee8385ac476aa076787e8873290644007be2d361108e02fdf8ef6693aa7b363",
+    "patched_sha256": "4e615ba900e8924b7a40abebd993bf052d091c62d01aa1fdd75a8964cc22889c",
+    "changes": "close coop before versus; close root; use unique versus/survival mode keys"
+  },
+  {
+    "id": "122123666",
+    "mission": "deathcraft.txt",
+    "source_sha256": "9f31bdeaceb8253803dc71c008488936870ca186e7d2c56fb2d5b1eba851b683",
+    "patched_sha256": "3b4aa7a4e2dba711f97012fcef7ad580efc155a9791aa68b18ad9bf91037af0d",
+    "changes": "close coop before versus; close root; use unique versus/survival mode keys"
+  },
+  {
+    "id": "122179839",
+    "mission": "deathcraft.txt",
+    "source_sha256": "5dd383842ac99cbefc72911555e4668d49fc19f8d3ae7dfce5658d565ccdd8d6",
+    "patched_sha256": "abd5b7836ef961d2a11fb0df2e70d66a553f0fa8d777311eba50db35f1009cd5",
+    "changes": "close coop before versus; close root; use unique versus/survival mode keys"
+  },
+  {
+    "id": "2396847377",
+    "mission": "zengchengre.txt",
+    "source_sha256": "97623f713b0626ac50d046b41bdb4ac352d817aef7a145cbe2dfdb5d67b6cc88",
+    "patched_sha256": "2d7095e6b3a3044e3d5a8cab61e1344b2e3a7d00d8e2b9c66d9a5de9b56ec8cb",
+    "changes": "close root at EOF"
+  },
+  {
+    "id": "3220375446",
+    "mission": "mapaliminal.txt",
+    "source_sha256": "0b44ce5c33c8bb1cbb810929e43869cf87b6092a17a1d55e8b5564191d31936c",
+    "patched_sha256": "a5aa55d389b444d6d02c60bb3ad20eb8d97a9448eebc1cd68bde4aec358a5417",
+    "changes": "close root at EOF"
+  }
+]

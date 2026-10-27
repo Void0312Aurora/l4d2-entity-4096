@@ -81,3 +81,9 @@ to `-1` after the delete has completed. `d65_load.nut` comes from
 different high slot; use the actual `D65_CREATED idx=` value in that case.
 
 The public compatibility claim remains limited to this core/API/hook scope.
+
+`sm_d65_force <index>` is only a normal allocator smoke helper; SourceMod's
+`CreateEntityByName` native does not accept a requested entity index. The probe
+now reports the actual allocated index and skips `SDKHook` when the supplied
+index is invalid. Use the VScript `d65_create` sequence above for a real
+high-index allocation test.
