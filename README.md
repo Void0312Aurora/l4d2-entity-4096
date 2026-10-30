@@ -6,7 +6,9 @@ This is an experimental release candidate for private testing environments. It i
 
 ## Current release status
 
-**PARTIALLY_READY — single-client experimental testing.** The runtime-tested path is a Linux dedicated server plus the Windows client through Proton. The same Windows module manifest is provided for native Windows testing; that runtime has not been independently accepted. D65 evidence covers real `16/64/128/256/512` entity ladders, index `4095`, six special infected, client synchronization, and one map transition. D66 adds a real 1024-cycle wire-serial wrap test, a 317.5-second bounded 512-entity run, in-place module installer, reproducible SourceMod build and independent raw-evidence gates. A separate 2026-10-31 gameplay-assisted runtime test on `c6m1_riverbank` observed indices beyond the vanilla boundary while the game was running, including a common infected at index `2158`. This is a bounded server-side observation, not a new client-sync or long-duration acceptance test.
+**PARTIALLY_READY — one client connected to a separate dedicated server, not single-player mode.** The runtime-tested path is a Linux dedicated server plus the Windows client through Proton. The same Windows module manifest is provided for native Windows testing; that runtime has not been independently accepted. D65 evidence covers real `16/64/128/256/512` entity ladders, index `4095`, six special infected, client synchronization, and one map transition. D66 adds a real 1024-cycle wire-serial wrap test, a 317.5-second bounded 512-entity run, in-place module installer, reproducible SourceMod build and independent raw-evidence gates. A separate 2026-10-31 gameplay-assisted runtime test on `c6m1_riverbank` observed indices beyond the vanilla boundary while the game was running, including a common infected at index `2158`. This is a bounded server-side observation, not a new client-sync or long-duration acceptance test.
+
+**Single-player / client-hosted listen server is not implemented or validated by this release.** The Windows release manifest patches `bin/engine.dll` and `left4dead2/bin/client.dll`, but not the game-server module `left4dead2/bin/server.dll` needed by the local server path. Historical static work on `server.dll` exists, but it was not integrated into the release. See [compatibility](docs/compatibility.md#single-player-and-listen-server-scope) for the evidence and remaining unknowns.
 
 The following remain outside the release claim: internal 15-bit serial wraparound, multi-hour soak, two real Steam users, full simultaneous occupation of all 4096 network slots, native Windows runtime acceptance, Linux native client, and arbitrary native extensions.
 
@@ -19,6 +21,7 @@ The following remain outside the release claim: internal 15-bit serial wraparoun
 | Proton Windows client | Experimental | End-to-end connection, updates, deletion, reuse and map transition |
 | Windows native dedicated server | Not tested | Do not list as supported |
 | Linux native client | Not tested | Do not list as supported |
+| Windows single-player / listen server | **Not implemented / not validated** | Client-hosted Windows game-server path is outside the release; historical `server.dll` prototype is static-only |
 | SourceMod core / SDKTools / SDKHooks | Limited compatible build | Only the API and callbacks in the D65 probe are covered |
 
 ## Install the release modules
@@ -121,6 +124,7 @@ The gate reports static identity, manifest, evidence-integrity, and end-to-end s
 
 - All addresses and byte assertions are bound to build `23990068`; a Steam update invalidates them.
 - Vanilla clients cannot decode network indices at or above `2048`.
+- **Single-client is not single-player**: current runtime acceptance uses a separate Linux dedicated server. The release does not include a Windows `server.dll` patch for client-hosted single-player and makes no claim about that mode, including whether ordinary low-index single-player launches still work.
 - Wire serial repeats after 1024 reuse cycles as expected. The internal 15-bit wrap remains `NOT_TESTED`.
 - The gameplay-assisted >2047 observation used hidden filler entities. Natural-only saturation, full simultaneous 4096-slot occupation and sustained high-load stability are unverified. This run has no separate high-index client packet/visibility trace; D65/D66 client evidence remains distinct.
 - VAC safety, public matchmaking, and public release distribution are unverified.
