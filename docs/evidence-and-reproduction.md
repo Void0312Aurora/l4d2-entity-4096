@@ -10,7 +10,7 @@ published.
 | Level | Repository example | What it supports |
 | --- | --- | --- |
 | Static | release manifests, engine/manifest*.json, data/*.csv, disassembly notes | Expected bytes, widths, layout and artifact identity |
-| Runtime observation | D26/D61/D62 reports and compact snapshots | A bounded behavior in the named process and environment |
+| Runtime observation | D26/D61/D62 reports and compact snapshots, [2026-10-31 gameplay-assisted scan](../artifacts/entity-index-20261031/README.md) | A bounded behavior in the named process and environment; does not by itself establish client delivery |
 | End-to-end | D65 validation and D66 smoke records | Patched server and patched client observed together |
 | Recomputed | check_d65_evidence.py, check_raw_lifecycle.py, check_serial_result.py | The compact/raw inputs satisfy explicit invariants |
 | Missing | external raw run directories | Cannot be independently replayed from the repository alone |
@@ -30,6 +30,7 @@ inputs is not proof that the old experiment has been replayed.
 | Bounded 512-entity run | D66 findings | reports/n27d66/bounded-soak.json | tools/release/check_soak_result.py against raw samples | Sample files are local; result is bounded, not multi-hour |
 | SourceMod compatibility | D66 findings | reports/n27d66/sourcemod-build.json, sourcemod-smoke.json | tools/sourcemod/build_compat.py --check-only; smoke record | Source commits and artifact hashes are public; raw private log is hashed only |
 | Map transition | D65 validation and findings | D65 compact record | D65 evidence checker | One corrected private transition; repeated 512 transitions remain partial |
+| Gameplay-assisted indices beyond 2047 | [2026-10-31 evidence overview](../artifacts/entity-index-20261031/README.md) | [Logger log](../artifacts/entity-index-20261031/entity_limit_2026-10-31_00-20-00.log), [VScript scan](../artifacts/entity-index-20261031/runtime-index-scan.txt) | [fill/cleanup](../artifacts/entity-index-20261031/entity_index_fill.nut), [scan](../artifacts/entity-index-20261031/entity_index_scan.nut), [SHA256SUMS](../artifacts/entity-index-20261031/SHA256SUMS) | Patched Linux server in gameplay, max index 2158 (`infected`); no same-run independent client-side trace, no natural-only saturation or sustained threshold duration |
 
 ## What is published
 
@@ -46,6 +47,17 @@ The repository does not publish Valve's complete original or modified DLL/SO,
 Steam credentials, process dumps, cores, raw memory snapshots, unfiltered
 Proton logs, or the large private Workshop cache. D62–D66 reports intentionally
 refer to those files by compact names and hashes where appropriate.
+
+## Gameplay-assisted index evidence (2026-10-31)
+
+The published run occurred on `c6m1_riverbank` with the patched Linux server. `z_common_limit=500` raised the permitted infected population; it does **not** establish that 500 infected were simultaneously alive. The fill helper spawned invisible `prop_dynamic_override` entities at `0 0 -10000`, retained handles to keep them alive, and offered `entity_index_fill_cleanup()` for removal. The scan helper used `Entities.First()` / `Entities.Next()` and `GetEntityIndex()`.
+
+- Entity Limits Logger: `All: 2374`, `Networked: 2159`.
+- VScript: `count=2397`, `unique=2127`, `negative=0`, `max=2158`, `maxclass=infected`, `over2047=105`.
+- Interpretation: the observed maximum is an ordinary infected entity above the old 2047 maximum under filler-assisted in-game load. Because the traversal returned more observations than distinct indices, scan counts must not be reported as exact simultaneous distinct network-edict occupancy. The Logger totals are presented as reported, without equating them to an independently audited allocator occupancy.
+- Boundaries: the saved report spans a 28-minute snapshot interval, **not** a measured 28-minute run above the threshold; no paired high-index client packet/visibility trace for this session is published. Natural-only horde saturation and long-duration stability remain unverified.
+
+The published scripts and records can be inspected, and the helper can be used in a matching private test to collect a **new** observation. This does not replay the historical game session or establish what the client received. Keep the original log and scan unchanged; record any future client traces and time-above-threshold measurements separately.
 
 ## Reproduce static and compact checks
 
@@ -112,7 +124,7 @@ manufactured when the original directory is absent.
 
 ## Evidence gaps
 
-The following remain open: two real Steam clients, native Windows runtime,
+The following remain open: natural-only gameplay saturation above 2047, independently traced client delivery in the 2026-10-31 gameplay-assisted run, measured time-above-threshold, two real Steam clients, native Windows runtime,
 native Linux client, internal 15-bit serial wrap, multi-hour soak, full
 simultaneous 4096-slot occupation, repeated 512-entity map transitions, and
 arbitrary native extensions. D66's repeated-transition visibility pattern is
