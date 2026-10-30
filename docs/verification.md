@@ -9,6 +9,7 @@ D66 keeps build, integrity, raw semantics, installation and runtime checks separ
 | Raw lifecycle semantics | `tools/release/check_raw_lifecycle.py` | Recomputes actual indices, wire serial, handles, origins, deletion and reuse across 54 raw snapshots |
 | Installer checks | `tools/release/install.py` | Source hashes, hunk assertions, output hashes, private-copy and recovery behavior |
 | Runtime acceptance | D65/D66 raw run directories | Real server/client lifecycle, Frida observation, map transition and D66 serial wrap |
+| In-game high-index server observation | [2026-10-31 Logger/scan](../artifacts/entity-index-20261031/README.md) | Active-game, filler-assisted server indices >=2048; must not be promoted to a client synchronization or soak result |
 
 Run the evidence and release gates:
 
@@ -46,10 +47,17 @@ evidence. Without source trees, reconstruction is `NOT_TESTED`.
 
 `tools/release/check_serial_arithmetic.py` produces `reports/n27d66/serial-arithmetic.json`. It proves only the documented 10-bit/15-bit encode-decode arithmetic and marks `runtime_claim` as `NONE`; it is not a substitute for the live serial runner.
 
+## 2026-10-31 gameplay-assisted crossing
+
+The separately published [run log](../artifacts/entity-index-20261031/entity_limit_2026-10-31_00-20-00.log) records `All: 2374` and `Networked: 2159`; the [VScript scan](../artifacts/entity-index-20261031/runtime-index-scan.txt) records max index `2158` as `infected` and `over2047=105`. The [fill script](../artifacts/entity-index-20261031/entity_index_fill.nut) generated persistent hidden props to force high-index allocation, and the [scan script](../artifacts/entity-index-20261031/entity_index_scan.nut) captured the server-side result. Assign `RUNTIME_OBSERVED` / `PASS_BOUNDED` to this crossing only. The different `count=2397` and `unique=2127` scan values rule out equating traversal count with exact distinct active edicts. The 28-minute Logger interval does not quantify time above 2047.
+
+This is **not** an additional D65/D66 client synchronization pass, a natural-only horde threshold test, or a 4096-slot occupancy test. No raw gameplay/client trace was added to the release gate by this documentation update.
+
 ## Evidence rules
 
 - A static manifest does not prove runtime behavior.
 - A server-side snapshot does not prove client visibility.
+- A filler-assisted high-index infected observation does not prove an unassisted horde reaches that index, or that a long snapshot interval was spent above the threshold.
 - A natural index-4095 run does not prove full 4096-slot occupation.
 - A finite serial observation does not prove wraparound safety.
 - A compatibility probe does not prove arbitrary third-party extension compatibility.
