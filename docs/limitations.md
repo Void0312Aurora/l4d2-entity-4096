@@ -17,9 +17,12 @@ The project is intentionally published as an experimental **single-client plus s
 | Windows native dedicated server | NOT_TESTED | Linux dedicated server is the supported server path |
 | Windows client-hosted single-player / listen server | **NOT_IMPLEMENTED / NOT_VALIDATED** | Windows release manifest does not include `server.dll`; historical static 808-site prototype was neither integrated nor accepted in a local single-player runtime |
 | Windows native client runtime | NOT_TESTED | The Windows image is runtime-tested through Proton |
-| Linux native client | NOT_TESTED | Windows/Proton is the tested client path |
+| Linux native client | **LIMITED PLAYTEST (user-reported)** | Successful server connection and gameplay reported; no independently archived high-index client evidence or high-load acceptance, and no Linux-native client patch in release manifests |
+| Intermittent native Linux loading/rendering issues | **OBSERVED BY USER / UNTRIAGED** | A few irregularities during play; sparse observations with no controlled reproduction, causal attribution or measured frequency |
 | VAC/public matchmaking | NOT_TESTED | Use private, non-public test environments |
 | Other native extensions | NOT_TESTED | SourceMod result is limited to the D65 probe scope |
+
+Basic Linux-native client/server gameplay is distinct from a native client accepting high-index network entities. High-load testing is not a prerequisite to describing basic playability, but the absence of a Linux-native client patch/trace means **full 4096-index compatibility remains unverified**. The reported occasional display/loading anomalies are not currently attributable to the expansion.
 
 The 2026-10-31 Logger report's 28-minute snapshot interval is not measured time above 2047. Its `All: 2374`, `Networked: 2159` and the VScript scan's `count=2397`, `unique=2127`, `over2047=105` have different counting semantics; do not present them as an independently audited simultaneous count of distinct network edicts. See [the published evidence](../artifacts/entity-index-20261031/README.md).
 
