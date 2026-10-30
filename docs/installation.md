@@ -95,6 +95,15 @@ prefix and server paths and records module identities.
 Windows native dedicated server and Linux native client are not in the tested
 support set. Do not infer support from a successful file replacement.
 
+**Single-player caveat:** these Windows instructions install **client-side**
+modules only (`engine.dll` and `client.dll`). They do not install a patched
+Windows `server.dll` or provide 4096-edict client-hosted single-player/listen-
+server support. "One tested client" means one client connected to a separate
+Linux dedicated server, not a single-player campaign. The behavior of
+ordinary low-index single-player with the patched client modules has not been
+independently accepted. Historical Windows `server.dll` research is not a
+release installer component; see [compatibility](compatibility.md#single-player-and-listen-server-scope).
+
 ## Restore
 
 Restore the original modules from the receipt:
