@@ -8,9 +8,11 @@ This is an experimental release candidate for private testing environments. It i
 
 **PARTIALLY_READY — one client connected to a separate dedicated server, not single-player mode.** The runtime-tested path is a Linux dedicated server plus the Windows client through Proton. The same Windows module manifest is provided for native Windows testing; that runtime has not been independently accepted. D65 evidence covers real `16/64/128/256/512` entity ladders, index `4095`, six special infected, client synchronization, and one map transition. D66 adds a real 1024-cycle wire-serial wrap test, a 317.5-second bounded 512-entity run, in-place module installer, reproducible SourceMod build and independent raw-evidence gates. A separate 2026-10-31 gameplay-assisted runtime test on `c6m1_riverbank` observed indices beyond the vanilla boundary while the game was running, including a common infected at index `2158`. This is a bounded server-side observation, not a new client-sync or long-duration acceptance test.
 
+**Linux native-client qualification:** real server-connected gameplay has been reported on a native Linux client, correcting the previous blanket `NOT_TESTED` label. This is a limited compatibility observation without an archived client trace or recorded >2047 index exposure; it does not show that an unmodified native client can decode expanded network indices. Occasional loading/rendering irregularities were noticed during play, but were infrequent and have not been reproduced or attributed to this patch. High-load testing is optional for claiming *basic connectivity*, but high-index acceptance is still needed before claiming full 4096 compatibility on that client.
+
 **Single-player / client-hosted listen server is not implemented or validated by this release.** The Windows release manifest patches `bin/engine.dll` and `left4dead2/bin/client.dll`, but not the game-server module `left4dead2/bin/server.dll` needed by the local server path. Historical static work on `server.dll` exists, but it was not integrated into the release. See [compatibility](docs/compatibility.md#single-player-and-listen-server-scope) for the evidence and remaining unknowns.
 
-The following remain outside the release claim: internal 15-bit serial wraparound, multi-hour soak, two real Steam users, full simultaneous occupation of all 4096 network slots, native Windows runtime acceptance, Linux native client, and arbitrary native extensions.
+The following remain outside the release claim: internal 15-bit serial wraparound, multi-hour soak, two real Steam users, full simultaneous occupation of all 4096 network slots, native Windows runtime acceptance, **Linux native-client high-index/high-load acceptance**, and arbitrary native extensions.
 
 ## What is supported
 
@@ -20,7 +22,7 @@ The following remain outside the release claim: internal 15-bit serial wraparoun
 | Windows client image | Experimental; native runtime unverified | Real patched module observations at 2048, 2049 and 4095 through Proton |
 | Proton Windows client | Experimental | End-to-end connection, updates, deletion, reuse and map transition |
 | Windows native dedicated server | Not tested | Do not list as supported |
-| Linux native client | Not tested | Do not list as supported |
+| Linux native client | **Limited gameplay observed (user-reported)** | Connected to the server and played; no high-index/high-load validation, and occasional loading/rendering anomalies remain uninvestigated |
 | Windows single-player / listen server | **Not implemented / not validated** | Client-hosted Windows game-server path is outside the release; historical `server.dll` prototype is static-only |
 | SourceMod core / SDKTools / SDKHooks | Limited compatible build | Only the API and callbacks in the D65 probe are covered |
 
