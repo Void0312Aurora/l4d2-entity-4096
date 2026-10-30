@@ -21,6 +21,7 @@ records and the separately scoped 2026-10-31 gameplay-assisted observation.
 | Topic | Final explanation | Key analysis | Current implementation | Main validation |
 | --- | --- | --- | --- | --- |
 | Windows engine reverse engineering | [technical report](technical-report.md#engine-binary-modifications) | [reports/report.md](../reports/report.md) | [Windows manifest](../release/manifests/windows-client.json) | [D66 gate](../reports/n27d66/validation.json) |
+| Windows single-player / listen server | [compatibility scope](compatibility.md#single-player-and-listen-server-scope), [technical report](technical-report.md#windows-single-player--in-process-listen-server-boundary) | [historical Windows `server.dll` analysis](../reports/report.md), [N26 loopback baseline](../reports/network-n26-baseline.md) | [historical prototype manifest](../manifests/server.json) and [builder](../tools/build_server.py) (**not** release modules) | `NOT_IMPLEMENTED / NOT_VALIDATED`; no in-process listen-server runtime acceptance |
 | Linux engine and entity storage | [expansion architecture](technical-report.md#expansion-architecture) | [D56](../reports/n27d56/findings.md), [D61](../reports/n27d61/findings.md) | [Linux manifest](../release/manifests/linux-server.json) | [D62 validation](../reports/n27d62/validation.json) |
 | Entity table and handles | [lifecycle](technical-report.md#entity-lifecycle-and-failure-analysis) | [D30 correction](../reports/n27d30/correction.md), [D62](../reports/n27d62/findings.md) | [handle data](../data/handle_ops.csv) | [raw lifecycle gate](../tools/release/check_raw_lifecycle.py) |
 | Network widths and PacketEntities | [protocol chapter](technical-report.md#network-protocol-and-snapshot-processing) | [N25](../reports/network-n25.md), [N27 reports](../reports/network-n27b.md) | [width sites](../data/netproto_width_sites.csv) | [D65 validation](../reports/n27d65/validation.json) |
@@ -40,9 +41,9 @@ report remains available so that correction is auditable.
 
 | Phase | Finding | Current status | Entry points |
 | --- | --- | --- | --- |
-| D1–D18 | Initial Windows storage and entity-list reverse engineering | REFERENCE | [early report](../reports/report.md), [D19 synthesis](../reports/n27d19/findings.md) |
+| D1–D18 | Initial Windows storage and entity-list reverse engineering, including historical `server.dll` experimental static candidate (808 patches, 30/30 PE preflight) | REFERENCE; not a listen-server release implementation | [early report](../reports/report.md), [prototype manifest](../manifests/server.json), [D19 synthesis](../reports/n27d19/findings.md) |
 | Network N1–N24 | Snapshot fields, protocol widths and client frame paths | REFERENCE; individual corrections retained | [network reports](../reports/) |
-| D19–D36 | Linux capacity, transmit and frame experiments | REFERENCE | [D19](../reports/n27d19/findings.md), [D36](../reports/n27d36/findings.md) |
+| D19–D36 | Linux capacity, transmit and frame experiments; N26 separately identified an out-of-process `127.0.0.1` loopback pitfall | REFERENCE; not evidence of listen-server failure | [D19](../reports/n27d19/findings.md), [N26 baseline](../reports/network-n26-baseline.md), [D36](../reports/n27d36/findings.md) |
 | D43–D48 | Client loading and high-index sign-on failures | HISTORICAL; later client paths passed | [D43](../reports/n27d43/findings.md), [D48](../reports/n27d48/findings.md) |
 | D49/D50 | Actual client lifecycle at 2048/2049/4095; disconnect still failed | Lifecycle observation retained; disconnect limitation SUPERSEDED by D62 | [D49/D50](../reports/n27d49/findings.md), [D62](../reports/n27d62/findings.md) |
 | D56 | Non-network slots overlapped the new network range | Diagnosis retained; old candidate SUPERSEDED by D61 partition | [D56](../reports/n27d56/findings.md), [D61](../reports/n27d61/findings.md) |
