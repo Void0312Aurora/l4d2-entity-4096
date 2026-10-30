@@ -227,6 +227,18 @@ rebuilt core, SDKTools, SDKHooks and D65 probe loaded; reference round trips at
 passed. This is `END_TO_END_VERIFIED` for that probe scope. DHooks, left4dhooks,
 L4DToolZ and arbitrary third-party native extensions are `NOT_TESTED`.
 
+## Windows single-player / in-process listen-server boundary
+
+The project's **single-client** end-to-end claim refers to one Windows/Proton client and a **separate patched Linux dedicated server**. It is not acceptance of L4D2's Windows client-hosted **single-player/listen-server** path. In the latter, the game process also runs local game-server logic, which must agree with the client's entity range and packet/snapshot handling. A dedicated-server success is insufficient to certify this distinct execution arrangement.
+
+The current [Windows release manifest](../release/manifests/windows-client.json) contains `bin/engine.dll` and `left4dead2/bin/client.dll` only; the local Windows game-server module `left4dead2/bin/server.dll` is not in the supported release patch set. The [Linux release manifest](../release/manifests/linux-server.json) instead covers `engine_srv.so` and `server_srv.so`. **Expanded Windows single-player is not implemented or runtime-validated in the current release.** Neither the result of ordinary low-index single-player with these patched client modules nor the precise first failing stage is recorded.
+
+There **is** prior Windows `server.dll` work: the [historical research report](../reports/report.md) (sections 75, 176–177), [manifest](../manifests/server.json), and [builder](../tools/build_server.py) describe static layout/handle research, an isolated experimental server-module image and a later 808-site candidate with 30/30 PE checks. That work is not equivalent to a current build-pinned release artifact or a three-module listen-server runtime test. Its assumptions and binary identity require re-audit before any integration.
+
+The [N26 loopback baseline](../reports/network-n26-baseline.md) investigated `127.0.0.1` between **separate processes**, where process-local `NET_SendLoopPacket` prevented a reply reaching the independent client; the LAN-address control worked. This does not prove the in-process Listen Server loopback path is broken. The local initialization, edict partition, loopback transport, snapshot serialization and entity lifecycle have not been jointly measured in the expanded Windows single-player configuration. Their failure mechanisms remain **undetermined**, not diagnosed.
+
+Acceptance should proceed by comparing original and patched low-index single-player startup, auditing and integrating Windows game-server support where needed, capturing the actual local-server connection path, and finally observing high-index entity creation, client state, deletion/reuse and map transition. See the [compatibility notes](compatibility.md#single-player-and-listen-server-scope) and [verification model](verification.md).
+
 ## Experimental validation
 
 | Objective | Result | Evidence level and boundary |
@@ -244,6 +256,7 @@ L4DToolZ and arbitrary third-party native extensions are `NOT_TESTED`.
 | Bounded 512-entity run | PASS_BOUNDED | 317.5 seconds, 10 samples, three recycle rounds; no multi-hour claim. |
 | 512-entity repeated map transitions | PARTIAL | Visibility/harness failures retained; possible PVS effect is unresolved. |
 | SourceMod compatibility | PASS | Rebuilt components and probe only. |
+| Windows single-player / listen server with 4096 edicts | NOT_IMPLEMENTED / NOT_TESTED | No Windows `server.dll` in the current release manifest; historical static prototype exists but no integrated or runtime-accepted local-server path. |
 | Active gameplay with filler-assisted indices >=2048 | PASS_BOUNDED | `RUNTIME_OBSERVED` on patched Linux server; VScript max index 2158 (`infected`), Logger `Networked: 2159`; no independent high-index client trace in this run. |
 
 ### Gameplay-assisted high-index observation (2026-10-31)
@@ -261,6 +274,7 @@ inputs to the current report.
 - The manifests and byte assertions are tied to build `23990068`. A later
   Steam update requires a new audit and reconstruction.
 - Two real Steam clients were not available and remain `NOT_TESTED`.
+- Client-hosted Windows single-player/listen-server expansion is `NOT_IMPLEMENTED` in the current release and `NOT_TESTED` as an integrated configuration. Historical `server.dll` static work exists but is not a validated release component; process-local loopback is not a diagnosed fault.
 - Native Windows runtime, Windows dedicated server and native Linux client are
   `NOT_TESTED`; the tested client path is Windows through Proton.
 - Internal 15-bit serial wrap is `NOT_TESTED`; the network 10-bit wrap result
@@ -282,7 +296,7 @@ inputs to the current report.
 
 ## Future work
 
-The useful next steps are a second legal Steam client, native Windows and
+The useful next steps include auditing the historical Windows `server.dll` candidate and validating client-hosted single-player/listen-server separately from the proven dedicated-server setup. Other planned work includes a second legal Steam client, native Windows and
 Linux-client acceptance, a separately designed long-duration run, explicit
 full-slot occupancy testing, unassisted horde-pressure sampling, a paired
 client/server gameplay trace above 2047, and extension-by-extension compatibility work.
