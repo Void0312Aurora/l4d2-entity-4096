@@ -16,8 +16,8 @@ while the internal handle index is 13 bits. The protocol's entity serial stays
 10 bits; the internal handle serial stays 15 bits. These widths are deliberately
 separate.
 
-The strongest current result is a private Linux dedicated server with a patched
-Windows client running through Proton. D65 completed real create/update/delete
+The strongest instrumented high-index client result is a private Linux dedicated server with a patched
+Windows client running through Proton. Separate **user-reported native Linux client gameplay** establishes preliminary server-connected playability only; there is no corresponding high-index client trace or native-client patch manifest. D65 completed real create/update/delete
 and allocator-reuse tests at `16/64/128/256/512` loads and at network index
 `4095`, special-infected and one map-transition tests. D66 independently
 recomputed the raw lifecycle records, completed one natural 1024-cycle wire
@@ -256,6 +256,8 @@ Acceptance should proceed by comparing original and patched low-index single-pla
 | Bounded 512-entity run | PASS_BOUNDED | 317.5 seconds, 10 samples, three recycle rounds; no multi-hour claim. |
 | 512-entity repeated map transitions | PARTIAL | Visibility/harness failures retained; possible PVS effect is unresolved. |
 | SourceMod compatibility | PASS | Rebuilt components and probe only. |
+| Native Linux client normal gameplay | REPORTED_PLAYTEST (limited) | Connected to the server and played according to the tester; no archived high-index client trace, no synthetic high-load test, and no native Linux client patch manifest. |
+| Native Linux client loading/rendering irregularities | UNTRIAGED | Infrequent user-observed issues without reproduction/control comparison or causal attribution. |
 | Windows single-player / listen server with 4096 edicts | NOT_IMPLEMENTED / NOT_TESTED | No Windows `server.dll` in the current release manifest; historical static prototype exists but no integrated or runtime-accepted local-server path. |
 | Active gameplay with filler-assisted indices >=2048 | PASS_BOUNDED | `RUNTIME_OBSERVED` on patched Linux server; VScript max index 2158 (`infected`), Logger `Networked: 2159`; no independent high-index client trace in this run. |
 
@@ -275,8 +277,11 @@ inputs to the current report.
   Steam update requires a new audit and reconstruction.
 - Two real Steam clients were not available and remain `NOT_TESTED`.
 - Client-hosted Windows single-player/listen-server expansion is `NOT_IMPLEMENTED` in the current release and `NOT_TESTED` as an integrated configuration. Historical `server.dll` static work exists but is not a validated release component; process-local loopback is not a diagnosed fault.
-- Native Windows runtime, Windows dedicated server and native Linux client are
-  `NOT_TESTED`; the tested client path is Windows through Proton.
+- Native Windows runtime and Windows dedicated server are `NOT_TESTED`.
+  Native Linux **client gameplay** is user-reported and preliminary, not a
+  verified high-index client path; the instrumented end-to-end high-index
+  client result remains Windows through Proton. Occasional loading/rendering
+  irregularities in native Linux play are untriaged and not assigned to the patch.
 - Internal 15-bit serial wrap is `NOT_TESTED`; the network 10-bit wrap result
   covers one naturally reused slot.
 - Multi-hour stability and full simultaneous occupation of all 4096 network
@@ -297,7 +302,7 @@ inputs to the current report.
 ## Future work
 
 The useful next steps include auditing the historical Windows `server.dll` candidate and validating client-hosted single-player/listen-server separately from the proven dedicated-server setup. Other planned work includes a second legal Steam client, native Windows and
-Linux-client acceptance, a separately designed long-duration run, explicit
+Linux-native high-index client acceptance (if claimed), a separately designed long-duration run, explicit
 full-slot occupancy testing, unassisted horde-pressure sampling, a paired
 client/server gameplay trace above 2047, and extension-by-extension compatibility work.
 Each needs new evidence; none should be inferred from the current 4095 or
