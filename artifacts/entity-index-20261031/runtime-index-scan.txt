@@ -1,0 +1,34 @@
+Runtime scan output captured after the final fill batch:
+
+ENTITY_INDEX_SCAN count=2397 unique=2127 negative=0 max=2158 maxclass=infected over2047=105
+ENTITY_INDEX_HIGH 2048:prop_dynamic
+ENTITY_INDEX_HIGH 2049:prop_dynamic
+ENTITY_INDEX_HIGH 2050:prop_dynamic
+ENTITY_INDEX_HIGH 2051:prop_dynamic
+ENTITY_INDEX_HIGH 2052:prop_dynamic
+ENTITY_INDEX_HIGH 2053:prop_dynamic
+ENTITY_INDEX_HIGH 2054:prop_dynamic
+ENTITY_INDEX_HIGH 2055:prop_dynamic
+ENTITY_INDEX_HIGH 2056:prop_dynamic
+ENTITY_INDEX_HIGH 2057:prop_dynamic
+ENTITY_INDEX_HIGH 2058:prop_dynamic
+ENTITY_INDEX_HIGH 2059:prop_dynamic
+ENTITY_INDEX_HIGH 2060:prop_dynamic
+ENTITY_INDEX_HIGH 2061:prop_dynamic
+ENTITY_INDEX_HIGH 2062:prop_dynamic
+ENTITY_INDEX_HIGH 2063:prop_dynamic
+ENTITY_INDEX_HIGH 2064:prop_dynamic
+ENTITY_INDEX_HIGH 2065:prop_dynamic
+ENTITY_INDEX_HIGH 2066:prop_dynamic
+ENTITY_INDEX_HIGH 2067:prop_dynamic
+ENTITY_INDEX_HIGH 2068:prop_dynamic
+ENTITY_INDEX_HIGH 2069:prop_dynamic
+ENTITY_INDEX_HIGH 2070:prop_dynamic
+ENTITY_INDEX_HIGH 2071:prop_dynamic
+ENTITY_INDEX_HIGH 2072:prop_dynamic
+ENTITY_INDEX_HIGH 2073:prop_dynamic
+ENTITY_INDEX_HIGH 2074:prop_dynamic
+ENTITY_INDEX_HIGH 2075:prop_dynamic
+ENTITY_INDEX_HIGH 2076:prop_dynamic
+ENTITY_INDEX_HIGH 2077:prop_dynamic
+ENTITY_INDEX_HIGH 2078:prop_dynamic
