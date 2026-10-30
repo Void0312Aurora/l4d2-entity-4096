@@ -92,8 +92,13 @@ same Windows modules through Proton. For that path,
 `tools/linux/run_proton_client.py --help` exposes explicit game, Proton,
 prefix and server paths and records module identities.
 
-Windows native dedicated server and Linux native client are not in the tested
-support set. Do not infer support from a successful file replacement.
+Windows native dedicated-server support remains untested. A native Linux
+client has been used for server-connected gameplay (reported limited playtest),
+but that client is not covered by the Windows/Proton client patch manifest.
+No native Linux client patch manifest or high-index client validation is
+included here. Occasional loading/rendering anomalies during that playtest
+are untriaged. Do not infer full 4096-index native-client compatibility
+from basic connectivity or from successful dedicated-server installation.
 
 **Single-player caveat:** these Windows instructions install **client-side**
 modules only (`engine.dll` and `client.dll`). They do not install a patched
