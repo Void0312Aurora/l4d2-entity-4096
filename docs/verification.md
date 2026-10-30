@@ -10,6 +10,7 @@ D66 keeps build, integrity, raw semantics, installation and runtime checks separ
 | Installer checks | `tools/release/install.py` | Source hashes, hunk assertions, output hashes, in-place module backup and recovery behavior |
 | Runtime acceptance | D65/D66 raw run directories | Real **separate Linux dedicated-server plus Windows/Proton client** lifecycle, Frida observation, map transition and D66 serial wrap; **not** client-hosted single-player |
 | In-game high-index server observation | [2026-10-31 Logger/scan](../artifacts/entity-index-20261031/README.md) | Active-game, filler-assisted server indices >=2048; must not be promoted to a client synchronization or soak result |
+| Native Linux-client playtest (reported) | User's gameplay observation; no independently archived trace in this repository | Basic server connection and gameplay observed; intermittent loading/rendering issues untriaged; **not** high-index client acceptance |
 
 Run the evidence and release gates:
 
@@ -58,6 +59,12 @@ To claim Windows client-hosted single-player with 4096 edicts, independently rec
 The separately published [run log](../artifacts/entity-index-20261031/entity_limit_2026-10-31_00-20-00.log) records `All: 2374` and `Networked: 2159`; the [VScript scan](../artifacts/entity-index-20261031/runtime-index-scan.txt) records max index `2158` as `infected` and `over2047=105`. The [fill script](../artifacts/entity-index-20261031/entity_index_fill.nut) generated persistent hidden props to force high-index allocation, and the [scan script](../artifacts/entity-index-20261031/entity_index_scan.nut) captured the server-side result. Assign `RUNTIME_OBSERVED` / `PASS_BOUNDED` to this crossing only. The different `count=2397` and `unique=2127` scan values rule out equating traversal count with exact distinct active edicts. The 28-minute Logger interval does not quantify time above 2047.
 
 This is **not** an additional D65/D66 client synchronization pass, a natural-only horde threshold test, or a 4096-slot occupancy test. No raw gameplay/client trace was added to the release gate by this documentation update.
+
+## Native Linux-client evidence boundary
+
+A tester reports successfully connecting with a **native Linux client** and playing on the server. This replaces the blanket "never tested" statement, but it is a **reported limited playtest**: no recorded client build/module identity, high-index entity trace, controlled high-load run or systematic loading/rendering issue log was supplied with this update. The released Linux manifest patches the **dedicated server**, while the published client patch is Windows/Proton. Normal-play connectivity needs no synthetic stress run to count as observed, but it cannot verify a native Linux client can consume entity indices at or above `2048`.
+
+The occasional loading/rendering anomalies are **untriaged observations**, not evidence of a known expansion regression. Before upgrading the native Linux client claim to full high-index compatibility, record loaded client module identities and independently capture above-2047 server/client entity synchronization in a controlled session. Investigating the occasional visual issues is a separate, potentially useful differential-debugging task, not a presumed blocker to reporting the limited successful gameplay.
 
 ## Evidence rules
 
