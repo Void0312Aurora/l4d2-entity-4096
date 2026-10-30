@@ -6,13 +6,11 @@ This is an experimental release candidate for private testing environments. It i
 
 ## Current release status
 
-**PARTIALLY_READY — one client connected to a separate dedicated server, not single-player mode.** The runtime-tested path is a Linux dedicated server plus the Windows client through Proton. The same Windows module manifest is provided for native Windows testing; that runtime has not been independently accepted. D65 evidence covers real `16/64/128/256/512` entity ladders, index `4095`, six special infected, client synchronization, and one map transition. D66 adds a real 1024-cycle wire-serial wrap test, a 317.5-second bounded 512-entity run, in-place module installer, reproducible SourceMod build and independent raw-evidence gates. A separate 2026-10-31 gameplay-assisted runtime test on `c6m1_riverbank` observed indices beyond the vanilla boundary while the game was running, including a common infected at index `2158`. This is a bounded server-side observation, not a new client-sync or long-duration acceptance test.
+**PARTIALLY_READY.** The tested setup is a Linux dedicated server with a Windows client through Proton. D65/D66 verified entity creation, synchronization and reuse up to index `4095`, plus map transitions and bounded load tests. An in-game filler-assisted test also observed a common infected at index `2158`.
 
-**Linux native-client qualification:** real server-connected gameplay has been reported on a native Linux client, correcting the previous blanket `NOT_TESTED` label. This is a limited compatibility observation without an archived client trace or recorded >2047 index exposure; it does not show that an unmodified native client can decode expanded network indices. Occasional loading/rendering irregularities were noticed during play, but were infrequent and have not been reproduced or attributed to this patch. High-load testing is optional for claiming *basic connectivity*, but high-index acceptance is still needed before claiming full 4096 compatibility on that client.
-
-**Single-player / client-hosted listen server is not implemented or validated by this release.** The Windows release manifest patches `bin/engine.dll` and `left4dead2/bin/client.dll`, but not the game-server module `left4dead2/bin/server.dll` needed by the local server path. Historical static work on `server.dll` exists, but it was not integrated into the release. See [compatibility](docs/compatibility.md#single-player-and-listen-server-scope) for the evidence and remaining unknowns.
-
-The following remain outside the release claim: internal 15-bit serial wraparound, multi-hour soak, two real Steam users, full simultaneous occupation of all 4096 network slots, native Windows runtime acceptance, **Linux native-client high-index/high-load acceptance**, and arbitrary native extensions.
+- **Linux native client:** Server-connected gameplay has been tested. High-index support has not been verified; occasional loading/rendering issues remain uninvestigated.
+- **Windows single-player:** 4096-edict listen-server mode is not yet supported. The current Windows release does not include a patched `server.dll`.
+- **Pending:** Native Windows acceptance, two-client testing, long-duration stability and full 4096-slot occupancy. Details: [compatibility](docs/compatibility.md) and [limitations](docs/limitations.md).
 
 ## What is supported
 
@@ -22,8 +20,8 @@ The following remain outside the release claim: internal 15-bit serial wraparoun
 | Windows client image | Experimental; native runtime unverified | Real patched module observations at 2048, 2049 and 4095 through Proton |
 | Proton Windows client | Experimental | End-to-end connection, updates, deletion, reuse and map transition |
 | Windows native dedicated server | Not tested | Do not list as supported |
-| Linux native client | **Limited gameplay observed (user-reported)** | Connected to the server and played; no high-index/high-load validation, and occasional loading/rendering anomalies remain uninvestigated |
-| Windows single-player / listen server | **Not implemented / not validated** | Client-hosted Windows game-server path is outside the release; historical `server.dll` prototype is static-only |
+| Linux native client | Gameplay tested | Connected and played; high-index support unverified, occasional loading/rendering issues |
+| Windows single-player / listen server | Not supported yet | Windows `server.dll` is not included in this release |
 | SourceMod core / SDKTools / SDKHooks | Limited compatible build | Only the API and callbacks in the D65 probe are covered |
 
 ## Install the release modules
@@ -92,7 +90,7 @@ update. See [installation](docs/installation.md) for recovery details.
 | Wire serial wrap | Index 2229, 1024 ordinary reuse cycles, client/server `1023 → 0 → 1` and return to initial wire serial |
 | Gameplay-assisted crossing of 2048 | `c6m1_riverbank`: Logger `All: 2374`, `Networked: 2159`; VScript `max=2158`, `maxclass=infected`, `over2047=105` after persistent hidden prop fill. Server-side only; not natural-only load or a fresh client-sync trace |
 
-The [2026-10-31 in-game evidence](artifacts/entity-index-20261031/README.md) includes the [Logger report](artifacts/entity-index-20261031/entity_limit_2026-10-31_00-20-00.log), [VScript scan](artifacts/entity-index-20261031/runtime-index-scan.txt), [fill/cleanup helper](artifacts/entity-index-20261031/entity_index_fill.nut), and [scan helper](artifacts/entity-index-20261031/entity_index_scan.nut). The scan reported `count=2397` but `unique=2127`; these do not count the same thing and must not be equated with distinct occupied network slots. The snapshot interval does not measure time above index 2047.
+[2026-10-31 gameplay evidence](artifacts/entity-index-20261031/README.md): [Logger](artifacts/entity-index-20261031/entity_limit_2026-10-31_00-20-00.log), [index scan](artifacts/entity-index-20261031/runtime-index-scan.txt) and [test scripts](artifacts/entity-index-20261031/entity_index_fill.nut).
 
 The machine-readable D65 record is [reports/n27d65/validation.json](reports/n27d65/validation.json), with the narrative in [reports/n27d65/findings.md](reports/n27d65/findings.md). D66’s release decision and test boundaries are in [reports/n27d66/release-readiness.md](reports/n27d66/release-readiness.md); the final gate is [reports/n27d66/validation.json](reports/n27d66/validation.json), with [wire serial](reports/n27d66/network-serial.json), [bounded soak](reports/n27d66/bounded-soak.json), and [SourceMod smoke](reports/n27d66/sourcemod-smoke.json) records.
 
@@ -126,9 +124,8 @@ The gate reports static identity, manifest, evidence-integrity, and end-to-end s
 
 - All addresses and byte assertions are bound to build `23990068`; a Steam update invalidates them.
 - Vanilla clients cannot decode network indices at or above `2048`.
-- **Single-client is not single-player**: current runtime acceptance uses a separate Linux dedicated server. The release does not include a Windows `server.dll` patch for client-hosted single-player and makes no claim about that mode, including whether ordinary low-index single-player launches still work.
 - Wire serial repeats after 1024 reuse cycles as expected. The internal 15-bit wrap remains `NOT_TESTED`.
-- The gameplay-assisted >2047 observation used hidden filler entities. Natural-only saturation, full simultaneous 4096-slot occupation and sustained high-load stability are unverified. This run has no separate high-index client packet/visibility trace; D65/D66 client evidence remains distinct.
+- Full 4096-slot occupancy, long-duration stability and native Linux high-index client support remain unverified.
 - VAC safety, public matchmaking, and public release distribution are unverified.
 - Third-party SourceMod native extensions are not covered by the limited compatibility build.
 - The installer touches only the manifest-listed modules; addons and the rest of the Steam tree are left in place.
