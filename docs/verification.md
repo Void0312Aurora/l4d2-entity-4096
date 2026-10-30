@@ -7,7 +7,7 @@ D66 keeps build, integrity, raw semantics, installation and runtime checks separ
 | Static build checks | existing `engine/verify_pe.py`, `tools/precheck_server.py`, manifest checks | Source identity, structure, expected old bytes and output hashes |
 | Evidence integrity | `tools/linux/check_d65_evidence.py` | Named D65 raw snapshots exist and match the recorded module identities |
 | Raw lifecycle semantics | `tools/release/check_raw_lifecycle.py` | Recomputes actual indices, wire serial, handles, origins, deletion and reuse across 54 raw snapshots |
-| Installer checks | `tools/release/install.py` | Source hashes, hunk assertions, output hashes, private-copy and recovery behavior |
+| Installer checks | `tools/release/install.py` | Source hashes, hunk assertions, output hashes, in-place module backup and recovery behavior |
 | Runtime acceptance | D65/D66 raw run directories | Real server/client lifecycle, Frida observation, map transition and D66 serial wrap |
 | In-game high-index server observation | [2026-10-31 Logger/scan](../artifacts/entity-index-20261031/README.md) | Active-game, filler-assisted server indices >=2048; must not be promoted to a client synchronization or soak result |
 
