@@ -92,22 +92,9 @@ same Windows modules through Proton. For that path,
 `tools/linux/run_proton_client.py --help` exposes explicit game, Proton,
 prefix and server paths and records module identities.
 
-Windows native dedicated-server support remains untested. A native Linux
-client has been used for server-connected gameplay (reported limited playtest),
-but that client is not covered by the Windows/Proton client patch manifest.
-No native Linux client patch manifest or high-index client validation is
-included here. Occasional loading/rendering anomalies during that playtest
-are untriaged. Do not infer full 4096-index native-client compatibility
-from basic connectivity or from successful dedicated-server installation.
+Windows native dedicated-server support is untested. A native Linux client has been used for normal server gameplay, but high-index support has not been verified; occasional visual glitches remain under investigation.
 
-**Single-player caveat:** these Windows instructions install **client-side**
-modules only (`engine.dll` and `client.dll`). They do not install a patched
-Windows `server.dll` or provide 4096-edict client-hosted single-player/listen-
-server support. "One tested client" means one client connected to a separate
-Linux dedicated server, not a single-player campaign. The behavior of
-ordinary low-index single-player with the patched client modules has not been
-independently accepted. Historical Windows `server.dll` research is not a
-release installer component; see [compatibility](compatibility.md#single-player-and-listen-server-scope).
+**Single-player:** The Windows installer patches `engine.dll` and `client.dll` only. The 4096-edict listen server requires additional Windows `server.dll` work; see [compatibility](compatibility.md#single-player-and-listen-server-scope).
 
 ## Restore
 
