@@ -9,7 +9,8 @@ D66 keeps build, integrity, raw semantics, installation and runtime checks separ
 | Raw lifecycle semantics | `tools/release/check_raw_lifecycle.py` | Recomputes actual indices, wire serial, handles, origins, deletion and reuse across 54 raw snapshots |
 | Installer checks | `tools/release/install.py` | Source hashes, hunk assertions, output hashes, in-place module backup and recovery behavior |
 | Runtime acceptance | D65/D66 raw run directories | Real **separate Linux dedicated-server plus Windows/Proton client** lifecycle, Frida observation, map transition and D66 serial wrap; **not** client-hosted single-player |
-| In-game high-index server observation | [2026-10-31 Logger/scan](../artifacts/entity-index-20261031/README.md) | Active-game, filler-assisted server indices >=2048; must not be promoted to a client synchronization or soak result |
+| In-game high-index server observation | [2026-10-31 Logger/scan](../artifacts/entity-index-20261031/README.md) | Native Windows client was connected and playing; Linux server reached `Networked: 2159`, VScript index `2158`. Server-side evidence, not a native Windows client index trace |
+| Windows native-client gameplay | Gameplay observation / Oct 31 Logger | Connected to Linux server and played during assisted high-index server test; native client-side trace pending |
 | Linux native-client gameplay | Gameplay observation | Connected and played; high-index sync untested, occasional visual glitches to investigate |
 
 Run the evidence and release gates:
