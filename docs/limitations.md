@@ -16,7 +16,7 @@ The project is intentionally published as an experimental **single-client plus s
 | All 4096 network slots occupied | NOT_TESTED | Index 4095 was reached by normal allocation, not full occupancy |
 | Windows native dedicated server | NOT_TESTED | Linux dedicated server is the supported server path |
 | Windows client-hosted single-player / listen server | **NOT_IMPLEMENTED / NOT_VALIDATED** | Windows release manifest does not include `server.dll`; historical static 808-site prototype was neither integrated nor accepted in a local single-player runtime |
-| Windows native client runtime | NOT_TESTED | The Windows image is runtime-tested through Proton |
+| Windows native client | Gameplay tested | Connected and played on patched Linux server; Oct 31 server Logger reached 2159, client-side high-index trace pending |
 | Linux native client | Gameplay tested | Connected to server and played; high-index sync still untested |
 | Native Linux loading/rendering issues | Uninvestigated | Occasional issues during gameplay |
 | VAC/public matchmaking | NOT_TESTED | Use private, non-public test environments |
