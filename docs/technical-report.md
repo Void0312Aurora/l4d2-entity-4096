@@ -22,7 +22,7 @@ and allocator-reuse tests at `16/64/128/256/512` loads and at network index
 `4095`, special-infected and one map-transition tests. D66 independently
 recomputed the raw lifecycle records, completed one natural 1024-cycle wire
 serial wrap at index `2229`, ran a 317.5-second bounded 512-entity test, and
-repeated a limited SourceMod compatibility smoke test. The release decision is
+repeated a limited SourceMod compatibility smoke test. A separate 2026-10-31 gameplay-assisted server observation on `c6m1_riverbank` used persistent hidden props to push the allocator beyond the vanilla index limit; the maximum observed entity index was `2158`, with class `infected`. This does not add a same-run independent client trace. The release decision is
 `PARTIALLY_READY` for a private single-client setup. It is not evidence of
 full-slot occupation, multi-user operation, multi-hour stability, native
 Windows execution, or arbitrary extension compatibility.
@@ -244,6 +244,13 @@ L4DToolZ and arbitrary third-party native extensions are `NOT_TESTED`.
 | Bounded 512-entity run | PASS_BOUNDED | 317.5 seconds, 10 samples, three recycle rounds; no multi-hour claim. |
 | 512-entity repeated map transitions | PARTIAL | Visibility/harness failures retained; possible PVS effect is unresolved. |
 | SourceMod compatibility | PASS | Rebuilt components and probe only. |
+| Active gameplay with filler-assisted indices >=2048 | PASS_BOUNDED | `RUNTIME_OBSERVED` on patched Linux server; VScript max index 2158 (`infected`), Logger `Networked: 2159`; no independent high-index client trace in this run. |
+
+### Gameplay-assisted high-index observation (2026-10-31)
+
+A separate `c6m1_riverbank` session on the patched Linux 4096 server set `z_common_limit=500` and spawned persistent, invisible `prop_dynamic_override` fillers below the map through VScript. Holding the fillers alive reduced immediate reuse of low indices while normal gameplay continued. The published Entity Limits Logger report records `All: 2374` and `Networked: 2159`. A direct VScript scan recorded `count=2397`, `unique=2127`, `negative=0`, `max=2158`, `maxclass=infected`, and `over2047=105`. The last value is the scan's count of observations at indices >=2048; it is not an independently deduplicated count. In particular, `count` and `unique` differ, so neither `count` nor the Logger total independently establishes the number of simultaneously occupied *distinct* network edicts.
+
+The [published evidence directory](../artifacts/entity-index-20261031/README.md) includes the [Logger log](../artifacts/entity-index-20261031/entity_limit_2026-10-31_00-20-00.log), [scan output](../artifacts/entity-index-20261031/runtime-index-scan.txt), [fill/cleanup helper](../artifacts/entity-index-20261031/entity_index_fill.nut), and [scanner](../artifacts/entity-index-20261031/entity_index_scan.nut). This is `RUNTIME_OBSERVED` for gameplay-assisted server allocation of a common infected beyond index 2047, not evidence that an unassisted horde exceeded the limit. The report's 28-minute snapshot interval is not a measurement of sustained time above the threshold. There is no new client-side index/snapshot trace for this session; D65/D66 end-to-end evidence is separate.
 
 The compact records are linked from [evidence and reproduction](evidence-and-reproduction.md).
 The D65 and D66 machine-readable records are kept unchanged as historical
@@ -260,6 +267,9 @@ inputs to the current report.
   covers one naturally reused slot.
 - Multi-hour stability and full simultaneous occupation of all 4096 network
   slots are `NOT_TESTED`.
+- The 2026-10-31 gameplay-assisted crossing does not test natural-only
+  saturation of the old limit, duration above 2047, or independent client
+  synchronization of the high-index infected in that same session.
 - Repeated 512-entity map transitions remain `PARTIAL`. The continuous
   missing-client-object pattern is recorded, but its PVS/visibility cause is
   not established.
@@ -274,7 +284,8 @@ inputs to the current report.
 
 The useful next steps are a second legal Steam client, native Windows and
 Linux-client acceptance, a separately designed long-duration run, explicit
-full-slot occupancy testing, and extension-by-extension compatibility work.
+full-slot occupancy testing, unassisted horde-pressure sampling, a paired
+client/server gameplay trace above 2047, and extension-by-extension compatibility work.
 Each needs new evidence; none should be inferred from the current 4095 or
 single-client results. Supporting a later L4D2 build requires re-analysis and
 new manifests. An 8192-network-edict expansion is only a future research
