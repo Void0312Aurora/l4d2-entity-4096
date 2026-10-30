@@ -2,8 +2,8 @@
 
 This index keeps the historical D1–D66 timeline while adding a topic-first
 route to the final technical explanation. Historical reports remain available;
-the current result is defined by the technical report, manifests and D65/D66
-records.
+the current result is defined by the technical report, manifests, D65/D66
+records and the separately scoped 2026-10-31 gameplay-assisted observation.
 
 ## Start with the final explanation
 
@@ -27,7 +27,7 @@ records.
 | Client initialization and synchronization | [protocol chapter](technical-report.md#network-protocol-and-snapshot-processing) | [N27-D6–D9](../reports/network-n27d6.md) | [client manifest](../release/manifests/windows-client.json) | [D65 findings](../reports/n27d65/findings.md) |
 | Entity lifecycle | [lifecycle chapter](technical-report.md#entity-lifecycle-and-failure-analysis) | [D49/D50](../reports/n27d49/findings.md), [D62](../reports/n27d62/findings.md) | [D65 lifecycle runner](../tools/linux/run_d65_lifecycle.py) | [D66 raw checks](../reports/n27d66/raw-lifecycle.json) |
 | Corrected assumptions | [failure analysis](technical-report.md#entity-lifecycle-and-failure-analysis) | [D30](../reports/n27d30/correction.md), [D63](../reports/n27d63/findings.md), [D64](../reports/n27d64/findings.md) | [D65 legal probes](../tools/linux/vscript/d65_special.nut) | [D65/D66 records](../reports/n27d65/validation.json) |
-| Dynamic and load testing | [experimental validation](technical-report.md#experimental-validation) | [D65](../reports/n27d65/findings.md), [D66](../reports/n27d66/findings.md) | [Linux runners](../tools/linux/) | [D66 validation](../reports/n27d66/validation.json) |
+| Dynamic and load testing | [experimental validation](technical-report.md#experimental-validation) | [D65](../reports/n27d65/findings.md), [D66](../reports/n27d66/findings.md) | [Linux runners](../tools/linux/), [2026-10-31 filler](../artifacts/entity-index-20261031/entity_index_fill.nut) | [D66 validation](../reports/n27d66/validation.json), [gameplay-assisted scan](../artifacts/entity-index-20261031/runtime-index-scan.txt) |
 | SourceMod compatibility | [compatibility chapter](technical-report.md#sourcemod-and-extension-compatibility) | [D65 compatibility](../tools/sourcemod/d65_compatibility.md) | [compatibility builder](../tools/sourcemod/build_compat.py) | [D66 smoke](../reports/n27d66/sourcemod-smoke.json) |
 | Installer and release engineering | [patch map](patch-map.md), [evidence](evidence-and-reproduction.md) | [D66 findings](../reports/n27d66/findings.md) | [installer](../tools/release/install.py), [release manifests](../release/manifests/) | [release gate](../tools/release/check_rc.py) |
 
@@ -52,6 +52,7 @@ report remains available so that correction is auditable.
 | D64 | Frida/original comparison isolated invalid Hunter VScript usage | Current correction; legal creation used in D65 | [D64](../reports/n27d64/findings.md) |
 | D65 | Real ladder, index 4095, special infected, map transition and SourceMod probe | Current core runtime baseline; incomplete tests remain explicit | [D65](../reports/n27d65/findings.md) |
 | D66 | Natural wire-serial wrap, bounded run, release installer and public evidence gates | Current release candidate | [D66](../reports/n27d66/findings.md) |
+| 2026-10-31 gameplay observation | Hidden filler props during `c6m1_riverbank` gameplay led to high-index ordinary infected (max 2158) | `RUNTIME_OBSERVED` server-side only; not natural-only, client-traced or sustained high-load acceptance | [runtime artifact and scripts](../artifacts/entity-index-20261031/README.md) |
 
 ## Active entry points
 
