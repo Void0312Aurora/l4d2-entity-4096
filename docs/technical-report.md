@@ -16,16 +16,19 @@ while the internal handle index is 13 bits. The protocol's entity serial stays
 10 bits; the internal handle serial stays 15 bits. These widths are deliberately
 separate.
 
-The tested high-index client path uses a Linux dedicated server with a patched
-Windows client through Proton. Linux native-client gameplay has also been reported; high-index support is still untested. D65 completed real create/update/delete
+D65/D66 high-index client synchronization was tested with a Linux dedicated
+server and patched Windows client through Proton. A native Windows client also
+connected and played on the Linux server during the October 31 in-game test;
+its server Logger reported `Networked: 2159` and VScript reached index `2158`.
+Linux native-client gameplay has also been reported; its high-index support remains untested. D65 completed real create/update/delete
 and allocator-reuse tests at `16/64/128/256/512` loads and at network index
 `4095`, special-infected and one map-transition tests. D66 independently
 recomputed the raw lifecycle records, completed one natural 1024-cycle wire
 serial wrap at index `2229`, ran a 317.5-second bounded 512-entity test, and
 repeated a limited SourceMod compatibility smoke test. A 2026-10-31 in-game test on `c6m1_riverbank` reached index `2158` (`infected`) with hidden filler entities. The release decision is
 `PARTIALLY_READY` for a private single-client setup. It is not evidence of
-full-slot occupation, multi-user operation, multi-hour stability, native
-Windows execution, or arbitrary extension compatibility.
+full-slot occupation, multi-user operation, multi-hour stability, independent
+native Windows high-index client-side verification, or arbitrary extension compatibility.
 
 Evidence labels in this report are explicit:
 
@@ -256,6 +259,7 @@ Acceptance should proceed by comparing original and patched low-index single-pla
 | Bounded 512-entity run | PASS_BOUNDED | 317.5 seconds, 10 samples, three recycle rounds; no multi-hour claim. |
 | 512-entity repeated map transitions | PARTIAL | Visibility/harness failures retained; possible PVS effect is unresolved. |
 | SourceMod compatibility | PASS | Rebuilt components and probe only. |
+| Native Windows client gameplay | TESTED (basic) | Connected to Linux server and played during Oct 31 server-side high-index observation (`Networked: 2159`); native client-side index trace pending. |
 | Native Linux client gameplay | TESTED (basic) | Connected to server and played; high-index synchronization untested. |
 | Native Linux client loading/rendering | UNTRIAGED | Occasional glitches during gameplay; investigation pending. |
 | Windows single-player / listen server with 4096 edicts | NOT_IMPLEMENTED / NOT_TESTED | No Windows `server.dll` in the current release manifest; historical static prototype exists but no integrated or runtime-accepted local-server path. |
@@ -277,9 +281,10 @@ inputs to the current report.
   Steam update requires a new audit and reconstruction.
 - Two real Steam clients were not available and remain `NOT_TESTED`.
 - Client-hosted Windows single-player/listen-server expansion is `NOT_IMPLEMENTED` in the current release and `NOT_TESTED` as an integrated configuration. Historical `server.dll` static work exists but is not a validated release component; process-local loopback is not a diagnosed fault.
-- Native Windows runtime and Windows dedicated server are `NOT_TESTED`.
-  Linux native-client gameplay has been tested, but high-index synchronization
-  remains untested and occasional loading/rendering issues are under review.
+- Native Windows client gameplay was tested, but a same-run native Windows
+  client-side high-index trace is pending. Windows dedicated server remains
+  `NOT_TESTED`. Linux native-client gameplay was tested; its high-index support
+  remains unverified and occasional loading/rendering issues are under review.
 - Internal 15-bit serial wrap is `NOT_TESTED`; the network 10-bit wrap result
   covers one naturally reused slot.
 - Multi-hour stability and full simultaneous occupation of all 4096 network
@@ -299,8 +304,8 @@ inputs to the current report.
 
 ## Future work
 
-The useful next steps include auditing the historical Windows `server.dll` candidate and validating client-hosted single-player/listen-server separately from the proven dedicated-server setup. Other planned work includes a second legal Steam client, native Windows and
-Linux-native high-index client acceptance (if claimed), a separately designed long-duration run, explicit
+The useful next steps include auditing the historical Windows `server.dll` candidate and validating client-hosted single-player/listen-server separately from the proven dedicated-server setup. Other planned work includes a second legal Steam client, native Windows client-side and
+Linux-native high-index acceptance (if claimed), a separately designed long-duration run, explicit
 full-slot occupancy testing, unassisted horde-pressure sampling, a paired
 client/server gameplay trace above 2047, and extension-by-extension compatibility work.
 Each needs new evidence; none should be inferred from the current 4095 or
