@@ -9,8 +9,8 @@ that every hunk has received an independent dynamic test.
 
 | Target module | Manifest | Build | Output role | Current status |
 | --- | --- | --- | --- | --- |
-| Windows bin/engine.dll | release/manifests/windows-client.json | 23990068 | Client capacity, frame, snapshot and protocol consumers | Static reconstruction PASS; runtime through Proton only |
-| Windows left4dead2/bin/client.dll | same | 23990068 | Client game-module consumers and layout companions | Static reconstruction PASS; runtime through Proton only |
+| Windows bin/engine.dll | release/manifests/windows-client.json | 23990068 | Client capacity, frame, snapshot and protocol consumers | Proton high-index E2E; native Windows gameplay observed, client-side high-index trace pending |
+| Windows left4dead2/bin/client.dll | same | 23990068 | Client game-module consumers and layout companions | Proton high-index E2E; native Windows gameplay observed, client-side high-index trace pending |
 | Windows left4dead2/bin/server.dll (historical only) | [manifests/server.json](../manifests/server.json) (**not** a release manifest) | Historical source image; revalidate build identity | Local game-server entity list, handles, and allocation consumers | 808-site experimental static candidate, 30/30 PE preflight; **no current release integration or listen-server runtime acceptance** |
 | Linux bin/engine_srv.so | release/manifests/linux-server.json | 23990068 | Server edicts, reuse arrays and network paths | Static reconstruction PASS; real private server PASS in tested scope |
 | Linux left4dead2/bin/server_srv.so | same | 23990068 | Entity list, handles, game-module consumers | Static reconstruction PASS; real private server PASS in tested scope |
