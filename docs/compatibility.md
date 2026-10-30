@@ -8,30 +8,22 @@
 | Windows client image | Experimental; native runtime NOT_TESTED | Patched module slots at 2048, 2049 and 4095 observed through Proton |
 | Proton Windows client | Experimental | Sign-on, synchronized updates, deletion, reuse and map transition |
 | Windows native dedicated server | NOT_TESTED | No end-to-end D66 evidence |
-| Linux native client | **LIMITED PLAYTEST (user-reported); high-index NOT_VALIDATED** | Connected to the server and played; no recorded >2047 client-side trace or high-load acceptance. Occasional loading/rendering anomalies, not systematically investigated |
+| Linux native client | Gameplay tested | Server connection and gameplay confirmed; high-index support unverified, occasional loading/rendering issues |
 | Windows client-hosted single-player / listen server | **NOT_IMPLEMENTED / NOT_VALIDATED** | No Windows `server.dll` in the release manifest, and no accepted single-player local-server experiment |
 | Two real Steam users | NOT_TESTED | One local Steam account was available during D65 |
 | Public matchmaking/VAC | NOT_TESTED | Private/insecure experiments only |
 
 ## Linux native-client gameplay observation
 
-A native Linux client has reportedly **connected to the server and been used for actual gameplay**. The previous blanket `NOT_TESTED` entry was too strong: this supports a **preliminary basic-playability / connectivity observation**, not a full 4096-edict client acceptance. The repository's [release manifests](../release/manifests/) include patched Windows client and Linux dedicated-server modules, but **no native Linux client patch manifest**. The observed native-client binary identity and maximal network entity index visible to that client were not captured in an independently inspectable session record.
-
-No high-load experiment or direct client-side decoding/synchronization trace above `2047` is recorded for this Linux native-client path. Such load testing is **not required** to describe a bounded normal-play compatibility observation; nevertheless, a successful ordinary session below the legacy limit cannot establish high-index protocol compatibility. Do not conflate the patched Linux **server** with a patched Linux **client**.
-
-A small number of **intermittent loading and/or rendering irregularities** were noticed during gameplay, but the cases were infrequent and not systematically reproduced, logged, categorized or compared against an unmodified control. Their relation to entity-limit expansion is **unknown**; neither a patch-induced defect nor a defect-free rendering outcome is established. A small, timestamped reproduction and a vanilla-client/control comparison would be more useful than presuming a root cause or requiring a full synthetic stress run.
+A native Linux client has been used for server-connected gameplay. High-index synchronization has not been tested, and the release has no Linux native-client patch manifest. A few loading/rendering glitches occurred during play; investigation is pending.
 
 ## Single-player and listen-server scope
 
-**Single-client** in D65/D66 means one Windows game client (run through Proton) connected to a **separate Linux dedicated server**. It does **not** mean the game's single-player menu or an in-process Windows **listen server**. A client-hosted single-player game must run the local game-server logic and the client-side networking/snapshot path within the game process; success against a dedicated server does not automatically validate this arrangement.
+D65/D66 tested one Windows/Proton client connected to a **separate Linux dedicated server**. Windows single-player instead hosts a local listen server.
 
-The current [Windows release manifest](../release/manifests/windows-client.json) lists only `bin/engine.dll` and `left4dead2/bin/client.dll`; it omits `left4dead2/bin/server.dll`. The [Linux server release manifest](../release/manifests/linux-server.json) patches `bin/engine_srv.so` and `left4dead2/bin/server_srv.so` instead. Consequently, **the published Windows client patch is not a complete 4096-edict listen-server implementation**. The effect of installing it on ordinary low-index single-player startup has not been established by a dedicated control test; do not claim that ordinary single-player necessarily fails.
+The [Windows release manifest](../release/manifests/windows-client.json) contains `engine.dll` and `client.dll`, but not `server.dll`. A [historical server-module prototype](../manifests/server.json) exists (808 patches; 30/30 PE preflight), but has not been integrated or runtime-tested. See the [research report](../reports/report.md).
 
-This gap does **not** mean Windows `server.dll` was never studied. The historical [Windows reverse-engineering report](../reports/report.md) (notably sections 75 and 177), [static patch manifest](../manifests/server.json), and [experimental builder](../tools/build_server.py) document an isolated patched `server.dll` prototype with **808 patch sites and 30/30 PE preflight checks**. Those are historical **static/structural** results, not a current release manifest, not a verified three-module listen-server build, and not a runtime acceptance result. They must be audited against the current release and build identity before reuse.
-
-The historical [N26 loopback baseline](../reports/network-n26-baseline.md) observed that **an out-of-process** client connecting to a separate server on `127.0.0.1` could trigger the engine's process-local `NET_SendLoopPacket` path; using a non-loopback LAN address worked for that experiment. This does **not** establish a defect in an in-process listen server, or prove that its loopback implementation requires modification. That question, along with local game-server initialization, edict allocation, snapshot and client observation paths, remains untested for the patched Windows single-player mode.
-
-Required acceptance work: reproduce baseline single-player startup with original modules; test ordinary low-index single-player startup with the current Windows patch; re-audit and integrate the historical server-module changes where needed; record loaded modules, server capacity and local connection path; then test indices `2047/2048/2049/4095` with server allocation, client creation/update/delete/reuse and map transitions. Diagnose the first observed failure rather than assigning a loopback or `server.dll` root cause in advance.
+[N26](../reports/network-n26-baseline.md) documented a loopback issue between separate processes; the listen-server path has not been tested. Next steps are to integrate the Windows server module and verify local startup and high-index entity synchronization.
 
 ## SourceMod compatibility
 
