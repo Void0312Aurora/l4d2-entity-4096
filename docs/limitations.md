@@ -1,6 +1,6 @@
 # Limitations
 
-The project is intentionally published as an experimental single-client release candidate.
+The project is intentionally published as an experimental **single-client plus separate Linux dedicated-server** release candidate. This does **not** include client-hosted single-player/listen-server support.
 
 | Item | Status | Consequence |
 | --- | --- | --- |
@@ -15,11 +15,14 @@ The project is intentionally published as an experimental single-client release 
 | Two real Steam clients | NOT_TESTED | No concurrent-client claim |
 | All 4096 network slots occupied | NOT_TESTED | Index 4095 was reached by normal allocation, not full occupancy |
 | Windows native dedicated server | NOT_TESTED | Linux dedicated server is the supported server path |
+| Windows client-hosted single-player / listen server | **NOT_IMPLEMENTED / NOT_VALIDATED** | Windows release manifest does not include `server.dll`; historical static 808-site prototype was neither integrated nor accepted in a local single-player runtime |
 | Windows native client runtime | NOT_TESTED | The Windows image is runtime-tested through Proton |
 | Linux native client | NOT_TESTED | Windows/Proton is the tested client path |
 | VAC/public matchmaking | NOT_TESTED | Use private, non-public test environments |
 | Other native extensions | NOT_TESTED | SourceMod result is limited to the D65 probe scope |
 
 The 2026-10-31 Logger report's 28-minute snapshot interval is not measured time above 2047. Its `All: 2374`, `Networked: 2159` and the VScript scan's `count=2397`, `unique=2127`, `over2047=105` have different counting semantics; do not present them as an independently audited simultaneous count of distinct network edicts. See [the published evidence](../artifacts/entity-index-20261031/README.md).
+
+The [historical Windows `server.dll` study](../reports/report.md), [prototype manifest](../manifests/server.json) and [builder](../tools/build_server.py) are real static work, not proof of a released listen-server implementation. The [N26 loopback experiment](../reports/network-n26-baseline.md) involved **separate processes** and cannot diagnose a fault in the client's in-process listen-server transport. No control experiment establishes whether ordinary under-2048 single-player works with the current Windows client patch, or why an expanded local server would fail. See [compatibility](compatibility.md#single-player-and-listen-server-scope).
 
 The source build is tied to L4D2 build `23990068`. A Steam update invalidates the byte manifests until a new audit and runtime regression are completed. The project does not distribute complete Valve DLLs or bypass Steam checks.
