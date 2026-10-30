@@ -6,13 +6,11 @@ L4D2-4096 是面向《Left 4 Dead 2》build `23990068` 的非官方、版本绑�
 
 ## 当前状态
 
-**PARTIALLY_READY：一个客户端连接独立专用服务器的实验性测试，并非单人模式验收。** 已验证路径是 Linux 专用服务器配合 Proton 运行 Windows 客户端。同一 Windows 模块 manifest 可供原生 Windows 测试，但该运行环境尚未独立验收。D65 已经完成真实 `16/64/128/256/512` 阶梯、索引 `4095`、六类特殊感染者、客户端同步和一次地图切换。D66 增加了真实 1024 次网络 serial 回绕试验、317.5 秒有界 512 实体运行、安装器、SourceMod 可复现构建和原始证据验收门禁。另有 2026-10-31 在 `c6m1_riverbank` 实际游玩会话中的辅助填充测试，观测到普通感染者占用索引 `2158`；这属于有界服务端运行时观测，不等于该次测试已独立验证客户端高索引同步或长时间稳定性。
+**PARTIALLY_READY（实验性）。** 已验证 Linux 专用服务器与 Windows/Proton 客户端联机，完成最高索引 `4095` 的实体创建、同步、复用及地图切换等测试。另在实际游玩中通过隐藏实体辅助填充，观察到索引 `2158` 的普通感染者。
 
-**Linux 原生客户端的验证边界：**已有与服务器联机并实际游玩的用户报告，故先前一概标为“未测试”不准确。但仓库没有该次客户端完整轨迹或索引超过2047的同步证据，也不能据此声称未经扩容的 Linux 原生客户端能够解码高索引。游玩中偶尔出现加载或渲染异常，发生较少、尚未系统复现或归因，不能认定是补丁引起的。基本联机可用不以高负载验收为必要前提；若要宣称该客户端完整支持4096索引，仍需独立验证高索引同步。
-
-**Windows 客户端内置单人模式（Listen Server）的 4096 扩容尚未实现、尚未验收。** 当前 Windows 发布清单只包含 `bin/engine.dll` 和 `left4dead2/bin/client.dll`，没有纳入本地服务端所需的 `left4dead2/bin/server.dll`。历史上虽已研究该模块并生成静态实验补丁，但没有集成到现行发布。见[兼容性说明](docs/compatibility.md#single-player-and-listen-server-scope)。
-
-以下内容不属于当前发布声明：内部 15-bit serial 回绕、多小时运行、两名真实 Steam 用户、同时占满 4096 个网络槽位、原生 Windows 运行验收、**Linux 原生客户端的高索引/高负载验收**以及任意第三方原生扩展。
+- **Linux 原生客户端：** 已完成实际联机游玩；高索引兼容性尚未验证，偶发加载或渲染异常待排查。
+- **Windows 单人模式：** 暂不支持 4096 实体的本地 Listen Server，当前发布未包含 Windows `server.dll` 补丁。
+- **尚待验证：** 原生 Windows 运行、双客户端、长时间稳定性及 4096 槽满载。详见[兼容性说明](docs/compatibility.md)与[项目限制](docs/limitations.md)。
 
 ## 平台支持边界
 
@@ -22,8 +20,8 @@ L4D2-4096 是面向《Left 4 Dead 2》build `23990068` 的非官方、版本绑�
 | Windows 客户端文件 | 实验性；原生运行未验收 | 通过 Proton 观察到 2048、2049、4095 槽位 |
 | Proton Windows 客户端 | 实验性支持 | 连接、更新、删除、复用和地图切换端到端通过 |
 | Windows 原生专用服务器 | 未测试 | 不列为支持平台 |
-| Linux 原生客户端 | **已有实际联机游玩（用户报告，有限范围）** | 已连接服务器并游玩；高索引/高负载未验收，偶发加载或渲染异常尚未排查 |
-| Windows 单人模式 / 内置 Listen Server | **未实现、未验收** | 当前发布未集成 Windows `server.dll` 扩容补丁；仅有历史静态实验成果 |
+| Linux 原生客户端 | 已实际联机游玩 | 高索引兼容性未验证；偶发加载/渲染异常待排查 |
+| Windows 单人模式 / 内置 Listen Server | 暂不支持 | 本版未包含 Windows `server.dll` 补丁 |
 | SourceMod/SDKTools/SDKHooks | 限定兼容构建 | 仅覆盖 D65 探针中的 API 和回调 |
 
 ## 安装补丁模块
@@ -84,7 +82,7 @@ python3 tools/release/install.py restore \
 | 网络 serial 回绕 | 索引 2229 自然复用 1024 次，双端 `1023 → 0 → 1`，最终回到初始网络 serial |
 | 实际游玩中辅助填充跨越 2048 | `c6m1_riverbank`：Logger `All: 2374`、`Networked: 2159`；VScript `max=2158`、`maxclass=infected`、`over2047=105`。通过持续保留隐藏物件产生压力；仅为服务端观测，不代表纯自然负载或该次客户端同步验收 |
 
-新增的 [2026-10-31 实际运行证据](artifacts/entity-index-20261031/README.md) 提供 [Logger 原始记录](artifacts/entity-index-20261031/entity_limit_2026-10-31_00-20-00.log)、[VScript 扫描输出](artifacts/entity-index-20261031/runtime-index-scan.txt)、[填充与清理脚本](artifacts/entity-index-20261031/entity_index_fill.nut)及[扫描脚本](artifacts/entity-index-20261031/entity_index_scan.nut)。扫描中 `count=2397` 与 `unique=2127` 不同，不能直接等同于同时占用的独立网络槽位数；日志的快照间隔也不是越过 2047 的持续时间。
+[2026-10-31 实际游玩证据](artifacts/entity-index-20261031/README.md)：[Logger 日志](artifacts/entity-index-20261031/entity_limit_2026-10-31_00-20-00.log)、[索引扫描](artifacts/entity-index-20261031/runtime-index-scan.txt)及[测试脚本](artifacts/entity-index-20261031/entity_index_fill.nut)。
 
 D65 的机器可读记录见 [reports/n27d65/validation.json](reports/n27d65/validation.json)，叙述报告见 [reports/n27d65/findings.md](reports/n27d65/findings.md)。D66 的发布判断见 [reports/n27d66/release-readiness.md](reports/n27d66/release-readiness.md)，最终门禁见 [reports/n27d66/validation.json](reports/n27d66/validation.json)，并附有[网络 serial](reports/n27d66/network-serial.json)、[有界运行](reports/n27d66/bounded-soak.json)和 [SourceMod smoke](reports/n27d66/sourcemod-smoke.json)记录。
 
@@ -118,9 +116,8 @@ python3 tools/release/check_rc.py \
 
 - 所有地址和字节断言绑定 build `23990068`，游戏更新后即失效。
 - 原版客户端无法解码 `2048` 及以上网络索引。
-- **单客户端≠单人模式**：当前验收依赖独立 Linux 专用服务器，不包含 Windows 客户端内置的单人本机服务器。也尚未实测当前补丁对普通2048以下单人启动有何影响；不能将单人扩容未实现直接解释为单人游戏必然无法启动。
 - 网络 serial 按预期在 1024 次复用后重复；内部 15-bit 回绕仍为 `NOT_TESTED`。
-- 最新的真实游玩测试借助隐藏实体辅助跨越 2047，尚不能证明自然刷怪单独突破原版限制、4096 个槽位同时占满或持续高负载稳定性；该次无独立的客户端高索引同步轨迹，不能替代 D65/D66 的端到端证据。
+- 4096 槽满载、长时间稳定性及 Linux 原生客户端的高索引同步尚未验证。
 - VAC 安全性、公开匹配和正式公开 Release 均未验证。
 - 其他 SourceMod 原生扩展不在兼容构建结论内。
 - 当前安装器仅在匹配版本的游戏目录中原位替换 manifest 指定模块；操作前关闭游戏，保留 `*.l4d2-4096.bak` 与 receipt，并仅在私有测试环境使用。
