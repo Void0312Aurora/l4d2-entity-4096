@@ -6,7 +6,7 @@ This is an experimental release candidate for private copies. It is not a Valve 
 
 ## Current release status
 
-**PARTIALLY_READY — single-client experimental testing.** The runtime-tested path is a Linux dedicated server plus the Windows client through Proton. The same Windows module manifest is provided for native Windows testing; that runtime has not been independently accepted. D65 evidence covers real `16/64/128/256/512` entity ladders, index `4095`, six special infected, client synchronization, and one map transition. D66 adds a real 1024-cycle wire-serial wrap test, a 317.5-second bounded 512-entity run, private-copy installer, reproducible SourceMod build and independent raw-evidence gates.
+**PARTIALLY_READY — single-client experimental testing.** The runtime-tested path is a Linux dedicated server plus the Windows client through Proton. The same Windows module manifest is provided for native Windows testing; that runtime has not been independently accepted. D65 evidence covers real `16/64/128/256/512` entity ladders, index `4095`, six special infected, client synchronization, and one map transition. D66 adds a real 1024-cycle wire-serial wrap test, a 317.5-second bounded 512-entity run, private-copy installer, reproducible SourceMod build and independent raw-evidence gates. A separate 2026-10-31 gameplay-assisted runtime test on `c6m1_riverbank` observed indices beyond the vanilla boundary while the game was running, including a common infected at index `2158`. This is a bounded server-side observation, not a new client-sync or long-duration acceptance test.
 
 The following remain outside the release claim: internal 15-bit serial wraparound, multi-hour soak, two real Steam users, full simultaneous occupation of all 4096 network slots, native Windows runtime acceptance, Linux native client, and arbitrary native extensions.
 
@@ -85,6 +85,9 @@ update. See [installation](docs/installation.md) for recovery details.
 | Special infected | Hunter, Spitter, Smoker, Boomer, Charger and Jockey under 512 live high-index props |
 | Map transition | `c1m1_hotel → c1m2_streets`, then high-index recreation and synchronization |
 | Wire serial wrap | Index 2229, 1024 ordinary reuse cycles, client/server `1023 → 0 → 1` and return to initial wire serial |
+| Gameplay-assisted crossing of 2048 | `c6m1_riverbank`: Logger `All: 2374`, `Networked: 2159`; VScript `max=2158`, `maxclass=infected`, `over2047=105` after persistent hidden prop fill. Server-side only; not natural-only load or a fresh client-sync trace |
+
+The [2026-10-31 in-game evidence](artifacts/entity-index-20261031/README.md) includes the [Logger report](artifacts/entity-index-20261031/entity_limit_2026-10-31_00-20-00.log), [VScript scan](artifacts/entity-index-20261031/runtime-index-scan.txt), [fill/cleanup helper](artifacts/entity-index-20261031/entity_index_fill.nut), and [scan helper](artifacts/entity-index-20261031/entity_index_scan.nut). The scan reported `count=2397` but `unique=2127`; these do not count the same thing and must not be equated with distinct occupied network slots. The snapshot interval does not measure time above index 2047.
 
 The machine-readable D65 record is [reports/n27d65/validation.json](reports/n27d65/validation.json), with the narrative in [reports/n27d65/findings.md](reports/n27d65/findings.md). D66’s release decision and test boundaries are in [reports/n27d66/release-readiness.md](reports/n27d66/release-readiness.md); the final gate is [reports/n27d66/validation.json](reports/n27d66/validation.json), with [wire serial](reports/n27d66/network-serial.json), [bounded soak](reports/n27d66/bounded-soak.json), and [SourceMod smoke](reports/n27d66/sourcemod-smoke.json) records.
 
@@ -119,6 +122,7 @@ The gate reports static identity, manifest, evidence-integrity, and end-to-end s
 - All addresses and byte assertions are bound to build `23990068`; a Steam update invalidates them.
 - Vanilla clients cannot decode network indices at or above `2048`.
 - Wire serial repeats after 1024 reuse cycles as expected. The internal 15-bit wrap remains `NOT_TESTED`.
+- The gameplay-assisted >2047 observation used hidden filler entities. Natural-only saturation, full simultaneous 4096-slot occupation and sustained high-load stability are unverified. This run has no separate high-index client packet/visibility trace; D65/D66 client evidence remains distinct.
 - VAC safety, public matchmaking, and public release distribution are unverified.
 - Third-party SourceMod native extensions are not covered by the limited compatibility build.
 - The installer touches only the manifest-listed modules; addons and the rest of the Steam tree are left in place.
