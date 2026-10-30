@@ -8,10 +8,18 @@
 | Windows client image | Experimental; native runtime NOT_TESTED | Patched module slots at 2048, 2049 and 4095 observed through Proton |
 | Proton Windows client | Experimental | Sign-on, synchronized updates, deletion, reuse and map transition |
 | Windows native dedicated server | NOT_TESTED | No end-to-end D66 evidence |
-| Linux native client | NOT_TESTED | No client build or runtime evidence |
+| Linux native client | **LIMITED PLAYTEST (user-reported); high-index NOT_VALIDATED** | Connected to the server and played; no recorded >2047 client-side trace or high-load acceptance. Occasional loading/rendering anomalies, not systematically investigated |
 | Windows client-hosted single-player / listen server | **NOT_IMPLEMENTED / NOT_VALIDATED** | No Windows `server.dll` in the release manifest, and no accepted single-player local-server experiment |
 | Two real Steam users | NOT_TESTED | One local Steam account was available during D65 |
 | Public matchmaking/VAC | NOT_TESTED | Private/insecure experiments only |
+
+## Linux native-client gameplay observation
+
+A native Linux client has reportedly **connected to the server and been used for actual gameplay**. The previous blanket `NOT_TESTED` entry was too strong: this supports a **preliminary basic-playability / connectivity observation**, not a full 4096-edict client acceptance. The repository's [release manifests](../release/manifests/) include patched Windows client and Linux dedicated-server modules, but **no native Linux client patch manifest**. The observed native-client binary identity and maximal network entity index visible to that client were not captured in an independently inspectable session record.
+
+No high-load experiment or direct client-side decoding/synchronization trace above `2047` is recorded for this Linux native-client path. Such load testing is **not required** to describe a bounded normal-play compatibility observation; nevertheless, a successful ordinary session below the legacy limit cannot establish high-index protocol compatibility. Do not conflate the patched Linux **server** with a patched Linux **client**.
+
+A small number of **intermittent loading and/or rendering irregularities** were noticed during gameplay, but the cases were infrequent and not systematically reproduced, logged, categorized or compared against an unmodified control. Their relation to entity-limit expansion is **unknown**; neither a patch-induced defect nor a defect-free rendering outcome is established. A small, timestamped reproduction and a vanilla-client/control comparison would be more useful than presuming a root cause or requiring a full synthetic stress run.
 
 ## Single-player and listen-server scope
 
