@@ -6,18 +6,18 @@ This is an experimental release candidate for private testing environments. It i
 
 ## Current release status
 
-**PARTIALLY_READY.** The tested setup is a Linux dedicated server with a Windows client through Proton. D65/D66 verified entity creation, synchronization and reuse up to index `4095`, plus map transitions and bounded load tests. An in-game filler-assisted test also observed a common infected at index `2158`.
+**PARTIALLY_READY.** A patched Linux dedicated server and Windows/Proton client passed high-index synchronization tests up to `4095`. A native Windows client has also connected and played on the Linux server. In that native Windows gameplay session, a filler-assisted test recorded `Networked: 2159` and an infected at index `2158` on the server.
 
 - **Linux native client:** Server-connected gameplay has been tested. High-index support has not been verified; occasional loading/rendering issues remain uninvestigated.
 - **Windows single-player:** 4096-edict listen-server mode is not yet supported. The current Windows release does not include a patched `server.dll`.
-- **Pending:** Native Windows acceptance, two-client testing, long-duration stability and full 4096-slot occupancy. Details: [compatibility](docs/compatibility.md) and [limitations](docs/limitations.md).
+- **Pending:** Native Windows client-side high-index tracing, two-client testing, long-duration stability and full 4096-slot occupancy. Details: [compatibility](docs/compatibility.md) and [limitations](docs/limitations.md).
 
 ## What is supported
 
 | Component | Status | Evidence boundary |
 | --- | --- | --- |
 | Linux dedicated server | Experimental | Real D65 Proton/client sessions; patched `engine_srv.so` and `server_srv.so` |
-| Windows client image | Experimental; native runtime unverified | Real patched module observations at 2048, 2049 and 4095 through Proton |
+| Windows native client | Gameplay tested | Connected to patched Linux server; Oct 31 gameplay/Logger test crossed 2048 on the server. High-index client-side trace pending |
 | Proton Windows client | Experimental | End-to-end connection, updates, deletion, reuse and map transition |
 | Windows native dedicated server | Not tested | Do not list as supported |
 | Linux native client | Gameplay tested | Connected and played; high-index support unverified, occasional loading/rendering issues |
