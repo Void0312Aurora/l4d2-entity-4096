@@ -6,18 +6,18 @@ L4D2-4096 是面向《Left 4 Dead 2》build `23990068` 的非官方、版本绑�
 
 ## 当前状态
 
-**PARTIALLY_READY（实验性）。** 已验证 Linux 专用服务器与 Windows/Proton 客户端联机，完成最高索引 `4095` 的实体创建、同步、复用及地图切换等测试。另在实际游玩中通过隐藏实体辅助填充，观察到索引 `2158` 的普通感染者。
+**PARTIALLY_READY（实验性）。** Linux 专用服务器与 Windows/Proton 客户端已通过最高索引 `4095` 的同步测试；Windows 原生客户端也已连接 Linux 服务器并实际游玩。在该原生 Windows 游玩测试中，通过隐藏实体辅助填充，服务端 Logger 记录 `Networked: 2159`，最大实体索引 `2158`（普通感染者）。
 
 - **Linux 原生客户端：** 已完成实际联机游玩；高索引兼容性尚未验证，偶发加载或渲染异常待排查。
 - **Windows 单人模式：** 暂不支持 4096 实体的本地 Listen Server，当前发布未包含 Windows `server.dll` 补丁。
-- **尚待验证：** 原生 Windows 运行、双客户端、长时间稳定性及 4096 槽满载。详见[兼容性说明](docs/compatibility.md)与[项目限制](docs/limitations.md)。
+- **尚待验证：** Windows 原生客户端侧高索引同步专项记录、双客户端、长时间稳定性及 4096 槽满载。详见[兼容性说明](docs/compatibility.md)与[项目限制](docs/limitations.md)。
 
 ## 平台支持边界
 
 | 组件 | 状态 | 证据范围 |
 | --- | --- | --- |
 | Linux 专用服务器 | 实验性支持 | D65 真实 Proton/客户端会话；`engine_srv.so` 与 `server_srv.so` |
-| Windows 客户端文件 | 实验性；原生运行未验收 | 通过 Proton 观察到 2048、2049、4095 槽位 |
+| Windows 原生客户端 | 已实际联机游玩 | 连接 Linux 扩容服务器并进行超过2048的游戏内服务端测试；客户端侧高索引追踪待补充 |
 | Proton Windows 客户端 | 实验性支持 | 连接、更新、删除、复用和地图切换端到端通过 |
 | Windows 原生专用服务器 | 未测试 | 不列为支持平台 |
 | Linux 原生客户端 | 已实际联机游玩 | 高索引兼容性未验证；偶发加载/渲染异常待排查 |
