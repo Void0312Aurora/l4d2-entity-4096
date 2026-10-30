@@ -5,13 +5,17 @@
 | Platform or component | Status | What was actually tested |
 | --- | --- | --- |
 | Linux dedicated server | Experimental | Patched engine/game DLLs, real high-index allocations and a Proton client |
-| Windows client image | Experimental; native runtime NOT_TESTED | Patched module slots at 2048, 2049 and 4095 observed through Proton |
+| Windows native client | Gameplay tested; high-index client trace pending | Connected to patched Linux server and played during Oct 31 filler-assisted test (`Networked: 2159` on server) |
 | Proton Windows client | Experimental | Sign-on, synchronized updates, deletion, reuse and map transition |
 | Windows native dedicated server | NOT_TESTED | No end-to-end D66 evidence |
 | Linux native client | Gameplay tested | Server connection and gameplay confirmed; high-index support unverified, occasional loading/rendering issues |
 | Windows client-hosted single-player / listen server | **NOT_IMPLEMENTED / NOT_VALIDATED** | No Windows `server.dll` in the release manifest, and no accepted single-player local-server experiment |
 | Two real Steam users | NOT_TESTED | One local Steam account was available during D65 |
 | Public matchmaking/VAC | NOT_TESTED | Private/insecure experiments only |
+
+## Native Windows client gameplay
+
+A native Windows client connected to the patched Linux dedicated server and was used for real gameplay, including the [October 31 assisted high-index test](../artifacts/entity-index-20261031/README.md). The server-side Logger recorded `Networked: 2159` and the VScript scan reached index `2158` (`infected`). A separate native Windows client-side high-index trace was not collected; D65/D66 high-index synchronization was tested through Proton.
 
 ## Linux native-client gameplay observation
 
