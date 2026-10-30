@@ -9,8 +9,21 @@
 | Proton Windows client | Experimental | Sign-on, synchronized updates, deletion, reuse and map transition |
 | Windows native dedicated server | NOT_TESTED | No end-to-end D66 evidence |
 | Linux native client | NOT_TESTED | No client build or runtime evidence |
+| Windows client-hosted single-player / listen server | **NOT_IMPLEMENTED / NOT_VALIDATED** | No Windows `server.dll` in the release manifest, and no accepted single-player local-server experiment |
 | Two real Steam users | NOT_TESTED | One local Steam account was available during D65 |
 | Public matchmaking/VAC | NOT_TESTED | Private/insecure experiments only |
+
+## Single-player and listen-server scope
+
+**Single-client** in D65/D66 means one Windows game client (run through Proton) connected to a **separate Linux dedicated server**. It does **not** mean the game's single-player menu or an in-process Windows **listen server**. A client-hosted single-player game must run the local game-server logic and the client-side networking/snapshot path within the game process; success against a dedicated server does not automatically validate this arrangement.
+
+The current [Windows release manifest](../release/manifests/windows-client.json) lists only `bin/engine.dll` and `left4dead2/bin/client.dll`; it omits `left4dead2/bin/server.dll`. The [Linux server release manifest](../release/manifests/linux-server.json) patches `bin/engine_srv.so` and `left4dead2/bin/server_srv.so` instead. Consequently, **the published Windows client patch is not a complete 4096-edict listen-server implementation**. The effect of installing it on ordinary low-index single-player startup has not been established by a dedicated control test; do not claim that ordinary single-player necessarily fails.
+
+This gap does **not** mean Windows `server.dll` was never studied. The historical [Windows reverse-engineering report](../reports/report.md) (notably sections 75 and 177), [static patch manifest](../manifests/server.json), and [experimental builder](../tools/build_server.py) document an isolated patched `server.dll` prototype with **808 patch sites and 30/30 PE preflight checks**. Those are historical **static/structural** results, not a current release manifest, not a verified three-module listen-server build, and not a runtime acceptance result. They must be audited against the current release and build identity before reuse.
+
+The historical [N26 loopback baseline](../reports/network-n26-baseline.md) observed that **an out-of-process** client connecting to a separate server on `127.0.0.1` could trigger the engine's process-local `NET_SendLoopPacket` path; using a non-loopback LAN address worked for that experiment. This does **not** establish a defect in an in-process listen server, or prove that its loopback implementation requires modification. That question, along with local game-server initialization, edict allocation, snapshot and client observation paths, remains untested for the patched Windows single-player mode.
+
+Required acceptance work: reproduce baseline single-player startup with original modules; test ordinary low-index single-player startup with the current Windows patch; re-audit and integrate the historical server-module changes where needed; record loaded modules, server capacity and local connection path; then test indices `2047/2048/2049/4095` with server allocation, client creation/update/delete/reuse and map transitions. Diagnose the first observed failure rather than assigning a loopback or `server.dll` root cause in advance.
 
 ## SourceMod compatibility
 
