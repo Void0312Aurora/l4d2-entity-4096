@@ -87,10 +87,11 @@ can be started from PowerShell with the normal executable:
 ```
 
 Then use the game console: `connect <server-LAN-address>:27132`.
-Native Windows runtime acceptance is pending; the tested runtime uses the
-same Windows modules through Proton. For that path,
-`tools/linux/run_proton_client.py --help` exposes explicit game, Proton,
-prefix and server paths and records module identities.
+Native Windows client gameplay against the patched Linux server has been
+completed, including the Oct 31 server-side 2048+ test; native Windows
+client-side high-index tracing is still pending. D65/D66 high-index client
+validation used Proton; `tools/linux/run_proton_client.py --help` documents
+that test harness.
 
 Windows native dedicated-server support is untested. A native Linux client has been used for normal server gameplay, but high-index support has not been verified; occasional visual glitches remain under investigation.
 
