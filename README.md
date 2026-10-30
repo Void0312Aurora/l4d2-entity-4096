@@ -2,7 +2,7 @@
 
 L4D2-4096 is an unofficial, build-pinned expansion of the **Left 4 Dead 2** network entity limit. It raises the network range from `0..2047` to `0..4095` and the internal entity table from 4096 to 8192 slots while keeping the original Source entity semantics.
 
-This is an experimental release candidate for private testing environments. It is not a Valve product, does not bypass Steam ownership or authentication, and does not include Valve binaries. The client and dedicated server must use matching patched images.
+This is an experimental release candidate for private testing environments. It is not a Valve product, does not bypass Steam ownership or authentication, and does not include Valve binaries. High-index network operation requires compatible patched client and dedicated-server images; basic connectivity below the original limit is a separate, narrower claim.
 
 ## Current release status
 
