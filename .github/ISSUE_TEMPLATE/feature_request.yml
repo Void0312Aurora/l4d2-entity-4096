@@ -1,0 +1,32 @@
+name: Feature or compatibility request
+description: Propose a new platform, compatibility improvement, or test scenario.
+title: "[Request] "
+body:
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - Windows single-player / listen server
+        - Windows client or server
+        - Linux client or server
+        - SourceMod / native extensions
+        - Network or entity behavior
+        - Installer / documentation
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: goal
+    attributes:
+      label: What would you like to change?
+      description: Describe the use case and what success would look like.
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: Technical context or alternative approaches (optional)
+      description: Include affected game builds, existing test evidence, and trade-offs if known.
+    validations:
+      required: false
