@@ -130,6 +130,12 @@ The gate reports static identity, manifest, evidence-integrity, and end-to-end s
 - Third-party SourceMod native extensions are not covered by the limited compatibility build.
 - The installer touches only the manifest-listed modules; addons and the rest of the Steam tree are left in place.
 
+## Contributing and license
+
+Bug reports, compatibility testing and pull requests are welcome. See [CONTRIBUTING.md](CONTRIBUTING.md), the [issue templates](.github/ISSUE_TEMPLATE/) and the [development guide](docs/development.md). AI-assisted contributions are welcome when reviewed and validated by their submitters.
+
+Original project material is licensed under the [MIT License](LICENSE). This license does not cover Valve game binaries or third-party assets and code under separate terms.
+
 ## Provenance
 
 The repository contains research data, patch manifests, scripts and documentation. It does not contain Valve’s original or modified game binaries. See [research-index](docs/research-index.md) for the historical evidence chain and the reports that were superseded by later runtime observations.
