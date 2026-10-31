@@ -1,0 +1,78 @@
+name: Bug report
+description: Report a crash, regression, compatibility issue, or unexpected behavior.
+title: "[Bug] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting a problem. Please use a private test setup and remove personal information, Steam tokens, and proprietary binaries from any attachments.
+  - type: dropdown
+    id: client-platform
+    attributes:
+      label: Client platform
+      options:
+        - Windows native
+        - Windows through Proton
+        - Linux native
+        - Not applicable (server-only)
+        - Other
+    validations:
+      required: true
+  - type: dropdown
+    id: server-platform
+    attributes:
+      label: Server environment
+      options:
+        - Linux dedicated server
+        - Windows dedicated server (not validated)
+        - Windows listen server / single-player (not supported)
+        - Other / not applicable
+    validations:
+      required: true
+  - type: input
+    id: game-build
+    attributes:
+      label: L4D2 build and patch status
+      description: Current release targets build 23990068. Say whether the client and server have matching patches.
+      placeholder: "Build 23990068; patched Linux server + native Windows client"
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to reproduce
+      description: Include map, relevant settings, plugins, and the smallest reliable sequence.
+      placeholder: |
+        1. Start ...
+        2. Connect ...
+        3. Spawn ...
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+      description: Include crash signatures, entity indices, or console errors when applicable.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Logs and evidence (optional)
+      description: Provide redacted logs, module hashes, screenshots, and whether this is a server-side observation or client-side trace. Do not attach game binaries or private dumps.
+      render: text
+    validations:
+      required: false
+  - type: textarea
+    id: control
+    attributes:
+      label: Control test / other context (optional)
+      description: Does it reproduce with original binaries or without SourceMod/plugins? If not tested, say so.
+    validations:
+      required: false
