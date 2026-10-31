@@ -122,4 +122,10 @@ python3 tools/release/check_rc.py \
 - 其他 SourceMod 原生扩展不在兼容构建结论内。
 - 当前安装器仅在匹配版本的游戏目录中原位替换 manifest 指定模块；操作前关闭游戏，保留 `*.l4d2-4096.bak` 与 receipt，并仅在私有测试环境使用。
 
+## 贡献与许可
+
+欢迎提交 Bug 报告、兼容性测试结果和 Pull Request。请参阅[贡献指南](CONTRIBUTING.md)、[Issue 模板](.github/ISSUE_TEMPLATE/)与[开发说明](docs/development.md)。接受经过贡献者检查与验证的 AI 辅助贡献。
+
+仓库原创内容采用 [MIT 许可证](LICENSE)；Valve 游戏二进制及其他第三方资产、代码不属于该授权范围。
+
 仓库只包含研究数据、差分 manifest、脚本和文档，不包含 Valve 原始或修改后的完整游戏二进制。历史证据链见[研究索引](docs/research-index.md)。
